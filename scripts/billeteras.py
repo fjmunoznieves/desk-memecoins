@@ -48,7 +48,7 @@ for r in rows:
         res["nota"] = "cadena no disponible en Etherscan v2"; out.append(res); continue
     n = get(dict(chainid=cid, module="proxy", action="eth_getTransactionCount", address=a, tag="latest"))
     try: res["tx_enviadas"] = int(n.get("result", "0x0"), 16)
-    except Exception: res["nota"] = "sin nonce: " + str(n.get("message", ""))[:40]
+    except Exception: res["nota"] = "sin nonce: " + str(n.get("result", n.get("message", "")))[:120]
     time.sleep(0.3)
     t = get(dict(chainid=cid, module="account", action="txlist", address=a, startblock=0, endblock=99999999, page=1, offset=10, sort="asc"))
     txs = t.get("result") if isinstance(t.get("result"), list) else []
@@ -57,7 +57,7 @@ for r in rows:
         inc = [x for x in txs if x.get("to", "").lower() == a]
         if inc: res["fondeo_desde"] = inc[0]["from"].lower()
     elif not res["nota"]:
-        res["nota"] = str(t.get("message", ""))[:40]
+        res["nota"] = str(t.get("result", t.get("message", "")))[:120]
     time.sleep(0.3)
     out.append(res)
 with open(OUT, "w", newline="") as f:
