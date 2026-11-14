@@ -26,7 +26,7 @@ def safe(e):  # nunca mostrar la clave en los errores
 
 
 if not KEY:
-    sys.exit("Falta el secreto HELIUS_API_KEY")
+    print("Falta el secreto HELIUS_API_KEY: no se revisa nada todavía"); json.dump([], open(AL, "w")); sys.exit(0)
 wl = [r["direccion"] for r in csv.DictReader(open(WL), delimiter="\t")]
 st = json.load(open(ST)) if os.path.exists(ST) else {"ultima": {}, "alertados": []}
 primera = not st["ultima"]
