@@ -29,6 +29,9 @@ if cand:
         time.sleep(1.2)
 L += ["", f"## Candidatos (numéricos + seguridad): {len(ok)}"]
 L += [f"- **{r['sym']}** ({r['chain']}) `{r['addr']}`: falta revisar señales de entrada y GMGN a mano." for r in ok] or ["- Ninguno."]
+h2 = [r for r in R if (r["c5"] or 0) >= 50 or (r["c1"] or 0) >= 150]
+L += ["", f"## H2: subidas fuertes (+50 % en 5m o +150 % en 1h): {len(h2)}"]
+L += [f"- {r['sym']} ({r['chain']}) `{r['addr']}` banda {r['band']}, 5m {r['c5']} %, 1h {r['c1']} %, mc {int(r['mc']):,}, liq {int(r['liq']):,}, precio {r['price']}" for r in h2] or ["- Ninguna."]
 os.makedirs("escaneos", exist_ok=True)
 open(f"escaneos/escaneo_{stamp}.md", "w").write("\n".join(L) + "\n")
 print(f"escaneos/escaneo_{stamp}.md", len(cand), len(ok))
