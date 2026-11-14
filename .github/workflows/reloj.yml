@@ -1,9 +1,7 @@
-name: Reloj (watchlist + H16), 4 al día + 1 AM
+name: Reloj nocturno (watchlist + H16), 1 AM
 on:
   schedule:
-    - cron: "7 6,14 * * *"     # 1:07 AM y 9:07 AM Bogotá
-    - cron: "47 8,20 * * *"    # 3:47 AM y 3:47 PM Bogotá
-    - cron: "27 17 * * *"      # 12:27 PM Bogotá
+    - cron: "7 6 * * *"     # 1:07 AM Bogotá (de día el reloj va dentro de cada escaneo)
   workflow_dispatch: {}
 permissions:
   contents: write

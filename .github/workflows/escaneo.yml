@@ -11,7 +11,7 @@ permissions:
   actions: read
   issues: write
 concurrency:
-  group: escaneo
+  group: h16
   cancel-in-progress: false
 jobs:
   escaneo:
@@ -47,8 +47,29 @@ jobs:
           python3 scripts/sombra.py registrar rows2.json
           python3 scripts/sombra.py medir
           python3 scripts/sombra.py resumen > datos/sombra_resumen.txt || true
+      - name: Watchlist Solana, compras nuevas (Helius, solo lectura)
+        continue-on-error: true
+        env:
+          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+        run: python3 scripts/watch_solana.py
+      - name: Aviso si 2+ billeteras compran el mismo token
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/alerta_issue.py
+      - name: H16 resurrecciones (DexScreener, solo lectura)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/resurreccion.py
+      - name: Billeteras BNB/Robinhood (solo en el de 3:47 AM)
+        if: github.event.schedule == '47 8 * * *'
+        continue-on-error: true
+        env:
+          ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
+        run: python3 scripts/billeteras.py
       - name: Guardar resultados
-        if: steps.freno.outputs.corre == 'true'
+        if: always()
         run: |
           git config user.name "desk-bot"
           git config user.email "desk-bot@users.noreply.github.com"

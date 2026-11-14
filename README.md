@@ -8,7 +8,7 @@ Para correrlo a mano: pestaña Actions → "Escaneo desk (paper)" → Run workfl
 
 ## Horarios (tope 1.000 min/mes de GitHub Actions)
 - Escaneo: 3:47 AM, 9:07 AM, 12:27 PM* y 3:47 PM Bogotá (*se salta si el gasto del mes va por encima del ritmo).
-- Reloj (watchlist Solana + H16): 1:07 AM, 3:47 AM, 9:07 AM, 12:27 PM y 3:47 PM.
+  Cada escaneo incluye también la watchlist Solana (Helius) y la H16; el de 3:47 AM además revisa las billeteras.
+- Reloj nocturno (watchlist + H16): 1:07 AM.
 - H16 historial: 1:23 AM, solo tokens nuevos o pendientes.
-- Billeteras: diario, 3:17 AM.
 - Freno (scripts/presupuesto.py): escaneos se cortan desde 950 min y el resto desde 985; abre un issue de aviso al pasar 800 y 950. Las corridas manuales siempre corren.

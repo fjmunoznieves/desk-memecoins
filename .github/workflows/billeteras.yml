@@ -1,8 +1,6 @@
-name: Revisar billeteras (Etherscan)
+name: "Revisar billeteras (Etherscan), manual; a diario va dentro del escaneo de 3:47 AM"
 on:
   workflow_dispatch: {}
-  schedule:
-    - cron: "17 8 * * *"   # 3:17 AM Bogotá, diario
 permissions:
   contents: write
 concurrency:
