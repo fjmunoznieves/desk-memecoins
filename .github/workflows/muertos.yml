@@ -1,7 +1,7 @@
-name: H16 marcar muertos (diario)
+name: H16 marcar muertos (4 tandas al día)
 on:
   schedule:
-    - cron: "23 3 * * *"   # 10:23 PM Bogotá
+    - cron: "23 */6 * * *"   # 4 tandas al día (50 min cada una)
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -11,7 +11,7 @@ concurrency:
 jobs:
   muertos:
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    timeout-minutes: 70
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
