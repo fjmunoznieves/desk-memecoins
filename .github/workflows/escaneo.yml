@@ -1,0 +1,41 @@
+name: Escaneo desk (paper)
+on:
+  schedule:
+    - cron: "47 13 * * *"   # 8:47 AM Bogotá
+    - cron: "47 17 * * *"   # 12:47 PM Bogotá
+    - cron: "47 22 * * *"   # 5:47 PM Bogotá
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: escaneo
+  cancel-in-progress: false
+jobs:
+  escaneo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SOMBRA_OUT: datos/estudio_reglas_sombra.tsv
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Escanear (GeckoTerminal + DexScreener)
+        run: python3 scripts/scan.py
+      - name: Filtros numéricos
+        run: python3 scripts/filtro.py
+      - name: Informe con revisión de seguridad
+        run: python3 scripts/reporte.py
+      - name: Sombra (registrar y medir a 24 h)
+        run: |
+          python3 scripts/sombra.py registrar rows2.json
+          python3 scripts/sombra.py medir
+          python3 scripts/sombra.py resumen > datos/sombra_resumen.txt || true
+      - name: Guardar resultados
+        run: |
+          git config user.name "desk-bot"
+          git config user.email "desk-bot@users.noreply.github.com"
+          git add escaneos datos
+          git commit -m "Escaneo $(date -u +%Y-%m-%dT%H:%MZ)" || echo "sin cambios"
+          git pull --rebase && git push

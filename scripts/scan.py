@@ -1,0 +1,94 @@
+import json, time, sys, urllib.request, collections
+G = "https://api.geckoterminal.com/api/v2/"
+def get(url, tries=4):
+    for k in range(tries):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "desk-scan", "Accept": "application/json"})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return json.load(r)
+        except Exception as e:
+            code = getattr(e, "code", None)
+            if code == 429:
+                time.sleep(30)
+            else:
+                time.sleep(3)
+    return None
+
+lists = []
+for net in ("solana", "bsc"):
+    for dur in ("5m", "1h", "6h", "24h"):
+        for p in (1, 2, 3):
+            lists.append((net, f"networks/{net}/trending_pools?duration={dur}&page={p}"))
+    for p in range(1, 11 if net == "solana" else 6):
+        lists.append((net, f"networks/{net}/new_pools?page={p}"))
+    for p in range(1, 6 if net == "solana" else 4):
+        lists.append((net, f"networks/{net}/pools?sort=h24_volume_usd_desc&page={p}"))
+
+toks = collections.OrderedDict()
+cov = collections.Counter()
+for net, path in lists:
+    d = get(G + path)
+    time.sleep(2.1)
+    if not d:
+        cov["fail"] += 1
+        continue
+    for pl in d.get("data", []):
+        b = pl["relationships"]["base_token"]["data"]["id"].split("_", 1)[1]
+        cov[net] += 1
+        toks.setdefault((net, b), path)
+print("gecko entries", dict(cov), "unique", len(toks), file=sys.stderr)
+
+# DexScreener
+chainmap = {"solana": "solana", "bsc": "bsc"}
+best = {}
+now = time.time() * 1000
+bych = collections.defaultdict(list)
+for (net, a) in toks:
+    bych[chainmap[net]].append(a)
+# Robinhood via DexScreener boosts/profiles + search
+rh = set()
+for u in ("https://api.dexscreener.com/token-profiles/latest/v1", "https://api.dexscreener.com/token-boosts/latest/v1", "https://api.dexscreener.com/token-boosts/top/v1"):
+    d = get(u) or []
+    for x in d:
+        if x.get("chainId") == "robinhood":
+            rh.add(x["tokenAddress"])
+for q in ("robinhood", "HOOD", "WETH robinhood"):
+    d = get("https://api.dexscreener.com/latest/dex/search?q=" + q) or {}
+    for p in d.get("pairs", []) or []:
+        if p.get("chainId") == "robinhood":
+            rh.add(p["baseToken"]["address"])
+bych["robinhood"] = list(rh)
+print("robinhood", len(rh), file=sys.stderr)
+
+for ch, addrs in bych.items():
+    for i in range(0, len(addrs), 30):
+        d = get(f"https://api.dexscreener.com/tokens/v1/{ch}/" + ",".join(addrs[i:i+30])) or []
+        time.sleep(0.4)
+        for p in d:
+            a = p["baseToken"]["address"]
+            key = (ch, a)
+            liq = (p.get("liquidity") or {}).get("usd") or 0
+            e = best.setdefault(key, {"pairs": [], "minCreated": 1e20})
+            e["pairs"].append(p)
+            if p.get("pairCreatedAt"):
+                e["minCreated"] = min(e["minCreated"], p["pairCreatedAt"])
+            if "p" not in e or liq > ((e["p"].get("liquidity") or {}).get("usd") or 0):
+                e["p"] = p
+
+BASEQ = {"SOL", "WSOL", "USDC", "USDT", "WBNB", "BNB", "USD1", "ETH", "WETH", "BUSD", "FDUSD"}
+rows = []
+for (ch, a), e in best.items():
+    p = e["p"]
+    age_h = (now - e["minCreated"]) / 3.6e6 if e["minCreated"] < 1e20 else None
+    tx = (p.get("txns") or {}).get("m5") or {}
+    b, s = tx.get("buys", 0), tx.get("sells", 0)
+    pc = p.get("priceChange") or {}
+    info = p.get("info") or {}
+    socials = [x.get("type") for x in info.get("socials", [])] + (["web"] if info.get("websites") else [])
+    rows.append(dict(chain=ch, addr=a, sym=p["baseToken"]["symbol"], dex=p.get("dexId"), quote=p["quoteToken"]["symbol"],
+                     age_h=age_h, liq=(p.get("liquidity") or {}).get("usd") or 0, mc=p.get("marketCap") or p.get("fdv") or 0,
+                     v5=(p.get("volume") or {}).get("m5") or 0, v1h=(p.get("volume") or {}).get("h1") or 0,
+                     b=b, s=s, c5=pc.get("m5") or 0, c1=pc.get("h1") or 0, c24=pc.get("h24") or 0,
+                     socials=socials, boosts=(p.get("boosts") or {}).get("active", 0), price=p.get("priceUsd"), pair=p.get("pairAddress")))
+json.dump(rows, open("rows.json", "w"))
+print("rows", len(rows), file=sys.stderr)
