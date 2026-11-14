@@ -1,5 +1,8 @@
 import json, time, sys, urllib.request, collections
 G = "https://api.geckoterminal.com/api/v2/"
+PAUSA = [2.1]  # segundos entre consultas a GeckoTerminal; sube sola si nos frenan (429)
+
+
 def get(url, tries=4):
     for k in range(tries):
         try:
@@ -9,26 +12,28 @@ def get(url, tries=4):
         except Exception as e:
             code = getattr(e, "code", None)
             if code == 429:
-                time.sleep(30)
+                PAUSA[0] = min(PAUSA[0] + 1, 6)
+                time.sleep(8 + 4 * k)
             else:
                 time.sleep(3)
     return None
 
+# Listas recortadas (nov-14) para gastar menos minutos: las de 6 h repetían casi todo lo de 1 h y 24 h.
 lists = []
 for net in ("solana", "bsc"):
-    for dur in ("5m", "1h", "6h", "24h"):
-        for p in (1, 2, 3):
+    for dur in ("5m", "1h", "24h"):
+        for p in (1, 2):
             lists.append((net, f"networks/{net}/trending_pools?duration={dur}&page={p}"))
-    for p in range(1, 11 if net == "solana" else 6):
+    for p in range(1, 9 if net == "solana" else 5):
         lists.append((net, f"networks/{net}/new_pools?page={p}"))
-    for p in range(1, 6 if net == "solana" else 4):
+    for p in range(1, 4 if net == "solana" else 3):
         lists.append((net, f"networks/{net}/pools?sort=h24_volume_usd_desc&page={p}"))
 
 toks = collections.OrderedDict()
 cov = collections.Counter()
 for net, path in lists:
     d = get(G + path)
-    time.sleep(2.1)
+    time.sleep(PAUSA[0])
     if not d:
         cov["fail"] += 1
         continue

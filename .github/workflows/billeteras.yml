@@ -2,7 +2,7 @@ name: Revisar billeteras (Etherscan)
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: "17 12 * * *"   # 7:17 AM Bogotá
+    - cron: "17 12 */2 * *"   # 7:17 AM Bogotá, cada 2 días
 permissions:
   contents: write
 concurrency:

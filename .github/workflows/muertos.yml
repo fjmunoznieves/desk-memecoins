@@ -5,6 +5,7 @@ on:
   workflow_dispatch: {}
 permissions:
   contents: write
+  actions: read
 concurrency:
   group: h16
   cancel-in-progress: false
@@ -17,9 +18,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Freno mensual (tope 1.000 min)
+        id: freno
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/presupuesto.py "otro"
       - name: Velas diarias y marca de muertos (GeckoTerminal, solo lectura)
+        if: steps.freno.outputs.corre == 'true'
         run: python3 scripts/muertos.py
       - name: Guardar
+        if: steps.freno.outputs.corre == 'true'
         run: |
           git config user.name "desk-bot"
           git config user.email "desk-bot@users.noreply.github.com"

@@ -2,10 +2,14 @@ name: Escaneo desk (paper)
 on:
   schedule:
     - cron: "47 8 * * *"    # 3:47 AM Bogotá
-    - cron: "47 15 * * *"   # 10:47 AM Bogotá
+    - cron: "7 12 * * *"    # 7:07 AM Bogotá (opcional)
+    - cron: "27 15 * * *"   # 10:27 AM Bogotá
+    - cron: "47 18 * * *"   # 1:47 PM Bogotá (opcional)
+    - cron: "7 22 * * *"    # 5:07 PM Bogotá
   workflow_dispatch: {}
 permissions:
   contents: write
+  actions: read
 concurrency:
   group: escaneo
   cancel-in-progress: false
@@ -20,20 +24,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Freno mensual (tope 1.000 min)
+        id: freno
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/presupuesto.py "${{ (github.event.schedule == '7 12 * * *' || github.event.schedule == '47 18 * * *') && 'escaneo_opcional' || 'escaneo' }}"
       - name: Escanear (GeckoTerminal + DexScreener)
+        if: steps.freno.outputs.corre == 'true'
         run: python3 scripts/scan.py
       - name: H16 sumar tokens de más de 7 días al universo
+        if: steps.freno.outputs.corre == 'true'
         run: python3 scripts/universo_agregar.py rows.json
       - name: Filtros numéricos
+        if: steps.freno.outputs.corre == 'true'
         run: python3 scripts/filtro.py
       - name: Informe con revisión de seguridad
+        if: steps.freno.outputs.corre == 'true'
         run: python3 scripts/reporte.py
       - name: Sombra (registrar y medir a 24 h)
+        if: steps.freno.outputs.corre == 'true'
         run: |
           python3 scripts/sombra.py registrar rows2.json
           python3 scripts/sombra.py medir
           python3 scripts/sombra.py resumen > datos/sombra_resumen.txt || true
       - name: Guardar resultados
+        if: steps.freno.outputs.corre == 'true'
         run: |
           git config user.name "desk-bot"
           git config user.email "desk-bot@users.noreply.github.com"

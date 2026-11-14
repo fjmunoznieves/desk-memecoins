@@ -1,11 +1,12 @@
-name: Reloj (watchlist + H16), cada 2 h 30 min
+name: Reloj (watchlist + H16), 4 AM a 6 PM + 1 AM
 on:
   schedule:
-    - cron: "7 0,5,10,15,20 * * *"
-    - cron: "37 2,7,12,17,22 * * *"
+    - cron: "7 6,9,14,19 * * *"     # 1:07, 4:07, 9:07 AM y 2:07 PM Bogotá
+    - cron: "37 11,16,21 * * *"     # 6:37, 11:37 AM y 4:37 PM Bogotá
   workflow_dispatch: {}
 permissions:
   contents: write
+  actions: read
   issues: write
 concurrency:
   group: h16
@@ -19,15 +20,23 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Freno mensual (tope 1.000 min)
+        id: freno
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/presupuesto.py "reloj"
       - name: Watchlist Solana, compras nuevas (Helius, solo lectura)
+        if: steps.freno.outputs.corre == 'true'
         env:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
         run: python3 scripts/watch_solana.py
       - name: Aviso si 2+ billeteras compran el mismo token
+        if: steps.freno.outputs.corre == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/alerta_issue.py
       - name: H16 resurrecciones (DexScreener, solo lectura)
+        if: steps.freno.outputs.corre == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/resurreccion.py
