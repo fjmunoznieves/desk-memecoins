@@ -23,6 +23,8 @@ jobs:
           python-version: "3.12"
       - name: Escanear (GeckoTerminal + DexScreener)
         run: python3 scripts/scan.py
+      - name: H16 sumar tokens de más de 7 días al universo
+        run: python3 scripts/universo_agregar.py rows.json
       - name: Filtros numéricos
         run: python3 scripts/filtro.py
       - name: Informe con revisión de seguridad
