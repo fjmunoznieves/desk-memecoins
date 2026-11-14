@@ -23,8 +23,16 @@ def get(url, tries=4):
             with urllib.request.urlopen(req, timeout=30) as r:
                 return json.load(r)
         except Exception as e:
-            time.sleep(30 if getattr(e, "code", None) == 429 else 3)
+            if getattr(e, "code", None) == 429:
+                PAUSA[0] = min(PAUSA[0] + 1, 6)
+                time.sleep(8 + 4 * k)
+            else:
+                time.sleep(3)
     return None
+
+
+PAUSA = [2.1]          # sube sola si GeckoTerminal frena (429)
+PRESUPUESTO_MEDIR = 180  # segundos por corrida: lo que no alcance se mide en el siguiente escaneo
 
 
 def load():
@@ -105,6 +113,8 @@ def medir():
     now = time.time()
     n = 0
     for r in rows:
+        if time.time() - now > PRESUPUESTO_MEDIR:
+            break
         if r["estado"] != "pendiente" or now - int(r["ts"]) < VENTANA * 3600 or r["cadena"] not in GNET:
             if r["estado"] == "pendiente" and r["cadena"] not in GNET and now - int(r["ts"]) >= VENTANA * 3600:
                 r["estado"] = "sin datos (cadena)"
@@ -117,7 +127,7 @@ def medir():
         t0 = int(r["ts"])
         d = get(f"https://api.geckoterminal.com/api/v2/networks/{GNET[r['cadena']]}/pools/{pool}/ohlcv/minute"
                 f"?aggregate=5&limit=300&currency=usd&token={r['direccion']}&before_timestamp={t0 + 24 * 3600}")
-        time.sleep(2.1)
+        time.sleep(PAUSA[0])
         try:
             c = sorted(x for x in d["data"]["attributes"]["ohlcv_list"] if t0 <= x[0] <= t0 + 24 * 3600)
         except Exception:
