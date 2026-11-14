@@ -1,7 +1,7 @@
-name: H16 marcar muertos (4 tandas al día)
+name: H16 historial de tokens nuevos (diario)
 on:
   schedule:
-    - cron: "23 */6 * * *"   # 4 tandas al día (50 min cada una)
+    - cron: "23 6 * * *"   # 1:23 AM Bogotá: solo tokens nuevos o pendientes
   workflow_dispatch: {}
 permissions:
   contents: write
