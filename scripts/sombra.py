@@ -84,6 +84,31 @@ def pool_de(ch, addr):
     return max(d, key=lambda p: (p.get("liquidity") or {}).get("usd") or 0)["pairAddress"]
 
 
+def liq_actual(ch, addr):
+    """Liquidez total del token ahora (0 si ya no tiene pares: rug / liquidez retirada). None si la API falla."""
+    d = get(f"https://api.dexscreener.com/tokens/v1/{ch}/{addr}")
+    if d is None:
+        return None
+    return sum((p.get("liquidity") or {}).get("usd") or 0 for p in d)
+
+
+SIN_SALIDA = 1000  # USD: por debajo, la posición que seguía abierta se da por perdida (no hay con quién vender)
+CERRADAS = ("stop", "time stop 45 min")  # salidas que ocurren antes; un rug posterior no las afecta
+
+
+def ajustar_rug(r):
+    """Si la simulación terminaba con posición abierta y el token ya no tiene liquidez, resultado -100 %."""
+    if r.get("sim_detalle") in CERRADAS or str(r.get("sim_detalle", "")).startswith("rug"):
+        return False
+    liq = liq_actual(r["cadena"], r["direccion"])
+    time.sleep(0.4)
+    if liq is not None and liq < SIN_SALIDA:
+        r["sim_pct"] = -100.0
+        r["sim_detalle"] = f"rug: liquidez retirada (antes {r.get('sim_detalle')}, {r.get('sim_pct')} %)"
+        return True
+    return False
+
+
 def simular(c, p0):
     """Velas de 5 min [ts,o,h,l,c,v] desde la entrada. Reglas del desk simplificadas:
     stop -20 %, TP1 50 % a +60 % (luego stop en break-even), TP2 25 % a +120 %, resto trailing 20 %,
@@ -143,6 +168,7 @@ def medir():
         r["fin24_pct"] = round((c[-1][4] / p0 - 1) * 100, 1)
         s, det = simular(c, p0)
         r["sim_pct"] = round(s, 1); r["sim_detalle"] = det; r["estado"] = "medido"
+        ajustar_rug(r)
         n += 1
     save(rows)
     print("medidos", n)
