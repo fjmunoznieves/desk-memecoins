@@ -2,14 +2,14 @@ name: Escaneo desk (paper)
 on:
   schedule:
     - cron: "47 8 * * *"    # 3:47 AM Bogotá
-    - cron: "7 12 * * *"    # 7:07 AM Bogotá (opcional)
-    - cron: "27 15 * * *"   # 10:27 AM Bogotá
-    - cron: "47 18 * * *"   # 1:47 PM Bogotá (opcional)
-    - cron: "7 22 * * *"    # 5:07 PM Bogotá
+    - cron: "7 14 * * *"    # 9:07 AM Bogotá
+    - cron: "27 17 * * *"   # 12:27 PM Bogotá (opcional: se salta si el gasto va por encima del ritmo)
+    - cron: "47 20 * * *"   # 3:47 PM Bogotá
   workflow_dispatch: {}
 permissions:
   contents: write
   actions: read
+  issues: write
 concurrency:
   group: escaneo
   cancel-in-progress: false
@@ -28,7 +28,7 @@ jobs:
         id: freno
         env:
           GH_TOKEN: ${{ github.token }}
-        run: python3 scripts/presupuesto.py "${{ (github.event.schedule == '7 12 * * *' || github.event.schedule == '47 18 * * *') && 'escaneo_opcional' || 'escaneo' }}"
+        run: python3 scripts/presupuesto.py "${{ (github.event.schedule == '27 17 * * *') && 'escaneo_opcional' || 'escaneo' }}"
       - name: Escanear (GeckoTerminal + DexScreener)
         if: steps.freno.outputs.corre == 'true'
         run: python3 scripts/scan.py

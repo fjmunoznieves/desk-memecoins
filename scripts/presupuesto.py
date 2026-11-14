@@ -48,6 +48,18 @@ elif tipo == "escaneo":
 else:
     corre = usado < 985
 print(f"uso del mes {usado} min | ritmo hoy {ritmo:.0f} | tope {TOPE} | {tipo}: {'corre' if corre else 'SE SALTA'}")
+# Aviso a Fran (issue de GitHub, le llega por correo/app) al cruzar 800 y 950 min, una vez por mes cada uno
+mes = hoy.strftime("%Y-%m")
+for umbral in (800, 950):
+    if usado is not None and usado >= umbral:
+        titulo = f"Minutos GitHub {mes}: pasamos {umbral} de {TOPE}"
+        r = subprocess.run(["gh", "api", f"repos/{repo}/issues?state=all&per_page=50"], capture_output=True, text=True)
+        ya = r.returncode == 0 and any(i.get("title") == titulo for i in json.loads(r.stdout))
+        if r.returncode == 0 and not ya:
+            cuerpo = (f"Uso del mes: {usado} min (ritmo esperado hoy: {ritmo:.0f}). Tope: {TOPE} min.\n\n"
+                      "Desde 950 el freno salta los escaneos; desde 985, el reloj y lo demás. Las corridas manuales siempre corren.")
+            subprocess.run(["gh", "issue", "create", "--repo", repo, "--title", titulo, "--body", cuerpo])
+
 if os.environ.get("GITHUB_OUTPUT"):
     with open(os.environ["GITHUB_OUTPUT"], "a") as f:
         f.write(f"corre={'true' if corre else 'false'}\n")
