@@ -22,6 +22,33 @@ def get(params):
     return {}
 
 
+RPC = {"bsc": ["https://bsc-dataseed.bnbchain.org", "https://bsc-dataseed1.defibit.io"]}
+
+
+def rpcs_robinhood(cid):
+    try:
+        with urllib.request.urlopen(urllib.request.Request("https://chainid.network/chains.json", headers={"User-Agent": "desk-scan"}), timeout=30) as r:
+            for c in json.load(r):
+                if str(c.get("chainId")) == str(cid):
+                    return [u for u in c.get("rpc", []) if u.startswith("https") and "${" not in u]
+    except Exception:
+        pass
+    return []
+
+
+def nonce_rpc(ch, a):
+    """Transacciones enviadas por RPC pública (gratis, sin clave)."""
+    for u in RPC.get(ch, []):
+        try:
+            body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "eth_getTransactionCount", "params": [a, "latest"]}).encode()
+            req = urllib.request.Request(u, data=body, headers={"Content-Type": "application/json", "User-Agent": "desk-scan"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                return int(json.load(r)["result"], 16)
+        except Exception:
+            continue
+    return None
+
+
 def chain_ids():
     ids = {"bsc": "56"}
     try:
@@ -37,7 +64,9 @@ def chain_ids():
 if not KEY:
     sys.exit("Falta el secreto ETHERSCAN_API_KEY")
 ids = chain_ids()
-print("cadenas:", ids)
+if "robinhood" in ids:
+    RPC["robinhood"] = rpcs_robinhood(ids["robinhood"])
+print("cadenas:", ids, "rpc:", {k: len(v) for k, v in RPC.items()})
 rows = list(csv.DictReader(open(IN), delimiter="\t"))
 out = []
 for r in rows:
@@ -48,7 +77,10 @@ for r in rows:
         res["nota"] = "cadena no disponible en Etherscan v2"; out.append(res); continue
     n = get(dict(chainid=cid, module="proxy", action="eth_getTransactionCount", address=a, tag="latest"))
     try: res["tx_enviadas"] = int(n.get("result", "0x0"), 16)
-    except Exception: res["nota"] = "sin nonce: " + str(n.get("result", n.get("message", "")))[:120]
+    except Exception:
+        v = nonce_rpc(ch, a)
+        if v is not None: res["tx_enviadas"] = v
+        else: res["nota"] = "sin nonce: " + str(n.get("result", n.get("message", "")))[:60]
     time.sleep(0.3)
     t = get(dict(chainid=cid, module="account", action="txlist", address=a, startblock=0, endblock=99999999, page=1, offset=10, sort="asc"))
     txs = t.get("result") if isinstance(t.get("result"), list) else []
@@ -57,7 +89,8 @@ for r in rows:
         inc = [x for x in txs if x.get("to", "").lower() == a]
         if inc: res["fondeo_desde"] = inc[0]["from"].lower()
     elif not res["nota"]:
-        res["nota"] = str(t.get("result", t.get("message", "")))[:120]
+        m = str(t.get("result", t.get("message", "")))
+        res["nota"] = "fondeo no disponible (plan gratis de Etherscan no cubre esta cadena)" if "upgrade" in m.lower() else m[:60]
     time.sleep(0.3)
     out.append(res)
 with open(OUT, "w", newline="") as f:
