@@ -76,3 +76,4 @@ jobs:
           git add escaneos datos
           git commit -m "Escaneo $(date -u +%Y-%m-%dT%H:%MZ)" || echo "sin cambios"
           git pull --rebase && git push
+
