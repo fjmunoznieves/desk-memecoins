@@ -137,7 +137,7 @@ def main():
         w = csv.DictWriter(fh, fieldnames=list(filas[0]), delimiter="\t"); w.writeheader(); w.writerows(filas)
     # billeteras nuevas (ni A ni B) que aparecen entre los primeros compradores de 3 o más tokens
     nuevas = {w: v for w, v in todos.items() if len({x[0] for x in v}) >= 3}
-    with open("datos/tokens_anio_nuevas.tsv", "w", newline="") as fh:
+    with open("datos/vector_C_nuevas.tsv", "w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t"); w.writerow(["billetera", "n_tokens", "tokens"])
         for k, v in sorted(nuevas.items(), key=lambda kv: -len(kv[1])):
             w.writerow([k, len({x[0] for x in v}), " | ".join(f"{s} {time.strftime('%Y-%m-%d', time.gmtime(bt or 0))}" for _, s, bt in v)])
