@@ -23,6 +23,7 @@ log = lambda *a: print(*a, file=sys.stderr)
 
 
 def get(url, tipo="json", intentos=2):
+    """Un 404 no se reintenta."""
     for k in range(intentos):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=25) as r:
@@ -30,6 +31,8 @@ def get(url, tipo="json", intentos=2):
             return json.loads(data) if tipo == "json" else data
         except Exception as e:
             log("fallo", url[:90], getattr(e, "code", e))
+            if getattr(e, "code", None) == 404:
+                return None
             time.sleep(3 + 3 * k)
     return None
 
@@ -54,6 +57,8 @@ def wikipedia():
         except Exception:
             return {}
     ayer, antes = top(1), top(2)
+    if not ayer:  # Wikimedia publica el día anterior unas horas después de medianoche UTC
+        ayer, antes = antes, top(3)
     out = []
     for i, (art, v) in enumerate(list(ayer.items())[:200]):
         nombre = art.replace("_", " ")
@@ -99,7 +104,7 @@ def gdelt():
     out = []
     for g, n in cuenta.most_common(40):
         m = len(medios[g])
-        if m >= 4:
+        if (" " in g and m >= 4) or m >= 8:
             out.append({"tema": g, "fuente": "gdelt", "calor": min(100, 30 + 8 * m),
                         "porque": f"en {n} titulares de {m} medios distintos en 6 h (GDELT)"})
     log("gdelt", len(arts), "artículos,", len(out), "temas")
@@ -135,12 +140,15 @@ def palabras(t):
 
 
 def coincide(tema, sym, name):
-    """El token alude al tema si su símbolo o nombre contiene la palabra clave del tema (o al revés)."""
+    """Coincidencia estricta (evita falsos positivos): el símbolo es igual a una palabra distintiva del tema,
+    o el nombre del token contiene el tema completo."""
     s, n, k = clave(sym), clave(name), clave(tema)
-    if len(k) >= 3 and (k == s or k in n or (len(s) >= 4 and s in k)):
+    if not s or len(s) > 15:
+        return False
+    if len(k) >= 4 and (s == k or n == k or (len(k) >= 6 and k in n)):
         return True
-    ws = palabras(tema)
-    return bool(ws) and max(ws, key=len) in (s + " " + n) and len(max(ws, key=len)) >= 4
+    ws = [w for w in palabras(tema) if len(w) >= 5]
+    return len(palabras(tema)) <= 2 and any(w == s for w in ws)
 
 
 def buscar_token(tema):
