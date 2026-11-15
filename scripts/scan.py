@@ -90,7 +90,9 @@ for (ch, a), e in best.items():
     pc = p.get("priceChange") or {}
     info = p.get("info") or {}
     socials = [x.get("type") for x in info.get("socials", [])] + (["web"] if info.get("websites") else [])
-    rows.append(dict(chain=ch, addr=a, sym=p["baseToken"]["symbol"], dex=p.get("dexId"), quote=p["quoteToken"]["symbol"],
+    src = toks.get((ch, a), "")
+    rows.append(dict(chain=ch, addr=a, sym=p["baseToken"]["symbol"], name=p["baseToken"].get("name", ""),
+                     trending=("trending_pools" in src), src_dur=(src.split("duration=")[1].split("&")[0] if "duration=" in src else ""), dex=p.get("dexId"), quote=p["quoteToken"]["symbol"],
                      age_h=age_h, liq=(p.get("liquidity") or {}).get("usd") or 0, mc=p.get("marketCap") or p.get("fdv") or 0,
                      v5=(p.get("volume") or {}).get("m5") or 0, v1h=(p.get("volume") or {}).get("h1") or 0,
                      b=b, s=s, c5=pc.get("m5") or 0, c1=pc.get("h1") or 0, c24=pc.get("h24") or 0,

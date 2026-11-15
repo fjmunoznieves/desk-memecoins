@@ -12,3 +12,6 @@ Para correrlo a mano: pestaña Actions → "Escaneo desk (paper)" → Run workfl
 - Reloj nocturno (watchlist + H16): 1:07 AM.
 - H16 historial: 1:23 AM, solo tokens nuevos o pendientes.
 - Freno (scripts/presupuesto.py): escaneos se cortan desde 950 min y el resto desde 985; abre un issue de aviso al pasar 800 y 950. Las corridas manuales siempre corren.
+
+## Radar de narrativas (v15, H17–H19)
+`scripts/narrativa.py` corre dentro de los escaneos de 3:47 y 9:07 AM (Bogotá). Fuentes gratis y sin clave: Wikipedia pageviews, GDELT DOC y Google Trends (RSS, solo intento). DexScreener search dice si el tema ya tiene token. H18 cruza con el trending del escaneo y solo avisa si coinciden 2 fuentes (liq ≥ 30k y seguridad OK). H19 registra huecos sin token como "idea paper". Salidas: `datos/narrativas.json`, `datos/h17_narrativas.tsv`, `datos/h18_cruces.tsv`, `datos/h19_huecos.tsv`.

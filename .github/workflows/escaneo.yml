@@ -66,6 +66,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/resurreccion.py
+      - name: Radar de narrativas H17-H19 (solo 3:47 y 9:07; nunca tumba la corrida)
+        if: steps.freno.outputs.corre == 'true' && (github.event.schedule == '47 8 * * *' || github.event.schedule == '7 14 * * *' || github.event_name == 'workflow_dispatch')
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/narrativa.py
       - name: Billeteras BNB/Robinhood (solo en el de 3:47 AM)
         if: github.event.schedule == '47 8 * * *'
         continue-on-error: true
