@@ -35,7 +35,7 @@ def get(url, tipo="json", intentos=2):
             log("fallo", url[:90], getattr(e, "code", e))
             if getattr(e, "code", None) == 404:
                 return None
-            time.sleep(3 + 3 * k)
+            time.sleep((8 + 6 * k) if getattr(e, "code", None) == 429 else (3 + 3 * k))
     return None
 
 
@@ -92,7 +92,7 @@ def _ngrams(titulo):
 def gdelt():
     """Titulares en inglés de las últimas 6 h; temas = nombres propios que más se repiten entre medios distintos."""
     q = urllib.parse.quote("sourcelang:english")
-    d = get(f"https://api.gdeltproject.org/api/v2/doc/doc?query={q}&mode=artlist&maxrecords=250&timespan=6h&format=json&sort=hybridrel")
+    d = get(f"https://api.gdeltproject.org/api/v2/doc/doc?query={q}&mode=artlist&maxrecords=250&timespan=6h&format=json&sort=hybridrel", intentos=3)
     arts = (d or {}).get("articles") or []
     cuenta, medios = collections.Counter(), collections.defaultdict(set)
     for a in arts:
@@ -133,7 +133,7 @@ def trends():
         return []
 
 
-SUBS = ("memes", "CryptoCurrency", "SatoshiStreetBets", "solana", "worldnews", "news", "popular")
+SUBS = ("memes", "CryptoCurrency", "SatoshiStreetBets", "popular")  # pocas y despacio: Reddit da 429 si se le pide rápido
 
 
 def _temas_reddit(titulos_por_sub):
@@ -156,14 +156,14 @@ def reddit_rss():
     """Sin códigos de API: feeds RSS públicos de Reddit, solo intento. Si Reddit los bloquea, lista vacía."""
     titulos = {}
     for sub in SUBS:
-        raw = get(f"https://www.reddit.com/r/{sub}/top/.rss?t=day&limit=50", tipo="raw", intentos=1)
+        raw = get(f"https://www.reddit.com/r/{sub}/top/.rss?t=day&limit=50", tipo="raw", intentos=2)
         if raw:
             try:
                 ns = {"a": "http://www.w3.org/2005/Atom"}
                 titulos[sub] = [e.findtext("a:title", default="", namespaces=ns) for e in ET.fromstring(raw).findall("a:entry", ns)]
             except Exception as e:
                 log("reddit rss", sub, "no se pudo leer:", e)
-        time.sleep(2)
+        time.sleep(6)
     out = _temas_reddit(titulos)
     log("reddit rss:", len(titulos), "comunidades leídas,", len(out), "temas")
     return out
@@ -403,6 +403,7 @@ def main():
     huecos = [{"ts": ahora, "hora_utc": hora, "tema": e["tema"], "fuentes": ",".join(e["fuentes"]), "calor": e["calor"],
                "porque": " | ".join(e["porque"]), "idea": "idea paper (no se crea nada)"}
               for e in grupos if not e["token"] and (len(e["fuentes"]) >= 2 or e["calor"] >= 70)]
+    huecos = sorted(huecos, key=lambda h: (h["fuentes"].count(",") + 1, h["calor"]), reverse=True)[:8]
 
     os.makedirs(SALIDA, exist_ok=True)
     json.dump({"hora_utc": hora, "fuentes_ok": sorted({t["fuente"] for t in temas}),
