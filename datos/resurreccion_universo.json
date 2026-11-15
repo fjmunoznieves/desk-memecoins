@@ -6571,5 +6571,82 @@
 "sym": "CRCLB",
 "pool": "0x29967c54c5Bf12E8158c8894376064b30ebaB297",
 "revivio": 0
+},
+{
+"net": "solana",
+"token": "chipCAT7vi5CZtbZsn9z7iMPXvFwyAnKz3QFu8XVuHm",
+"sym": "CHIP",
+"pool": "DUqgJsWak9Y3SuiM4rxL257KUpsHV54JA171RdTTPZuw",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0xad8c787992428cD158E451aAb109f724B6bc36de",
+"sym": "ASP",
+"pool": "0xf9452Bb9B8B119DC08094B8B3B191bC88e94b319",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0x2f8A339B5889FfaC4c5A956787cdA593b3c36867",
+"sym": "CMC20",
+"pool": "0xB4bd7EC1df39806dF478d0Ce540580a118671eEA",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0x0A73d885CdD66adF69c6D64c0609e55C527dB2BE",
+"sym": "K",
+"pool": "0x6eA9789F71F9571b6aD1BE41b97824F6883CE0F6",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0xbb73BB2505AC4643d5C0a99c2A1F34B3DfD09D11",
+"sym": "MGC",
+"pool": "0x0b32Ea94DA1F6679b11686eAD47AA4C6bF38cd59",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0xA5C8e1513B6A08334b479fe4D71F1253259469BE",
+"sym": "GUA",
+"pool": "0xaeEd9A1A9859Bc30dc76dC367825fdE54274FeD6",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0x235B6fe22B4642aDa16D311855c49Ce7DE260841",
+"sym": "EDEN",
+"pool": "0x64fa53217bde4179f54C9706dE431b73814e92db",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0x30117E4bC17d7B044194b76A38365C53b72F7D49",
+"sym": "GWEI",
+"pool": "0xA8D956401D161F61418576B375B4fDaf0e76155F",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0x87d00066cf131ff54B72B134a217D5401E5392b6",
+"sym": "PUFFER",
+"pool": "0xDA7630A141dBB6382DDb6409AeA7331da543B0Bb",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0xaFCC12e4040615E7Afe9fb4330eB3D9120acAC05",
+"sym": "PIRATE",
+"pool": "0x8cb829111c90E0101492d5A1aa011F09614129E7",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0x000Ae314E2A2172a039B26378814C252734f556A",
+"sym": "ASTER",
+"pool": "0x7E58f160B5B77b8B24Cd9900C09A3E730215aC47",
+"revivio": 0
 }
 ]
