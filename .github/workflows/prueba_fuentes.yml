@@ -1,0 +1,26 @@
+name: "Prueba de fuentes (manual)"
+# Solo manual. Prueba si GitHub puede leer fuentes públicas, gratis y sin clave, antes de integrarlas.
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Probar endpoints públicos
+        run: |
+          for u in \
+            "https://api.chainbase.com/tops/v1/trending" \
+            "https://api.chainbase.com/tops/v1/tool/list-trending-topics" \
+            "https://api.coingecko.com/api/v3/search/trending" \
+            "https://api.coinmarketcap.com/data-api/v3/topsearch/rank" \
+            "https://www.reddit.com/r/CryptoCurrency/top/.rss?t=day&limit=5" \
+            "https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/$(date -u -d '2 days ago' +%Y/%m/%d)" \
+            "https://public.api.bsky.app/xrpc/app.bsky.unspecced.getTrendingTopics" ; do
+            echo "===== $u"
+            code=$(curl -s -m 20 -A "desk-prueba/1.0 (solo lectura)" -o r.txt -w "%{http_code}" "$u" || echo ERR)
+            echo "HTTP $code, $(wc -c < r.txt) bytes"
+            head -c 1500 r.txt; echo
+          done
