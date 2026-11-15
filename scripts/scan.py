@@ -29,6 +29,29 @@ for net in ("solana", "bsc"):
     for p in range(1, 4 if net == "solana" else 3):
         lists.append((net, f"networks/{net}/pools?sort=h24_volume_usd_desc&page={p}"))
 
+# Plan B (nov-15): si GeckoTerminal falla en una lista, se usa DexPaprika (gratis, sin clave).
+# Sin clave solo ve pools creadas hace ≥1 h y una página de 100; se consulta máximo una vez por red y tipo.
+DP = "https://api.dexpaprika.com/networks/{net}/pools/search?limit=100&created_after=-48h&order_by={orden}&sort=desc"
+QUOTE = {"SOL", "WSOL", "USDC", "USDT", "WBNB", "BNB", "USD1", "ETH", "WETH", "BUSD", "FDUSD"}
+dp_hecho = {}
+
+
+def plan_b(net, path):
+    orden = "created_at" if "new_pools" in path else "volume_usd_24h"
+    if (net, orden) in dp_hecho:
+        return []
+    d = get(DP.format(net=net, orden=orden), tries=2) or {}
+    dp_hecho[(net, orden)] = True
+    out = []
+    for pl in d.get("results") or []:
+        for t in pl.get("tokens") or []:
+            if (t.get("symbol") or "").upper() not in QUOTE and t.get("id"):
+                out.append(t["id"])
+                break
+    print(f"plan B DexPaprika {net} {orden}: {len(out)} tokens", file=sys.stderr)
+    return out
+
+
 toks = collections.OrderedDict()
 cov = collections.Counter()
 for net, path in lists:
@@ -36,6 +59,9 @@ for net, path in lists:
     time.sleep(PAUSA[0])
     if not d:
         cov["fail"] += 1
+        for b in plan_b(net, path):
+            cov["dexpaprika"] += 1
+            toks.setdefault((net, b), "dexpaprika")
         continue
     for pl in d.get("data", []):
         b = pl["relationships"]["base_token"]["data"]["id"].split("_", 1)[1]
