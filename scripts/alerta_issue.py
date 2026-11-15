@@ -6,3 +6,6 @@ for a in json.load(open("datos/alertas_pendientes.json")):
             f"- Token (Solana): `{t}`", f"- DexScreener: https://dexscreener.com/solana/{t}", f"- GMGN: https://gmgn.ai/sol/token/{t}", "", "Billeteras de la watchlist que compraron:"]
     body += [f"- `{w['b']}` a las {w['hora']} UTC ({w['sol']} SOL)" for w in a["billeteras"]]
     subprocess.run(["gh", "issue", "create", "--title", f"Watchlist: {len(a['billeteras'])} billeteras compraron {t[:6]}…{t[-4:]}", "--body", "\n".join(body)], check=False)
+
+# H21 (nov-15): consenso de la watchlist en tokens maduros. Corre aquí para no tocar los horarios.
+subprocess.run(["python3", "scripts/h21.py"], check=False)
