@@ -113,3 +113,8 @@ if not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").starts
               LOG_FILE="datos/h22_compras.tsv", AL_FILE="datos/h22_alertas.json")
     subprocess.run([sys.executable, __file__], env=e3, check=False)
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "h22.py")], check=False)
+
+# H24 (15-nov): tokens con pool contra acciones tokenizadas, cruzados con A/B/C. En cada escaneo, solo registro.
+if not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").startswith("Escaneo"):
+    import subprocess
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "h24.py")], check=False)
