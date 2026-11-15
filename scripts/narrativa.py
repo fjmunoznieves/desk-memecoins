@@ -3,7 +3,8 @@
 H17 · temas calientes de fuentes gratis y sin clave:
       Wikipedia pageviews (lo más visto ayer vs anteayer), GDELT DOC (titulares de las últimas 6 h)
       y Google Trends (RSS público, solo intento: si falla se salta).
-      Reddit solo si existen los secretos REDDIT_CLIENT_ID/REDDIT_CLIENT_SECRET.
+      Reddit (RSS público; API si existen REDDIT_CLIENT_ID/SECRET), Chainbase Tops (temas de X),
+      lo más buscado en CoinGecko y CoinMarketCap, y tendencias de Bluesky. Todo gratis y sin clave.
       Para cada tema, búsqueda en DexScreener: ¿ya tiene token en Solana, BNB o Robinhood?
 H18 · cruce con el trending 5m/1h/24h del escaneo (rows.json). Solo avisa si coinciden 2 fuentes
       (una narrativa + el trending, o dos narrativas) y el token pasa liquidez ≥ 30k y seguridad.
@@ -18,7 +19,7 @@ UA = {"User-Agent": "desk-narrativas/1.0 (paper trading, solo lectura)", "Accept
 CADENAS = {"solana": "Solana", "bsc": "BNB", "robinhood": "Robinhood"}
 LIQ_TOKEN = 1000      # mínimo para decir "ya tiene token"
 LIQ_AVISO = 30000     # mínimo para abrir aviso en H18
-MAX_TEMAS = 25        # búsquedas en DexScreener por corrida
+MAX_TEMAS = 35        # búsquedas en DexScreener por corrida
 SALIDA = "datos"
 log = lambda *a: print(*a, file=sys.stderr)
 
@@ -208,6 +209,67 @@ def reddit():
     return out[:15]
 
 
+def chainbase():
+    """Tops de Chainbase: temas calientes de X (Twitter) con resumen. Gratis y sin clave.
+    Ojo: Chainbase tiene token propio (C), posible sesgo menor."""
+    d = get("https://api.chainbase.com/tops/v1/tool/list-trending-topics") or {}
+    items = d.get("items") or d.get("data") or []
+    if items:
+        log("chainbase campos:", sorted(items[0].keys()))
+    out = []
+    for i, it in enumerate(items[:20]):
+        k = (it.get("keyword") or it.get("topic") or "").strip()
+        if not k:
+            continue
+        resumen = (it.get("summary") or "").strip().replace("\n", " ")
+        out.append({"tema": k, "fuente": "x_chainbase", "calor": max(50, 90 - 2 * i),
+                    "porque": f"tema caliente en X según Chainbase Tops (puesto {i + 1})" + (f": {resumen[:160]}…" if resumen else "")})
+    log("chainbase", len(out), "temas")
+    return out[:15]
+
+
+def coingecko():
+    """Lo más buscado en CoinGecko (sin clave). Se omiten las grandes (top 100 por capitalización)."""
+    d = get("https://api.coingecko.com/api/v3/search/trending") or {}
+    out = []
+    for c in d.get("coins") or []:
+        it = c.get("item") or {}
+        rk = it.get("market_cap_rank") or 10**6
+        if rk <= 100 or not it.get("name"):
+            continue
+        out.append({"tema": it["name"], "fuente": "coingecko", "calor": 70,
+                    "porque": f"entre lo más buscado en CoinGecko ({it.get('symbol', '')}, puesto de capitalización {rk if rk < 10**6 else 's/d'})"})
+    log("coingecko", len(out), "temas")
+    return out
+
+
+def coinmarketcap():
+    """Lo más buscado en CoinMarketCap (sin clave). Se omiten las grandes (top 100)."""
+    d = get("https://api.coinmarketcap.com/data-api/v3/topsearch/rank") or {}
+    out = []
+    for c in ((d.get("data") or {}).get("cryptoTopSearchRanks") or []):
+        rk = c.get("rank") or 10**6
+        if rk <= 100 or not c.get("name"):
+            continue
+        out.append({"tema": c["name"], "fuente": "coinmarketcap", "calor": 70,
+                    "porque": f"entre lo más buscado en CoinMarketCap ({c.get('symbol', '')}, puesto {rk})"})
+    log("coinmarketcap", len(out), "temas")
+    return out
+
+
+def bluesky():
+    """Temas en tendencia de Bluesky (API pública, sin clave)."""
+    d = get("https://public.api.bsky.app/xrpc/app.bsky.unspecced.getTrendingTopics") or {}
+    out = []
+    for i, t in enumerate(d.get("topics") or []):
+        k = (t.get("displayName") or t.get("topic") or "").strip()
+        if k and k.lower() not in EVERGREEN:
+            out.append({"tema": k, "fuente": "bluesky", "calor": max(45, 70 - 2 * i),
+                        "porque": "tendencia en Bluesky" + (f": {t['description'][:140]}" if t.get("description") else "")})
+    log("bluesky", len(out), "temas")
+    return out[:10]
+
+
 def clave(t):
     return re.sub(r"[^a-z0-9]", "", t.lower())
 
@@ -287,7 +349,7 @@ def main():
     ahora = int(time.time())
     hora = time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora))
     temas = []
-    for f in (wikipedia, gdelt, trends, reddit):
+    for f in (wikipedia, gdelt, trends, reddit, chainbase, coingecko, coinmarketcap, bluesky):
         try:
             temas += f()
         except Exception as e:
