@@ -94,7 +94,7 @@ def billeteras():
 def main():
     ws = billeteras()
     print(f"billeteras: {len(ws)}", flush=True)
-    toks = list(csv.DictReader(open("datos/h21_backtest_tokens.tsv"), delimiter="\t"))
+    toks = list(csv.DictReader(open(os.environ.get("TOKENS") or "datos/h21_backtest_tokens.tsv"), delimiter="\t"))
     desde = int(os.environ.get("DESDE") or 0)
     toks = toks[desde:desde + int(os.environ.get("LIMITE") or 99)]
     filas, resumen = [], []
@@ -138,7 +138,7 @@ def main():
               f"muerto(-30..-7d) {r['muerto_23d']:3}  antes(-7..0d) {r['antes_7d']:3}  consenso24h {r['consenso_24h']:2}  "
               f"día0 {r['dia_arranque']:3}  watchlist {r['watchlist_antes']}  ({len(pares)} consultas, {time.time() - t_ini:.0f} s)", flush=True)
 
-    for nombre, datos in (("datos/h21_backtest_resumen.tsv", resumen), ("datos/h21_backtest_entradas.tsv", filas)):
+    for nombre, datos in (("datos/h21_" + (os.environ.get("SALIDA") or "backtest") + "_resumen.tsv", resumen), ("datos/h21_" + (os.environ.get("SALIDA") or "backtest") + "_entradas.tsv", filas)):
         if datos:
             seguir = desde > 0 and os.path.exists(nombre)
             with open(nombre, "a" if seguir else "w", newline="") as f:

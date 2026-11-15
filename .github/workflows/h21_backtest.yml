@@ -6,6 +6,9 @@ on:
       limite:
         description: "Cuántos tokens probar"
         default: "20"
+      grupo:
+        description: "backtest (revivieron) o control (no revivieron)"
+        default: "backtest"
       desde:
         description: "Desde qué token (0 = el primero)"
         default: "0"
@@ -23,10 +26,12 @@ jobs:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
           LIMITE: ${{ inputs.limite }}
           DESDE: ${{ inputs.desde }}
+          SALIDA: ${{ inputs.grupo }}
+          TOKENS: datos/h21_${{ inputs.grupo }}_tokens.tsv
         run: python3 -u scripts/h21_backtest.py
       - name: Guardar resultados
         run: |
           git config user.name "desk-bot"; git config user.email "desk-bot@users.noreply.github.com"
-          git add datos/h21_backtest_*.tsv || true
+          git add datos/h21_*.tsv || true
           git commit -m "Backtest H21: resultados" || exit 0
           for i in 1 2 3 4; do git pull --rebase -q && git push -q && break; sleep $((i*5)); done
