@@ -108,3 +108,8 @@ if not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").starts
     e2 = dict(os.environ, H_NOMBRE="H23", COMPRAS_FILE="datos/h23_compras.tsv", SALIDA_FILE="datos/h23_consenso.tsv",
               EDAD_MIN_H="0", EDAD_MAX_H="72")
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "h21.py")], env=e2, check=False)
+    # H22 (15-nov, aprobado por Fran): vigila las 148 billeteras B a las mismas horas y cruza con tokens de A.
+    e3 = dict(os.environ, ES_H23="1", WL_FILE="datos/vector_B_148.tsv", ST_FILE="datos/h22_estado.json",
+              LOG_FILE="datos/h22_compras.tsv", AL_FILE="datos/h22_alertas.json")
+    subprocess.run([sys.executable, __file__], env=e3, check=False)
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "h22.py")], check=False)
