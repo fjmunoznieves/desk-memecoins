@@ -35,6 +35,10 @@ jobs:
       - name: H16 sumar tokens de más de 7 días al universo
         if: steps.freno.outputs.corre == 'true'
         run: python3 scripts/universo_agregar.py rows.json
+      - name: Chequeo de que GoPlus responde (BNB)
+        if: steps.freno.outputs.corre == 'true'
+        continue-on-error: true
+        run: python3 scripts/seguridad.py bsc 0x8436f5Fa0592c91ce8A856C604cC4f76A3223F5a
       - name: Filtros numéricos
         if: steps.freno.outputs.corre == 'true'
         run: python3 scripts/filtro.py

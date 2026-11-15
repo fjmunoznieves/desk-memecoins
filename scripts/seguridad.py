@@ -2,7 +2,7 @@
 
 - solana: RugCheck (top10, LP bloqueada, mint/freeze).
 - bsc y robinhood: GeckoTerminal token info (holders, top10, honeypot). RugCheck solo cubre Solana.
-  Impuestos y renuncia de contrato en BNB siguen saliendo de GMGN token_detail (Firecrawl), paso manual.
+  En BNB, además, GoPlus (gratis, sin clave): impuestos <5 %, contrato renunciado, no honeypot, dev ≤5 %, LP bloqueada ≥90 %.
 
 Uso como módulo:  from seguridad import revisar; fallos, datos = revisar("robinhood", "0x...")
 Uso directo:      python3 seguridad.py <cadena> <direccion>
@@ -57,11 +57,40 @@ def _evm(chain, addr):
     return f, {"fuente": "geckoterminal", "top10": top10, "holders": count, "honeypot": hp, "gt_score": a.get("gt_score")}
 
 
+GP_CHAIN = {"bsc": "56"}  # GoPlus no cubre Robinhood Chain
+TAX_MAX = 0.05
+DEV_MAX = 0.05
+CERO = ("", "0x0000000000000000000000000000000000000000", "0x000000000000000000000000000000000000dead")
+
+
+def _goplus(chain, addr):
+    """GoPlus Security (API pública, sin clave): impuestos, renuncia, honeypot, dev y LP bloqueada en BNB."""
+    if chain not in GP_CHAIN:
+        return [], {}
+    d = get(f"https://api.gopluslabs.io/api/v1/token_security/{GP_CHAIN[chain]}?contract_addresses={addr}") or {}
+    r = (d.get("result") or {}).get(addr.lower())
+    if not r:
+        return ["impuestos?"], {"goplus": "sin datos"}
+    num = lambda k: float(r.get(k) or 0) if str(r.get(k) or "").replace(".", "", 1).isdigit() else None
+    bt, st, dev = num("buy_tax"), num("sell_tax"), num("creator_percent")
+    f = []
+    if bt is None or st is None: f.append("impuestos?")
+    elif max(bt, st) >= TAX_MAX: f.append("impuestos")
+    if r.get("is_honeypot") == "1" or r.get("cannot_sell_all") == "1": f.append("honeypot")
+    if (r.get("owner_address") or "").lower() not in CERO or r.get("can_take_back_ownership") == "1": f.append("no renunciado")
+    if dev is not None and dev > DEV_MAX: f.append("dev")
+    lp = sum(float(h.get("percent") or 0) for h in r.get("lp_holders") or [] if h.get("is_locked") == 1 or (h.get("address") or "").lower() in CERO)
+    if r.get("lp_holders") and lp < 0.9: f.append("lp")
+    return f, {"goplus": {"buy_tax": bt, "sell_tax": st, "dev": dev, "lp_bloq": round(lp * 100, 1), "owner": r.get("owner_address"), "open_source": r.get("is_open_source")}}
+
+
 def revisar(chain, addr):
     if chain == "solana":
         return _solana(addr)
     if chain in ("bsc", "robinhood"):
-        return _evm(chain, addr)
+        f, info = _evm(chain, addr)
+        gf, ginfo = _goplus(chain, addr)
+        return f + [x for x in gf if x not in f], {**info, **ginfo}
     return ["seg?"], {"error": f"cadena no soportada: {chain}"}
 
 

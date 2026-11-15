@@ -25,7 +25,7 @@ if cand:
         f, info = revisar(r["chain"], r["addr"])
         seg = "PASA" if not f else "NO: " + "+".join(f)
         if not f: ok.append(r)
-        L.append(f"| {r['sym']} | {r['chain']} | `{r['addr']}` | {r['band']} | {int(r['mc']):,} | {int(r['liq']):,} | {seg} (top10 {info.get('top10')}) | https://dexscreener.com/{DS.get(r['chain'], r['chain'])}/{r['addr']} |")
+        L.append(f"| {r['sym']} | {r['chain']} | `{r['addr']}` | {r['band']} | {int(r['mc']):,} | {int(r['liq']):,} | {seg} (top10 {info.get('top10')}{(', GoPlus ' + str(info['goplus'])) if isinstance(info.get('goplus'), dict) else ''}) | https://dexscreener.com/{DS.get(r['chain'], r['chain'])}/{r['addr']} |")
         time.sleep(1.2)
 L += ["", f"## Candidatos (numéricos + seguridad): {len(ok)}"]
 L += [f"- **{r['sym']}** ({r['chain']}) `{r['addr']}`: falta revisar señales de entrada y GMGN a mano." for r in ok] or ["- Ninguno."]
