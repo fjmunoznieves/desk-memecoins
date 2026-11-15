@@ -103,6 +103,8 @@ def main():
     # 1) velas (GeckoTerminal ~30/min): en un hilo aparte mientras Helius trabaja
     def todas_velas():
         res = {}
+        if os.environ.get("SIN_VELAS"):
+            return res  # GeckoTerminal limita mucho desde GitHub: las velas se calculan aparte
         for t in toks:
             res[t["token"]] = velas(t["pool"]) or {}
             time.sleep(2.1)

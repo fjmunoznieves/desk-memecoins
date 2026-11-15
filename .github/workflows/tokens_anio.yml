@@ -11,13 +11,14 @@ permissions:
 jobs:
   anio:
     runs-on: ubuntu-latest
-    timeout-minutes: 55
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - name: Análisis
         env:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
           MAX_PAG: ${{ inputs.max_pag }}
+          SIN_VELAS: "1"
         run: python3 -u scripts/tokens_anio.py
       - name: Guardar resultados
         if: always()
