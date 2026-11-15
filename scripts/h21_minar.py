@@ -27,7 +27,7 @@ def rpc(m, p):
             with urllib.request.urlopen(req, timeout=60) as r:
                 d = json.load(r)
             if "error" in d:
-                print("  error RPC:", str(d["error"])[:160], flush=True); return None
+                print("  error RPC:", str(d["error"])[:400], flush=True); return None
             return d.get("result")
         except urllib.error.HTTPError as e:
             if e.code != 429:
@@ -43,7 +43,7 @@ def compradores(pool, mint, t0):
     out, token, pags = {}, None, 0
     while pags < MAX_PAG:
         opts = {"transactionDetails": "full", "sortOrder": "asc", "limit": 100, "encoding": "jsonParsed",
-                "maxSupportedTransactionVersion": 0,
+                "maxSupportedTransactionVersion": 1,
                 "filters": {"blockTime": {"gte": t0 - VENTANA, "lt": t0}, "status": "succeeded"}}
         if token:
             opts["paginationToken"] = token
