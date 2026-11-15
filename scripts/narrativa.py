@@ -22,7 +22,7 @@ LIQ_AVISO = 30000     # mínimo para abrir aviso en H18
 MAX_TEMAS = 25        # búsquedas en DexScreener por corrida
 SALIDA = "datos"
 INICIO = time.time()
-TOPE_S = 50          # segundos máximos del radar por corrida (cuida el tope de minutos)
+TOPE_S = 30          # segundos máximos del radar por corrida (cuida el tope de minutos)
 queda = lambda: TOPE_S - (time.time() - INICIO)
 log = lambda *a: print(*a, file=sys.stderr)
 
@@ -95,7 +95,7 @@ def _ngrams(titulo):
 def gdelt():
     """Titulares en inglés de las últimas 6 h; temas = nombres propios que más se repiten entre medios distintos."""
     q = urllib.parse.quote("sourcelang:english")
-    d = get(f"https://api.gdeltproject.org/api/v2/doc/doc?query={q}&mode=artlist&maxrecords=250&timespan=6h&format=json&sort=hybridrel", intentos=2)
+    d = get(f"https://api.gdeltproject.org/api/v2/doc/doc?query={q}&mode=artlist&maxrecords=250&timespan=6h&format=json&sort=hybridrel", intentos=1)
     arts = (d or {}).get("articles") or []
     cuenta, medios = collections.Counter(), collections.defaultdict(set)
     for a in arts:
@@ -159,7 +159,7 @@ def reddit_rss():
     """Sin códigos de API: feeds RSS públicos de Reddit, solo intento. Si Reddit los bloquea, lista vacía."""
     titulos = {}
     for sub in SUBS:
-        if queda() < 25:
+        if queda() < 12:
             break
         raw = get(f"https://www.reddit.com/r/{sub}/top/.rss?t=day&limit=50", tipo="raw", intentos=1)
         if raw:
@@ -355,7 +355,7 @@ def main():
     hora = time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora))
     temas = []
     for f in (chainbase, wikipedia, trends, coingecko, coinmarketcap, bluesky, gdelt, reddit):
-        if queda() < 20:
+        if queda() < 10:
             log(f.__name__, 'saltado por tiempo')
             continue
         try:
@@ -366,9 +366,10 @@ def main():
     grupos = agrupar(temas)[:MAX_TEMAS]
 
     # H17: ¿el tema ya tiene token?
-    for e in grupos:
-        e["token"] = buscar_token(e["tema"]) if queda() > 5 else None
-        time.sleep(0.3)
+    cripto = ("coingecko", "coinmarketcap", "x_chainbase")
+    for e in sorted(grupos, key=lambda e: not any(f in cripto for f in e["fuentes"])):
+        e["token"] = buscar_token(e["tema"]) if queda() > 2 else None
+        time.sleep(0.25)
 
     # H18: cruce con el trending del escaneo
     try:
