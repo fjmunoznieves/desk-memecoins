@@ -9,6 +9,12 @@ on:
       grupo:
         description: "backtest (revivieron) o control (no revivieron)"
         default: "backtest"
+      billeteras:
+        description: "Archivo de billeteras (vacío = watchlist + top)"
+        default: ""
+      sufijo:
+        description: "Sufijo para los archivos de salida"
+        default: ""
       desde:
         description: "Desde qué token (0 = el primero)"
         default: "0"
@@ -26,7 +32,8 @@ jobs:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
           LIMITE: ${{ inputs.limite }}
           DESDE: ${{ inputs.desde }}
-          SALIDA: ${{ inputs.grupo }}
+          SALIDA: ${{ inputs.grupo }}${{ inputs.sufijo }}
+          BILLETERAS: ${{ inputs.billeteras }}
           TOKENS: datos/h21_${{ inputs.grupo }}_tokens.tsv
         run: python3 -u scripts/h21_backtest.py
       - name: Guardar resultados

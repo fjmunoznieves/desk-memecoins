@@ -76,8 +76,10 @@ def ata(owner, mint, prog):
 
 def billeteras():
     out = {}
-    for f, col_dir, col_nom in (("datos/watchlist_solana.tsv", "direccion", "nota"),
-                                ("datos/billeteras_top_lista.tsv", "direccion", "nombre")):
+    fuentes = (("datos/watchlist_solana.tsv", "direccion", "nota"), ("datos/billeteras_top_lista.tsv", "direccion", "nombre"))
+    if os.environ.get("BILLETERAS"):
+        fuentes = ((os.environ["BILLETERAS"], "direccion", "nombre"),)
+    for f, col_dir, col_nom in fuentes:
         for r in csv.DictReader(open(f), delimiter="\t"):
             d = (r.get(col_dir) or "").strip()
             if not d or d.startswith("0x"):
