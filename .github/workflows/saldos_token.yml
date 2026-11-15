@@ -1,0 +1,24 @@
+name: "Saldos de un token (manual)"
+# Solo manual y solo lectura (Helius): cuánto tiene cada billetera de un token ahora.
+on:
+  workflow_dispatch:
+    inputs:
+      mint:
+        description: "Contrato del token (Solana)"
+        required: true
+      billeteras:
+        description: "Billeteras separadas por espacio"
+        required: true
+permissions:
+  contents: read
+jobs:
+  saldos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+          MINT: ${{ inputs.mint }}
+          BILLETERAS: ${{ inputs.billeteras }}
+        run: python3 scripts/saldos_token.py
