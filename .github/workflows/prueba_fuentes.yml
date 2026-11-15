@@ -43,3 +43,25 @@ jobs:
           print('fuentes', d['fuentes_ok'])
           for e in d['narrativas']: print(e['fuentes'], e['calor'], e['tema'][:60], '|', (e['token'] or {}).get('sym'), (e['token'] or {}).get('cadena'))
           print('huecos', [h['tema'] for h in d['huecos_h19']])"
+  helius:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      K: ${{ secrets.HELIUS_API_KEY }}
+    steps:
+      - name: Probar Helius (solo lectura; la clave nunca se imprime)
+        run: |
+          if [ -z "$K" ]; then echo "HELIUS_API_KEY no existe"; exit 0; fi
+          W=4EvYSYpt8ZbZNTwB2kjg7s8nXtiESryxCrorFm7cLGLR
+          M=7SL2VnfYsChvog5oQY9Nmtqu1wceaMiQzWoqoLQpump
+          echo "== v0 swaps de una billetera"
+          curl -s -m 30 -o r.txt -w "HTTP %{http_code}\n" "https://api.helius.xyz/v0/addresses/$W/transactions?type=SWAP&limit=100&api-key=$K"
+          python3 -c "import json,datetime;d=json.load(open('r.txt'));print(len(d), datetime.datetime.utcfromtimestamp(d[-1]['timestamp']) if isinstance(d,list) and d else str(d)[:300])"
+          echo "== RPC getSignaturesForAddress (mint)"
+          curl -s -m 30 -o r.txt -w "HTTP %{http_code}\n" "https://mainnet.helius-rpc.com/?api-key=$K" -H 'Content-Type: application/json' \
+            -d "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"getSignaturesForAddress\",\"params\":[\"$M\",{\"limit\":1000}]}"
+          python3 -c "import json;d=json.load(open('r.txt'));r=d.get('result');print(len(r) if r else str(d)[:300])"
+          echo "== RPC getTransactionsForAddress con filtro de fecha (mint)"
+          curl -s -m 30 -o r.txt -w "HTTP %{http_code}\n" "https://mainnet.helius-rpc.com/?api-key=$K" -H 'Content-Type: application/json' \
+            -d "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"getTransactionsForAddress\",\"params\":[\"$M\",{\"transactionDetails\":\"signatures\",\"sortOrder\":\"asc\",\"limit\":100,\"filters\":{\"blockTime\":{\"gte\":1762300800,\"lte\":1762560000}}}]}"
+          head -c 600 r.txt; echo
