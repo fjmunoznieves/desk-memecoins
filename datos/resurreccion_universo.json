@@ -6648,5 +6648,54 @@
 "sym": "ASTER",
 "pool": "0x7E58f160B5B77b8B24Cd9900C09A3E730215aC47",
 "revivio": 0
+},
+{
+"net": "solana",
+"token": "dfxQsZjikuu5DGXPgX7yEpRog74HT5cJgytT3i5iLtw",
+"sym": "DFX",
+"pool": "Bsf4J2aqQ5iBbBfbW6RKyxhFMt1PynHm2hhFgVdP6rcu",
+"revivio": 0
+},
+{
+"net": "solana",
+"token": "CFPkPq1eYPR8GLzEo59wUbbMioX4bshaTQiSGzTSpump",
+"sym": "MENSA",
+"pool": "E8RJG3srQBiSFMxDwrKG2DkwpWGyK7UYcFjkaTs9tbrS",
+"revivio": 0
+},
+{
+"net": "solana",
+"token": "8JCsa61htnPj2af7g1KSyU1UEncruHE1Ph9aNR6rpump",
+"sym": "FUTA",
+"pool": "Gdav29YtrdhQo9QW6LCbDbwsxoteZtdbeAjQ6nC3feQ3",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0x7C8217517ed4711fe2DECCdFefFE8d906b9Ae11F",
+"sym": "BLESS",
+"pool": "0x49986efbeEdEa3Ab962CA95caF86919860ECc9DB",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0xD7057e7C56B9C2d5f0a3E639D07610db31C949c8",
+"sym": "LITY",
+"pool": "0x91727E4485542612e9eD4293d1021414DBF5e588",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0x3fefe29dA25BEa166fB5f6ADe7b5976D2b0e586B",
+"sym": "ROAM",
+"pool": "0x30D59a44930B3994c116846EFe55fC8fcF608aa8",
+"revivio": 0
+},
+{
+"net": "robinhood",
+"token": "0x32aC8C1D7672667D5EbdEa22935F7B06fC8D496f",
+"sym": "HOOD",
+"pool": "0x1c1F6e283a72A68c15C816324363c794151cf913",
+"revivio": 0
 }
 ]

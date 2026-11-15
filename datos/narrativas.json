@@ -1,301 +1,394 @@
 {
- "hora_utc": "2026-11-15 02:11",
+ "hora_utc": "2026-11-15 09:24",
  "fuentes_ok": [
-  "gdelt",
-  "trends"
+  "bluesky",
+  "coingecko",
+  "coinmarketcap",
+  "trends",
+  "wikipedia",
+  "x_chainbase"
  ],
  "narrativas": [
   {
-   "tema": "FAA",
+   "tema": "Sean Duffy",
    "fuentes": [
-    "gdelt"
+    "wikipedia"
    ],
-   "calor": 78,
+   "calor": 100,
    "porque": [
-    "en 6 titulares de 6 medios distintos en 6 h (GDELT)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "QPqDtcCTwz5bfRphEAyLZZHfShfHgJDUn1xAe46pump",
-    "sym": "FAA",
-    "liq": 1533,
-    "vol24": 350,
-    "c24": -23.1,
-    "edad_h": 27.6
-   }
-  },
-  {
-   "tema": "Priscilla Block Shares",
-   "fuentes": [
-    "gdelt"
-   ],
-   "calor": 78,
-   "porque": [
-    "en 6 titulares de 6 medios distintos en 6 h (GDELT)"
+    "434,101 visitas ayer en Wikipedia, 11.7× anteayer"
    ],
    "token": null
   },
   {
-   "tema": "Stunning",
+   "tema": "FAA Lifts Nationwide Ground Stop",
    "fuentes": [
-    "gdelt"
+    "x_chainbase"
    ],
-   "calor": 78,
+   "calor": 90,
    "porque": [
-    "en 6 titulares de 6 medios distintos en 6 h (GDELT)"
+    "tema caliente en X según Chainbase Tops (puesto 1): The Federal Aviation Administration (FAA) lifted a nationwide ground stop that halted US flights for several hours due to a technical outage. Transportation Sec…"
    ],
    "token": null
   },
   {
-   "tema": "Her One",
+   "tema": "Nvidia Board Approaches Arm CEO",
    "fuentes": [
-    "gdelt"
+    "x_chainbase"
    ],
-   "calor": 78,
+   "calor": 88,
    "porque": [
-    "en 6 titulares de 6 medios distintos en 6 h (GDELT)"
+    "tema caliente en X según Chainbase Tops (puesto 2): Nvidia CEO Jensen Huang has resigned following reports of a personal relationship with Alice Huang, which internal messages suggest he misled executives about. …"
    ],
    "token": null
   },
   {
-   "tema": "Kind Ring",
+   "tema": "SpaceX Catches Starship Tower",
    "fuentes": [
-    "gdelt"
+    "x_chainbase"
+   ],
+   "calor": 86,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 3): SpaceX achieved a historic milestone by successfully catching the Starship upper stage using the mechanical arms of its launch tower, known as Mechazilla, at th…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Fetterman Opposes Data Center Ban",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 84,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 4): Democrats secured significant victories in the US midterm elections, flipping governorships in Alaska, Texas, Georgia, Ohio, and Iowa, while gaining complete co…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "US Proposes Ukraine Cede Donbas",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 82,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 5): Ukrainian President Volodymyr Zelensky stated that US negotiators proposed Ukraine cede the Donbas region in exchange for NATO membership during recent peace ta…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "China Leads Underwater Data Patents",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 80,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 6): Reports indicate that massive data centers in Southeast Asia have provided crucial computing power for Chinese companies while serving as a cover for alleged ch…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Global Pressure Hits Banks Investors",
+   "fuentes": [
+    "x_chainbase"
    ],
    "calor": 78,
    "porque": [
-    "en 6 titulares de 6 medios distintos en 6 h (GDELT)"
+    "tema caliente en X según Chainbase Tops (puesto 7): The collapse of a digital bank in Paraguay has initiated a deposit-insurance payout to over 1.8 million people, while sparking a political scandal involving the…"
    ],
-   "token": {
-    "cadena": "bsc",
-    "token": "0x3e098C23DCFBbE0A3f468A6bEd1cf1a59DC1770D",
-    "sym": "YU",
-    "liq": 138592,
-    "vol24": 43,
-    "c24": -6.67,
-    "edad_h": 32633.4
-   }
+   "token": null
   },
   {
-   "tema": "Man",
+   "tema": "Pakistan SCO Canada Philippines Deal",
    "fuentes": [
-    "gdelt"
+    "x_chainbase"
+   ],
+   "calor": 76,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 8): The Philippines has concluded free trade negotiations with Canada after one year of talks, aiming to diversify economic partnerships and support local producers…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Trump Federal Workforce SNAP Changes",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 74,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 9): During the first 18 months of his second term, President Trump oversaw a reduction of approximately 255,000 federal employees, shrinking the workforce by 12% to…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Tesla Cybercab Personal Use",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 72,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 10): Tesla has begun offering the Cybercab to a limited group of customers for personal purchase, marking a shift in its autonomous vehicle strategy. This move coinc…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Markwayne Mullin",
+   "fuentes": [
+    "wikipedia"
+   ],
+   "calor": 72,
+   "porque": [
+    "113,475 visitas ayer en Wikipedia, 3.2× anteayer"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Trump Proposes 2027 Military Budget",
+   "fuentes": [
+    "x_chainbase"
    ],
    "calor": 70,
    "porque": [
-    "en 7 titulares de 5 medios distintos en 6 h (GDELT)"
+    "tema caliente en X según Chainbase Tops (puesto 11): Donald Trump stated that the stock market lost $3 trillion in value immediately following the election. Concurrently, reports indicate the U.S. national debt in…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Kava",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (KAVA, puesto de capitalización 453)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "BCdwQBAn8dYB5YjTsoB6TdHAWokxv28k2oZUodERpump",
-    "sym": "MANIFEST",
-    "liq": 220401,
-    "vol24": 152964,
-    "c24": -14.99,
-    "edad_h": 4366.1
+    "token": "81Bne9W7ekt4Zr4hFtgVrhb3SXzKtqrYAbso5L7SKrWy",
+    "sym": "KAVA",
+    "liq": 357826488,
+    "vol24": 55,
+    "c24": -0.04,
+    "edad_h": 10174.9
    }
   },
   {
-   "tema": "Sydney",
+   "tema": "Quantus",
    "fuentes": [
-    "gdelt"
+    "coingecko"
    ],
-   "calor": 62,
+   "calor": 70,
    "porque": [
-    "en 4 titulares de 4 medios distintos en 6 h (GDELT)"
+    "entre lo más buscado en CoinGecko (QTC, puesto de capitalización 972)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "8KTatZdn1S9bDuWd6diKPpXf2ciCF3P6SDE2oqDaeBoR",
-    "sym": "MILK",
-    "liq": 13831,
-    "vol24": 60,
-    "c24": -3.46,
-    "edad_h": 24556.4
+    "token": "Bn9oW3GVKQdgNJG5w5P53dbuZfUtAehwFAniZYry68T8",
+    "sym": "QTC",
+    "liq": 644128,
+    "vol24": 115015,
+    "c24": -20.65,
+    "edad_h": 66.0
    }
   },
   {
-   "tema": "victoria justice",
+   "tema": "Aero",
    "fuentes": [
-    "trends"
+    "coingecko"
    ],
-   "calor": 60,
+   "calor": 70,
    "porque": [
-    "búsqueda en tendencia en Google (500+)"
+    "entre lo más buscado en CoinGecko (AERO, puesto de capitalización 120)"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Pons",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (PONS, puesto de capitalización 285)"
    ],
    "token": {
     "cadena": "robinhood",
-    "token": "0xAE2Df3c1749daEE721c1BFcbbFDde5D61ae7cb99",
-    "sym": "BTCETHUSDTBNBUSDCXRPSOLTRXHYPEDOGERAINZECDELLEOXLMXMRLINKADACCDAIBCHUSD1USDEGRAMLTCUSDGSUIDEXEHBARPYUSDAVAXCRONEARXAUTSHIBUNITAOUSDYWLFIPAXGOKBASTERONDOMHTXRLUSDUSDDSKYDOTMNTAAVEWLDUSDFICPBGBPEPEETCUMORPHOUSDGOPIKCSCTMSTABLEPOLJLPJSTATOMQNTENARENDERKASALGOBEATGT币安人生PUMPBDXJUPGHOFILXDCTBLLXFLRVVVLITARBUSD0USXINJAPTUSDAITUSDNEXONIGHTCAKEETHFIDASHAEROEURCVETVIRTUALTRUMPPENGUPYTHFETSUNFDUSDSEITIACRVSPXLUNCLDOSTXGNOZROJTOBSVBTTDUCKYPENDLENFTIMXMONXTZCFXBONKJASMYFRAXUB2ZDCRVELVETOPSTRCXKOGEXPLSYRUPKAIAKITEAUSDKAITOSTRKAPEPEFLOKIZBCNEIGENXECUSATGRTENSHWFIRAYFFPIEVERSECOMPTELAAPLXBIOTACHZAXSSPYXAKTWIFMXEDGEBORGMUXZANOGUSDTSLAXEURCVRUNEHOODXQQQXTWTAPETHETANEOXCNSANDMANABTWFARTCOININTCXRIFGOOGLXNVDAXTRACALEVSNARTBKBPCVXWEMIXCRCLXBATAWEAGOMININGTIBBIRUDSTAGSHFLFRXUSDRLBUSSFPGENIUSDUSDMRVLX1INCHNEXDYDXSOSOBMXEUSXGALAGLMREALSENTEGLDSMILEKABJSMCFGDATAAVVGLDXDEEPZKKMNOOCRCLONVCNTMETAXALLOSOONDRVYZYATHAMDXGRASSCHEEMSMSFTXGEODQUSDONSPCXBUAIFLUIDWOULDLIGHTMELANIASNDKBBANKRAVECSCOXBEAMSNXCOWZAMANMRANTFUNORDIRSRYFIZENKOXQTUMLISUSDZBUANSEMVTXLPTBANMSTRXLURMETXPRLINXLBTNXPCCOINXZRXORCAPLTRXWALHUMAARCBANANAS31MUBGASSFORMIVVONKTABASDGBGMXFTTCARDSMAXNILAUSDSUIRIVERBILLCVXXSHXIEMGXAIOZFIDDQFISAFEUSELESSHOTCHIPVXPLUMERVNGSXPFEXREDOGQUBICVBUSDPRESPCXZIGXPINAIHKSMLABVELOTFUELGCOINPGXSCHFXCOAIMINATURBOBIOWCASHCATMAGMAZILABBVXENJVTIXEWUXBERAAVGOXDHNBABYDOGEIOSUPERJELLYJELLYLINEAAPRDIEMGWEISYNHDXAZNXXPNPCZETASPKBRETTXOMXUNHXELFBRK.BXBABYTONXXGPSPROSGMEXIDHONXKUBMEGABRAXLTOSHISKHYXCYSSOXXXKAVAXNOCRCLBUPOPENLIONHOLOXVSSUSHISN4AKEIWMXSN51CCDOMIJCTCKBTQQQXXAUMREDVVSCOPXXMNGOMOVECTCONTASTRTROLLBLURBTBTXELGCRWDXTCELOSMHXAPPXFLOWREQPURRASSETACHROSEBDCATRBARRRDHRXSRXMRKXRONZCHFALTMUONPOPCATAPEXIBITONXYOBARDSUTJNJXEWYXSPYONNOCKPNUTLLYXRPLYUSDSKRFUNAGTPEAQPCIPMXBACXICNTAMZNXXUSDNVDAONMOGSENTISMYMASKJPMXEURIPOLYXAMPGHNTFBBUSDAZTECSTARVTHOPROVEESPMOODENGNOTMEVAMGLIDRMMTBIMORCLXAMBRXGOHOMEBNKRKGENB2ATAMPLCUSD0GMOCAANKRTMOXSOXLXWMTXPRONVOXKLACXSNTFOGOMEMETGBPNFLXXPEPXREKTBURNMANTRAUMAVANAXVGWAVESAIATSCQQQONZEREBRODUSKCOINONLOCUSCROSSHIMSONPMLUNASPACEDBRELONIRYSATOSZBTSSVBSBCMCSAXHSKUSDPOREMEWZESTNESSAHARAABTXDEGENARXKNTQACNXSQDCSPRSTORJLAYERAISN44MANTALUSDWKCCOREPRLHOMEUPCNOWACXUSTCMBGSKYAIDFDVXCAPBOLDAVNTBANDBMNRXBNTPLAYXANMCDXSUSDOPENXSERVUSDKDEPWHITETORNZORAMYXESPORTSEUSDHIVEBOMEUNSUQCLITEXB3PEOPLEBORASMARTTRUTHCATITAKLKWUSDMDTXGIGGLEETHWORBSFOLKSOSMOIBMXSWFTCSN9SLXAITCOLLECTASTEROIDCRMXICXRAILVRNEIRORLCUNPVANTAOPGSIRENPOWRAIOPROMAOPORBRATMARKMWOOSKLSOMICYBERALEONAORISMVLQANXHANAROBOHYPERCALCHAINEDUONGISIKCAUCTIONMERLKNCDAGSNEKEULIOSTGMTIOTXLCXSLVONGOOGLONWINSTEEMEVSLVXCOTIBBILVBASEDMUSDSLTFAIPREOPAIPUNDIXDODOFIDALONCOINDEPOSTRAXCTSIPYTHIAGIGAARKCHEELARDRMTLMLKPHAMETISROGLISTASIGNNOSSLPSATSREZCVCPYBOBOWOJAKSTGIQTLTONSNCYGGAIOTCLOAUDIOPMTANTTPTDKABLASTTXCNEETDOGSCARVXCHXYMLSKABTCPOOLAPI3TRIAMSTRONRIZEBREVPOKTSN3SAPIENERGAIXBTWAXPWBXCGOCBKSTRXIDOLAPTMLRCDRAMBPPLTXRTXWCTYNGFLUXCETUSCGPTOHOSOXLBBIGTIMESONICTACGAMEFULPOWERPIPPINAEVOKMDONEIEFAONSPELLACUEDENEGL1BLESSTAIKOMEDMOVRCTKGCBBOXNILUSUALMOBBTGOXBFCTNSRADSARARAABEYMGOMRVLON龙虾TOKAMAKBIRBPIXELOXTLQTYZENTPARTIETNWETGOLDGRTSLAONXNYINAOCHRSTBLEPICFTRBXAIINTCONQUAISCRTONRMUHEZANIMEFRSNDKBTRSTNYMEVAAAGLDENSOXAUT0AGGONBLUAIRUJIGNSSN56MAGICQKCNMCBICOINXMETAAURORAMBLDFGGOATCLANKERCHEXELSABANANAMEYPDDONARROW哈基米CELRIBSFLOCKUSDHZKCSTRCONSOFIONINTCBNEWTC98DESOZKPMMUIARPAQIELUCICWXTRADORDERITOTONHPGYENJOECTRRECALLUSDCVBITCOINMPLXUFDVANRYUSDBSLNDOGCORNSBBTCMIRADIAYBDIAMIAUONLUMIASAUCEBLENDHMSTRFIROIXSBCDXSGDBROCCOLIMUBARAKXRDISLMALICEOSAKOPNFUSDOGNAVATLMFELYREIKATTIPONKISHUDOODAVAILSOLVTUTMSFTONEFAONKCTPONKEWECANKAIOVENOMAMZNONALIAERGOINITREPWANMAVGLMRFARSXTBONEMWXTSFIAIARSCRAREACNBULLAABELESETSTHUNTSN62GODSMSTRBNSTGUNVEREMRBNTBOBAFARTBOYLAERATGCCWUCOLXKERNELSN5CATDOLONXAAPXRCRCLMANIFESTBERTHEGICCOLAMDONPORTALUSDMLYNARIAPROMPTIEMGONCHILLGUYNCTFHESTOFCTEVEREPSYELLOWCETBUTTCOINCLASHSOPHGLEECDESUHEIBOBAAPLONMETAONOWBIWFONVOWXIONLMTSROLLTT4VINEEWTAURATXRESOLVPSGCHECKPRIMEREPPOSANTOSTRUSTXU3O8EURRADXWALLETDYMGRIFFAINBELIAGGRSSPCXSHELLRAMPTAITRADOORDRIFTMOCUCNQQQBPPCWILDBMTQIAVICIREADYAICSPCXONUSDQDEXTSDACTHONEYGRNDDORASPCXX我踏马来了BEEAGRSFORTGUAMCOINGALSKHYBNVDABSTCINVTKOBOUNTYASRASMPNKBARDADDYAGIBALHFTDEODIKAAHTNIMSOILNETXOMGLYXLOANSOLOVDAISLERFTHEMCBARTXEEMONDXIHAEDALPEPBTCLESQGROWSUPRAOLASMBXTSMONTAKETOWNSNUMIBADGERMAPOESIMSWARMSALPINEXSGOVONOUSDCREPECOOKIEACEWRXLOOMACSOGYFIGHTPIKAPEPECOINMNSRYPUFFERMAVIAREDOQUICKMUSNDKONWENKNNBISONELAAUKIL3ELKONETKGSTMPCBGSCPORTOPONDDIVIANYONENAVXBRISEUSDRBETATLOSRACAUSDPTKANAPUFUELGTCANTHROPICBTRSDEXTREETQQQONPOLSMAMOPAALUTKRIONARGAMOBTXIWNONVULTVATRENIDAOZRCSAVESPARKLETAVGOONMOBILECITYVNXAUBFGAQTEDELASPMAMEPHNIXJUVVLINKPPTCAWGPHDNMINTURTLESAGALLYONZKJCOQPITEWYBPOPMCDULLORCLONRIOXWCARMONSUREETHDYDXVCHFALPHRHEADNTKRLUSDUCARENAPNGWEXOBLUECRETAOMIKAMITOKEALCXLMWRRSS3LVLADYSPDTLAZIOATSPYRVICHOPRDEUSKYVEATLASSPAODOSDOGINMEBCNMLNXPLAMORIGSTMONANEONMIMGEARKOMACOREUMRMRVLANONPTBSPCMPAYAIBMNRONSCRSPSHEMIFWOGNOMGBYTESIXLINGOBOSONM87PZMWOLFREFWAIGALEONROAMHOODONSKIPIBDMDAUDDKEYCATELIZAOSTONICSWAPLAVASUNDOGSYMMPKOINBTSEGFALPORKOLORAIACMXEM$PURPEVLTCQCOMONLATRSPCXSCORSPACEXSNANDYVESTGMMTDGMAMITOQUQLMTONPIVXGHXSHAREASMLONEURQKLVPBTCMNTXTSLABSBDGRINLQKOONSEND哭哭马CATEAFCKEKIUSIHCSWELLSPECTREPUSSBNBTIGERCRTSLOFIPOLISFEISWEATSTNKCESSWOLFONRMSTRFARMBTGNSJAGERGFIRINTCIWMONAVLSPCDRAMONWENDRGNBLZAIVMETFIALUVTCWODPUNDIAIRENVITABTSDJEDDMCRLS客服小何DSYNCOCTAGEMSMVCFOXPALMIJHONWSPPXCPDIMOBUYPFEONNEURALA8CXTUBTBIFIRNBWBABAONNOBODYSN88XBGZTCOVPPMEASHDWKENDUIDIASUKUUSOONGROKASTSONWNCGFLMCOLSPROPCFREYAGMETETCULTCARDINGOVOOIGAIBMAJORMEVREEFBFMANYUYEEEMTIBMONRMETAQAITDENTXFCNBISBCSCOONNAKAMIGGLESJPMONALTSZNAVTPGONXEPPLTRONBELLSZYPTOUSDC(WORMHOLE)NATIXCTXCLVTSMBNIZAMATHGOLDAOPXPAINA47PEIPEIABBCALEPHINTERCVXONROAOASIMPTPRCLRAMDIRFEGVARAMINIMA雪球NVOONOBSRMYROUSDVPANWONLOTRDRAMOFCKOSYSMCDONCLOAKVALFORESTQSTRNVDANEXASHIDOVFYGHSTHEARTLEASHVAIDMTRBOOEFORTHVOLTLNQARWOORTWMTONLIBERTYAECOOKGMEESWCHKARRATDJI6930RTSLABAYNODLTRUAZEROSNSSTREAMZEUSPORNROCKETLQRIDRTPEPONSTATUSAVONDLHEROEURTMRVLBALTTTOKENBZZSBUXONCEEKPARTPBRONTRUFRWALUCKYCAFOXSYBIDDOBOSISSHARPSDTTRUUHIGHGLWBBORGYSTUFFMANEKISRMRTSMTAROTPLUDCEATYURUPXCFTRDRXAMDBPINRUSSELLRQQQKIBSHIRYULMBRNFTYECCEURXTNJESUSCUBERMSFTPUPSNXRAVNOMDTEPTBLKONTMONMYSTXSWAPVERSEMYTHDEUROJOBYAIDOGESOLCEXNUMGOALASKPAPARAZZIKUJIAURYMSFTBTAOBOTMCMBXNWHALEBOTTORAVGORGOOGLLINONBIOTBOTGMCOINTEMCOMOBYOBTXPMGOOGLBLIBRAKINDBIDZHOOKEQIXONLIMEMTADNNUBINDYTHQREGENTRARIGEONHOLDBOOPRZRCSWAPKWENTAIDEXCOPXONVERTAIADPLUCA401JKPROPSKDABENJIMIABITCIP2PWHITEWHALETTNSTIKHIUOSCWEBHAROLDQCOMBVEURTRIASSTRIKEVEXTRA0X0AST67WINRXTERHOSKYSNOWONMETAVGOATEDBTC2TRWARBNNOWONSOULCHATMOEWCUMMIESBFICSMTOPENAIDAMMCHCRYPTOZCLHOGESAROSCRPTMAYCRPNMTMONKYTAVAUNHONKORIALXELNOKBDEVVEBILLYEGGZTXOVROCICATDOPUCAGAQUACKFANCBYTESHPINGCEREHTREVDCSCAABTONRVFNYACTPXFIRETARDIOMLCPALUMERYLUMINTAXMXDBAREAIOTRISEWFCONGAFIPENGUINHODLSOXXONRENECMULTICAMP$HACHIXMNGSONCOINBCROWN10SETSTORMTRADESCSSKEYMCADEMDAOBAONABNBONSPURSGHUBNKEONBIDUONAIXDDXSNDKOGPUBULLSHIBDOGESMCIONPERPDHTRICEBSAIRSOXLSHRBABYASTEROIDHACHIKOHOUSERNBISCYCHGPTSERAPHASTRACHEQRHOODBABYSHARKSIGMAPYPLONADMMAONEURAUANDURILSIGNACOHRONMETABCOSALONHIPPOIRENONCOSTONPUBLICVRTONECHOGHOSTLXVLXJDONGAIXQCADBCOINRKLBONNAPMAIGAPIPESLRSRXDATTSTARLAACDLLUXCRWVONHASHAIPORHOPPYKARATEAZITHAIGOGAEURRAIVADERAOL一KAITKPALEXGOCHUIZIROBOTSRDDTONDEFXDTECPLTRBWELFPXL1PHOTONSKHYPEPEONTRONXPASSBEB1MGXACMGONBLOCKWEPE3ULLLITEBMCNPANDORAXAVIERBUILDOUTXTPJMPTIDRXSKHYONWARDAAOIBCRMONFLQLONINCEONCELLNIBIPSYOPANIMENEOCLOUDMYRIATOPEWYONAXPONSPGIONSOV人生K线KIMAEQBJAILSTOOLARIA20WAGMIGAMESTSUKAOPUSUNCXROARYFIIHELLOOBOLHYGONLITKEYMAGAWIKENNRGARIOGRGRWAINCIMUNODESQQQONBSTSOXLONPHBPAWSSLXMEZOVSYSWUFTEAGORKPIGGYMGPDBCNOICENIKOTPTUHNSXDAGGPUSHOGGOTHSWASHFUTUONSOGNISALTADBEONFRICURANUSHEHEBXEDISONSBETVRAICHIGROWACNONDASHONRNOKITABESTSTCREAMSLAPCHKNVINUFIONFLXONSTRDCPHRMVXRPHSHRAPOPTIGAIATOWERHYDRANTXDNXUBERONSPYBPUNCHAARTMOTHERDEROCBRSBHOSICOCORALLRDSFACTVOXELNOKONZFISAMOGLDONCASPWEASEGRACYRDNTMOCHILOBOHTDBUNKERVISTAETNONSAITOCOCOROPSPSUPSHILITEONXCLFLIXMANCUDISSCPGLWONA2ZSOLVEXPEPUWCOTCOMRKLBBZKMLAPOONWDCBNFPFISQOMTXNONPXPMELIONCAHCOINBERRYPIRATEATRSHIRODUREVBCAAARKPEPE2.0NBT修仙OXYONAIPONBXXHYPCVBCHBOTONUFOUXLINKSLOTHWOZXKILOWHYROOT$1CLORESNDKXJYAIKATATMXUNIBOTAVGOBKOMPETEINTUONZEXTURBOSSHRUBKINICMATAWCFUSETERMINUSSHOPONCPRUSDNEMCMEMEFIBASEYOOSHITSPACEXCWIFRTQQQBABABIMGNIBMBHINTPVTKEXMOONGLQEXAAEROBUDGMRXSQTRRKLBFNCTPDAIRISASEQBTSONUNA老子CHIRPHEGEJEWELNRNNAFTSCAMFLIXXMNWRASMLAGIALPHABNBHOLDERABYSSEXRDARMBBTC.ℏRORCLZOONCHIATAWARXRPHAIBTCBAMSHFTTITDRTRBCRWSPKTGGRCOHRAXOLPUSHDPRBONDOKLOONKOINRINGSHMSGTHOODBENXAI3AMATONMAIVNURARSPYWSIMAKOSCARSPECRIFT1DEFIPACEMEFAISLAYSPOTONPOOHAAOIONFIGONEQTYIDNGBAXBNCLNWBAIMTVCEGONMSTRLKYNUTUSDSFOXYCHOXNACREOTOTOLMCSWAPQORPOGMMPNICPEPONKTC$MICHIFLHYONLOOKAPPONGAINMADREMXONMDXBCUTSDAOANOMEPATRIOTJETTONDFIGTAI安DUCKSLIMBC2WEFIFFOGONCIRCLEMEMESEAIBXCRAMZNVSGISLANDPINOCHAMPDOLANALLNITROFLTAIKEKSLC4EVERWDCONGOUTKMCELBCRASHOIIAOIIASNAIKPOPCAPTAINBNBBOSSWYACLVNCAPSU2UGOZENPHONHEMULEEFI42SMURFCATNOTHINGMNTCSTUPIDRAAOISTMXLOLXELSGEVONKEYCELRFOXBASEDAIFGDLONURAONRDWONARTYVKORABGLPLNSOLAMAHTSHAKKAMTRGFROGBABYPEPERIOTONISKNULSSTRMXPRTDEMOWL$WAFFLESFAIR3CREDIDELABSBOSTHLMENGOGMEONMIDASMLZSWAPCANNMSQHAPPYMUBARAKAHEFCLC黑马KP3RBADRAAPLRFCRIBMNUXBUCKAZOIDSTROGLABUBUNPCSJAMDEGOSBETONDUKOHMNDDIPMBOXBCCOINBZRPORT3ENDVERTCKPTIMEGZONEBEONRITEPOXALPHARABITRVLMASQSAMBUZZSSGXCXSFUNDBRGOVLSABAIBHCBUBBLEEDGENMTDKUNCIRVVORCSIPHERVCFLUCEACAESBDOGITOHOODBEERDCDRBABAHOLYRPLTRMRXMYSTERYMCRTHONKXMONEYNAVINBLUTITNCARRXRBIOFIGLXYONGENEALVAVTIONTBULLHORDVDOT$TOADPOOLXAKITALTXLISATIMIROOBEEMILLIBUSYMPONSCFJUNODFSAUBERCHONKYONDSON",
-    "liq": 25829,
-    "vol24": 58,
-    "c24": -9.62,
-    "edad_h": 2855.9
+    "token": "0x39dBED3a2bd333467115dE45665cC57F813C4571",
+    "sym": "PONS",
+    "liq": 1363194,
+    "vol24": 183933,
+    "c24": -8.51,
+    "edad_h": 2988.7
    }
   },
   {
-   "tema": "kirk ferentz",
+   "tema": "Stand with Jensen (StandJensenCoin)",
    "fuentes": [
-    "trends"
+    "coinmarketcap"
    ],
-   "calor": 60,
+   "calor": 70,
    "porque": [
-    "búsqueda en tendencia en Google (500+)"
+    "entre lo más buscado en CoinMarketCap (JENSEN, puesto 4617)"
+   ],
+   "token": null
+  },
+  {
+   "tema": "EVAA Protocol",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (EVAA, puesto 386)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "8du34ohgGj2ikZVTGZNwHbNbqX8b8AHGFANf6qmopump",
-    "sym": "KIRK",
-    "liq": 19654,
-    "vol24": 514,
-    "c24": -8.74,
-    "edad_h": 2077.4
+    "token": "Ej4cuBwfc36DZH1TiMcX29cTTxM9jgVYJaKF5XtUtZhv",
+    "sym": "EVAA",
+    "liq": 29919924,
+    "vol24": 317042,
+    "c24": -0.03,
+    "edad_h": 425.1
    }
   },
   {
-   "tema": "will ferrell",
+   "tema": "All-time favorite movie scenes",
    "fuentes": [
-    "trends"
+    "bluesky"
    ],
-   "calor": 60,
+   "calor": 70,
    "porque": [
-    "búsqueda en tendencia en Google (500+)"
+    "tendencia en Bluesky: Users name beloved film moments, from True Romance's Sicilian scene to Miller's Crossing."
    ],
    "token": null
   },
   {
-   "tema": "ramit sethi",
+   "tema": "NYPD $9M Gold Scam Crypto Fraud",
    "fuentes": [
-    "trends"
+    "x_chainbase"
    ],
-   "calor": 60,
+   "calor": 68,
    "porque": [
-    "búsqueda en tendencia en Google (200+)"
+    "tema caliente en X según Chainbase Tops (puesto 12): The NYPD is requesting public assistance to identify a suspect involved in a $9 million gold bar theft on Manhattan's Upper West Side. The victim, a 67-year-old…"
    ],
    "token": null
   },
   {
-   "tema": "power grid emergency",
+   "tema": "Jensen Huang resigns as Nvidia CEO",
    "fuentes": [
-    "trends"
+    "bluesky"
    ],
-   "calor": 60,
+   "calor": 68,
    "porque": [
-    "búsqueda en tendencia en Google (200+)"
-   ],
-   "token": {
-    "cadena": "robinhood",
-    "token": "0x727701F88f09Fed71eb217Bcea88b3F314CF7079",
-    "sym": "GRID",
-    "liq": 71845,
-    "vol24": 9146,
-    "c24": -15.81,
-    "edad_h": 2926.1
-   }
-  },
-  {
-   "tema": "nz vs ind",
-   "fuentes": [
-    "trends"
-   ],
-   "calor": 60,
-   "porque": [
-    "búsqueda en tendencia en Google (10000+)"
+    "tendencia en Bluesky: Nvidia co-founder steps down as CEO; reports of affairs, espionage circulate."
    ],
    "token": null
   },
   {
-   "tema": "cade cunningham",
+   "tema": "Judge Blocks DC Golf Closure",
    "fuentes": [
-    "trends"
+    "x_chainbase"
    ],
-   "calor": 60,
+   "calor": 66,
    "porque": [
-    "búsqueda en tendencia en Google (2000+)"
+    "tema caliente en X según Chainbase Tops (puesto 13): A federal judge has issued a temporary order blocking the Trump administration from closing a municipal golf course in Washington, D.C., halting plans to renova…"
    ],
    "token": null
   },
   {
-   "tema": "zion williamson",
+   "tema": "Historical events as streaming series",
    "fuentes": [
-    "trends"
+    "bluesky"
    ],
-   "calor": 60,
+   "calor": 66,
    "porque": [
-    "búsqueda en tendencia en Google (2000+)"
+    "tendencia en Bluesky: People pick eras, from the Mexican Revolution to the Napoleonic Wars, that deserve big-budget dramas."
    ],
-   "token": {
-    "cadena": "solana",
-    "token": "7RTVnPY8yDnoywLJmk3Lf3VtiQDwu2FCWL6HvsfLrFZ1",
-    "sym": "ZION",
-    "liq": 11196,
-    "vol24": 17,
-    "c24": 1.39,
-    "edad_h": 2144.5
-   }
+   "token": null
   },
   {
-   "tema": "utah state vs san diego st",
+   "tema": "Italy Fines Meta 805m Euro",
    "fuentes": [
-    "trends"
+    "x_chainbase"
    ],
-   "calor": 60,
+   "calor": 64,
    "porque": [
-    "búsqueda en tendencia en Google (1000+)"
+    "tema caliente en X según Chainbase Tops (puesto 14): Italy’s Data Protection Authority has fined Meta Platforms €805 million ($887 million) for allegedly accessing photos and videos from the galleries of approxima…"
    ],
-   "token": {
-    "cadena": "solana",
-    "token": "bGtAGexqRBwCxWLVqJUJ9wJiDVs6PAz7nuHYaJnjKkm",
-    "sym": "USEM",
-    "liq": 21808405,
-    "vol24": 1,
-    "c24": 0,
-    "edad_h": 3927.3
-   }
+   "token": null
   }
  ],
- "cruces_h18": [
-  {
-   "ts": 1794708694,
-   "hora_utc": "2026-11-15 02:11",
-   "tema": "utah state vs san diego st",
-   "fuentes": "trends,trending 5m",
-   "cadena": "solana",
-   "token": "Pb2TYdiAm6Hxyg5z2VYkXHuZJDb1iu1YHnyLiKfpump",
-   "sym": "USPR",
-   "liq": 351111,
-   "mc": 12278951,
-   "c1": 0.37,
-   "seguridad": "ok",
-   "aviso": "si"
-  }
- ],
+ "cruces_h18": [],
  "huecos_h19": [
   {
-   "ts": 1794708694,
-   "hora_utc": "2026-11-15 02:11",
-   "tema": "Priscilla Block Shares",
-   "fuentes": "gdelt",
-   "calor": 78,
-   "porque": "en 6 titulares de 6 medios distintos en 6 h (GDELT)",
+   "ts": 1794734649,
+   "hora_utc": "2026-11-15 09:24",
+   "tema": "Sean Duffy",
+   "fuentes": "wikipedia",
+   "calor": 100,
+   "porque": "434,101 visitas ayer en Wikipedia, 11.7× anteayer",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794708694,
-   "hora_utc": "2026-11-15 02:11",
-   "tema": "Stunning",
-   "fuentes": "gdelt",
-   "calor": 78,
-   "porque": "en 6 titulares de 6 medios distintos en 6 h (GDELT)",
+   "ts": 1794734649,
+   "hora_utc": "2026-11-15 09:24",
+   "tema": "FAA Lifts Nationwide Ground Stop",
+   "fuentes": "x_chainbase",
+   "calor": 90,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): The Federal Aviation Administration (FAA) lifted a nationwide ground stop that halted US flights for several hours due to a technical outage. Transportation Sec…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794708694,
-   "hora_utc": "2026-11-15 02:11",
-   "tema": "Her One",
-   "fuentes": "gdelt",
+   "ts": 1794734649,
+   "hora_utc": "2026-11-15 09:24",
+   "tema": "Nvidia Board Approaches Arm CEO",
+   "fuentes": "x_chainbase",
+   "calor": 88,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Nvidia CEO Jensen Huang has resigned following reports of a personal relationship with Alice Huang, which internal messages suggest he misled executives about. …",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1794734649,
+   "hora_utc": "2026-11-15 09:24",
+   "tema": "SpaceX Catches Starship Tower",
+   "fuentes": "x_chainbase",
+   "calor": 86,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): SpaceX achieved a historic milestone by successfully catching the Starship upper stage using the mechanical arms of its launch tower, known as Mechazilla, at th…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1794734649,
+   "hora_utc": "2026-11-15 09:24",
+   "tema": "Fetterman Opposes Data Center Ban",
+   "fuentes": "x_chainbase",
+   "calor": 84,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 4): Democrats secured significant victories in the US midterm elections, flipping governorships in Alaska, Texas, Georgia, Ohio, and Iowa, while gaining complete co…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1794734649,
+   "hora_utc": "2026-11-15 09:24",
+   "tema": "US Proposes Ukraine Cede Donbas",
+   "fuentes": "x_chainbase",
+   "calor": 82,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 5): Ukrainian President Volodymyr Zelensky stated that US negotiators proposed Ukraine cede the Donbas region in exchange for NATO membership during recent peace ta…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1794734649,
+   "hora_utc": "2026-11-15 09:24",
+   "tema": "China Leads Underwater Data Patents",
+   "fuentes": "x_chainbase",
+   "calor": 80,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 6): Reports indicate that massive data centers in Southeast Asia have provided crucial computing power for Chinese companies while serving as a cover for alleged ch…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1794734649,
+   "hora_utc": "2026-11-15 09:24",
+   "tema": "Global Pressure Hits Banks Investors",
+   "fuentes": "x_chainbase",
    "calor": 78,
-   "porque": "en 6 titulares de 6 medios distintos en 6 h (GDELT)",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 7): The collapse of a digital bank in Paraguay has initiated a deposit-insurance payout to over 1.8 million people, while sparking a political scandal involving the…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
