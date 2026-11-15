@@ -6,7 +6,7 @@ asociada (ATA, programa Token y Token-2022) y pide a Helius su historial de firm
 entrada de esa billetera en ese token. Compara entradas en los 7 días antes del arranque con el periodo muerto
 (30 a 7 días antes) como control. Necesita HELIUS_API_KEY (GitHub Secret); la clave nunca se imprime.
 """
-import csv, json, os, sys, time, datetime as dt, urllib.request
+import csv, json, os, sys, time, datetime as dt, urllib.request, urllib.error
 from solders.pubkey import Pubkey
 
 K = os.environ.get("HELIUS_API_KEY", "")
@@ -19,21 +19,55 @@ PROGS = [Pubkey.from_string("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"),
 DIA = 86400
 
 
-def rpc_batch(calls):
-    """calls: lista de (method, params). Devuelve lista de result (o None)."""
-    body = json.dumps([{"jsonrpc": "2.0", "id": i, "method": m, "params": p} for i, (m, p) in enumerate(calls)]).encode()
-    for intento in range(5):
+MODO = {"batch": None}
+from concurrent.futures import ThreadPoolExecutor
+
+
+def rpc_uno(m, p):
+    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": m, "params": p}).encode()
+    for intento in range(4):
         try:
             req = urllib.request.Request(RPC, data=body, headers={"Content-Type": "application/json"})
-            with urllib.request.urlopen(req, timeout=60) as r:
-                out = json.load(r)
-            res = [None] * len(calls)
-            for o in out:
-                res[o["id"]] = o.get("result")
-            return res
-        except Exception as e:  # 429 u otros: espera y reintenta (sin imprimir la URL)
-            time.sleep(3 + 4 * intento)
-    return [None] * len(calls)
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return json.load(r).get("result")
+        except urllib.error.HTTPError as e:
+            if e.code != 429:
+                return None
+            time.sleep(1 + 2 * intento)
+        except Exception:
+            time.sleep(1)
+    return None
+
+
+def rpc_batch(calls):
+    """Usa lotes JSON-RPC si Helius los acepta; si no, llamadas sueltas en paralelo (≈8/s)."""
+    if MODO["batch"] is not False:
+        r = rpc_lote(calls)
+        if r is not None:
+            MODO["batch"] = True
+            return r
+        MODO["batch"] = False
+        print("lotes no permitidos: uso llamadas sueltas", flush=True)
+    with ThreadPoolExecutor(8) as ex:
+        return list(ex.map(lambda c: rpc_uno(*c), calls))
+
+
+def rpc_lote(calls):
+    body = json.dumps([{"jsonrpc": "2.0", "id": i, "method": m, "params": p} for i, (m, p) in enumerate(calls)]).encode()
+    try:
+        req = urllib.request.Request(RPC, data=body, headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            out = json.load(r)
+        if not isinstance(out, list):
+            print("lote rechazado:", str(out)[:200], flush=True); return None
+        res = [None] * len(calls)
+        for o in out:
+            res[o["id"]] = o.get("result")
+        return res
+    except urllib.error.HTTPError as e:
+        print("lote rechazado: HTTP", e.code, e.read()[:200], flush=True); return None
+    except Exception as e:
+        print("lote falló:", type(e).__name__, flush=True); return None
 
 
 def ata(owner, mint, prog):
@@ -59,13 +93,17 @@ def billeteras():
 
 def main():
     ws = billeteras()
-    print(f"billeteras: {len(ws)}")
-    toks = list(csv.DictReader(open("datos/h21_backtest_tokens.tsv"), delimiter="\t"))
+    print(f"billeteras: {len(ws)}", flush=True)
+    toks = list(csv.DictReader(open("datos/h21_backtest_tokens.tsv"), delimiter="\t"))[:int(os.environ.get("LIMITE", "99"))]
     filas, resumen = [], []
     for t in toks:
         mint = Pubkey.from_string(t["token"])
         t0 = int(dt.datetime.strptime(t["arranque"], "%Y-%m-%d").replace(tzinfo=dt.timezone.utc).timestamp())
-        pares = [(w, ata(Pubkey.from_string(w), mint, p)) for w in ws for p in PROGS]
+        info = rpc_uno("getAccountInfo", [t["token"], {"encoding": "base64"}]) or {}
+        dueño = ((info.get("value") or {}).get("owner")) or ""
+        progs = [p for p in PROGS if str(p) == dueño] or PROGS
+        pares = [(w, ata(Pubkey.from_string(w), mint, p)) for w in ws for p in progs]
+        t_ini = time.time()
         primeras = {}
         for i in range(0, len(pares), 100):
             lote = pares[i:i + 100]
@@ -96,7 +134,7 @@ def main():
         r = resumen[-1]
         print(f"{r['sym']:10} {r['arranque']} x{r['subida_x']:>5}  alguna vez {r['alguna_vez']:3}  "
               f"muerto(-30..-7d) {r['muerto_23d']:3}  antes(-7..0d) {r['antes_7d']:3}  consenso24h {r['consenso_24h']:2}  "
-              f"día0 {r['dia_arranque']:3}  watchlist {r['watchlist_antes']}")
+              f"día0 {r['dia_arranque']:3}  watchlist {r['watchlist_antes']}  ({len(pares)} consultas, {time.time() - t_ini:.0f} s)", flush=True)
 
     for nombre, datos in (("datos/h21_backtest_resumen.tsv", resumen), ("datos/h21_backtest_entradas.tsv", filas)):
         if datos:
