@@ -36,7 +36,7 @@ def get(url, tipo="json", intentos=2):
             return json.loads(data) if tipo == "json" else data
         except Exception as e:
             log("fallo", url[:90], getattr(e, "code", e))
-            if getattr(e, "code", None) == 404:
+            if getattr(e, "code", None) == 404 or k == intentos - 1:
                 return None
             time.sleep((8 + 6 * k) if getattr(e, "code", None) == 429 else (3 + 3 * k))
     return None
@@ -362,7 +362,7 @@ def main():
             temas += f()
         except Exception as e:
             log(f.__name__, "falló:", e)
-        time.sleep(1)
+        log(f"  ({f.__name__} listo a los {time.time() - INICIO:.0f} s)")
     grupos = agrupar(temas)[:MAX_TEMAS]
 
     # H17: ¿el tema ya tiene token?
