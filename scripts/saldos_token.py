@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 """Saldo actual de un token en varias billeteras (Helius RPC, solo lectura). La clave nunca se imprime."""
-import json, os, sys, urllib.request
+import json, os, sys, time, urllib.request, urllib.error
 K = os.environ.get("HELIUS_API_KEY", "")
 RPC = f"https://mainnet.helius-rpc.com/?api-key={K}"
 mint = os.environ["MINT"]; ws = os.environ["BILLETERAS"].split()
 def rpc(m, p):
     req = urllib.request.Request(RPC, data=json.dumps({"jsonrpc": "2.0", "id": 1, "method": m, "params": p}).encode(), headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r).get("result")
+    for i in range(8):  # reintenta si Helius limita (429), p. ej. cuando otra corrida lo está usando
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return json.load(r).get("result")
+        except urllib.error.HTTPError as e:
+            if e.code != 429 or i == 7:
+                raise
+            time.sleep(2 + 3 * i)
 sup = float((rpc("getTokenSupply", [mint]) or {}).get("value", {}).get("uiAmount") or 0)
 for w in ws:
     try:
