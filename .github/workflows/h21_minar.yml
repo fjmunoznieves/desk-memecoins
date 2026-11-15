@@ -1,0 +1,27 @@
+name: "Minar billeteras 180 d (manual)"
+# Solo manual y solo lectura: compradores previos a cada resurrección, vía Helius.
+on:
+  workflow_dispatch:
+    inputs:
+      max_pag:
+        description: "Máximo de páginas de 100 transacciones por token"
+        default: "30"
+permissions:
+  contents: write
+jobs:
+  minar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Minar
+        env:
+          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+          MAX_PAG: ${{ inputs.max_pag }}
+        run: python3 -u scripts/h21_minar.py
+      - name: Guardar resultados
+        run: |
+          git config user.name "desk-bot"; git config user.email "desk-bot@users.noreply.github.com"
+          git add datos/h21_billeteras_180d.tsv || true
+          git commit -m "Billeteras 180 d: resultados" || exit 0
+          for i in 1 2 3 4; do git pull --rebase -q && git push -q && break; sleep $((i*5)); done
