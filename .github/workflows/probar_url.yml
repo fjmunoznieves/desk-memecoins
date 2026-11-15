@@ -1,0 +1,19 @@
+name: "Probar URL (manual)"
+# Solo manual y solo lectura: muestra el código HTTP y el inicio de la respuesta de una URL pública.
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "URL pública (sin claves)"
+        required: true
+permissions:
+  contents: read
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - env:
+          U: ${{ inputs.url }}
+        run: |
+          curl -s -m 30 -A "desk-prueba/1.0" -o r.txt -w "HTTP %{http_code}\n" "$U"; head -c 1500 r.txt; echo
