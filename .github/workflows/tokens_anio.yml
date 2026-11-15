@@ -23,6 +23,6 @@ jobs:
         if: always()
         run: |
           git config user.name "desk-bot"; git config user.email "desk-bot@users.noreply.github.com"
-          git add datos/tokens_anio_resultado.tsv || true
+          git add datos/tokens_anio_resultado.tsv datos/tokens_anio_nuevas.tsv || true
           git commit -m "Análisis por token 1 año: resultados" || exit 0
           for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep $((i*7)); done

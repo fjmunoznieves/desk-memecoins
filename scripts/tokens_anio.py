@@ -115,10 +115,13 @@ def main():
             c, pags, cortado = compradores(t["pool"], t["token"], int(t["creado"]))
             return t, c, pags, cortado
 
-        filas = []
+        filas, todos = [], {}
         with ThreadPoolExecutor(3) as ex:
             for t, c, pags, cortado in ex.map(uno, toks):
                 a = sorted(w for w in c if w in A); b = sorted(w for w in c if w in B)
+                for w, bt in c.items():
+                    if w not in A and w not in B:
+                        todos.setdefault(w, []).append((t["token"], t["sym"], bt))
                 filas.append(dict(sym=t["sym"], token=t["token"], creado=time.strftime("%Y-%m-%d", time.gmtime(int(t["creado"]))),
                                   semestre="S1" if int(t["creado"]) < 1779062400 else "S2",  # 2026-05-18
                                   compradores_72h=len(c), billeteras_A=len(a), billeteras_B=len(b),
@@ -130,7 +133,13 @@ def main():
         f.update({k: v.get(f["token"], {}).get(k, "") for k in ("multiplo", "dias_al_max", "hoy_vs_max")})
     with open("datos/tokens_anio_resultado.tsv", "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(filas[0]), delimiter="\t"); w.writeheader(); w.writerows(filas)
-    print("listo:", len(filas))
+    # billeteras nuevas (ni A ni B) que aparecen entre los primeros compradores de 3 o más tokens
+    nuevas = {w: v for w, v in todos.items() if len({x[0] for x in v}) >= 3}
+    with open("datos/tokens_anio_nuevas.tsv", "w", newline="") as fh:
+        w = csv.writer(fh, delimiter="\t"); w.writerow(["billetera", "n_tokens", "tokens"])
+        for k, v in sorted(nuevas.items(), key=lambda kv: -len(kv[1])):
+            w.writerow([k, len({x[0] for x in v}), " | ".join(f"{s} {time.strftime('%Y-%m-%d', time.gmtime(bt or 0))}" for _, s, bt in v)])
+    print("listo:", len(filas), "| billeteras nuevas en 3+ tokens:", len(nuevas))
 
 
 if __name__ == "__main__":
