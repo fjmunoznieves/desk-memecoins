@@ -7,11 +7,13 @@ Datos: datos/watchlist_compras.tsv (Helius) + DexScreener (gratis). Paper tradin
 import csv, json, os, sys, time, urllib.request
 from collections import defaultdict
 
-COMPRAS = "datos/watchlist_compras.tsv"
-SALIDA = "datos/h21_consenso.tsv"
+COMPRAS = os.environ.get("COMPRAS_FILE", "datos/watchlist_compras.tsv")
+SALIDA = os.environ.get("SALIDA_FILE", "datos/h21_consenso.tsv")
+NOMBRE = os.environ.get("H_NOMBRE", "H21")
 CAMPOS = ["ts", "hora_utc", "token", "sym", "billeteras", "n", "edad_d", "precio", "mc", "liq", "p24", "c24", "p7d", "c7d", "estado"]
 VENTANA = 24 * 3600
-EDAD_MIN_H = 48
+EDAD_MIN_H = float(os.environ.get("EDAD_MIN_H", 48))
+EDAD_MAX_H = float(os.environ.get("EDAD_MAX_H", 1e9))  # H23 usa 0–72 h
 
 
 def dex(addrs):
@@ -34,7 +36,7 @@ def dex(addrs):
 
 def main():
     if not os.path.exists(COMPRAS):
-        print("H21: sin compras de la watchlist todavía")
+        print(NOMBRE, ": sin compras de la watchlist todavía")
         return
     ahora = time.time()
     filas = list(csv.DictReader(open(COMPRAS), delimiter="\t"))
@@ -64,12 +66,12 @@ def main():
         if not d or not d["creado"]:
             continue
         edad_h = (ahora * 1000 - d["creado"]) / 3.6e6
-        if edad_h < EDAD_MIN_H:
+        if edad_h < EDAD_MIN_H or edad_h > EDAD_MAX_H:
             continue  # los jóvenes van por las reglas normales (señal 3)
         previas.append({"ts": int(ahora), "hora_utc": time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora)), "token": tok, "sym": d["sym"],
                         "billeteras": ",".join(bs), "n": len(bs), "edad_d": round(edad_h / 24, 1), "precio": d["precio"],
                         "mc": round(d["mc"]), "liq": round(d["liq"]), "p24": "", "c24": "", "p7d": "", "c7d": "", "estado": "abierto"})
-        print(f"H21 nuevo: {d['sym']} {tok} ({len(bs)} billeteras, {edad_h / 24:.1f} días)")
+        print(f"{NOMBRE} nuevo: {d['sym']} {tok} ({len(bs)} billeteras, {edad_h / 24:.1f} días)")
 
     for r in previas:
         if r["estado"] != "abierto":
@@ -89,7 +91,7 @@ def main():
         w = csv.DictWriter(f, CAMPOS, delimiter="\t", extrasaction="ignore")
         w.writeheader()
         w.writerows(previas)
-    print(f"H21: {len(previas)} registrados, {sum(1 for r in previas if r['estado'] == 'abierto')} abiertos")
+    print(f"{NOMBRE}: {len(previas)} registrados, {sum(1 for r in previas if r['estado'] == 'abierto')} abiertos")
 
 
 if __name__ == "__main__":

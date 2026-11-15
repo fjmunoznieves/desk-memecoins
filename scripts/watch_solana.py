@@ -9,7 +9,10 @@ import csv, json, os, sys, time, urllib.request
 KEY = os.environ.get("HELIUS_API_KEY", "").strip()
 RPC = f"https://mainnet.helius-rpc.com/?api-key={KEY}"
 PARSE = [f"https://api-mainnet.helius-rpc.com/v0/transactions?api-key={KEY}", f"https://api.helius.xyz/v0/transactions?api-key={KEY}"]
-WL, ST, LOG, AL = "datos/watchlist_solana.tsv", "datos/watchlist_estado.json", "datos/watchlist_compras.tsv", "datos/alertas_pendientes.json"
+WL = os.environ.get("WL_FILE", "datos/watchlist_solana.tsv")
+ST = os.environ.get("ST_FILE", "datos/watchlist_estado.json")
+LOG = os.environ.get("LOG_FILE", "datos/watchlist_compras.tsv")
+AL = os.environ.get("AL_FILE", "datos/alertas_pendientes.json")
 BASE = {"So11111111111111111111111111111111111111112", "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
         "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY2yoAFsTJ9Q9Pd2", "USD1ttGY1N17NEEHLmELoaybftRBUSErhqYiQzvEmuB"}
 COLS = ["hora_utc", "ts", "billetera", "token", "cantidad", "sol_gastado", "firma"]
@@ -94,3 +97,14 @@ st["alertados"] = st["alertados"][-500:]
 json.dump(st, open(ST, "w"), indent=1)
 json.dump(alertas, open(AL, "w"), indent=1)
 print(("punto de partida fijado; " if primera else "") + f"billeteras con tx nuevas: {len(nuevas)}, compras: {len(compras)}, alertas: {len(alertas)}")
+
+# H23 (15-nov, aprobado por Fran): vigila las 129 billeteras C solo en los escaneos de 3:47 AM y 3:47 PM Bogotá
+# (8:47 y 20:47 UTC; se acepta hasta 2 h de retraso de GitHub). Solo registro, sin avisos.
+import subprocess
+if not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").startswith("Escaneo") and time.gmtime().tm_hour in (8, 9, 10, 20, 21, 22):
+    e = dict(os.environ, ES_H23="1", WL_FILE="datos/vector_C_entrenadas.tsv", ST_FILE="datos/h23_estado.json",
+             LOG_FILE="datos/h23_compras.tsv", AL_FILE="datos/h23_alertas.json")
+    subprocess.run([sys.executable, __file__], env=e, check=False)
+    e2 = dict(os.environ, H_NOMBRE="H23", COMPRAS_FILE="datos/h23_compras.tsv", SALIDA_FILE="datos/h23_consenso.tsv",
+              EDAD_MIN_H="0", EDAD_MAX_H="72")
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "h21.py")], env=e2, check=False)
