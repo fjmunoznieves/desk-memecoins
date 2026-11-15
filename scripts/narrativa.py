@@ -19,8 +19,11 @@ UA = {"User-Agent": "desk-narrativas/1.0 (paper trading, solo lectura)", "Accept
 CADENAS = {"solana": "Solana", "bsc": "BNB", "robinhood": "Robinhood"}
 LIQ_TOKEN = 1000      # mínimo para decir "ya tiene token"
 LIQ_AVISO = 30000     # mínimo para abrir aviso en H18
-MAX_TEMAS = 35        # búsquedas en DexScreener por corrida
+MAX_TEMAS = 25        # búsquedas en DexScreener por corrida
 SALIDA = "datos"
+INICIO = time.time()
+TOPE_S = 50          # segundos máximos del radar por corrida (cuida el tope de minutos)
+queda = lambda: TOPE_S - (time.time() - INICIO)
 log = lambda *a: print(*a, file=sys.stderr)
 
 
@@ -92,7 +95,7 @@ def _ngrams(titulo):
 def gdelt():
     """Titulares en inglés de las últimas 6 h; temas = nombres propios que más se repiten entre medios distintos."""
     q = urllib.parse.quote("sourcelang:english")
-    d = get(f"https://api.gdeltproject.org/api/v2/doc/doc?query={q}&mode=artlist&maxrecords=250&timespan=6h&format=json&sort=hybridrel", intentos=3)
+    d = get(f"https://api.gdeltproject.org/api/v2/doc/doc?query={q}&mode=artlist&maxrecords=250&timespan=6h&format=json&sort=hybridrel", intentos=2)
     arts = (d or {}).get("articles") or []
     cuenta, medios = collections.Counter(), collections.defaultdict(set)
     for a in arts:
@@ -156,14 +159,16 @@ def reddit_rss():
     """Sin códigos de API: feeds RSS públicos de Reddit, solo intento. Si Reddit los bloquea, lista vacía."""
     titulos = {}
     for sub in SUBS:
-        raw = get(f"https://www.reddit.com/r/{sub}/top/.rss?t=day&limit=50", tipo="raw", intentos=2)
+        if queda() < 25:
+            break
+        raw = get(f"https://www.reddit.com/r/{sub}/top/.rss?t=day&limit=50", tipo="raw", intentos=1)
         if raw:
             try:
                 ns = {"a": "http://www.w3.org/2005/Atom"}
                 titulos[sub] = [e.findtext("a:title", default="", namespaces=ns) for e in ET.fromstring(raw).findall("a:entry", ns)]
             except Exception as e:
                 log("reddit rss", sub, "no se pudo leer:", e)
-        time.sleep(6)
+        time.sleep(3)
     out = _temas_reddit(titulos)
     log("reddit rss:", len(titulos), "comunidades leídas,", len(out), "temas")
     return out
@@ -349,7 +354,10 @@ def main():
     ahora = int(time.time())
     hora = time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora))
     temas = []
-    for f in (wikipedia, gdelt, trends, reddit, chainbase, coingecko, coinmarketcap, bluesky):
+    for f in (chainbase, wikipedia, trends, coingecko, coinmarketcap, bluesky, gdelt, reddit):
+        if queda() < 20:
+            log(f.__name__, 'saltado por tiempo')
+            continue
         try:
             temas += f()
         except Exception as e:
@@ -359,8 +367,8 @@ def main():
 
     # H17: ¿el tema ya tiene token?
     for e in grupos:
-        e["token"] = buscar_token(e["tema"])
-        time.sleep(0.4)
+        e["token"] = buscar_token(e["tema"]) if queda() > 5 else None
+        time.sleep(0.3)
 
     # H18: cruce con el trending del escaneo
     try:
