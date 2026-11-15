@@ -295,6 +295,30 @@ def coincide(tema, sym, name):
     return len(palabras(tema)) <= 2 and any(w == s for w in ws)
 
 
+COMUNES = set("""about above after again against along also among another any around away back based because been before
+being below best better between big black blue board body book both bring build business call came case cause center change
+check city claim close come company could country court cream data deal denies does down during early east economy election
+energy even every face fact family fast final first found free from full game general give global going gold good great green
+ground group growth half hand happy hard have head health heart help here high hits home house however human idea into issue
+just keep kind king land large last late later launch lead leads least left less level life lifts light like line little live
+local long look lose love made major make many market media money month more most move much music must name nation national
+nationwide near need never next night north note number offer office often only open opens order other over part party past
+people place plan plans play point police power pressure price problem proposes public push quick rate real report rise road
+rock rules rumors safe said same school second security sell send service shares should show side since small social some south
+space stand start state still stock stop store story strong study such support sure system take talk team tells than that their
+them then there these they thing think this those three through time today told tower trade trump under until value very wants
+water week west what when where which while white whole will with women word work world would year years young""".split())
+
+
+def coincide_texto(texto, sym):
+    """El símbolo del token (4+ letras, poco común) aparece como palabra completa en el tema o su resumen.
+    Ej.: tema 'Nvidia… Jensen Huang…' y token JENSEN."""
+    s = clave(sym)
+    if len(s) < 4 or len(s) > 12 or s in COMUNES:
+        return False
+    return s in set(re.findall(r"[a-z0-9]+", texto.lower()))
+
+
 def buscar_token(tema):
     d = get("https://api.dexscreener.com/latest/dex/search?q=" + urllib.parse.quote(tema), intentos=1) or {}
     mejor = None
@@ -381,7 +405,8 @@ def main():
     cruces = []
     for e in grupos:
         for r in trending:
-            if not coincide(e["tema"], r.get("sym", ""), r.get("name", "")):
+            texto = e["tema"] + " " + " ".join(e.get("porque", []))
+            if not (coincide(e["tema"], r.get("sym", ""), r.get("name", "")) or coincide_texto(texto, r.get("sym", ""))):
                 continue
             fuentes = e["fuentes"] + ["trending " + (r.get("src_dur") or "")]
             c = {"ts": ahora, "hora_utc": hora, "tema": e["tema"], "fuentes": ",".join(fuentes), "cadena": r["chain"], "token": r["addr"],
