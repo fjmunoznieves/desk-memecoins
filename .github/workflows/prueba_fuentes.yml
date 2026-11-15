@@ -24,3 +24,16 @@ jobs:
             echo "HTTP $code, $(wc -c < r.txt) bytes"
             head -c 1500 r.txt; echo
           done
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - name: Radar de narrativas en seco (sin avisos ni guardado)
+        run: |
+          python3 scripts/narrativa.py
+          python3 -c "
+          import json; d=json.load(open('datos/narrativas.json'))
+          print('fuentes', d['fuentes_ok'])
+          for e in d['narrativas']: print(e['fuentes'], e['calor'], e['tema'][:60], '|', (e['token'] or {}).get('sym'), (e['token'] or {}).get('cadena'))
+          print('huecos', [h['tema'] for h in d['huecos_h19']])"
