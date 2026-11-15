@@ -132,13 +132,48 @@ def trends():
         return []
 
 
+SUBS = ("memes", "CryptoCurrency", "SatoshiStreetBets", "solana", "worldnews", "news", "popular")
+
+
+def _temas_reddit(titulos_por_sub):
+    cuenta, subs = collections.Counter(), collections.defaultdict(set)
+    for sub, titulos in titulos_por_sub.items():
+        for t in titulos:
+            for g in set(_ngrams(t)):
+                if g.lower() not in EVERGREEN:
+                    cuenta[g] += 1
+                    subs[g].add(sub)
+    out = []
+    for g, n in cuenta.most_common(40):
+        if (" " in g and n >= 2) or len(subs[g]) >= 3:
+            out.append({"tema": g, "fuente": "reddit", "calor": min(100, 35 + 10 * len(subs[g]) + 3 * n),
+                        "porque": f"en {n} posts top de Reddit ({', '.join(sorted(subs[g]))})"})
+    return out[:15]
+
+
+def reddit_rss():
+    """Sin códigos de API: feeds RSS públicos de Reddit, solo intento. Si Reddit los bloquea, lista vacía."""
+    titulos = {}
+    for sub in SUBS:
+        raw = get(f"https://www.reddit.com/r/{sub}/top/.rss?t=day&limit=50", tipo="raw", intentos=1)
+        if raw:
+            try:
+                ns = {"a": "http://www.w3.org/2005/Atom"}
+                titulos[sub] = [e.findtext("a:title", default="", namespaces=ns) for e in ET.fromstring(raw).findall("a:entry", ns)]
+            except Exception as e:
+                log("reddit rss", sub, "no se pudo leer:", e)
+        time.sleep(2)
+    out = _temas_reddit(titulos)
+    log("reddit rss:", len(titulos), "comunidades leídas,", len(out), "temas")
+    return out
+
+
 def reddit():
     """Reddit (solo si existen REDDIT_CLIENT_ID y REDDIT_CLIENT_SECRET en los secretos de GitHub; si no, se salta).
     Lectura de los posts más votados de las últimas horas en comunidades de memes, cripto y noticias."""
     cid, sec = os.environ.get("REDDIT_CLIENT_ID"), os.environ.get("REDDIT_CLIENT_SECRET")
     if not cid or not sec:
-        log("reddit saltado: sin secretos")
-        return []
+        return reddit_rss()
     import base64
     try:
         req = urllib.request.Request("https://www.reddit.com/api/v1/access_token", data=b"grant_type=client_credentials",
