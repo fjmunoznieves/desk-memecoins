@@ -2,8 +2,11 @@ name: Escaneo desk (paper)
 on:
   schedule:
     - cron: "47 8 * * *"    # 3:47 AM Bogotá
+    
     - cron: "7 14 * * *"    # 9:07 AM Bogotá
+    
     - cron: "27 17 * * *"   # 12:27 PM Bogotá (opcional: se salta si el gasto va por encima del ritmo)
+    
     - cron: "47 20 * * *"   # 3:47 PM Bogotá
   workflow_dispatch: {}
 permissions:
