@@ -1,0 +1,35 @@
+name: "Vector de billeteras 1 año (manual)"
+# Solo manual y solo lectura (Helius): 1 año de operaciones de la muestra A (289) y B (148), por separado.
+on:
+  workflow_dispatch:
+    inputs:
+      max_pag:
+        description: "Páginas de 100 transacciones por billetera"
+        default: "20"
+permissions:
+  contents: write
+jobs:
+  vector:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    strategy:
+      fail-fast: false
+      matrix:
+        muestra: [A_289, B_148]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Vector ${{ matrix.muestra }}
+        env:
+          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+          MAX_PAG: ${{ inputs.max_pag }}
+          HILOS: "3"
+          BILLETERAS: datos/vector_${{ matrix.muestra }}.tsv
+          SALIDA: datos/vector_ops_${{ matrix.muestra }}.tsv
+        run: python3 -u scripts/vector_billeteras.py
+      - name: Guardar resultados
+        if: always()
+        run: |
+          git config user.name "desk-bot"; git config user.email "desk-bot@users.noreply.github.com"
+          git add datos/vector_ops_*.tsv || true
+          git commit -m "Vector ${{ matrix.muestra }}: resultados" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep $((i*7)); done
