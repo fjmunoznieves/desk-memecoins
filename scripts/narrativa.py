@@ -3,6 +3,7 @@
 H17 · temas calientes de fuentes gratis y sin clave:
       Wikipedia pageviews (lo más visto ayer vs anteayer), GDELT DOC (titulares de las últimas 6 h)
       y Google Trends (RSS público, solo intento: si falla se salta).
+      Reddit solo si existen los secretos REDDIT_CLIENT_ID/REDDIT_CLIENT_SECRET.
       Para cada tema, búsqueda en DexScreener: ¿ya tiene token en Solana, BNB o Robinhood?
 H18 · cruce con el trending 5m/1h/24h del escaneo (rows.json). Solo avisa si coinciden 2 fuentes
       (una narrativa + el trending, o dos narrativas) y el token pasa liquidez ≥ 30k y seguridad.
@@ -131,6 +132,47 @@ def trends():
         return []
 
 
+def reddit():
+    """Reddit (solo si existen REDDIT_CLIENT_ID y REDDIT_CLIENT_SECRET en los secretos de GitHub; si no, se salta).
+    Lectura de los posts más votados de las últimas horas en comunidades de memes, cripto y noticias."""
+    cid, sec = os.environ.get("REDDIT_CLIENT_ID"), os.environ.get("REDDIT_CLIENT_SECRET")
+    if not cid or not sec:
+        log("reddit saltado: sin secretos")
+        return []
+    import base64
+    try:
+        req = urllib.request.Request("https://www.reddit.com/api/v1/access_token", data=b"grant_type=client_credentials",
+                                     headers={"User-Agent": UA["User-Agent"],
+                                              "Authorization": "Basic " + base64.b64encode(f"{cid}:{sec}".encode()).decode()})
+        with urllib.request.urlopen(req, timeout=25) as r:
+            tok = json.load(r)["access_token"]
+    except Exception as e:
+        log("reddit sin token:", getattr(e, "code", e))
+        return []
+    hdr = {"User-Agent": UA["User-Agent"], "Authorization": "bearer " + tok}
+    cuenta, subs = collections.Counter(), collections.defaultdict(set)
+    for sub in ("memes", "CryptoCurrency", "SatoshiStreetBets", "solana", "worldnews", "news", "popular"):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(f"https://oauth.reddit.com/r/{sub}/top?t=day&limit=50", headers=hdr), timeout=25) as r:
+                posts = json.load(r)["data"]["children"]
+        except Exception as e:
+            log("reddit", sub, getattr(e, "code", e))
+            continue
+        for p in posts:
+            for g in set(_ngrams(p["data"].get("title", ""))):
+                if g.lower() not in EVERGREEN:
+                    cuenta[g] += 1
+                    subs[g].add(sub)
+        time.sleep(1)
+    out = []
+    for g, n in cuenta.most_common(40):
+        if (" " in g and n >= 2) or len(subs[g]) >= 3:
+            out.append({"tema": g, "fuente": "reddit", "calor": min(100, 35 + 10 * len(subs[g]) + 3 * n),
+                        "porque": f"en {n} posts top de Reddit ({', '.join(sorted(subs[g]))})"})
+    log("reddit", len(out), "temas")
+    return out[:15]
+
+
 def clave(t):
     return re.sub(r"[^a-z0-9]", "", t.lower())
 
@@ -210,7 +252,7 @@ def main():
     ahora = int(time.time())
     hora = time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora))
     temas = []
-    for f in (wikipedia, gdelt, trends):
+    for f in (wikipedia, gdelt, trends, reddit):
         try:
             temas += f()
         except Exception as e:

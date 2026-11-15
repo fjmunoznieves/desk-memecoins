@@ -72,6 +72,8 @@ jobs:
         timeout-minutes: 3
         env:
           GH_TOKEN: ${{ github.token }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
         run: python3 scripts/narrativa.py
       - name: Billeteras BNB/Robinhood (solo en el de 3:47 AM)
         if: github.event.schedule == '47 8 * * *'
