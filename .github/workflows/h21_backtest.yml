@@ -6,12 +6,15 @@ on:
       limite:
         description: "Cuántos tokens probar"
         default: "20"
+      desde:
+        description: "Desde qué token (0 = el primero)"
+        default: "0"
 permissions:
   contents: write
 jobs:
   backtest:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - run: pip install -q solders
@@ -19,6 +22,7 @@ jobs:
         env:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
           LIMITE: ${{ inputs.limite }}
+          DESDE: ${{ inputs.desde }}
         run: python3 -u scripts/h21_backtest.py
       - name: Guardar resultados
         run: |
