@@ -16,3 +16,10 @@ jobs:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
           ALCHEMY_API_KEY: ${{ inputs.fuente == 'alchemy' && secrets.ALCHEMY_API_KEY || '' }}
         run: python3 scripts/prueba_compra.py
+      - name: Prueba foto de cartera (5 billeteras A, dos pasadas)
+        env:
+          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+        run: |
+          head -6 datos/watchlist_A_oper.tsv > /tmp/wl.tsv
+          for i in 1 2; do CARTERA=1 ES_H23=1 WL_FILE=/tmp/wl.tsv ST_FILE=/tmp/st.json LOG_FILE=/tmp/log.tsv AL_FILE=/tmp/al.json python3 scripts/watch_solana.py; done
+          python3 -c "import json;d=json.load(open('/tmp/st.json'));print({w[:6]:len(v) for w,v in d['cartera'].items()})"

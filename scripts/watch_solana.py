@@ -43,8 +43,9 @@ if not KEY:
 wl = [r["direccion"] for r in csv.DictReader(open(WL), delimiter="\t")]
 st = json.load(open(ST)) if os.path.exists(ST) else {"ultima": {}, "alertados": []}
 primera = not st["ultima"]
+CARTERA = bool(os.environ.get("CARTERA"))  # 16-nov (Fran, freno Helius): foto de cartera en vez de leer transacciones
 nuevas = {}
-for w in wl:
+for w in ([] if CARTERA else wl):
     try:
         d = post(RPC, {"jsonrpc": "2.0", "id": 1, "method": "getSignaturesForAddress", "params": [w, {"limit": 50}]})
     except Exception as e:
@@ -102,14 +103,75 @@ def compra_de(t, w):
                  cantidad=v, sol_gastado=round(sol, 3), firma=t["transaction"]["signatures"][0]) for m, v in got]
 
 
-NTX = 0
-for w, sigs in nuevas.items():
-    for sg in sigs:
-        t = tx_rpc(sg); NTX += 1
-        if t:
-            compras += compra_de(t, w)
-        time.sleep(0.05 if ALC else 0.11)
-print(f"getTransaction: {NTX} ({'Alchemy' if ALC else 'Helius RPC, 1 crédito c/u'})")
+TOKEN_PROGS = ["TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA", "TokenzQdBNbLqP5VEhdkAS6EPFLC1PazdAEnB3Ts7Dmw"]
+
+
+def foto(w):
+    """Saldos de todos los tokens de la billetera (2 consultas: Token y Token-2022). None si falla."""
+    out = {}
+    for prog in TOKEN_PROGS:
+        try:
+            r = post(RPC, {"jsonrpc": "2.0", "id": 1, "method": "getTokenAccountsByOwner",
+                           "params": [w, {"programId": prog}, {"encoding": "jsonParsed"}]}).get("result") or {}
+        except Exception as e:
+            print("foto error", w[:6], safe(e)[:80]); return None
+        for acc in r.get("value") or []:
+            inf = acc["account"]["data"]["parsed"]["info"]
+            v = float(inf["tokenAmount"]["uiAmount"] or 0)
+            if v > 0 and inf["mint"] not in BASE:
+                out[inf["mint"]] = out.get(inf["mint"], 0) + v
+    return out
+
+
+def precios(mints):
+    px = {}
+    ms = list(mints)
+    for i in range(0, len(ms), 30):
+        try:
+            req = urllib.request.Request("https://api.dexscreener.com/tokens/v1/solana/" + ",".join(ms[i:i + 30]), headers={"User-Agent": "desk-scan"})
+            for p in json.load(urllib.request.urlopen(req, timeout=25)):
+                m = p["baseToken"]["address"]
+                liq = (p.get("liquidity") or {}).get("usd") or 0
+                if m not in px or liq > px[m][1]:
+                    px[m] = (float(p.get("priceUsd") or 0), liq)
+        except Exception as e:
+            print("dexscreener", str(e)[:60])
+        time.sleep(0.25)
+    return {m: v[0] for m, v in px.items()}
+
+
+if CARTERA:
+    # Compra = un token nuevo o que sube ≥10 % frente a la foto anterior (entre escaneos). Venta = baja (queda en la foto).
+    prev = st.setdefault("cartera", {})
+    subidas, ahora = [], int(time.time())
+    for w in wl:
+        f = foto(w); time.sleep(0.1)
+        if f is None:
+            continue
+        p0 = prev.get(w)
+        if p0 is not None:
+            for m, v in f.items():
+                antes = p0.get(m, 0)
+                if v > antes * 1.1:
+                    subidas.append((w, m, v - antes))
+        prev[w] = {m: round(v, 6) for m, v in f.items()}
+    px = precios({m for _, m, _ in subidas}) if subidas else {}
+    sol_px = precios(["So11111111111111111111111111111111111111112"]).get("So11111111111111111111111111111111111111112") or 0
+    for w, m, dv in subidas:
+        usd = dv * px.get(m, 0)
+        compras.append(dict(hora_utc=time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora)), ts=ahora, billetera=w, token=m,
+                            cantidad=round(dv, 6), sol_gastado=round(usd / sol_px, 3) if sol_px else "", firma="foto"))
+    print(f"cartera: {len(wl)} billeteras, {2 * len(wl)} consultas, {len(subidas)} subidas de saldo")
+else:
+    NTX = 0
+    for w, sigs in nuevas.items():
+        for sg in sigs:
+            t = tx_rpc(sg); NTX += 1
+            if t:
+                compras += compra_de(t, w)
+            time.sleep(0.05 if ALC else 0.11)
+    print(f"getTransaction: {NTX} ({'Alchemy' if ALC else 'Helius RPC, 1 crédito c/u'})")
+
 
 if compras:
     nuevo = not os.path.exists(LOG)
