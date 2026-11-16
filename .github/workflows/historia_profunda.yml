@@ -1,0 +1,37 @@
+name: "Historia completa 1 año (manual, por lotes)"
+# 16-nov (Fran): historia completa de los 40 mejores operadores sin bots, por partes y dentro del plan gratis de Helius.
+# Solo manual y solo lectura. getTransactionsForAddress cuesta 100 créditos por página de 100 transacciones.
+on:
+  workflow_dispatch:
+    inputs:
+      lote:
+        description: "Filas de datos/historia_40.tsv, p. ej. 0-9"
+        default: "0-9"
+      max_pag:
+        description: "Tope de páginas por billetera (100 créditos cada una)"
+        default: "40"
+permissions:
+  contents: write
+jobs:
+  historia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Historia lote ${{ inputs.lote }}
+        env:
+          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+          PROFUNDO: "1"
+          LOTE: ${{ inputs.lote }}
+          MAX_PAG: ${{ inputs.max_pag }}
+          HILOS: "2"
+          BILLETERAS: datos/historia_40.tsv
+          SALIDA: datos/vector_profundo.tsv
+        run: python3 -u scripts/vector_billeteras.py
+      - name: Guardar resultados
+        if: always()
+        run: |
+          git config user.name "desk-bot"; git config user.email "desk-bot@users.noreply.github.com"
+          git add datos/vector_profundo.tsv || true
+          git commit -m "Historia completa: lote ${{ inputs.lote }}" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep $((i*7)); done

@@ -122,3 +122,5 @@ if not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").starts
 # Foto de saldos (16-nov, aprobado por Fran): a las 3:47 AM y PM, después de H22/H23/H24. Solo registro.
 if not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").startswith("Escaneo") and time.gmtime().tm_hour in (8, 9, 10, 20, 21, 22):
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "fotos_saldos.py")], check=False)
+    # Salidas en sombra (16-nov, aprobado por Fran): escalonada, "copiar A" y consenso por operadores. Solo registro.
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "salidas.py")], check=False)

@@ -51,6 +51,10 @@ def claves(tx):
     return out + (la.get("writable") or []) + (la.get("readonly") or [])
 
 
+LLAMADAS = [0]
+HASTA = {}  # modo profundo: billetera -> ts más antiguo ya leído (se pide solo lo anterior)
+
+
 def procesar(fila):
     w, bot = fila
     desde = int(time.time()) - DIAS * 86400
@@ -61,9 +65,12 @@ def procesar(fila):
         opts = {"transactionDetails": "full", "sortOrder": "desc", "limit": 100, "encoding": "jsonParsed",
                 "maxSupportedTransactionVersion": 1,
                 "filters": {"blockTime": {"gte": desde}, "status": "succeeded"}}
+        if w in HASTA:
+            opts["filters"]["blockTime"]["lt"] = HASTA[w]
         if token:
             opts["paginationToken"] = token
         r = rpc("getTransactionsForAddress", [w, opts])
+        LLAMADAS[0] += 1
         if not r:
             break
         for tx in r.get("data") or []:
@@ -114,6 +121,19 @@ def procesar(fila):
 
 def main():
     ws = [(r["direccion"], r.get("bot") == "sí") for r in csv.DictReader(open(os.environ["BILLETERAS"]), delimiter="\t")]
+    lote = os.environ.get("LOTE", "")  # "0-9" = filas 0 a 9 de la lista
+    if lote:
+        a, b = (int(x) for x in lote.split("-"))
+        ws = ws[a:b + 1]
+    if os.environ.get("PROFUNDO"):
+        # 16-nov (Fran): historia completa del año, por partes. Solo se piden las transacciones anteriores a lo que
+        # ya teníamos en vector_ops_A_289 / B_148 (y a lo ya bajado en lotes previos).
+        for f in ("datos/vector_ops_A_289.tsv", "datos/vector_ops_B_148.tsv", os.environ["SALIDA"]):
+            if os.path.exists(f):
+                for r in csv.DictReader(open(f), delimiter="\t"):
+                    for c in ("primera_compra", "ultima"):
+                        if r.get(c):
+                            HASTA[r["billetera"]] = min(HASTA.get(r["billetera"], 10 ** 12), int(r[c]))
     print(f"billeteras: {len(ws)}, {DIAS} días, máx {MAX_PAG} páginas", flush=True)
     filas = []
     with ThreadPoolExecutor(HILOS) as ex:
@@ -125,9 +145,15 @@ def main():
                                   primera_compra=a["primera"] or "", ultima=a["ultima"] or "",
                                   historial_cortado="sí" if cortado else "no"))
             print(f"{w[:8]}  {ntx:5} tx  {len(agg):4} tokens  {pags} págs{'  (cortado)' if cortado else ''}", flush=True)
-    with open(os.environ["SALIDA"], "w", newline="") as f:
-        wr = csv.DictWriter(f, fieldnames=list(filas[0]) if filas else ["billetera"], delimiter="\t")
-        wr.writeheader(); wr.writerows(filas)
+    modo_ag = os.environ.get("PROFUNDO") and os.path.exists(os.environ["SALIDA"])
+    with open(os.environ["SALIDA"], "a" if modo_ag else "w", newline="") as f:
+        campos = ["billetera", "token", "sol_in", "sol_out", "pnl_sol", "usd_in", "usd_out", "pnl_usd", "compras", "ventas",
+                  "primera_compra", "ultima", "historial_cortado"]
+        wr = csv.DictWriter(f, fieldnames=campos, delimiter="\t")
+        if not modo_ag:
+            wr.writeheader()
+        wr.writerows(filas)
+    print(f"consultas Helius aprox: {LLAMADAS[0]} (≈{LLAMADAS[0] * 100} créditos)")
     print(f"filas billetera×token: {len(filas)}; tokens distintos: {len({x['token'] for x in filas})}")
 
 
