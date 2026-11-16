@@ -17,7 +17,9 @@ for r in filas:
     hit = any(x["token"] == r["token"] for x in c)
     ok += hit
     if not hit:
-        if not t: print("   sin tx (None)")
+        if not t:
+            raw = ns["post"](ns["RPC_TX"], {"jsonrpc": "2.0", "id": 1, "method": "getTransaction", "params": [r["firma"].strip(), {"encoding": "jsonParsed", "maxSupportedTransactionVersion": 0}]})
+            print("   sin tx:", repr(r["firma"][-6:]), ns["safe"](json.dumps(raw))[:200])
         else:
             m = t.get("meta") or {}
             print("   err", m.get("err"), "tb", [(b.get("owner","")[:6], b["mint"][:6], b["uiTokenAmount"].get("uiAmount")) for b in (m.get("postTokenBalances") or []) if r["token"] == b["mint"]][:4])
