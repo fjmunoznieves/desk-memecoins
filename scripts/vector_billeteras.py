@@ -52,6 +52,7 @@ def claves(tx):
 
 
 LLAMADAS = [0]
+TOPE_TOTAL = int(os.environ.get("TOPE_CONSULTAS") or 10 ** 9)  # freno de créditos por corrida (100 c/u)
 HASTA = {}  # modo profundo: billetera -> ts más antiguo ya leído (se pide solo lo anterior)
 
 
@@ -61,7 +62,7 @@ def procesar(fila):
     agg = defaultdict(lambda: {"sol_in": 0.0, "sol_out": 0.0, "usd_in": 0.0, "usd_out": 0.0, "compras": 0, "ventas": 0, "primera": None, "ultima": None})
     token, pags, ntx = None, 0, 0
     tope = 5 if bot else MAX_PAG  # los bots tienen miles de tx al día: solo una muestra
-    while pags < tope:
+    while pags < tope and LLAMADAS[0] < TOPE_TOTAL:
         opts = {"transactionDetails": "full", "sortOrder": "desc", "limit": 100, "encoding": "jsonParsed",
                 "maxSupportedTransactionVersion": 1,
                 "filters": {"blockTime": {"gte": desde}, "status": "succeeded"}}

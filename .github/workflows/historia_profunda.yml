@@ -4,9 +4,15 @@ name: "Historia completa 1 año (manual, por lotes)"
 on:
   workflow_dispatch:
     inputs:
+      lista:
+        description: "Lista: datos/historia_40.tsv, datos/historia_A.tsv, datos/historia_B.tsv o datos/historia_C.tsv"
+        default: "datos/historia_40.tsv"
       lote:
-        description: "Filas de datos/historia_40.tsv, p. ej. 0-9"
+        description: "Filas de la lista, p. ej. 0-9"
         default: "0-9"
+      tope_consultas:
+        description: "Freno total de consultas Helius en esta corrida (100 créditos c/u)"
+        default: "1500"
       max_pag:
         description: "Tope de páginas por billetera (100 créditos cada una)"
         default: "40"
@@ -15,17 +21,18 @@ permissions:
 jobs:
   historia:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
-      - name: Historia lote ${{ inputs.lote }}
+      - name: Historia ${{ inputs.lista }} lote ${{ inputs.lote }}
         env:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
           PROFUNDO: "1"
           LOTE: ${{ inputs.lote }}
           MAX_PAG: ${{ inputs.max_pag }}
           HILOS: "2"
-          BILLETERAS: datos/historia_40.tsv
+          BILLETERAS: ${{ inputs.lista }}
+          TOPE_CONSULTAS: ${{ inputs.tope_consultas }}
           SALIDA: datos/vector_profundo.tsv
         run: python3 -u scripts/vector_billeteras.py
       - name: Guardar resultados
@@ -33,5 +40,5 @@ jobs:
         run: |
           git config user.name "desk-bot"; git config user.email "desk-bot@users.noreply.github.com"
           git add datos/vector_profundo.tsv || true
-          git commit -m "Historia completa: lote ${{ inputs.lote }}" || exit 0
+          git commit -m "Historia completa: ${{ inputs.lista }} lote ${{ inputs.lote }}" || exit 0
           for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep $((i*7)); done
