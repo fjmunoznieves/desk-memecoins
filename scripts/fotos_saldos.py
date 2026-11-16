@@ -51,6 +51,10 @@ def main():
         if r["estado"] == "abierto": add(r["token"], "H22", r["sym"], {"B": r["billeteras_B"].split(",")})
     for r in leer("datos/h24_pool_acciones.tsv"):
         if r["estado"] == "abierto" and r["cadena"] == "solana": add(r["token"], "H24", r["sym"])
+    # 16-nov: también los tokens que nuestras A sostienen y subieron (alertas_sostenidas, últimos 7 días)
+    for r in leer("datos/alertas_sostenidas.tsv"):
+        if time.time() - int(r["ts"]) < 7 * 86400:
+            add(r["token"], "SOST", r["sym"])
     precios = {}
     lista = list(toks)
     for i in range(0, len(lista), 30):
