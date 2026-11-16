@@ -43,6 +43,9 @@ def senales():
         vistos.add(r["token"])
         out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip="SOST", cadena="solana", token=r["token"], sym=r["sym"],
                         precio=r["precio"], n_billeteras=len(r["billeteras"].split(",")), n_oper=r["operadores"], c24="", c7d="", pool=""))
+    for r in leer("datos/seguimiento.tsv"):  # 16-nov: puntos de seguimiento (consenso A con saldo real)
+        out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip="SEG", cadena="solana", token=r["token"], sym=r["sym"],
+                        precio=r["precio"], n_billeteras=len(r["billeteras"].split(",")), n_oper="", c24="", c7d="", pool=""))
     return out
 
 

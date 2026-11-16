@@ -55,6 +55,9 @@ def main():
     for r in leer("datos/alertas_sostenidas.tsv"):
         if time.time() - int(r["ts"]) < 7 * 86400:
             add(r["token"], "SOST", r["sym"])
+    # 16-nov: puntos de seguimiento (tokens con ≥3 operadores A dentro, saldo real verificado)
+    for r in leer("datos/seguimiento.tsv"):
+        add(r["token"], "SEG", r["sym"], {"A": r["billeteras"].split(",")})
     precios = {}
     lista = list(toks)
     for i in range(0, len(lista), 30):
