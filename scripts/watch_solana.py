@@ -151,14 +151,16 @@ if CARTERA:
         p0 = prev.get(w)
         if p0 is not None:
             for m, v in f.items():
-                antes = p0.get(m, 0)
-                if v > antes * 1.1:
+                antes = p0.get(m[:12], 0)
+                if v > antes * 1.1 + 1e-9:
                     subidas.append((w, m, v - antes))
-        prev[w] = {m: round(v, 6) for m, v in f.items()}
+        prev[w] = {m[:12]: float("%.4g" % v) for m, v in f.items()}  # clave corta y 4 cifras: el estado se guarda en git
     px = precios({m for _, m, _ in subidas}) if subidas else {}
     sol_px = precios(["So11111111111111111111111111111111111111112"]).get("So11111111111111111111111111111111111111112") or 0
     for w, m, dv in subidas:
         usd = dv * px.get(m, 0)
+        if usd < 5:  # polvo o tokens sin precio
+            continue
         compras.append(dict(hora_utc=time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora)), ts=ahora, billetera=w, token=m,
                             cantidad=round(dv, 6), sol_gastado=round(usd / sol_px, 3) if sol_px else "", firma="foto"))
     print(f"cartera: {len(wl)} billeteras, {2 * len(wl)} consultas, {len(subidas)} subidas de saldo")
