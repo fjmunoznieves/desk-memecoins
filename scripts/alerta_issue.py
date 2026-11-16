@@ -9,3 +9,6 @@ for a in json.load(open("datos/alertas_pendientes.json")):
 
 # H21 (nov-15): consenso de la watchlist en tokens maduros. Corre aquí para no tocar los horarios.
 subprocess.run(["python3", "scripts/h21.py"], check=False)
+
+# Vigilancia de posiciones abiertas de A (16-nov, caso BLOB): avisa si sube un token que nuestras A aún sostienen.
+subprocess.run(["python3", "scripts/vigila_sostenidas.py"], check=False)
