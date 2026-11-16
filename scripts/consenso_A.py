@@ -74,7 +74,7 @@ def main():
         if not p:
             continue
         mc = p.get("marketCap") or p.get("fdv") or 0
-        if mc > MC_MAX or ((p.get("liquidity") or {}).get("usd") or 0) < LIQ_MIN:
+        if not mc or mc > MC_MAX or ((p.get("liquidity") or {}).get("usd") or 0) < LIQ_MIN:
             continue
         d = por[t]
         filas.append(dict(ts=ahora, hora_utc=hora, token=t, sym=p["baseToken"]["symbol"], precio=p.get("priceUsd") or "",
