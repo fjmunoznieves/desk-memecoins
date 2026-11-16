@@ -15,3 +15,12 @@ subprocess.run(["python3", "scripts/vigila_sostenidas.py"], check=False)
 
 # Consenso A en vivo (16-nov): abre el aviso de lo que dejó consenso_A.py.
 subprocess.run(["python3", "scripts/consenso_A.py"], check=False)
+
+# CONTROL de la foto de cartera (16-nov, Fran): si no coincide con las fotos de saldos, abre aviso.
+import os as _os, json as _json
+if _os.path.exists("datos/control_cartera_falla.json") and _os.environ.get("GITHUB_REPOSITORY"):
+    f = _json.load(open("datos/control_cartera_falla.json"))
+    r = subprocess.run(["gh", "issue", "create", "--repo", _os.environ["GITHUB_REPOSITORY"], "--title", "CONTROL: la foto de cartera no coincide con las fotos de saldos",
+                        "--body", "\n".join(f"- {x['lista']}: {x['coinciden']} de {x['total']} posiciones coinciden" for x in f) + "\n\nRevisar watch_solana.py (modo CARTERA) antes de confiar en consenso A, H22 y H23."], check=False)
+    if r.returncode == 0:
+        _os.remove("datos/control_cartera_falla.json")

@@ -182,6 +182,28 @@ if CARTERA:
             for w, k, dv, v in bajadas:
                 wv.writerow([time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora)), ahora, w, k, "%.4g" % dv, "%.4g" % v, "si" if v == 0 else "no"])
     print(f"cartera: {len(wl)} billeteras, {2 * len(wl)} consultas, {len(subidas)} subidas y {len(bajadas)} bajadas de saldo")
+    # CONTROL (16-nov, Fran): la foto de cartera debe coincidir con las fotos de saldos directas (fotos_saldos.py, que consulta
+    # token por token). Sin consultas extra. Si coincide menos del 90 %, se registra la falla y se abre aviso.
+    try:
+        fs = list(csv.DictReader(open("datos/fotos_saldos.tsv"), delimiter="\t"))
+        ult = max(int(r["ts"]) for r in fs)
+        en_wl = set(wl)
+        pares = {(r["billetera"], r["token"]) for r in fs if int(r["ts"]) == ult and r["billetera"] in en_wl and float(r["usd"] or 0) >= 20}
+        ok = sum(1 for w, t in pares if w in prev and t[:12] in prev[w])
+        pct = round(100 * ok / len(pares), 1) if pares else None
+        estado_c = "sin datos" if pct is None else ("ok" if pct >= 90 else "FALLA")
+        print(f"CONTROL cartera vs fotos de saldos: {ok}/{len(pares)} posiciones coinciden ({pct} %) → {estado_c}")
+        nuevo_c = not os.path.exists("datos/control_cartera.tsv")
+        with open("datos/control_cartera.tsv", "a", newline="") as fc:
+            if nuevo_c:
+                fc.write("hora_utc\tlista\tcoinciden\ttotal\tpct\testado\n")
+            fc.write(f"{time.strftime('%Y-%m-%d %H:%M', time.gmtime(ahora))}\t{os.path.basename(WL)}\t{ok}\t{len(pares)}\t{pct}\t{estado_c}\n")
+        if estado_c == "FALLA":
+            json.dump([{"control": "cartera", "lista": os.path.basename(WL), "coinciden": ok, "total": len(pares)}],
+                      open("datos/control_cartera_falla.json", "w"))
+    except Exception as e:
+        print("control cartera no se pudo calcular:", str(e)[:80])
+
 else:
     from concurrent.futures import ThreadPoolExecutor
     pares = [(w, sg) for w, sigs in nuevas.items() for sg in sigs]
