@@ -36,6 +36,13 @@ def senales():
             out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip=hip, cadena=r.get("cadena") or "solana", token=r["token"],
                             sym=r["sym"], precio=r["precio"], n_billeteras=n, n_oper=r.get(col_o, ""),
                             c24=r.get("c24", ""), c7d=r.get("c7d", ""), pool=r.get("pool", "")))
+    vistos = set()
+    for r in leer("datos/alertas_sostenidas.tsv"):  # 16-nov: tokens que nuestras A sostienen y suben
+        if r["token"] in vistos:
+            continue
+        vistos.add(r["token"])
+        out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip="SOST", cadena="solana", token=r["token"], sym=r["sym"],
+                        precio=r["precio"], n_billeteras=len(r["billeteras"].split(",")), n_oper=r["operadores"], c24="", c7d="", pool=""))
     return out
 
 
