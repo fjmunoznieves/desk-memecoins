@@ -378,7 +378,9 @@ def main():
     ahora = int(time.time())
     hora = time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora))
     temas = []
-    for f in (chainbase, wikipedia, trends, coingecko, coinmarketcap, bluesky, gdelt, reddit):
+    # 16-nov (Fran): GDELT y Reddit fuera (429 desde GitHub y casi todo noticia general). Wikipedia y Trends quedan
+    # solo como contexto: no abren aviso por sí solas; el aviso H18 exige al menos una fuente cripto.
+    for f in (chainbase, coingecko, coinmarketcap, bluesky, wikipedia, trends):
         if queda() < 10:
             log(f.__name__, 'saltado por tiempo')
             continue
@@ -390,7 +392,7 @@ def main():
     grupos = agrupar(temas)[:MAX_TEMAS]
 
     # H17: ¿el tema ya tiene token?
-    cripto = ("coingecko", "coinmarketcap", "x_chainbase")
+    cripto = ("coingecko", "coinmarketcap", "x_chainbase", "bluesky")
     for e in sorted(grupos, key=lambda e: not any(f in cripto for f in e["fuentes"])):
         e["token"] = buscar_token(e["tema"]) if queda() > 2 else None
         time.sleep(0.25)
@@ -402,6 +404,13 @@ def main():
         filas = []
     trending = [r for r in filas if r.get("trending")]
     ya = recientes_h18()
+    try:  # 16-nov: cruce con nuestras billeteras (operadores reales sin bots)
+        sys.path.insert(0, os.path.dirname(__file__))
+        from h24 import billeteras
+        from operadores import n_operadores
+        W = billeteras()
+    except Exception:
+        W, n_operadores = {}, (lambda x: 0)
     cruces = []
     for e in grupos:
         for r in trending:
@@ -411,7 +420,10 @@ def main():
             fuentes = e["fuentes"] + ["trending " + (r.get("src_dur") or "")]
             c = {"ts": ahora, "hora_utc": hora, "tema": e["tema"], "fuentes": ",".join(fuentes), "cadena": r["chain"], "token": r["addr"],
                  "sym": r["sym"], "liq": round(r.get("liq") or 0), "mc": round(r.get("mc") or 0), "c1": r.get("c1"), "seguridad": "", "aviso": "no"}
-            if len(fuentes) >= 2 and c["liq"] >= LIQ_AVISO and (r["chain"], r["addr"]) not in ya:
+            w = W.get(r["addr"], {})
+            c["nuestras"] = f"A{n_operadores(w.get('A', ()))} B{n_operadores(w.get('B', ()))} C{n_operadores(w.get('C', ()))}"
+            if (len(fuentes) >= 2 and any(f in cripto for f in e["fuentes"]) and c["liq"] >= LIQ_AVISO
+                    and (r["chain"], r["addr"]) not in ya):
                 try:
                     sys.path.insert(0, os.path.dirname(__file__))
                     from seguridad import revisar
@@ -427,6 +439,7 @@ def main():
                         f"- Token: {r['sym']} en {cad}", f"- Contrato: `{r['addr']}`",
                         f"- DexScreener: https://dexscreener.com/{r['chain']}/{r['addr']}",
                         f"- Fuentes que coinciden: {', '.join(fuentes)}",
+                        f"- Nuestros operadores que lo han tocado (sin bots): {c['nuestras']}",
                         f"- Liquidez: {c['liq']:,} USD | MC: {c['mc']:,} USD | Precio 1 h: {r.get('c1')}%",
                         "", "Una narrativa caliente no es señal de entrada: aplica filtros 5.x y 2 de 3 señales."])
                     res = subprocess.run(["gh", "issue", "create", "--title", f"H18 narrativa: {e['tema']} → {r['sym']} ({cad})", "--body", cuerpo])
@@ -447,7 +460,7 @@ def main():
                                     "porque": " | ".join(e["porque"]), "tiene_token": "si" if e["token"] else "no",
                                     **({k: e["token"][k] for k in ("cadena", "token", "sym", "liq")} if e["token"] else {})} for e in grupos],
            ["ts", "hora_utc", "tema", "fuentes", "calor", "porque", "tiene_token", "cadena", "token", "sym", "liq"])
-    anexar("h18_cruces.tsv", cruces, ["ts", "hora_utc", "tema", "fuentes", "cadena", "token", "sym", "liq", "mc", "c1", "seguridad", "aviso"])
+    anexar("h18_cruces.tsv", cruces, ["ts", "hora_utc", "tema", "fuentes", "cadena", "token", "sym", "liq", "mc", "c1", "seguridad", "aviso", "nuestras"])
     anexar("h19_huecos.tsv", huecos, ["ts", "hora_utc", "tema", "fuentes", "calor", "porque", "idea"])
     print(f"H17 temas {len(grupos)} (fuentes: {', '.join(sorted({t['fuente'] for t in temas})) or 'ninguna'}) | "
           f"con token {sum(1 for e in grupos if e['token'])} | H18 cruces {len(cruces)} avisos {sum(1 for c in cruces if c['aviso'] == 'si')} | H19 huecos {len(huecos)}")
