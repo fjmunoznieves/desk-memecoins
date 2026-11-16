@@ -10,6 +10,9 @@ on:
       lote:
         description: "Filas de la lista, p. ej. 0-9"
         default: "0-9"
+      dias:
+        description: "Días hacia atrás (365 = año completo; 60 = dos meses)"
+        default: "60"
       tope_consultas:
         description: "Freno total de consultas Helius en esta corrida (100 créditos c/u)"
         default: "1500"
@@ -28,6 +31,7 @@ jobs:
         env:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
           PROFUNDO: "1"
+          DIAS: ${{ inputs.dias }}
           LOTE: ${{ inputs.lote }}
           MAX_PAG: ${{ inputs.max_pag }}
           HILOS: "2"
