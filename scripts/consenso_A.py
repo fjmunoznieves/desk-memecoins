@@ -46,13 +46,15 @@ def main():
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "watch_solana.py")], env=e, check=False)
     m = mapa()
     ahora = int(time.time())
-    por = defaultdict(dict)  # token -> operador -> (billetera, ts)
+    por = defaultdict(dict)
+    todas = defaultdict(lambda: defaultdict(set))  # token -> operador -> billeteras  # token -> operador -> (billetera, ts)
     for r in leer(LOG):
         if ahora - int(r["ts"]) > VENTANA or float(r.get("sol_gastado") or 0) < SOL_MIN:
             continue
         op, bot = m.get(r["billetera"], (r["billetera"][:6], False))
         if not bot:
             por[r["token"]].setdefault(op, (r["billetera"], int(r["ts"])))
+            todas[r["token"]][op].add(r["billetera"])
     ya = {r["token"] for r in leer(SEG)}
     cand = [t for t, d in por.items() if len(d) >= 2 and t not in ya]
     if not cand:
@@ -77,6 +79,19 @@ def main():
         if not mc or mc > MC_MAX or ((p.get("liquidity") or {}).get("usd") or 0) < LIQ_MIN:
             continue
         d = por[t]
+        # 16-nov (casos COGE, Zelleinu, Lemon…): solo avisa si 2+ operadores SIGUEN dentro (saldo real ≥20 USD, Helius)
+        from vigila_sostenidas import saldo_usd
+        precio = float(p.get("priceUsd") or 0)
+        vivos = {}
+        for op, ws in todas[t].items():
+            for w in sorted(ws)[:5]:
+                u = saldo_usd(w, t, precio); time.sleep(0.12)
+                if u is not None and u >= 20:
+                    vivos[op] = (w, d[op][1]); break
+        if len(vivos) < 2:
+            print(f"consenso A descartado (ya vendieron): {p['baseToken']['symbol']} {t} {len(d)} operadores, {len(vivos)} siguen dentro")
+            continue
+        d = vivos
         filas.append(dict(ts=ahora, hora_utc=hora, token=t, sym=p["baseToken"]["symbol"], precio=p.get("priceUsd") or "",
                           billeteras=",".join(w for w, _ in d.values()), nota=f"consenso A en vivo: {len(d)} operadores"))
         avisos.append(dict(token=t, sym=p["baseToken"]["symbol"], n_oper=len(d), operadores=", ".join(sorted(d)), mc=round(mc),
