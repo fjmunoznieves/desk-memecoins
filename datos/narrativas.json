@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-16 16:59",
+ "hora_utc": "2026-11-16 18:28",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -9,6 +9,19 @@
   "x_chainbase"
  ],
  "narrativas": [
+  {
+   "tema": "SpaceX Catches Starship",
+   "fuentes": [
+    "x_chainbase",
+    "bluesky"
+   ],
+   "calor": 84,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 9): SpaceX successfully caught the Starship upper stage, Ship 42, using launch tower arms following its return from orbit. The spacecraft completed 14 orbits and su…",
+    "tendencia en Bluesky: Elon Musk's rocket company used the launch tower's \"chopsticks\" arms to grab the returning ship."
+   ],
+   "token": null
+  },
   {
    "tema": "Archive of Our Own",
    "fuentes": [
@@ -66,10 +79,10 @@
     "cadena": "solana",
     "token": "7ETtD1R93rjLsKjvevZQLXySu6Ag3jNRm9xF8FVXpump",
     "sym": "Cousins",
-    "liq": 7355,
-    "vol24": 18482,
-    "c24": -32.66,
-    "edad_h": 170.4
+    "liq": 6673,
+    "vol24": 17647,
+    "c24": -44.58,
+    "edad_h": 171.9
    }
   },
   {
@@ -106,35 +119,35 @@
    "token": null
   },
   {
-   "tema": "UK PM Brexit Failure Statement",
+   "tema": "Bitcoin Buy Walls Hold",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): The United States has deployed the USS Theodore Roosevelt to join two other aircraft carriers in the Middle East, significantly increasing naval presence amid e…"
+    "tema caliente en X según Chainbase Tops (puesto 1): Discussions across social media highlight a mix of technical analysis, market sentiment, and broader technological trends. Key topics include Solana price actio…"
    ],
    "token": null
   },
   {
-   "tema": "Trump DOJ Warns Democrats Subpoenas",
+   "tema": "Xi Trump Putin Hold Shenzhen Summit",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): The Trump administration is issuing legal warnings to Democratic lawmakers regarding potential investigations into the President and his associates, with the De…"
+    "tema caliente en X según Chainbase Tops (puesto 2): China has confirmed that President Xi Jinping will host a trilateral summit with US President Donald Trump and Russian President Vladimir Putin in Shenzhen on N…"
    ],
    "token": null
   },
   {
-   "tema": "Xi Trump Putin Shenzhen Summit",
+   "tema": "Russia Saudi Drone Attacks",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 86,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): China has confirmed that President Xi Jinping will host a first-ever trilateral summit with US President Donald Trump and Russian President Vladimir Putin in Sh…"
+    "tema caliente en X según Chainbase Tops (puesto 3): Estonia has announced the closure of its remaining border crossings with Russia following the arrest of eight suspects in an alleged arson plot targeting the dr…"
    ],
    "token": null
   },
@@ -150,24 +163,24 @@
    "token": null
   },
   {
-   "tema": "Uber Amazon Zoox Launch",
+   "tema": "Supreme Court Rejects Custodia Appeal",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 84,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): Tesla intends to invest an additional €3 billion in its Berlin factory to construct a new production facility for Cybercabs, with construction starting in 2027 …"
+    "tema caliente en X según Chainbase Tops (puesto 4): The US Supreme Court has declined to hear Custodia Bank's challenge regarding the Federal Reserve's denial of its application for a master account. This decisio…"
    ],
    "token": null
   },
   {
-   "tema": "Supreme Court Rejects Crypto Fed Access",
+   "tema": "Boris Johnson Promotes Solana Tokenization",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 82,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): The Supreme Court has denied a crypto bank's request for access to Federal Reserve payment systems, marking a significant legal decision regarding the integrati…"
+    "tema caliente en X según Chainbase Tops (puesto 5): Former UK Prime Minister Boris Johnson stated at the Solana Breakpoint conference that London must take a leading role in blockchain technology and asset tokeni…"
    ],
    "token": null
   },
@@ -178,29 +191,29 @@
    ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): Hong Kong Financial Secretary Paul Chan announced that the city plans to introduce a bill by the end of the year to expand licensing requirements for cryptocurr…"
+    "tema caliente en X según Chainbase Tops (puesto 6): Hong Kong Financial Secretary Paul Chan announced that the region plans to introduce a bill by the end of the year to extend licensing requirements to cryptocur…"
    ],
    "token": null
   },
   {
-   "tema": "Democrats Vote Against Clarity Act",
+   "tema": "Michael Dell Addresses London Event",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 78,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): Senator Cynthia Lummis and proponents of the Clarity Act state that Democrats voted against the legislation despite it including binding rules for token launch …"
+    "tema caliente en X según Chainbase Tops (puesto 7): Discussions involving Michael Dell and shareholder interests have emerged alongside a scheduled event in London. The gathering, identified as the GGC London Gra…"
    ],
    "token": null
   },
   {
-   "tema": "JPMorgan DBS Token Dollar",
+   "tema": "China Tests New Electric Aircraft",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 76,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): JPMorgan and DBS Bank have initiated 24/7 cross-border payment services using tokenized U.S. dollars between the United States and Singapore. The service enable…"
+    "tema caliente en X según Chainbase Tops (puesto 8): China has completed the first test flight of its CE-25A electric passenger aircraft in Shandong Province. The aircraft is designed to carry up to 19 passengers …"
    ],
    "token": null
   },
@@ -216,65 +229,24 @@
    "token": null
   },
   {
-   "tema": "Blackstone Data Center Debt Struggle",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 74,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): Blackstone's data center trust has acquired a 75.1% stake in 13 Amazon Web Services data center buildings across Indiana and Mississippi in a deal valued at app…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Data Center Energy Constraints",
+   "tema": "Uber Amazon Zoox Launch",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 72,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): Discussions highlight the critical role of energy infrastructure in supporting AI and data center growth, with Canada identified as a key hub for connecting ins…"
+    "tema caliente en X según Chainbase Tops (puesto 10): Tesla announced plans to invest an additional €3 billion in its Berlin factory to produce up to one million Cybercabs annually, with construction starting in 20…"
    ],
    "token": null
   },
   {
-   "tema": "GTA VI Nov 19",
+   "tema": "South Korea Proposes Wallet Travel Rule",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): Grand Theft Auto VI is scheduled for release on November 19 for PlayStation 5 and Xbox Series X/S, having already generated over $1 billion in estimated pre-ord…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "ni hao cat",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (MIHAO, puesto de capitalización 927)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
-    "sym": "mihao",
-    "liq": 426400,
-    "vol24": 1986366,
-    "c24": -5.34,
-    "edad_h": 528.3
-   }
-  },
-  {
-   "tema": "Gato The Cat",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (GATO, puesto de capitalización 854)"
+    "tema caliente en X según Chainbase Tops (puesto 11): South Korean lawmaker Kim Hyun-jung has proposed an amendment to the Specific Financial Information Act requiring crypto exchanges to verify wallet ownership be…"
    ],
    "token": null
   },
@@ -285,17 +257,47 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (MACCA, puesto de capitalización 818)"
+    "entre lo más buscado en CoinGecko (MACCA, puesto de capitalización 790)"
    ],
    "token": {
     "cadena": "solana",
     "token": "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump",
     "sym": "Macca",
-    "liq": 160340,
-    "vol24": 229419,
-    "c24": -9.71,
-    "edad_h": 771.3
+    "liq": 160128,
+    "vol24": 231364,
+    "c24": -7.79,
+    "edad_h": 772.8
    }
+  },
+  {
+   "tema": "AudaCity",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (DACITYCOIN, puesto de capitalización 992)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "3pPNZcuhAo9V3KCYPmXRCHZpXu2Qq7kSUV7p7s3TuUfY",
+    "sym": "DacityCoin",
+    "liq": 23236099,
+    "vol24": 1045,
+    "c24": 0,
+    "edad_h": 124.3
+   }
+  },
+  {
+   "tema": "Gato The Cat",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (GATO, puesto de capitalización 784)"
+   ],
+   "token": null
   },
   {
    "tema": "Pudgy Penguins",
@@ -304,7 +306,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 122)"
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 123)"
    ],
    "token": {
     "cadena": "solana",
@@ -313,61 +315,40 @@
     "liq": 30435009,
     "vol24": 1037,
     "c24": 0,
-    "edad_h": 438.7
+    "edad_h": 440.2
    }
   }
  ],
  "cruces_h18": [
   {
-   "ts": 1794848383,
-   "hora_utc": "2026-11-16 16:59",
-   "tema": "Hong Kong Crypto License Bill Plan",
-   "fuentes": "x_chainbase,trending 5m",
-   "cadena": "solana",
-   "token": "85RhcSEMy15SNhFLmSArNm7udPKXVagVgsq4YmSopump",
-   "sym": "bill",
-   "liq": 32530,
-   "mc": 84091,
-   "c1": -34.96,
-   "seguridad": "ok",
-   "aviso": "si",
-   "nuestras": "A5 B1 C0"
-  },
-  {
-   "ts": 1794848383,
-   "hora_utc": "2026-11-16 16:59",
-   "tema": "ni hao cat",
-   "fuentes": "coingecko,trending 5m",
-   "cadena": "solana",
-   "token": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
-   "sym": "mihao",
-   "liq": 427539,
-   "mc": 14648624,
-   "c1": -0.77,
-   "seguridad": "top10",
-   "aviso": "no",
-   "nuestras": "A46 B24 C0"
-  },
-  {
-   "ts": 1794848383,
-   "hora_utc": "2026-11-16 16:59",
+   "ts": 1794853702,
+   "hora_utc": "2026-11-16 18:28",
    "tema": "Gato The Cat",
    "fuentes": "coingecko,trending 24h",
    "cadena": "solana",
    "token": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
    "sym": "GATO",
-   "liq": 245803,
-   "mc": 5624714,
-   "c1": -2.69,
-   "seguridad": "ok",
-   "aviso": "si",
+   "liq": 247757,
+   "mc": 5680265,
+   "c1": 0.13,
+   "seguridad": "",
+   "aviso": "no",
    "nuestras": "A1 B14 C0"
   }
  ],
  "huecos_h19": [
   {
-   "ts": 1794848383,
-   "hora_utc": "2026-11-16 16:59",
+   "ts": 1794853702,
+   "hora_utc": "2026-11-16 18:28",
+   "tema": "SpaceX Catches Starship",
+   "fuentes": "x_chainbase,bluesky",
+   "calor": 84,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 9): SpaceX successfully caught the Starship upper stage, Ship 42, using launch tower arms following its return from orbit. The spacecraft completed 14 orbits and su… | tendencia en Bluesky: Elon Musk's rocket company used the launch tower's \"chopsticks\" arms to grab the returning ship.",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1794853702,
+   "hora_utc": "2026-11-16 18:28",
    "tema": "Archive of Our Own",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -375,8 +356,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794848383,
-   "hora_utc": "2026-11-16 16:59",
+   "ts": 1794853702,
+   "hora_utc": "2026-11-16 18:28",
    "tema": "9/11",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -384,8 +365,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794848383,
-   "hora_utc": "2026-11-16 16:59",
+   "ts": 1794853702,
+   "hora_utc": "2026-11-16 18:28",
    "tema": "List of Nazi concentration camps",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -393,8 +374,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794848383,
-   "hora_utc": "2026-11-16 16:59",
+   "ts": 1794853702,
+   "hora_utc": "2026-11-16 18:28",
    "tema": "Full Gear (2026)",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -402,8 +383,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794848383,
-   "hora_utc": "2026-11-16 16:59",
+   "ts": 1794853702,
+   "hora_utc": "2026-11-16 18:28",
    "tema": "Amon-Ra St. Brown",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -411,8 +392,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794848383,
-   "hora_utc": "2026-11-16 16:59",
+   "ts": 1794853702,
+   "hora_utc": "2026-11-16 18:28",
    "tema": "Stephen Thompson (fighter)",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -420,21 +401,12 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794848383,
-   "hora_utc": "2026-11-16 16:59",
+   "ts": 1794853702,
+   "hora_utc": "2026-11-16 18:28",
    "tema": "Kayla Harrison",
    "fuentes": "wikipedia",
    "calor": 97,
    "porque": "145,493 visitas ayer en Wikipedia, 5.7× anteayer",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1794848383,
-   "hora_utc": "2026-11-16 16:59",
-   "tema": "UK PM Brexit Failure Statement",
-   "fuentes": "x_chainbase",
-   "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): The United States has deployed the USS Theodore Roosevelt to join two other aircraft carriers in the Middle East, significantly increasing naval presence amid e…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
