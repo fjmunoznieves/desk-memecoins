@@ -7208,5 +7208,26 @@
 "sym": "AAVE",
 "pool": "0x8B22c20cB60Ae915524FB46e1C1b101b50168445",
 "revivio": 0
+},
+{
+"net": "solana",
+"token": "DEkqHyPN7GMRJ5cArtQFAWefqbZb33Hyf6s5iCwjEonT",
+"sym": "USDe",
+"pool": "FXPopoKVLHeXonysHMEonZZJ4nsUdFqr4RpFuAvLUvFB",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0x5b1910eAaD6450E50f816082Aa078C41F10C292f",
+"sym": "TSLAB",
+"pool": "0xB0f5E5400E8F0F7C242F2b7740C004f020579c41",
+"revivio": 0
+},
+{
+"net": "bsc",
+"token": "0xaF53d56ff99f1322515E54FdDE93FF8b3b7DAFd5",
+"sym": "PROM",
+"pool": "0x83E98cAC01259a0D00729cfB722810472C421459",
+"revivio": 0
 }
 ]

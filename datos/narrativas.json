@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-16 19:36",
+ "hora_utc": "2026-11-16 21:27",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -9,27 +9,6 @@
   "x_chainbase"
  ],
  "narrativas": [
-  {
-   "tema": "Spacecoin",
-   "fuentes": [
-    "coingecko",
-    "coinmarketcap"
-   ],
-   "calor": 80,
-   "porque": [
-    "entre lo más buscado en CoinGecko (SPACE, puesto de capitalización 625)",
-    "entre lo más buscado en CoinMarketCap (SPACE, puesto 483)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "9V91UHNw1yWXWdHuuzbT17RC8KycsGdt88eybd3ifQgw",
-    "sym": "SPACE",
-    "liq": 82944273,
-    "vol24": 118085,
-    "c24": 0,
-    "edad_h": 3680.2
-   }
-  },
   {
    "tema": "Archive of Our Own",
    "fuentes": [
@@ -87,10 +66,10 @@
     "cadena": "solana",
     "token": "7ETtD1R93rjLsKjvevZQLXySu6Ag3jNRm9xF8FVXpump",
     "sym": "Cousins",
-    "liq": 6735,
-    "vol24": 17630,
-    "c24": -42.07,
-    "edad_h": 173.0
+    "liq": 6425,
+    "vol24": 15480,
+    "c24": -52.65,
+    "edad_h": 174.8
    }
   },
   {
@@ -127,35 +106,35 @@
    "token": null
   },
   {
-   "tema": "Bitcoin Buy Walls Hold",
+   "tema": "Router Malfunction Stops US Flights",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): Discussions across social media highlight a mix of technical analysis, market sentiment, and broader technological trends. Key topics include Solana price actio…"
+    "tema caliente en X según Chainbase Tops (puesto 1): SpaceX is advancing Starship V4 development with a 40% length increase to 70 meters and nine Raptor engines, while engineers inspect the recently returned orbit…"
    ],
    "token": null
   },
   {
-   "tema": "Xi Trump Putin Hold Shenzhen Summit",
+   "tema": "Supreme Court Rejects Custodia Appeal",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): China has confirmed that President Xi Jinping will host a trilateral summit with US President Donald Trump and Russian President Vladimir Putin in Shenzhen on N…"
+    "tema caliente en X según Chainbase Tops (puesto 2): The US Supreme Court has declined to hear Custodia Bank's challenge regarding the Federal Reserve's denial of its application for a master account. This decisio…"
    ],
    "token": null
   },
   {
-   "tema": "Russia Saudi Drone Attacks",
+   "tema": "Major US Banks Technical Outages",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 86,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): Estonia has announced the closure of its remaining border crossings with Russia following the arrest of eight suspects in an alleged arson plot targeting the dr…"
+    "tema caliente en X según Chainbase Tops (puesto 3): Customers of major US financial institutions, including JPMorgan Chase, Bank of America, Wells Fargo, and U.S. Bancorp, are reporting widespread service disrupt…"
    ],
    "token": null
   },
@@ -171,57 +150,57 @@
    "token": null
   },
   {
-   "tema": "Supreme Court Rejects Custodia Appeal",
+   "tema": "Data Center Energy Constraints",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 84,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): The US Supreme Court has declined to hear Custodia Bank's challenge regarding the Federal Reserve's denial of its application for a master account. This decisio…"
+    "tema caliente en X según Chainbase Tops (puesto 4): A Maryland community blocked a proposed $5 billion AI data center project due to resident concerns over utility costs, water consumption, and environmental risk…"
    ],
    "token": null
   },
   {
-   "tema": "Boris Johnson Promotes Solana Tokenization",
+   "tema": "Robert Pattinson New James Bond",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 82,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): Former UK Prime Minister Boris Johnson stated at the Solana Breakpoint conference that London must take a leading role in blockchain technology and asset tokeni…"
+    "tema caliente en X según Chainbase Tops (puesto 5): Robert Pattinson has been officially cast as James Bond, becoming the seventh actor to portray the iconic British spy. He will star in the 26th official James B…"
    ],
    "token": null
   },
   {
-   "tema": "Hong Kong Crypto License Bill Plan",
+   "tema": "Solana Breakpoint 2026 Announced",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): Hong Kong Financial Secretary Paul Chan announced that the region plans to introduce a bill by the end of the year to extend licensing requirements to cryptocur…"
+    "tema caliente en X según Chainbase Tops (puesto 6): The Gmgn event in London is approaching its final stage, featuring a grand final where participants compete for an Aston Martin. Concurrently, a summit is sched…"
    ],
    "token": null
   },
   {
-   "tema": "Michael Dell Addresses London Event",
+   "tema": "Buffett Donates $5.5B Berkshire Shares",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 78,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): Discussions involving Michael Dell and shareholder interests have emerged alongside a scheduled event in London. The gathering, identified as the GGC London Gra…"
+    "tema caliente en X según Chainbase Tops (puesto 7): Warren Buffett has donated approximately $5.5 billion worth of Berkshire Hathaway Class B shares to four philanthropic foundations associated with his family. T…"
    ],
    "token": null
   },
   {
-   "tema": "China Tests New Electric Aircraft",
+   "tema": "Oil Prices Drop IEA Surplus Forecast",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 76,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): China has completed the first test flight of its CE-25A electric passenger aircraft in Shandong Province. The aircraft is designed to carry up to 19 passengers …"
+    "tema caliente en X según Chainbase Tops (puesto 8): Global oil prices have declined significantly, with Brent crude falling to $95.37 per barrel and U.S. diesel dropping below $6 per gallon. The International Ene…"
    ],
    "token": null
   },
@@ -237,35 +216,35 @@
    "token": null
   },
   {
-   "tema": "SpaceX Catches Starship",
+   "tema": "Prince Harry Visits Ukraine Veterans",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 74,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): SpaceX successfully caught the Starship upper stage, Ship 42, using launch tower arms following its return from orbit. The spacecraft completed 14 orbits and su…"
+    "tema caliente en X según Chainbase Tops (puesto 9): Ukrainian, American, and European representatives held online discussions regarding the war in Ukraine, with participants including Jared Kushner, Steve Witkoff…"
    ],
    "token": null
   },
   {
-   "tema": "Uber Amazon Zoox Launch",
+   "tema": "Blackstone Buys $5B Amazon Data Centers",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 72,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): Tesla announced plans to invest an additional €3 billion in its Berlin factory to produce up to one million Cybercabs annually, with construction starting in 20…"
+    "tema caliente en X según Chainbase Tops (puesto 10): Blackstone's data center acquisition vehicle has purchased a 75.1% majority interest in two joint ventures with Amazon, in a deal valued at approximately $5 bil…"
    ],
    "token": null
   },
   {
-   "tema": "South Korea Proposes Wallet Travel Rule",
+   "tema": "Alibaba Launches Qwen4-Max Model",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): South Korean lawmaker Kim Hyun-jung has proposed an amendment to the Specific Financial Information Act requiring crypto exchanges to verify wallet ownership be…"
+    "tema caliente en X según Chainbase Tops (puesto 11): Alibaba has released Qwen4-Max, the flagship model of its Qwen4 series, featuring a 1M-token context window and native support for text, images, and videos. The…"
    ],
    "token": null
   },
@@ -276,16 +255,16 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (MACCA, puesto de capitalización 806)"
+    "entre lo más buscado en CoinGecko (MACCA, puesto de capitalización 818)"
    ],
    "token": {
     "cadena": "solana",
     "token": "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump",
     "sym": "Macca",
-    "liq": 164383,
-    "vol24": 241235,
-    "c24": -5.2,
-    "edad_h": 773.9
+    "liq": 173487,
+    "vol24": 259074,
+    "c24": 7.97,
+    "edad_h": 775.8
    }
   },
   {
@@ -295,7 +274,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (GATO, puesto de capitalización 852)"
+    "entre lo más buscado en CoinGecko (GATO, puesto de capitalización 910)"
    ],
    "token": null
   },
@@ -306,7 +285,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (DACITYCOIN, puesto de capitalización 958)"
+    "entre lo más buscado en CoinGecko (DACITYCOIN, puesto de capitalización 953)"
    ],
    "token": {
     "cadena": "solana",
@@ -315,22 +294,221 @@
     "liq": 23236099,
     "vol24": 1045,
     "c24": 0,
-    "edad_h": 125.4
+    "edad_h": 127.3
+   }
+  },
+  {
+   "tema": "Pudgy Penguins",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 122)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "GeUYiY5x3yFYx33fVW4hou98xnSQvf8KDKdhXgmWwPMf",
+    "sym": "PENGU",
+    "liq": 30435009,
+    "vol24": 1037,
+    "c24": 0,
+    "edad_h": 443.2
    }
   }
  ],
  "cruces_h18": [
   {
-   "ts": 1794857796,
-   "hora_utc": "2026-11-16 19:36",
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
+   "tema": "Supreme Court Rejects Custodia Appeal",
+   "fuentes": "x_chainbase,trending 5m",
+   "cadena": "solana",
+   "token": "K24DHfMZvuBvnTwwqjDxMWiUE9M8iWLveNBArVFKwdr",
+   "sym": "BANK",
+   "liq": 0,
+   "mc": 93505,
+   "c1": 97.54,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
+   "tema": "Supreme Court Rejects Custodia Appeal",
+   "fuentes": "x_chainbase,trending 5m",
+   "cadena": "solana",
+   "token": "GYPuLfbfnkq4khSiysYZ6kB9kzFgmgnd15X9z8kW3rB",
+   "sym": "BANK",
+   "liq": 124444,
+   "mc": 87680,
+   "c1": 125,
+   "seguridad": "lp",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
+   "tema": "Supreme Court Rejects Custodia Appeal",
+   "fuentes": "x_chainbase,trending 5m",
+   "cadena": "solana",
+   "token": "667tvUtaFVbesmSZDYCgQzYkJW4y36PdbmacRZGipump",
+   "sym": "BANK",
+   "liq": 29242,
+   "mc": 103621,
+   "c1": 2.94,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B1 C0"
+  },
+  {
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
+   "tema": "Supreme Court Rejects Custodia Appeal",
+   "fuentes": "x_chainbase,trending 5m",
+   "cadena": "solana",
+   "token": "FKsdxuXmemQscVSY7mTQuSSvHs3ph95VnVyMFPSWsLfL",
+   "sym": "BANK",
+   "liq": 0,
+   "mc": 0,
+   "c1": 0,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
+   "tema": "Supreme Court Rejects Custodia Appeal",
+   "fuentes": "x_chainbase,trending 5m",
+   "cadena": "solana",
+   "token": "HS94zj6J7oRu8Xo25C2YQUpKib6pb2Dc4T3Ub9CKsSEZ",
+   "sym": "BANK",
+   "liq": 0,
+   "mc": 0,
+   "c1": 0,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
+   "tema": "Supreme Court Rejects Custodia Appeal",
+   "fuentes": "x_chainbase,trending 1h",
+   "cadena": "solana",
+   "token": "HhPn5uFUjhAvR4qKoTPGC7yDMQpZ9T8gPtV4rA8aXLX",
+   "sym": "BANK",
+   "liq": 0,
+   "mc": 87759,
+   "c1": 53.02,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
+   "tema": "Major US Banks Technical Outages",
+   "fuentes": "x_chainbase,trending 5m",
+   "cadena": "solana",
+   "token": "K24DHfMZvuBvnTwwqjDxMWiUE9M8iWLveNBArVFKwdr",
+   "sym": "BANK",
+   "liq": 0,
+   "mc": 93505,
+   "c1": 97.54,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
+   "tema": "Major US Banks Technical Outages",
+   "fuentes": "x_chainbase,trending 5m",
+   "cadena": "solana",
+   "token": "GYPuLfbfnkq4khSiysYZ6kB9kzFgmgnd15X9z8kW3rB",
+   "sym": "BANK",
+   "liq": 124444,
+   "mc": 87680,
+   "c1": 125,
+   "seguridad": "lp",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
+   "tema": "Major US Banks Technical Outages",
+   "fuentes": "x_chainbase,trending 5m",
+   "cadena": "solana",
+   "token": "667tvUtaFVbesmSZDYCgQzYkJW4y36PdbmacRZGipump",
+   "sym": "BANK",
+   "liq": 29242,
+   "mc": 103621,
+   "c1": 2.94,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B1 C0"
+  },
+  {
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
+   "tema": "Major US Banks Technical Outages",
+   "fuentes": "x_chainbase,trending 5m",
+   "cadena": "solana",
+   "token": "FKsdxuXmemQscVSY7mTQuSSvHs3ph95VnVyMFPSWsLfL",
+   "sym": "BANK",
+   "liq": 0,
+   "mc": 0,
+   "c1": 0,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
+   "tema": "Major US Banks Technical Outages",
+   "fuentes": "x_chainbase,trending 5m",
+   "cadena": "solana",
+   "token": "HS94zj6J7oRu8Xo25C2YQUpKib6pb2Dc4T3Ub9CKsSEZ",
+   "sym": "BANK",
+   "liq": 0,
+   "mc": 0,
+   "c1": 0,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
+   "tema": "Major US Banks Technical Outages",
+   "fuentes": "x_chainbase,trending 1h",
+   "cadena": "solana",
+   "token": "HhPn5uFUjhAvR4qKoTPGC7yDMQpZ9T8gPtV4rA8aXLX",
+   "sym": "BANK",
+   "liq": 0,
+   "mc": 87759,
+   "c1": 53.02,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
    "tema": "Gato The Cat",
-   "fuentes": "coingecko,trending 1h",
+   "fuentes": "coingecko,trending 24h",
    "cadena": "solana",
    "token": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
    "sym": "GATO",
-   "liq": 247621,
-   "mc": 5692271,
-   "c1": -0.13,
+   "liq": 241815,
+   "mc": 5406988,
+   "c1": -6.03,
    "seguridad": "",
    "aviso": "no",
    "nuestras": "A1 B14 C0"
@@ -338,8 +516,8 @@
  ],
  "huecos_h19": [
   {
-   "ts": 1794857796,
-   "hora_utc": "2026-11-16 19:36",
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
    "tema": "Archive of Our Own",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -347,8 +525,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794857796,
-   "hora_utc": "2026-11-16 19:36",
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
    "tema": "9/11",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -356,8 +534,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794857796,
-   "hora_utc": "2026-11-16 19:36",
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
    "tema": "List of Nazi concentration camps",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -365,8 +543,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794857796,
-   "hora_utc": "2026-11-16 19:36",
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
    "tema": "Full Gear (2026)",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -374,8 +552,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794857796,
-   "hora_utc": "2026-11-16 19:36",
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
    "tema": "Amon-Ra St. Brown",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -383,8 +561,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794857796,
-   "hora_utc": "2026-11-16 19:36",
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
    "tema": "Stephen Thompson (fighter)",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -392,8 +570,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794857796,
-   "hora_utc": "2026-11-16 19:36",
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
    "tema": "Kayla Harrison",
    "fuentes": "wikipedia",
    "calor": 97,
@@ -401,12 +579,12 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794857796,
-   "hora_utc": "2026-11-16 19:36",
-   "tema": "Bitcoin Buy Walls Hold",
+   "ts": 1794864475,
+   "hora_utc": "2026-11-16 21:27",
+   "tema": "Router Malfunction Stops US Flights",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Discussions across social media highlight a mix of technical analysis, market sentiment, and broader technological trends. Key topics include Solana price actio…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): SpaceX is advancing Starship V4 development with a 40% length increase to 70 meters and nine Raptor engines, while engineers inspect the recently returned orbit…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
