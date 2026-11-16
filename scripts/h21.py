@@ -10,10 +10,13 @@ from collections import defaultdict
 COMPRAS = os.environ.get("COMPRAS_FILE", "datos/watchlist_compras.tsv")
 SALIDA = os.environ.get("SALIDA_FILE", "datos/h21_consenso.tsv")
 NOMBRE = os.environ.get("H_NOMBRE", "H21")
-CAMPOS = ["ts", "hora_utc", "token", "sym", "billeteras", "n", "edad_d", "precio", "mc", "liq", "p24", "c24", "p7d", "c7d", "estado"]
+CAMPOS = ["ts", "hora_utc", "token", "sym", "billeteras", "n", "n_oper", "edad_d", "precio", "mc", "liq", "p24", "c24", "p7d", "c7d", "estado"]
 VENTANA = 24 * 3600
 EDAD_MIN_H = float(os.environ.get("EDAD_MIN_H", 48))
 EDAD_MAX_H = float(os.environ.get("EDAD_MAX_H", 1e9))  # H23 usa 0–72 h
+
+
+from operadores import n_operadores
 
 
 def dex(addrs):
@@ -69,7 +72,7 @@ def main():
         if edad_h < EDAD_MIN_H or edad_h > EDAD_MAX_H:
             continue  # los jóvenes van por las reglas normales (señal 3)
         previas.append({"ts": int(ahora), "hora_utc": time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora)), "token": tok, "sym": d["sym"],
-                        "billeteras": ",".join(bs), "n": len(bs), "edad_d": round(edad_h / 24, 1), "precio": d["precio"],
+                        "billeteras": ",".join(bs), "n": len(bs), "n_oper": n_operadores(bs), "edad_d": round(edad_h / 24, 1), "precio": d["precio"],
                         "mc": round(d["mc"]), "liq": round(d["liq"]), "p24": "", "c24": "", "p7d": "", "c7d": "", "estado": "abierto"})
         print(f"{NOMBRE} nuevo: {d['sym']} {tok} ({len(bs)} billeteras, {edad_h / 24:.1f} días)")
 

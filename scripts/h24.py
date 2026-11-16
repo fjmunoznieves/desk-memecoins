@@ -7,12 +7,13 @@ Salida: datos/h24_pool_acciones.tsv. Datos gratis (DexScreener) + archivos de He
 """
 import csv, json, os, re, sys, time, urllib.request
 from collections import defaultdict
+from operadores import n_operadores
 
 SALIDA = "datos/h24_pool_acciones.tsv"
 BASEQ = {"SOL", "WSOL", "USDC", "USDT", "WBNB", "BNB", "USD1", "ETH", "WETH", "BUSD", "FDUSD", "PYUSD"}
 ACCIONES = {"TTWO", "NVDAB", "NVDAX", "TSLAX", "AAPLX", "SPYX", "QQQX", "MSTRX", "COINX", "HOODX", "GOOGLX", "METAX", "AMZNX"}
 CAMPOS = ["ts", "hora_utc", "cadena", "token", "sym", "quote", "tipo", "origen", "edad_h", "precio", "mc", "liq",
-          "A", "B", "C", "billeteras", "p24", "c24", "max_c", "max24_pct", "sim_pct", "sim_usd", "sim_detalle", "pool",
+          "A", "B", "C", "operadores", "billeteras", "p24", "c24", "max_c", "max24_pct", "sim_pct", "sim_usd", "sim_detalle", "pool",
           "p7d", "c7d", "estado"]
 POSICION_USD = 12  # tamaño de posición paper del desk
 MANUALES = [  # casos vistos el 15-nov (consultas de Fran y radar)
@@ -122,6 +123,7 @@ def main():
     for r in previas:  # cruce con billeteras (se actualiza en cada corrida) y medición
         w = W.get(r["token"], {"A": set(), "B": set(), "C": set()})
         r["A"], r["B"], r["C"] = len(w["A"]), len(w["B"]), len(w["C"])
+        r["operadores"] = n_operadores(w["A"] | w["B"] | w["C"])
         r["billeteras"] = " ".join(f"{g}:{x[:6]}" for g in "ABC" for x in sorted(w[g]))[:400]
         d, p0 = datos.get((r["cadena"], r["token"].lower())), float(r["precio"] or 0)
         if r["estado"] != "abierto" or not d or not p0:

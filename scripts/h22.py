@@ -9,10 +9,11 @@ import csv, os, sys, time
 from collections import defaultdict
 sys.path.insert(0, os.path.dirname(__file__))
 from h21 import dex
+from operadores import n_operadores
 
 COMPRAS = "datos/h22_compras.tsv"
 SALIDA = "datos/h22_cruce.tsv"
-CAMPOS = ["ts", "hora_utc", "token", "sym", "billeteras_B", "nB", "nA", "edad_d", "precio", "mc", "liq", "p24", "c24", "p7d", "c7d", "estado"]
+CAMPOS = ["ts", "hora_utc", "token", "sym", "billeteras_B", "nB", "nA", "nB_oper", "nA_oper", "edad_d", "precio", "mc", "liq", "p24", "c24", "p7d", "c7d", "estado"]
 EDAD_MIN_H = 48
 
 
@@ -50,7 +51,7 @@ def main():
         if edad_h < EDAD_MIN_H:
             continue
         previas.append({"ts": int(ahora), "hora_utc": time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora)), "token": tok, "sym": d["sym"],
-                        "billeteras_B": ",".join(sorted(bs)), "nB": len(bs), "nA": len(A[tok]), "edad_d": round(edad_h / 24, 1),
+                        "billeteras_B": ",".join(sorted(bs)), "nB": len(bs), "nA": len(A[tok]), "nB_oper": n_operadores(bs), "nA_oper": n_operadores(A[tok]), "edad_d": round(edad_h / 24, 1),
                         "precio": d["precio"], "mc": round(d["mc"]), "liq": round(d["liq"]), "p24": "", "c24": "", "p7d": "", "c7d": "", "estado": "abierto"})
         print(f"H22 nuevo: {d['sym']} {tok} (B {len(bs)}, A {len(A[tok])}, {edad_h / 24:.1f} días)")
     for r in previas:
