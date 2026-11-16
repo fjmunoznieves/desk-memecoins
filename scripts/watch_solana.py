@@ -143,7 +143,7 @@ def precios(mints):
 if CARTERA:
     # Compra = un token nuevo o que sube ≥10 % frente a la foto anterior (entre escaneos). Venta = baja (queda en la foto).
     prev = st.setdefault("cartera", {})
-    subidas, ahora = [], int(time.time())
+    subidas, bajadas, ahora = [], [], int(time.time())
     for w in wl:
         f = foto(w); time.sleep(0.1)
         if f is None:
@@ -154,6 +154,12 @@ if CARTERA:
                 antes = p0.get(m[:12], 0)
                 if v > antes * 1.1 + 1e-9:
                     subidas.append((w, m, v - antes))
+            # Salidas (16-nov, Fran): saldo que baja ≥10 % o desaparece → datos/*_ventas.tsv (ciclo entrada-sostén-salida)
+            cortos = {m[:12]: m for m in f}
+            for k, antes in p0.items():
+                v = f.get(cortos.get(k, ""), 0)
+                if antes > 0 and v < antes * 0.9:
+                    bajadas.append((w, k, antes - v, v))
         prev[w] = {m[:12]: float("%.4g" % v) for m, v in f.items()}  # clave corta y 4 cifras: el estado se guarda en git
     px = precios({m for _, m, _ in subidas}) if subidas else {}
     sol_px = precios(["So11111111111111111111111111111111111111112"]).get("So11111111111111111111111111111111111111112") or 0
@@ -163,7 +169,16 @@ if CARTERA:
             continue
         compras.append(dict(hora_utc=time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora)), ts=ahora, billetera=w, token=m,
                             cantidad=round(dv, 6), sol_gastado=round(usd / sol_px, 3) if sol_px else "", firma="foto"))
-    print(f"cartera: {len(wl)} billeteras, {2 * len(wl)} consultas, {len(subidas)} subidas de saldo")
+    if bajadas:
+        VLOG = LOG.replace("compras", "ventas") if "compras" in LOG else LOG + ".ventas"
+        nuevo_v = not os.path.exists(VLOG)
+        with open(VLOG, "a", newline="") as fv:
+            wv = csv.writer(fv, delimiter="\t", lineterminator="\n")
+            if nuevo_v:
+                wv.writerow(["hora_utc", "ts", "billetera", "token12", "vendido", "queda", "salida_total"])
+            for w, k, dv, v in bajadas:
+                wv.writerow([time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora)), ahora, w, k, "%.4g" % dv, "%.4g" % v, "si" if v == 0 else "no"])
+    print(f"cartera: {len(wl)} billeteras, {2 * len(wl)} consultas, {len(subidas)} subidas y {len(bajadas)} bajadas de saldo")
 else:
     from concurrent.futures import ThreadPoolExecutor
     pares = [(w, sg) for w, sigs in nuevas.items() for sg in sigs]
