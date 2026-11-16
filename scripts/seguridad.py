@@ -31,7 +31,13 @@ def _solana(addr):
     if not rc:
         return ["seg?"], {"fuente": "rugcheck", "error": "sin datos"}
     f = []
-    th = rc.get("topHolders") or []
+    # 16-nov: las cuentas de los pools (y sus dueños/autoridades) no son holders; antes inflaban el top 10 (caso BJB)
+    pools = set()
+    for m in rc.get("markets") or []:
+        pools.add(m.get("pubkey"))
+        for k in ("liquidityAAccount", "liquidityBAccount"):
+            pools.add((m.get(k) or {}).get("owner"))
+    th = [h for h in rc.get("topHolders") or [] if h.get("owner") not in pools and h.get("address") not in pools]
     top10 = sum(h.get("pct", 0) for h in th[:10])
     if top10 > TOP10_MAX: f.append("top10")
     lp = [(m.get("lp") or {}).get("lpLockedPct") or 0 for m in rc.get("markets") or []]
