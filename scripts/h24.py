@@ -11,7 +11,7 @@ from operadores import n_operadores
 
 SALIDA = "datos/h24_pool_acciones.tsv"
 BASEQ = {"SOL", "WSOL", "USDC", "USDT", "WBNB", "BNB", "USD1", "ETH", "WETH", "BUSD", "FDUSD", "PYUSD"}
-ACCIONES = {"TTWO", "NVDAB", "NVDAX", "TSLAX", "AAPLX", "SPYX", "QQQX", "MSTRX", "COINX", "HOODX", "GOOGLX", "METAX", "AMZNX"}
+ACCIONES = {"TTWO", "NVDAB", "NVDAX", "TSLAX", "AAPLX", "SPYX", "QQQX", "MSTRX", "COINX", "HOODX", "GOOGLX", "METAX", "AMZNX", "COST"}  # COST = Costco tokenizado (Backpack), caso 🌭 16-nov
 CAMPOS = ["ts", "hora_utc", "cadena", "token", "sym", "quote", "tipo", "origen", "edad_h", "precio", "mc", "liq",
           "A", "B", "C", "operadores", "billeteras", "p24", "c24", "max_c", "max24_pct", "sim_pct", "sim_usd", "sim_detalle", "pool",
           "p7d", "c7d", "estado"]
@@ -21,6 +21,7 @@ MANUALES = [  # casos vistos el 15-nov (consultas de Fran y radar)
     ("solana", "DKYcjobF7HPtL9RyQBRdeRQ2iWvizpfbgWwPWNXdpump", "radar"),
     ("solana", "4xgqefa5WcdHWKXzqvM9MRJqWYGaHVEUnpUL4Vq5pump", "escaneo"),
     ("bsc", "0xb82535e74b03ffe4910efea1c759b6bbbf0a7777", "Fran"),
+    ("solana", "Euj4Mx9GemNfFb36fAXYMKBaA2S9qgnt5qptmo8CKbX6", "Fran"),  # 🌭 hotdog vs COST, 16-nov
 ]
 
 
