@@ -5,11 +5,11 @@ de lo puesto, última operación en los últimos 30 días). En cada escaneo y ca
 si el token sube ≥50 % en 6 h (o ≥30 % en 1 h) con liquidez ≥30 mil USD.
 Salida: datos/alertas_sostenidas.tsv (el radar la lee) y un issue de GitHub (corre desde alerta_issue.py, que tiene GH_TOKEN en escaneo y reloj).
 Un mismo token no se vuelve a avisar en 12 h salvo que siga subiendo otro 50 %."""
-import csv, json, os, subprocess, sys, time, urllib.request
+import csv, json, os, subprocess, sys, time, urllib.request, urllib.error
 from collections import defaultdict
 
 ALERTAS = "datos/alertas_sostenidas.tsv"
-CAMPOS = ["ts", "hora_utc", "token", "sym", "operadores", "billeteras", "mc", "liq", "h1", "h6", "h24", "precio", "dexscreener"]
+CAMPOS = ["ts", "hora_utc", "token", "sym", "operadores", "billeteras", "dentro", "mc", "liq", "h1", "h6", "h24", "precio", "dexscreener"]
 SUBE_H6, SUBE_H1, LIQ_MIN = 50, 30, 30000
 
 
@@ -37,7 +37,45 @@ def posiciones():
     return out
 
 
+PEND = "datos/sostenidas_pendientes.json"
+K = os.environ.get("HELIUS_API_KEY", "").strip()
+
+
+def saldo_usd(w, t, precio):
+    """Saldo real ahora (Helius, solo lectura). None si no se pudo consultar."""
+    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "getTokenAccountsByOwner",
+                       "params": [w, {"mint": t}, {"encoding": "jsonParsed"}]}).encode()
+    for i in range(5):
+        try:
+            req = urllib.request.Request(f"https://mainnet.helius-rpc.com/?api-key={K}", data=body, headers={"Content-Type": "application/json"})
+            r = json.load(urllib.request.urlopen(req, timeout=20)).get("result") or {}
+            return sum(float(a["account"]["data"]["parsed"]["info"]["tokenAmount"]["uiAmount"] or 0) for a in r.get("value", [])) * precio
+        except urllib.error.HTTPError as e:
+            if e.code != 429: return None
+            time.sleep(2 + 2 * i)
+        except Exception:
+            time.sleep(1)
+    return None
+
+
+def avisar():
+    """Crea el issue con lo pendiente (corre desde alerta_issue.py, que tiene GH_TOKEN)."""
+    if not os.path.exists(PEND):
+        return
+    nuevas = json.load(open(PEND))
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    if nuevas and repo:
+        cuerpo = "\n".join(f"- **{a['sym']}** `{a['token']}`: +{a['h6']} % en 6 h (+{a['h1']} % en 1 h), MC {a['mc']:,}, liq {a['liq']:,}, "
+                           f"siguen dentro (saldo real): {a['dentro']}. {a['dexscreener']}" for a in nuevas)
+        r = subprocess.run(["gh", "issue", "create", "--repo", repo, "--title", f"Sube token que nuestras A sostienen ({nuevas[0]['hora_utc']} UTC)",
+                            "--body", cuerpo + "\n\nSolo aviso, paper trading."], check=False)
+        if r.returncode == 0:
+            os.remove(PEND)
+
+
 def main():
+    if os.environ.get("GH_TOKEN") and not K:
+        avisar(); return
     pos = posiciones()
     toks = list(pos)
     previas = leer(ALERTAS)
@@ -67,7 +105,17 @@ def main():
             if a in ult and ahora - ult[a][0] < 12 * 3600 and precio < 1.5 * ult[a][1]:
                 continue
             n, ws = pos[a]
-            nuevas.append(dict(ts=ahora, hora_utc=hora, token=a, sym=p["baseToken"]["symbol"], operadores=n,
+            dentro = "sin verificar"
+            if K:
+                vivos = []
+                for w in ws[:20]:
+                    u = saldo_usd(w, a, precio); time.sleep(0.12)
+                    if u is not None and u >= 20:
+                        vivos.append(f"{w[:6]} {round(u):,} USD")
+                if not vivos:
+                    continue  # el vector decía que seguían dentro, pero ya vendieron: no se avisa
+                dentro = ", ".join(vivos)
+            nuevas.append(dict(dentro=dentro, ts=ahora, hora_utc=hora, token=a, sym=p["baseToken"]["symbol"], operadores=n,
                                billeteras=",".join(w[:6] for w in ws[:15]), mc=round(p.get("marketCap") or p.get("fdv") or 0),
                                liq=round(liq), h1=h1, h6=h6, h24=ch.get("h24"), precio=precio,
                                dexscreener=f"https://dexscreener.com/solana/{a}"))
@@ -79,12 +127,11 @@ def main():
         w.writerows(nuevas)
     for a in nuevas:
         print(f"SOSTENIDA SUBE: {a['sym']} {a['token']} h1 {a['h1']} % h6 {a['h6']} % mc {a['mc']} liq {a['liq']} operadores A dentro {a['operadores']}")
-    repo = os.environ.get("GITHUB_REPOSITORY")
-    if nuevas and repo and os.environ.get("GH_TOKEN"):
-        cuerpo = "\n".join(f"- **{a['sym']}** `{a['token']}`: +{a['h6']} % en 6 h (+{a['h1']} % en 1 h), MC {a['mc']:,}, liq {a['liq']:,}, "
-                           f"{a['operadores']} operadores A dentro. {a['dexscreener']}" for a in nuevas)
-        subprocess.run(["gh", "issue", "create", "--repo", repo, "--title", f"Sube token que nuestras A sostienen ({hora} UTC)",
-                        "--body", cuerpo + "\n\nSolo aviso, paper trading."], check=False)
+    if nuevas:
+        previo = json.load(open(PEND)) if os.path.exists(PEND) else []
+        json.dump(previo + nuevas, open(PEND, "w"), indent=1)
+    if os.environ.get("GITHUB_ACTIONS"):  # el reloj solo hace git add de algunos archivos: se deja preparado aquí
+        subprocess.run(["git", "add", ALERTAS], check=False)
     print(f"sostenidas: {len(toks)} tokens vigilados, {len(nuevas)} avisos")
 
 

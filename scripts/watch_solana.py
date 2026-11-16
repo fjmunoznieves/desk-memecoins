@@ -124,3 +124,9 @@ if not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").starts
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "fotos_saldos.py")], check=False)
     # Salidas en sombra (16-nov, aprobado por Fran): escalonada, "copiar A" y consenso por operadores. Solo registro.
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "salidas.py")], check=False)
+
+# Vigilancia de posiciones abiertas de A (16-nov, caso BLOB): en escaneo y reloj; detecta subidas y verifica saldo real
+# con Helius. El issue lo crea alerta_issue.py (paso siguiente, con GH_TOKEN).
+if not os.environ.get("ES_H23"):
+    import subprocess
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "vigila_sostenidas.py")], check=False)
