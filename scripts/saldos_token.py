@@ -4,6 +4,7 @@ import json, os, sys, time, urllib.request, urllib.error
 K = os.environ.get("HELIUS_API_KEY", "")
 RPC = f"https://mainnet.helius-rpc.com/?api-key={K}"
 mint = os.environ["MINT"]; ws = os.environ["BILLETERAS"].split()
+# Modo varios tokens (16-nov): MINT=multi y BILLETERAS="token:billetera token:billetera ..."
 def rpc(m, p):
     req = urllib.request.Request(RPC, data=json.dumps({"jsonrpc": "2.0", "id": 1, "method": m, "params": p}).encode(), headers={"Content-Type": "application/json"})
     for i in range(8):  # reintenta si Helius limita (429), p. ej. cuando otra corrida lo está usando
@@ -14,11 +15,15 @@ def rpc(m, p):
             if e.code != 429 or i == 7:
                 raise
             time.sleep(2 + 3 * i)
-sup = float((rpc("getTokenSupply", [mint]) or {}).get("value", {}).get("uiAmount") or 0)
-for w in ws:
+pares = [x.split(":") for x in ws] if mint == "multi" else [(mint, w) for w in ws]
+sups = {}
+for mint, w in pares:
+    if mint not in sups:
+        sups[mint] = float((rpc("getTokenSupply", [mint]) or {}).get("value", {}).get("uiAmount") or 0)
+    sup = sups[mint]
     try:
         r = rpc("getTokenAccountsByOwner", [w, {"mint": mint}, {"encoding": "jsonParsed"}]) or {}
         amt = sum(float(a["account"]["data"]["parsed"]["info"]["tokenAmount"]["uiAmount"] or 0) for a in r.get("value", []))
-        print(f"{w}\t{amt:,.0f}\t{(amt / sup * 100 if sup else 0):.3f}% del suministro")
+        print(f"{mint}\t{w}\t{amt:,.0f}\t{(amt / sup * 100 if sup else 0):.3f}% del suministro")
     except Exception as e:
         print(w, "error", type(e).__name__)
