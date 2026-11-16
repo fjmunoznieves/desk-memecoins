@@ -103,7 +103,7 @@ def compra_de(t, w):
                  cantidad=v, sol_gastado=round(sol, 3), firma=t["transaction"]["signatures"][0]) for m, v in got]
 
 
-TOKEN_PROGS = ["TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA", "TokenzQdBNbLqP5VEhdkAS6EPFLC1PazdAEnB3Ts7Dmw"]
+TOKEN_PROGS = ["TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA", "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"]
 
 
 def foto(w):
