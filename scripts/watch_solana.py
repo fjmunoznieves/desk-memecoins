@@ -165,13 +165,17 @@ if CARTERA:
                             cantidad=round(dv, 6), sol_gastado=round(usd / sol_px, 3) if sol_px else "", firma="foto"))
     print(f"cartera: {len(wl)} billeteras, {2 * len(wl)} consultas, {len(subidas)} subidas de saldo")
 else:
-    NTX = 0
-    for w, sigs in nuevas.items():
-        for sg in sigs:
-            t = tx_rpc(sg); NTX += 1
+    from concurrent.futures import ThreadPoolExecutor
+    pares = [(w, sg) for w, sigs in nuevas.items() for sg in sigs]
+    NTX = len(pares)
+
+    def una(par):
+        time.sleep(0.4)  # 4 hilos ≈ 8 consultas/s: bajo el límite de Helius (10/s)
+        return par[0], tx_rpc(par[1])
+    with ThreadPoolExecutor(4) as ex:
+        for w, t in ex.map(una, pares):
             if t:
                 compras += compra_de(t, w)
-            time.sleep(0.05 if ALC else 0.11)
     print(f"getTransaction: {NTX} ({'Alchemy' if ALC else 'Helius RPC, 1 crédito c/u'})")
 
 
