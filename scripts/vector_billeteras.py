@@ -10,10 +10,11 @@ import csv, json, os, sys, time, urllib.request, urllib.error
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 
-K = os.environ.get("HELIUS_API_KEY", "")
+FUENTE = (os.environ.get("FUENTE") or "helius").strip().lower()  # 16-nov: alchemy = cuota gratis aparte (30M CU/mes)
+K = os.environ.get("ALCHEMY_API_KEY" if FUENTE == "alchemy" else "HELIUS_API_KEY", "").strip()
 if not K:
-    print("Falta HELIUS_API_KEY"); sys.exit(0)
-RPC = f"https://mainnet.helius-rpc.com/?api-key={K}"
+    print("Falta la clave de", FUENTE); sys.exit(0)
+RPC = f"https://solana-mainnet.g.alchemy.com/v2/{K}" if FUENTE == "alchemy" else f"https://mainnet.helius-rpc.com/?api-key={K}"
 WSOL = "So11111111111111111111111111111111111111112"
 # estables como moneda de pago (USDC, USDT, USD1, PYUSD): se suman en USD aparte de SOL
 ESTABLES = {"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY2yoAFsTJ9Q9Pd2",
@@ -56,11 +57,45 @@ TOPE_TOTAL = int(os.environ.get("TOPE_CONSULTAS") or 10 ** 9)  # freno de crédi
 HASTA = {}  # modo profundo: billetera -> ts más antiguo ya leído (se pide solo lo anterior)
 
 
+TX_ALC = [0]
+
+
+def pagina_alchemy(w, opts, estado):
+    """Imita una página de getTransactionsForAddress con getSignaturesForAddress + getTransaction (Alchemy)."""
+    f = opts["filters"]["blockTime"]; desde, hasta = f["gte"], f.get("lt", 10 ** 12)
+    while len(estado["cola"]) < 100 and not estado["fin"]:
+        p = {"limit": 1000}
+        if estado["antes"]:
+            p["before"] = estado["antes"]
+        sig = rpc("getSignaturesForAddress", [w, p])
+        if sig is None:
+            return None
+        if not sig:
+            estado["fin"] = True; break
+        estado["antes"] = sig[-1]["signature"]
+        for x in sig:
+            bt = x.get("blockTime") or 0
+            if bt < desde:
+                estado["fin"] = True; break
+            if bt < hasta and x.get("err") is None:
+                estado["cola"].append(x["signature"])
+        if len(sig) < 1000:
+            estado["fin"] = True
+    lote, estado["cola"] = estado["cola"][:100], estado["cola"][100:]
+    def una(sg):
+        return rpc("getTransaction", [sg, {"encoding": "jsonParsed", "maxSupportedTransactionVersion": 0}])
+    with ThreadPoolExecutor(5) as ex:
+        txs = [t for t in ex.map(una, lote) if t]
+    TX_ALC[0] += len(lote)
+    return {"data": txs, "paginationToken": "sigue" if (estado["cola"] or not estado["fin"]) else None}
+
+
 def procesar(fila):
     w, bot = fila
     desde = int(time.time()) - DIAS * 86400
     agg = defaultdict(lambda: {"sol_in": 0.0, "sol_out": 0.0, "usd_in": 0.0, "usd_out": 0.0, "compras": 0, "ventas": 0, "primera": None, "ultima": None})
     token, pags, ntx = None, 0, 0
+    est = {"cola": [], "antes": None, "fin": False}
     tope = 5 if bot else MAX_PAG  # los bots tienen miles de tx al día: solo una muestra
     while pags < tope and LLAMADAS[0] < TOPE_TOTAL:
         opts = {"transactionDetails": "full", "sortOrder": "desc", "limit": 100, "encoding": "jsonParsed",
@@ -70,7 +105,7 @@ def procesar(fila):
             opts["filters"]["blockTime"]["lt"] = HASTA[w]
         if token:
             opts["paginationToken"] = token
-        r = rpc("getTransactionsForAddress", [w, opts])
+        r = pagina_alchemy(w, opts, est) if FUENTE == "alchemy" else rpc("getTransactionsForAddress", [w, opts])
         LLAMADAS[0] += 1
         if not r:
             break
@@ -156,7 +191,10 @@ def main():
         if not modo_ag:
             wr.writeheader()
         wr.writerows(filas)
-    print(f"consultas Helius aprox: {LLAMADAS[0]} (≈{LLAMADAS[0] * 100} créditos)")
+    if FUENTE == "alchemy":
+        print(f"Alchemy: {LLAMADAS[0]} páginas, {TX_ALC[0]} getTransaction")
+    else:
+        print(f"consultas Helius aprox: {LLAMADAS[0]} (≈{LLAMADAS[0] * 100} créditos)")
     print(f"filas billetera×token: {len(filas)}; tokens distintos: {len({x['token'] for x in filas})}")
 
 

@@ -16,6 +16,9 @@ on:
       tope_consultas:
         description: "Freno total de consultas Helius en esta corrida (100 créditos c/u)"
         default: "1500"
+      fuente:
+        description: "helius o alchemy (cuota gratis aparte)"
+        default: "helius"
       max_pag:
         description: "Tope de páginas por billetera (100 créditos cada una)"
         default: "40"
@@ -30,6 +33,8 @@ jobs:
       - name: Historia ${{ inputs.lista }} lote ${{ inputs.lote }}
         env:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+          FUENTE: ${{ inputs.fuente }}
           PROFUNDO: "1"
           DIAS: ${{ inputs.dias }}
           LOTE: ${{ inputs.lote }}
