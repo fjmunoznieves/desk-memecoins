@@ -114,6 +114,8 @@ def procesar(fila):
                     a["sol_out"] += sol; a["ventas"] += 1
             a["ultima"] = bt if a["ultima"] is None else max(a["ultima"], bt)
         pags += 1
+        if pags >= 10 and not agg:
+            break  # 1.000 transacciones sin ninguna compra/venta de token: no es trader, no se gastan más créditos
         token = r.get("paginationToken")
         if not token:
             break
