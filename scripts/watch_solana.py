@@ -44,8 +44,9 @@ for w in wl:
     last = st["ultima"].get(w)
     if last and last in sigs:
         sigs = sigs[:sigs.index(last)]
-    elif not last:
+    elif not last and not os.environ.get("SEMILLA"):
         st["ultima"][w] = sigs[0]; continue  # primera vez: solo marcar el punto de partida
+    # SEMILLA (consenso A, 16-nov): la primera vez toma las últimas 50 transacciones como nuevas
     if sigs:
         nuevas[w] = sigs
         st["ultima"][w] = sigs[0]

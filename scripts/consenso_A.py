@@ -42,7 +42,7 @@ def main():
     if os.environ.get("GH_TOKEN") and not os.environ.get("HELIUS_API_KEY"):
         avisar(); return
     e = dict(os.environ, ES_H23="1", WL_FILE="datos/watchlist_A_oper.tsv", ST_FILE="datos/consenso_A_estado.json",
-             LOG_FILE=LOG, AL_FILE="datos/consenso_A_wl.json")
+             LOG_FILE=LOG, AL_FILE="datos/consenso_A_wl.json", SEMILLA="1")
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "watch_solana.py")], env=e, check=False)
     m = mapa()
     ahora = int(time.time())
