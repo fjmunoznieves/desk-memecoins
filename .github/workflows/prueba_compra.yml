@@ -30,3 +30,7 @@ jobs:
           head -3 datos/watchlist_solana.tsv > /tmp/wl2.tsv
           SEMILLA=1 ES_H23=1 WL_FILE=/tmp/wl2.tsv ST_FILE=/tmp/st2.json LOG_FILE=/tmp/log2.tsv AL_FILE=/tmp/al2.json python3 scripts/watch_solana.py
           head -4 /tmp/log2.tsv || true
+      - name: Diagnóstico foto
+        env:
+          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+        run: python3 scripts/prueba_foto.py
