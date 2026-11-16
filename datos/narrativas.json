@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-16 18:28",
+ "hora_utc": "2026-11-16 19:36",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -10,17 +10,25 @@
  ],
  "narrativas": [
   {
-   "tema": "SpaceX Catches Starship",
+   "tema": "Spacecoin",
    "fuentes": [
-    "x_chainbase",
-    "bluesky"
+    "coingecko",
+    "coinmarketcap"
    ],
-   "calor": 84,
+   "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): SpaceX successfully caught the Starship upper stage, Ship 42, using launch tower arms following its return from orbit. The spacecraft completed 14 orbits and su…",
-    "tendencia en Bluesky: Elon Musk's rocket company used the launch tower's \"chopsticks\" arms to grab the returning ship."
+    "entre lo más buscado en CoinGecko (SPACE, puesto de capitalización 625)",
+    "entre lo más buscado en CoinMarketCap (SPACE, puesto 483)"
    ],
-   "token": null
+   "token": {
+    "cadena": "solana",
+    "token": "9V91UHNw1yWXWdHuuzbT17RC8KycsGdt88eybd3ifQgw",
+    "sym": "SPACE",
+    "liq": 82944273,
+    "vol24": 118085,
+    "c24": 0,
+    "edad_h": 3680.2
+   }
   },
   {
    "tema": "Archive of Our Own",
@@ -79,10 +87,10 @@
     "cadena": "solana",
     "token": "7ETtD1R93rjLsKjvevZQLXySu6Ag3jNRm9xF8FVXpump",
     "sym": "Cousins",
-    "liq": 6673,
-    "vol24": 17647,
-    "c24": -44.58,
-    "edad_h": 171.9
+    "liq": 6735,
+    "vol24": 17630,
+    "c24": -42.07,
+    "edad_h": 173.0
    }
   },
   {
@@ -229,6 +237,17 @@
    "token": null
   },
   {
+   "tema": "SpaceX Catches Starship",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 74,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 9): SpaceX successfully caught the Starship upper stage, Ship 42, using launch tower arms following its return from orbit. The spacecraft completed 14 orbits and su…"
+   ],
+   "token": null
+  },
+  {
    "tema": "Uber Amazon Zoox Launch",
    "fuentes": [
     "x_chainbase"
@@ -257,17 +276,28 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (MACCA, puesto de capitalización 790)"
+    "entre lo más buscado en CoinGecko (MACCA, puesto de capitalización 806)"
    ],
    "token": {
     "cadena": "solana",
     "token": "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump",
     "sym": "Macca",
-    "liq": 160128,
-    "vol24": 231364,
-    "c24": -7.79,
-    "edad_h": 772.8
+    "liq": 164383,
+    "vol24": 241235,
+    "c24": -5.2,
+    "edad_h": 773.9
    }
+  },
+  {
+   "tema": "Gato The Cat",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (GATO, puesto de capitalización 852)"
+   ],
+   "token": null
   },
   {
    "tema": "AudaCity",
@@ -276,7 +306,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (DACITYCOIN, puesto de capitalización 992)"
+    "entre lo más buscado en CoinGecko (DACITYCOIN, puesto de capitalización 958)"
    ],
    "token": {
     "cadena": "solana",
@@ -285,52 +315,22 @@
     "liq": 23236099,
     "vol24": 1045,
     "c24": 0,
-    "edad_h": 124.3
-   }
-  },
-  {
-   "tema": "Gato The Cat",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (GATO, puesto de capitalización 784)"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Pudgy Penguins",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 123)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "GeUYiY5x3yFYx33fVW4hou98xnSQvf8KDKdhXgmWwPMf",
-    "sym": "PENGU",
-    "liq": 30435009,
-    "vol24": 1037,
-    "c24": 0,
-    "edad_h": 440.2
+    "edad_h": 125.4
    }
   }
  ],
  "cruces_h18": [
   {
-   "ts": 1794853702,
-   "hora_utc": "2026-11-16 18:28",
+   "ts": 1794857796,
+   "hora_utc": "2026-11-16 19:36",
    "tema": "Gato The Cat",
-   "fuentes": "coingecko,trending 24h",
+   "fuentes": "coingecko,trending 1h",
    "cadena": "solana",
    "token": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
    "sym": "GATO",
-   "liq": 247757,
-   "mc": 5680265,
-   "c1": 0.13,
+   "liq": 247621,
+   "mc": 5692271,
+   "c1": -0.13,
    "seguridad": "",
    "aviso": "no",
    "nuestras": "A1 B14 C0"
@@ -338,17 +338,8 @@
  ],
  "huecos_h19": [
   {
-   "ts": 1794853702,
-   "hora_utc": "2026-11-16 18:28",
-   "tema": "SpaceX Catches Starship",
-   "fuentes": "x_chainbase,bluesky",
-   "calor": 84,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 9): SpaceX successfully caught the Starship upper stage, Ship 42, using launch tower arms following its return from orbit. The spacecraft completed 14 orbits and su… | tendencia en Bluesky: Elon Musk's rocket company used the launch tower's \"chopsticks\" arms to grab the returning ship.",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1794853702,
-   "hora_utc": "2026-11-16 18:28",
+   "ts": 1794857796,
+   "hora_utc": "2026-11-16 19:36",
    "tema": "Archive of Our Own",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -356,8 +347,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794853702,
-   "hora_utc": "2026-11-16 18:28",
+   "ts": 1794857796,
+   "hora_utc": "2026-11-16 19:36",
    "tema": "9/11",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -365,8 +356,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794853702,
-   "hora_utc": "2026-11-16 18:28",
+   "ts": 1794857796,
+   "hora_utc": "2026-11-16 19:36",
    "tema": "List of Nazi concentration camps",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -374,8 +365,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794853702,
-   "hora_utc": "2026-11-16 18:28",
+   "ts": 1794857796,
+   "hora_utc": "2026-11-16 19:36",
    "tema": "Full Gear (2026)",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -383,8 +374,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794853702,
-   "hora_utc": "2026-11-16 18:28",
+   "ts": 1794857796,
+   "hora_utc": "2026-11-16 19:36",
    "tema": "Amon-Ra St. Brown",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -392,8 +383,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794853702,
-   "hora_utc": "2026-11-16 18:28",
+   "ts": 1794857796,
+   "hora_utc": "2026-11-16 19:36",
    "tema": "Stephen Thompson (fighter)",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -401,12 +392,21 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794853702,
-   "hora_utc": "2026-11-16 18:28",
+   "ts": 1794857796,
+   "hora_utc": "2026-11-16 19:36",
    "tema": "Kayla Harrison",
    "fuentes": "wikipedia",
    "calor": 97,
    "porque": "145,493 visitas ayer en Wikipedia, 5.7× anteayer",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1794857796,
+   "hora_utc": "2026-11-16 19:36",
+   "tema": "Bitcoin Buy Walls Hold",
+   "fuentes": "x_chainbase",
+   "calor": 90,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Discussions across social media highlight a mix of technical analysis, market sentiment, and broader technological trends. Key topics include Solana price actio…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
