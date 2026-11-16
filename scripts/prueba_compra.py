@@ -16,5 +16,10 @@ for r in filas:
     c = ns["compra_de"](t, r["billetera"]) if t else []
     hit = any(x["token"] == r["token"] for x in c)
     ok += hit
+    if not hit:
+        if not t: print("   sin tx (None)")
+        else:
+            m = t.get("meta") or {}
+            print("   err", m.get("err"), "tb", [(b.get("owner","")[:6], b["mint"][:6], b["uiTokenAmount"].get("uiAmount")) for b in (m.get("postTokenBalances") or []) if r["token"] == b["mint"]][:4])
     print("OK " if hit else "MAL", r["token"][:8], "viejo", r["sol_gastado"], "nuevo", [(x["token"][:8], x["sol_gastado"]) for x in c])
 print(f"coinciden {ok}/{len(filas)}")
