@@ -87,7 +87,17 @@ def _goplus(chain, addr):
     if dev is not None and dev > DEV_MAX: f.append("dev")
     lp = sum(float(h.get("percent") or 0) for h in r.get("lp_holders") or [] if h.get("is_locked") == 1 or (h.get("address") or "").lower() in CERO)
     if r.get("lp_holders") and lp < 0.9: f.append("lp")
-    return f, {"goplus": {"buy_tax": bt, "sell_tax": st, "dev": dev, "lp_bloq": round(lp * 100, 1), "owner": r.get("owner_address"), "open_source": r.get("is_open_source")}}
+    # 16-nov (caso mihao BNB): el top 10 de GeckoTerminal dio 4 % con una billetera de 60 %. Se calcula también con los
+    # holders de GoPlus, sin pools (pares DEX), bloqueos ni direcciones quemadas; y se rechaza una ballena de >10 %.
+    pares = {(x.get("pair") or "").lower() for x in r.get("dex") or []}
+    reales = [h for h in r.get("holders") or [] if (h.get("address") or "").lower() not in pares | set(CERO)
+              and h.get("is_locked") != 1 and not h.get("tag")]
+    pct = sorted((float(h.get("percent") or 0) for h in reales), reverse=True)
+    gp_top10 = round(sum(pct[:10]) * 100, 2)
+    if gp_top10 > TOP10_MAX: f.append("top10_gp")
+    if pct and pct[0] > 0.10: f.append("ballena")
+    return f, {"goplus": {"buy_tax": bt, "sell_tax": st, "dev": dev, "lp_bloq": round(lp * 100, 1), "owner": r.get("owner_address"),
+                          "open_source": r.get("is_open_source"), "top10_gp": gp_top10, "mayor": round(pct[0] * 100, 2) if pct else None}}
 
 
 def revisar(chain, addr):
