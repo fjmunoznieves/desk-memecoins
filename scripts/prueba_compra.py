@@ -12,7 +12,7 @@ for n in ast.parse(src).body:
 filas = list(csv.DictReader(open("datos/watchlist_compras.tsv"), delimiter="\t"))[-12:]
 ok = 0
 for r in filas:
-    t = ns["tx_rpc"](r["firma"])
+    t = ns["tx_rpc"](r["firma"].strip())
     c = ns["compra_de"](t, r["billetera"]) if t else []
     hit = any(x["token"] == r["token"] for x in c)
     ok += hit
