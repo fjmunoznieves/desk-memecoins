@@ -1,6 +1,6 @@
 """Vigila las compras nuevas de la watchlist de Solana con Helius. Solo lectura y paper: no opera.
 - RPC getSignaturesForAddress (barato) para ver si hay transacciones nuevas por billetera.
-- Solo si hay nuevas, las interpreta con la API de transacciones de Helius (en lotes).
+- Solo si hay nuevas, las interpreta con getTransaction (1 crédito por tx; Alchemy si hay ALCHEMY_API_KEY).
 - Registra cada compra en datos/watchlist_compras.tsv y, si 2+ billeteras compran el mismo token en 24 h,
   escribe datos/alertas_pendientes.json para que el workflow abra un aviso (issue) en GitHub.
 La clave sale del secreto HELIUS_API_KEY y nunca se imprime."""
@@ -8,7 +8,8 @@ import csv, json, os, sys, time, urllib.request, urllib.error
 
 KEY = os.environ.get("HELIUS_API_KEY", "").strip()
 RPC = f"https://mainnet.helius-rpc.com/?api-key={KEY}"
-PARSE = [f"https://api-mainnet.helius-rpc.com/v0/transactions?api-key={KEY}", f"https://api.helius.xyz/v0/transactions?api-key={KEY}"]
+ALC = os.environ.get("ALCHEMY_API_KEY", "").strip()
+RPC_TX = f"https://solana-mainnet.g.alchemy.com/v2/{ALC}" if ALC else RPC
 WL = os.environ.get("WL_FILE", "datos/watchlist_solana.tsv")
 ST = os.environ.get("ST_FILE", "datos/watchlist_estado.json")
 LOG = os.environ.get("LOG_FILE", "datos/watchlist_compras.tsv")
@@ -30,8 +31,11 @@ def post(url, body):
             time.sleep(2 + 3 * i)
 
 
-def safe(e):  # nunca mostrar la clave en los errores
-    return str(e).replace(KEY, "***") if KEY else str(e)
+def safe(e):  # nunca mostrar las claves en los errores
+    m = str(e)
+    for k in (KEY, ALC):
+        if k: m = m.replace(k, "***")
+    return m
 
 
 if not KEY:
@@ -59,27 +63,53 @@ for w in wl:
     time.sleep(0.2)
 
 compras = []
+# 16-nov (freno Helius 738k): antes se usaba la API "Enhanced Transactions" de Helius (100 créditos por llamada,
+# una por billetera con tx nuevas → decenas de miles de créditos por escaneo). Ahora: getTransaction jsonParsed
+# por firma (1 crédito en Helius; o Alchemy si está ALCHEMY_API_KEY). Misma regla de compra.
+def tx_rpc(sg):
+    try:
+        return post(RPC_TX, {"jsonrpc": "2.0", "id": 1, "method": "getTransaction",
+                             "params": [sg, {"encoding": "jsonParsed", "maxSupportedTransactionVersion": 0}]}).get("result")
+    except Exception as e:
+        print("tx error", safe(e)[:80]); return None
+
+
+def compra_de(t, w):
+    meta = t.get("meta") or {}
+    if meta.get("err") is not None:
+        return []
+    ks = [k["pubkey"] if isinstance(k, dict) else k for k in t["transaction"]["message"]["accountKeys"]]
+    dif = {}
+    for lado, sg in (("preTokenBalances", -1), ("postTokenBalances", 1)):
+        for b in meta.get(lado) or []:
+            if b.get("owner") != w:
+                continue
+            dif[b["mint"]] = dif.get(b["mint"], 0) + sg * float(b["uiTokenAmount"]["uiAmount"] or 0)
+    got = [(m, v) for m, v in dif.items() if m not in BASE and v > 0]
+    gave_tok = [m for m, v in dif.items() if m not in BASE and v < 0]
+    if not got or gave_tok:  # compra = recibe token no base sin entregar otro token no base
+        return []
+    sol = 0.0
+    if w in ks:
+        i = ks.index(w)
+        sol = max(0.0, (meta["preBalances"][i] - meta["postBalances"][i]) / 1e9)
+    sol += max(0.0, -dif.get("So11111111111111111111111111111111111111112", 0))
+    base_out = any(v < 0 for m, v in dif.items() if m in BASE)
+    if sol < 0.05 and not base_out:  # descarta airdrops y transferencias gratis
+        return []
+    ts = t.get("blockTime") or int(time.time())
+    return [dict(hora_utc=time.strftime("%Y-%m-%d %H:%M", time.gmtime(ts)), ts=ts, billetera=w, token=m,
+                 cantidad=v, sol_gastado=round(sol, 3), firma=t["transaction"]["signatures"][0]) for m, v in got]
+
+
+NTX = 0
 for w, sigs in nuevas.items():
-    for i in range(0, len(sigs), 100):
-        txs = None
-        for u in PARSE:
-            try:
-                txs = post(u, {"transactions": sigs[i:i + 100]}); break
-            except Exception as e:
-                print("parse error", safe(e)[:80])
-        for t in txs or []:
-            tt = t.get("tokenTransfers") or []
-            got = [x for x in tt if x.get("toUserAccount") == w and x.get("mint") not in BASE]
-            gave_tok = [x for x in tt if x.get("fromUserAccount") == w and x.get("mint") not in BASE]
-            if not got or gave_tok:  # compra = recibe token no base sin entregar otro token no base
-                continue
-            sol = sum(x.get("amount", 0) for x in t.get("nativeTransfers") or [] if x.get("fromUserAccount") == w) / 1e9
-            if sol < 0.05 and t.get("type") != "SWAP":  # descarta airdrops y transferencias gratis
-                continue
-            ts = t.get("timestamp") or int(time.time())
-            for x in got:
-                compras.append(dict(hora_utc=time.strftime("%Y-%m-%d %H:%M", time.gmtime(ts)), ts=ts, billetera=w, token=x["mint"],
-                                    cantidad=x.get("tokenAmount"), sol_gastado=round(sol, 3), firma=t.get("signature")))
+    for sg in sigs:
+        t = tx_rpc(sg); NTX += 1
+        if t:
+            compras += compra_de(t, w)
+        time.sleep(0.05 if ALC else 0.11)
+print(f"getTransaction: {NTX} ({'Alchemy' if ALC else 'Helius RPC, 1 crédito c/u'})")
 
 if compras:
     nuevo = not os.path.exists(LOG)
