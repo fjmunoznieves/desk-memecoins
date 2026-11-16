@@ -112,7 +112,10 @@ def foto(w):
     for prog in TOKEN_PROGS:
         try:
             r = post(RPC, {"jsonrpc": "2.0", "id": 1, "method": "getTokenAccountsByOwner",
-                           "params": [w, {"programId": prog}, {"encoding": "jsonParsed"}]}).get("result") or {}
+                           "params": [w, {"programId": prog}, {"encoding": "jsonParsed"}]})
+            if r.get("error"):  # 16-nov: un error de la consulta no puede pasar como "billetera vacía"
+                print("foto error", w[:6], str(r["error"])[:80]); return None
+            r = r.get("result") or {}
         except Exception as e:
             print("foto error", w[:6], safe(e)[:80]); return None
         for acc in r.get("value") or []:
