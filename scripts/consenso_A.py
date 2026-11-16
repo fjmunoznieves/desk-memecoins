@@ -15,7 +15,7 @@ LOG = "datos/consenso_A_compras.tsv"
 SEG = "datos/seguimiento.tsv"
 PEND = "datos/consenso_pendientes.json"
 CAMPOS_SEG = ["ts", "hora_utc", "token", "sym", "precio", "billeteras", "nota"]
-VENTANA, MC_MAX, SOL_MIN = 72 * 3600, 100e6, 0.1
+VENTANA, MC_MAX, SOL_MIN, LIQ_MIN = 72 * 3600, 100e6, 0.1, 10000  # 16-nov: sin liquidez mínima salían tokens muertos de 2 mil de MC
 
 
 def leer(f):
@@ -74,7 +74,7 @@ def main():
         if not p:
             continue
         mc = p.get("marketCap") or p.get("fdv") or 0
-        if mc > MC_MAX:
+        if mc > MC_MAX or ((p.get("liquidity") or {}).get("usd") or 0) < LIQ_MIN:
             continue
         d = por[t]
         filas.append(dict(ts=ahora, hora_utc=hora, token=t, sym=p["baseToken"]["symbol"], precio=p.get("priceUsd") or "",
