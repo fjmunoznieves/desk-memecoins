@@ -130,3 +130,5 @@ if not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").starts
 if not os.environ.get("ES_H23"):
     import subprocess
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "vigila_sostenidas.py")], check=False)
+    # Consenso A en vivo (16-nov, Fran): 2+ operadores A compran el mismo token en 72 h → seguimiento + aviso.
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "consenso_A.py")], check=False)

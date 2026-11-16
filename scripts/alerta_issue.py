@@ -12,3 +12,6 @@ subprocess.run(["python3", "scripts/h21.py"], check=False)
 
 # Vigilancia de posiciones abiertas de A (16-nov, caso BLOB): avisa si sube un token que nuestras A aún sostienen.
 subprocess.run(["python3", "scripts/vigila_sostenidas.py"], check=False)
+
+# Consenso A en vivo (16-nov): abre el aviso de lo que dejó consenso_A.py.
+subprocess.run(["python3", "scripts/consenso_A.py"], check=False)
