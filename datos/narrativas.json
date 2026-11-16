@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-16 09:24",
+ "hora_utc": "2026-11-16 14:24",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -9,6 +9,27 @@
   "x_chainbase"
  ],
  "narrativas": [
+  {
+   "tema": "SuperRare",
+   "fuentes": [
+    "coingecko",
+    "coinmarketcap"
+   ],
+   "calor": 80,
+   "porque": [
+    "entre lo más buscado en CoinGecko (RARE, puesto de capitalización 954)",
+    "entre lo más buscado en CoinMarketCap (RARE, puesto 747)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "BYrTsmbRjTCfPVGMM4PVAAfbFPRz6xHkL7oZYHtJWP2E",
+    "sym": "RARE",
+    "liq": 22730414,
+    "vol24": 300220,
+    "c24": 0,
+    "edad_h": 1222.9
+   }
+  },
   {
    "tema": "Archive of Our Own",
    "fuentes": [
@@ -62,7 +83,15 @@
    "porque": [
     "121,498 visitas ayer en Wikipedia, 7.6× anteayer"
    ],
-   "token": null
+   "token": {
+    "cadena": "solana",
+    "token": "7ETtD1R93rjLsKjvevZQLXySu6Ag3jNRm9xF8FVXpump",
+    "sym": "Cousins",
+    "liq": 8171,
+    "vol24": 25215,
+    "c24": -38.33,
+    "edad_h": 167.8
+   }
   },
   {
    "tema": "Amon-Ra St. Brown",
@@ -98,35 +127,35 @@
    "token": null
   },
   {
-   "tema": "Bitcoin Sweeps Lows Near 62k",
+   "tema": "Input Tweets Lack Crypto Content",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): Bitcoin experienced significant volatility, sweeping liquidity below the $62,700 level and triggering over $1 billion in long liquidations before rebounding abo…"
+    "tema caliente en X según Chainbase Tops (puesto 1): Attendees at the Solana Breakpoint conference report full capacity, reflecting renewed interest in the ecosystem despite broader market uncertainty. Concurrentl…"
    ],
    "token": null
   },
   {
-   "tema": "Trump Nvidia AI Champion Designation",
+   "tema": "Trump DOJ Warns Democrats",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): The Trump administration is set to designate major US technology firms, including Nvidia, Amazon, Microsoft, OpenAI, and Anthropic, as AI \"national champions\" t…"
+    "tema caliente en X según Chainbase Tops (puesto 2): Following Democratic gains in the midterm elections, the Trump administration's Department of Justice has issued warnings to incoming lawmakers regarding potent…"
    ],
    "token": null
   },
   {
-   "tema": "Iran Strikes Bahrain Base",
+   "tema": "EU Funds Ukraine Air Defense",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 86,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): Iranian forces launched drone attacks on a US air defense radar site in Bahrain, which Tehran claimed as retaliation for hostile actions, while Bahrain reported…"
+    "tema caliente en X según Chainbase Tops (puesto 3): The European Union has finalized a new sanctions package against Russia, including 113 listings and targets such as the Wildberries CEO and St. Petersburg oil t…"
    ],
    "token": null
   },
@@ -142,57 +171,57 @@
    "token": null
   },
   {
-   "tema": "Crypto Market Volatility Mixed",
+   "tema": "US Debt Surpasses 40 Trillion",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 84,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): Cryptocurrency investors express varied reactions to recent market fluctuations, with some reporting portfolio losses while others advocate for holding position…"
+    "tema caliente en X según Chainbase Tops (puesto 4): The United States national debt has officially exceeded $40.6 trillion, with public debt now larger than the entire US economy for the first time since World Wa…"
    ],
    "token": null
   },
   {
-   "tema": "Trader Risk Management Advice",
+   "tema": "FAA Nationwide Flight Shutdown",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 82,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): Crypto traders and analysts emphasize the importance of patience, discipline, and risk management amidst current market volatility. Discussions highlight that m…"
+    "tema caliente en X según Chainbase Tops (puesto 5): A malfunctioning router at an FAA radio site in El Dorado, Arkansas, caused a nationwide flight ground stop on Friday, resulting in over 10,000 delayed or cance…"
    ],
    "token": null
   },
   {
-   "tema": "US BTC ETH ETF Outflows",
+   "tema": "JPMorgan DBS Token Dollar",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): U.S. spot Bitcoin and Ethereum ETFs recorded combined net outflows of $1.46 billion last week, with Bitcoin funds seeing $1.07 billion in redemptions and Ethere…"
+    "tema caliente en X según Chainbase Tops (puesto 6): JPMorgan and DBS Bank have initiated 24/7 cross-border payments using tokenized U.S. dollars on their respective blockchain deposit networks. The service enable…"
    ],
    "token": null
   },
   {
-   "tema": "Samsung Austin Chip Factory Expansion",
+   "tema": "ECB Europe Economy Resilient",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 78,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): Samsung plans to invest $1.9 billion to expand its Austin, Texas chip factory, aiming to produce STM32V8 chips for SpaceX Starlink satellites by 2030. This move…"
+    "tema caliente en X según Chainbase Tops (puesto 7): European Central Bank Vice President Boris Vujcic stated that artificial intelligence and high sovereign debts are the most prominent risks to financial stabili…"
    ],
    "token": null
   },
   {
-   "tema": "Solana Memecoin Breakpoint Updates",
+   "tema": "Japan Stocks Drop 150 Billion",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 76,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): Multiple new memecoins are launching on the Solana network via pump.fun, with influencers promoting tokens such as NINU and sharing contract addresses for early…"
+    "tema caliente en X según Chainbase Tops (puesto 8): Approximately $150 billion was wiped from Japanese stock markets following reports that the country's economy contracted by 0.1% in the third quarter, missing e…"
    ],
    "token": null
   },
@@ -208,35 +237,65 @@
    "token": null
   },
   {
-   "tema": "Russia Ukraine Exchange Drone Strikes",
+   "tema": "Coinbase Broadridge Token Standard",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 74,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): Ukrainian forces conducted drone strikes on multiple Russian targets, including energy infrastructure, an airbase in the Astrakhan region, and industrial facili…"
+    "tema caliente en X según Chainbase Tops (puesto 9): Coinbase CEO Brian Armstrong stated that the primary benefit of tokenized equities is providing market access to billions of people and enabling better on-chain…"
    ],
    "token": null
   },
   {
-   "tema": "Asian Currencies Hit Lows",
+   "tema": "Luxor Software Hijacked Bitcoin",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 72,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): Multiple Asian currencies, including the Indonesian rupiah, Taiwan dollar, and Australian dollar, have fallen to their lowest levels in recent periods due to do…"
+    "tema caliente en X según Chainbase Tops (puesto 10): Attackers compromised Luxor's Commander software to redirect approximately 13 EH/s of Bitcoin mining hashrate from over a dozen client accounts to the OCEAN min…"
    ],
    "token": null
   },
   {
-   "tema": "AI Boom Impacts US Jobs",
+   "tema": "Cardano Founder Challenges CEO",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): US Treasury Secretary Scott Bessent stated that Iran's economy is projected to contract by 25% between March 2026 and March 2027, a decline exceeding the Soviet…"
+    "tema caliente en X según Chainbase Tops (puesto 11): Cardano founder Charles Hoskinson publicly questioned Cardano Foundation CEO Frederik Gregaard regarding the accountability and ownership of 850,000 tokenized V…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Macca the Gator",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (MACCA, puesto de capitalización 820)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump",
+    "sym": "Macca",
+    "liq": 163752,
+    "vol24": 238516,
+    "c24": -11.86,
+    "edad_h": 768.7
+   }
+  },
+  {
+   "tema": "Gato The Cat",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (GATO, puesto de capitalización 813)"
    ],
    "token": null
   },
@@ -253,90 +312,34 @@
     "cadena": "solana",
     "token": "GeUYiY5x3yFYx33fVW4hou98xnSQvf8KDKdhXgmWwPMf",
     "sym": "PENGU",
-    "liq": 30434983,
-    "vol24": 1,
+    "liq": 30435009,
+    "vol24": 1037,
     "c24": 0,
-    "edad_h": 431.1
-   }
-  },
-  {
-   "tema": "EVAA Protocol",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (EVAA, puesto de capitalización 725)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "Ej4cuBwfc36DZH1TiMcX29cTTxM9jgVYJaKF5XtUtZhv",
-    "sym": "EVAA",
-    "liq": 29926190,
-    "vol24": 440811,
-    "c24": -0.01,
-    "edad_h": 449.1
-   }
-  },
-  {
-   "tema": "Monad",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 166)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
-    "sym": "MON",
-    "liq": 31943929,
-    "vol24": 259624,
-    "c24": 0,
-    "edad_h": 1108.6
-   }
-  },
-  {
-   "tema": "Derive",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (DRV, puesto de capitalización 124)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "DPcz93J8vKiEL2W6dSSUuyonSmMxo8Bm8xS47ADCpbBE",
-    "sym": "DRV",
-    "liq": 391822858,
-    "vol24": 28,
-    "c24": 0,
-    "edad_h": 746.9
+    "edad_h": 436.1
    }
   }
  ],
  "cruces_h18": [
   {
-   "ts": 1794821088,
-   "hora_utc": "2026-11-16 09:24",
-   "tema": "Solana Memecoin Breakpoint Updates",
-   "fuentes": "x_chainbase,trending 1h",
+   "ts": 1794839097,
+   "hora_utc": "2026-11-16 14:24",
+   "tema": "Gato The Cat",
+   "fuentes": "coingecko,trending 24h",
    "cadena": "solana",
-   "token": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
-   "sym": "PUMP",
-   "liq": 19187746,
-   "mc": 1324973007,
-   "c1": 1.43,
-   "seguridad": "top10",
-   "aviso": "no"
+   "token": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
+   "sym": "GATO",
+   "liq": 265953,
+   "mc": 6574078,
+   "c1": 0.55,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A1 B14 C0"
   }
  ],
  "huecos_h19": [
   {
-   "ts": 1794821088,
-   "hora_utc": "2026-11-16 09:24",
+   "ts": 1794839097,
+   "hora_utc": "2026-11-16 14:24",
    "tema": "Archive of Our Own",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -344,8 +347,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794821088,
-   "hora_utc": "2026-11-16 09:24",
+   "ts": 1794839097,
+   "hora_utc": "2026-11-16 14:24",
    "tema": "9/11",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -353,8 +356,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794821088,
-   "hora_utc": "2026-11-16 09:24",
+   "ts": 1794839097,
+   "hora_utc": "2026-11-16 14:24",
    "tema": "List of Nazi concentration camps",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -362,8 +365,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794821088,
-   "hora_utc": "2026-11-16 09:24",
+   "ts": 1794839097,
+   "hora_utc": "2026-11-16 14:24",
    "tema": "Full Gear (2026)",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -371,17 +374,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794821088,
-   "hora_utc": "2026-11-16 09:24",
-   "tema": "Kirk Cousins",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "121,498 visitas ayer en Wikipedia, 7.6× anteayer",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1794821088,
-   "hora_utc": "2026-11-16 09:24",
+   "ts": 1794839097,
+   "hora_utc": "2026-11-16 14:24",
    "tema": "Amon-Ra St. Brown",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -389,8 +383,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794821088,
-   "hora_utc": "2026-11-16 09:24",
+   "ts": 1794839097,
+   "hora_utc": "2026-11-16 14:24",
    "tema": "Stephen Thompson (fighter)",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -398,12 +392,21 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794821088,
-   "hora_utc": "2026-11-16 09:24",
+   "ts": 1794839097,
+   "hora_utc": "2026-11-16 14:24",
    "tema": "Kayla Harrison",
    "fuentes": "wikipedia",
    "calor": 97,
    "porque": "145,493 visitas ayer en Wikipedia, 5.7× anteayer",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1794839097,
+   "hora_utc": "2026-11-16 14:24",
+   "tema": "Input Tweets Lack Crypto Content",
+   "fuentes": "x_chainbase",
+   "calor": 90,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Attendees at the Solana Breakpoint conference report full capacity, reflecting renewed interest in the ecosystem despite broader market uncertainty. Concurrentl…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
