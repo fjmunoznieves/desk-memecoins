@@ -4,7 +4,7 @@
 - Registra cada compra en datos/watchlist_compras.tsv y, si 2+ billeteras compran el mismo token en 24 h,
   escribe datos/alertas_pendientes.json para que el workflow abra un aviso (issue) en GitHub.
 La clave sale del secreto HELIUS_API_KEY y nunca se imprime."""
-import csv, json, os, sys, time, urllib.request
+import csv, json, os, sys, time, urllib.request, urllib.error
 
 KEY = os.environ.get("HELIUS_API_KEY", "").strip()
 RPC = f"https://mainnet.helius-rpc.com/?api-key={KEY}"
@@ -20,8 +20,14 @@ COLS = ["hora_utc", "ts", "billetera", "token", "cantidad", "sol_gastado", "firm
 
 def post(url, body):
     req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "User-Agent": "desk-scan"})
-    with urllib.request.urlopen(req, timeout=40) as r:
-        return json.load(r)
+    for i in range(5):  # 16-nov: reintenta ante 429 (límite de Helius cuando corren varias cosas a la vez)
+        try:
+            with urllib.request.urlopen(req, timeout=40) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            if e.code != 429 or i == 4:
+                raise
+            time.sleep(2 + 3 * i)
 
 
 def safe(e):  # nunca mostrar la clave en los errores
