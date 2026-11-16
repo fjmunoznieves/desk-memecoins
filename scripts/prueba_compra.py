@@ -18,7 +18,7 @@ for r in filas:
     ok += hit
     if not hit:
         if not t:
-            raw = ns["post"](ns["RPC_TX"], {"jsonrpc": "2.0", "id": 1, "method": "getTransaction", "params": [r["firma"].strip(), {"encoding": "jsonParsed", "maxSupportedTransactionVersion": 0}]})
+            raw = ns["post"](ns["RPC_TX"], {"jsonrpc": "2.0", "id": 1, "method": "getTransaction", "params": [r["firma"].strip(), {"encoding": "jsonParsed", "maxSupportedTransactionVersion": 1}]})
             print("   sin tx:", repr(r["firma"][-6:]), ns["safe"](json.dumps(raw))[:200])
         else:
             m = t.get("meta") or {}

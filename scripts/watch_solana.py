@@ -69,7 +69,7 @@ compras = []
 def tx_rpc(sg):
     try:
         return post(RPC_TX, {"jsonrpc": "2.0", "id": 1, "method": "getTransaction",
-                             "params": [sg, {"encoding": "jsonParsed", "maxSupportedTransactionVersion": 0}]}).get("result")
+                             "params": [sg, {"encoding": "jsonParsed", "maxSupportedTransactionVersion": 1}]}).get("result")
     except Exception as e:
         print("tx error", safe(e)[:80]); return None
 
