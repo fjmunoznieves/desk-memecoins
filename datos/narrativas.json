@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-17 17:57",
+ "hora_utc": "2026-11-17 21:21",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -9,40 +9,6 @@
   "x_chainbase"
  ],
  "narrativas": [
-  {
-   "tema": "Brevis",
-   "fuentes": [
-    "coingecko",
-    "coinmarketcap"
-   ],
-   "calor": 80,
-   "porque": [
-    "entre lo más buscado en CoinGecko (BREV, puesto de capitalización 661)",
-    "entre lo más buscado en CoinMarketCap (BREV, puesto 520)"
-   ],
-   "token": {
-    "cadena": "bsc",
-    "token": "0x086F405146Ce90135750Bbec9A063a8B20A8bfFb",
-    "sym": "BREV",
-    "liq": 6018,
-    "vol24": 230373,
-    "c24": 33.63,
-    "edad_h": 2912.4
-   }
-  },
-  {
-   "tema": "Game Awards nominations announced",
-   "fuentes": [
-    "bluesky",
-    "trends"
-   ],
-   "calor": 80,
-   "porque": [
-    "tendencia en Bluesky: Nominees include Resident Evil Requiem, Trails in the Sky 2nd Chapter, and Fire Emblem: Fortune's Weave.",
-    "búsqueda en tendencia en Google (20000+)"
-   ],
-   "token": null
-  },
   {
    "tema": "Robert Pattinson",
    "fuentes": [
@@ -56,10 +22,10 @@
     "cadena": "solana",
     "token": "AWY6oLUyJJaHv2eSXJTSdJeXNefGqY6G86RD77Nbpump",
     "sym": "007",
-    "liq": 8066,
-    "vol24": 123369,
-    "c24": -74.82,
-    "edad_h": 26.8
+    "liq": 6985,
+    "vol24": 93205,
+    "c24": -50.64,
+    "edad_h": 30.2
    }
   },
   {
@@ -106,12 +72,12 @@
    ],
    "token": {
     "cadena": "solana",
-    "token": "5SMoZrJDaFnhDSJ9kh8SWutC7zKSDwnQJYpuj6ugpump",
-    "sym": "CRAIG",
-    "liq": 3377,
-    "vol24": 0,
+    "token": "4aSmCrL5SxwU1d52oyGes5Lof38yBnSAVBJRi6kRpump",
+    "sym": "DANIEL",
+    "liq": 3354,
+    "vol24": 5,
     "c24": 0,
-    "edad_h": 12415.8
+    "edad_h": 16500.1
    }
   },
   {
@@ -126,46 +92,46 @@
    "token": null
   },
   {
-   "tema": "US Dollar 19 Month High",
+   "tema": "Meta Tests App Telegram Banned",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): The US dollar has strengthened to its highest level in 19 months, driven by hotter-than-expected inflation data and market expectations of further Federal Reser…"
+    "tema caliente en X según Chainbase Tops (puesto 1): Meta is testing a direct messaging application in Turkiye and Thailand, incorporating integrated user safety safeguards. Concurrently, several Middle Eastern co…"
    ],
    "token": null
   },
   {
-   "tema": "Anthropic IPO Price Range Set",
+   "tema": "Deutsche Bank Internal Files Leak",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): Anthropic has filed an amended S-1 for its initial public offering, setting a share price range of $70 to $78. The filing reveals that Amazon will hold 48.2% of…"
+    "tema caliente en X según Chainbase Tops (puesto 2): Whistleblowers leaked over 15 million internal Deutsche Bank documents to a global consortium of journalists, exposing significant compliance failures and risk …"
    ],
    "token": null
   },
   {
-   "tema": "LeBron Passes Kidd Assists Record",
+   "tema": "GTA VI Worker Time Off",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 86,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): The Los Angeles Chargers and Baltimore Ravens are scheduled to compete in a Monday Night Football matchup broadcast on ESPN, featuring key players such as Justi…"
+    "tema caliente en X según Chainbase Tops (puesto 3): Grand Theft Auto VI has generated an estimated $1.5 billion in revenue prior to its official release, marking a significant financial milestone for the gaming i…"
    ],
    "token": null
   },
   {
-   "tema": "US Banks Service Outages",
+   "tema": "US Retail Sales Growth Slows",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 84,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): Major US financial institutions, including JPMorgan Chase, Bank of America, Wells Fargo, and U.S. Bancorp, experienced widespread service disruptions affecting …"
+    "tema caliente en X según Chainbase Tops (puesto 4): US retail sales growth moderated in October, with data indicating a pullback in big-ticket items such as automobiles masking resilient demand for other goods. B…"
    ],
    "token": null
   },
@@ -181,79 +147,57 @@
    "token": null
   },
   {
-   "tema": "Trump Manila Quad Talks",
+   "tema": "France Faces Economic Crisis",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 82,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): US President Donald Trump has arrived in Manila, Philippines, to attend the 49th ASEAN Summit. During his visit, he is scheduled to hold discussions with the le…"
+    "tema caliente en X según Chainbase Tops (puesto 5): French presidential candidate Jean-Luc Mélenchon highlighted severe poverty and meal insecurity in France, attributing the situation to political decisions and …"
    ],
    "token": null
   },
   {
-   "tema": "Ukraine Strikes Crimean Bridge",
+   "tema": "EU Approves UniCredit Commerzbank",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): Ukrainian forces launched drone and missile attacks on the Kerch Bridge connecting Russia to Crimea, resulting in the collapse of a roadway section and an arch …"
+    "tema caliente en X según Chainbase Tops (puesto 6): Germany has announced its support for Spain's Pablo Hernandez de Cos to succeed Christine Lagarde as the President of the European Central Bank. This diplomatic…"
    ],
    "token": null
   },
   {
-   "tema": "UK Unemployment Falls 4.6%",
+   "tema": "SNL Partner Michael Investigated",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 78,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): The UK unemployment rate decreased to 4.6% in September, beating the forecast of 4.7%, while average weekly earnings rose by 3.6% year-on-year. Despite the drop…"
+    "tema caliente en X según Chainbase Tops (puesto 7): Authorities are investigating multiple unrelated incidents, including a potential hate crime attack on an Uber driver in Minnesota and a robbery attempt in Prat…"
    ],
    "token": null
   },
   {
-   "tema": "Solana Foundation Buys CoinGecko",
+   "tema": "Chevron Nears Beacon Offshore Deal",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 76,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): The Solana Foundation has acquired a majority stake in the crypto data platform CoinGecko, as confirmed by foundation member Vibhu. The partnership aims to expa…"
+    "tema caliente en X según Chainbase Tops (puesto 8): Chevron is finalizing a approximately $5 billion agreement to acquire a majority stake in Beacon Offshore Energy, a Blackstone-backed producer operating in the …"
    ],
    "token": null
   },
   {
-   "tema": "Russia Allows Bitcoin Ethereum Purchase",
+   "tema": "Schafer Zendaya Bond Girl Contenders",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 74,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): Starting November 17, Russian retail investors can legally purchase Bitcoin, Ethereum, and USDT through authorized financial intermediaries. The new regulations…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Trump Thailand Tariff Elimination",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 72,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): President Trump announced that Thailand will eliminate all tariffs on U.S. exports and increase purchases of American farm goods by $2.6 billion. This trade agr…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Sui Network Zero Gas Fees",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 70,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): Sui Network processed a record 96.2 million transactions in a single week, averaging 159.07 transactions per second, while implementing zero gas fees for suppor…"
+    "tema caliente en X según Chainbase Tops (puesto 9): Variety has named Hunter Schafer to its wish list for the role of Bond girl in Robert Pattinson’s upcoming debut as James Bond. Concurrently, reports indicate t…"
    ],
    "token": null
   },
@@ -264,16 +208,16 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (BP, puesto de capitalización 140)"
+    "entre lo más buscado en CoinGecko (BP, puesto de capitalización 141)"
    ],
    "token": {
     "cadena": "solana",
     "token": "GMWrcQ185wqe7HNKg5m4qCtC3NQhAwS5fFMhbEgm8BiN",
     "sym": "BP",
-    "liq": 1249791700,
-    "vol24": 255230,
+    "liq": 1249791705,
+    "vol24": 300626,
     "c24": 0,
-    "edad_h": 937.1
+    "edad_h": 940.5
    }
   },
   {
@@ -283,46 +227,54 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 128)"
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 127)"
    ],
    "token": {
     "cadena": "solana",
     "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
     "sym": "PENGU",
-    "liq": 2122225,
-    "vol24": 142719,
-    "c24": -7.17,
-    "edad_h": 16804.9
+    "liq": 2187527,
+    "vol24": 664482,
+    "c24": -3.83,
+    "edad_h": 16808.4
    }
   },
   {
-   "tema": "Aero",
+   "tema": "Monad",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (AERO, puesto de capitalización 120)"
+    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 170)"
    ],
-   "token": null
+   "token": {
+    "cadena": "solana",
+    "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
+    "sym": "MON",
+    "liq": 31943947,
+    "vol24": 255210,
+    "c24": 0,
+    "edad_h": 1144.6
+   }
   },
   {
-   "tema": "Terra Classic",
+   "tema": "Brevis",
    "fuentes": [
     "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (LUNC, puesto 110)"
+    "entre lo más buscado en CoinMarketCap (BREV, puesto 490)"
    ],
    "token": {
-    "cadena": "solana",
-    "token": "FqCSrz5qBLWj8gizt9UBaVmiGEya5aGgXzahrChxcJEM",
-    "sym": "LUNC",
-    "liq": 64151884,
-    "vol24": 1,
-    "c24": 0,
-    "edad_h": 3967.0
+    "cadena": "bsc",
+    "token": "0x086F405146Ce90135750Bbec9A063a8B20A8bfFb",
+    "sym": "BREV",
+    "liq": 8341,
+    "vol24": 290202,
+    "c24": 44.14,
+    "edad_h": 2915.8
    }
   },
   {
@@ -332,94 +284,175 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (PHA, puesto 472)"
+    "entre lo más buscado en CoinMarketCap (PHA, puesto 476)"
    ],
    "token": {
     "cadena": "solana",
     "token": "8THZ69JP2ErZuHVj4G5rcwkFfsQafp5mQsaoQReApump",
     "sym": "NETWORK",
-    "liq": 24795,
-    "vol24": 24034,
-    "c24": 77.93,
-    "edad_h": 572.1
+    "liq": 24243,
+    "vol24": 20361,
+    "c24": 67.6,
+    "edad_h": 575.5
    }
+  },
+  {
+   "tema": "Terra Classic",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (LUNC, puesto 109)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "FqCSrz5qBLWj8gizt9UBaVmiGEya5aGgXzahrChxcJEM",
+    "sym": "LUNC",
+    "liq": 64151884,
+    "vol24": 1,
+    "c24": 0,
+    "edad_h": 3970.4
+   }
+  },
+  {
+   "tema": "Momentum",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (MMT, puesto 463)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "2SESmE4AN8KSKu3MUtF6QJTFC5LT6WzodGW7JMQRyxvP",
+    "sym": "MMT",
+    "liq": 296885386,
+    "vol24": 192381,
+    "c24": 0,
+    "edad_h": 2632.1
+   }
+  },
+  {
+   "tema": "Global stocks slide before Nvidia earnings",
+   "fuentes": [
+    "bluesky"
+   ],
+   "calor": 70,
+   "porque": [
+    "tendencia en Bluesky: Chip and tech shares led losses on the Nasdaq, TSX, and European markets ahead of Nvidia's results."
+   ],
+   "token": null
+  },
+  {
+   "tema": "The Game Awards nominations",
+   "fuentes": [
+    "bluesky"
+   ],
+   "calor": 68,
+   "porque": [
+    "tendencia en Bluesky: Gamers debate this year's nominees, including an unreleased title up for Game of the Year."
+   ],
+   "token": null
   }
  ],
  "cruces_h18": [
   {
-   "ts": 1794938229,
-   "hora_utc": "2026-11-17 17:57",
+   "ts": 1794950494,
+   "hora_utc": "2026-11-17 21:21",
+   "tema": "Deutsche Bank Internal Files Leak",
+   "fuentes": "x_chainbase,trending 5m",
+   "cadena": "solana",
+   "token": "Es11jSMieH368TgWinerwYMZHxfQPtjn8v8ubyHsegJX",
+   "sym": "Bank",
+   "liq": 5,
+   "mc": 23604,
+   "c1": 158,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1794950494,
+   "hora_utc": "2026-11-17 21:21",
+   "tema": "EU Approves UniCredit Commerzbank",
+   "fuentes": "x_chainbase,trending 5m",
+   "cadena": "solana",
+   "token": "Es11jSMieH368TgWinerwYMZHxfQPtjn8v8ubyHsegJX",
+   "sym": "Bank",
+   "liq": 5,
+   "mc": 23604,
+   "c1": 158,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1794950494,
+   "hora_utc": "2026-11-17 21:21",
    "tema": "Backpack",
    "fuentes": "coingecko,trending 5m",
    "cadena": "solana",
    "token": "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo",
    "sym": "TTWO",
-   "liq": 208677,
-   "mc": 87,
-   "c1": -1.3,
+   "liq": 205917,
+   "mc": 88,
+   "c1": -0.61,
    "seguridad": "top10,lp,mint/freeze",
    "aviso": "no",
    "nuestras": "A20 B10 C0"
   },
   {
-   "ts": 1794938229,
-   "hora_utc": "2026-11-17 17:57",
+   "ts": 1794950494,
+   "hora_utc": "2026-11-17 21:21",
    "tema": "Backpack",
-   "fuentes": "coingecko,trending 1h",
-   "cadena": "solana",
-   "token": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
-   "sym": "BP",
-   "liq": 5946368,
-   "mc": 253135308,
-   "c1": -0.99,
-   "seguridad": "top10,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A2 B6 C0"
-  },
-  {
-   "ts": 1794938229,
-   "hora_utc": "2026-11-17 17:57",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 1h",
+   "fuentes": "coingecko,trending 5m",
    "cadena": "solana",
    "token": "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb",
    "sym": "SPCX",
-   "liq": 2712963,
+   "liq": 2793468,
    "mc": 0,
-   "c1": 0.46,
+   "c1": 0.49,
    "seguridad": "top10,mint/freeze",
    "aviso": "no",
    "nuestras": "A19 B7 C0"
   },
   {
-   "ts": 1794938229,
-   "hora_utc": "2026-11-17 17:57",
+   "ts": 1794950494,
+   "hora_utc": "2026-11-17 21:21",
    "tema": "Backpack",
-   "fuentes": "coingecko,trending 1h",
+   "fuentes": "coingecko,trending 5m",
    "cadena": "solana",
    "token": "NVDAVuiB7hwd3m5Wa1JuHNovPaPG6BH1QNztbKFxNjv",
    "sym": "NVDA",
-   "liq": 457,
-   "mc": 606963,
-   "c1": 0,
-   "seguridad": "",
+   "liq": 111392,
+   "mc": 612421,
+   "c1": 1.95,
+   "seguridad": "top10,mint/freeze",
    "aviso": "no",
    "nuestras": "A12 B1 C0"
+  },
+  {
+   "ts": 1794950494,
+   "hora_utc": "2026-11-17 21:21",
+   "tema": "Backpack",
+   "fuentes": "coingecko,trending 1h",
+   "cadena": "solana",
+   "token": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
+   "sym": "BP",
+   "liq": 5917977,
+   "mc": 250627594,
+   "c1": 1,
+   "seguridad": "top10,mint/freeze",
+   "aviso": "no",
+   "nuestras": "A2 B6 C1"
   }
  ],
  "huecos_h19": [
   {
-   "ts": 1794938229,
-   "hora_utc": "2026-11-17 17:57",
-   "tema": "Game Awards nominations announced",
-   "fuentes": "bluesky,trends",
-   "calor": 80,
-   "porque": "tendencia en Bluesky: Nominees include Resident Evil Requiem, Trails in the Sky 2nd Chapter, and Fire Emblem: Fortune's Weave. | búsqueda en tendencia en Google (20000+)",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1794938229,
-   "hora_utc": "2026-11-17 17:57",
+   "ts": 1794950494,
+   "hora_utc": "2026-11-17 21:21",
    "tema": "Suki Waterhouse",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -427,8 +460,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794938229,
-   "hora_utc": "2026-11-17 17:57",
+   "ts": 1794950494,
+   "hora_utc": "2026-11-17 21:21",
    "tema": "Saturn Devouring His Son",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -436,8 +469,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794938229,
-   "hora_utc": "2026-11-17 17:57",
+   "ts": 1794950494,
+   "hora_utc": "2026-11-17 21:21",
    "tema": "Mordechai Vanunu",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -445,8 +478,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794938229,
-   "hora_utc": "2026-11-17 17:57",
+   "ts": 1794950494,
+   "hora_utc": "2026-11-17 21:21",
    "tema": "List of James Bond films",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -454,30 +487,39 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794938229,
-   "hora_utc": "2026-11-17 17:57",
-   "tema": "US Dollar 19 Month High",
+   "ts": 1794950494,
+   "hora_utc": "2026-11-17 21:21",
+   "tema": "Meta Tests App Telegram Banned",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): The US dollar has strengthened to its highest level in 19 months, driven by hotter-than-expected inflation data and market expectations of further Federal Reser…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Meta is testing a direct messaging application in Turkiye and Thailand, incorporating integrated user safety safeguards. Concurrently, several Middle Eastern co…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794938229,
-   "hora_utc": "2026-11-17 17:57",
-   "tema": "Anthropic IPO Price Range Set",
+   "ts": 1794950494,
+   "hora_utc": "2026-11-17 21:21",
+   "tema": "Deutsche Bank Internal Files Leak",
    "fuentes": "x_chainbase",
    "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Anthropic has filed an amended S-1 for its initial public offering, setting a share price range of $70 to $78. The filing reveals that Amazon will hold 48.2% of…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Whistleblowers leaked over 15 million internal Deutsche Bank documents to a global consortium of journalists, exposing significant compliance failures and risk …",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794938229,
-   "hora_utc": "2026-11-17 17:57",
-   "tema": "LeBron Passes Kidd Assists Record",
+   "ts": 1794950494,
+   "hora_utc": "2026-11-17 21:21",
+   "tema": "GTA VI Worker Time Off",
    "fuentes": "x_chainbase",
    "calor": 86,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 3): The Los Angeles Chargers and Baltimore Ravens are scheduled to compete in a Monday Night Football matchup broadcast on ESPN, featuring key players such as Justi…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): Grand Theft Auto VI has generated an estimated $1.5 billion in revenue prior to its official release, marking a significant financial milestone for the gaming i…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1794950494,
+   "hora_utc": "2026-11-17 21:21",
+   "tema": "US Retail Sales Growth Slows",
+   "fuentes": "x_chainbase",
+   "calor": 84,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 4): US retail sales growth moderated in October, with data indicating a pullback in big-ticket items such as automobiles masking resilient demand for other goods. B…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
