@@ -85,6 +85,11 @@ def _goplus(chain, addr):
     if r.get("is_honeypot") == "1" or r.get("cannot_sell_all") == "1": f.append("honeypot")
     if (r.get("owner_address") or "").lower() not in CERO or r.get("can_take_back_ownership") == "1": f.append("no renunciado")
     if dev is not None and dev > DEV_MAX: f.append("dev")
+    # 17-nov (caso Jacket, la plataforma avisó "Creator can move funds" y pasamos): controles del dueño sobre saldos
+    # aunque la propiedad esté renunciada (proxy actualizable, dueño oculto, puede cambiar saldos, pausar, autodestruir).
+    ctrl = [k for k in ("owner_change_balance", "hidden_owner", "selfdestruct", "transfer_pausable", "is_proxy", "can_take_back_ownership")
+            if r.get(k) == "1"]
+    if ctrl: f.append("control_dueño")
     lp = sum(float(h.get("percent") or 0) for h in r.get("lp_holders") or [] if h.get("is_locked") == 1 or (h.get("address") or "").lower() in CERO)
     if r.get("lp_holders") and lp < 0.9: f.append("lp")
     # 16-nov (caso mihao BNB): el top 10 de GeckoTerminal dio 4 % con una billetera de 60 %. Se calcula también con los
@@ -97,7 +102,7 @@ def _goplus(chain, addr):
     if gp_top10 > TOP10_MAX: f.append("top10_gp")
     if pct and pct[0] > 0.10: f.append("ballena")
     return f, {"goplus": {"buy_tax": bt, "sell_tax": st, "dev": dev, "lp_bloq": round(lp * 100, 1), "owner": r.get("owner_address"),
-                          "open_source": r.get("is_open_source"), "top10_gp": gp_top10, "mayor": round(pct[0] * 100, 2) if pct else None}}
+                          "open_source": r.get("is_open_source"), "control": ctrl, "top10_gp": gp_top10, "mayor": round(pct[0] * 100, 2) if pct else None}}
 
 
 def revisar(chain, addr):
