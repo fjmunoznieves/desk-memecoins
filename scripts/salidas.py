@@ -22,7 +22,7 @@ ALERTAS = "datos/alertas_salida.tsv"
 CAMPOS = ["ts", "hora_utc", "hip", "cadena", "token", "sym", "precio", "n_billeteras", "n_oper", "pasa_oper",
           "c24", "c7d", "max7d_pct", "esc_pct", "esc_detalle", "esc35_pct", "esc35_detalle", "trail30_pct", "trail30_detalle", "copiaA_pct", "copiaA_hora", "copiaA_detalle", "pool", "estado"]
 CAMPOS_AL = ["ts", "hora_utc", "hip", "token", "sym", "operadores_con_saldo", "operadores_vendieron", "precio", "cambio_desde_senal"]
-PRESUPUESTO_S = 240
+PRESUPUESTO_S = 120  # 17-nov: bajado de 240 (minutos de GitHub)
 
 
 def leer(f):

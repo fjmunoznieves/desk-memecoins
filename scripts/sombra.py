@@ -32,7 +32,7 @@ def get(url, tries=4):
 
 
 PAUSA = [2.1]          # sube sola si GeckoTerminal frena (429)
-PRESUPUESTO_MEDIR = 180  # segundos por corrida: lo que no alcance se mide en el siguiente escaneo
+PRESUPUESTO_MEDIR = 90  # 17-nov: bajado de 180 para ahorrar minutos de GitHub; lo que no alcance se mide en el siguiente escaneo
 
 
 def load():
