@@ -1,0 +1,15 @@
+ts	hora_utc	cadena	token	sym	precio	liq	mc	motivo	estado_escaneo	fallos
+1794587461	2026-11-13 16:31	solana	EunAsZtcViruWAUmtyqSaNWvTq61hD8hhtWM1rxkgieX	TRUMP	0.00002492	32125	24921	usa el símbolo de TRUMP sin ser el contrato oficial	sin pool	top10+lp
+1794587461	2026-11-13 16:31	solana	CPA8c3HoNRaNWEfEnbcgzmaHDp4f4JHJZRaj3jCvYxGS	NVIDIA	0.00002025	23861	20253	imita marca NVIDIA	precio no cuadra	liq+b/s
+1794610432	2026-11-13 22:53	bsc	0x0fdB75fede1cD3bA3e849E67480a2B376C0EFd3B	TRUMP	0.05027	54421	11562704199	usa el símbolo de TRUMP sin ser el contrato oficial	medido	vol5m
+1794654053	2026-11-14 11:00	bsc	0xA40040489F8Cb7465D9F1698Dd43918ef2272AcE	TRUMP	0.01182	32086	4139397835	usa el símbolo de TRUMP sin ser el contrato oficial	precio no cuadra	vol5m+5m>=50
+1794672752	2026-11-14 16:12	solana	NVDAVuiB7hwd3m5Wa1JuHNovPaPG6BH1QNztbKFxNjv	NVDA	159.39	180853	627668	imita marca NVDA	medido	vol5m+b/s
+1794702934	2026-11-15 00:35	solana	Acgs6mb4PC7tQbDm9T4EeTfNx3ZDh5fNSjHcHZQLpump	USDC	0.0002441	48847	244199	usa el símbolo de USDC sin ser el contrato oficial	medido	top10
+1794734577	2026-11-15 09:22	bsc	0xcA61c8C09761EAA0B82274511a6BeEf8f6E0a0E5	TRUMP	0.01739	31020	4001826275	usa el símbolo de TRUMP sin ser el contrato oficial	precio no cuadra	vol5m+5m>=50
+1794753070	2026-11-15 14:31	bsc	0x5b4f1853097cD992dffe9259cd29Ef041b2b4463	DOGE	0.000006340	75201	41215	usa el símbolo de DOGE sin ser el contrato oficial	medido	vol5m
+1794758346	2026-11-15 15:59	bsc	0xf929069c6c359C83252AeBC2d231849A440C5adB	TRUMP	0.01317	30246	3822113171	usa el símbolo de TRUMP sin ser el contrato oficial	medido	vol5m+5m>=50
+1794780034	2026-11-15 22:00	bsc	0x8f02e7f984899bc3F43c10D270947F77ee6Acf1e	TRUMP	0.02121	42117	7425244870	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m+5m>=50
+1794789010	2026-11-16 00:30	bsc	0xd28e244B94623C8e9A97649e6b8C78adaE42138E	BONK	0.0004794	105292	100682	usa el símbolo de BONK sin ser el contrato oficial	pendiente	top10
+1794789010	2026-11-16 00:30	bsc	0xcab998d948ACf6f0BdDa54C08667d60620f39e35	TRUMP	0.02561	47841	9478176221	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m
+1794847926	2026-11-16 16:52	bsc	0x6CCCf61720416Fca20d1C9B38455373f3a3276Dd	TRUMP	0.04700	53902	12222328333	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m+5m>=50
+1794856891	2026-11-16 19:21	bsc	0xB0140aa2CE0343BcB724BE0Cd8E3a45d576F369C	TRUMP	0.005926	19964	1659346976	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	liq

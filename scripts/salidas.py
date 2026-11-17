@@ -7,6 +7,8 @@ Para cada señal de H21, H22, H23 y H24 (Solana y BNB) guarda en datos/salidas_s
   3. copiar A: sale cuando la mitad o más de los operadores (sin bots) que tenían ≥5 USD del token en la primera
      foto de saldos bajaron su saldo 30 % o más (datos/fotos_saldos.tsv, 3:47 AM y PM). Ese momento queda también
      como aviso en datos/alertas_salida.tsv para el radar.
+  4. (17-nov, Fran) comparativo en las mismas velas: escalonada con stop -35 % (esc35) y trailing 30 % puro sin stop
+     fijo ni ventas parciales (trail30).
 También guarda pasa_oper = "sí" si la señal tiene 2 o más operadores reales sin bots (consenso por operadores).
 """
 import csv, os, sys, time
@@ -18,7 +20,7 @@ from operadores import mapa
 SALIDA = "datos/salidas_sombra.tsv"
 ALERTAS = "datos/alertas_salida.tsv"
 CAMPOS = ["ts", "hora_utc", "hip", "cadena", "token", "sym", "precio", "n_billeteras", "n_oper", "pasa_oper",
-          "c24", "c7d", "max7d_pct", "esc_pct", "esc_detalle", "copiaA_pct", "copiaA_hora", "copiaA_detalle", "pool", "estado"]
+          "c24", "c7d", "max7d_pct", "esc_pct", "esc_detalle", "esc35_pct", "esc35_detalle", "trail30_pct", "trail30_detalle", "copiaA_pct", "copiaA_hora", "copiaA_detalle", "pool", "estado"]
 CAMPOS_AL = ["ts", "hora_utc", "hip", "token", "sym", "operadores_con_saldo", "operadores_vendieron", "precio", "cambio_desde_senal"]
 PRESUPUESTO_S = 240
 
@@ -43,18 +45,19 @@ def senales():
         vistos.add(r["token"])
         out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip="SOST", cadena="solana", token=r["token"], sym=r["sym"],
                         precio=r["precio"], n_billeteras=len(r["billeteras"].split(",")), n_oper=r["operadores"], c24="", c7d="", pool=""))
-    for f, hip in (("datos/h25_sombra.tsv", "H25"), ("datos/h26_sombra.tsv", "H26")):  # 17-nov (Fran): estudios en sombra
+    for f, hip in (("datos/h25_sombra.tsv", "H25"), ("datos/h26_sombra.tsv", "H26"), ("datos/h27_sombra.tsv", "H27"),
+                   ("datos/imitadores.tsv", "IMIT")):  # 17-nov (Fran): estudios en sombra
         for r in leer(f):
             out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip=hip, cadena=r["cadena"], token=r["token"], sym=r["sym"],
-                            precio=r["precio"], n_billeteras="", n_oper=r.get("n_oper", ""), c24="", c7d="", pool=r.get("pool", "")))
+                            precio=r["precio"], n_billeteras="", n_oper=r.get("n_oper", r.get("n_elite", "")), c24="", c7d="", pool=r.get("pool", "")))
     for r in leer("datos/seguimiento.tsv"):  # 16-nov: puntos de seguimiento (consenso A con saldo real)
         out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip="SEG", cadena="solana", token=r["token"], sym=r["sym"],
                         precio=r["precio"], n_billeteras=len(r["billeteras"].split(",")), n_oper="", c24="", c7d="", pool=""))
     return out
 
 
-def escalonada(c, p0):
-    stop, pos, pnl, peak, t2, t3 = p0 * 0.8, 1.0, 0.0, p0, False, False
+def escalonada(c, p0, stop_ini=0.8):
+    stop, pos, pnl, peak, t2, t3 = p0 * stop_ini, 1.0, 0.0, p0, False, False
     for ts, o, h, l, cl, v in c:
         if l <= stop:
             pnl += pos * (stop / p0 - 1)
@@ -71,6 +74,18 @@ def escalonada(c, p0):
     if c and c[-1][0] < c[0][0] + 6.9 * 86400:
         return pnl * 100, "en curso (valor a hoy)" if not t2 else "en curso, ya vendió 1/3 en x2"
     return pnl * 100, "cierre 7 d" if t2 else "cierre 7 d sin x2"
+
+
+def trailing(c, p0, caida=0.3):
+    """17-nov (Fran, comparativo de salidas): sin stop fijo ni ventas parciales; vende todo cuando cae 30 % desde el máximo."""
+    peak = p0
+    for ts, o, h, l, cl, v in c:
+        if l <= peak * (1 - caida):
+            return (peak * (1 - caida) / p0 - 1) * 100, "trailing"
+        peak = max(peak, h)
+    if c and c[-1][0] < c[0][0] + 6.9 * 86400:
+        return (c[-1][4] / p0 - 1) * 100, "en curso (valor a hoy)"
+    return ((c[-1][4] / p0 - 1) * 100 if c else 0), "cierre 7 d"
 
 
 def copiar_A():
@@ -133,7 +148,7 @@ def main():
                 print(f"salida A: {r['sym']} {r['token']} ({r['hip']}) {a[3]}/{a[2]} operadores vendieron, {r['copiaA_pct']} % desde la señal")
         # escalonada (se recalcula hasta cumplir 7 días)
         edad = time.time() - int(r["ts"])
-        if r.get("estado") != "cerrado" and p0 and r["cadena"] in GNET and edad >= 3600 and time.time() - t_ini < PRESUPUESTO_S:
+        if (r.get("estado") != "cerrado" or not r.get("esc35_pct")) and p0 and r["cadena"] in GNET and edad >= 3600 and time.time() - t_ini < PRESUPUESTO_S:
             pool = r.get("pool") or pool_de(r["cadena"], r["token"])
             if pool:
                 r["pool"] = pool
@@ -149,6 +164,11 @@ def main():
                     r["max7d_pct"] = round((max(x[2] for x in c) / p0 - 1) * 100, 1)
                     pct, det = escalonada(c, p0)
                     r["esc_pct"], r["esc_detalle"] = round(pct, 1), det
+                    # 17-nov (Fran): comparativo de salidas en las mismas velas (sin consultas extra)
+                    pct35, det35 = escalonada(c, p0, 0.65)
+                    r["esc35_pct"], r["esc35_detalle"] = round(pct35, 1), det35
+                    pct_t, det_t = trailing(c, p0)
+                    r["trail30_pct"], r["trail30_detalle"] = round(pct_t, 1), det_t
                     r["estado"] = "cerrado" if edad >= 7 * 86400 else "abierto"
         r.setdefault("estado", "abierto")
         filas.append(r)

@@ -106,6 +106,10 @@ def revisar(chain, addr):
     if chain in ("bsc", "robinhood"):
         f, info = _evm(chain, addr)
         gf, ginfo = _goplus(chain, addr)
+        # 17-nov (revisión de rechazos BNB, caso Jacket): el top 10 de GeckoTerminal cuenta el pool como holder e infla el
+        # porcentaje. Si GoPlus dio holders, manda su top 10 sin pools (top10_gp); el de GeckoTerminal queda informativo.
+        if (ginfo.get("goplus") or {}).get("top10_gp") is not None and (ginfo["goplus"].get("mayor") is not None):
+            f = [x for x in f if x != "top10"]
         return f + [x for x in gf if x not in f], {**info, **ginfo}
     return ["seg?"], {"error": f"cadena no soportada: {chain}"}
 
