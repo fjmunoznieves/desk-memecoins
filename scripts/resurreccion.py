@@ -5,6 +5,18 @@ y precio de la última hora en verde. Se registra TODO disparo en datos/h16_resu
 solo se abre un aviso (issue) si la liquidez es ≥ 30k USD y la revisión de seguridad pasa.
 Cada hora también sigue los disparos abiertos: máximo y mínimo vistos, precio a +6 h y a +24 h.
 """
+import atexit as _atexit, os as _os, subprocess as _sp
+
+
+def _stage_reloj():
+    """17-nov: el reloj (último paso antes de "Guardar") solo hacía git add de 4 archivos; los demás que escriben
+    watch_solana, salidas, fotos, etc. quedaban sin preparar y el git pull --rebase fallaba → el push NO se hacía y
+    se perdía todo el estado de la corrida (pasó el 17-nov 06:27 UTC). Aquí se prepara todo datos/."""
+    if _os.environ.get("GITHUB_ACTIONS") and _os.environ.get("GITHUB_WORKFLOW", "").startswith("Reloj"):
+        _sp.run(["git", "add", "-A", "datos"], check=False)
+
+
+_atexit.register(_stage_reloj)
 import csv, json, os, subprocess, sys, time, urllib.request
 sys.path.insert(0, os.path.dirname(__file__))
 from seguridad import revisar
