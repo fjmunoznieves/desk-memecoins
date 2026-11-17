@@ -43,6 +43,10 @@ def senales():
         vistos.add(r["token"])
         out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip="SOST", cadena="solana", token=r["token"], sym=r["sym"],
                         precio=r["precio"], n_billeteras=len(r["billeteras"].split(",")), n_oper=r["operadores"], c24="", c7d="", pool=""))
+    for f, hip in (("datos/h25_sombra.tsv", "H25"), ("datos/h26_sombra.tsv", "H26")):  # 17-nov (Fran): estudios en sombra
+        for r in leer(f):
+            out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip=hip, cadena=r["cadena"], token=r["token"], sym=r["sym"],
+                            precio=r["precio"], n_billeteras="", n_oper=r.get("n_oper", ""), c24="", c7d="", pool=r.get("pool", "")))
     for r in leer("datos/seguimiento.tsv"):  # 16-nov: puntos de seguimiento (consenso A con saldo real)
         out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip="SEG", cadena="solana", token=r["token"], sym=r["sym"],
                         precio=r["precio"], n_billeteras=len(r["billeteras"].split(",")), n_oper="", c24="", c7d="", pool=""))

@@ -107,7 +107,7 @@ def main():
         previo = json.load(open(PEND)) if os.path.exists(PEND) else []
         json.dump(previo + avisos, open(PEND, "w"), indent=1)
     if os.environ.get("GITHUB_ACTIONS"):
-        subprocess.run(["git", "add", SEG, LOG, "datos/consenso_A_estado.json"] + (["datos/liquidez_seguimiento.tsv"] if os.path.exists("datos/liquidez_seguimiento.tsv") else []) + (["datos/consenso_A_ventas.tsv"] if os.path.exists("datos/consenso_A_ventas.tsv") else []), check=False)
+        subprocess.run(["git", "add", SEG, LOG, "datos/consenso_A_estado.json"] + [f for f in ("datos/liquidez_seguimiento.tsv", "datos/h25_sombra.tsv", "datos/h26_sombra.tsv") if os.path.exists(f)] + (["datos/consenso_A_ventas.tsv"] if os.path.exists("datos/consenso_A_ventas.tsv") else []), check=False)
     print(f"consenso A: {len(filas)} avisos nuevos")
 
 

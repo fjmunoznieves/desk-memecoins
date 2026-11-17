@@ -8,7 +8,7 @@ from h24 import billeteras
 K = os.environ.get("HELIUS_API_KEY", "").strip()
 RPC = f"https://mainnet.helius-rpc.com/?api-key={K}"
 SALIDA = "datos/fotos_saldos.tsv"
-MAX_CONSULTAS = int(os.environ.get("FOTO_MAX") or 700)
+MAX_CONSULTAS = int(os.environ.get("FOTO_MAX") or 900)
 CAMPOS = ["ts", "hora_utc", "hip", "token", "sym", "grupo", "billetera", "cantidad", "usd", "precio"]
 
 
@@ -43,6 +43,14 @@ def main():
         if t in toks:
             hip = toks[t][0] + "+" + hip
         toks[t] = (hip, sym, g)
+    # 17-nov: primero seguimiento y sostenidas (antes quedaban fuera por el tope de consultas: KNIGHT nunca se medía)
+    # 16-nov: también los tokens que nuestras A sostienen y subieron (alertas_sostenidas, últimos 7 días)
+    for r in leer("datos/alertas_sostenidas.tsv"):
+        if time.time() - int(r["ts"]) < 7 * 86400:
+            add(r["token"], "SOST", r["sym"])
+    # 16-nov: puntos de seguimiento (tokens con ≥3 operadores A dentro, saldo real verificado)
+    for r in leer("datos/seguimiento.tsv"):
+        add(r["token"], "SEG", r["sym"], {"A": r["billeteras"].split(",")})
     for r in leer("datos/h21_consenso.tsv"):
         if r["estado"] == "abierto": add(r["token"], "H21", r["sym"], {"A": r["billeteras"].split(",")})
     for r in leer("datos/h23_consenso.tsv"):
@@ -51,13 +59,6 @@ def main():
         if r["estado"] == "abierto": add(r["token"], "H22", r["sym"], {"B": r["billeteras_B"].split(",")})
     for r in leer("datos/h24_pool_acciones.tsv"):
         if r["estado"] == "abierto" and r["cadena"] == "solana": add(r["token"], "H24", r["sym"])
-    # 16-nov: también los tokens que nuestras A sostienen y subieron (alertas_sostenidas, últimos 7 días)
-    for r in leer("datos/alertas_sostenidas.tsv"):
-        if time.time() - int(r["ts"]) < 7 * 86400:
-            add(r["token"], "SOST", r["sym"])
-    # 16-nov: puntos de seguimiento (tokens con ≥3 operadores A dentro, saldo real verificado)
-    for r in leer("datos/seguimiento.tsv"):
-        add(r["token"], "SEG", r["sym"], {"A": r["billeteras"].split(",")})
     precios = {}
     lista = list(toks)
     for i in range(0, len(lista), 30):
