@@ -100,8 +100,9 @@ def main():
             ch, liq = p.get("priceChange") or {}, (p.get("liquidity") or {}).get("usd") or 0
             h1, h6 = float(ch.get("h1") or 0), float(ch.get("h6") or 0)
             precio = float(p.get("priceUsd") or 0)
-            if liq < LIQ_MIN or not (h6 >= SUBE_H6 or h1 >= SUBE_H1):
-                continue
+            mc = p.get("marketCap") or p.get("fdv") or 0
+            if liq < LIQ_MIN or not (h6 >= SUBE_H6 or h1 >= SUBE_H1) or not mc or mc > 100e6:
+                continue  # 17-nov: fuera MC > 100 M o sin MC (caso "HYPE" falso con MC de 246 mil millones)
             if a in ult and ahora - ult[a][0] < 12 * 3600 and precio < 1.5 * ult[a][1]:
                 continue
             n, ws = pos[a]
