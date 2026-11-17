@@ -1,0 +1,326 @@
+<title>Mesa FOMO</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: mesa de operaciones; columna de tokens a la izquierda, ficha del token y conversación a la derecha */
+:root{
+  --bg:#f3f4f1; --panel:#ffffff; --line:#d9ddd4; --fg:#1b2420; --muted:#5f6b64;
+  --accent:#1f6f5c; --accent-soft:#e1efe9; --good:#1d7a3e; --bad:#b4372f; --warn:#a86a00;
+  --good-soft:#e3f2e7; --bad-soft:#f8e4e2; --warn-soft:#f6ecd8;
+  --f-disp:"Archivo",system-ui,sans-serif; --f-body:"IBM Plex Sans",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121815; --panel:#1a221e; --line:#2c3833; --fg:#e4ebe6; --muted:#93a39a;
+  --accent:#5cc4a6; --accent-soft:#1e3a31; --good:#5fcf83; --bad:#f08a80; --warn:#e3b14f;
+  --good-soft:#1c3324; --bad-soft:#3a1f1d; --warn-soft:#382d17; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121815; --panel:#1a221e; --line:#2c3833; --fg:#e4ebe6; --muted:#93a39a;
+  --accent:#5cc4a6; --accent-soft:#1e3a31; --good:#5fcf83; --bad:#f08a80; --warn:#e3b14f;
+  --good-soft:#1c3324; --bad-soft:#3a1f1d; --warn-soft:#382d17; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:14px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 40px}
+h1,h2,h3{font-family:var(--f-disp);text-wrap:balance;margin:0}
+h1{font-size:22px;font-weight:800;letter-spacing:-.01em}
+h2{font-size:18px;font-weight:700}
+h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+a{color:var(--accent)}
+header{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto 14px}
+.stamp{font-size:12px;color:var(--muted)}
+.search{display:flex;gap:8px;flex:1 1 320px;max-width:560px}
+input,textarea,button{font:inherit;color:inherit}
+input[type=text],textarea{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:9px 11px}
+input:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+button{cursor:pointer;border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:8px 12px;white-space:nowrap}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:600}
+button:disabled{opacity:.5;cursor:default}
+main{display:grid;grid-template-columns:330px minmax(0,1fr);gap:16px;max-width:1280px;margin:0 auto}
+@media (max-width:860px){main{grid-template-columns:minmax(0,1fr)}}
+.list{background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden;align-self:start}
+.list-head{display:flex;gap:6px;flex-wrap:wrap;padding:10px;border-bottom:1px solid var(--line)}
+.chipbtn{font-size:12px;padding:4px 9px;border-radius:99px}
+.chipbtn[aria-pressed=true]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:600}
+.rows{max-height:72vh;overflow:auto}
+@media (max-width:860px){.rows{max-height:320px}}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:9px 12px;border-bottom:1px solid var(--line);cursor:pointer;width:100%;text-align:left;border-radius:0;border-width:0 0 1px 0;background:transparent}
+.row:hover{background:var(--accent-soft)}
+.row[aria-current=true]{background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)}
+.row .sym{font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.row .meta{grid-column:1/-1;font-size:12px;color:var(--muted);white-space:normal}
+.pill{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;white-space:nowrap}
+.p-good{background:var(--good-soft);color:var(--good)} .p-bad{background:var(--bad-soft);color:var(--bad)} .p-warn{background:var(--warn-soft);color:var(--warn)} .p-mut{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.detail{display:flex;flex-direction:column;gap:16px;min-width:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;min-width:0}
+.tok-head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;justify-content:space-between}
+.addr{font-size:12px;word-break:break-all;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px;margin-top:14px}
+.stat{border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+.stat b{display:block;font-family:var(--f-mono);font-size:16px;font-weight:500}
+.stat span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.verdict{margin-top:14px;padding:10px 12px;border-radius:6px;font-size:13.5px}
+.tablewrap{overflow-x:auto;margin-top:10px}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+th,td{text-align:right;padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
+td.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.pos{color:var(--good)} .neg{color:var(--bad)}
+.chat{display:flex;flex-direction:column;gap:10px}
+.quick{display:flex;flex-wrap:wrap;gap:6px}
+.msgs{display:flex;flex-direction:column;gap:10px;max-height:460px;overflow:auto}
+.msg{padding:10px 12px;border-radius:8px;max-width:92%;white-space:pre-wrap;overflow-wrap:anywhere}
+.msg.yo{align-self:flex-end;background:var(--accent-soft)}
+.msg.cl{align-self:flex-start;background:var(--bg);border:1px solid var(--line)}
+.ask{display:flex;gap:8px;align-items:flex-end}
+.ask textarea{min-height:44px;resize:vertical}
+.note{font-size:12px;color:var(--muted)}
+.empty{padding:30px 16px;text-align:center;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header>
+  <div>
+    <h1>Mesa FOMO</h1>
+    <div class="stamp" id="stamp">Cargando datos del desk…</div>
+  </div>
+  <form class="search" id="buscar">
+    <input type="text" id="q" placeholder="Pega un contrato o escribe un ticker" autocomplete="off" aria-label="Contrato o ticker">
+    <button type="submit" class="primary">Abrir</button>
+  </form>
+</header>
+
+<main>
+  <section class="list" aria-label="Tokens en seguimiento">
+    <div class="list-head" id="filtros">
+      <button class="chipbtn" data-f="todos" aria-pressed="true">Todos</button>
+      <button class="chipbtn" data-f="dentro" aria-pressed="false">Con A dentro</button>
+      <button class="chipbtn" data-f="elite" aria-pressed="false">Con élite</button>
+      <button class="chipbtn" data-f="h25" aria-pressed="false">H25 / H27</button>
+    </div>
+    <div class="rows" id="rows"><div class="empty">Cargando…</div></div>
+  </section>
+
+  <section class="detail">
+    <div class="card" id="ficha"><div class="empty">Elige un token de la lista o pega un contrato arriba.</div></div>
+
+    <div class="card chat">
+      <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline">
+        <h2>Pregúntale a la Mesa</h2>
+        <span class="note" id="ctx">Contexto: todos los tokens</span>
+      </div>
+      <div class="quick" id="quick">
+        <button data-q="¿Tiene entrada o no? Dame la decisión primero y luego el porqué.">¿Tiene entrada?</button>
+        <button data-q="¿Quién de los nuestros lo sostiene, cuánto metió y sacó cada uno, y cómo le ha ido en toda su historia? ¿Es consenso de élite o de perdedores?">¿Quién lo sostiene?</button>
+        <button data-q="¿La billetera u operador que más acierta ya salió? ¿Están vendiendo según las fotos de saldo?">¿Ya están saliendo?</button>
+        <button data-q="De todos los tokens, ¿cuáles tienen la mejor estructura y el mejor consenso ahora mismo? Máximo 3, con el porqué.">Lo mejor de hoy</button>
+      </div>
+      <div class="msgs" id="msgs" aria-live="polite"></div>
+      <form class="ask" id="askf">
+        <textarea id="pregunta" rows="2" placeholder="Escribe tu pregunta sobre el token elegido o sobre todo el desk"></textarea>
+        <button class="primary" id="enviar" type="submit">Preguntar</button>
+      </form>
+      <div class="note" id="estado-claude">Las respuestas usan solo los datos del desk que ves aquí (sin consultar Helius ni gastar créditos del proyecto).</div>
+    </div>
+  </section>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+let D = null, sel = null, filtro = "todos", hist = [];
+const fmt = (n, d = 0) => n === null || n === undefined || n === "" || isNaN(+n) ? "—" : (+n).toLocaleString("es-CO", {maximumFractionDigits: d});
+const usd = n => n === null || n === undefined || n === "" ? "—" : "$" + (Math.abs(+n) >= 1e6 ? fmt(n / 1e6, 2) + "M" : Math.abs(+n) >= 1e3 ? fmt(n / 1e3, 1) + "k" : fmt(n));
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+
+// Lectura del historial de cada operador que sigue dentro: élite, ganador, perdedor o sin historia
+function calidad(h) {
+  if (!h || !h.jugadas || h.jugadas < 5) return "sin";
+  if (h.elite) return "elite";
+  if (h.pnl_sin_mejor > 0) return "gana";
+  if (h.pnl_sol > 0) return "golpe";
+  return "pierde";
+}
+function veredicto(t) {
+  const dentro = t.sostienen.filter(h => !h.bot && h.usd_ahora >= 20);
+  const ops = [...new Set(dentro.map(h => h.operador))];
+  const c = {elite: 0, gana: 0, golpe: 0, pierde: 0, sin: 0};
+  ops.forEach(o => c[calidad(t.operadores[o])]++);
+  const buenos = c.elite + c.gana;
+  let cls = "p-mut", txt = "Sin consenso de los nuestros";
+  const flojos = c.pierde + c.golpe;
+  if (ops.length >= 2 && c.elite >= 1 && buenos >= flojos) { cls = "p-good"; txt = "Consenso con élite"; }
+  else if (ops.length >= 2 && buenos > flojos) { cls = "p-good"; txt = "Consenso de ganadores"; }
+  else if (ops.length >= 2 && c.pierde > 0 && c.pierde >= buenos && c.pierde >= c.golpe) { cls = "p-bad"; txt = "Consenso de perdedores"; }
+  else if (ops.length >= 1) { cls = "p-warn"; txt = "Mixto o con poca historia"; }
+  // la mejor que tuvo posición y ya salió
+  const todos = Object.entries(t.operadores).filter(([o, h]) => h.jugadas >= 5).sort((a, b) => (b[1].pnl_sin_mejor ?? -1e9) - (a[1].pnl_sin_mejor ?? -1e9));
+  const mejor = todos[0];
+  const mejorSalio = mejor && !ops.includes(mejor[0]);
+  return {cls, txt, c, ops, mejor, mejorSalio};
+}
+
+function pasaFiltro(t) {
+  if (filtro === "dentro") return t.resumen.operadores_dentro > 0;
+  if (filtro === "elite") return t.resumen.elite_dentro > 0;
+  if (filtro === "h25") return t.senales.length > 0;
+  return true;
+}
+function pintarLista() {
+  const rs = D.tokens.filter(pasaFiltro);
+  $("#rows").innerHTML = rs.length ? "" : '<div class="empty">Ningún token cumple este filtro.</div>';
+  rs.forEach(t => {
+    const v = veredicto(t), e = t.estructura || {};
+    const b = document.createElement("button");
+    b.className = "row"; b.setAttribute("aria-current", sel && sel.token === t.token);
+    b.innerHTML = `<span class="sym">${esc(t.sym)}</span><span class="pill ${v.cls}">${v.txt}</span>
+      <span class="meta mono">${t.resumen.operadores_dentro} oper. dentro · ${usd(t.resumen.usd_dentro)} · liq ${usd(e.liq)} · MC ${usd(e.mc)}</span>`;
+    b.onclick = () => abrir(t.token);
+    $("#rows").appendChild(b);
+  });
+}
+
+function abrir(token) {
+  sel = D.tokens.find(t => t.token === token) || null;
+  try { localStorage.setItem("mesa_sel", token); } catch (e) {}
+  pintarLista(); pintarFicha();
+  $("#ctx").textContent = sel ? "Contexto: " + sel.sym : "Contexto: todos los tokens";
+}
+
+function pintarFicha() {
+  const f = $("#ficha");
+  if (!sel) { f.innerHTML = '<div class="empty">Elige un token de la lista o pega un contrato arriba.</div>'; return; }
+  const t = sel, e = t.estructura || {}, v = veredicto(t);
+  const lm = +e.liq_mc_pct;
+  const franja = isNaN(lm) ? "—" : lm >= 5 && lm <= 15 ? "en franja sana" : lm < 5 ? "liquidez fina" : "liq/MC alta";
+  const filas = t.sostienen.filter(h => !h.bot && (h.usd_ahora >= 20 || h.usd_max >= 20 || (h.jugada && h.jugada.sol_in >= 0.5)));
+  filas.sort((a, b) => b.usd_ahora - a.usd_ahora || (b.usd_max - a.usd_max));
+  const mostrar = filas.slice(0, 40);
+  const trs = mostrar.map(h => {
+    const o = t.operadores[h.operador] || {}, q = calidad(o), j = h.jugada || {};
+    const tag = {elite: '<span class="pill p-good">élite</span>', gana: '<span class="pill p-good">gana</span>', pierde: '<span class="pill p-bad">pierde</span>', golpe: '<span class="pill p-warn">1 golpe</span>', sin: '<span class="pill p-mut">poca historia</span>'}[q];
+    const tend = h.usd_antes === null ? "" : h.usd_ahora < h.usd_antes * 0.7 ? ' <span class="neg">▼ vende</span>' : h.usd_ahora > h.usd_antes * 1.3 ? ' <span class="pos">▲ suma</span>' : "";
+    return `<tr><td class="mono" title="${esc(h.billetera)}">${esc(h.billetera.slice(0, 6))} <span class="muted">${esc(h.grupo)}${h.operador !== h.billetera.slice(0, 6) ? " · op " + esc(h.operador) : ""}</span></td><td>${tag}</td>
+      <td class="num">${usd(h.usd_ahora)}${tend}</td><td class="num">${fmt(j.sol_in, 1)} / ${fmt(j.sol_out, 1)}</td>
+      <td class="num">${o.jugadas ?? 0}</td><td class="num">${o.jugadas ? o.pct_gana + "% / " + o.pct_x2 + "%" : "—"}</td>
+      <td class="num ${o.pnl_sin_mejor > 0 ? "pos" : o.pnl_sin_mejor < 0 ? "neg" : ""}">${fmt(o.pnl_sol, 0)} / ${fmt(o.pnl_sin_mejor, 0)}</td>
+      <td class="num">${o.dias_cubiertos ?? "—"}</td></tr>`;
+  }).join("");
+  const sal = (t.salidas_sombra || []).map(s => `<tr><td>${esc(s.hora_utc)}</td><td>${esc(s.hip)}</td><td class="num">${fmt(s.max7d_pct, 0)}%</td>
+      <td class="num">${s.esc_pct === "" ? "—" : fmt(s.esc_pct, 0) + "%"}</td><td class="num">${s.esc35_pct === "" ? "—" : fmt(s.esc35_pct, 0) + "%"}</td>
+      <td class="num">${s.trail30_pct === "" ? "—" : fmt(s.trail30_pct, 0) + "%"}</td><td class="num">${s.copiaA_pct === "" ? "—" : fmt(s.copiaA_pct, 0) + "%"}</td><td>${esc(s.estado)}</td></tr>`).join("");
+  f.innerHTML = `
+    <div class="tok-head"><h2>${esc(t.sym)} <span class="muted" style="font-weight:500;font-size:14px">${esc(t.cadena)}</span></h2>
+      <a href="${esc(t.dexscreener)}" target="_blank" rel="noopener">Ver en DexScreener</a></div>
+    <div class="addr mono">${esc(t.token)}</div>
+    ${t.nota ? `<div class="note" style="margin-top:6px">${esc(t.nota)}</div>` : ""}
+    <div class="stats">
+      <div class="stat"><span>Liquidez</span><b>${usd(e.liq)}</b></div>
+      <div class="stat"><span>MC</span><b>${usd(e.mc)}</b></div>
+      <div class="stat"><span>Liq / MC</span><b>${fmt(e.liq_mc_pct, 1)}%</b><span>${franja}</span></div>
+      <div class="stat"><span>Vol 24 h</span><b>${usd(e.vol24h)}</b></div>
+      <div class="stat"><span>Holders</span><b>${fmt(e.holders)}</b><span>${e.mc_por_holder ? usd(e.mc_por_holder) + " por holder" : ""}</span></div>
+      <div class="stat"><span>Nuestros dentro</span><b>${t.resumen.operadores_dentro}</b><span>${t.resumen.salieron} ya salieron</span></div>
+    </div>
+    <div class="verdict ${v.cls}"><b>${v.txt}.</b> Dentro: ${v.c.elite} élite, ${v.c.gana} con historial ganador, ${v.c.golpe} que dependen de un solo golpe, ${v.c.pierde} perdedores, ${v.c.sin} con poca historia.
+      ${v.mejor ? (v.mejorSalio ? ` El de mejor historial que pasó por aquí (${esc(v.mejor[0])}) <b>ya salió</b>.` : ` El de mejor historial (${esc(v.mejor[0])}) sigue dentro.`) : ""}</div>
+    ${t.senales.length ? `<div class="note" style="margin-top:8px">${t.senales.slice(-3).map(esc).join("<br>")}</div>` : ""}
+    <h3 style="margin-top:18px">Quién sostiene y su historia completa</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Billetera</th><th>Historial</th><th>Saldo hoy</th><th>SOL metido / sacado</th><th>Jugadas</th><th>Gana / x2</th><th>PnL SOL / sin mejor</th><th>Días</th></tr></thead>
+      <tbody>${trs || '<tr><td colspan="8" class="muted">Ninguna de las nuestras tiene saldo registrado.</td></tr>'}</tbody></table></div>
+    ${filas.length > 40 ? `<div class="note">Se muestran 40 de ${filas.length} billeteras.</div>` : ""}
+    <div class="note">Saldo de la última foto (${esc(t.sostienen[0]?.foto || "—")} UTC). El historial es por operador, sumando todas sus billeteras.</div>
+    ${sal ? `<h3 style="margin-top:18px">Si lo hubiéramos copiado (sombra)</h3><div class="tablewrap"><table>
+      <thead><tr><th>Señal</th><th>Hip.</th><th>Máx 7 d</th><th>Stop −20</th><th>Stop −35</th><th>Trailing 30</th><th>Copiar A</th><th>Estado</th></tr></thead><tbody>${sal}</tbody></table></div>` : ""}`;
+}
+
+// ---- búsqueda ----
+$("#buscar").onsubmit = ev => {
+  ev.preventDefault();
+  const q = $("#q").value.trim(); if (!q || !D) return;
+  const ql = q.toLowerCase();
+  const t = D.tokens.find(t => t.token === q) || D.tokens.find(t => t.sym.toLowerCase() === ql) || D.tokens.find(t => t.token.toLowerCase().startsWith(ql) && ql.length >= 6);
+  if (t) { abrir(t.token); return; }
+  sel = null; pintarLista();
+  const solana = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(q), evm = /^0x[0-9a-fA-F]{40}$/.test(q);
+  $("#ficha").innerHTML = `<h2>No está en el desk</h2><p class="muted">Ninguna de nuestras billeteras lo tiene registrado en las fotos de saldo hasta ${esc(D.generado)}.
+    ${solana || evm ? `Puedes revisarlo en <a href="https://dexscreener.com/${evm ? "bsc" : "solana"}/${esc(q)}" target="_blank" rel="noopener">DexScreener</a>, o pedírmelo en el chat del proyecto para el análisis completo.` : ""}</p>`;
+  $("#ctx").textContent = "Contexto: todos los tokens";
+};
+$("#filtros").onclick = ev => {
+  const b = ev.target.closest("button"); if (!b) return;
+  filtro = b.dataset.f;
+  document.querySelectorAll("#filtros button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  pintarLista();
+};
+
+// ---- conversación con Claude ----
+let sample = null;
+const INSTR = `Eres el analista de la mesa de memecoins de Fran (paper trading, nunca dinero real). Responde en español, claro y breve, frases completas, sin consejos de inversión personalizados: es análisis de nuestros datos para la mesa.
+Formato aprobado por Fran para un token: 1) decisión primero (¿entrada sí/no o vigilar?), 2) quién de los nuestros sostiene: por cada operador, saldo actual, SOL metido/sacado en este token y su historial completo (jugadas, % gana, % x2, PnL total y sin su mejor jugada, días cubiertos, si es élite; "1 golpe" = gana en total pero pierde sin su mejor jugada), 3) estructura (liquidez, liq/MC con franja sana 5-15 %, volumen, holders y MC por holder), 4) conclusión: ¿consenso de élite o de perdedores? ¿el que más acertó ya salió? ¿están vendiendo (saldo hoy vs foto anterior)?
+Reglas: un mismo operador con varias billeteras cuenta como uno; los bots no cuentan. Lo que importa es si COPIANDO (entrar cuando detectamos su compra y salir cuando detectamos su venta) se gana; según el estudio de 695 consensos, entrar 24 h después si 2+ operadores A siguen dentro y salir copiando a las A fue lo mejor (+3.933 USD en 216 casos, 39 % ganan, mediana −8 %); entrar al detectar con stop −20 % perdió. Señala cuando la historia de una billetera esté cortada o cubra pocos días. Si un dato no está, dilo; no inventes cifras. Usa los nombres de operador (6 letras) tal cual.`;
+
+function resumenTodos() {
+  return D.tokens.map(t => ({sym: t.sym, token: t.token, resumen: t.resumen, veredicto: veredicto(t).txt,
+    estructura: t.estructura ? {liq: t.estructura.liq, mc: t.estructura.mc, liq_mc_pct: t.estructura.liq_mc_pct, vol24h: t.estructura.vol24h, holders: t.estructura.holders} : null,
+    senales: t.senales.slice(-2)}));
+}
+function contextoToken(t) {
+  const s = t.sostienen.filter(h => !h.bot && (h.usd_ahora >= 20 || h.usd_max >= 20 || (h.jugada && h.jugada.sol_in >= 0.5))).slice(0, 60);
+  const ops = {}; s.forEach(h => ops[h.operador] = t.operadores[h.operador]);
+  return {token: t.token, sym: t.sym, cadena: t.cadena, nota: t.nota, estructura: t.estructura, resumen: t.resumen, veredicto_heuristico: veredicto(t).txt,
+    senales: t.senales, sostienen: s, historial_operadores: ops, salidas_sombra: t.salidas_sombra};
+}
+const herramientas = () => [{
+  name: "ver_token", description: "Devuelve la ficha completa de un token del desk (quién sostiene, historial, estructura, salidas en sombra). Acepta ticker o contrato.",
+  inputSchema: {type: "object", properties: {q: {type: "string"}}, required: ["q"]},
+  execute: ({q}) => { const ql = String(q).toLowerCase(); const t = D.tokens.find(t => t.token === q || t.sym.toLowerCase() === ql); if (!t) throw new Error("No está en el desk"); return contextoToken(t); }
+}];
+
+function burbuja(cls, txt) {
+  const d = document.createElement("div"); d.className = "msg " + cls; d.textContent = txt;
+  $("#msgs").appendChild(d); $("#msgs").scrollTop = 1e9; return d;
+}
+async function preguntar(texto) {
+  if (!texto || !D) return;
+  if (!sample) { burbuja("cl", "Las preguntas a Claude no están disponibles en esta vista. Escríbeme en el chat del proyecto."); return; }
+  burbuja("yo", texto);
+  const out = burbuja("cl", "Pensando…");
+  const ctxData = sel ? {token_elegido: contextoToken(sel), metodos_salida_sombra: D.metodos_salida}
+                      : {todos_los_tokens: resumenTodos(), metodos_salida_sombra: D.metodos_salida};
+  const primera = `${INSTR}\n\nDatos del desk (actualizados ${D.generado}):\n${JSON.stringify(ctxData)}\n\nPregunta de Fran: ${texto}`;
+  const msgs = hist.length ? [...hist, {role: "user", content: `${sel ? "(Token elegido: " + sel.sym + ")\n" + JSON.stringify(ctxData) + "\n\n" : ""}${texto}`}]
+                           : [{role: "user", content: primera}];
+  $("#enviar").disabled = true;
+  try {
+    const r = await sample(msgs, {cache: false, modelTier: "default", tools: herramientas(), onText: ({text}) => { out.textContent = text; $("#msgs").scrollTop = 1e9; }});
+    out.textContent = r.text;
+    hist = [...msgs, {role: "assistant", content: r.text}].slice(-8);
+    if (hist[0].role !== "user") hist = hist.slice(1);
+  } catch (e) {
+    out.textContent = e.code === "not_granted" ? "No se dio permiso para preguntar a Claude desde esta página." :
+                      e.code === "rate_limited" ? "Demasiadas preguntas seguidas. Espera un minuto e intenta de nuevo." :
+                      (e.text || "No pude responder: " + (e.message || e.code));
+  } finally { $("#enviar").disabled = false; }
+}
+$("#askf").onsubmit = ev => { ev.preventDefault(); const q = $("#pregunta").value.trim(); $("#pregunta").value = ""; preguntar(q); };
+$("#pregunta").onkeydown = ev => { if (ev.key === "Enter" && !ev.shiftKey) { ev.preventDefault(); $("#askf").requestSubmit(); } };
+$("#quick").onclick = ev => { const b = ev.target.closest("button"); if (b) preguntar(b.dataset.q); };
+
+// ---- carga ----
+(async () => {
+  try {
+    D = await (await fetch("mesa.json", {cache: "no-store"})).json();
+    $("#stamp").textContent = `Datos del desk al ${D.generado} · ${D.tokens.length} tokens`;
+    let last = null; try { last = localStorage.getItem("mesa_sel"); } catch (e) {}
+    pintarLista();
+    abrir(last && D.tokens.some(t => t.token === last) ? last : D.tokens[0].token);
+  } catch (e) {
+    $("#stamp").textContent = "No se pudieron cargar los datos del desk.";
+    $("#rows").innerHTML = '<div class="empty">Sin datos. Pídeme en el chat que actualice la Mesa.</div>';
+  }
+  try { sample = window.claude ? await window.claude.use("sample") : null; } catch (e) { sample = null; }
+  if (!sample) { $("#estado-claude").textContent = "Preguntar a Claude no está disponible en esta vista; la ficha sí funciona."; }
+})();
+</script>
