@@ -284,3 +284,4 @@ if not os.environ.get("ES_H23"):
     # H27 (élite en tokens viejos), IMIT (nombres que imitan) y bundles (17-nov, Fran): solo registro, sin Helius.
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "estudios_17nov.py")], check=False)  # H27, IMIT, bundles
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "mesa_datos.py")], check=False)  # datos de la Mesa interactiva
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "h28_catalizador.py")], check=False)  # H28 catalizador (sombra)

@@ -46,7 +46,7 @@ def senales():
         out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip="SOST", cadena="solana", token=r["token"], sym=r["sym"],
                         precio=r["precio"], n_billeteras=len(r["billeteras"].split(",")), n_oper=r["operadores"], c24="", c7d="", pool=""))
     for f, hip in (("datos/h25_sombra.tsv", "H25"), ("datos/h26_sombra.tsv", "H26"), ("datos/h27_sombra.tsv", "H27"),
-                   ("datos/imitadores.tsv", "IMIT")):  # 17-nov (Fran): estudios en sombra
+                   ("datos/imitadores.tsv", "IMIT"), ("datos/h28_sombra.tsv", "H28")):  # 17-nov (Fran): estudios en sombra
         for r in leer(f):
             out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip=hip, cadena=r["cadena"], token=r["token"], sym=r["sym"],
                             precio=r["precio"], n_billeteras="", n_oper=r.get("n_oper", r.get("n_elite", "")), c24="", c7d="", pool=r.get("pool", "")))

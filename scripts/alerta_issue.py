@@ -24,3 +24,20 @@ if _os.path.exists("datos/control_cartera_falla.json") and _os.environ.get("GITH
                         "--body", "\n".join(f"- {x['lista']}: {x['coinciden']} de {x['total']} posiciones coinciden" for x in f) + "\n\nRevisar watch_solana.py (modo CARTERA) antes de confiar en consenso A, H22 y H23."], check=False)
     if r.returncode == 0:
         _os.remove("datos/control_cartera_falla.json")
+
+# 17-nov (Fran, caso GEKKO avisado 52 min tarde): cada candidato del escaneo abre un aviso al momento.
+import glob as _glob, re as _re
+_esc = sorted(_glob.glob("escaneos/escaneo_*.md"))
+_hecho = "datos/candidatos_avisados.txt"
+_ya = set(open(_hecho).read().split()) if _os.path.exists(_hecho) else set()
+if _esc and _os.path.basename(_esc[-1]) not in _ya and _os.environ.get("GITHUB_REPOSITORY"):
+    _sec = next((s for s in _re.split(r"\n## ", open(_esc[-1]).read()) if s.startswith("Candidatos")), "")
+    _cands = _re.findall(r"\*\*(.+?)\*\* \((\w+)\) `([^`]+)`", _sec)
+    if _cands:
+        _body = ["Paper trading: solo aviso. Candidato = pasa filtros numéricos y seguridad; falta revisar señales de entrada.", ""]
+        _body += [f"- **{s}** ({c}) `{t}` https://dexscreener.com/{c}/{t}" for s, c, t in _cands]
+        subprocess.run(["gh", "issue", "create", "--repo", _os.environ["GITHUB_REPOSITORY"], "--title",
+                        "Candidato del escaneo: " + ", ".join(s for s, c, t in _cands), "--body", "\n".join(_body)], check=False)
+    with open(_hecho, "a") as _f:
+        _f.write(_os.path.basename(_esc[-1]) + "\n")
+    subprocess.run(["git", "add", _hecho], check=False)
