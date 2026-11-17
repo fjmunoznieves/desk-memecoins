@@ -47,6 +47,16 @@ elif tipo == "escaneo":
     corre = usado < 1900
 else:
     corre = usado < 1950
+# 17-nov: si GitHub dispara el programado tarde y el guardián ya lanzó uno a mano, no repetir (choque al subir datos).
+if corre and not manual and tipo.startswith("escaneo"):
+    r = subprocess.run(["gh", "api", f"repos/{repo}/actions/workflows/escaneo.yml/runs?per_page=5"], capture_output=True, text=True)
+    if r.returncode == 0:
+        for x in json.loads(r.stdout).get("workflow_runs", []):
+            t = dt.datetime.fromisoformat(x["created_at"].replace("Z", "+00:00"))
+            if str(x["id"]) != os.environ.get("GITHUB_RUN_ID") and (hoy - t).total_seconds() < 45 * 60:
+                print(f"ya hubo un escaneo hace {(hoy - t).total_seconds() / 60:.0f} min (corrida {x['id']}): este se salta")
+                corre = False
+                break
 print(f"uso del mes {usado} min | ritmo hoy {ritmo:.0f} | tope {TOPE} | {tipo}: {'corre' if corre else 'SE SALTA'}")
 # Aviso a Fran (issue de GitHub, le llega por correo/app) al cruzar 800 y 950 min, una vez por mes cada uno
 mes = hoy.strftime("%Y-%m")
