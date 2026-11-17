@@ -9,7 +9,7 @@ import json, sys, time, urllib.request, os, csv, collections
 OUT = os.environ.get("SOMBRA_OUT", "/mnt/project-files/desk/estudio_reglas_sombra.tsv")
 VENTANA = float(os.environ.get("SOMBRA_HORAS", "24"))
 COLS = ["hora_utc", "ts", "cadena", "direccion", "simbolo", "banda", "precio", "mc", "liq", "v5", "bs5", "c5", "c1",
-        "quote", "fallos", "n_fallos", "pool", "estado", "max24_pct", "fin24_pct", "sim_pct", "sim_detalle"]
+        "quote", "fallos", "n_fallos", "pool", "estado", "max24_pct", "fin24_pct", "sim_pct", "sim_detalle", "holders"]
 BASEQ = {"SOL", "WSOL", "USDC", "USDT", "WBNB", "BNB", "USD1", "ETH", "WETH", "BUSD", "FDUSD"}
 GNET = {"solana": "solana", "bsc": "bsc", "robinhood": "robinhood"}
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -64,14 +64,16 @@ def registrar(path):
         if len(f) > 2 or r["liq"] < 15000 or (r["chain"], r["addr"]) in seen:
             continue
         f = list(f)
+        holders = ""
         if not f:  # seguridad 5.2 en las tres cadenas (seguridad.py)
-            sf, _ = revisar(r["chain"], r["addr"])
+            sf, info = revisar(r["chain"], r["addr"])
             f += sf
+            holders = (info or {}).get("holders") or ""  # 17-nov (Fran): holders al detectar, solo registro
             time.sleep(1.2)
         rows.append(dict(hora_utc=time.strftime("%Y-%m-%d %H:%M", time.gmtime(now)), ts=int(now), cadena=r["chain"],
                          direccion=r["addr"], simbolo=r["sym"], banda=r["band"], precio=r["price"], mc=int(r["mc"]),
                          liq=int(r["liq"]), v5=int(r["v5"]), bs5=round(r.get("bs", 0), 2), c5=r["c5"], c1=r["c1"],
-                         quote=r["quote"], fallos="+".join(f) or "ninguno", n_fallos=len(f), pool=r.get("pair") or "", estado="pendiente"))
+                         quote=r["quote"], fallos="+".join(f) or "ninguno", n_fallos=len(f), pool=r.get("pair") or "", estado="pendiente", holders=holders))
         n += 1
     save(rows)
     print("registrados", n)
