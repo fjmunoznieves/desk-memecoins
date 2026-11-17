@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-16 23:00",
+ "hora_utc": "2026-11-17 09:24",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -10,457 +10,459 @@
  ],
  "narrativas": [
   {
-   "tema": "Bless",
+   "tema": "Robert Pattinson named new James Bond",
+   "fuentes": [
+    "bluesky",
+    "wikipedia"
+   ],
+   "calor": 100,
+   "porque": [
+    "tendencia en Bluesky: The Batman star Robert Pattinson will play 007 in the next film of the spy franchise.",
+    "1,363,657 visitas ayer en Wikipedia, 57.5× anteayer"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Backpack",
    "fuentes": [
     "coingecko",
     "coinmarketcap"
    ],
    "calor": 80,
    "porque": [
-    "entre lo más buscado en CoinGecko (BLESS, puesto de capitalización 530)",
-    "entre lo más buscado en CoinMarketCap (BLESS, puesto 330)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "G3kgZkB76seNzxzv39AYV9c8284SdrmX5dUKAR8wWJTJ",
-    "sym": "BLESS",
-    "liq": 20811407,
-    "vol24": 99222,
-    "c24": 0,
-    "edad_h": 2538.2
-   }
-  },
-  {
-   "tema": "United Airlines reports system outage",
-   "fuentes": [
-    "bluesky",
-    "trends"
-   ],
-   "calor": 76,
-   "porque": [
-    "tendencia en Bluesky: A computer failure kept United planes from taking off, just days after a nationwide FAA ground stop.",
-    "búsqueda en tendencia en Google (50000+)"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Archive of Our Own",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "860,729 visitas ayer en Wikipedia, 19.9× anteayer"
-   ],
-   "token": null
-  },
-  {
-   "tema": "9/11",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "673,012 visitas ayer en Wikipedia, nuevo en el top"
-   ],
-   "token": null
-  },
-  {
-   "tema": "List of Nazi concentration camps",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "534,193 visitas ayer en Wikipedia, nuevo en el top"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Full Gear (2026)",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "175,811 visitas ayer en Wikipedia, 6.8× anteayer"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Kirk Cousins",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "121,498 visitas ayer en Wikipedia, 7.6× anteayer"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "7ETtD1R93rjLsKjvevZQLXySu6Ag3jNRm9xF8FVXpump",
-    "sym": "Cousins",
-    "liq": 6600,
-    "vol24": 14657,
-    "c24": -43.35,
-    "edad_h": 176.4
-   }
-  },
-  {
-   "tema": "Amon-Ra St. Brown",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "112,331 visitas ayer en Wikipedia, 9.5× anteayer"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Stephen Thompson (fighter)",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "106,236 visitas ayer en Wikipedia, nuevo en el top"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Kayla Harrison",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 97,
-   "porque": [
-    "145,493 visitas ayer en Wikipedia, 5.7× anteayer"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Supreme Court Rejects Custodia Appeal",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 90,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): Customers of major US financial institutions, including Chase, Bank of America, and Wells Fargo, reported widespread service disruptions affecting online bankin…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Iran Claims Strait Tanker Strikes",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 88,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): Tensions have escalated in the Middle East as Iran's Revolutionary Guard claims multiple oil tankers hit naval mines or were struck by projectiles in the Strait…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "EU Signs Russia Sanctions",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 86,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): The European Union has approved a new sanctions package against Russia, adding 113 listings including Wildberries founder Tatyana Kim, while foreign ministers f…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "UFC 334",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 86,
-   "porque": [
-    "321,149 visitas ayer en Wikipedia, 4.6× anteayer"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Data Center Energy Constraints",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 84,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): Uniper is approaching an agreement to convert idle power plants into data centers, while a Maryland community has blocked a proposed $5 billion AI data center p…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "US Warns European Network Security",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 82,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): Germany, the Netherlands, Greece, Austria, and Denmark have announced plans to establish a migrant deportation center in Rwanda, marking the European Union's fi…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Uber Amazon Zoox Launch",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 80,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): Uber has begun offering rides in Amazon's driverless Zoox robotaxis in Las Vegas, marking the first time these steering-wheel-free vehicles are available throug…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Paris Bans Protests Near Schools",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 78,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): Police in Paris have implemented a ban on protests within 100 meters of ten schools and five universities. This measure aims to prevent disturbances and ensure …"
-   ],
-   "token": null
-  },
-  {
-   "tema": "US Dollar Hits 19-Month High",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 76,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): The US dollar has reached its strongest level in 19 months, driving the euro down to $1.10, its weakest point since April 2025. This shift is primarily attribut…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Josh Hokit",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 75,
-   "porque": [
-    "168,260 visitas ayer en Wikipedia, 3.5× anteayer"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Expert Challenges Epstein Ruling",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 74,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): Forensic scientist Dr. Michael Freeman has released an analysis of Jeffrey Epstein's autopsy files, concluding that the evidence points to homicide rather than …"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Ukraine EU Leaders Hold Talks",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 72,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): Ukrainian President Zelensky confirmed that Ukrainian, American, and European representatives held online discussions regarding negotiation steps. The talks inv…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Russia Ukraine Exchange Drone Strikes",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 70,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): Ukrainian forces conducted a massive drone barrage targeting industrial sites in Russia's Rostov region, the Crimean Bridge, and energy infrastructure, resultin…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Backpack",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (BP, puesto de capitalización 128)"
+    "entre lo más buscado en CoinGecko (BP, puesto de capitalización 134)",
+    "entre lo más buscado en CoinMarketCap (BP, puesto 218)"
    ],
    "token": {
     "cadena": "solana",
     "token": "GMWrcQ185wqe7HNKg5m4qCtC3NQhAwS5fFMhbEgm8BiN",
     "sym": "BP",
-    "liq": 1249791679,
-    "vol24": 293615,
+    "liq": 1249791692,
+    "vol24": 299226,
     "c24": 0,
-    "edad_h": 918.1
+    "edad_h": 928.5
    }
   },
   {
-   "tema": "Aero",
+   "tema": "Suki Waterhouse",
+   "fuentes": [
+    "wikipedia"
+   ],
+   "calor": 100,
+   "porque": [
+    "378,948 visitas ayer en Wikipedia, 40.2× anteayer"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Robert Pattinson filmography",
+   "fuentes": [
+    "wikipedia"
+   ],
+   "calor": 100,
+   "porque": [
+    "191,139 visitas ayer en Wikipedia, nuevo en el top"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Saturn Devouring His Son",
+   "fuentes": [
+    "wikipedia"
+   ],
+   "calor": 100,
+   "porque": [
+    "176,155 visitas ayer en Wikipedia, nuevo en el top"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Mordechai Vanunu",
+   "fuentes": [
+    "wikipedia"
+   ],
+   "calor": 100,
+   "porque": [
+    "132,656 visitas ayer en Wikipedia, nuevo en el top"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Daniel Craig",
+   "fuentes": [
+    "wikipedia"
+   ],
+   "calor": 100,
+   "porque": [
+    "107,838 visitas ayer en Wikipedia, 11.2× anteayer"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "5SMoZrJDaFnhDSJ9kh8SWutC7zKSDwnQJYpuj6ugpump",
+    "sym": "CRAIG",
+    "liq": 3377,
+    "vol24": 0,
+    "c24": 0,
+    "edad_h": 12407.3
+   }
+  },
+  {
+   "tema": "List of James Bond films",
+   "fuentes": [
+    "wikipedia"
+   ],
+   "calor": 100,
+   "porque": [
+    "106,736 visitas ayer en Wikipedia, 7.0× anteayer"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Iran Plans DC Attack Report",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 90,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 1): Ukrainian forces launched drone and missile attacks on the Crimean Bridge, causing structural collapse and suspending traffic between Russia and Crimea. Concurr…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "US Banks Service Outage",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 88,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 2): Major US financial institutions, including JPMorgan Chase, Bank of America, Wells Fargo, and U.S. Bancorp, experienced widespread service disruptions affecting …"
+   ],
+   "token": null
+  },
+  {
+   "tema": "SteveWillDoIt Rolex Cash",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 86,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 3): Influencer SteveWillDoIt refused to award a $10,000 Rolex to a Nigerian winner of his X giveaway, citing a preference for participants who use his casino referr…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Optimizely Malware Injection",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 84,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 4): Hackers exploited a vulnerability in the third-party tool Optimizely to inject malware into the websites of 178 major organizations, including cryptocurrency ha…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Sharad Kapoor",
+   "fuentes": [
+    "wikipedia"
+   ],
+   "calor": 84,
+   "porque": [
+    "118,510 visitas ayer en Wikipedia, 4.4× anteayer"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Binance Blockchain Week Bangkok",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 82,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 5): Binance is hosting its Blockchain Week event in Bangkok on November 28–29, bringing together leaders from Web3, traditional finance, and global payments. The sc…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Supreme Court Rejects Trump Cuts",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 80,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 6): The Supreme Court rejected the Trump administration's bid to cut off grants associated with DEI initiatives, while a federal judge temporarily barred the closur…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Russia Blocks EU in Peace Talks",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 78,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 7): The Kremlin has stated that Europe is not cleared to join upcoming peace negotiations with Ukraine, insisting talks remain between Russia, Ukraine, and the Unit…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Robinhood Engineer Pleads Guilty",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 76,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 8): Huaisong Xiang, a former software engineer at Robinhood, has pleaded guilty to wire fraud for engaging in an insider trading scheme on the decentralized derivat…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "China Lowers Costs for Manufacturing",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 74,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 9): Chinese officials are implementing various measures to maintain economic momentum while addressing environmental concerns, including efforts to reduce factory c…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Trezor Partner Data Breach",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 72,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 10): Cryptocurrency hardware wallet manufacturer Trezor disclosed that its shipping partner, Skladon, experienced a data breach affecting approximately 27,000 custom…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Xi Strengthens Trust with PNG PM",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 70,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 11): Chinese President Xi Jinping held discussions with Papua New Guinea's Prime Minister, emphasizing the need to reinforce political trust and elevate bilateral ti…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Pudgy Penguins",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (AERO, puesto de capitalización 120)"
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 126)"
    ],
-   "token": null
+   "token": {
+    "cadena": "solana",
+    "token": "GeUYiY5x3yFYx33fVW4hou98xnSQvf8KDKdhXgmWwPMf",
+    "sym": "PENGU",
+    "liq": 30431958,
+    "vol24": 1037,
+    "c24": -0.01,
+    "edad_h": 455.1
+   }
+  },
+  {
+   "tema": "EVAA Protocol",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (EVAA, puesto de capitalización 620)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "Ej4cuBwfc36DZH1TiMcX29cTTxM9jgVYJaKF5XtUtZhv",
+    "sym": "EVAA",
+    "liq": 29922547,
+    "vol24": 267231,
+    "c24": -0.01,
+    "edad_h": 473.1
+   }
+  },
+  {
+   "tema": "Quantus",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (QTC, puesto de capitalización 950)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "Bn9oW3GVKQdgNJG5w5P53dbuZfUtAehwFAniZYry68T8",
+    "sym": "QTC",
+    "liq": 654735,
+    "vol24": 73437,
+    "c24": -6.19,
+    "edad_h": 114.0
+   }
+  },
+  {
+   "tema": "Huma Finance",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (HUMA, puesto 455)"
+   ],
+   "token": {
+    "cadena": "bsc",
+    "token": "0x92516e0DDf1dDBF7FAB1b79CaC26689fDC5ba8e6",
+    "sym": "HUMA",
+    "liq": 1931105,
+    "vol24": 296,
+    "c24": -26.34,
+    "edad_h": 12957.7
+   }
+  },
+  {
+   "tema": "JW Token",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (JWT, puesto 3748)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "JWmDeJQwXBmTinz7EQVmMMBpjXNU3yHTEQY7Bhy9UD4",
+    "sym": "JWT",
+    "liq": 10577,
+    "vol24": 378,
+    "c24": 12.55,
+    "edad_h": 3812.3
+   }
   }
  ],
  "cruces_h18": [
   {
-   "ts": 1794870033,
-   "hora_utc": "2026-11-16 23:00",
+   "ts": 1794907491,
+   "hora_utc": "2026-11-17 09:24",
    "tema": "Backpack",
-   "fuentes": "coingecko,trending 5m",
-   "cadena": "solana",
-   "token": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
-   "sym": "BP",
-   "liq": 6587256,
-   "mc": 292289140,
-   "c1": 36.79,
-   "seguridad": "top10,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A1 B6 C0"
-  },
-  {
-   "ts": 1794870033,
-   "hora_utc": "2026-11-16 23:00",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 5m",
+   "fuentes": "coingecko,coinmarketcap,trending 5m",
    "cadena": "solana",
    "token": "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo",
    "sym": "TTWO",
-   "liq": 216215,
+   "liq": 198504,
    "mc": 92,
-   "c1": 0.33,
+   "c1": 0.46,
    "seguridad": "top10,lp,mint/freeze",
    "aviso": "no",
    "nuestras": "A20 B10 C0"
   },
   {
-   "ts": 1794870033,
-   "hora_utc": "2026-11-16 23:00",
+   "ts": 1794907491,
+   "hora_utc": "2026-11-17 09:24",
    "tema": "Backpack",
-   "fuentes": "coingecko,trending 5m",
-   "cadena": "solana",
-   "token": "DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF",
-   "sym": "DJT",
-   "liq": 82635,
-   "mc": 78345,
-   "c1": 1.37,
-   "seguridad": "top10,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A12 B6 C0"
-  },
-  {
-   "ts": 1794870033,
-   "hora_utc": "2026-11-16 23:00",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 5m",
-   "cadena": "solana",
-   "token": "GG1Wvgh2rj74wCJhny1g8Wycq2yhVXZJLZd9TZMevSfJ",
-   "sym": "BPCAT",
-   "liq": 0,
-   "mc": 0,
-   "c1": 0,
-   "seguridad": "",
-   "aviso": "no",
-   "nuestras": "A0 B0 C0"
-  },
-  {
-   "ts": 1794870033,
-   "hora_utc": "2026-11-16 23:00",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 5m",
+   "fuentes": "coingecko,coinmarketcap,trending 5m",
    "cadena": "solana",
    "token": "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb",
    "sym": "SPCX",
-   "liq": 2818502,
+   "liq": 2916005,
    "mc": 0,
-   "c1": 0.33,
+   "c1": -0.62,
    "seguridad": "top10,mint/freeze",
    "aviso": "no",
    "nuestras": "A19 B7 C0"
+  },
+  {
+   "ts": 1794907491,
+   "hora_utc": "2026-11-17 09:24",
+   "tema": "Backpack",
+   "fuentes": "coingecko,coinmarketcap,trending 5m",
+   "cadena": "solana",
+   "token": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
+   "sym": "BP",
+   "liq": 6606523,
+   "mc": 275541329,
+   "c1": 5.64,
+   "seguridad": "top10,mint/freeze",
+   "aviso": "no",
+   "nuestras": "A2 B6 C0"
   }
  ],
  "huecos_h19": [
   {
-   "ts": 1794870033,
-   "hora_utc": "2026-11-16 23:00",
-   "tema": "United Airlines reports system outage",
-   "fuentes": "bluesky,trends",
-   "calor": 76,
-   "porque": "tendencia en Bluesky: A computer failure kept United planes from taking off, just days after a nationwide FAA ground stop. | búsqueda en tendencia en Google (50000+)",
+   "ts": 1794907491,
+   "hora_utc": "2026-11-17 09:24",
+   "tema": "Robert Pattinson named new James Bond",
+   "fuentes": "bluesky,wikipedia",
+   "calor": 100,
+   "porque": "tendencia en Bluesky: The Batman star Robert Pattinson will play 007 in the next film of the spy franchise. | 1,363,657 visitas ayer en Wikipedia, 57.5× anteayer",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794870033,
-   "hora_utc": "2026-11-16 23:00",
-   "tema": "Archive of Our Own",
+   "ts": 1794907491,
+   "hora_utc": "2026-11-17 09:24",
+   "tema": "Suki Waterhouse",
    "fuentes": "wikipedia",
    "calor": 100,
-   "porque": "860,729 visitas ayer en Wikipedia, 19.9× anteayer",
+   "porque": "378,948 visitas ayer en Wikipedia, 40.2× anteayer",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794870033,
-   "hora_utc": "2026-11-16 23:00",
-   "tema": "9/11",
+   "ts": 1794907491,
+   "hora_utc": "2026-11-17 09:24",
+   "tema": "Robert Pattinson filmography",
    "fuentes": "wikipedia",
    "calor": 100,
-   "porque": "673,012 visitas ayer en Wikipedia, nuevo en el top",
+   "porque": "191,139 visitas ayer en Wikipedia, nuevo en el top",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794870033,
-   "hora_utc": "2026-11-16 23:00",
-   "tema": "List of Nazi concentration camps",
+   "ts": 1794907491,
+   "hora_utc": "2026-11-17 09:24",
+   "tema": "Saturn Devouring His Son",
    "fuentes": "wikipedia",
    "calor": 100,
-   "porque": "534,193 visitas ayer en Wikipedia, nuevo en el top",
+   "porque": "176,155 visitas ayer en Wikipedia, nuevo en el top",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794870033,
-   "hora_utc": "2026-11-16 23:00",
-   "tema": "Full Gear (2026)",
+   "ts": 1794907491,
+   "hora_utc": "2026-11-17 09:24",
+   "tema": "Mordechai Vanunu",
    "fuentes": "wikipedia",
    "calor": 100,
-   "porque": "175,811 visitas ayer en Wikipedia, 6.8× anteayer",
+   "porque": "132,656 visitas ayer en Wikipedia, nuevo en el top",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794870033,
-   "hora_utc": "2026-11-16 23:00",
-   "tema": "Amon-Ra St. Brown",
+   "ts": 1794907491,
+   "hora_utc": "2026-11-17 09:24",
+   "tema": "List of James Bond films",
    "fuentes": "wikipedia",
    "calor": 100,
-   "porque": "112,331 visitas ayer en Wikipedia, 9.5× anteayer",
+   "porque": "106,736 visitas ayer en Wikipedia, 7.0× anteayer",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794870033,
-   "hora_utc": "2026-11-16 23:00",
-   "tema": "Stephen Thompson (fighter)",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "106,236 visitas ayer en Wikipedia, nuevo en el top",
+   "ts": 1794907491,
+   "hora_utc": "2026-11-17 09:24",
+   "tema": "Iran Plans DC Attack Report",
+   "fuentes": "x_chainbase",
+   "calor": 90,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Ukrainian forces launched drone and missile attacks on the Crimean Bridge, causing structural collapse and suspending traffic between Russia and Crimea. Concurr…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794870033,
-   "hora_utc": "2026-11-16 23:00",
-   "tema": "Kayla Harrison",
-   "fuentes": "wikipedia",
-   "calor": 97,
-   "porque": "145,493 visitas ayer en Wikipedia, 5.7× anteayer",
+   "ts": 1794907491,
+   "hora_utc": "2026-11-17 09:24",
+   "tema": "US Banks Service Outage",
+   "fuentes": "x_chainbase",
+   "calor": 88,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Major US financial institutions, including JPMorgan Chase, Bank of America, Wells Fargo, and U.S. Bancorp, experienced widespread service disruptions affecting …",
    "idea": "idea paper (no se crea nada)"
   }
  ]
