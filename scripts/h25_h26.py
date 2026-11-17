@@ -3,7 +3,7 @@
 H25 "maduros con A": token con 7 días o más, 2+ operadores A (sin bots) que SOSTIENEN (última foto de saldos, ≥20 USD c/u),
      liquidez ≥ 75 mil USD y volumen de 24 h ≥ 50 mil USD (el de 5 min no sirve en tokens maduros). Candidatos: seguimiento + sostenidas de los últimos 3 días.
 H26 "lanzamientos con liquidez sana": candidatos del escaneo (estudio_reglas_sombra.tsv) con liquidez 100–250 mil USD y
-     liquidez/MC entre 5 y 15 %.
+     liquidez/MC entre 5 y 15 %, y que pase la revisión de seguridad (top10, dev, LP, mint/freeze).
 Cada token entra una sola vez, al precio del momento. salidas.py mide sus salidas (escalonada y "copiar A")."""
 import csv, json, os, sys, time, urllib.request
 sys.path.insert(0, os.path.dirname(__file__))
@@ -93,6 +93,8 @@ def h26(ahora, hora):
         try:
             liq, mc = float(r["liq"]), float(r["mc"])
         except (TypeError, ValueError):
+            continue
+        if r.get("fallos"):  # 17-nov (caso GTA, rug -99 %): además debe pasar la revisión de seguridad
             continue
         if 100000 <= liq <= 250000 and mc and 5 <= 100 * liq / mc <= 15:
             ya.add(t)
