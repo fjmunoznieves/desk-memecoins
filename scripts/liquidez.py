@@ -3,7 +3,7 @@ En cada escaneo y reloj guarda liquidez, MC, volumen y su relación, para estudi
 liquidez al detectar, si la liquidez se drena (señal de salida) y qué rangos de liquidez/MC funcionan."""
 import csv, json, os, time, urllib.request
 SEG, OUT = "datos/seguimiento.tsv", "datos/liquidez_seguimiento.tsv"
-CAMPOS = ["ts", "hora_utc", "token", "sym", "liq", "mc", "liq_mc_pct", "vol5m", "vol1h", "vol24h", "precio", "pool"]
+CAMPOS = ["ts", "hora_utc", "token", "sym", "liq", "mc", "liq_mc_pct", "vol5m", "vol1h", "vol24h", "precio", "pool", "holders", "mc_por_holder"]
 
 
 def main():
@@ -34,12 +34,34 @@ def main():
                               liq=round(liq), mc=round(mc), liq_mc_pct=round(100 * liq / mc, 1) if mc else "",
                               vol5m=v.get("m5"), vol1h=v.get("h1"), vol24h=v.get("h24"), precio=p.get("priceUsd"), pool=p.get("pairAddress")))
         time.sleep(0.3)
+    # 17-nov (Fran): cantidad de holders y MC por holder (¿los holders dan soporte al precio?). RugCheck gratis, solo registro.
+    t0 = time.time()
+    for r in filas:
+        if time.time() - t0 > 120:
+            break
+        try:
+            req = urllib.request.Request(f"https://api.rugcheck.xyz/v1/tokens/{r['token']}/report", headers={"User-Agent": "desk-liquidez"})
+            h = json.load(urllib.request.urlopen(req, timeout=20)).get("totalHolders")
+            if h:
+                r["holders"] = h
+                r["mc_por_holder"] = round(r["mc"] / h, 1) if r["mc"] else ""
+        except Exception:
+            pass
+        time.sleep(0.5)
+    # si el archivo tiene el encabezado viejo, se reescribe con las columnas nuevas
+    if os.path.exists(OUT):
+        with open(OUT) as fh:
+            cab = fh.readline().rstrip("\n").split("\t")
+        if cab != CAMPOS:
+            viejas = list(csv.DictReader(open(OUT), delimiter="\t"))
+            with open(OUT, "w", newline="") as fh:
+                w = csv.DictWriter(fh, CAMPOS, delimiter="\t", extrasaction="ignore"); w.writeheader(); w.writerows(viejas)
     nuevo = not os.path.exists(OUT)
     with open(OUT, "a", newline="") as f:
         w = csv.DictWriter(f, CAMPOS, delimiter="\t")
         if nuevo: w.writeheader()
         w.writerows(filas)
-    print(f"liquidez: {len(filas)} tokens registrados")
+    print(f"liquidez: {len(filas)} tokens registrados, {sum(1 for r in filas if r.get('holders'))} con holders")
 
 
 if __name__ == "__main__":
