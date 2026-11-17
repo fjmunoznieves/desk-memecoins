@@ -14,3 +14,8 @@ ts	hora_utc	cadena	token	sym	precio	liq	mc	motivo	estado_escaneo	fallos
 1794847926	2026-11-16 16:52	bsc	0x6CCCf61720416Fca20d1C9B38455373f3a3276Dd	TRUMP	0.04700	53902	12222328333	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m+5m>=50
 1794856891	2026-11-16 19:21	bsc	0xB0140aa2CE0343BcB724BE0Cd8E3a45d576F369C	TRUMP	0.005926	19964	1659346976	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	liq
 1794949556	2026-11-17 21:05	bsc	0x67013AF25A97Ff5C73CCF23E5d82f4b6bE24F97b	TRUMP	0.04728	55103	12767435517	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m+5m>=50
+1794953991	2026-11-17 22:19	solana	GwZaMuX8KeF6cEfQcV6oWyVhKszRpZojFzB6qTQW4UCD	NVIDIANS	0.00008764	25109	87648	imita marca NVIDIA	pendiente	liq+pool
+1794953991	2026-11-17 22:19	solana	WD29ThFKErmZ4kDcfKRGZLBa7FMh6eNTc6ecLYFP1uz	NVIDIANS	0.00002909	38162	29091	imita marca NVIDIA	pendiente	b/s
+1794953991	2026-11-17 22:19	bsc	0x92f6038692830F6c14b06b6Dc7b3f9b91e6D01f2	PEPE	0.02247	30000	22477	usa el símbolo de PEPE sin ser el contrato oficial	pendiente	vol5m
+1794953991	2026-11-17 22:19	bsc	0xCd75184984423e2EB4723bE38d7Ee0b3783213FF	NFLXc	0.000002602	39277	26024	imita marca NFLX	pendiente	vol5m
+1794953991	2026-11-17 22:19	bsc	0x09bff94E35e83a625725817fD65B09390dEd916b	TRUMP	0.02129	37810	5963799901	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m+5m>=50
