@@ -1,6 +1,6 @@
 """Operadores de élite (17-nov, Fran) para H27 en sombra. Se calcula de la historia ya bajada (vector_ops_A/B + vector_profundo, sumados),
 sin gastar Helius. Por billetera (sin bots), jugadas con ≥0,5 SOL y al menos una venta:
-  élite = 20+ jugadas, ganancia ≥100 SOL aun quitando su mejor jugada (no depende de un solo golpe) y 5 %+ de jugadas en x2
+  élite (por OPERADOR, todas sus billeteras sumadas) = 20+ jugadas, ganancia ≥100 SOL aun quitando su mejor jugada (no depende de un solo golpe) y 5 %+ de jugadas en x2
   (descarta scalpers que ganan seguido pero poco).
 Ojo: la historia de las A cubre ~60 días y muchas quedaron cortadas en 100 páginas (ver cobertura en la memoria).
 Salida: datos/elite.tsv"""
@@ -31,21 +31,33 @@ def main():
     for (b, t), (si, so, ve) in agg.items():
         if si >= 0.5 and ve > 0:
             st[b].append((si, so))
-    filas = []
+    # 17-nov (caso VEYRA): se evalúa el OPERADOR completo (todas sus billeteras sumadas); GLg22V parecía élite pero su
+    # otra billetera 4cXnf2 perdía 1.464 SOL. Cada billetera de un operador élite queda en la lista.
+    por_op, miembros = defaultdict(list), defaultdict(list)
     for w, v in st.items():
         op, bot = m.get(w, (w[:6], False))
         if bot:
             continue
+        por_op[op] += v
+        miembros[op].append(w)
+    for w in m:  # billeteras del operador sin jugadas propias también cuentan como suyas
+        op, bot = m[w]
+        if op in por_op and w not in miembros[op] and not bot:
+            miembros[op].append(w)
+    filas = []
+    for op, v in por_op.items():
         n = len(v); pnl = sum(so - si for si, so in v); best = max(so - si for si, so in v)
         x2 = sum(so >= 2 * si for si, so in v) / n
         if n >= 20 and pnl - best >= 100 and x2 >= 0.05:
-            filas.append(dict(billetera=w, operador=op, grupo=g.get(w, "?"), jugadas=n,
-                              pct_gana=round(100 * sum(so > si for si, so in v) / n), pct_x2=round(100 * x2),
-                              pnl_sol=round(pnl, 1), pnl_sin_mejor=round(pnl - best, 1), historial_cortado=cort.get(w, "")))
+            for w in miembros[op]:
+                filas.append(dict(billetera=w, operador=op, grupo=g.get(w, "?"), jugadas=n,
+                                  pct_gana=round(100 * sum(so > si for si, so in v) / n), pct_x2=round(100 * x2),
+                                  pnl_sol=round(pnl, 1), pnl_sin_mejor=round(pnl - best, 1), historial_cortado=cort.get(w, ""),
+                                  billeteras_operador=len(miembros[op])))
     filas.sort(key=lambda r: -r["pnl_sin_mejor"])
     with open("datos/elite.tsv", "w", newline="") as f:
         w = csv.DictWriter(f, list(filas[0]), delimiter="\t"); w.writeheader(); w.writerows(filas)
-    print(f"élite: {len(filas)} billeteras")
+    print(f"élite: {len({r['operador'] for r in filas})} operadores, {len(filas)} billeteras")
     for r in filas:
         print(r["billetera"][:6], r["grupo"], r["jugadas"], f'{r["pct_gana"]}%', f'x2 {r["pct_x2"]}%', r["pnl_sol"], r["pnl_sin_mejor"])
 
