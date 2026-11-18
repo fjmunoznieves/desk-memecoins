@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-18 09:24",
+ "hora_utc": "2026-11-18 14:36",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -16,82 +16,104 @@
    ],
    "calor": 80,
    "porque": [
-    "entre lo más buscado en CoinGecko (MMT, puesto de capitalización 399)",
-    "entre lo más buscado en CoinMarketCap (MMT, puesto 327)"
+    "entre lo más buscado en CoinGecko (MMT, puesto de capitalización 410)",
+    "entre lo más buscado en CoinMarketCap (MMT, puesto 331)"
    ],
    "token": {
     "cadena": "solana",
     "token": "2SESmE4AN8KSKu3MUtF6QJTFC5LT6WzodGW7JMQRyxvP",
     "sym": "MMT",
-    "liq": 296885392,
-    "vol24": 201055,
+    "liq": 296885395,
+    "vol24": 162997,
     "c24": 0,
-    "edad_h": 2644.2
+    "edad_h": 2649.3
    }
-  },
-  {
-   "tema": "Nvidia Board Seeks New CEO",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 90,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): Nvidia reported record Q3 revenue of $115.8 billion and raised Q4 guidance to $130 billion, beating analyst expectations despite the recent resignation of CEO J…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Apple Services Outage",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 88,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): Apple reported technical issues affecting iCloud, Apple Pay, and the App Store, attributing the disruption to an internal update. This incident follows a series…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Anthropic IPO SpaceX Fund",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 86,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): Anthropic has raised its initial public offering price to above $80 per share, valuing the company at approximately $1.5 trillion to $1.6 trillion, with Amazon …"
-   ],
-   "token": null
-  },
-  {
-   "tema": "World Bank Explores USDC Payments",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 84,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): The World Bank Group has announced a collaboration with Citi and Circle to explore the use of the regulated stablecoin USDC for minting and settling funds in it…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "US Intel Reports Iran Threat",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 82,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): Tensions between the United States and Iran have intensified following reports of a potential radiological 'dirty bomb' plot against Washington, which US offici…"
-   ],
-   "token": null
   },
   {
    "tema": "GTA VI Worker Time Off",
    "fuentes": [
     "x_chainbase"
    ],
+   "calor": 90,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 1): Grand Theft Auto VI has officially launched, beginning its global rollout in New Zealand before expanding to other regions. The game achieved an estimated $1.5 …"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Global Cyber Attack Discussions",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 88,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 2): Market participants express mixed sentiments regarding current crypto conditions, with some citing bear market delusions and others highlighting Bitcoin accumul…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Nvidia Board Declines Huang Reinstatement",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 86,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 3): Former Nvidia CEO Jensen Huang issued a statement expressing regret for personal mistakes and willingness to return to his role if the board deemed it in the co…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Barr Warns AI Bank Runs",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 84,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 4): OpenAI has officially released its newest AI models, GPT-6.2 Astra and Sol, positioning them as efficient, cost-effective solutions for real-world tasks. The la…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Nvidia Reports Record Q3 Revenue Guidance",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 82,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 5): Nvidia reported third-quarter revenue of $115.8 billion, surpassing analyst estimates of approximately $109 billion, with adjusted earnings per share reaching $…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Coinbase Expands BTC Loans Russia Approves Crypto",
+   "fuentes": [
+    "x_chainbase"
+   ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): Grand Theft Auto VI has surpassed an estimated $1.5 billion in revenue two days prior to its November 19 launch, with PlayStation accounting for approximately 7…"
+    "tema caliente en X según Chainbase Tops (puesto 6): Coinbase has expanded its Bitcoin-backed lending service to allow users in all 50 U.S. states, including New York, to borrow USDC against BTC, ETH, and SOL hold…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "US Officials Deny Cyberattack NSA Outage",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 78,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 7): U.S. intelligence officials, including Director of National Intelligence Jay Clayton and Secretary of State Marco Rubio, stated there is no evidence of a coordi…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Anthropic Prepares Nasdaq IPO",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 76,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 8): Anthropic is set to price its initial public offering at the top of its targeted range or above, driven by substantial market demand that has pushed total order…"
    ],
    "token": null
   },
@@ -100,55 +122,52 @@
    "fuentes": [
     "x_chainbase"
    ],
-   "calor": 78,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): Bitcoin has continued to decline in price over the past weeks, driven by aggressive selling pressure that has overridden significant buy-side liquidity. Market …"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Fed Projects Rate Hikes Minutes",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 76,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): The Federal Reserve released the FOMC meeting minutes at 2:00 PM ET, providing insights into future interest rate decisions. Market participants are analyzing t…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "NEAR Intents Live Session",
-   "fuentes": [
-    "x_chainbase"
-   ],
    "calor": 74,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): NEAR Intents has scheduled a live broadcast for Episode 3 of 'Shhh... It’s Confidential' tomorrow at 2:00 PM UTC, available on YouTube. Concurrently, Episode 4 …"
+    "tema caliente en X según Chainbase Tops (puesto 9): Bitcoin is currently testing key support levels around $60,000 to $62,000, with market data indicating a phase of seller capitulation. Despite weeks of strong b…"
    ],
    "token": null
   },
   {
-   "tema": "CFTC Halts Kalshi Prediction Markets",
+   "tema": "VCs Agentic Trading Stack",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 72,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): The U.S. Commodity Futures Trading Commission (CFTC) has ordered prediction market platform Kalshi to suspend trading on markets tied to President Donald Trump'…"
+    "tema caliente en X según Chainbase Tops (puesto 10): Binance founder Changpeng Zhao (CZ) stated at Cantor Convergence that while AI creates value, most startups will fail, making crypto builders a more solid inves…"
    ],
    "token": null
   },
   {
-   "tema": "US Grid Fast Energization Plan",
+   "tema": "US Strikes Iranian Missile Site Qeshm",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): PJM Interconnection has proposed a \"fast energization\" plan to accelerate connections for data centers and power plants amid surging demand on the US grid. Conc…"
+    "tema caliente en X según Chainbase Tops (puesto 11): US fighter jets struck an IRGC missile launch site on Iran's Qeshm Island in the Strait of Hormuz, while Iranian forces attacked multiple tankers and launched d…"
    ],
    "token": null
+  },
+  {
+   "tema": "Official Trump",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (TRUMP, puesto de capitalización 136)"
+   ],
+   "token": {
+    "cadena": "bsc",
+    "token": "0x172eb459C85f82Cb2a2E007a8DbA26402ed75BF4",
+    "sym": "TRUMP",
+    "liq": 960406090,
+    "vol24": 0,
+    "c24": 1.72,
+    "edad_h": 7555.0
+   }
   },
   {
    "tema": "Pudgy Penguins",
@@ -157,35 +176,95 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 127)"
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 126)"
    ],
    "token": {
     "cadena": "solana",
     "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
     "sym": "PENGU",
-    "liq": 2224900,
-    "vol24": 840687,
-    "c24": 0.36,
-    "edad_h": 16820.4
+    "liq": 2238887,
+    "vol24": 900844,
+    "c24": 3.68,
+    "edad_h": 16825.6
    }
   },
   {
-   "tema": "Quantus",
+   "tema": "Monad",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (QTC, puesto de capitalización 908)"
+    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 171)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "Bn9oW3GVKQdgNJG5w5P53dbuZfUtAehwFAniZYry68T8",
-    "sym": "QTC",
-    "liq": 715014,
-    "vol24": 77253,
-    "c24": 10.16,
-    "edad_h": 138.0
+    "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
+    "sym": "MON",
+    "liq": 31943968,
+    "vol24": 299006,
+    "c24": 0,
+    "edad_h": 1161.8
+   }
+  },
+  {
+   "tema": "Artificial Superintelligence Alliance",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (FET, puesto de capitalización 125)"
+   ],
+   "token": null
+  },
+  {
+   "tema": "pippin",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (PIPPIN, puesto 654)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump",
+    "sym": "pippin",
+    "liq": 3428788,
+    "vol24": 9763561,
+    "c24": 67.76,
+    "edad_h": 17730.1
+   }
+  },
+  {
+   "tema": "Boundless",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (ZKC, puesto 624)"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Irys",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (IRYS, puesto 343)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "Bxu2YsCo6eB9wEhuAYSsucsjq6epC2SUfvhBYzgrMPmk",
+    "sym": "IRYS",
+    "liq": 22017158,
+    "vol24": 40,
+    "c24": 0,
+    "edad_h": 475.3
    }
   },
   {
@@ -195,35 +274,16 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (ZKP, puesto 801)"
+    "entre lo más buscado en CoinMarketCap (ZKP, puesto 836)"
    ],
    "token": {
     "cadena": "bsc",
     "token": "0xd89B7dD376E671c124352267516BEF1C2cc231a3",
     "sym": "ZKP",
-    "liq": 2406,
-    "vol24": 5854,
-    "c24": 25.37,
-    "edad_h": 7888.7
-   }
-  },
-  {
-   "tema": "Brevis",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (BREV, puesto 533)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "DKEcR2VLUc8fEp6R7iRc4Go3Ze1R4k4iFqkx5Bi9Fwvi",
-    "sym": "BREVIS",
-    "liq": 1124211149,
-    "vol24": 132950,
-    "c24": 0,
-    "edad_h": 4.7
+    "liq": 2308,
+    "vol24": 7001,
+    "c24": 10.04,
+    "edad_h": 7893.9
    }
   },
   {
@@ -233,37 +293,56 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (UP, puesto 434)"
+    "entre lo más buscado en CoinMarketCap (UP, puesto 473)"
    ],
    "token": {
     "cadena": "solana",
     "token": "ErLoMPYAvm5NkWDKepHqV2j1CJsnwV6P647a8LHUGUzs",
     "sym": "UP",
-    "liq": 214070599,
-    "vol24": 201005,
+    "liq": 214070602,
+    "vol24": 162916,
     "c24": 0,
-    "edad_h": 2908.8
+    "edad_h": 2914.0
    }
   },
   {
-   "tema": "NVIDIA tokenized stock (xStock)",
+   "tema": "Impossible Cloud Network",
    "fuentes": [
     "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (NVDAX, puesto 250)"
+    "entre lo más buscado en CoinMarketCap (ICNT, puesto 176)"
+   ],
+   "token": {
+    "cadena": "bsc",
+    "token": "0xBfFffB7A4D52b0b517cFc4D3C9086f196e427777",
+    "sym": "ICNT",
+    "liq": 7246,
+    "vol24": 178,
+    "c24": -5.05,
+    "edad_h": 23.9
+   }
+  },
+  {
+   "tema": "Trump, Xi and Putin to meet",
+   "fuentes": [
+    "bluesky"
+   ],
+   "calor": 70,
+   "porque": [
+    "tendencia en Bluesky: The three leaders plan joint talks at the APEC summit in Shenzhen, China, possibly on nuclear stockpiles."
    ],
    "token": null
   },
   {
-   "tema": "Figure HELOC",
+   "tema": "SpaceX CFO Outlines AI Plan",
    "fuentes": [
-    "coinmarketcap"
+    "x_chainbase"
    ],
-   "calor": 70,
+   "calor": 68,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (FIGR_HELOC, puesto 4024)"
+    "tema caliente en X según Chainbase Tops (puesto 12): SpaceX CFO Bret Johnsen stated that the company aims to become a leading AI infrastructure player by next year, leveraging orbital compute capabilities expected…"
    ],
    "token": null
   },
@@ -272,140 +351,146 @@
    "fuentes": [
     "bluesky"
    ],
-   "calor": 70,
+   "calor": 68,
    "porque": [
     "tendencia en Bluesky: Andy Burnham argues leaving the EU cost the UK more than it gained, ahead of an EU summit."
    ],
    "token": null
-  },
-  {
-   "tema": "Jones Adams Prediction",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 68,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 12): Media personalities Alex Jones and Mike Adams responded to The Economist's \"The World Ahead 2027\" cover, discussing predictions of mass famine, AI-driven contro…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Trump, Xi and Putin to meet",
-   "fuentes": [
-    "bluesky"
-   ],
-   "calor": 68,
-   "porque": [
-    "tendencia en Bluesky: The three leaders plan joint talks at the APEC summit in Shenzhen, China, possibly on nuclear stockpiles."
-   ],
-   "token": null
-  },
-  {
-   "tema": "US Retail Sales Up Production Down",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 66,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 13): US industrial production declined by 0.4% in October, missing expectations of a 0.1% increase, while manufacturing output rose by 0.3%. Retail sales growth mode…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Make a band name bigger",
-   "fuentes": [
-    "bluesky"
-   ],
-   "calor": 66,
-   "porque": [
-    "tendencia en Bluesky: Players inflate famous band names into puns, like Manic Highway Preachers and The Boulder Roses."
-   ],
-   "token": null
-  },
-  {
-   "tema": "Waller States Monopoly Breaking Down",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 64,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 14): Federal Reserve Governor Christopher Waller stated that the traditional bank monopoly in payments is breaking down due to competition from blockchain technology…"
-   ],
-   "token": null
   }
  ],
- "cruces_h18": [],
+ "cruces_h18": [
+  {
+   "ts": 1795012561,
+   "hora_utc": "2026-11-18 14:36",
+   "tema": "Official Trump",
+   "fuentes": "coingecko,trending 1h",
+   "cadena": "solana",
+   "token": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+   "sym": "TRUMP",
+   "liq": 127048,
+   "mc": 266423178,
+   "c1": -0.89,
+   "seguridad": "top10",
+   "aviso": "no",
+   "nuestras": "A2 B3 C0"
+  },
+  {
+   "ts": 1795012561,
+   "hora_utc": "2026-11-18 14:36",
+   "tema": "pippin",
+   "fuentes": "coinmarketcap,trending 5m",
+   "cadena": "solana",
+   "token": "Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump",
+   "sym": "pippin",
+   "liq": 3455623,
+   "mc": 18852047,
+   "c1": 0.81,
+   "seguridad": "top10",
+   "aviso": "no",
+   "nuestras": "A0 B4 C1"
+  },
+  {
+   "ts": 1795012561,
+   "hora_utc": "2026-11-18 14:36",
+   "tema": "Trump, Xi and Putin to meet",
+   "fuentes": "bluesky,trending 5m",
+   "cadena": "solana",
+   "token": "FrLC6rNopSFeYHRYFmbhydRSDCx92TVzf537EcAz8g2M",
+   "sym": "APEC",
+   "liq": 0,
+   "mc": 22454,
+   "c1": 43.73,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1795012561,
+   "hora_utc": "2026-11-18 14:36",
+   "tema": "Trump, Xi and Putin to meet",
+   "fuentes": "bluesky,trending 5m",
+   "cadena": "solana",
+   "token": "4u8YvCpCbUsFgDL9gHDkENCt7aZZKsYYdZEsjDPCpump",
+   "sym": "APEC",
+   "liq": 14986,
+   "mc": 50435,
+   "c1": 59.33,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  }
+ ],
  "huecos_h19": [
   {
-   "ts": 1794993875,
-   "hora_utc": "2026-11-18 09:24",
-   "tema": "Nvidia Board Seeks New CEO",
-   "fuentes": "x_chainbase",
-   "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Nvidia reported record Q3 revenue of $115.8 billion and raised Q4 guidance to $130 billion, beating analyst expectations despite the recent resignation of CEO J…",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1794993875,
-   "hora_utc": "2026-11-18 09:24",
-   "tema": "Apple Services Outage",
-   "fuentes": "x_chainbase",
-   "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Apple reported technical issues affecting iCloud, Apple Pay, and the App Store, attributing the disruption to an internal update. This incident follows a series…",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1794993875,
-   "hora_utc": "2026-11-18 09:24",
-   "tema": "Anthropic IPO SpaceX Fund",
-   "fuentes": "x_chainbase",
-   "calor": 86,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 3): Anthropic has raised its initial public offering price to above $80 per share, valuing the company at approximately $1.5 trillion to $1.6 trillion, with Amazon …",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1794993875,
-   "hora_utc": "2026-11-18 09:24",
-   "tema": "World Bank Explores USDC Payments",
-   "fuentes": "x_chainbase",
-   "calor": 84,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 4): The World Bank Group has announced a collaboration with Citi and Circle to explore the use of the regulated stablecoin USDC for minting and settling funds in it…",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1794993875,
-   "hora_utc": "2026-11-18 09:24",
-   "tema": "US Intel Reports Iran Threat",
-   "fuentes": "x_chainbase",
-   "calor": 82,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 5): Tensions between the United States and Iran have intensified following reports of a potential radiological 'dirty bomb' plot against Washington, which US offici…",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1794993875,
-   "hora_utc": "2026-11-18 09:24",
+   "ts": 1795012561,
+   "hora_utc": "2026-11-18 14:36",
    "tema": "GTA VI Worker Time Off",
    "fuentes": "x_chainbase",
-   "calor": 80,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 6): Grand Theft Auto VI has surpassed an estimated $1.5 billion in revenue two days prior to its November 19 launch, with PlayStation accounting for approximately 7…",
+   "calor": 90,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Grand Theft Auto VI has officially launched, beginning its global rollout in New Zealand before expanding to other regions. The game achieved an estimated $1.5 …",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794993875,
-   "hora_utc": "2026-11-18 09:24",
-   "tema": "Bitcoin Price Decline",
+   "ts": 1795012561,
+   "hora_utc": "2026-11-18 14:36",
+   "tema": "Global Cyber Attack Discussions",
+   "fuentes": "x_chainbase",
+   "calor": 88,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Market participants express mixed sentiments regarding current crypto conditions, with some citing bear market delusions and others highlighting Bitcoin accumul…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795012561,
+   "hora_utc": "2026-11-18 14:36",
+   "tema": "Nvidia Board Declines Huang Reinstatement",
+   "fuentes": "x_chainbase",
+   "calor": 86,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): Former Nvidia CEO Jensen Huang issued a statement expressing regret for personal mistakes and willingness to return to his role if the board deemed it in the co…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795012561,
+   "hora_utc": "2026-11-18 14:36",
+   "tema": "Barr Warns AI Bank Runs",
+   "fuentes": "x_chainbase",
+   "calor": 84,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 4): OpenAI has officially released its newest AI models, GPT-6.2 Astra and Sol, positioning them as efficient, cost-effective solutions for real-world tasks. The la…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795012561,
+   "hora_utc": "2026-11-18 14:36",
+   "tema": "Nvidia Reports Record Q3 Revenue Guidance",
+   "fuentes": "x_chainbase",
+   "calor": 82,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 5): Nvidia reported third-quarter revenue of $115.8 billion, surpassing analyst estimates of approximately $109 billion, with adjusted earnings per share reaching $…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795012561,
+   "hora_utc": "2026-11-18 14:36",
+   "tema": "Coinbase Expands BTC Loans Russia Approves Crypto",
+   "fuentes": "x_chainbase",
+   "calor": 80,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 6): Coinbase has expanded its Bitcoin-backed lending service to allow users in all 50 U.S. states, including New York, to borrow USDC against BTC, ETH, and SOL hold…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795012561,
+   "hora_utc": "2026-11-18 14:36",
+   "tema": "US Officials Deny Cyberattack NSA Outage",
    "fuentes": "x_chainbase",
    "calor": 78,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 7): Bitcoin has continued to decline in price over the past weeks, driven by aggressive selling pressure that has overridden significant buy-side liquidity. Market …",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 7): U.S. intelligence officials, including Director of National Intelligence Jay Clayton and Secretary of State Marco Rubio, stated there is no evidence of a coordi…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794993875,
-   "hora_utc": "2026-11-18 09:24",
-   "tema": "Fed Projects Rate Hikes Minutes",
+   "ts": 1795012561,
+   "hora_utc": "2026-11-18 14:36",
+   "tema": "Anthropic Prepares Nasdaq IPO",
    "fuentes": "x_chainbase",
    "calor": 76,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 8): The Federal Reserve released the FOMC meeting minutes at 2:00 PM ET, providing insights into future interest rate decisions. Market participants are analyzing t…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 8): Anthropic is set to price its initial public offering at the top of its targeted range or above, driven by substantial market demand that has pushed total order…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
