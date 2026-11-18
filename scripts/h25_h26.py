@@ -267,7 +267,7 @@ def h31(ahora, hora):
 def h31s(ahora, hora, extra=None):
     """H31s "pozo + chispa SIN A" (18-nov, Fran, caso hotdog: −95 % en el pozo, chispa a las 8 AM, x9, sin billeteras nuestras).
     Mismo criterio que H31 pero sobre todo el universo de los escaneos de las últimas 24 h (datos/universo_escaneos.tsv, Solana):
-    ≥75 % bajo su máximo, cambio 1 h entre +5 y +30 %, volumen de la hora ≥2× el promedio y ≥2 mil USD con ≥30 operaciones, meme, edad ≥1 d, liq ≥10 mil, MC ≤10 M.
+    ≥75 % bajo su máximo, cambio 1 h entre +5 y +30 %, volumen de la hora ≥2× el promedio (sin mínimo; volumen y operaciones como etiqueta), meme, edad ≥1 d, liq ≥10 mil, MC ≤10 M.
     Etiqueta holders/compradores netos (Jupiter) y si hay A dentro, para medir si las A suman. Solo registro → datos/h31s_sombra.tsv."""
     ya = {r["token"] for r in leer("datos/h31s_sombra.tsv")}
     uni, jup = {}, {}
@@ -291,9 +291,8 @@ def h31s(ahora, hora, extra=None):
         liq = (p.get("liquidity") or {}).get("usd") or 0
         mc = p.get("marketCap") or p.get("fdv") or 0
         edad = (ahora * 1000 - (p.get("pairCreatedAt") or ahora * 1000)) / 8.64e7
-        tx1 = (p.get("txns") or {}).get("h1") or {}
-        if v1 < 2000 or (tx1.get("buys", 0) + tx1.get("sells", 0)) < 30:  # sin esto, tokens muertos con 3 operaciones parecen chispa
-            continue
+        # 18-nov: sin mínimo de volumen. En el histórico (569 pozo+chispa con A, 75 d) la chispa con volumen de la hora <2 mil USD
+        # rindió mejor (x2 7 d 45 %, cae −35 % 10 %) que ≥2 mil (39 % / 29 %); >10 mil fue lo peor. Volumen y operaciones van como etiqueta.
         if 5 <= c1 <= 30 and vx >= 2 and liq >= 10000 and mc and mc <= 10e6 and edad >= 1 and not no_meme(t, p["baseToken"].get("symbol", "")):
             pre.append((t, c1, vx, edad, liq, mc))
     if not pre:
@@ -315,7 +314,7 @@ def h31s(ahora, hora, extra=None):
         out.append(dict(ts=ahora, hora_utc=hora, cadena="solana", token=t, sym=p["baseToken"]["symbol"], precio=p.get("priceUsd"), liq=round(liq),
                         mc=round(mc), liq_mc_pct=round(100 * liq / mc, 1), vol1h=round((p.get("volume") or {}).get("h1") or 0), edad_d=round(edad, 1),
                         n_oper=len(ops), operadores=",".join(sorted(ops)), pool=p.get("pairAddress"),
-                        motivo=f"pozo + chispa sin A: dd {round(dd)} %, c1 {c1} %, vol 1 h x{round(vx, 1)}, compras/ventas 1 h {tx.get('buys')}/{tx.get('sells')}, "
+                        motivo=f"pozo + chispa sin A: dd {round(dd)} %, c1 {c1} %, vol 1 h {round((p.get('volume') or {}).get('h1') or 0)} USD x{round(vx, 1)}, compras/ventas 1 h {tx.get('buys')}/{tx.get('sells')}, "
                                f"holders 1 h {j.get('hold_chg1h') or 'sin dato'} %, netos 1 h {j.get('netos1h') or 'sin dato'}, A dentro {len(ops)}"))
         print(f"H31s entrada sombra: {p['baseToken']['symbol']} {t} {out[-1]['motivo']}")
     return out
