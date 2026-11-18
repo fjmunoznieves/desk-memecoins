@@ -267,7 +267,7 @@ def h31(ahora, hora):
 def h31s(ahora, hora, extra=None):
     """H31s "pozo + chispa SIN A" (18-nov, Fran, caso hotdog: −95 % en el pozo, chispa a las 8 AM, x9, sin billeteras nuestras).
     Mismo criterio que H31 pero sobre todo el universo de los escaneos de las últimas 24 h (datos/universo_escaneos.tsv, Solana):
-    ≥75 % bajo su máximo, cambio 1 h entre +5 y +30 %, volumen de la hora ≥2× el promedio (sin mínimo; volumen y operaciones como etiqueta), meme, edad ≥1 d, liq ≥10 mil, MC ≤10 M.
+    ≥75 % bajo su máximo, cambio 1 h entre +5 y +15 % (dato), volumen de la hora ≥2× el promedio (sin mínimo; volumen y operaciones como etiqueta), meme, edad ≥3 d (dato), liq ≥10 mil y MC ≤10 M (criterio, sin histórico de liquidez/MC).
     Etiqueta holders/compradores netos (Jupiter) y si hay A dentro, para medir si las A suman. Solo registro → datos/h31s_sombra.tsv."""
     ya = {r["token"] for r in leer("datos/h31s_sombra.tsv")}
     uni, jup = {}, {}
@@ -293,7 +293,9 @@ def h31s(ahora, hora, extra=None):
         edad = (ahora * 1000 - (p.get("pairCreatedAt") or ahora * 1000)) / 8.64e7
         # 18-nov: sin mínimo de volumen. En el histórico (569 pozo+chispa con A, 75 d) la chispa con volumen de la hora <2 mil USD
         # rindió mejor (x2 7 d 45 %, cae −35 % 10 %) que ≥2 mil (39 % / 29 %); >10 mil fue lo peor. Volumen y operaciones van como etiqueta.
-        if 5 <= c1 <= 30 and vx >= 2 and liq >= 10000 and mc and mc <= 10e6 and edad >= 1 and not no_meme(t, p["baseToken"].get("symbol", "")):
+        # 18-nov auditoría (569 pozo+chispa, 75 d): c1 5-15 % ratio x2/caída 3,1; 15-30 % 1,6; 30-60 % 0,9 → solo 5-15.
+        # Edad: 1-3 d ratio 1,2 (n=23), 3-7 d 1,9, 7-14 d 2,2, ≥14 d 3,2 → mínimo 3 d.
+        if 5 <= c1 <= 15 and vx >= 2 and liq >= 10000 and mc and mc <= 10e6 and edad >= 3 and not no_meme(t, p["baseToken"].get("symbol", "")):
             pre.append((t, c1, vx, edad, liq, mc))
     if not pre:
         return []
