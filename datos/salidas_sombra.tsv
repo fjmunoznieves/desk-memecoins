@@ -1,19 +1,19 @@
 ts	hora_utc	hip	cadena	token	sym	precio	n_billeteras	n_oper	pasa_oper	c24	c7d	max7d_pct	esc_pct	esc_detalle	esc35_pct	esc35_detalle	trail30_pct	trail30_detalle	copiaA_pct	copiaA_hora	copiaA_detalle	pool	estado
-1794753291	2026-11-15 14:34	H21	solana	7SL2VnfYsChvog5oQY9Nmtqu1wceaMiQzWoqoLQpump	NIO	0.001535	3	3	sí	-0.1		28.8	-20.0	stop	-3.6	en curso (valor a hoy)	-3.6	en curso (valor a hoy)				B4Wmjc6PvjCtU3qSVS3eTT9Mr4M5V5jBkRQctWANTc71	abierto
-1794789251	2026-11-16 00:34	H21	solana	G82HMSo6mHqhY1XdxFK5mrLfGSruDq23J3PDBp34KLf5	Chillmas	6.348e-05	2	2	sí	-14.1		0.9	-20.0	stop	-9.8	en curso (valor a hoy)	-29.4	trailing				94RQ3AmCm2gkzeSotGk4U7nKHfriMGhtn3qfc5Dvz2R5	abierto
+1794753291	2026-11-15 14:34	H21	solana	7SL2VnfYsChvog5oQY9Nmtqu1wceaMiQzWoqoLQpump	NIO	0.001535	3	3	sí	-0.1		28.8	-20.0	stop	-8.5	en curso (valor a hoy)	-9.8	trailing				B4Wmjc6PvjCtU3qSVS3eTT9Mr4M5V5jBkRQctWANTc71	abierto
+1794789251	2026-11-16 00:34	H21	solana	G82HMSo6mHqhY1XdxFK5mrLfGSruDq23J3PDBp34KLf5	Chillmas	6.348e-05	2	2	sí	-14.1		0.9	-20.0	stop	-13.6	en curso (valor a hoy)	-29.4	trailing				94RQ3AmCm2gkzeSotGk4U7nKHfriMGhtn3qfc5Dvz2R5	abierto
 1794907475	2026-11-17 09:24	H21	solana	CXiFtcydRwRXhDp6YgUkzvjUvASFdbxHNRQfMCBfpump	Ignore	1.81e-05	2	2	sí													4mRZsjzhEMHZT2YNqTDsDjzpjQbSpGBosh5EeQbjYCbq	abierto
-1794907475	2026-11-17 09:24	H21	solana	FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump	HOGE	0.0005952	2	2	sí			84.1	-12.1	en curso (valor a hoy)	-12.1	en curso (valor a hoy)	27.7	trailing				7CNC9gGegzEfFK8fLXiYUhdtMEeFPQZoND56U1Mxhnor	abierto
-1794907475	2026-11-17 09:24	H21	solana	4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump	mihao	0.01127	3	3	sí			1.3	-20.0	stop	-5.8	en curso (valor a hoy)	-5.8	en curso (valor a hoy)				Ho1aSG6WGH1FfXdEHrK2f4Ggt1Hoxo9s5jcLMDqeyeBz	abierto
-1794950474	2026-11-17 21:21	H21	solana	FSkyjfqB26u6c2GSgpACrjbxp9yQAR8rutxprVNppump	:3	0.0003696	2	2	sí			8.0	0.1	en curso (valor a hoy)	0.1	en curso (valor a hoy)	0.1	en curso (valor a hoy)				GxYbNxjGR9mEuVzXsGBi2Y78RGkwBMRok4RS9sMUb8hE	abierto
+1794907475	2026-11-17 09:24	H21	solana	FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump	HOGE	0.0005952	2	2	sí			84.1	-20.0	stop	-17.2	en curso (valor a hoy)	27.7	trailing				7CNC9gGegzEfFK8fLXiYUhdtMEeFPQZoND56U1Mxhnor	abierto
+1794907475	2026-11-17 09:24	H21	solana	4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump	mihao	0.01127	3	3	sí			1.3	-20.0	stop	-35.0	stop	-29.1	trailing				Ho1aSG6WGH1FfXdEHrK2f4Ggt1Hoxo9s5jcLMDqeyeBz	abierto
+1794950474	2026-11-17 21:21	H21	solana	FSkyjfqB26u6c2GSgpACrjbxp9yQAR8rutxprVNppump	:3	0.0003696	2	2	sí			487.5	143.8	trailing	143.8	trailing	131.4	trailing	143.3	2026-11-18 09:13	2 de 3 operadores bajaron ≥30 %	GxYbNxjGR9mEuVzXsGBi2Y78RGkwBMRok4RS9sMUb8hE	abierto
 1794821017	2026-11-16 09:23	H23	solana	uGSVUNLW9gJfBcjRsswi1U8GtjmNYtcLLPZDiZeZVtH	MERT	4.573e-06	2	1	no	-100		54.4	-20.0	stop	-35.0	stop	-30.0	trailing				AitRStXjoT9N72Cz3pj8cSoUURa5Jw1hJsFEZt3HLDML	abierto
 1794863602	2026-11-16 21:13	H23	solana	5qRxJ9W45zUrUtGGDneysiRBKZaceNriEqVUei1Rpump	SAME	7.651e-06	2	2	sí	-64.6		101.5	-20.0	stop	60.7	trailing	-22.0	trailing				FnRkPhgxzMzHAkkjHLFpfLxCVdLoafJn4HsY1NuFHfjR	abierto
 1794863602	2026-11-16 21:13	H23	solana	4JzrYs2Hwors4bzZpDv2US1Xj7nNvsDvQQ7JKwDXWsDa	CRIME	8.274e-05	6	5	sí	-97.1		-83.9	-20.0	stop	-35.0	stop	-30.0	trailing	-92.8	2026-11-16 22:50	1 de 1 operadores bajaron ≥30 %	GXt9Lu43248NPdJ4zyD1MgnXDcvGmryzGkErphnvmYKm	abierto
-1794863602	2026-11-16 21:13	H23	solana	CNqQ7qs3yTu8nqq1yvniLGUdcav6zeX3eanLPFPbpump	WINNER	1.422e-06	4	3	sí	-1.6		0.7	-1.4	en curso (valor a hoy)	-1.4	en curso (valor a hoy)	-1.4	en curso (valor a hoy)				GjBW3Lj9ftBjCvU3XA85Au8nFNj6P12gZoH8UYeC6uMm	abierto
+1794863602	2026-11-16 21:13	H23	solana	CNqQ7qs3yTu8nqq1yvniLGUdcav6zeX3eanLPFPbpump	WINNER	1.422e-06	4	3	sí	-1.6		0.7	-0.9	en curso (valor a hoy)	-0.9	en curso (valor a hoy)	-0.9	en curso (valor a hoy)				GjBW3Lj9ftBjCvU3XA85Au8nFNj6P12gZoH8UYeC6uMm	abierto
 1794863602	2026-11-16 21:13	H23	solana	6ijrSYtrQSXiZ3QtjpRBL3F52SEA2zR7yzd98uT8pump	22M	6.968e-06	3	2	sí	-78.9		7.8	-20.0	stop	-35.0	stop	-24.6	trailing				Eu7auzwxCJqM3Z6nf5PNPPeZthqKm8uS8gzPzx8XghyJ	abierto
 1794863602	2026-11-16 21:13	H23	solana	GP4TAnoTDptS8rzhDBAiz9NCMsSa1RgJbSw36ZDmpump	jonson	2e-06	2	1	no	-100		2.0	1.6	en curso (valor a hoy)	1.6	en curso (valor a hoy)	1.6	en curso (valor a hoy)				942KDU1jgnScMRaakPuTHymDjhNH5jA1Dou3aTWDpTV	abierto
 1794863602	2026-11-16 21:13	H23	solana	DsXfStKbMhmMVEZVq6JqHWGTEJeu7LhhuP4tcruPh35e	ZDAY	2e-06	2	1	no	-100		1.0	1.0	en curso (valor a hoy)	1.0	en curso (valor a hoy)	1.0	en curso (valor a hoy)				JBd871Je8BioCxYc31By1ouTNTwqg8rB6u1hWZho8CgK	abierto
 1794863602	2026-11-16 21:13	H23	solana	2vjAeetmCFgZQQqRGYsnZuoN9xwWeT6nqo8CytHtpws4	Tide	1.908e-05	2	1	no													GHd9FgzKD3dXn971bPz4iyggczBPADLGhMQD9dwaDmEU	abierto
-1794863602	2026-11-16 21:13	H23	solana	HsrEvGVsm8CPXMT55LTGDDycvn6LiYC9UYKoo2o3pump	GOON	1.962e-06	3	2	sí	-1.6		17.3	-1.7	en curso (valor a hoy)	-1.7	en curso (valor a hoy)	-1.7	en curso (valor a hoy)				7GqxZdX4NLKXVCKgBuz6qxUdKurQVkamef3tHLVrTAYy	abierto
+1794863602	2026-11-16 21:13	H23	solana	HsrEvGVsm8CPXMT55LTGDDycvn6LiYC9UYKoo2o3pump	GOON	1.962e-06	3	2	sí	-1.6		17.3	-1.0	en curso (valor a hoy)	-1.0	en curso (valor a hoy)	-1.0	en curso (valor a hoy)				7GqxZdX4NLKXVCKgBuz6qxUdKurQVkamef3tHLVrTAYy	abierto
 1794863602	2026-11-16 21:13	H23	solana	HnFmyGWVkeChVe4FnG69wVshYv65TwGpPefGiTSLpump	FOMOFUN	2.815e-06	3	2	sí													7gtQYxk7NEqRQNxfNjifY5foiSo9ezRk5Tzew4BvU5UX	abierto
 1794863602	2026-11-16 21:13	H23	solana	7TnXXR1ytJ9PZDxgSA8VwbyKmEWZmiA2YAn55YyVpump	Trader	0.0002462	8	7	sí	-76.4		18.6	-20.0	stop	-35.0	stop	-30.0	trailing	-26.8	2026-11-16 22:50	2 de 4 operadores bajaron ≥30 %	AAzZ8nV8k5Vs9pNRJoKF7y5jJtHhdEDNUHhx4jcRyXLL	abierto
 1794863602	2026-11-16 21:13	H23	solana	FsFqQGxCNd7dbFuimCW4hMiFRdvvM8PoLyp4WZrxAUnN	Lemon	7.142e-05	2	2	sí	-81.1		21.6	-20.0	stop	-35.0	stop	-14.9	trailing	4.1	2026-11-16 22:50	1 de 1 operadores bajaron ≥30 %	HTvR8ckL2MDuKoupy5b8ae36HkUBBAErLNMhNpnzuJvQ	abierto
@@ -44,6 +44,18 @@ ts	hora_utc	hip	cadena	token	sym	precio	n_billeteras	n_oper	pasa_oper	c24	c7d	ma
 1794949792	2026-11-17 21:09	H23	solana	2Qt3mhYF3PFiDooQgUKeNLw8dDRDjGBk3s7Abvq9pump	FUTA	5.475e-06	2	2	sí														abierto
 1794949792	2026-11-17 21:09	H23	solana	GbGzZQugMJtZnhcnNyHUamXg2xGZw4C4RWy1uSvVpump	SOYOUARE	1.837e-05	2	2	sí														abierto
 1794949792	2026-11-17 21:09	H23	solana	4htgg1WaAis8nui7d5PrHiou6YyNykzzA35yA53Vpump	Grokia	1.395e-05	2	2	sí														abierto
+1794993212	2026-11-18 09:13	H23	solana	4La95NEVJdYK9kr375SfKPXnLA8ef8GtsjfVfW27pump	BAWSAQ	0.0006026	2	2	sí														abierto
+1794993212	2026-11-18 09:13	H23	solana	A4zQMT7ZFC2mM8fZDDQEqCs5bLFifA9XhDAJtHc3Lzbm	GROKIA	0.000112	2	2	sí														abierto
+1794993212	2026-11-18 09:13	H23	solana	42t61wPi41TwWtpqBVgZN1V4hjiKwZBKwq27xME9pump	1.0	6.012e-06	2	2	sí														abierto
+1794993212	2026-11-18 09:13	H23	solana	73tAdnm52mgbkvEGHVajGtPU54u8jReYGTSvY94Qw9ZS	COOLCAT	1.125e-05	2	2	sí														abierto
+1794993212	2026-11-18 09:13	H23	solana	Dys6SYbjUsy8kksaqrXqo5L2GzgCYDiguGGcS8B5rkrv	bul	6.651e-05	2	2	sí														abierto
+1794993212	2026-11-18 09:13	H23	solana	9jhs5qoJnUFU7AZXbsiD1Q6De6FVsino9Ysw8QU6pump	WANTED	6.896e-05	2	2	sí														abierto
+1794993212	2026-11-18 09:13	H23	solana	rizF5PvLP9pTBT9L1pHJwLEip1BZTG5Q6wzYeWGpump	PATTINSON	1.318e-05	2	1	no														abierto
+1794993212	2026-11-18 09:13	H23	solana	3BTugN2YuH8ozBfUVRmvKAZi3QSWtbdAgQ3BhxEDpump	DIC	5.623e-06	3	3	sí														abierto
+1794993212	2026-11-18 09:13	H23	solana	EadD2LMp6EbH9PrbXUFWcrZKMhoKVrZN1gpwRhH5pump	ANT	0.0003143	2	2	sí														abierto
+1794993212	2026-11-18 09:13	H23	solana	NMX3DEvN4XrsKJoWKBPyK9X5AwfwvtcGYxrwzLfpump	TURF	1.373e-05	2	2	sí														abierto
+1794993212	2026-11-18 09:13	H23	solana	Bygm5ULo9xBRdvzp5TAqtvxd5FLHf6wt8T1tBNo5pump	SLOPAGANDA	1.159e-05	2	2	sí														abierto
+1794993212	2026-11-18 09:13	H23	solana	47mUZNAjSFA3nmxnRa1y7P9Jmi5WPWpVP1ACPQZqpump	Spud	8.367e-06	2	2	sí														abierto
 1794821036	2026-11-16 09:23	H22	solana	4FP2GRQS3WYPsZSE2dwaVzqkajrBpHcXyVSTVt83pump	Huang	4.747e-05	1	0	no	-36.3		1.4	-20.0	stop	-35.0	stop	-29.0	trailing				FJ1Y3drK5Z715mj8Hk512ekk3rQhTAhgRv6HMhnPCN2u	abierto
 1794821036	2026-11-16 09:23	H22	solana	uHMWNFjUNxbPy1q43WrdbzygmJwdeh6AiQm1NKdxPAY	PAYDAY	8.627e-05	1	0	no	50.3		11.5	-20.0	stop	-3.3	en curso (valor a hoy)	-26.5	trailing				9rQAUw4uNyfsqsJ9F3BPo3hBFY1V6ptaEtPkRhhH3zpL	abierto
 1794821036	2026-11-16 09:23	H22	solana	GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump	WASTED	0.003494	1	0	no	-11.8		2.5	-20.0	stop	-35.0	stop	-28.3	trailing				TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN	abierto
@@ -117,7 +129,7 @@ ts	hora_utc	hip	cadena	token	sym	precio	n_billeteras	n_oper	pasa_oper	c24	c7d	ma
 1794863713	2026-11-16 21:15	H22	solana	Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr	FLOAT	0.003214	2	2	sí	-28.1													abierto
 1794863713	2026-11-16 21:15	H22	solana	8rHoAfpdE89bi1SRRKaYUWfng3YpntoxZQyEQy9GPmZV	MAGGIE	1.008e-05	2	2	sí	28.9													abierto
 1794863713	2026-11-16 21:15	H22	solana	7ymF66Z6VhgNiwadtVhjTtT6U7iQRpSxeiRrhfufhigh	HIGH	0.0005414	1	1	no	-10.6													abierto
-1794863713	2026-11-16 21:15	H22	solana	8Mi9E1V2bdPeAaRkR5yxUsAvpzP6UBUEEUrYmgKNpump	WEALTH	0.0004168	2	2	sí	-27.4													abierto
+1794863713	2026-11-16 21:15	H22	solana	8Mi9E1V2bdPeAaRkR5yxUsAvpzP6UBUEEUrYmgKNpump	WEALTH	0.0004168	2	2	sí	-27.4									-41.9	2026-11-18 09:13	2 de 3 operadores bajaron ≥30 %		abierto
 1794863713	2026-11-16 21:15	H22	solana	5mH155ePpNWJb2GktpftLJbcTvoxFaUrv7XkZPDtpump	catalyst	1.428e-05	1	1	no	-0.8													abierto
 1794863713	2026-11-16 21:15	H22	solana	5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump	Max	0.001009	1	1	no	-4.9													abierto
 1794863713	2026-11-16 21:15	H22	solana	MukLDtJ8Cx9DxLbeyLRSWPSposTMWuwHANbuaudpump	OTC	0.002748	1	1	no	7.2													abierto
@@ -163,15 +175,17 @@ ts	hora_utc	hip	cadena	token	sym	precio	n_billeteras	n_oper	pasa_oper	c24	c7d	ma
 1794857156	2026-11-16 19:25	H24	solana	98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g	HYPE	333955.53	22	18	sí	-100.0												DMowdMa1AwrTiw2RUJk7igDxCcKDZ5Ra7VqYTT6CZDkw	abierto
 1794863716	2026-11-16 21:15	H24	solana	667tvUtaFVbesmSZDYCgQzYkJW4y36PdbmacRZGipump	BANK	0.0001127	2	1	no	-90.9												8CefVQPGWuW1wHmgxCqnSF5kvMAXKEwK9YpwtbphMJ5	abierto
 1794863716	2026-11-16 21:15	H24	solana	WENWENvqqNya429ubCdR81ZmD69brwQaaBYY6p3LCpk	WEN	0.01736	14	9	sí	-100.0												7vWRTPPBq3aNaJZsrfterTz1BSjht4YSHBXJwnbuV6SC	abierto
-1794869277	2026-11-16 22:47	H24	solana	nxPqZ4F7ux8Vph5NFu25rEP6Kx9Gr1U6Fmj36Rjpump	Dacity	0.001408	37	31	sí													G2UuRbmVDzDFP4qyoBJrSKBXSi7d6V4bPP9tHPs36y4b	abierto
-1794869277	2026-11-16 22:47	H24	bsc	0x3E7f1039896454B9cb27c53CC7383e1AB9D9512a	METFI	0.01145	0	0	no													0x43035D67b163742Fd3f3CD1310D6C2FBE17C82F6	abierto
+1794869277	2026-11-16 22:47	H24	solana	nxPqZ4F7ux8Vph5NFu25rEP6Kx9Gr1U6Fmj36Rjpump	Dacity	0.001408	37	31	sí	-38.5												G2UuRbmVDzDFP4qyoBJrSKBXSi7d6V4bPP9tHPs36y4b	abierto
+1794869277	2026-11-16 22:47	H24	bsc	0x3E7f1039896454B9cb27c53CC7383e1AB9D9512a	METFI	0.01145	0	0	no	-1.0												0x43035D67b163742Fd3f3CD1310D6C2FBE17C82F6	abierto
 1794926012	2026-11-17 14:33	H24	solana	HuAXPyDWDaMYFKuwQHpqL1oPnj93zdzWmtvFGzCeCUa7	MASK	0.02091	30	24	sí													4GWh5saKgzoukhhj4Rh3p5FmPU6yPuAexV6FaH5JQYfm	abierto
-1794926012	2026-11-17 14:33	H24	solana	A4zQMT7ZFC2mM8fZDDQEqCs5bLFifA9XhDAJtHc3Lzbm	GROKIA	0.00026	1	1	no													4gy24R4fRDMBHNY2LxhwGoUCHpz6maqvWyVnKp2kyuP1	abierto
+1794926012	2026-11-17 14:33	H24	solana	A4zQMT7ZFC2mM8fZDDQEqCs5bLFifA9XhDAJtHc3Lzbm	GROKIA	0.00026	2	2	sí													4gy24R4fRDMBHNY2LxhwGoUCHpz6maqvWyVnKp2kyuP1	abierto
 1794926012	2026-11-17 14:33	H24	solana	6sBvfTnThBPUQsEWjiXdgCnHwxGZfEDqegtVu4vLpump	WANTED	0.0002729	9	3	sí													CowBNpAYZn5FxtvgkjTRY9C69Ps2Bp8nRDYt7tiyPLXo	abierto
 1794937932	2026-11-17 17:52	H24	bsc	0xEc6D1444Ce527fa92350af62d42EB23182233333	GFH	550.26	0	0	no													0xF4Cc9A664983D805070B4622b31Fb9Bf4b137922	abierto
 1794949799	2026-11-17 21:09	H24	robinhood	0x420697E19abce47239cf040c342Bb2FE7d40B311	MUSEBOOTY	3.856e-06	0	0	no													0xc53f473883e0c7eb159935633daaa41142bb1883ab1794b60b61d5ccb1330e7f	abierto
-1794954231	2026-11-17 22:23	H24	solana	GwZaMuX8KeF6cEfQcV6oWyVhKszRpZojFzB6qTQW4UCD	NVIDIANS	8.876e-05	0	0	no													AWUHBaqvxzdnn2vC6SgpzK5SzhqLGTxBhsSiMy4ZYZpb	abierto
+1794954231	2026-11-17 22:23	H24	solana	GwZaMuX8KeF6cEfQcV6oWyVhKszRpZojFzB6qTQW4UCD	NVIDIANS	8.876e-05	1	1	no													AWUHBaqvxzdnn2vC6SgpzK5SzhqLGTxBhsSiMy4ZYZpb	abierto
 1794954231	2026-11-17 22:23	H24	bsc	0x001208F7F53F78Db2b32E1c68198D3e8f320Aa23	APD	0.001181	0	0	no													0x0EcF06dAae95a9F860551cFD9cA175cC81Ad90eD	abierto
+1794969861	2026-11-18 02:44	H24	solana	AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump	Macca	0.002272	22	17	sí													4FoNNNMMKMa66ppCiA9557cg63s2BNN9UoFcaKxXbmvg	abierto
+1794993229	2026-11-18 09:13	H24	solana	EadD2LMp6EbH9PrbXUFWcrZKMhoKVrZN1gpwRhH5pump	ANT	0.0003258	2	2	sí													CtbK3gTAFki1BfKQRbEa35MQ5TShnLC3G5DTBPMnWU7R	abierto
 1794829243	2026-11-16 11:40	SOST	solana	HTmQz7My6MehV7bjhJ6jde8nDND1yvsz68d24LP7YgUQ	GP	0.0007221	1	1	no														abierto
 1794829243	2026-11-16 11:40	SOST	solana	8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump	BLOB	0.0136	11	1	no										-61.0	2026-11-17 21:10	1 de 1 operadores bajaron ≥30 %		abierto
 1794829243	2026-11-16 11:40	SOST	solana	mBjWbrkGosa8RZopsghLZTF6KELiMUmEZh4mijqpump	MEVS	0.001181	5	1	no										-78.2	2026-11-17 21:10	1 de 2 operadores bajaron ≥30 %		abierto
@@ -179,11 +193,14 @@ ts	hora_utc	hip	cadena	token	sym	precio	n_billeteras	n_oper	pasa_oper	c24	c7d	ma
 1794838234	2026-11-16 14:10	SOST	solana	4B8CdHPZ8ng1CtMP2Jk2W8wGAwJ5nJnap1deVsz2pump	BUTTHOLE	32.7	1	1	no														abierto
 1794853336	2026-11-16 18:22	SOST	solana	13EAww2eo8g1Xp9U7qrLNg1WoHFHKbs9xy2EQJjfpump	SWJ	19.96	7	1	no										-100.0	2026-11-17 21:10	1 de 2 operadores bajaron ≥30 %		abierto
 1794853336	2026-11-16 18:22	SOST	solana	HHoDt9mEET28qFFWtUPNTqGcmRQPh3TJChAWHmBopump	HYGG	102	1	1	no														abierto
-1794857159	2026-11-16 19:25	SOST	solana	8Mi9E1V2bdPeAaRkR5yxUsAvpzP6UBUEEUrYmgKNpump	WEALTH	-10.07	1	1	no														abierto
+1794857159	2026-11-16 19:25	SOST	solana	8Mi9E1V2bdPeAaRkR5yxUsAvpzP6UBUEEUrYmgKNpump	WEALTH	-10.07	1	1	no										-100.0	2026-11-18 09:13	2 de 3 operadores bajaron ≥30 %		abierto
 1794869824	2026-11-16 22:57	SOST	solana	NTRNDMqQSiwEC2jJs3wJiZS6bpGYQJtMNQJgiX3WyV6	NTRNDM	27.56	2	2	sí														abierto
 1794937939	2026-11-17 17:52	SOST	solana	4rYsDHMfKmt6VuVGcM8cGzBgkZNgQT3w2DhdEmtVpump	DacityCoin	45.87	3	3	sí														abierto
 1794950170	2026-11-17 21:16	SOST	solana	HZbiEpF2oM658EpjNRRqxharz5L9Ddm8akpSH2R5pump	Rocco	14.1	3	3	sí														abierto
 1794950170	2026-11-17 21:16	SOST	solana	39wVWdqCJWmHwpQS4Twx9GYmmhLSSKDPPJE7DM7Zpump	DACITY	135	5	5	sí														abierto
+1794954548	2026-11-17 22:29	SOST	solana	6zzzG49KX5nksnqfogs31dwoMYSHaJXkropKbv1QZVga	Malfoid	39.99	1	1	no														abierto
+1794969865	2026-11-18 02:44	SOST	solana	FSkyjfqB26u6c2GSgpACrjbxp9yQAR8rutxprVNppump	:3	296	4	4	sí										-100.0	2026-11-18 09:13	2 de 3 operadores bajaron ≥30 %		abierto
+1794969865	2026-11-18 02:44	SOST	solana	5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump	Max	86.21	5	5	sí														abierto
 1794877473	2026-11-17 01:04	H25	solana	4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump	mihao	0.01420		22	sí													Ho1aSG6WGH1FfXdEHrK2f4Ggt1Hoxo9s5jcLMDqeyeBz	abierto
 1794877473	2026-11-17 01:04	H25	solana	7SL2VnfYsChvog5oQY9Nmtqu1wceaMiQzWoqoLQpump	NIO	0.001505		4	sí													B4Wmjc6PvjCtU3qSVS3eTT9Mr4M5V5jBkRQctWANTc71	abierto
 1794907372	2026-11-17 09:22	H25	solana	Fp4JkqEcKYKBKhb9iMu9NSDeo71HWgq2q9QtXaaKpump	paws	0.0007806		4	sí													2rmaFtFZmJtLXdPgRvk417RLc9GBD3jGbAqtttmfG3AF	abierto
@@ -195,13 +212,14 @@ ts	hora_utc	hip	cadena	token	sym	precio	n_billeteras	n_oper	pasa_oper	c24	c7d	ma
 1794950349	2026-11-17 21:19	H25	solana	J8PSdNP3QewKq2Z1JJJFDMaqF7KcaiJhR7gbr5KZpump	TripleT	0.001966		2	sí													3KFCgJ5R3zshW8hTDbzjSrrKSRYmKvsMfhc4Vo4iddxD	abierto
 1794950349	2026-11-17 21:19	H25	solana	2u1tszSeqZ3qBWF3uNGPFc8TzMk2tdiwknnRMWGWjGWH	USDG	0.9998		3	sí													5KqohoeGjTjyHAFJJywK4J7fkFuK82PfMyuseGgLKZu2	abierto
 1794950349	2026-11-17 21:19	H25	solana	G7vQWurMkMMm2dU3iZpXYFTHT9Biio4F4gZCrwFpKNwG	BIRB	0.06822		2	sí													GUWFT7bbLphGrcpAPnnEnBbe1uErv9e6LLC2qPx2wZy1	abierto
-1794950349	2026-11-17 21:19	H25	solana	SKRbvo6Gf7GondiT3BbTfuRDPqLWei4j2Qy2NPGZhW3	SKR	0.009958		2	sí													VY1ZQXjqBwvuWgVfTfhqanJe96GGoQrX7xZZDrWPGiT	abierto
+1794950349	2026-11-17 21:19	H25	solana	SKRbvo6Gf7GondiT3BbTfuRDPqLWei4j2Qy2NPGZhW3	SKR	0.009958		2	sí										-1.7	2026-11-18 09:13	1 de 2 operadores bajaron ≥30 %	VY1ZQXjqBwvuWgVfTfhqanJe96GGoQrX7xZZDrWPGiT	abierto
 1794950349	2026-11-17 21:19	H25	solana	HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr	EURC	1.10		2	sí													ArisQNcbjXPJD7RgPRvysatX3xcfHPTbcTkfD8kDoZ9i	abierto
 1794950349	2026-11-17 21:19	H25	solana	TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo	TTWO	205.97		5	sí													7qZPiJ2Lvwh9DV9gUBH2EwConBE3RUrAvGRjpN8vTjtT	abierto
 1794950349	2026-11-17 21:19	H25	solana	Pren1FvFX6J3E4kXhJuCiAD5aDmGEb7qJRncwA8Lkhw	ANTHROPIC	945.53		8	sí													Bnoev1Gp1o247d7zTwSbznRwqjkRmbrx3R6Qt4P16YbQ	abierto
 1794950349	2026-11-17 21:19	H25	solana	9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump	Fartcoin 	0.09070		2	sí													Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw	abierto
 1794950349	2026-11-17 21:19	H25	solana	DKYcjobF7HPtL9RyQBRdeRQ2iWvizpfbgWwPWNXdpump	DacityCoin	0.007622		4	sí													7Te1wXcfeQjKLGHXFvxSCnGZTqunoZ9fxBn7KKjrkNEr	abierto
 1794950349	2026-11-17 21:19	H25	solana	7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr	POPCAT	0.02826		2	sí													FRhB8L7Y9Qq41qZXYLtC2nw8An1RJfLLxRF2x9RwLLMo	abierto
+1794970045	2026-11-18 02:47	H25	solana	FSkyjfqB26u6c2GSgpACrjbxp9yQAR8rutxprVNppump	:3	0.001451		3	sí										-38.0	2026-11-18 09:13	2 de 3 operadores bajaron ≥30 %	GxYbNxjGR9mEuVzXsGBi2Y78RGkwBMRok4RS9sMUb8hE	abierto
 1794856891	2026-11-16 19:21	H26	bsc	0x8f7A9671A16d964d5feC1a229DD73e44E2233c7e	GTA	0.005304																0x0DD1084Ae7d7344FB07CB75047F208698E3D80D1	abierto
 1794879125	2026-11-17 01:32	H27	solana	MsGDybWRSNdNXkdDZhEksgzugT5CbVWUG2wkhwgpump	MeiMei	0.0004377		1	no													DtDfaWqhCEaeFXJUHjGC8Xo9XxH52ENVhA1XoJ9F4d8Y	abierto
 1794879125	2026-11-17 01:32	H27	solana	XsqE9cRRpzxcGKDXj1BJ7Xmg4GRhZoyY1KpmGSxAWT2	MCDx	280.51		1	no													6UaXnzFjCtn9qwcCUEex7EG4hoojSDrf6iZfjQUYaNqP	abierto
@@ -227,6 +245,9 @@ ts	hora_utc	hip	cadena	token	sym	precio	n_billeteras	n_oper	pasa_oper	c24	c7d	ma
 1794926327	2026-11-17 14:38	H27	solana	ejrz94zR4A2ScS8LdvRaQih2xUxaE2ydreqUNKmpump	ANTS	0.006257		1	no													AF5Cn9Mu1Y8Coh68xKBYpSjxXdk1LbNxgo76dPpRRoLB	abierto
 1794931140	2026-11-17 15:59	H27	solana	Pren1FvFX6J3E4kXhJuCiAD5aDmGEb7qJRncwA8Lkhw	ANTHROPIC	951.68		2	sí													Bnoev1Gp1o247d7zTwSbznRwqjkRmbrx3R6Qt4P16YbQ	abierto
 1794950460	2026-11-17 21:21	H27	solana	39wVWdqCJWmHwpQS4Twx9GYmmhLSSKDPPJE7DM7Zpump	DACITY	0.0002238		1	no													BDDxV7hoqUN7GPwom7Ea9EXbcragfDMhzSHy77ZHU6ZE	abierto
+1794970148	2026-11-18 02:49	H27	solana	CbcyNo7m1amFWqEQm2m4PLv1UNvpcL3C1Ujm6AkzpKoU	e/acc	0.0002366		1	no													4JAnKFddd5fFTk5PxDj3PpTWJuTEfSWQEjZJcgKQ9KwW	abierto
+1794970148	2026-11-18 02:49	H27	solana	AuRhMFYgi4G3AQCy3ZfzkArVYLvozD2cH1b6R1RHpump	DCT	0.0002082		1	no													DxLP7qgW3zhh5dFLbfqpDtEyfykPoc9JJmLdmxgXjTq7	abierto
+1794983321	2026-11-18 06:28	H27	solana	56S874EPXeXKLQJCkMCsW15z38LW9xBpq4qQLr5qpump	DAC	0.0004757		2	sí													Hy94e2z3C1CRE9oYb7SN9F6TSNmWkQy6MRHZPxrfNTfU	abierto
 1794587461	2026-11-13 16:31	IMIT	solana	EunAsZtcViruWAUmtyqSaNWvTq61hD8hhtWM1rxkgieX	TRUMP	0.00002492																	abierto
 1794587461	2026-11-13 16:31	IMIT	solana	CPA8c3HoNRaNWEfEnbcgzmaHDp4f4JHJZRaj3jCvYxGS	NVIDIA	0.00002025																	abierto
 1794610432	2026-11-13 22:53	IMIT	bsc	0x0fdB75fede1cD3bA3e849E67480a2B376C0EFd3B	TRUMP	0.05027																	abierto
@@ -242,6 +263,11 @@ ts	hora_utc	hip	cadena	token	sym	precio	n_billeteras	n_oper	pasa_oper	c24	c7d	ma
 1794847926	2026-11-16 16:52	IMIT	bsc	0x6CCCf61720416Fca20d1C9B38455373f3a3276Dd	TRUMP	0.04700																	abierto
 1794856891	2026-11-16 19:21	IMIT	bsc	0xB0140aa2CE0343BcB724BE0Cd8E3a45d576F369C	TRUMP	0.005926																	abierto
 1794949556	2026-11-17 21:05	IMIT	bsc	0x67013AF25A97Ff5C73CCF23E5d82f4b6bE24F97b	TRUMP	0.04728																	abierto
+1794953991	2026-11-17 22:19	IMIT	solana	GwZaMuX8KeF6cEfQcV6oWyVhKszRpZojFzB6qTQW4UCD	NVIDIANS	0.00008764																	abierto
+1794953991	2026-11-17 22:19	IMIT	solana	WD29ThFKErmZ4kDcfKRGZLBa7FMh6eNTc6ecLYFP1uz	NVIDIANS	0.00002909																	abierto
+1794953991	2026-11-17 22:19	IMIT	bsc	0x92f6038692830F6c14b06b6Dc7b3f9b91e6D01f2	PEPE	0.02247																	abierto
+1794953991	2026-11-17 22:19	IMIT	bsc	0xCd75184984423e2EB4723bE38d7Ee0b3783213FF	NFLXc	0.000002602																	abierto
+1794953991	2026-11-17 22:19	IMIT	bsc	0x09bff94E35e83a625725817fD65B09390dEd916b	TRUMP	0.02129																	abierto
 1794938206	2026-11-17 17:56	H28	solana	7Evw4uxTxLGGEFEvXLUNYyc1J7PnFk9EYwTUFagARUX	ACRUX	0.00006531																58FQSXfMtQhJ1durY9E7rGKcuzsHTw1Sp87UDqrcr1dG	abierto
 1794938206	2026-11-17 17:56	H28	solana	9AhHRV5UWdz8MJgP97LczfrVBB2No9u1vse992mQpump	Cyber	0.00001251																DKqD831snBTSMSZJwzHaCVLbiRQF4YbNmtQZtqmzghnr	abierto
 1794938206	2026-11-17 17:56	H28	solana	6PrBbWUciChkoYKEaJZJXjtiQnRJqiAgLMYTEnXbpump	JVOLT	0.0002718																7z7XZfWMCdJdLVS8N1y5v5fdsTJ5jcbbsKwvS6dXkqNg	abierto
@@ -265,6 +291,47 @@ ts	hora_utc	hip	cadena	token	sym	precio	n_billeteras	n_oper	pasa_oper	c24	c7d	ma
 1794950468	2026-11-17 21:21	H28	bsc	0x67013AF25A97Ff5C73CCF23E5d82f4b6bE24F97b	TRUMP	0.02986																0x9245f393ad18BA77C46E1114A1D777D0c4CDC627	abierto
 1794950468	2026-11-17 21:21	H28	bsc	0xEabb14c396D38ADcc898Dc78375D50Feb28678DB	SD🐶	0.0001448																0xEd14083be1eC2B900832c1c307DCEfd8a08DB344	abierto
 1794950468	2026-11-17 21:21	H28	bsc	0xd5cdF125cf6A7cDc8964Fd0c5dC1c735542124B8	EVAA	0.04348																0x0e449861D1AB2610A5fA537c33b5FE5Cc6Fb5900	abierto
+1794954829	2026-11-17 22:33	H28	solana	2wFebWh1YQMRDmEZmWA5gCEzjWz1V8fPbQvfPv1Jpump	hamster	0.00003738																FRXsn5NawNoLfvEDWJd8F4ors8vGemm6XdxwqEbuCdPW	abierto
+1794954829	2026-11-17 22:33	H28	solana	DVehfNFvE3judvtWcFEJWpjSR8FbZUeYLZz3wmKypump	GTA	0.0002121																4Nmq748nWcNgA42h26TagsCuA5iihdSzWEi8mpUu4bUw	abierto
+1794954829	2026-11-17 22:33	H28	solana	453edF32x8aS8MXHBg2t6vtKLWyK7D7NKRyybcskpump	GTA	0.00004623																6S4EwQLmf1vr4ftX9T16KyebEA4adLSPFHeAmL89nbJg	abierto
+1794954829	2026-11-17 22:33	H28	solana	HUZcQqm6va2bHDoFD26eUMcXqiEpYsUDHiw9YNmLpump	PS5	0.00002529																ATC6PJd9erfuzs4giV6DNW8dHeVRBUEuRFPcQBLQFTC7	abierto
+1794954829	2026-11-17 22:33	H28	solana	46ZQcBhPZoPMG6QcneN92MT4oo4dqjbzTGxbJ6Nqi2yV	INU	0.00001058																86YE74RPCep4esri1WNK71Tv3s5J7KzgxHDDAwpuXFTt	abierto
+1794954829	2026-11-17 22:33	H28	solana	5je4cs1ihqrkcAjEasAY2mP7u81wX6XGDkREgCTzpump	INU	0.00001751																3i7Ce3UaSgbuumf2Qx5cTWzMfFmied8XBE45JWVRekUR	abierto
+1794954829	2026-11-17 22:33	H28	solana	8nUH7dwgagpMvtQnsRRMzRtUrHdv2sJiuQXABQpUpump	GTAMAS	0.00001060																56dfMuLscU8Hy5r1qUdC49hyYCuWMrNGoepmRqoR2o1Z	abierto
+1794954829	2026-11-17 22:33	H28	solana	5zQxXRcsip2ViGsWjvbw1q2fQuv3JtizLhivM7topump	NEGRO	0.00002024																9PqrL1SP7bKsiNGyP5gL4LhrgbuYZ9c6hRQu6apRHu15	abierto
+1794954829	2026-11-17 22:33	H28	solana	HSekCAUcfwZWjvBjhjJsgYAUc5ZqJ98LmBcC5jjhpump	ADR	0.00001535																7ytbM4Ys3CaHZiJxjuHbTkRs7TLSg6Ri1syjnpJEbV7X	abierto
+1794954829	2026-11-17 22:33	H28	solana	DQmWiZfT6FaDoMivEtz55SqUH6YNefa4Qu5RcSyWujph	GTA	0.00006495																61SzxmHtA2Dq2nUrBj3GvNh3HhcVYZ19DDvC1ESW7uLd	abierto
+1794954829	2026-11-17 22:33	H28	bsc	0xE921bCf06Bd39fe18807Ab62e10cfA1d352eb44E	巨蟹座金	0.0004335																0x7dAa01d0a49674e2086476BE68efc9DDA9A74c00	abierto
+1794954829	2026-11-17 22:33	H28	bsc	0xf56fca55c8e0a3f857d65B4C8c261aa23F8EDEA6	KATIA	0.00001570																0x3AbC005aB6F8717Cc3d94dFE895F7228d594Cb3f	abierto
+1794954829	2026-11-17 22:33	H28	bsc	0x6Fa67E2af1D6907b4E88E823B5fb26eC9d230872	MPx	0.00003509																0x4db4D7199a2C4278E793763c939ee7Bf67f32e5C	abierto
+1794954829	2026-11-17 22:33	H28	bsc	0x09bff94E35e83a625725817fD65B09390dEd916b	TRUMP	0.007216																0x920a12F4EB52d2BFc78b7F51041bCCB8D546d73d	abierto
+1794959918	2026-11-17 23:58	H28	solana	9Bg8sX2bnMM4KwaXAeEtqpYQAkv2vmqFD7wzJ6eopump	GrokChan	0.00004758																7mQbX3hmh4fmNfcZog29qDGfnVa1t6n3vKXFkxsinNK2	abierto
+1794959918	2026-11-17 23:58	H28	solana	EBCpGdXuS34WZuX13thrku2KmuLSe3Tf2gMtMKndpump	maxi	0.000009017																6oKentYR4k1ShEsrXPVg8J1CqDnFRxChrPu9MrJwrdLy	abierto
+1794959918	2026-11-17 23:58	H28	solana	6AJASJJi16YncPgRofq5Evixk7Ws2ardShBnPArtpump	BI	0.00002421																5oKPso8yGJ363sDUJVsGk6zNkWP2EChcu9sFA1yPE4So	abierto
+1794970155	2026-11-18 02:49	H28	solana	4sTdeEFkQisRpWS9abeW8XvNFxxaTwCboFe9oDrNpump	NADJA	0.0001028																C2rmanEY8otDsNqXLR74Ba5Ybs1ZdGDyLgemoqxgJmtq	abierto
+1794970155	2026-11-18 02:49	H28	solana	GZr3WfwSzJA1FFMbxXKFvroVCxvaYcrNCTET7kxfpump	GMS	0.000007692																7AVgCZpmevHamby5iRmamiRntaFFDiAnAVDkX3S3bBPG	abierto
+1794970155	2026-11-18 02:49	H28	solana	9rbKkz2BDQBVgZmrHY6d7PTq2ge91gkpEyE4y9PPpump	Leonida	0.0006816																6Ecx5Lm5dinVma1xWMEumj6ABZL3g1Xx4t5rxQxELzdn	abierto
+1794970155	2026-11-18 02:49	H28	solana	GKj42uUGCAgHUZhAwPPC41WGchYhyfgycatJ8Vzqpump	KALEB	0.00003595																7VUmyqboXC9RBjzXjjQEsTHP743LoP3zvaFZ6d1eybWv	abierto
+1794970155	2026-11-18 02:49	H28	solana	3yrPGBFyWAey1tFKBKJtwBsxXjfyhZmZ3nkW9xggpump	cheatcode	0.00003847																59S6oXTwHU2XWFQsAtmKgNQjJPJJWLjL62yBrxxwzQXs	abierto
+1794970155	2026-11-18 02:49	H28	solana	5xhuX8VK8k8wGDdfFniWUzUQUSHjzKARosCGtEZypump	KATIA	0.0007749																HwpNgwS3MK3AR8NcaPXzQLZqKpyLcqaegFRqRyEXvcoJ	abierto
+1794970155	2026-11-18 02:49	H28	solana	47mUZNAjSFA3nmxnRa1y7P9Jmi5WPWpVP1ACPQZqpump	Spud	0.00001819																DAiGdmF1yYbQmqfxx4AzXCoPiGPrYita4hVBf52b47K6	abierto
+1794970155	2026-11-18 02:49	H28	solana	Fn95NtGXWPaJXc4N5y9rVkUq1NwZbjBNJzPVvNRLpump	SHIT	0.0007950																D1LXpkFpbQr1YwVgWYQsed93czdz8hA7s9g7yb8LMFfe	abierto
+1794970155	2026-11-18 02:49	H28	solana	FgkKMV1sHgazsXNLAHqcZR4kCSn9WGfLQMfgo62CWiBo	mihao	0.00003716																HwrtbuMfYfTFDjiabABii6eiiMdQ5vFYaiubvz8v21vT	abierto
+1794970155	2026-11-18 02:49	H28	solana	Aq7BnuTRL4biYrnHrsst1wRn53KGyH799e7K2MX5b4Lw	CLAUDIA	0.0001141																5e1tuTgQ7M7ec4fprP77ocMKpBjxkznk9Xhm6g1CHUEN	abierto
+1794970155	2026-11-18 02:49	H28	solana	4sjQivg34nG4tfVqawrGhGx3ymoBMDweJRy6DUHmzqQR	NADJA	0.00003883																GbMjd5zJ1djGKRbbPcug5oeu3iGKhPkEQKoCc8XkGoLV	abierto
+1794970155	2026-11-18 02:49	H28	bsc	0xfA8E0a2a56A2CdAD36466252f35C5D535fFaE734	EVAA	0.02058																0xFb1dc3197447F47794f0AAE5BD152DE60f294443	abierto
+1794970155	2026-11-18 02:49	H28	bsc	0x6b5FF559d59Cc9BD1E4e1ebb45580230557291D2	SM	0.0004405																0x63081Bf4dF10544C2242919f2E8d773e1110143F	abierto
+1794970155	2026-11-18 02:49	H28	bsc	0x40B100BA17e089d1D671809022c941E5457773c0	PHO	0.0001444																0x6A0b8244B7df97984F2A250a6A7B8c96db89eA4F	abierto
+1794983328	2026-11-18 06:28	H28	solana	EoC8TA2wiSgFzAXpYvczPQ7fwx8hHCdZwE4arHbupump	FI	0.0001053																4PVSkUDzmdKdus5CFv8dCWcQF5vPeCzvPbSSq6WBFv1p	abierto
+1794983328	2026-11-18 06:28	H28	solana	BM52Wwq9ikCqnmJUdUjMbUohyWsuDaHb1mKhw4yqpump	Calypso	0.00007872																CC8RzX1HHbMS1oEz4AAmmGxxyczCzMrehvXTVzGhtVC5	abierto
+1794983328	2026-11-18 06:28	H28	solana	D6REawj58gC8K6rVHR5YRTtFRQU7roKXpJFwt9g7Q9C2	Elmo	0.000007912																3vnxyY99ETkRDAkfJ51FZdqtxADpTYGrcbiWEcKShKg7	abierto
+1794983328	2026-11-18 06:28	H28	solana	8qHpNFu6o6JDx8rmdjik6k3si8QRLBgMuuRmGQ21pump	67coin	0.00001778																68amZd5FhryZgYKpyppgXQZr88MoSNrSz2ssA8h5S7yz	abierto
+1794983328	2026-11-18 06:28	H28	solana	85osSLFjprTGWRkrXMTGjsmaWR2pjUb38AiJzr16pump	clawd	0.00001084																G2RfX9ni6iFEuBotvKZi5KEJjUeeuT6YsgddNtsEStML	abierto
+1794983328	2026-11-18 06:28	H28	solana	E3rsQyKo464r9rc3PnNk3k8aXippfQHzxY1DgK3jpump	HEIST	0.00005985																FoHpXGUvDXKJPYaixFnvYiCa3YwAiiKp23kbbpEtry9n	abierto
+1794983328	2026-11-18 06:28	H28	solana	AWytauWViaF8yBAPqBE6AxxVDq14smvhjP3K9is1yhzE	GTA$	0.00003547																G9GrmZr34cGg2PdkmnVY9EHvzFQkb9QNWBxTEnh1tupU	abierto
+1794983328	2026-11-18 06:28	H28	solana	EadD2LMp6EbH9PrbXUFWcrZKMhoKVrZN1gpwRhH5pump	ANT	0.0001790																CtbK3gTAFki1BfKQRbEa35MQ5TShnLC3G5DTBPMnWU7R	abierto
+1794983328	2026-11-18 06:28	H28	solana	A8mt1ypn7fX5jidk5xNRjpNGpSGZiU6ZXKW1ZzJRpump	AI	0.00006728																C31W2o5URYf4uxSwJU2rqQUFCeNfXHrxC1KwPC76SBNM	abierto
+1794983328	2026-11-18 06:28	H28	bsc	0x2af814e60778671B04CB6C4024B926Fe114Fb349	Starsdog	0.0003547																0x22019109a611D491B24d5aF0a1C175124DD66C42	abierto
 1794839741	2026-11-16 14:35	SEG	solana	7XdCaKpqLmKE2K7yr9xaeWB1H2CVZ1oGwxB6hmd9pump	WIZARD	0.0005140	6																abierto
 1794839741	2026-11-16 14:35	SEG	solana	4W7BNgGspH3YFbLsP5T7AnKAzr6REGMMBGK9xDZKpump	chudhaos	0.0003096	7																abierto
 1794839741	2026-11-16 14:35	SEG	solana	4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump	mihao	0.01652	7																abierto
@@ -288,7 +355,7 @@ ts	hora_utc	hip	cadena	token	sym	precio	n_billeteras	n_oper	pasa_oper	c24	c7d	ma
 1794857773	2026-11-16 19:36	SEG	solana	Csu5jtHmWJFuYXP2cB3AEUwia6tYrDffdUknLuxqpump	BELLA	0.0001913	3												-72.7	2026-11-16 22:50	1 de 1 operadores bajaron ≥30 %		abierto
 1794864447	2026-11-16 21:27	SEG	solana	MsGDybWRSNdNXkdDZhEksgzugT5CbVWUG2wkhwgpump	MeiMei	0.0004142	2																abierto
 1794864447	2026-11-16 21:27	SEG	solana	3xwpPXRJ7zMDutnxiBPxcbYdJ1u9yZtVj8WjN6Nspump	Retardia	0.0001807	2																abierto
-1794864447	2026-11-16 21:27	SEG	solana	FSkyjfqB26u6c2GSgpACrjbxp9yQAR8rutxprVNppump	:3	0.0003071	2																abierto
+1794864447	2026-11-16 21:27	SEG	solana	FSkyjfqB26u6c2GSgpACrjbxp9yQAR8rutxprVNppump	:3	0.0003071	2												192.8	2026-11-18 09:13	2 de 3 operadores bajaron ≥30 %		abierto
 1794864447	2026-11-16 21:27	SEG	solana	4JzrYs2Hwors4bzZpDv2US1Xj7nNvsDvQQ7JKwDXWsDa	CRIME	0.00004023	2												-85.1	2026-11-16 22:50	1 de 1 operadores bajaron ≥30 %		abierto
 1794886016	2026-11-17 03:26	SEG	solana	MEFNBXixkEbait3xn9bkm8WsJzXtVsaJEn4c8Sam21u	ME	0.03896	2																abierto
 1794886016	2026-11-17 03:26	SEG	solana	85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ	W	0.008643	2																abierto
@@ -300,9 +367,9 @@ ts	hora_utc	hip	cadena	token	sym	precio	n_billeteras	n_oper	pasa_oper	c24	c7d	ma
 1794926316	2026-11-17 14:38	SEG	solana	J8PSdNP3QewKq2Z1JJJFDMaqF7KcaiJhR7gbr5KZpump	TripleT	0.002071	2																abierto
 1794926316	2026-11-17 14:38	SEG	solana	2u1tszSeqZ3qBWF3uNGPFc8TzMk2tdiwknnRMWGWjGWH	USDG	0.9924	2																abierto
 1794926316	2026-11-17 14:38	SEG	solana	G7vQWurMkMMm2dU3iZpXYFTHT9Biio4F4gZCrwFpKNwG	BIRB	0.06929	2																abierto
-1794926316	2026-11-17 14:38	SEG	solana	SKRbvo6Gf7GondiT3BbTfuRDPqLWei4j2Qy2NPGZhW3	SKR	0.009978	2																abierto
+1794926316	2026-11-17 14:38	SEG	solana	SKRbvo6Gf7GondiT3BbTfuRDPqLWei4j2Qy2NPGZhW3	SKR	0.009978	2												-1.9	2026-11-18 09:13	1 de 2 operadores bajaron ≥30 %		abierto
 1794926316	2026-11-17 14:38	SEG	solana	6ErRss728CstWJD9wHNeVEdVmKncYMRpsWHKLbxopump	WORLDCRAFT	0.00006987	2												-72.1	2026-11-17 22:23	1 de 1 operadores bajaron ≥30 %		abierto
-1794926316	2026-11-17 14:38	SEG	solana	6Nh9cmDoQvd2FvjNm44VmTwbyiKtxgmM7SCuhREhpump	GTA$	0.0001450	2																abierto
+1794926316	2026-11-17 14:38	SEG	solana	6Nh9cmDoQvd2FvjNm44VmTwbyiKtxgmM7SCuhREhpump	GTA$	0.0001450	2												-4.2	2026-11-18 09:13	1 de 2 operadores bajaron ≥30 %		abierto
 1794926316	2026-11-17 14:38	SEG	solana	HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr	EURC	1.099	2																abierto
 1794931127	2026-11-17 15:58	SEG	solana	TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo	TTWO	207.44	3																abierto
 1794931127	2026-11-17 15:58	SEG	solana	Pren1FvFX6J3E4kXhJuCiAD5aDmGEb7qJRncwA8Lkhw	ANTHROPIC	951.68	4																abierto
@@ -318,3 +385,16 @@ ts	hora_utc	hip	cadena	token	sym	precio	n_billeteras	n_oper	pasa_oper	c24	c7d	ma
 1794950446	2026-11-17 21:20	SEG	solana	HFcyhe28iLYRhac2W5FBdtDGFunWDJesCR7f6EZJpump	MRPENIS	0.00001823	2																abierto
 1794950446	2026-11-17 21:20	SEG	solana	GTA6ot7gjnojk8WwAoxKrqDkrLtCPtSfzAikk6zu2koH	GTA6	0.9949	5																abierto
 1794950446	2026-11-17 21:20	SEG	solana	EVbsBwxqdbMqadwAsVZ6KP9SJiaNmLSHAAb4W2mUpump	LUNO	0.0003978	2																abierto
+1794954814	2026-11-17 22:33	SEG	solana	GwZaMuX8KeF6cEfQcV6oWyVhKszRpZojFzB6qTQW4UCD	NVIDIANS	0.00008103	2																abierto
+1794959903	2026-11-17 23:58	SEG	solana	31ivRCrYYoapPxnMw3HQwdoiuxh5vExMpmUvH5pfqETJ	ARNOLD	0.001783	2																abierto
+1794970135	2026-11-18 02:48	SEG	solana	3FEvMfxW3zx9V6cCnQ1UmWHKTozbxAVN2LeeTY4tpump	MEW	0.00006648	2																abierto
+1794970135	2026-11-18 02:48	SEG	solana	9k2nqjUrSh9p2ZBnWxNE3QRWYiLocrWZfoDm3Vdxpump	CHAR	0.0001365	2																abierto
+1794970135	2026-11-18 02:48	SEG	solana	AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump	Macca	0.002283	2																abierto
+1794970135	2026-11-18 02:48	SEG	solana	DriFtupJYLTosbwoN8koMbEYSx54aFAVLddWsbksjwg7	DRIFT	0.009677	2																abierto
+1794970135	2026-11-18 02:48	SEG	solana	XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W	SPYx	738.52	2																abierto
+1794970135	2026-11-18 02:48	SEG	solana	2tKjPFvzeWqBmmxjtGBb3zfb8zfFVePjpBhHbE2epump	KIM	0.00006298	3																abierto
+1794970135	2026-11-18 02:48	SEG	solana	HCNhQCu5nrmWhSE3mo7fRU9eGiGLmi2fnE8omgLpump	DCI	0.0004582	3																abierto
+1794983311	2026-11-18 06:28	SEG	solana	56S874EPXeXKLQJCkMCsW15z38LW9xBpq4qQLr5qpump	DAC	0.0004757	3																abierto
+1794983311	2026-11-18 06:28	SEG	solana	C4H3m4UddYipAYU7F1i1h7fqhhr2qdZmsDPqW8kYpump	RUBIUS	0.00002454	2																abierto
+1794983311	2026-11-18 06:28	SEG	solana	6Psyw62PeV3HmtPXKBoK7k1q4aEsMucLTfE9QG9gpump	BIZCAT	0.00008792	2																abierto
+1794983311	2026-11-18 06:28	SEG	solana	4sTdeEFkQisRpWS9abeW8XvNFxxaTwCboFe9oDrNpump	NADJA	0.00002693	2																abierto

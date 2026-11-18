@@ -1,31 +1,291 @@
 [
  {
-  "token": "FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump",
+  "token": "ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg",
   "billeteras": [
    {
     "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
     "hora": "2026-11-17 21:08",
-    "sol": "7.476"
+    "sol": "1.309"
    },
    {
-    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
-    "hora": "2026-11-17 22:22",
-    "sol": "0.14"
+    "b": "BEochrdGhm5pcKVF73DURYrGo1DLzxq6bBcUBphQR64d",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.078"
    }
   ]
  },
  {
-  "token": "E7Xfasv5CRTNc6Xb16w36BZk3HRSogh8T4ZFimSnpump",
+  "token": "4La95NEVJdYK9kr375SfKPXnLA8ef8GtsjfVfW27pump",
   "billeteras": [
    {
-    "b": "2bhy5b5JFXkdaFxMfQmfYXPMMbbfN1JkkpxXYoS3tf5P",
-    "hora": "2026-11-17 22:22",
-    "sol": "1.377"
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+    "hora": "2026-11-17 21:08",
+    "sol": "29.692"
    },
    {
-    "b": "814g5NDkNMPcMFCugzG3jtqEn8cKBNc2VQLnavW4RzEL",
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-18 09:12",
+    "sol": "9.059"
+   }
+  ]
+ },
+ {
+  "token": "A4zQMT7ZFC2mM8fZDDQEqCs5bLFifA9XhDAJtHc3Lzbm",
+  "billeteras": [
+   {
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+    "hora": "2026-11-17 21:08",
+    "sol": "0.645"
+   },
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.203"
+   }
+  ]
+ },
+ {
+  "token": "Fp4JkqEcKYKBKhb9iMu9NSDeo71HWgq2q9QtXaaKpump",
+  "billeteras": [
+   {
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+    "hora": "2026-11-17 21:08",
+    "sol": "1.807"
+   },
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.142"
+   }
+  ]
+ },
+ {
+  "token": "FTu55MyigXns96jz4nTCDDiTCjYJjyrHSceCgG9Upump",
+  "billeteras": [
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-17 21:08",
+    "sol": "0.433"
+   },
+   {
+    "b": "7rbxsXchaL1Jz46BXbF88k1hBYoWHLaKo8YbofMndW46",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.132"
+   }
+  ]
+ },
+ {
+  "token": "8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump",
+  "billeteras": [
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-17 21:08",
+    "sol": "1.04"
+   },
+   {
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.234"
+   }
+  ]
+ },
+ {
+  "token": "42t61wPi41TwWtpqBVgZN1V4hjiKwZBKwq27xME9pump",
+  "billeteras": [
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-17 21:08",
+    "sol": "0.227"
+   },
+   {
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.379"
+   }
+  ]
+ },
+ {
+  "token": "73tAdnm52mgbkvEGHVajGtPU54u8jReYGTSvY94Qw9ZS",
+  "billeteras": [
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-17 21:08",
+    "sol": "0.076"
+   },
+   {
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.072"
+   }
+  ]
+ },
+ {
+  "token": "Dys6SYbjUsy8kksaqrXqo5L2GzgCYDiguGGcS8B5rkrv",
+  "billeteras": [
+   {
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
     "hora": "2026-11-17 22:22",
-    "sol": "1.665"
+    "sol": "0.101"
+   },
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.09"
+   }
+  ]
+ },
+ {
+  "token": "9jhs5qoJnUFU7AZXbsiD1Q6De6FVsino9Ysw8QU6pump",
+  "billeteras": [
+   {
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+    "hora": "2026-11-17 22:22",
+    "sol": "0.262"
+   },
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.073"
+   }
+  ]
+ },
+ {
+  "token": "rizF5PvLP9pTBT9L1pHJwLEip1BZTG5Q6wzYeWGpump",
+  "billeteras": [
+   {
+    "b": "STorreSu8X6yPLmiEScNHSGDinqV7j84hWjmvH9SPwk",
+    "hora": "2026-11-17 22:22",
+    "sol": "0.695"
+   },
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.086"
+   }
+  ]
+ },
+ {
+  "token": "3BTugN2YuH8ozBfUVRmvKAZi3QSWtbdAgQ3BhxEDpump",
+  "billeteras": [
+   {
+    "b": "572gijC9dnNiSFgeSDaLMEmPzyZH9MqT7SCVMwKkeTqF",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.875"
+   },
+   {
+    "b": "DSKEyfEeTymHBErcktvyS1ZgHGs1svgA2MJvLA7oEp1G",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.791"
+   },
+   {
+    "b": "H8cbcJgrMRGU6jujEfDcprDxtReunzpXfnKbhdbFZ3HU",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.7"
+   }
+  ]
+ },
+ {
+  "token": "EadD2LMp6EbH9PrbXUFWcrZKMhoKVrZN1gpwRhH5pump",
+  "billeteras": [
+   {
+    "b": "BEochrdGhm5pcKVF73DURYrGo1DLzxq6bBcUBphQR64d",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.072"
+   },
+   {
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+    "hora": "2026-11-18 09:12",
+    "sol": "2.923"
+   }
+  ]
+ },
+ {
+  "token": "FSkyjfqB26u6c2GSgpACrjbxp9yQAR8rutxprVNppump",
+  "billeteras": [
+   {
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+    "hora": "2026-11-18 09:12",
+    "sol": "3.047"
+   },
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.253"
+   }
+  ]
+ },
+ {
+  "token": "NMX3DEvN4XrsKJoWKBPyK9X5AwfwvtcGYxrwzLfpump",
+  "billeteras": [
+   {
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.198"
+   },
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.255"
+   }
+  ]
+ },
+ {
+  "token": "8Mi9E1V2bdPeAaRkR5yxUsAvpzP6UBUEEUrYmgKNpump",
+  "billeteras": [
+   {
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.738"
+   },
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-18 09:12",
+    "sol": "6.251"
+   }
+  ]
+ },
+ {
+  "token": "Bygm5ULo9xBRdvzp5TAqtvxd5FLHf6wt8T1tBNo5pump",
+  "billeteras": [
+   {
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.457"
+   },
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.086"
+   }
+  ]
+ },
+ {
+  "token": "9a13W5HdqE95g3YE8Dk9wCHPucrCH33h6BTfdFvRpump",
+  "billeteras": [
+   {
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+    "hora": "2026-11-18 09:12",
+    "sol": "3.737"
+   },
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.139"
+   }
+  ]
+ },
+ {
+  "token": "47mUZNAjSFA3nmxnRa1y7P9Jmi5WPWpVP1ACPQZqpump",
+  "billeteras": [
+   {
+    "b": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.289"
+   },
+   {
+    "b": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "hora": "2026-11-18 09:12",
+    "sol": "0.097"
    }
   ]
  }

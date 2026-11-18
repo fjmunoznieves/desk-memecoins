@@ -1,93 +1,75 @@
 {
- "hora_utc": "2026-11-17 22:34",
+ "hora_utc": "2026-11-18 09:24",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
   "coinmarketcap",
   "trends",
-  "wikipedia",
   "x_chainbase"
  ],
  "narrativas": [
   {
-   "tema": "Robert Pattinson",
+   "tema": "Momentum",
    "fuentes": [
-    "wikipedia"
+    "coingecko",
+    "coinmarketcap"
    ],
-   "calor": 100,
+   "calor": 80,
    "porque": [
-    "1,363,657 visitas ayer en Wikipedia, 57.5× anteayer"
+    "entre lo más buscado en CoinGecko (MMT, puesto de capitalización 399)",
+    "entre lo más buscado en CoinMarketCap (MMT, puesto 327)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "AWY6oLUyJJaHv2eSXJTSdJeXNefGqY6G86RD77Nbpump",
-    "sym": "007",
-    "liq": 6621,
-    "vol24": 74889,
-    "c24": -58.75,
-    "edad_h": 31.4
-   }
-  },
-  {
-   "tema": "Suki Waterhouse",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "378,948 visitas ayer en Wikipedia, 40.2× anteayer"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Saturn Devouring His Son",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "176,155 visitas ayer en Wikipedia, nuevo en el top"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Mordechai Vanunu",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "132,656 visitas ayer en Wikipedia, nuevo en el top"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Daniel Craig",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "107,838 visitas ayer en Wikipedia, 11.2× anteayer"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "4aSmCrL5SxwU1d52oyGes5Lof38yBnSAVBJRi6kRpump",
-    "sym": "DANIEL",
-    "liq": 3354,
-    "vol24": 5,
+    "token": "2SESmE4AN8KSKu3MUtF6QJTFC5LT6WzodGW7JMQRyxvP",
+    "sym": "MMT",
+    "liq": 296885392,
+    "vol24": 201055,
     "c24": 0,
-    "edad_h": 16501.3
+    "edad_h": 2644.2
    }
   },
   {
-   "tema": "List of James Bond films",
+   "tema": "Nvidia Board Seeks New CEO",
    "fuentes": [
-    "wikipedia"
+    "x_chainbase"
    ],
-   "calor": 100,
+   "calor": 90,
    "porque": [
-    "106,736 visitas ayer en Wikipedia, 7.0× anteayer"
+    "tema caliente en X según Chainbase Tops (puesto 1): Nvidia reported record Q3 revenue of $115.8 billion and raised Q4 guidance to $130 billion, beating analyst expectations despite the recent resignation of CEO J…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Apple Services Outage",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 88,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 2): Apple reported technical issues affecting iCloud, Apple Pay, and the App Store, attributing the disruption to an internal update. This incident follows a series…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Anthropic IPO SpaceX Fund",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 86,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 3): Anthropic has raised its initial public offering price to above $80 per share, valuing the company at approximately $1.5 trillion to $1.6 trillion, with Amazon …"
+   ],
+   "token": null
+  },
+  {
+   "tema": "World Bank Explores USDC Payments",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 84,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 4): The World Bank Group has announced a collaboration with Citi and Circle to explore the use of the regulated stablecoin USDC for minting and settling funds in it…"
    ],
    "token": null
   },
@@ -96,159 +78,77 @@
    "fuentes": [
     "x_chainbase"
    ],
-   "calor": 90,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): US intelligence indicates that Iran is developing contingency plans for a potential dirty bomb or chemical weapon attack targeting senior Trump administration o…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "LeBron Passes Kidd Assists Record",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 88,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): The Los Angeles Chargers faced the Baltimore Ravens in a Monday Night Football game broadcast on ESPN and available via NFL Plus. The matchup featured key perfo…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Schafer Zendaya Bond Girl Contenders",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 86,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): Forensic expert Michael Freeman claims that Jeffrey Epstein's death may have been a strangulation rather than a suicide, citing ligature marks and injuries cons…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Central Banks Hike Rates",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 84,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): Central bank officials from the United States, Australia, Japan, and other regions have indicated a continued preference for raising interest rates to address p…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Sharad Kapoor",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 84,
-   "porque": [
-    "118,510 visitas ayer en Wikipedia, 4.4× anteayer"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Solana Breakpoint 2027 SF",
-   "fuentes": [
-    "x_chainbase"
-   ],
    "calor": 82,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): Solana has officially announced that the Breakpoint 2027 conference will be held in San Francisco at Pier 48 from September 8 to 10. This announcement follows t…"
+    "tema caliente en X según Chainbase Tops (puesto 5): Tensions between the United States and Iran have intensified following reports of a potential radiological 'dirty bomb' plot against Washington, which US offici…"
    ],
    "token": null
   },
   {
-   "tema": "Solana Foundation Buys CoinGecko",
+   "tema": "GTA VI Worker Time Off",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): The Solana Foundation has acquired a majority stake in the crypto data platform CoinGecko, as confirmed by foundation member Vibhu. The partnership aims to enha…"
+    "tema caliente en X según Chainbase Tops (puesto 6): Grand Theft Auto VI has surpassed an estimated $1.5 billion in revenue two days prior to its November 19 launch, with PlayStation accounting for approximately 7…"
    ],
    "token": null
   },
   {
-   "tema": "BabyDoge Live Session",
+   "tema": "Bitcoin Price Decline",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 78,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): BabyDoge has announced that Episode 4 of The Wagging Truth will feature Jerome Arcebal, Co-Founder of Hound Haven Philippines. The live session is scheduled for…"
+    "tema caliente en X según Chainbase Tops (puesto 7): Bitcoin has continued to decline in price over the past weeks, driven by aggressive selling pressure that has overridden significant buy-side liquidity. Market …"
    ],
-   "token": {
-    "cadena": "bsc",
-    "token": "0xc748673057861a797275CD8A068AbB95A902e8de",
-    "sym": "BabyDoge",
-    "liq": 6611512,
-    "vol24": 104538,
-    "c24": 0.74,
-    "edad_h": 48149.2
-   }
+   "token": null
   },
   {
-   "tema": "Musk Says SA Demands Stake",
+   "tema": "Fed Projects Rate Hikes Minutes",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 76,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): Elon Musk stated that Starlink is not permitted to operate in South Africa due to regulatory requirements mandating 30% local ownership by historically disadvan…"
+    "tema caliente en X según Chainbase Tops (puesto 8): The Federal Reserve released the FOMC meeting minutes at 2:00 PM ET, providing insights into future interest rate decisions. Market participants are analyzing t…"
    ],
    "token": null
   },
   {
-   "tema": "Vance Urges Cyber Prep",
+   "tema": "NEAR Intents Live Session",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 74,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): US Vice President Vance advised Americans to be prepared for all scenarios following recent cyber troubles, though he stated no specific crisis is imminent. Pub…"
+    "tema caliente en X según Chainbase Tops (puesto 9): NEAR Intents has scheduled a live broadcast for Episode 3 of 'Shhh... It’s Confidential' tomorrow at 2:00 PM UTC, available on YouTube. Concurrently, Episode 4 …"
    ],
    "token": null
   },
   {
-   "tema": "US Retail Sales Slow",
+   "tema": "CFTC Halts Kalshi Prediction Markets",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 72,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): US retail sales experienced their fastest growth in four years during October, driven primarily by increased spending from low-income consumers. While demand fo…"
+    "tema caliente en X según Chainbase Tops (puesto 10): The U.S. Commodity Futures Trading Commission (CFTC) has ordered prediction market platform Kalshi to suspend trading on markets tied to President Donald Trump'…"
    ],
    "token": null
   },
   {
-   "tema": "Pentagon Fails Audit Again",
+   "tema": "US Grid Fast Energization Plan",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): The Pentagon has failed its financial audit for the ninth consecutive year, leaving over $2 trillion in assets unverified. The Department of Defense acknowledge…"
+    "tema caliente en X según Chainbase Tops (puesto 11): PJM Interconnection has proposed a \"fast energization\" plan to accelerate connections for data centers and power plants amid surging demand on the US grid. Conc…"
    ],
    "token": null
-  },
-  {
-   "tema": "Backpack",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (BP, puesto de capitalización 140)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "GMWrcQ185wqe7HNKg5m4qCtC3NQhAwS5fFMhbEgm8BiN",
-    "sym": "BP",
-    "liq": 1249791709,
-    "vol24": 344424,
-    "c24": 0,
-    "edad_h": 941.7
-   }
   },
   {
    "tema": "Pudgy Penguins",
@@ -257,16 +157,54 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 124)"
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 127)"
    ],
    "token": {
     "cadena": "solana",
     "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
     "sym": "PENGU",
-    "liq": 2251332,
-    "vol24": 714718,
-    "c24": -0.07,
-    "edad_h": 16809.6
+    "liq": 2224900,
+    "vol24": 840687,
+    "c24": 0.36,
+    "edad_h": 16820.4
+   }
+  },
+  {
+   "tema": "Quantus",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (QTC, puesto de capitalización 908)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "Bn9oW3GVKQdgNJG5w5P53dbuZfUtAehwFAniZYry68T8",
+    "sym": "QTC",
+    "liq": 715014,
+    "vol24": 77253,
+    "c24": 10.16,
+    "edad_h": 138.0
+   }
+  },
+  {
+   "tema": "zkPass",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (ZKP, puesto 801)"
+   ],
+   "token": {
+    "cadena": "bsc",
+    "token": "0xd89B7dD376E671c124352267516BEF1C2cc231a3",
+    "sym": "ZKP",
+    "liq": 2406,
+    "vol24": 5854,
+    "c24": 25.37,
+    "edad_h": 7888.7
    }
   },
   {
@@ -276,235 +214,198 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (BREV, puesto 471)"
-   ],
-   "token": {
-    "cadena": "bsc",
-    "token": "0x086F405146Ce90135750Bbec9A063a8B20A8bfFb",
-    "sym": "BREV",
-    "liq": 8538,
-    "vol24": 303398,
-    "c24": 49.26,
-    "edad_h": 2917.0
-   }
-  },
-  {
-   "tema": "Phala Network",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (PHA, puesto 477)"
+    "entre lo más buscado en CoinMarketCap (BREV, puesto 533)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "8THZ69JP2ErZuHVj4G5rcwkFfsQafp5mQsaoQReApump",
-    "sym": "NETWORK",
-    "liq": 24730,
-    "vol24": 19994,
-    "c24": 84.51,
-    "edad_h": 576.8
-   }
-  },
-  {
-   "tema": "Terra Classic",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (LUNC, puesto 110)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "FqCSrz5qBLWj8gizt9UBaVmiGEya5aGgXzahrChxcJEM",
-    "sym": "LUNC",
-    "liq": 64151884,
-    "vol24": 1,
+    "token": "DKEcR2VLUc8fEp6R7iRc4Go3Ze1R4k4iFqkx5Bi9Fwvi",
+    "sym": "BREVIS",
+    "liq": 1124211149,
+    "vol24": 132950,
     "c24": 0,
-    "edad_h": 3971.6
+    "edad_h": 4.7
    }
   },
   {
-   "tema": "Momentum",
+   "tema": "Unitas",
    "fuentes": [
     "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (MMT, puesto 468)"
+    "entre lo más buscado en CoinMarketCap (UP, puesto 434)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "2SESmE4AN8KSKu3MUtF6QJTFC5LT6WzodGW7JMQRyxvP",
-    "sym": "MMT",
-    "liq": 296885386,
-    "vol24": 192381,
+    "token": "ErLoMPYAvm5NkWDKepHqV2j1CJsnwV6P647a8LHUGUzs",
+    "sym": "UP",
+    "liq": 214070599,
+    "vol24": 201005,
     "c24": 0,
-    "edad_h": 2633.3
+    "edad_h": 2908.8
    }
+  },
+  {
+   "tema": "NVIDIA tokenized stock (xStock)",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (NVDAX, puesto 250)"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Figure HELOC",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (FIGR_HELOC, puesto 4024)"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Burnham says Brexit hasn't worked",
+   "fuentes": [
+    "bluesky"
+   ],
+   "calor": 70,
+   "porque": [
+    "tendencia en Bluesky: Andy Burnham argues leaving the EU cost the UK more than it gained, ahead of an EU summit."
+   ],
+   "token": null
+  },
+  {
+   "tema": "Jones Adams Prediction",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 68,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 12): Media personalities Alex Jones and Mike Adams responded to The Economist's \"The World Ahead 2027\" cover, discussing predictions of mass famine, AI-driven contro…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Trump, Xi and Putin to meet",
+   "fuentes": [
+    "bluesky"
+   ],
+   "calor": 68,
+   "porque": [
+    "tendencia en Bluesky: The three leaders plan joint talks at the APEC summit in Shenzhen, China, possibly on nuclear stockpiles."
+   ],
+   "token": null
+  },
+  {
+   "tema": "US Retail Sales Up Production Down",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 66,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 13): US industrial production declined by 0.4% in October, missing expectations of a 0.1% increase, while manufacturing output rose by 0.3%. Retail sales growth mode…"
+   ],
+   "token": null
   },
   {
    "tema": "Make a band name bigger",
    "fuentes": [
     "bluesky"
    ],
-   "calor": 70,
+   "calor": 66,
    "porque": [
     "tendencia en Bluesky: Players inflate famous band names into puns, like Manic Highway Preachers and The Boulder Roses."
    ],
    "token": null
+  },
+  {
+   "tema": "Waller States Monopoly Breaking Down",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 64,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 14): Federal Reserve Governor Christopher Waller stated that the traditional bank monopoly in payments is breaking down due to competition from blockchain technology…"
+   ],
+   "token": null
   }
  ],
- "cruces_h18": [
-  {
-   "ts": 1794954855,
-   "hora_utc": "2026-11-17 22:34",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 5m",
-   "cadena": "solana",
-   "token": "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo",
-   "sym": "TTWO",
-   "liq": 243043,
-   "mc": 89,
-   "c1": 0.64,
-   "seguridad": "top10,lp,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A20 B10 C0"
-  },
-  {
-   "ts": 1794954855,
-   "hora_utc": "2026-11-17 22:34",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 5m",
-   "cadena": "solana",
-   "token": "NVDAVuiB7hwd3m5Wa1JuHNovPaPG6BH1QNztbKFxNjv",
-   "sym": "NVDA",
-   "liq": 115474,
-   "mc": 620943,
-   "c1": 1.74,
-   "seguridad": "top10,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A12 B1 C0"
-  },
-  {
-   "ts": 1794954855,
-   "hora_utc": "2026-11-17 22:34",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 5m",
-   "cadena": "solana",
-   "token": "SKHYhSjuRWHgikq8eRKbtBbpABgJSkd7ytQV14i9EQ3",
-   "sym": "SKHY",
-   "liq": 2158897,
-   "mc": 1373,
-   "c1": 1.61,
-   "seguridad": "lp,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A1 B1 C0"
-  },
-  {
-   "ts": 1794954855,
-   "hora_utc": "2026-11-17 22:34",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 1h",
-   "cadena": "solana",
-   "token": "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb",
-   "sym": "SPCX",
-   "liq": 2802095,
-   "mc": 0,
-   "c1": 0.12,
-   "seguridad": "top10,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A19 B7 C0"
-  },
-  {
-   "ts": 1794954855,
-   "hora_utc": "2026-11-17 22:34",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 24h",
-   "cadena": "solana",
-   "token": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
-   "sym": "BP",
-   "liq": 5931321,
-   "mc": 251869319,
-   "c1": 0.5,
-   "seguridad": "top10,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A2 B6 C1"
-  }
- ],
+ "cruces_h18": [],
  "huecos_h19": [
   {
-   "ts": 1794954855,
-   "hora_utc": "2026-11-17 22:34",
-   "tema": "Suki Waterhouse",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "378,948 visitas ayer en Wikipedia, 40.2× anteayer",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1794954855,
-   "hora_utc": "2026-11-17 22:34",
-   "tema": "Saturn Devouring His Son",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "176,155 visitas ayer en Wikipedia, nuevo en el top",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1794954855,
-   "hora_utc": "2026-11-17 22:34",
-   "tema": "Mordechai Vanunu",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "132,656 visitas ayer en Wikipedia, nuevo en el top",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1794954855,
-   "hora_utc": "2026-11-17 22:34",
-   "tema": "List of James Bond films",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "106,736 visitas ayer en Wikipedia, 7.0× anteayer",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1794954855,
-   "hora_utc": "2026-11-17 22:34",
-   "tema": "US Intel Reports Iran Threat",
+   "ts": 1794993875,
+   "hora_utc": "2026-11-18 09:24",
+   "tema": "Nvidia Board Seeks New CEO",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): US intelligence indicates that Iran is developing contingency plans for a potential dirty bomb or chemical weapon attack targeting senior Trump administration o…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Nvidia reported record Q3 revenue of $115.8 billion and raised Q4 guidance to $130 billion, beating analyst expectations despite the recent resignation of CEO J…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794954855,
-   "hora_utc": "2026-11-17 22:34",
-   "tema": "LeBron Passes Kidd Assists Record",
+   "ts": 1794993875,
+   "hora_utc": "2026-11-18 09:24",
+   "tema": "Apple Services Outage",
    "fuentes": "x_chainbase",
    "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): The Los Angeles Chargers faced the Baltimore Ravens in a Monday Night Football game broadcast on ESPN and available via NFL Plus. The matchup featured key perfo…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Apple reported technical issues affecting iCloud, Apple Pay, and the App Store, attributing the disruption to an internal update. This incident follows a series…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794954855,
-   "hora_utc": "2026-11-17 22:34",
-   "tema": "Schafer Zendaya Bond Girl Contenders",
+   "ts": 1794993875,
+   "hora_utc": "2026-11-18 09:24",
+   "tema": "Anthropic IPO SpaceX Fund",
    "fuentes": "x_chainbase",
    "calor": 86,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 3): Forensic expert Michael Freeman claims that Jeffrey Epstein's death may have been a strangulation rather than a suicide, citing ligature marks and injuries cons…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): Anthropic has raised its initial public offering price to above $80 per share, valuing the company at approximately $1.5 trillion to $1.6 trillion, with Amazon …",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1794954855,
-   "hora_utc": "2026-11-17 22:34",
-   "tema": "Central Banks Hike Rates",
+   "ts": 1794993875,
+   "hora_utc": "2026-11-18 09:24",
+   "tema": "World Bank Explores USDC Payments",
    "fuentes": "x_chainbase",
    "calor": 84,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 4): Central bank officials from the United States, Australia, Japan, and other regions have indicated a continued preference for raising interest rates to address p…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 4): The World Bank Group has announced a collaboration with Citi and Circle to explore the use of the regulated stablecoin USDC for minting and settling funds in it…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1794993875,
+   "hora_utc": "2026-11-18 09:24",
+   "tema": "US Intel Reports Iran Threat",
+   "fuentes": "x_chainbase",
+   "calor": 82,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 5): Tensions between the United States and Iran have intensified following reports of a potential radiological 'dirty bomb' plot against Washington, which US offici…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1794993875,
+   "hora_utc": "2026-11-18 09:24",
+   "tema": "GTA VI Worker Time Off",
+   "fuentes": "x_chainbase",
+   "calor": 80,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 6): Grand Theft Auto VI has surpassed an estimated $1.5 billion in revenue two days prior to its November 19 launch, with PlayStation accounting for approximately 7…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1794993875,
+   "hora_utc": "2026-11-18 09:24",
+   "tema": "Bitcoin Price Decline",
+   "fuentes": "x_chainbase",
+   "calor": 78,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 7): Bitcoin has continued to decline in price over the past weeks, driven by aggressive selling pressure that has overridden significant buy-side liquidity. Market …",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1794993875,
+   "hora_utc": "2026-11-18 09:24",
+   "tema": "Fed Projects Rate Hikes Minutes",
+   "fuentes": "x_chainbase",
+   "calor": 76,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 8): The Federal Reserve released the FOMC meeting minutes at 2:00 PM ET, providing insights into future interest rate decisions. Market participants are analyzing t…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
