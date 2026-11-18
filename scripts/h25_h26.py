@@ -264,6 +264,63 @@ def h31(ahora, hora):
     return f1, f2
 
 
+def h31s(ahora, hora, extra=None):
+    """H31s "pozo + chispa SIN A" (18-nov, Fran, caso hotdog: −95 % en el pozo, chispa a las 8 AM, x9, sin billeteras nuestras).
+    Mismo criterio que H31 pero sobre todo el universo de los escaneos de las últimas 24 h (datos/universo_escaneos.tsv, Solana):
+    ≥75 % bajo su máximo, cambio 1 h entre +5 y +30 %, volumen de la hora ≥2× el promedio y ≥2 mil USD con ≥30 operaciones, meme, edad ≥1 d, liq ≥10 mil, MC ≤10 M.
+    Etiqueta holders/compradores netos (Jupiter) y si hay A dentro, para medir si las A suman. Solo registro → datos/h31s_sombra.tsv."""
+    ya = {r["token"] for r in leer("datos/h31s_sombra.tsv")}
+    uni, jup = {}, {}
+    for r in leer("datos/universo_escaneos.tsv"):
+        try:
+            if r["cadena"] == "solana" and ahora - int(r["ts"]) < 86400 and float(r["liq"] or 0) >= 10000:
+                uni[r["token"]] = r["sym"]
+                if r.get("hold_chg1h"):
+                    jup[r["token"]] = r
+        except (ValueError, KeyError):
+            pass
+    for t in extra or []:
+        uni.setdefault(t, "")
+    uni = [t for t in uni if t not in ya]
+    info = dex("solana", uni)
+    pre = []
+    for t, p in info.items():
+        ch, vol = p.get("priceChange") or {}, p.get("volume") or {}
+        c1, v1, v24 = ch.get("h1") or 0, vol.get("h1") or 0, vol.get("h24") or 0
+        vx = v1 / (v24 / 24) if v24 else 0
+        liq = (p.get("liquidity") or {}).get("usd") or 0
+        mc = p.get("marketCap") or p.get("fdv") or 0
+        edad = (ahora * 1000 - (p.get("pairCreatedAt") or ahora * 1000)) / 8.64e7
+        tx1 = (p.get("txns") or {}).get("h1") or {}
+        if v1 < 2000 or (tx1.get("buys", 0) + tx1.get("sells", 0)) < 30:  # sin esto, tokens muertos con 3 operaciones parecen chispa
+            continue
+        if 5 <= c1 <= 30 and vx >= 2 and liq >= 10000 and mc and mc <= 10e6 and edad >= 1 and not no_meme(t, p["baseToken"].get("symbol", "")):
+            pre.append((t, c1, vx, edad, liq, mc))
+    if not pre:
+        return []
+    aths = ath_de([x[0] for x in pre][:30], info)
+    sost = getattr(h31, "sost", {})
+    out = []
+    for t, c1, vx, edad, liq, mc in pre[:30]:
+        p = info[t]
+        precio = float(p.get("priceUsd") or 0)
+        if not aths.get(t) or not precio:
+            continue
+        dd = 100 * (precio / aths[t] - 1)
+        if dd > -75:
+            continue
+        j = jup.get(t, {})
+        tx = (p.get("txns") or {}).get("h1") or {}
+        ops = sost.get(t, set())
+        out.append(dict(ts=ahora, hora_utc=hora, cadena="solana", token=t, sym=p["baseToken"]["symbol"], precio=p.get("priceUsd"), liq=round(liq),
+                        mc=round(mc), liq_mc_pct=round(100 * liq / mc, 1), vol1h=round((p.get("volume") or {}).get("h1") or 0), edad_d=round(edad, 1),
+                        n_oper=len(ops), operadores=",".join(sorted(ops)), pool=p.get("pairAddress"),
+                        motivo=f"pozo + chispa sin A: dd {round(dd)} %, c1 {c1} %, vol 1 h x{round(vx, 1)}, compras/ventas 1 h {tx.get('buys')}/{tx.get('sells')}, "
+                               f"holders 1 h {j.get('hold_chg1h') or 'sin dato'} %, netos 1 h {j.get('netos1h') or 'sin dato'}, A dentro {len(ops)}"))
+        print(f"H31s entrada sombra: {p['baseToken']['symbol']} {t} {out[-1]['motivo']}")
+    return out
+
+
 MICRO = {"dacity": r"dacity|audacity", "gta": r"\bgta|grand theft|leonida", "anthropic": r"anthropi|claud|klaud", "nvidia": r"nvidia|jensen",
          "musk": r"musk|tesla|spacex|elon", "trump": r"trump|barron|maga\b", "over_back": r"nigga|its over|so back|there is hope",
          "milker": r"milker|titt|lactator", "pokemon": r"poke", "perro": r"\binu\b|inu$|doge|\bdog\b|dog$", "gato": r"\bcat\b|cat$|miao|meow|猫",
@@ -425,6 +482,12 @@ def main():
         print(f"H31: {len(e1)} entradas nuevas (pozo + chispa); H31p: {len(e2)} (pozo quieto)")
     except Exception as e:
         print("h31 falló:", e)
+    try:
+        g = h31s(ahora, hora)
+        guardar("datos/h31s_sombra.tsv", g)
+        print(f"H31s: {len(g)} entradas nuevas (pozo + chispa sin A)")
+    except Exception as e:
+        print("h31s falló:", e)
     try:
         g = h32(ahora, hora, getattr(h31, "sost", {}))
         guardar("datos/h32_sombra.tsv", g)
