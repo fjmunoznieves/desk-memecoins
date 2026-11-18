@@ -138,6 +138,7 @@ def h29(ahora, hora):
         ch = p.get("priceChange") or {}
         c24, c1 = ch.get("h24"), ch.get("h1")
         edad = (ahora * 1000 - (p.get("pairCreatedAt") or ahora * 1000)) / 8.64e7
+        v24 = (p.get("volume") or {}).get("h24") or 0
         h = sorted(hold.get(t, []))
         dh = round(100 * (h[-1][1] / h[-2][1] - 1), 1) if len(h) >= 2 and h[-2][1] else None
         if edad >= 3 and c24 is not None and c24 <= 30 and (c1 or 0) <= 10 and mc and mc <= 2e6 and liq >= 10000 \
@@ -146,8 +147,43 @@ def h29(ahora, hora):
             filas.append(dict(ts=ahora, hora_utc=hora, cadena="solana", token=t, sym=p["baseToken"]["symbol"], precio=p.get("priceUsd"),
                               liq=round(liq), mc=round(mc), liq_mc_pct=round(100 * liq / mc, 1), vol1h=round((p.get("volume") or {}).get("h1") or 0),
                               edad_d=round(edad, 1), n_oper=len(ops), operadores=",".join(sorted(ops)), pool=p.get("pairAddress"),
-                              motivo=f"impulso sano: c24 {c24} %, c1 {c1} %, holders {'sin dato' if dh is None else str(dh) + ' %'}"))
+                              motivo=f"impulso sano: c24 {c24} %, c1 {c1} %, holders {'sin dato' if dh is None else str(dh) + ' %'}"
+                                     + "".join(f" | {x}" for x in (
+                                         ["rebote"] if c24 <= -30 else []) + (["vol24 20k-500k"] if 20000 <= v24 <= 500000 else []) + (
+                                         ["3+ A"] if len(ops) >= 3 else []) + (["MC<100k"] if mc < 100000 else []) + (
+                                         ["holders suben"] if dh is not None and dh > 5 else []))))
             print(f"H29 entrada sombra: {p['baseToken']['symbol']} {t} {len(ops)} operadores A, c24 {c24} %, MC {round(mc):,}")
+    return filas
+
+
+SEGURIDAD = ("lp", "top10", "dev", "no renunciado", "seg?", "ballena", "impuestos", "control")
+
+
+def h30(ahora, hora):
+    """H30 "lanzamiento sano" (18-nov, Fran): carril chico en sombra (10 USD). Del estudio de 268 lanzamientos: sobreviven los de
+    volumen 5 min ≥150k (73 % terminan arriba) o liquidez 75–150k (mediana +6 %); mueren los de compras/ventas >2 o +10 % en 5 min,
+    y los de BNB contra WBNB/USDT (81 %). Entra si: v5 ≥150k, liq 75–150k, b/s ≤2, cambio 5 min ≤ +10 %, sin fallos de seguridad,
+    pool no contra WBNB/USDT. Solo registro."""
+    ya = {r["token"] for r in leer("datos/h30_sombra.tsv")}
+    filas = []
+    for r in leer("datos/estudio_reglas_sombra.tsv"):
+        t = r["direccion"]
+        if t in ya or ahora - int(r["ts"]) > 6 * 3600:
+            continue
+        try:
+            liq, mc, v5, bs5, c5 = (float(r[k]) for k in ("liq", "mc", "v5", "bs5", "c5"))
+        except (TypeError, ValueError, KeyError):
+            continue
+        fallos = (r.get("fallos") or "").lower()
+        if any(x in fallos for x in SEGURIDAD) or r.get("quote") in ("WBNB", "USDT"):
+            continue
+        if v5 >= 150000 and 75000 <= liq <= 150000 and bs5 <= 2 and c5 <= 10:
+            ya.add(t)
+            filas.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], cadena=r["cadena"], token=t, sym=r["simbolo"], precio=r["precio"],
+                              liq=round(liq), mc=round(mc), liq_mc_pct=round(100 * liq / mc, 1) if mc else "", vol1h="", edad_d="",
+                              n_oper="", operadores="", pool=r.get("pool", ""),
+                              motivo=f"lanzamiento sano: v5 {round(v5):,}, b/s {bs5}, c5 {c5} %, quote {r.get('quote')}"))
+            print(f"H30 entrada sombra: {r['simbolo']} {t} ({r['cadena']}) v5 {round(v5):,} liq {round(liq):,}")
     return filas
 
 
@@ -184,6 +220,12 @@ def main():
         print(f"H29: {len(c)} entradas nuevas")
     except Exception as e:
         print("h29 falló:", e)
+    try:
+        d = h30(ahora, hora)
+        guardar("datos/h30_sombra.tsv", d)
+        print(f"H30: {len(d)} entradas nuevas")
+    except Exception as e:
+        print("h30 falló:", e)
 
 
 if __name__ == "__main__":
