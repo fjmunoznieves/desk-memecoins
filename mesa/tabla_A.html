@@ -1,0 +1,139 @@
+<title>Tokens de nuestras A</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: libro de jugadas; resumen arriba, filtros, tabla ordenable y paginada */
+:root{
+  --bg:#f3f4f1; --panel:#ffffff; --line:#d9ddd4; --fg:#1b2420; --muted:#5f6b64;
+  --accent:#1f6f5c; --accent-soft:#e1efe9; --good:#1d7a3e; --bad:#b4372f; --warn:#a86a00;
+  --good-soft:#e3f2e7; --bad-soft:#f8e4e2; --warn-soft:#f6ecd8;
+  --f-disp:"Archivo",system-ui,sans-serif; --f-body:"IBM Plex Sans",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121815; --panel:#1a221e; --line:#2c3833; --fg:#e4ebe6; --muted:#93a39a;
+  --accent:#5cc4a6; --accent-soft:#1e3a31; --good:#5fcf83; --bad:#f08a80; --warn:#e3b14f;
+  --good-soft:#1c3324; --bad-soft:#3a1f1d; --warn-soft:#382d17; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121815; --panel:#1a221e; --line:#2c3833; --fg:#e4ebe6; --muted:#93a39a;
+  --accent:#5cc4a6; --accent-soft:#1e3a31; --good:#5fcf83; --bad:#f08a80; --warn:#e3b14f;
+  --good-soft:#1c3324; --bad-soft:#3a1f1d; --warn-soft:#382d17; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:14px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 40px}
+.wrap{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+h1{font-family:var(--f-disp);font-weight:800;font-size:22px;margin:0;text-wrap:balance}
+.muted{color:var(--muted)} .note{font-size:12px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.card b{display:block;font-family:var(--f-mono);font-size:18px;font-weight:500;font-variant-numeric:tabular-nums}
+.card span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px}
+input,select,button{font:inherit;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:6px 9px}
+input[type=text]{flex:1 1 220px;min-width:0}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+label{display:flex;gap:6px;align-items:center;font-size:13px}
+.tablewrap{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+th,td{padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap;text-align:right}
+th{position:sticky;top:0;background:var(--panel);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;cursor:pointer;user-select:none}
+th[aria-sort] {color:var(--accent)}
+th:nth-child(-n+2),td:nth-child(-n+2){text-align:left}
+td{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+td.sym{font-family:var(--f-body);font-weight:600}
+tr:hover td{background:var(--accent-soft)}
+.pos{color:var(--good)} .neg{color:var(--bad)}
+.pill{display:inline-block;font-family:var(--f-body);font-size:11px;font-weight:600;padding:1px 7px;border-radius:99px}
+.vivo{background:var(--good-soft);color:var(--good)} .débil{background:var(--warn-soft);color:var(--warn)} .muerto{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.pager{display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+a{color:var(--accent)}
+</style>
+
+<div class="wrap">
+  <div>
+    <h1>Tokens donde entraron nuestras A</h1>
+    <div class="note" id="stamp">Cargando…</div>
+  </div>
+  <div class="cards" id="cards"></div>
+  <form class="filters" id="f" onsubmit="return false">
+    <input type="text" id="q" placeholder="Buscar ticker, contrato u operador" aria-label="Buscar">
+    <label>Tipo <select id="tipo"><option value="meme" selected>memecoins</option><option value="">todos</option><option value="acción">acciones tokenizadas</option><option value="grande">grandes</option><option value="estable">estables</option></select></label>
+    <label>Estado <select id="estado"><option value="">todos</option><option>vivo</option><option>débil</option><option>muerto</option></select></label>
+    <label>Operadores A ≥ <select id="nop"><option>1</option><option selected>2</option><option>3</option><option>5</option><option>10</option></select></label>
+    <label><input type="checkbox" id="dentro"> Con A dentro hoy</label>
+    <label><input type="checkbox" id="elite"> Con élite</label>
+    <label>Edad máx (días) <input type="text" id="edad" inputmode="numeric" size="4" placeholder="—"></label>
+  </form>
+  <div class="note" id="resumen"></div>
+  <div class="tablewrap"><table>
+    <thead><tr id="cab"></tr></thead><tbody id="tb"></tbody></table></div>
+  <div class="pager"><span class="note" id="pinfo"></span><button id="prev">Anterior</button><button id="next">Siguiente</button></div>
+  <div class="note">Historia de las A: vector reciente + vector profundo sumados por billetera y token. Cubre ~60 días por billetera y algunas están cortadas, así que tokens viejos pueden tener entradas sin registrar. "SOL metido/sacado" solo cuenta compras y ventas en SOL o estables. "A dentro hoy" sale de la última foto de cartera (saldo ≥20 USD). Estado: vivo = liquidez ≥10k, débil = 1–10k, muerto = &lt;1k o sin pool.</div>
+</div>
+
+<script>
+const COLS = [
+  ["sym","Token"],["estado","Estado"],["edad_d","Edad d"],["primera_A","1.ª A"],["ultima_A","Última A"],["dias_A","Días A"],
+  ["n_oper","Oper. A"],["n_elite","Élite"],["sol_in","SOL metido"],["sol_out","SOL sacado"],["pnl_sol","PnL SOL"],["mult","Múltiplo"],
+  ["oper_dentro","A dentro"],["usd_dentro","USD dentro"],["mc","MC"],["liq","Liq"],["liq_mc","Liq/MC %"],["c24","24 h %"]];
+let D = [], vista = [], orden = ["usd_dentro", -1], pag = 0; const PP = 100;
+const $ = s => document.querySelector(s);
+const nf = (n, d = 0) => n === null || n === undefined || n === "" ? "—" : (+n).toLocaleString("es-CO", {maximumFractionDigits: d});
+const usd = n => !n ? "—" : "$" + (n >= 1e6 ? nf(n / 1e6, 2) + "M" : n >= 1e3 ? nf(n / 1e3, 1) + "k" : nf(n));
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function cabecera() {
+  $("#cab").innerHTML = COLS.map(([k, t]) => `<th data-k="${k}" ${orden[0] === k ? 'aria-sort="' + (orden[1] < 0 ? "descending" : "ascending") + '"' : ""}>${t}${orden[0] === k ? (orden[1] < 0 ? " ▼" : " ▲") : ""}</th>`).join("");
+}
+function filtrar() {
+  const q = $("#q").value.trim().toLowerCase(), est = $("#estado").value, nop = +$("#nop").value,
+        den = $("#dentro").checked, tip = $("#tipo").value, eli = $("#elite").checked, emax = parseFloat($("#edad").value);
+  vista = D.filter(r => r.n_oper >= nop && (!tip || r.tipo === tip) && (!est || r.estado === est) && (!den || r.oper_dentro > 0) && (!eli || r.n_elite > 0)
+    && (isNaN(emax) || r.edad_d <= emax)
+    && (!q || r.sym.toLowerCase().includes(q) || r.token.toLowerCase().includes(q) || (r.operadores || "").toLowerCase().includes(q)));
+  const [k, s] = orden;
+  vista.sort((a, b) => { const x = a[k], y = b[k]; if (x === y) return 0; if (x === null || x === undefined || x === "") return 1; if (y === null || y === undefined || y === "") return -1; return (x > y ? 1 : -1) * s; });
+  const pnl = vista.reduce((s, r) => s + (r.pnl_sol || 0), 0), gan = vista.filter(r => r.pnl_sol > 0).length;
+  $("#resumen").textContent = `${nf(vista.length)} tokens · las A ganaron en ${nf(gan)} (${vista.length ? Math.round(100 * gan / vista.length) : 0} %) · PnL total A ${nf(pnl, 0)} SOL · ${nf(vista.filter(r => r.oper_dentro > 0).length)} con A dentro hoy`;
+  pag = 0; pintar();
+}
+function pintar() {
+  cabecera();
+  const filas = vista.slice(pag * PP, pag * PP + PP);
+  $("#tb").innerHTML = filas.map(r => `<tr>
+    <td class="sym"><a href="https://dexscreener.com/solana/${esc(r.token)}" target="_blank" rel="noopener" title="${esc(r.token)}">${esc(r.sym)}</a></td>
+    <td><span class="pill ${esc(r.estado)}">${esc(r.estado)}</span></td>
+    <td>${nf(r.edad_d)}</td><td>${esc(r.primera_A)}</td><td>${esc(r.ultima_A)}</td><td>${nf(r.dias_A, 1)}</td>
+    <td title="${esc(r.operadores)}">${r.n_oper}</td><td>${r.n_elite || ""}</td>
+    <td>${nf(r.sol_in, 1)}</td><td>${nf(r.sol_out, 1)}</td><td class="${r.pnl_sol > 0 ? "pos" : r.pnl_sol < 0 ? "neg" : ""}">${nf(r.pnl_sol, 1)}</td>
+    <td>${r.mult === null ? "—" : "x" + nf(r.mult, 2)}</td>
+    <td>${r.oper_dentro || ""}${r.elite_dentro ? " (" + r.elite_dentro + " él.)" : ""}</td><td>${r.usd_dentro ? usd(r.usd_dentro) : ""}</td>
+    <td>${usd(r.mc)}</td><td>${usd(r.liq)}</td><td>${nf(r.liq_mc, 1)}</td>
+    <td class="${r.c24 > 0 ? "pos" : r.c24 < 0 ? "neg" : ""}">${r.c24 === null || r.c24 === undefined ? "—" : nf(r.c24, 0)}</td></tr>`).join("")
+    || `<tr><td colspan="${COLS.length}" class="muted" style="text-align:center;padding:24px">Ningún token cumple estos filtros.</td></tr>`;
+  const tot = Math.max(1, Math.ceil(vista.length / PP));
+  $("#pinfo").textContent = `Página ${pag + 1} de ${tot}`;
+  $("#prev").disabled = pag === 0; $("#next").disabled = pag >= tot - 1;
+}
+$("#cab").onclick = e => { const th = e.target.closest("th"); if (!th) return; const k = th.dataset.k; orden = [k, orden[0] === k ? -orden[1] : -1]; filtrar(); };
+["q", "tipo", "estado", "nop", "dentro", "elite", "edad"].forEach(id => $("#" + id).addEventListener("input", filtrar));
+$("#prev").onclick = () => { pag--; pintar(); }; $("#next").onclick = () => { pag++; pintar(); };
+
+(async () => {
+  try {
+    const j = await (await fetch("tabla_A.json", {cache: "no-store"})).json();
+    D = j.filas;
+    D = D.filter(r => r.tipo === "meme").concat(D.filter(r => r.tipo !== "meme"));
+    const M = D.filter(r => r.tipo === "meme");
+    const vivos = M.filter(r => r.estado === "vivo").length, dentro = M.filter(r => r.oper_dentro > 0).length;
+    const gan = M.filter(r => r.pnl_sol > 0).length;
+    $("#stamp").textContent = `Datos al ${j.generado} · tokens con más de 7 días`;
+    $("#cards").innerHTML = [
+      ["Memecoins", nf(M.length)], ["Siguen vivas", nf(vivos) + " (" + Math.round(100 * vivos / M.length) + " %)"],
+      ["Con A dentro hoy", nf(dentro)], ["Las A ganaron en", Math.round(100 * gan / M.length) + " %"],
+      ["PnL A total", nf(M.reduce((s, r) => s + (r.pnl_sol || 0), 0), 0) + " SOL"]]
+      .map(([t, v]) => `<div class="card"><span>${t}</span><b>${v}</b></div>`).join("");
+    filtrar();
+  } catch (e) { $("#stamp").textContent = "No se pudieron cargar los datos."; }
+})();
+</script>
