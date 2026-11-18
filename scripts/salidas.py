@@ -20,7 +20,7 @@ from operadores import mapa
 SALIDA = "datos/salidas_sombra.tsv"
 ALERTAS = "datos/alertas_salida.tsv"
 CAMPOS = ["ts", "hora_utc", "hip", "cadena", "token", "sym", "precio", "n_billeteras", "n_oper", "pasa_oper",
-          "c24", "c7d", "max7d_pct", "esc_pct", "esc_detalle", "esc35_pct", "esc35_detalle", "trail30_pct", "trail30_detalle", "copiaA_pct", "copiaA_hora", "copiaA_detalle", "pool", "estado"]
+          "c24", "c7d", "max7d_pct", "esc_pct", "esc_detalle", "esc35_pct", "esc35_detalle", "trail30_pct", "trail30_detalle", "copiaA_pct", "copiaA_hora", "copiaA_detalle", "hib_pct", "hib_detalle", "pool", "estado"]
 CAMPOS_AL = ["ts", "hora_utc", "hip", "token", "sym", "operadores_con_saldo", "operadores_vendieron", "precio", "cambio_desde_senal"]
 PRESUPUESTO_S = 120  # 17-nov: bajado de 240 (minutos de GitHub)
 
@@ -88,6 +88,25 @@ def trailing(c, p0, caida=0.3):
     return ((c[-1][4] / p0 - 1) * 100 if c else 0), "cierre 7 d"
 
 
+def hibrida(c, p0, salida_a=None, freno=0.65):
+    """18-nov (Fran aprobó): vende 1/3 en x2 y 1/3 en x3; el resto NO se vende por precio: se aguanta mientras las A sigan
+    dentro y se vende cuando sale la mitad de los operadores (copiar A, con el retraso real de las fotos). Freno de
+    catástrofe −35 %. Histórico (95 entradas filtro no perseguir + MC ≤2M, sin top 3): +296 USD vs +214 de la escalonada."""
+    pos, pnl, t2, t3 = 1.0, 0.0, False, False
+    for ts, o, h, l, cl, v in c:
+        if l <= p0 * freno:
+            return (pnl + pos * (freno - 1)) * 100, "freno −35 %" + (" (tras x2)" if t2 else "")
+        if not t2 and h >= 2 * p0:
+            pnl += 1 / 3; pos -= 1 / 3; t2 = True
+        if t2 and not t3 and h >= 3 * p0:
+            pnl += 2 / 3; pos -= 1 / 3; t3 = True
+        if salida_a and ts >= salida_a - salida_a % 3600:
+            return (pnl + pos * (cl / p0 - 1)) * 100, "salieron las A" + (" (tras x2)" if t2 else "")
+    if c:
+        pnl += pos * (c[-1][4] / p0 - 1)
+    return pnl * 100, "en curso (valor a hoy)" + (", ya vendió 1/3 en x2" if t2 else "")
+
+
 def copiar_A():
     """token -> (ts, precio, con_saldo, vendieron) del primer momento en que salió la mitad de los operadores."""
     m = mapa()
@@ -148,7 +167,7 @@ def main():
                 print(f"salida A: {r['sym']} {r['token']} ({r['hip']}) {a[3]}/{a[2]} operadores vendieron, {r['copiaA_pct']} % desde la señal")
         # escalonada (se recalcula hasta cumplir 7 días)
         edad = time.time() - int(r["ts"])
-        if (r.get("estado") != "cerrado" or not r.get("esc35_pct")) and p0 and r["cadena"] in GNET and edad >= 3600 and time.time() - t_ini < PRESUPUESTO_S:
+        if (r.get("estado") != "cerrado" or not r.get("esc35_pct") or not r.get("hib_pct")) and p0 and r["cadena"] in GNET and edad >= 3600 and time.time() - t_ini < PRESUPUESTO_S:
             pool = r.get("pool") or pool_de(r["cadena"], r["token"])
             if pool:
                 r["pool"] = pool
@@ -169,6 +188,9 @@ def main():
                     r["esc35_pct"], r["esc35_detalle"] = round(pct35, 1), det35
                     pct_t, det_t = trailing(c, p0)
                     r["trail30_pct"], r["trail30_detalle"] = round(pct_t, 1), det_t
+                    sa = a[0] if a and a[0] >= t0 else None
+                    pct_h, det_h = hibrida(c, p0, sa)
+                    r["hib_pct"], r["hib_detalle"] = round(pct_h, 1), det_h
                     r["estado"] = "cerrado" if edad >= 7 * 86400 else "abierto"
         r.setdefault("estado", "abierto")
         filas.append(r)
