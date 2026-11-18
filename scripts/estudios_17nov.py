@@ -129,6 +129,55 @@ def h27(ahora, hora):
     return filas
 
 
+def h33(ahora, hora, ventana=12 * 3600):
+    """H33 "élite sola en lanzamiento" (18-nov, Fran, caso JESTER: ETZpZa, élite de oNuaeU, entró sola a un token de 1 día y va +94 %;
+    no avisamos porque consenso A pide 2 operadores y H27 solo mira tokens de 7+ días). Un operador de élite (datos/elite.tsv) compra
+    (logs de compras A/B/C, últimas 12 h) un token de menos de 48 h con liquidez ≥10 mil y MC ≤10 M, aunque esté solo.
+    Entra una vez al precio del momento → datos/h33_sombra.tsv; salidas.py lo mide (escalonada, híbrida, copiar A). Solo registro."""
+    el = {r["billetera"]: r for r in leer("datos/elite.tsv")}
+    if not el:
+        return []
+    ya = {r["token"] for r in leer("datos/h33_sombra.tsv")}
+    quien, sol = defaultdict(set), defaultdict(float)
+    for f in ("datos/consenso_A_compras.tsv", "datos/h22_compras.tsv", "datos/h23_compras.tsv", "datos/watchlist_compras.tsv"):
+        for r in leer(f):
+            try:
+                ts = int(r["ts"])
+            except (TypeError, ValueError):
+                continue
+            b = r.get("billetera")
+            if b in el and ahora - ts <= ventana and r.get("token") not in ya:
+                quien[r["token"]].add(el[b]["operador"])
+                try:
+                    sol[r["token"]] += float(r.get("sol_gastado") or 0)
+                except ValueError:
+                    pass
+    if not quien:
+        return []
+    info = dex(list(quien))
+    hist = {}
+    for r in el.values():
+        hist.setdefault(r["operador"], r)
+    filas = []
+    for t, ops in quien.items():
+        p = info.get(t)
+        if not p:
+            continue
+        liq = (p.get("liquidity") or {}).get("usd") or 0
+        mc = p.get("marketCap") or p.get("fdv") or 0
+        edad = (ahora * 1000 - (p.get("pairCreatedAt") or ahora * 1000)) / 8.64e7
+        if edad < 2 and liq >= 10000 and mc and mc <= 10e6:
+            ch = p.get("priceChange") or {}
+            h = "; ".join(f"{o}: {hist[o].get('jugadas')} jugadas, x2 {hist[o].get('pct_x2')} %, pnl {hist[o].get('pnl_sol')} SOL"
+                          for o in sorted(ops) if o in hist)
+            filas.append(dict(ts=ahora, hora_utc=hora, cadena="solana", token=t, sym=p["baseToken"]["symbol"], precio=p.get("priceUsd"),
+                              liq=round(liq), mc=round(mc), liq_mc_pct=round(100 * liq / mc, 1), edad_d=round(edad, 2),
+                              n_elite=len(ops), elite=",".join(sorted(ops)), pool=p.get("pairAddress"),
+                              motivo=f"élite sola en lanzamiento ({len(ops)} op., {round(sol[t], 1)} SOL), c1 {ch.get('h1')} %, c24 {ch.get('h24')} % | {h}"))
+            print(f"H33 entrada sombra: {p['baseToken']['symbol']} {t} élite {','.join(sorted(ops))}, edad {round(edad * 24)} h, liq {round(liq):,}")
+    return filas
+
+
 def bundles():
     m = mapa()
     compras = defaultdict(dict)  # token -> billetera -> ts primera compra
@@ -214,12 +263,17 @@ def main():
     ahora = int(time.time()); hora = time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora))
     a = h27(ahora, hora); guardar("datos/h27_sombra.tsv", C27, a)
     b = imitadores(ahora, hora); guardar("datos/imitadores.tsv", CIM, b)
+    try:
+        c = h33(ahora, hora); guardar("datos/h33_sombra.tsv", C27, c)
+        print(f"H33: {len(c)} entradas nuevas (élite sola en lanzamiento)")
+    except Exception as e:
+        print("h33 falló:", e)
     if "--sin-bundles" not in sys.argv:
         bundles()
     print(f"H27: {len(a)} entradas nuevas; IMIT: {len(b)} nuevos")
     if os.environ.get("GITHUB_ACTIONS"):  # el reloj solo hace git add de algunos archivos
         import subprocess
-        subprocess.run(["git", "add"] + [f for f in ("datos/h27_sombra.tsv", "datos/imitadores.tsv", "datos/bundles_eventos.tsv",
+        subprocess.run(["git", "add"] + [f for f in ("datos/h27_sombra.tsv", "datos/h33_sombra.tsv", "datos/imitadores.tsv", "datos/bundles_eventos.tsv",
                                                     "datos/bundle_grupos.tsv", "datos/elite.tsv") if os.path.exists(f)], check=False)
 
 
