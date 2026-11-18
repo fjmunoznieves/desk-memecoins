@@ -260,7 +260,93 @@ def h31(ahora, hora):
         elif -20 <= c6 <= 15 and c1 > -10 and t not in ya2:
             f2.append(dict(fila, motivo="pozo quieto: " + etiq)); ya2.add(t)
             print(f"H31p entrada sombra: {fila['sym']} {t} {etiq}")
+    h31.sost = sost
     return f1, f2
+
+
+MICRO = {"dacity": r"dacity|audacity", "gta": r"\bgta|grand theft|leonida", "anthropic": r"anthropi|claud|klaud", "nvidia": r"nvidia|jensen",
+         "musk": r"musk|tesla|spacex|elon", "trump": r"trump|barron|maga\b", "over_back": r"nigga|its over|so back|there is hope",
+         "milker": r"milker|titt|lactator", "pokemon": r"poke", "perro": r"\binu\b|inu$|doge|\bdog\b|dog$", "gato": r"\bcat\b|cat$|miao|meow|猫",
+         "china": r"\bhao\b|chinese|china|[一-鿿]", "brainrot": r"tung|sahur", "negocios": r"business|\bbiz", "ia": r"\bai\b|agent|gpt|openai|\bbot\b",
+         "pepe": r"pepe|\bapu\b|frog"}
+PARADAS = set("""about after again board breaking coin crypto decline down explores fast fund grid hikes into live make market markets meet minutes
+name new news official payments plan prediction price production projects rate reports retail sales says seeks services session states
+stock threat time tokenized worker with world from that this have will their than they what when your more over band bigger halts outage
+says hasn't worked intents energization monopoly""".split())
+
+
+def h32(ahora, hora, sost):
+    """H32 "tema dormido que despierta" (18-nov, Fran). Estudio previo (256 tokens con A, velas 75 d): que un token de una temática estalle
+    NO hace rebotar a los caídos de su misma temática (x2 en 48 h 18-19 % igual que el control) → el contagio por temática amplia no
+    sirve; falta probar el disparador externo (noticia). Registra en sombra (10 USD) tokens del universo A (tabla_A, memes con liq ≥10 mil)
+    cuando (a) una palabra de un tema caliente en noticias/X (narrativas.json, calor ≥70) aparece en su nombre, o (b) otro token de su
+    misma micro-narrativa sube ≥+100 % en 24 h. Etiqueta si está en pozo (≤−75 % de su máximo) y cuántas A tiene dentro. Solo registro."""
+    import re
+    ya = {}
+    for r in leer("datos/h32_sombra.tsv"):
+        ya[r["token"]] = max(ya.get(r["token"], 0), int(r["ts"]))
+    try:
+        filas = json.load(open("datos/tabla_A.json"))["filas"]
+    except Exception:
+        return []
+    uni = [r["token"] for r in filas if r.get("tipo") == "meme" and (r.get("liq") or 0) >= 10000 and (r.get("mc") or 0) <= 20e6]
+    uni = list(dict.fromkeys(uni + list(sost)))
+    info = dex("solana", uni)
+    nom = {t: (p["baseToken"].get("symbol", ""), p["baseToken"].get("name", "")) for t, p in info.items()}
+    vivos = {}
+    for t, p in info.items():
+        liq = (p.get("liquidity") or {}).get("usd") or 0
+        mc = p.get("marketCap") or p.get("fdv") or 0
+        edad = (ahora * 1000 - (p.get("pairCreatedAt") or ahora * 1000)) / 8.64e7
+        if liq >= 10000 and mc and mc <= 10e6 and edad >= 3 and not no_meme(t, nom[t][0]):
+            vivos[t] = p
+    def micros(t):
+        s = (nom[t][0] + " " + nom[t][1]).lower()
+        return {k for k, rx in MICRO.items() if re.search(rx, s)}
+    disp = {}
+    # (a) noticia / tema caliente
+    try:
+        narr = json.load(open("datos/narrativas.json")).get("narrativas", [])
+    except Exception:
+        narr = []
+    for n in narr:
+        if (n.get("calor") or 0) < 70:
+            continue
+        pal = {w for w in re.findall(r"[a-z0-9]{4,}", n["tema"].lower()) if w not in PARADAS}
+        pal |= {w.lower() for w in re.findall(r"\b[A-Z]{3}\b", n["tema"]) if w.lower() not in ("ceo", "ipo", "fed", "cpi", "etf", "usa", "sec")}
+        for t in vivos:
+            nw = set(re.findall(r"[a-z0-9]{3,}", (nom[t][0] + " " + nom[t][1]).lower()))
+            com = pal & nw
+            if com:
+                disp.setdefault(t, f"noticia: '{n['tema']}' ({'+'.join(n.get('fuentes', []))}, calor {n['calor']}) palabra {','.join(sorted(com))}")
+    # (b) contagio de micro-narrativa
+    for t, p in vivos.items():
+        c24 = (p.get("priceChange") or {}).get("h24") or 0
+        if c24 >= 100:
+            for k in micros(t):
+                for u in vivos:
+                    if u != t and k in micros(u):
+                        disp.setdefault(u, f"contagio: {nom[t][0]} +{round(c24)} % en 24 h (narrativa {k})")
+    disp = {t: m for t, m in disp.items() if ahora - ya.get(t, 0) > 72 * 3600}
+    if not disp:
+        return []
+    aths = ath_de(list(disp)[:40], info)
+    out = []
+    for t, motivo in list(disp.items())[:40]:
+        p = info[t]
+        precio = float(p.get("priceUsd") or 0)
+        dd = round(100 * (precio / aths[t] - 1)) if aths.get(t) and precio else None
+        liq = (p.get("liquidity") or {}).get("usd") or 0
+        mc = p.get("marketCap") or p.get("fdv") or 0
+        ch = p.get("priceChange") or {}
+        ops = sost.get(t, set())
+        out.append(dict(ts=ahora, hora_utc=hora, cadena="solana", token=t, sym=nom[t][0], precio=p.get("priceUsd"), liq=round(liq), mc=round(mc),
+                        liq_mc_pct=round(100 * liq / mc, 1), vol1h=round((p.get("volume") or {}).get("h1") or 0),
+                        edad_d=round((ahora * 1000 - (p.get("pairCreatedAt") or ahora * 1000)) / 8.64e7, 1), n_oper=len(ops),
+                        operadores=",".join(sorted(ops)), pool=p.get("pairAddress"),
+                        motivo=f"{motivo} | {'pozo' if dd is not None and dd <= -75 else 'no pozo'} (dd {dd} %), c1 {ch.get('h1')} %, c24 {ch.get('h24')} %, A dentro {len(ops)}"))
+        print(f"H32 entrada sombra: {nom[t][0]} {t} {out[-1]['motivo']}")
+    return out
 
 
 SEGURIDAD = ("lp", "top10", "dev", "no renunciado", "seg?", "ballena", "impuestos", "control")
@@ -339,6 +425,12 @@ def main():
         print(f"H31: {len(e1)} entradas nuevas (pozo + chispa); H31p: {len(e2)} (pozo quieto)")
     except Exception as e:
         print("h31 falló:", e)
+    try:
+        g = h32(ahora, hora, getattr(h31, "sost", {}))
+        guardar("datos/h32_sombra.tsv", g)
+        print(f"H32: {len(g)} entradas nuevas (tema que despierta)")
+    except Exception as e:
+        print("h32 falló:", e)
 
 
 if __name__ == "__main__":
