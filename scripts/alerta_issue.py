@@ -41,3 +41,22 @@ if _esc and _os.path.basename(_esc[-1]) not in _ya and _os.environ.get("GITHUB_R
     with open(_hecho, "a") as _f:
         _f.write(_os.path.basename(_esc[-1]) + "\n")
     subprocess.run(["git", "add", _hecho], check=False)
+
+# 18-nov (Fran, caso :3 avisado 3 h tarde y luego x3,9): H21 con 2+ operadores en token maduro abre aviso al momento. Solo aviso.
+import csv as _csv
+_h21, _h21ya = "datos/h21_consenso.tsv", "datos/h21_avisados.txt"
+if _os.path.exists(_h21) and _os.environ.get("GITHUB_REPOSITORY"):
+    _ya21 = set(open(_h21ya).read().split()) if _os.path.exists(_h21ya) else set()
+    _nuevos = [r for r in _csv.DictReader(open(_h21), delimiter="\t")
+               if (r["token"] + "@" + r["ts"]) not in _ya21 and float(r.get("n_oper") or r.get("n") or 0) >= 2 and float(r.get("edad_d") or 0) >= 7]
+    for r in _nuevos:
+        _b = ["Paper trading: solo aviso. H21 = 2+ operadores de la watchlist compran un token maduro (≥7 d).", "",
+              f"- **{r['sym']}** (solana) `{r['token']}` https://dexscreener.com/solana/{r['token']}",
+              f"- Operadores: {r.get('n_oper')} · edad {r['edad_d']} d · precio {r['precio']} · MC {r['mc']} · liq {r['liq']} ({r['hora_utc']} UTC)",
+              "- Billeteras: " + ", ".join("`" + b + "`" for b in r["billeteras"].split(","))]
+        subprocess.run(["gh", "issue", "create", "--repo", _os.environ["GITHUB_REPOSITORY"], "--title",
+                        f"H21 consenso maduro: {r['sym']} ({r.get('n_oper')} operadores)", "--body", "\n".join(_b)], check=False)
+    if _nuevos:
+        with open(_h21ya, "a") as _f:
+            _f.write("".join(r["token"] + "@" + r["ts"] + "\n" for r in _nuevos))
+        subprocess.run(["git", "add", _h21ya], check=False)
