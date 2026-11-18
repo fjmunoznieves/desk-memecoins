@@ -25,3 +25,18 @@ for r in R:
 json.dump(R,open('rows2.json','w'))
 print('bandas',dict(collections.Counter(r['band'] for r in R)),'fallos',dict(fails))
 print('pasan numéricos en ventana A–D:',[(r['chain'],r['sym'],r['addr']) for r in R if not r['f'] and r['band'] in 'ABCD'])
+# 18-nov (Fran, caso JESTER): guardar el universo completo de cada escaneo, para saber qué vimos y por qué no pasó. Solo registro.
+try:
+    import os, time
+    U = "datos/universo_escaneos.tsv"
+    nuevo = not os.path.exists(U)
+    ts = int(os.path.getmtime("rows.json")); hora = time.strftime("%Y-%m-%d %H:%M", time.gmtime(ts))
+    with open(U, "a") as fh:
+        if nuevo:
+            fh.write("ts\thora_utc\tcadena\ttoken\tsym\tbanda\tedad_h\tmc\tliq\tv5\tc5\tc1\tbs\tfallos\n")
+        for r in R:
+            fh.write("\t".join(str(x) for x in (ts, hora, r["chain"], r["addr"], r["sym"], r["band"], round(r["age_h"], 1) if r.get("age_h") is not None else "",
+                     round(r.get("mc") or 0), round(r.get("liq") or 0), round(r.get("v5") or 0), r.get("c5", ""), r.get("c1", ""),
+                     round(r["bs"], 2), ",".join(r["f"]))) + "\n")
+except Exception as e:
+    print("universo_escaneos falló:", e)
