@@ -5,7 +5,7 @@ H25 "maduros con A": token con 7 días o más, 2+ operadores A (sin bots) que SO
 H26 "lanzamientos con liquidez sana": candidatos del escaneo (estudio_reglas_sombra.tsv) con liquidez 100–250 mil USD y
      liquidez/MC entre 5 y 15 %, y que pase la revisión de seguridad (top10, dev, LP, mint/freeze).
 Cada token entra una sola vez, al precio del momento. salidas.py mide sus salidas (escalonada y "copiar A")."""
-import csv, json, os, sys, time, urllib.request
+import csv, json, os, sys, time, urllib.error, urllib.request
 sys.path.insert(0, os.path.dirname(__file__))
 from operadores import mapa
 
@@ -156,6 +156,113 @@ def h29(ahora, hora):
     return filas
 
 
+ATH = "datos/ath_cache.json"
+
+
+def ath_de(toks, info):
+    """Máximo histórico por token (velas diarias de GeckoTerminal, en caché 24 h; luego se actualiza con el precio de cada escaneo)."""
+    try:
+        cache = json.load(open(ATH))
+    except Exception:
+        cache = {}
+    ahora, t0 = time.time(), time.time()
+    for t in toks:
+        p = info.get(t)
+        if not p:
+            continue
+        precio = float(p.get("priceUsd") or 0)
+        c = cache.get(t)
+        if (not c or ahora - c["ts"] > 86400) and time.time() - t0 < 150:
+            try:
+                url = (f"https://api.geckoterminal.com/api/v2/networks/solana/pools/{p['pairAddress']}/ohlcv/day"
+                       f"?aggregate=1&limit=180&currency=usd&token={t}")
+                req = urllib.request.Request(url, headers={"User-Agent": "desk-h31", "Accept": "application/json"})
+                try:
+                    v = json.load(urllib.request.urlopen(req, timeout=25))["data"]["attributes"]["ohlcv_list"]
+                except urllib.error.HTTPError as e:
+                    if e.code != 429:
+                        raise
+                    time.sleep(8)
+                    v = json.load(urllib.request.urlopen(req, timeout=25))["data"]["attributes"]["ohlcv_list"]
+                c = {"ts": ahora, "ath": max([x[2] for x in v] + [precio, (c or {}).get("ath", 0)])}
+                cache[t] = c
+            except Exception as e:
+                print("h31: geckoterminal", t[:8], str(e)[:50])
+            time.sleep(2.2)
+        if c:
+            c["ath"] = max(c["ath"], precio)
+    json.dump(cache, open(ATH, "w"))
+    return {t: c["ath"] for t, c in cache.items()}
+
+
+def h31(ahora, hora):
+    """H31 "pozo + chispa" (18-nov, Fran: A/B/C confirman interés, hay que detectar qué provoca el impulso). Estudio de precursores
+    (290 tokens con A dentro, velas 1 h, 4.397 casos): el volumen solo no anticipa; el pozo (≥75 % bajo su máximo, A dentro) hace x2
+    en 7 d 1 de cada 3 (base 16 %); pozo + chispa (sube 5–15 % en 1 h con volumen de la hora ≥2× el promedio) es la mejor relación
+    x2/caída (2,2). Dos carriles en sombra, 10 USD c/u: H31 = pozo + chispa (h31_sombra.tsv); H31p = pozo quieto, cambio 6 h entre
+    −20 y +15 % (h31p_sombra.tsv). Requiere 1+ operador A (sin bots) con ≥20 USD en la última foto, es meme, edad ≥3 d, liq ≥10 mil,
+    MC ≤10 M. Holders y compras/ventas (liquidez_seguimiento) van como etiqueta para medir si anticipan. Solo registro."""
+    ya1 = {r["token"] for r in leer("datos/h31_sombra.tsv")}
+    ya2 = {r["token"] for r in leer("datos/h31p_sombra.tsv")}
+    fs = leer("datos/fotos_saldos.tsv")
+    if not fs:
+        return [], []
+    mx = max(int(r["ts"]) for r in fs)
+    m = mapa()
+    sost = {}
+    for r in fs:
+        try:
+            if int(r["ts"]) > mx - 86400 and ahora - mx < 86400 and r.get("grupo") == "A" and float(r["usd"] or 0) >= 20:
+                op, bot = m.get(r["billetera"], (r["billetera"][:6], False))
+                if not bot:
+                    sost.setdefault(r["token"], set()).add(op)
+        except ValueError:
+            pass
+    info = dex("solana", list(sost))
+    cand = [t for t in sost if t in info and not no_meme(t, info[t]["baseToken"].get("symbol", ""))]
+    aths = ath_de(cand, info)
+    liqs = {}
+    for r in leer("datos/liquidez_seguimiento.tsv"):
+        liqs.setdefault(r["token"], []).append(r)
+    f1, f2 = [], []
+    for t in cand:
+        p = info[t]
+        precio = float(p.get("priceUsd") or 0)
+        ath = aths.get(t)
+        if not precio or not ath:
+            continue
+        dd = 100 * (precio / ath - 1)
+        liq = (p.get("liquidity") or {}).get("usd") or 0
+        mc = p.get("marketCap") or p.get("fdv") or 0
+        ch, vol = p.get("priceChange") or {}, p.get("volume") or {}
+        c1, c6, c24 = ch.get("h1") or 0, ch.get("h6") or 0, ch.get("h24") or 0
+        v1, v24 = vol.get("h1") or 0, vol.get("h24") or 0
+        vx = v1 / (v24 / 24) if v24 else 0
+        edad = (ahora * 1000 - (p.get("pairCreatedAt") or ahora * 1000)) / 8.64e7
+        if dd > -75 or edad < 3 or liq < 10000 or not mc or mc > 10e6:
+            continue
+        hs = sorted(liqs.get(t, []), key=lambda r: int(r["ts"]))
+        try:
+            dh = round(100 * (float(hs[-1]["holders"]) / float(hs[-2]["holders"]) - 1), 1)
+        except (IndexError, ValueError, ZeroDivisionError, KeyError):
+            dh = None
+        tx = (p.get("txns") or {}).get("h1") or {}
+        bs = round(tx.get("buys", 0) / tx["sells"], 2) if tx.get("sells") else None
+        ops = sost[t]
+        fila = dict(ts=ahora, hora_utc=hora, cadena="solana", token=t, sym=p["baseToken"]["symbol"], precio=p.get("priceUsd"),
+                    liq=round(liq), mc=round(mc), liq_mc_pct=round(100 * liq / mc, 1), vol1h=round(v1), edad_d=round(edad, 1),
+                    n_oper=len(ops), operadores=",".join(sorted(ops)), pool=p.get("pairAddress"))
+        etiq = (f"dd {round(dd)} %, c1 {c1} %, c6 {c6} %, c24 {c24} %, vol 1 h x{round(vx, 1)}, "
+                f"holders {'sin dato' if dh is None else str(dh) + ' %'}, compras/ventas 1 h {bs if bs is not None else 'sin dato'}")
+        if 5 <= c1 <= 15 and vx >= 2 and t not in ya1:
+            f1.append(dict(fila, motivo="pozo + chispa: " + etiq)); ya1.add(t)
+            print(f"H31 entrada sombra: {fila['sym']} {t} {etiq}")
+        elif -20 <= c6 <= 15 and c1 > -10 and t not in ya2:
+            f2.append(dict(fila, motivo="pozo quieto: " + etiq)); ya2.add(t)
+            print(f"H31p entrada sombra: {fila['sym']} {t} {etiq}")
+    return f1, f2
+
+
 SEGURIDAD = ("lp", "top10", "dev", "no renunciado", "seg?", "ballena", "impuestos", "control")
 
 
@@ -226,6 +333,12 @@ def main():
         print(f"H30: {len(d)} entradas nuevas")
     except Exception as e:
         print("h30 falló:", e)
+    try:
+        e1, e2 = h31(ahora, hora)
+        guardar("datos/h31_sombra.tsv", e1); guardar("datos/h31p_sombra.tsv", e2)
+        print(f"H31: {len(e1)} entradas nuevas (pozo + chispa); H31p: {len(e2)} (pozo quieto)")
+    except Exception as e:
+        print("h31 falló:", e)
 
 
 if __name__ == "__main__":
