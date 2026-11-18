@@ -3,18 +3,32 @@ En cada escaneo y reloj guarda liquidez, MC, volumen y su relación, para estudi
 liquidez al detectar, si la liquidez se drena (señal de salida) y qué rangos de liquidez/MC funcionan."""
 import csv, json, os, time, urllib.request
 SEG, OUT = "datos/seguimiento.tsv", "datos/liquidez_seguimiento.tsv"
-CAMPOS = ["ts", "hora_utc", "token", "sym", "liq", "mc", "liq_mc_pct", "vol5m", "vol1h", "vol24h", "precio", "pool", "holders", "mc_por_holder"]
+CAMPOS = ["ts", "hora_utc", "token", "sym", "liq", "mc", "liq_mc_pct", "vol5m", "vol1h", "vol24h", "precio", "pool", "holders", "mc_por_holder", "compras_1h", "ventas_1h", "compras_24h", "ventas_24h", "origen"]
 
 
 def main():
     if not os.path.exists(SEG):
         return
     seg = {r["token"]: r["sym"] for r in csv.DictReader(open(SEG), delimiter="\t")}
+    orig = {t: "seguimiento" for t in seg}
     for f in ("datos/alertas_sostenidas.tsv",):  # también las sostenidas de los últimos 3 días
         if os.path.exists(f):
             for r in csv.DictReader(open(f), delimiter="\t"):
                 if time.time() - int(r["ts"]) < 3 * 86400:
                     seg.setdefault(r["token"], r["sym"])
+    # 18-nov (Fran): A/B/C confirman interés, no impulso. Para estudiar qué PROVOCA el impulso se registran también
+    # todos los tokens con al menos 1 billetera A sosteniendo ≥20 USD en la última foto (holders y presión compra/venta).
+    if os.path.exists("datos/fotos_saldos.tsv"):
+        fs = list(csv.DictReader(open("datos/fotos_saldos.tsv"), delimiter="\t"))
+        if fs:
+            mx = max(int(r["ts"]) for r in fs)
+            for r in fs:
+                try:
+                    if int(r["ts"]) > mx - 86400 and r.get("grupo") == "A" and float(r["usd"] or 0) >= 20:
+                        seg.setdefault(r["token"], r.get("sym", ""))
+                        orig.setdefault(r["token"], "A_dentro")
+                except ValueError:
+                    pass
     toks, filas, ahora = list(seg), [], int(time.time())
     for i in range(0, len(toks), 30):
         try:
@@ -32,12 +46,15 @@ def main():
             v = p.get("volume") or {}
             filas.append(dict(ts=ahora, hora_utc=time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora)), token=a, sym=seg.get(a, ""),
                               liq=round(liq), mc=round(mc), liq_mc_pct=round(100 * liq / mc, 1) if mc else "",
-                              vol5m=v.get("m5"), vol1h=v.get("h1"), vol24h=v.get("h24"), precio=p.get("priceUsd"), pool=p.get("pairAddress")))
+                              vol5m=v.get("m5"), vol1h=v.get("h1"), vol24h=v.get("h24"), precio=p.get("priceUsd"), pool=p.get("pairAddress"),
+                              compras_1h=((p.get("txns") or {}).get("h1") or {}).get("buys"), ventas_1h=((p.get("txns") or {}).get("h1") or {}).get("sells"),
+                              compras_24h=((p.get("txns") or {}).get("h24") or {}).get("buys"), ventas_24h=((p.get("txns") or {}).get("h24") or {}).get("sells"),
+                              origen=orig.get(a, "sostenida")))
         time.sleep(0.3)
     # 17-nov (Fran): cantidad de holders y MC por holder (¿los holders dan soporte al precio?). RugCheck gratis, solo registro.
     t0 = time.time()
     for r in filas:
-        if time.time() - t0 > 120:
+        if time.time() - t0 > 200:
             break
         try:
             req = urllib.request.Request(f"https://api.rugcheck.xyz/v1/tokens/{r['token']}/report", headers={"User-Agent": "desk-liquidez"})
