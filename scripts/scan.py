@@ -69,6 +69,31 @@ for net, path in lists:
         toks.setdefault((net, b), path)
 print("gecko entries", dict(cov), "unique", len(toks), file=sys.stderr)
 
+# 18-nov (Fran: ver 500-1000 tokens por escaneo y medir el impulso). Jupiter Tokens API (gratis, sin clave): listas de tendencia,
+# más operados, puntaje orgánico y recientes de Solana, con holders, cambio de holders, compradores netos/orgánicos por ventana.
+JUP = {}
+JUP_FALLOS = [0]
+for path in ("toptrending/5m", "toptrending/1h", "toptrending/6h", "toptrending/24h", "toptraded/5m", "toptraded/1h", "toptraded/24h",
+             "toporganicscore/5m", "toporganicscore/1h", "toporganicscore/24h", "recent"):
+    d = None
+    if JUP_FALLOS[0] >= 3:  # si Jupiter no responde, no se alarga el escaneo
+        break
+    for k in range(2):
+        try:
+            req = urllib.request.Request("https://lite-api.jup.ag/tokens/v2/" + path + ("?limit=100" if "top" in path else ""),
+                                         headers={"User-Agent": "desk-scan", "Accept": "application/json"})
+            d = json.load(urllib.request.urlopen(req, timeout=15)); break
+        except Exception as e:
+            time.sleep(6)
+    JUP_FALLOS[0] = 0 if d else JUP_FALLOS[0] + 1
+    time.sleep(2.5)
+    for x in d or []:
+        a = x.get("id")
+        if a:
+            JUP.setdefault(a, x)
+            toks.setdefault(("solana", a), "jupiter_" + path)
+print("jupiter unique", len(JUP), "universo total", len(toks), file=sys.stderr)
+
 # DexScreener
 chainmap = {"solana": "solana", "bsc": "bsc"}
 best = {}
@@ -83,6 +108,9 @@ for u in ("https://api.dexscreener.com/token-profiles/latest/v1", "https://api.d
     for x in d:
         if x.get("chainId") == "robinhood":
             rh.add(x["tokenAddress"])
+        elif x.get("chainId") == "solana" and ("solana", x.get("tokenAddress")) not in toks:  # 18-nov: también perfiles/boosts de Solana
+            toks[("solana", x["tokenAddress"])] = "dexscreener_perfil"
+            bych["solana"].append(x["tokenAddress"])
 for q in ("robinhood", "HOOD", "WETH robinhood"):
     d = get("https://api.dexscreener.com/latest/dex/search?q=" + q) or {}
     for p in d.get("pairs", []) or []:
@@ -106,6 +134,16 @@ for ch, addrs in bych.items():
             if "p" not in e or liq > ((e["p"].get("liquidity") or {}).get("usd") or 0):
                 e["p"] = p
 
+def jup_campos(a):
+    x = JUP.get(a)
+    if not x:
+        return {}
+    s1, s5 = x.get("stats1h") or {}, x.get("stats5m") or {}
+    return dict(holders=x.get("holderCount"), hold_chg1h=s1.get("holderChange"), hold_chg5m=s5.get("holderChange"),
+                netos1h=s1.get("numNetBuyers"), organicos1h=s1.get("numOrganicBuyers"), traders1h=s1.get("numTraders"),
+                organic_score=x.get("organicScore"), top_holders=(x.get("audit") or {}).get("topHoldersPercentage"))
+
+
 BASEQ = {"SOL", "WSOL", "USDC", "USDT", "WBNB", "BNB", "USD1", "ETH", "WETH", "BUSD", "FDUSD"}
 rows = []
 for (ch, a), e in best.items():
@@ -122,6 +160,7 @@ for (ch, a), e in best.items():
                      age_h=age_h, liq=(p.get("liquidity") or {}).get("usd") or 0, mc=p.get("marketCap") or p.get("fdv") or 0,
                      v5=(p.get("volume") or {}).get("m5") or 0, v1h=(p.get("volume") or {}).get("h1") or 0,
                      b=b, s=s, c5=pc.get("m5") or 0, c1=pc.get("h1") or 0, c24=pc.get("h24") or 0,
-                     socials=socials, boosts=(p.get("boosts") or {}).get("active", 0), price=p.get("priceUsd"), pair=p.get("pairAddress")))
+                     socials=socials, boosts=(p.get("boosts") or {}).get("active", 0), price=p.get("priceUsd"), pair=p.get("pairAddress"),
+                     src=src, **jup_campos(a)))
 json.dump(rows, open("rows.json", "w"))
 print("rows", len(rows), file=sys.stderr)

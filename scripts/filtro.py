@@ -33,10 +33,10 @@ try:
     ts = int(os.path.getmtime("rows.json")); hora = time.strftime("%Y-%m-%d %H:%M", time.gmtime(ts))
     with open(U, "a") as fh:
         if nuevo:
-            fh.write("ts\thora_utc\tcadena\ttoken\tsym\tbanda\tedad_h\tmc\tliq\tv5\tc5\tc1\tbs\tfallos\n")
+            fh.write("ts\thora_utc\tcadena\ttoken\tsym\tbanda\tedad_h\tmc\tliq\tv5\tc5\tc1\tbs\tfallos\tfuente\tholders\thold_chg1h\thold_chg5m\tnetos1h\torganicos1h\ttraders1h\torganic_score\ttop_holders\n")
         for r in R:
             fh.write("\t".join(str(x) for x in (ts, hora, r["chain"], r["addr"], r["sym"], r["band"], round(r["age_h"], 1) if r.get("age_h") is not None else "",
                      round(r.get("mc") or 0), round(r.get("liq") or 0), round(r.get("v5") or 0), r.get("c5", ""), r.get("c1", ""),
-                     round(r["bs"], 2), ",".join(r["f"]))) + "\n")
+                     round(r["bs"], 2), ",".join(r["f"]), r.get("src", ""), *[r.get(k, "") for k in ("holders", "hold_chg1h", "hold_chg5m", "netos1h", "organicos1h", "traders1h", "organic_score", "top_holders")])) + "\n")
 except Exception as e:
     print("universo_escaneos falló:", e)
