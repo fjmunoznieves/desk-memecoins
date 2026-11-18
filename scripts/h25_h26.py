@@ -41,6 +41,23 @@ def dex(cadena, toks):
     return out
 
 
+NO_MEMES = {"EURC", "PYUSD", "USDG", "USD1", "SKR", "BIRB", "JUP", "JTO", "PYTH", "DRIFT", "KMNO", "RENDER", "WIF", "BONK", "PENGU",
+            "TRUMP", "MELANIA", "MNDE", "ME", "HUMA", "WINGS", "BMT", "DBR", "VIRTUAL", "CASH", "BP", "PUMP", "ZEC", "HYPE"}
+
+
+def no_meme(t, sym):
+    """18-nov (Fran vio USDG, EURC, TTWO, ANTHROPIC… en H25): fuera estables, acciones tokenizadas y tokens grandes/de proyecto."""
+    S = sym.upper()
+    if "USD" in S or S in NO_MEMES:
+        return True
+    if t.startswith("Xs") or (sym.endswith("x") and S[:-1].isalpha() and len(S) <= 6):  # xStocks (NVDAx, SPYx…)
+        return True
+    # acciones de Backpack/PreStocks y tokens oficiales usan dirección vanidosa con el ticker (TTWofw…, Pren1F… no; SPCXx…)
+    if not t.endswith("pump") and len(S) >= 3 and t.upper().startswith(S[:4]):
+        return True
+    return S in {"ANTHROPIC", "OPENAI", "SPACEX", "KALSHI"}
+
+
 def h25(ahora, hora):
     ya = {r["token"] for r in leer("datos/h25_sombra.tsv")}
     cand = {r["token"]: r["sym"] for r in leer("datos/seguimiento.tsv")}
@@ -67,7 +84,7 @@ def h25(ahora, hora):
     for t, s in cand.items():
         p = info.get(t)
         ops = sost.get(t, set())
-        if not p or len(ops) < 2:
+        if not p or len(ops) < 2 or no_meme(t, p["baseToken"].get("symbol", "")):
             continue
         liq = (p.get("liquidity") or {}).get("usd") or 0
         mc = p.get("marketCap") or p.get("fdv") or 0
