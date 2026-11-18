@@ -100,6 +100,57 @@ def h25(ahora, hora):
     return filas
 
 
+def h29(ahora, hora):
+    """H29 "impulso sano" (18-nov, Fran aprobó tras el estudio de impulso: 456 consensos A con velas → "no perseguir + MC ≤2M"
+    a 24 h dio +541 USD con 20 USD por entrada, 42 % ganan; perseguir: 93 % cae −35 %). Solo sombra, no cambia reglas.
+    Entra si: 2+ operadores A (sin bots) sostienen ≥20 USD c/u en la última foto, token ≥3 días, cambio 24 h ≤ +30 %,
+    cambio 1 h ≤ +10 %, MC ≤ 2 M, liquidez ≥ 10 mil, es meme, y los holders no bajaron >3 % entre las dos últimas fotos."""
+    ya = {r["token"] for r in leer("datos/h29_sombra.tsv")}
+    fs = leer("datos/fotos_saldos.tsv")
+    ult = {}
+    for r in fs:
+        ult[r["token"]] = max(ult.get(r["token"], 0), int(r["ts"]))
+    m = mapa()
+    sost = {}
+    for r in fs:
+        if r["token"] not in ya and int(r["ts"]) == ult[r["token"]] and ahora - int(r["ts"]) < 86400 \
+                and r.get("grupo") == "A" and float(r["usd"] or 0) >= 20:
+            op, bot = m.get(r["billetera"], (r["billetera"][:6], False))
+            if not bot:
+                sost.setdefault(r["token"], set()).add(op)
+    cand = [t for t, o in sost.items() if len(o) >= 2]
+    if not cand:
+        return []
+    hold = {}
+    for r in leer("datos/liquidez_seguimiento.tsv"):
+        try:
+            hold.setdefault(r["token"], []).append((int(r["ts"]), float(r["holders"])))
+        except (TypeError, ValueError, KeyError):
+            pass
+    info = dex("solana", cand)
+    filas = []
+    for t in cand:
+        p = info.get(t)
+        if not p or no_meme(t, p["baseToken"].get("symbol", "")):
+            continue
+        liq = (p.get("liquidity") or {}).get("usd") or 0
+        mc = p.get("marketCap") or p.get("fdv") or 0
+        ch = p.get("priceChange") or {}
+        c24, c1 = ch.get("h24"), ch.get("h1")
+        edad = (ahora * 1000 - (p.get("pairCreatedAt") or ahora * 1000)) / 8.64e7
+        h = sorted(hold.get(t, []))
+        dh = round(100 * (h[-1][1] / h[-2][1] - 1), 1) if len(h) >= 2 and h[-2][1] else None
+        if edad >= 3 and c24 is not None and c24 <= 30 and (c1 or 0) <= 10 and mc and mc <= 2e6 and liq >= 10000 \
+                and (dh is None or dh >= -3):
+            ops = sost[t]
+            filas.append(dict(ts=ahora, hora_utc=hora, cadena="solana", token=t, sym=p["baseToken"]["symbol"], precio=p.get("priceUsd"),
+                              liq=round(liq), mc=round(mc), liq_mc_pct=round(100 * liq / mc, 1), vol1h=round((p.get("volume") or {}).get("h1") or 0),
+                              edad_d=round(edad, 1), n_oper=len(ops), operadores=",".join(sorted(ops)), pool=p.get("pairAddress"),
+                              motivo=f"impulso sano: c24 {c24} %, c1 {c1} %, holders {'sin dato' if dh is None else str(dh) + ' %'}"))
+            print(f"H29 entrada sombra: {p['baseToken']['symbol']} {t} {len(ops)} operadores A, c24 {c24} %, MC {round(mc):,}")
+    return filas
+
+
 def h26(ahora, hora):
     ya = {r["token"] for r in leer("datos/h26_sombra.tsv")}
     filas = []
@@ -127,6 +178,12 @@ def main():
     a, b = h25(ahora, hora), h26(ahora, hora)
     guardar("datos/h25_sombra.tsv", a); guardar("datos/h26_sombra.tsv", b)
     print(f"H25: {len(a)} entradas nuevas; H26: {len(b)} entradas nuevas")
+    try:
+        c = h29(ahora, hora)
+        guardar("datos/h29_sombra.tsv", c)
+        print(f"H29: {len(c)} entradas nuevas")
+    except Exception as e:
+        print("h29 falló:", e)
 
 
 if __name__ == "__main__":
