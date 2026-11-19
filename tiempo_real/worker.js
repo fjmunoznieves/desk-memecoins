@@ -149,7 +149,7 @@ const MAX_TX = 30; // tope de transacciones leídas por minuto (CPU del plan gra
 async function rpc(env, lote) {
   const r = await fetch("https://rpc.shyft.to?api_key=" + env.SHYFT_API_KEY, {
     method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(lote) });
-  if (!r.ok) throw new Error("shyft " + r.status);
+  if (!r.ok) throw new Error("shyft " + r.status + " " + (await r.text()).slice(0, 150));
   const d = await r.json();
   return Array.isArray(d) ? d : [d];
 }
@@ -161,7 +161,7 @@ async function sondear(env) {
   // Regla de bots del desk (operadores.tsv): >200 operaciones al día = bot. Se cuenta por billetera y día UTC;
   // pasada esa cifra se siguen avanzando sus firmas pero no se leen sus transacciones (19-nov: is6MTR ~250/h).
   const ws = [...A], dia = Math.floor(ahora() / 86400);
-  const u = await env.DB.prepare("SELECT w, sig, dia, cnt FROM ult").all();
+  const u = await env.DB.prepare("SELECT w, sig, ts, dia, cnt FROM ult").all();
   const ult = new Map((u.results || []).map((x) => [x.w, x]));
   const nuevas = [], upd = [], dbg = [];
   let bots = 0;
