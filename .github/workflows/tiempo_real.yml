@@ -54,7 +54,8 @@ jobs:
           sleep 15
           U=$(cat datos/rt_url.txt)
           echo "GET /eventos: $(curl -s -m 20 "$U/eventos" | head -c 200)"
-          echo "POST sin clave (debe dar 401): $(curl -s -o /dev/null -w '%{http_code}' -m 20 -X POST "$U/webhook")"
+          echo "POST sin clave (debe dar 401): $(curl -s -o /dev/null -w '%{http_code}' -m 20 -X POST -H 'Content-Type: application/json' -d '[]' "$U/webhook")"
+          echo "POST con clave (debe dar 200): $(curl -s -o /dev/null -w '%{http_code}' -m 20 -X POST -H 'Content-Type: application/json' -H "Authorization: $WEBHOOK_AUTH" -d '[]' "$U/webhook")"
       - name: Webhook Helius
         if: ${{ inputs.webhook == 'si' }}
         env:
@@ -63,6 +64,7 @@ jobs:
       - name: Guardar URL
         run: |
           git config user.name "desk-bot"; git config user.email "desk-bot@users.noreply.github.com"
+          git checkout -- tiempo_real/wrangler.toml
           git add datos/rt_url.txt
           git commit -m "Tiempo real: URL del Worker" || true
           for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
