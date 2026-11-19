@@ -44,3 +44,23 @@ if isinstance(r, dict) and r.get("result"):
     s = r["result"][0]["signature"]
     st, r, dt = post({"jsonrpc": "2.0", "id": 1, "method": "getTransaction", "params": [s, {"encoding": "jsonParsed", "maxSupportedTransactionVersion": 0}]})
     print("4) getTransaction:", st, f"{dt:.2f}s", "ok" if isinstance(r, dict) and r.get("result") else str(r)[:200])
+
+# 5) actividad por billetera en la última hora (para ver quién genera el volumen)
+if os.environ.get("ACTIVIDAD"):
+    ahora = time.time(); filas = []
+    for i in range(0, len(A), 50):
+        parte = A[i:i+50]
+        st, r, dt = post([{"jsonrpc": "2.0", "id": j, "method": "getSignaturesForAddress", "params": [w, {"limit": 1000}]} for j, w in enumerate(parte)])
+        for x in (r if isinstance(r, list) else []):
+            l = x.get("result") or []
+            h1 = sum(1 for s in l if (s.get("blockTime") or 0) > ahora - 3600)
+            ok1 = sum(1 for s in l if (s.get("blockTime") or 0) > ahora - 3600 and s.get("err") is None)
+            filas.append((h1, ok1, parte[x["id"]]))
+        time.sleep(0.5)
+    filas.sort(reverse=True)
+    tot = sum(f[0] for f in filas)
+    print("ACT total 1h:", tot, "con err=None:", sum(f[1] for f in filas), "billeteras activas:", sum(1 for f in filas if f[0]))
+    acum = 0
+    for h1, ok1, w in filas[:40]:
+        acum += h1; print(f"ACT {h1:5d} {ok1:5d} {acum*100//max(tot,1):3d}% {w}")
+    open("/tmp/act.tsv", "w").write("\n".join(f"{w}\t{h}\t{o}" for h, o, w in filas))
