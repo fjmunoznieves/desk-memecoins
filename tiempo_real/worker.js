@@ -23,9 +23,12 @@ export default {
     }
     if (req.method === "POST" && url.pathname === "/alchemy") {
       const cuerpo = await req.text();
-      if (!env.ALCHEMY_SIGNING_KEY || !(await firmaOk(cuerpo, req.headers.get("X-Alchemy-Signature") || "", env.ALCHEMY_SIGNING_KEY)))
+      if (!env.ALCHEMY_SIGNING_KEY || !(await firmaOk(cuerpo, req.headers.get("X-Alchemy-Signature") || "", env.ALCHEMY_SIGNING_KEY))) {
+        await contar(env, "alchemy_firma_mala");
         return new Response("no", { status: 401 });
-      try { await alchemy(JSON.parse(cuerpo), env); } catch (e) {}
+      }
+      await contar(env, "alchemy_recibido");
+      try { await alchemy(JSON.parse(cuerpo), env); await contar(env, "alchemy_ok"); } catch (e) { await contar(env, "alchemy_error"); }
       return new Response("ok");
     }
     if (req.method === "GET" && url.pathname === "/eventos") {
@@ -36,7 +39,8 @@ export default {
       const r = await env.DB.prepare("SELECT COUNT(*) n, SUM(mc IS NOT NULL) con_precio, SUM(mc IS NULL AND COALESCE(intentos,0) >= 6) sin_dex, SUM(fuente='alchemy') alchemy, SUM(fuente='helius') helius, MAX(ts_det) ultimo, MAX(ts_precio) ultimo_precio FROM det").first();
       let err = "";
       try { await completar(env); } catch (e) { err = String(e).slice(0, 300); }
-      return Response.json({ ...r, ahora: ahora(), error_completar: err });
+      const c = await env.DB.prepare("SELECT k, n, ts FROM stats").all();
+      return Response.json({ ...r, ahora: ahora(), error_completar: err, contadores: c.results || [] });
     }
     return new Response("ok");
   },
@@ -72,6 +76,9 @@ async function completar(env) {
   await env.DB.batch(ops);
 }
 const ahora = () => Math.floor(Date.now() / 1000);
+async function contar(env, k) {
+  try { await env.DB.prepare("INSERT INTO stats(k, n, ts) VALUES (?, 1, ?) ON CONFLICT(k) DO UPDATE SET n = n + 1, ts = excluded.ts").bind(k, ahora()).run(); } catch (e) {}
+}
 async function firmaOk(cuerpo, firma, clave) {
   const k = await crypto.subtle.importKey("raw", new TextEncoder().encode(clave), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
   const s = new Uint8Array(await crypto.subtle.sign("HMAC", k, new TextEncoder().encode(cuerpo)));
