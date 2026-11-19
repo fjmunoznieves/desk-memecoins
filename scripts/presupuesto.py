@@ -58,8 +58,8 @@ if not manual and hoy.strftime("%Y-%m") == "2026-11" and hoy.day >= 19:
     if not (tipo.startswith("escaneo") and cron == "7 14 * * *"):
         print(f"modo 1 escaneo diario (Fran 19-nov): {tipo} {cron!r} se salta")
         corre = False
-    elif tipo == "escaneo_opcional":
-        corre = True
+    else:
+        corre = usado < 1990  # el único escaneo del día aguanta hasta casi el tope
 # 17-nov: si GitHub dispara el programado tarde y el guardián ya lanzó uno a mano, no repetir (choque al subir datos).
 if corre and not manual and tipo.startswith("escaneo"):
     r = subprocess.run(["gh", "api", f"repos/{repo}/actions/workflows/escaneo.yml/runs?per_page=5"], capture_output=True, text=True)
