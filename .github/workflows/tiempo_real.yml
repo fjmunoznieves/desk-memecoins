@@ -72,7 +72,7 @@ jobs:
           if [ -z "$ALCHEMY_NOTIFY_TOKEN" ]; then echo "sin ALCHEMY_NOTIFY_TOKEN: se omite Alchemy"; exit 0; fi
           WEBHOOK_URL="${WEBHOOK_URL%/webhook}/alchemy" SALIDA=/tmp/ak python3 scripts/alchemy_webhook.py
           echo "::add-mask::$(cat /tmp/ak)"
-          [ -s /tmp/ak ] || { echo "webhook Alchemy ya existía; se conserva su firma"; exit 0; }
+          [ -s /tmp/ak ] || { echo "sin cambio de firma"; exit 0; }
           cd tiempo_real && cat /tmp/ak | npx --yes wrangler@3.114.0 secret put ALCHEMY_SIGNING_KEY && rm -f /tmp/ak
       - name: Probar Worker
         run: |

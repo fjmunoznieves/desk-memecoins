@@ -23,28 +23,26 @@ def pedir(metodo, ruta, cuerpo=None):
 dirs = sorted({r["direccion"] for r in csv.DictReader(open("datos/watchlist_A_oper.tsv"), delimiter="\t")})
 lista = (pedir("GET", "/team-webhooks") or {}).get("data", [])
 mio = [w for w in lista if w.get("webhook_url") == URL]
-if mio:
-    w = mio[0]
-    print(f"webhook Alchemy ya existe ({w.get('network')}, activo={w.get('is_active')}); se actualizan direcciones")
-    pedir("PATCH", "/update-webhook-addresses", {"webhook_id": w["id"], "addresses_to_add": dirs, "addresses_to_remove": []})
-    if not w.get("is_active"):
-        pedir("PUT", "/update-webhook", {"webhook_id": w["id"], "is_active": True})
-        print("webhook Alchemy estaba desactivado (Alchemy lo apaga si fallan entregas): reactivado")
-else:
-    for red in ("SOLANA_MAINNET", "SOL_MAINNET"):
-        try:
-            req = urllib.request.Request(API + "/create-webhook", method="POST",
-                                         data=json.dumps({"network": red, "webhook_type": "ADDRESS_ACTIVITY", "webhook_url": URL,
-                                                          "name": "desk-h34-227", "addresses": dirs}).encode(),
-                                         headers={"X-Alchemy-Token": T, "Content-Type": "application/json", "User-Agent": "desk-tiempo-real/1.0"})
-            with urllib.request.urlopen(req, timeout=60) as r:
-                w = json.load(r).get("data", {}); break
-        except urllib.error.HTTPError as e:
-            print(f"red {red}: Alchemy respondió", e.code, e.read()[:300].decode(errors="ignore")); w = None
-    if not w:
-        sys.exit(1)
-    print(f"webhook Alchemy creado ({w.get('network')}): {len(dirs)} direcciones")
+if mio and mio[0].get("is_active"):
+    print(f"webhook Alchemy activo ({mio[0].get('network')}); no se toca ni se cambia la firma del Worker"); sys.exit(0)
+for w in mio:  # apagado (Alchemy lo apaga si fallan entregas): se borra y se crea de nuevo para tener una firma segura
+    pedir("DELETE", f"/delete-webhook?webhook_id={w['id']}")
+    print("webhook Alchemy apagado: borrado para recrearlo")
+w = None
+for red in ("SOLANA_MAINNET", "SOL_MAINNET"):
+    try:
+        req = urllib.request.Request(API + "/create-webhook", method="POST",
+                                     data=json.dumps({"network": red, "webhook_type": "ADDRESS_ACTIVITY", "webhook_url": URL,
+                                                      "name": "desk-h34-227", "addresses": dirs}).encode(),
+                                     headers={"X-Alchemy-Token": T, "Content-Type": "application/json", "User-Agent": "desk-tiempo-real/1.0"})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            w = json.load(r).get("data", {}); break
+    except urllib.error.HTTPError as e:
+        print(f"red {red}: Alchemy respondió", e.code, e.read()[:300].decode(errors="ignore"))
+if not w:
+    sys.exit(1)
+print(f"webhook Alchemy creado ({w.get('network')}): {len(dirs)} direcciones")
 k = w.get("signing_key") or ""
 if not k:
-    print("Alchemy no devolvió signing_key (se conserva la que tiene el Worker)"); sys.exit(0)
+    print("Alchemy no devolvió signing_key"); sys.exit(1)
 open(SAL, "w").write(k)
