@@ -149,7 +149,7 @@ async function precio(env, mint) {
 }
 
 // ---- Sondeo Shyft (19-nov) ----
-const MAX_TX = 50; // tope de transacciones leídas por minuto (CPU del plan gratis); el resto se cuenta como saltada
+const MAX_TX = 80; // tope de transacciones leídas por minuto (CPU del plan gratis); el resto se cuenta como saltada
 async function rpc(env, lote) {
   const r = await fetch("https://rpc.shyft.to?api_key=" + env.SHYFT_API_KEY, {
     method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(lote) });
