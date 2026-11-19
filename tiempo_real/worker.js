@@ -47,9 +47,29 @@ export default {
   },
 };
 async function completar(env) {
-    const r = await env.DB.prepare("SELECT mint FROM det WHERE mc IS NULL AND COALESCE(intentos, 0) < 6 AND ts_det > ? ORDER BY ts_det DESC LIMIT 8")
-      .bind(ahora() - 3600).all();
-    for (const x of r.results || []) await precio(env, x.mint);
+  // hasta 30 detecciones de los últimos 15 min sin precio, en UNA consulta a DexScreener (acepta 30 tokens por llamada)
+  const r = await env.DB.prepare("SELECT mint FROM det WHERE mc IS NULL AND COALESCE(intentos, 0) < 6 AND ts_det > ? ORDER BY ts_det DESC LIMIT 30")
+    .bind(ahora() - 900).all();
+  const mints = (r.results || []).map((x) => x.mint);
+  if (!mints.length) return;
+  let d = [];
+  try { d = await (await fetch("https://api.dexscreener.com/tokens/v1/solana/" + mints.join(","))).json(); } catch (e) { d = []; }
+  const mejor = new Map();
+  for (const p of Array.isArray(d) ? d : []) {
+    const t = (p.baseToken || {}).address;
+    if (!t) continue;
+    const q = mejor.get(t);
+    if (!q || ((p.liquidity || {}).usd || 0) > ((q.liquidity || {}).usd || 0)) mejor.set(t, p);
+  }
+  const ops = [];
+  for (const m of mints) {
+    const p = mejor.get(m);
+    if (p) ops.push(env.DB.prepare("UPDATE det SET sym = ?, precio = ?, mc = ?, liq = ?, pool = ?, creado = ?, ts_precio = ? WHERE mint = ?")
+      .bind(((p.baseToken || {}).symbol || "").slice(0, 20), String(p.priceUsd || ""), Math.round(p.marketCap || p.fdv || 0),
+            Math.round((p.liquidity || {}).usd || 0), p.pairAddress || "", p.pairCreatedAt || 0, ahora(), m));
+    else ops.push(env.DB.prepare("UPDATE det SET intentos = COALESCE(intentos, 0) + 1 WHERE mint = ?").bind(m));
+  }
+  await env.DB.batch(ops);
 }
 const ahora = () => Math.floor(Date.now() / 1000);
 async function firmaOk(cuerpo, firma, clave) {
