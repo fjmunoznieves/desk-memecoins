@@ -145,7 +145,7 @@ async function precio(env, mint) {
 }
 
 // ---- Sondeo Shyft (19-nov) ----
-const MAX_TX = 30; // tope de transacciones leídas por minuto (CPU del plan gratis); el resto se cuenta como saltada
+const MAX_TX = 50; // tope de transacciones leídas por minuto (CPU del plan gratis); el resto se cuenta como saltada
 async function rpc(env, lote) {
   const r = await fetch("https://rpc.shyft.to?api_key=" + env.SHYFT_API_KEY, {
     method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(lote) });
@@ -198,9 +198,12 @@ async function sondear(env) {
   await sumar(env, "shyft_tx_nuevas", nuevas.length);
   await sumar(env, "shyft_tx_bots", bots);
   await sumar(env, "shyft_saltadas", Math.max(0, nuevas.length - MAX_TX));
+  // primero las billeteras con menos movimiento en este minuto (las muy activas se parecen a bots)
+  const porW = new Map(); for (const n of nuevas) porW.set(n.w, (porW.get(n.w) || 0) + 1);
+  nuevas.sort((a, b) => porW.get(a.w) - porW.get(b.w));
   const leer = nuevas.slice(0, MAX_TX);
-  for (let i = 0; i < leer.length; i += 15) {
-    const parte = leer.slice(i, i + 15);
+  for (let i = 0; i < leer.length; i += 10) {
+    const parte = leer.slice(i, i + 10); // Shyft: máximo 10 getTransaction por lote
     let res = [];
     try {
       res = await rpc(env, parte.map((n, j) => ({ jsonrpc: "2.0", id: j, method: "getTransaction",
