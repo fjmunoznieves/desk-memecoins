@@ -50,7 +50,7 @@ export default {
   // Cada minuto: completa precio/MC/liq/edad (DexScreener) de las detecciones nuevas. Se separa del aviso porque el plan
   // gratis limita la CPU por petición y un aviso grande de Alchemy no alcanzaba a consultar DexScreener.
   async scheduled(evento, env, ctx) {
-    if (env.SHYFT_API_KEY) { try { await sondear(env); } catch (e) { await contar(env, "shyft_error"); } }
+    if (env.SHYFT_API_KEY) { try { await sondear(env); } catch (e) { await contar(env, "shyft_error_otro"); } }
     await completar(env);
   },
 };
@@ -154,38 +154,54 @@ async function sumar(env, k, n) {
   try { await env.DB.prepare("INSERT INTO stats(k, n, ts) VALUES (?, ?, ?) ON CONFLICT(k) DO UPDATE SET n = n + excluded.n, ts = excluded.ts").bind(k, n, ahora()).run(); } catch (e) {}
 }
 async function sondear(env) {
-  const ws = [...A];
-  const u = await env.DB.prepare("SELECT w, sig FROM ult").all();
-  const ult = new Map((u.results || []).map((x) => [x.w, x.sig]));
+  // Regla de bots del desk (operadores.tsv): >200 operaciones al día = bot. Se cuenta por billetera y día UTC;
+  // pasada esa cifra se siguen avanzando sus firmas pero no se leen sus transacciones (19-nov: is6MTR ~250/h).
+  const ws = [...A], dia = Math.floor(ahora() / 86400);
+  const u = await env.DB.prepare("SELECT w, sig, dia, cnt FROM ult").all();
+  const ult = new Map((u.results || []).map((x) => [x.w, x]));
   const nuevas = [], upd = [];
+  let bots = 0;
   for (let i = 0; i < ws.length; i += 50) {
     const parte = ws.slice(i, i + 50);
-    const res = await rpc(env, parte.map((w, j) => {
-      const o = { limit: 15 }; if (ult.get(w)) o.until = ult.get(w);
-      return { jsonrpc: "2.0", id: j, method: "getSignaturesForAddress", params: [w, o] };
-    }));
+    let res = [];
+    try {
+      res = await rpc(env, parte.map((w, j) => {
+        const o = { limit: 15 }; const x = ult.get(w); if (x && x.sig) o.until = x.sig;
+        return { jsonrpc: "2.0", id: j, method: "getSignaturesForAddress", params: [w, o] };
+      }));
+    } catch (e) { await contar(env, "shyft_error_firmas"); continue; }
     for (const x of res) {
       const w = parte[x.id], l = x.result;
       if (!w || !Array.isArray(l) || !l.length) continue;
-      upd.push(env.DB.prepare("INSERT INTO ult(w, sig, ts) VALUES (?, ?, ?) ON CONFLICT(w) DO UPDATE SET sig = excluded.sig, ts = excluded.ts").bind(w, l[0].signature, ahora()));
-      if (!ult.get(w)) continue; // primera vez: solo fija el punto de partida
-      for (const s of l) if (s.err == null) nuevas.push({ w, sig: s.signature, ts: s.blockTime || ahora() });
+      const prev = ult.get(w) || {};
+      const ok = l.filter((s) => s.err == null);
+      const cnt = (prev.dia === dia ? prev.cnt || 0 : 0) + l.length;
+      upd.push(env.DB.prepare("INSERT INTO ult(w, sig, ts, dia, cnt) VALUES (?, ?, ?, ?, ?) ON CONFLICT(w) DO UPDATE SET sig = excluded.sig, ts = excluded.ts, dia = excluded.dia, cnt = excluded.cnt")
+        .bind(w, l[0].signature, ahora(), dia, cnt));
+      if (!prev.sig) continue; // primera vez: solo fija el punto de partida
+      if (cnt > 200) { bots += ok.length; continue; }
+      for (const s of ok) nuevas.push({ w, sig: s.signature, ts: s.blockTime || ahora() });
     }
   }
   if (upd.length) await env.DB.batch(upd);
   await sumar(env, "shyft_minutos", 1);
   await sumar(env, "shyft_tx_nuevas", nuevas.length);
+  await sumar(env, "shyft_tx_bots", bots);
   await sumar(env, "shyft_saltadas", Math.max(0, nuevas.length - MAX_TX));
   const leer = nuevas.slice(0, MAX_TX);
   for (let i = 0; i < leer.length; i += 15) {
     const parte = leer.slice(i, i + 15);
-    const res = await rpc(env, parte.map((n, j) => ({ jsonrpc: "2.0", id: j, method: "getTransaction",
-      params: [n.sig, { encoding: "json", maxSupportedTransactionVersion: 0, commitment: "confirmed" }] })));
+    let res = [];
+    try {
+      res = await rpc(env, parte.map((n, j) => ({ jsonrpc: "2.0", id: j, method: "getTransaction",
+        params: [n.sig, { encoding: "json", maxSupportedTransactionVersion: 0, commitment: "confirmed" }] })));
+    } catch (e) { await contar(env, "shyft_error_tx"); continue; }
     for (const x of res) {
       const n = parte[x.id];
       if (n && x.result) await compraShyft(env, x.result, n);
     }
   }
+  await sumar(env, "shyft_tx_leidas", leer.length);
 }
 // misma regla que watch_solana.compra_de: recibe un token no base sin entregar otro no base, y gasta ≥0,05 SOL o entrega USDC/USDT
 async function compraShyft(env, t, n) {
