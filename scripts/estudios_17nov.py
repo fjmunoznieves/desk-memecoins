@@ -337,6 +337,12 @@ def main():
     try:
         d = h34(ahora, hora); guardar("datos/h34_sombra.tsv", C27, d)
         print(f"H34: {len(d)} entradas nuevas (primera A con MC 60-150 mil)")
+        # H34j (19-nov, Fran aprobó): misma H34 pero pool con <30 min de vida al detectar. Estudio 121 casos del rango:
+        # pool <30 min n=49 +30,7 % (+27/+34 por mitad, sin top5 +12 %, 17 operadores); 30-120 min 0 de 14; >2 h +4,5 %.
+        # Control: <30 min pierde en los otros rangos de MC. Ojo: el escaneo detecta con retraso, pocas filas esperadas.
+        dj = [dict(f, motivo="H34 joven (pool <30 min): " + f["motivo"]) for f in d if float(f.get("edad_d") or 99) * 1440 < 30]
+        guardar("datos/h34j_sombra.tsv", C27, dj)
+        print(f"H34j: {len(dj)} entradas nuevas (H34 con pool <30 min)")
     except Exception as e:
         print("h34 falló:", e)
     if "--sin-bundles" not in sys.argv:
@@ -344,7 +350,7 @@ def main():
     print(f"H27: {len(a)} entradas nuevas; IMIT: {len(b)} nuevos")
     if os.environ.get("GITHUB_ACTIONS"):  # el reloj solo hace git add de algunos archivos
         import subprocess
-        subprocess.run(["git", "add"] + [f for f in ("datos/h27_sombra.tsv", "datos/h33_sombra.tsv", "datos/h34_sombra.tsv", "datos/imitadores.tsv", "datos/bundles_eventos.tsv",
+        subprocess.run(["git", "add"] + [f for f in ("datos/h27_sombra.tsv", "datos/h33_sombra.tsv", "datos/h34_sombra.tsv", "datos/h34j_sombra.tsv", "datos/imitadores.tsv", "datos/bundles_eventos.tsv",
                                                     "datos/bundle_grupos.tsv", "datos/elite.tsv") if os.path.exists(f)], check=False)
 
 
