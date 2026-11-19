@@ -32,20 +32,25 @@ export default {
       const r = await env.DB.prepare("SELECT * FROM det WHERE ts_det > ? ORDER BY ts_det LIMIT 20000").bind(ahora() - 14 * 86400).all();
       return Response.json(r.results || []);
     }
-    if (req.method === "GET" && url.pathname === "/muestra") {
-      const r = await env.DB.prepare("SELECT ts, cuerpo FROM muestra WHERE id = 1").first();
-      return new Response(r ? r.ts + "\n" + r.cuerpo : "sin muestra");
+    if (req.method === "GET" && url.pathname === "/estado") {
+      const r = await env.DB.prepare("SELECT COUNT(*) n, SUM(mc IS NOT NULL) con_precio, SUM(mc IS NULL AND COALESCE(intentos,0) >= 6) sin_dex, SUM(fuente='alchemy') alchemy, SUM(fuente='helius') helius, MAX(ts_det) ultimo, MAX(ts_precio) ultimo_precio FROM det").first();
+      let err = "";
+      try { await completar(env); } catch (e) { err = String(e).slice(0, 300); }
+      return Response.json({ ...r, ahora: ahora(), error_completar: err });
     }
     return new Response("ok");
   },
   // Cada minuto: completa precio/MC/liq/edad (DexScreener) de las detecciones nuevas. Se separa del aviso porque el plan
   // gratis limita la CPU por petición y un aviso grande de Alchemy no alcanzaba a consultar DexScreener.
   async scheduled(evento, env, ctx) {
+    await completar(env);
+  },
+};
+async function completar(env) {
     const r = await env.DB.prepare("SELECT mint FROM det WHERE mc IS NULL AND COALESCE(intentos, 0) < 6 AND ts_det > ? ORDER BY ts_det DESC LIMIT 8")
       .bind(ahora() - 3600).all();
     for (const x of r.results || []) await precio(env, x.mint);
-  },
-};
+}
 const ahora = () => Math.floor(Date.now() / 1000);
 async function firmaOk(cuerpo, firma, clave) {
   const k = await crypto.subtle.importKey("raw", new TextEncoder().encode(clave), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
