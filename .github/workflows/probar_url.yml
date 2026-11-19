@@ -16,4 +16,4 @@ jobs:
       - env:
           U: ${{ inputs.url }}
         run: |
-          curl -s -m 30 -A "desk-prueba/1.0" -o r.txt -w "HTTP %{http_code}\n" "$U"; head -c 1500 r.txt; echo
+          curl -s -m 30 -A "desk-prueba/1.0" -o r.txt -w "HTTP %{http_code}\n" "$U"; head -c 6000 r.txt; echo
