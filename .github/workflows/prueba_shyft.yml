@@ -1,0 +1,11 @@
+name: Prueba Shyft
+on: workflow_dispatch
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/prueba_shyft.py
+        env:
+          SHYFT_API_KEY: ${{ secrets.SHYFT_API_KEY }}
