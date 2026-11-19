@@ -61,9 +61,14 @@ jobs:
         run: |
           npx --yes wrangler@3.114.0 deploy
           printf '%s' "$WEBHOOK_AUTH" | npx --yes wrangler@3.114.0 secret put WEBHOOK_AUTH
-          if [ -n "$ALCHEMY_SIGNING_KEY" ]; then printf '%s' "$ALCHEMY_SIGNING_KEY" | npx --yes wrangler@3.114.0 secret put ALCHEMY_SIGNING_KEY; else echo "sin ALCHEMY_SIGNING_KEY: /alchemy rechaza todo"; fi
+      - name: Webhook Alchemy (227 A)
         env:
-          ALCHEMY_SIGNING_KEY: ${{ secrets.ALCHEMY_SIGNING_KEY }}
+          ALCHEMY_NOTIFY_TOKEN: ${{ secrets.ALCHEMY_NOTIFY_TOKEN }}
+        run: |
+          if [ -z "$ALCHEMY_NOTIFY_TOKEN" ]; then echo "sin ALCHEMY_NOTIFY_TOKEN: se omite Alchemy"; exit 0; fi
+          WEBHOOK_URL="${WEBHOOK_URL%/webhook}/alchemy" SALIDA=/tmp/ak python3 scripts/alchemy_webhook.py
+          echo "::add-mask::$(cat /tmp/ak)"
+          cd tiempo_real && cat /tmp/ak | npx --yes wrangler@3.114.0 secret put ALCHEMY_SIGNING_KEY && rm -f /tmp/ak
       - name: Probar Worker
         run: |
           sleep 15
