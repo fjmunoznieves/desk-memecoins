@@ -6,6 +6,9 @@ on:
       webhook:
         description: "Crear/actualizar el webhook de Helius (100 créditos)"
         default: "si"
+      alchemy:
+        description: "Crear el webhook de Alchemy (227 A). OJO: el 19-nov gastó ~28M CU en ~1 h (plan gratis 30M/mes)"
+        default: "no"
 permissions:
   contents: write
 jobs:
@@ -66,6 +69,7 @@ jobs:
           npx --yes wrangler@3.114.0 deploy
           printf '%s' "$WEBHOOK_AUTH" | npx --yes wrangler@3.114.0 secret put WEBHOOK_AUTH
       - name: Webhook Alchemy (227 A)
+        if: ${{ inputs.alchemy == 'si' }}
         env:
           ALCHEMY_NOTIFY_TOKEN: ${{ secrets.ALCHEMY_NOTIFY_TOKEN }}
         run: |
