@@ -5,6 +5,7 @@
   escribe datos/alertas_pendientes.json para que el workflow abra un aviso (issue) en GitHub.
 La clave sale del secreto HELIUS_API_KEY y nunca se imprime."""
 import csv, json, os, sys, time, urllib.request, urllib.error
+T0 = time.time()
 
 KEY = os.environ.get("HELIUS_API_KEY", "").strip()
 RPC = f"https://mainnet.helius-rpc.com/?api-key={KEY}"
@@ -243,6 +244,16 @@ json.dump(st, open(ST, "w"), indent=1)
 json.dump(alertas, open(AL, "w"), indent=1)
 print(("punto de partida fijado; " if primera else "") + f"billeteras con tx nuevas: {len(nuevas)}, compras: {len(compras)}, alertas: {len(alertas)}")
 
+# 19-nov: el escaneo de 12:27 se cortó por el límite de 30 min antes de llegar a estudios_17nov (H34 en tiempo real).
+# Por eso H27/IMIT/bundles/H34rt corren primero (son baratos, sin Helius) y los pasos opcionales se saltan si no hay tiempo.
+import subprocess
+def _paso(nombre, opcional=False, limite_min=17):
+    if opcional and (time.time() - T0) / 60 > limite_min:
+        print(f"sin tiempo ({(time.time() - T0) / 60:.0f} min): se salta {nombre}")
+        return
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), nombre)], check=False)
+if not os.environ.get("ES_H23"):
+    _paso("estudios_17nov.py")  # H27, IMIT, bundles, H34 y H34 en tiempo real
 # H23 (15-nov, aprobado por Fran): vigila las 129 billeteras C solo en los escaneos de 3:47 AM y 3:47 PM Bogotá
 # (8:47 y 20:47 UTC; se acepta hasta 2 h de retraso de GitHub). Solo registro, sin avisos.
 import subprocess
@@ -276,12 +287,10 @@ if not os.environ.get("ES_H23"):
     import subprocess
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "vigila_sostenidas.py")], check=False)
     # Liquidez de lo que está en seguimiento (17-nov, Fran): solo registro, DexScreener.
-    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "liquidez.py")], check=False)
+    _paso("liquidez.py", opcional=True, limite_min=16)
     # H25 y H26 en sombra (17-nov, Fran): maduros con A sosteniendo / lanzamientos con liquidez 100-250k. Solo registro.
-    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "h25_h26.py")], check=False)
+    _paso("h25_h26.py", opcional=True, limite_min=18)
     # Consenso A en vivo (16-nov, Fran): 2+ operadores A compran el mismo token en 72 h → seguimiento + aviso.
-    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "consenso_A.py")], check=False)
-    # H27 (élite en tokens viejos), IMIT (nombres que imitan) y bundles (17-nov, Fran): solo registro, sin Helius.
-    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "estudios_17nov.py")], check=False)  # H27, IMIT, bundles
-    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "mesa_datos.py")], check=False)  # datos de la Mesa interactiva
-    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "h28_catalizador.py")], check=False)  # H28 catalizador (sombra)
+    _paso("consenso_A.py", opcional=True, limite_min=19)
+    _paso("mesa_datos.py", opcional=True, limite_min=20)  # datos de la Mesa interactiva
+    _paso("h28_catalizador.py", opcional=True, limite_min=20)  # H28 catalizador (sombra)
