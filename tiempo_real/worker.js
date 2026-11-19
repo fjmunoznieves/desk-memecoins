@@ -207,7 +207,7 @@ async function sondear(env) {
     let res = [];
     try {
       res = await rpc(env, parte.map((n, j) => ({ jsonrpc: "2.0", id: j, method: "getTransaction",
-        params: [n.sig, { encoding: "json", maxSupportedTransactionVersion: 0, commitment: "confirmed" }] })));
+        params: [n.sig, { encoding: "json", maxSupportedTransactionVersion: 1, commitment: "confirmed" }] })));
     } catch (e) { await contar(env, "shyft_error_tx"); dbg.push({ err_tx: String(e).slice(0, 200) }); continue; }
     const malos = res.filter((x) => x.error);
     if (malos.length) dbg.push({ err_items: malos.length, e: JSON.stringify(malos[0].error).slice(0, 200) });
@@ -240,7 +240,7 @@ async function compraShyft(env, t, n) {
   if (!dif.size) return "sin_saldos_dueño";
   if (!recibe.length) return "no_recibe";
   if (entrega) return "entrega_token";
-  const ks = ((t.transaction || {}).message || {}).accountKeys || [];
+  const ks = (((t.transaction || {}).message || {}).accountKeys || []).map((k) => (typeof k === "string" ? k : (k || {}).pubkey));
   const i = ks.indexOf(w);
   let sol = i >= 0 ? Math.max(0, ((meta.preBalances || [])[i] - (meta.postBalances || [])[i]) / 1e9 || 0) : 0;
   sol += Math.max(0, -(dif.get("So11111111111111111111111111111111111111112") || 0));
