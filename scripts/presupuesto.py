@@ -47,6 +47,19 @@ elif tipo == "escaneo":
     corre = usado < 1900
 else:
     corre = usado < 1950
+# 19-nov (Fran eligió "recortar a 1 escaneo diario" para no pasar 2.000 min en noviembre): hasta fin de mes solo
+# corre el escaneo programado de las 9:07 AM Bogotá (cron "7 14 * * *"); el resto de programados (otros escaneos,
+# reloj 1:07 AM, muertos 1:23 AM) se salta. Las corridas manuales siguen corriendo. Se apaga solo el 1-dic.
+if not manual and hoy.strftime("%Y-%m") == "2026-11" and hoy.day >= 19:
+    try:
+        cron = json.load(open(os.environ.get("GITHUB_EVENT_PATH", ""))).get("schedule", "")
+    except Exception:
+        cron = ""
+    if not (tipo.startswith("escaneo") and cron == "7 14 * * *"):
+        print(f"modo 1 escaneo diario (Fran 19-nov): {tipo} {cron!r} se salta")
+        corre = False
+    elif tipo == "escaneo_opcional":
+        corre = True
 # 17-nov: si GitHub dispara el programado tarde y el guardián ya lanzó uno a mano, no repetir (choque al subir datos).
 if corre and not manual and tipo.startswith("escaneo"):
     r = subprocess.run(["gh", "api", f"repos/{repo}/actions/workflows/escaneo.yml/runs?per_page=5"], capture_output=True, text=True)
