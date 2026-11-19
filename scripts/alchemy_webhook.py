@@ -43,5 +43,5 @@ else:
     print(f"webhook Alchemy creado ({w.get('network')}): {len(dirs)} direcciones")
 k = w.get("signing_key") or ""
 if not k:
-    print("Alchemy no devolvió signing_key"); sys.exit(1)
+    print("Alchemy no devolvió signing_key (se conserva la que tiene el Worker)"); sys.exit(0)
 open(SAL, "w").write(k)

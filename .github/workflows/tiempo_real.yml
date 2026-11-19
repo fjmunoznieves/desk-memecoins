@@ -45,6 +45,10 @@ jobs:
           [ -n "$ID" ] || { echo "no se pudo crear D1 (¿el token tiene permiso D1 Edit?)"; exit 1; }
           python3 -c "import json;print(json.dumps({'sql':open('tiempo_real/esquema.sql').read()}))" > /tmp/q.json
           curl -s -X POST -H "$H" -H "Content-Type: application/json" --data @/tmp/q.json "$API/$ID/query" | python3 -c "import json,sys;d=json.load(sys.stdin);print('esquema D1:', 'ok' if d.get('success') else d.get('errors'))"
+          for q in "ALTER TABLE det ADD COLUMN intentos INTEGER DEFAULT 0" "ALTER TABLE det ADD COLUMN ts_precio INTEGER"; do
+            python3 -c "import json,sys;print(json.dumps({'sql':sys.argv[1]}))" "$q" > /tmp/q.json
+            curl -s -X POST -H "$H" -H "Content-Type: application/json" --data @/tmp/q.json "$API/$ID/query" | python3 -c "import json,sys;d=json.load(sys.stdin);print('alter:', 'ok' if d.get('success') else 'ya existía')"
+          done
           printf '\n[[d1_databases]]\nbinding = "DB"\ndatabase_name = "desk-h34"\ndatabase_id = "%s"\n' "$ID" >> tiempo_real/wrangler.toml
       - name: Subdominio workers.dev
         run: |
@@ -68,6 +72,7 @@ jobs:
           if [ -z "$ALCHEMY_NOTIFY_TOKEN" ]; then echo "sin ALCHEMY_NOTIFY_TOKEN: se omite Alchemy"; exit 0; fi
           WEBHOOK_URL="${WEBHOOK_URL%/webhook}/alchemy" SALIDA=/tmp/ak python3 scripts/alchemy_webhook.py
           echo "::add-mask::$(cat /tmp/ak)"
+          [ -s /tmp/ak ] || { echo "webhook Alchemy ya existía; se conserva su firma"; exit 0; }
           cd tiempo_real && cat /tmp/ak | npx --yes wrangler@3.114.0 secret put ALCHEMY_SIGNING_KEY && rm -f /tmp/ak
       - name: Probar Worker
         run: |

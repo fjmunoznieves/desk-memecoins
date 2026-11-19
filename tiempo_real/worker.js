@@ -2,7 +2,7 @@
 // POST /webhook : Helius (enhanced, SWAP) de 30 billeteras; exige header Authorization = WEBHOOK_AUTH.
 // POST /alchemy : Alchemy Address Activity (Solana) de las 227 A; exige firma X-Alchemy-Signature (HMAC con ALCHEMY_SIGNING_KEY).
 // Cada PRIMERA compra de un token por una billetera vigilada se guarda en D1 (tabla det) con precio/MC/liq/edad de DexScreener.
-// GET /eventos : detecciones de los últimos 14 días (datos públicos de la cadena). GET /muestra: último aviso de Alchemy (diagnóstico).
+// GET /eventos : detecciones de los últimos 14 días (datos públicos de la cadena). Cron cada minuto: precio de DexScreener.
 import { A } from "./billeteras.js";
 const BASES = new Set([
   "So11111111111111111111111111111111111111112",
@@ -25,7 +25,6 @@ export default {
       const cuerpo = await req.text();
       if (!env.ALCHEMY_SIGNING_KEY || !(await firmaOk(cuerpo, req.headers.get("X-Alchemy-Signature") || "", env.ALCHEMY_SIGNING_KEY)))
         return new Response("no", { status: 401 });
-      try { await env.DB.prepare("INSERT OR REPLACE INTO muestra(id, ts, cuerpo) VALUES (1, ?, ?)").bind(ahora(), cuerpo.slice(0, 60000)).run(); } catch (e) {}
       try { await alchemy(JSON.parse(cuerpo), env); } catch (e) {}
       return new Response("ok");
     }
@@ -38,6 +37,13 @@ export default {
       return new Response(r ? r.ts + "\n" + r.cuerpo : "sin muestra");
     }
     return new Response("ok");
+  },
+  // Cada minuto: completa precio/MC/liq/edad (DexScreener) de las detecciones nuevas. Se separa del aviso porque el plan
+  // gratis limita la CPU por petición y un aviso grande de Alchemy no alcanzaba a consultar DexScreener.
+  async scheduled(evento, env, ctx) {
+    const r = await env.DB.prepare("SELECT mint FROM det WHERE mc IS NULL AND COALESCE(intentos, 0) < 6 AND ts_det > ? ORDER BY ts_det DESC LIMIT 8")
+      .bind(ahora() - 3600).all();
+    for (const x of r.results || []) await precio(env, x.mint);
   },
 };
 const ahora = () => Math.floor(Date.now() / 1000);
@@ -80,16 +86,20 @@ async function alchemy(j, env) {
   }
 }
 async function registrar(env, mint, w, ts_tx, firma, fuente) {
-  const r = await env.DB.prepare("INSERT OR IGNORE INTO det(mint, billetera, ts_tx, ts_det, firma, fuente) VALUES (?, ?, ?, ?, ?, ?)")
+  // solo cuenta la primera compra de cada token; el precio lo completa el cron de cada minuto
+  await env.DB.prepare("INSERT OR IGNORE INTO det(mint, billetera, ts_tx, ts_det, firma, fuente) VALUES (?, ?, ?, ?, ?, ?)")
     .bind(mint, w, ts_tx, ahora(), String(firma).slice(0, 100), fuente).run();
-  if (!r.meta || r.meta.changes !== 1) return;  // ya visto: solo cuenta la primera compra
+}
+async function precio(env, mint) {
   try {
     const d = await (await fetch("https://api.dexscreener.com/tokens/v1/solana/" + mint)).json();
     if (Array.isArray(d) && d.length) {
       const p = d.reduce((x, y) => (((y.liquidity || {}).usd || 0) > ((x.liquidity || {}).usd || 0) ? y : x));
-      await env.DB.prepare("UPDATE det SET sym = ?, precio = ?, mc = ?, liq = ?, pool = ?, creado = ?, ts_det = ? WHERE mint = ?")
+      await env.DB.prepare("UPDATE det SET sym = ?, precio = ?, mc = ?, liq = ?, pool = ?, creado = ?, ts_precio = ? WHERE mint = ?")
         .bind(((p.baseToken || {}).symbol || "").slice(0, 20), String(p.priceUsd || ""), Math.round(p.marketCap || p.fdv || 0),
               Math.round((p.liquidity || {}).usd || 0), p.pairAddress || "", p.pairCreatedAt || 0, ahora(), mint).run();
+      return;
     }
   } catch (e) {}
+  await env.DB.prepare("UPDATE det SET intentos = COALESCE(intentos, 0) + 1 WHERE mint = ?").bind(mint).run();
 }

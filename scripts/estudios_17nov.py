@@ -283,14 +283,15 @@ def h34rt(ahora, hora):
         mc = float(m.get("mc") or 0)
         if o.get("grupo") != "A" or o.get("bot") == "si" or not (60e3 <= mc <= 150e3) or previas[t] < tx - 60:
             continue
-        edad_min = (float(m.get("ts_det") or 0) * 1000 - float(m.get("creado") or 0)) / 6e4 if m.get("creado") else 9e9
-        lag = float(m.get("ts_det") or 0) - tx
+        edad_min = (tx * 1000 - float(m.get("creado") or 0)) / 6e4 if m.get("creado") else 9e9
+        tp = float(m.get("ts_precio") or m.get("ts_det") or 0)  # momento del precio (cron del Worker, ~1 min)
+        lag = tp - tx
         oper = o.get("operador", b[:6]); liq = float(m.get("liq") or 0)
-        filas.append(dict(ts=int(m.get("ts_det") or ahora), hora_utc=time.strftime("%Y-%m-%d %H:%M", time.gmtime(int(m.get("ts_det") or ahora))),
+        filas.append(dict(ts=int(tp or ahora), hora_utc=time.strftime("%Y-%m-%d %H:%M", time.gmtime(int(tp or ahora))),
                           cadena="solana", token=t, sym=m.get("sym", ""), precio=m.get("precio"), liq=round(liq), mc=round(mc),
                           liq_mc_pct=round(100 * liq / mc, 1) if mc else "", edad_d=round(edad_min / 1440, 4), n_elite=1, elite=oper,
                           pool=m.get("pool", ""),
-                          motivo=f"{'JOVEN ' if edad_min < 30 else ''}H34 tiempo real: primera A ({oper}), MC {round(mc):,}, pool {edad_min:.0f} min, detectado {lag:.0f} s tras la compra"))
+                          motivo=f"{'JOVEN ' if edad_min < 30 else ''}H34 tiempo real: primera A ({oper}), MC {round(mc):,}, pool {edad_min:.0f} min, precio {lag:.0f} s tras la compra ({m.get("fuente", "")})"))
         print(f"H34rt entrada sombra: {m.get('sym')} {t} {oper} MC {round(mc):,} pool {edad_min:.0f} min, retraso {lag:.0f} s")
     return filas
 
