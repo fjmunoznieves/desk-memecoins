@@ -1,0 +1,5 @@
+name = "desk-h34"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+workers_dev = true
+# kv_namespaces lo agrega el workflow tiempo_real.yml al crear el espacio KV

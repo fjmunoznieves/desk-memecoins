@@ -1,0 +1,68 @@
+name: Tiempo real (Worker Cloudflare + webhook Helius)
+# 19-nov (Fran): vigilancia en tiempo real de las billeteras de H34. Manual. Solo lectura de la cadena, paper.
+on:
+  workflow_dispatch:
+    inputs:
+      webhook:
+        description: "Crear/actualizar el webhook de Helius (100 créditos)"
+        default: "si"
+permissions:
+  contents: write
+jobs:
+  desplegar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Clave del webhook (derivada, nunca se imprime)
+        run: |
+          A=$(printf '%s' "${CLOUDFLARE_API_TOKEN}desk-h34" | sha256sum | cut -c1-48)
+          echo "::add-mask::$A"
+          echo "WEBHOOK_AUTH=$A" >> "$GITHUB_ENV"
+      - name: Espacio KV
+        run: |
+          API="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}"
+          ID=$(curl -s -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "$API/storage/kv/namespaces?per_page=100" | python3 -c "import json,sys;d=json.load(sys.stdin);print(next((n['id'] for n in d.get('result') or [] if n['title']=='desk-h34'),''))")
+          if [ -z "$ID" ]; then
+            ID=$(curl -s -X POST -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H "Content-Type: application/json" -d '{"title":"desk-h34"}' "$API/storage/kv/namespaces" | python3 -c "import json,sys;d=json.load(sys.stdin);print((d.get('result') or {}).get('id','') or (print(d.get('errors'),file=sys.stderr) or ''))")
+          fi
+          [ -n "$ID" ] || { echo "no se pudo crear el KV (¿el token tiene permiso Workers KV Storage?)"; exit 1; }
+          printf '\n[[kv_namespaces]]\nbinding = "H34"\nid = "%s"\n' "$ID" >> tiempo_real/wrangler.toml
+      - name: Subdominio workers.dev
+        run: |
+          API="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/subdomain"
+          S=$(curl -s -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" "$API" | python3 -c "import json,sys;d=json.load(sys.stdin);print((d.get('result') or {}).get('subdomain') or '')")
+          if [ -z "$S" ]; then
+            S="desk-$(printf '%s' "$CLOUDFLARE_ACCOUNT_ID" | sha256sum | cut -c1-8)"
+            curl -s -X PUT -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H "Content-Type: application/json" -d "{\"subdomain\":\"$S\"}" "$API" > /dev/null
+          fi
+          echo "WEBHOOK_URL=https://desk-h34.$S.workers.dev/webhook" >> "$GITHUB_ENV"
+          echo "https://desk-h34.$S.workers.dev" > datos/rt_url.txt
+      - name: Publicar Worker
+        working-directory: tiempo_real
+        run: |
+          npx --yes wrangler@3.114.0 deploy
+          printf '%s' "$WEBHOOK_AUTH" | npx --yes wrangler@3.114.0 secret put WEBHOOK_AUTH
+      - name: Probar Worker
+        run: |
+          sleep 15
+          U=$(cat datos/rt_url.txt)
+          echo "GET /eventos: $(curl -s -m 20 "$U/eventos" | head -c 200)"
+          echo "POST sin clave (debe dar 401): $(curl -s -o /dev/null -w '%{http_code}' -m 20 -X POST "$U/webhook")"
+      - name: Webhook Helius
+        if: ${{ inputs.webhook == 'si' }}
+        env:
+          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+        run: python3 scripts/helius_webhook.py
+      - name: Guardar URL
+        run: |
+          git config user.name "desk-bot"; git config user.email "desk-bot@users.noreply.github.com"
+          git add datos/rt_url.txt
+          git commit -m "Tiempo real: URL del Worker" || true
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done

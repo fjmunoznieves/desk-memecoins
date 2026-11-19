@@ -244,6 +244,57 @@ def h34(ahora, hora, ventana=12 * 3600):
     return filas
 
 
+def h34rt(ahora, hora):
+    """H34rt (19-nov, Fran): H34 medida en tiempo real. Un Worker de Cloudflare recibe de Helius (webhook) las compras de las
+    30 billeteras de datos/rt_billeteras.txt y guarda la PRIMERA compra de cada token con precio/MC de DexScreener a los
+    segundos. Aquí se leen esas detecciones y se aplica la misma regla de H34: primera de las nuestras (nadie nuestro antes),
+    operador A sin bots, MC 60-150 mil. La entrada en sombra usa el precio del Worker (sin retraso del escaneo).
+    Marca "joven" si el pool tenía <30 min (H34j). Solo registro, paper."""
+    import json as _j, urllib.request as _u
+    if not os.path.exists("datos/rt_url.txt"):
+        return []
+    url = open("datos/rt_url.txt").read().strip() + "/eventos"
+    try:
+        ev = _j.load(_u.urlopen(_u.Request(url, headers={"User-Agent": "desk-h34rt/1.0"}), timeout=30))
+    except Exception as e:
+        print("h34rt: no se pudo leer el Worker:", str(e)[:120]); return []
+    op = {r["billetera"]: r for r in leer("datos/operadores.tsv")}
+    ya = {r["token"] for r in leer("datos/h34rt_sombra.tsv")}
+    previas = defaultdict(lambda: 9e12)  # token -> primera vez que vimos a una billetera nuestra (no bot) en él
+    for r in leer("datos/vector_profundo.tsv") + leer("datos/vector_ops_A_289.tsv") + leer("datos/vector_ops_B_148.tsv"):
+        try:
+            ts = float(r.get("primera_compra") or 0)
+        except ValueError:
+            continue
+        if ts > 0 and op.get(r["billetera"], {}).get("bot") != "si":
+            previas[r["token"]] = min(previas[r["token"]], ts)
+    for r in leer("datos/fotos_saldos.tsv"):
+        try:
+            if float(r.get("usd") or 0) > 0:
+                previas[r["token"]] = min(previas[r["token"]], float(r["ts"]))
+        except (TypeError, ValueError):
+            pass
+    filas = []
+    for m in ev:
+        t = m.get("mint"); b = m.get("billetera"); tx = float(m.get("ts_tx") or m.get("ts_det") or 0)
+        if not t or t in ya:
+            continue
+        o = op.get(b, {})
+        mc = float(m.get("mc") or 0)
+        if o.get("grupo") != "A" or o.get("bot") == "si" or not (60e3 <= mc <= 150e3) or previas[t] < tx - 60:
+            continue
+        edad_min = (float(m.get("ts_det") or 0) * 1000 - float(m.get("creado") or 0)) / 6e4 if m.get("creado") else 9e9
+        lag = float(m.get("ts_det") or 0) - tx
+        oper = o.get("operador", b[:6]); liq = float(m.get("liq") or 0)
+        filas.append(dict(ts=int(m.get("ts_det") or ahora), hora_utc=time.strftime("%Y-%m-%d %H:%M", time.gmtime(int(m.get("ts_det") or ahora))),
+                          cadena="solana", token=t, sym=m.get("sym", ""), precio=m.get("precio"), liq=round(liq), mc=round(mc),
+                          liq_mc_pct=round(100 * liq / mc, 1) if mc else "", edad_d=round(edad_min / 1440, 4), n_elite=1, elite=oper,
+                          pool=m.get("pool", ""),
+                          motivo=f"{'JOVEN ' if edad_min < 30 else ''}H34 tiempo real: primera A ({oper}), MC {round(mc):,}, pool {edad_min:.0f} min, detectado {lag:.0f} s tras la compra"))
+        print(f"H34rt entrada sombra: {m.get('sym')} {t} {oper} MC {round(mc):,} pool {edad_min:.0f} min, retraso {lag:.0f} s")
+    return filas
+
+
 def bundles():
     m = mapa()
     compras = defaultdict(dict)  # token -> billetera -> ts primera compra
@@ -343,6 +394,8 @@ def main():
         dj = [dict(f, motivo="H34 joven (pool <30 min): " + f["motivo"]) for f in d if float(f.get("edad_d") or 99) * 1440 < 30]
         guardar("datos/h34j_sombra.tsv", C27, dj)
         print(f"H34j: {len(dj)} entradas nuevas (H34 con pool <30 min)")
+        e = h34rt(ahora, hora); guardar("datos/h34rt_sombra.tsv", C27, e)
+        print(f"H34rt: {len(e)} entradas nuevas (tiempo real)")
     except Exception as e:
         print("h34 falló:", e)
     if "--sin-bundles" not in sys.argv:
@@ -350,7 +403,7 @@ def main():
     print(f"H27: {len(a)} entradas nuevas; IMIT: {len(b)} nuevos")
     if os.environ.get("GITHUB_ACTIONS"):  # el reloj solo hace git add de algunos archivos
         import subprocess
-        subprocess.run(["git", "add"] + [f for f in ("datos/h27_sombra.tsv", "datos/h33_sombra.tsv", "datos/h34_sombra.tsv", "datos/h34j_sombra.tsv", "datos/imitadores.tsv", "datos/bundles_eventos.tsv",
+        subprocess.run(["git", "add"] + [f for f in ("datos/h27_sombra.tsv", "datos/h33_sombra.tsv", "datos/h34_sombra.tsv", "datos/h34j_sombra.tsv", "datos/h34rt_sombra.tsv", "datos/imitadores.tsv", "datos/bundles_eventos.tsv",
                                                     "datos/bundle_grupos.tsv", "datos/elite.tsv") if os.path.exists(f)], check=False)
 
 
