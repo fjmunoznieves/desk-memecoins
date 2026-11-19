@@ -64,3 +64,19 @@ if os.environ.get("ACTIVIDAD"):
     for h1, ok1, w in filas[:40]:
         acum += h1; print(f"ACT {h1:5d} {ok1:5d} {acum*100//max(tot,1):3d}% {w}")
     open("/tmp/act.tsv", "w").write("\n".join(f"{w}\t{h}\t{o}" for h, o, w in filas))
+
+# 6) depuración: orden de firmas, efecto de "until" y lote de getTransaction
+if os.environ.get("ACTIVIDAD") == "debug":
+    w = "is6MTRHEgyFLNTfYcuV4QBWLjrZBfmhVNYR6ccgr8KV"
+    st, r, dt = post(sig(w)); l = r.get("result") or []
+    print("DBG orden blockTime:", [s.get("blockTime") for s in l], "slots:", [s.get("slot") for s in l])
+    if len(l) > 2:
+        st, r2, dt = post({"jsonrpc": "2.0", "id": 1, "method": "getSignaturesForAddress", "params": [w, {"limit": 15, "until": l[2]["signature"]}]})
+        l2 = r2.get("result") if isinstance(r2, dict) else r2
+        print("DBG until=3ª firma -> devuelve", len(l2 or []), "(debería ser 2)")
+        lote = [{"jsonrpc": "2.0", "id": j, "method": "getTransaction", "params": [s["signature"], {"encoding": "json", "maxSupportedTransactionVersion": 0, "commitment": "confirmed"}]} for j, s in enumerate(l[:15])]
+        st, r3, dt = post(lote)
+        print("DBG lote getTransaction:", st, f"{dt:.2f}s", (sum(1 for x in r3 if x.get('result')) if isinstance(r3, list) else str(r3)[:300]))
+        if isinstance(r3, list):
+            print("DBG errores:", [str(x.get("error"))[:120] for x in r3 if x.get("error")][:3])
+        st, r4, dt = post(lote[:3]); print("DBG lote 3:", st, (sum(1 for x in r4 if x.get('result')) if isinstance(r4, list) else str(r4)[:300]))
