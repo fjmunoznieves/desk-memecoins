@@ -178,6 +178,72 @@ def h33(ahora, hora, ventana=12 * 3600):
     return filas
 
 
+def h34(ahora, hora, ventana=12 * 3600):
+    """H34 "primera A con MC 60-150 mil" (19-nov, Fran aprobó la recomendación del estudio de la primera A: 2.039 casos de 75 días,
+    entrar 1 min después de la primera A pierde −6,7 %; la única franja positiva en las dos mitades fue MC 60–150 mil al entrar,
+    +11 % y +9 %, 121 casos, 19 ganadoras, sin top 5 +2 %). Una A sin bots compra (logs de compras, últimas 12 h) un token donde
+    ninguna otra billetera nuestra (A/B/C) había entrado antes, y el MC al detectar está entre 60 y 150 mil. OJO: el estudio entra
+    1 minuto después de la A; aquí detectamos con el retraso del escaneo, así que mide la franja con retraso. Solo registro."""
+    import csv as _c
+    op = {}
+    for r in leer("datos/operadores.tsv"):
+        op[r["billetera"]] = r
+    ya = {r["token"] for r in leer("datos/h34_sombra.tsv")}
+    previas = defaultdict(set)  # token -> billeteras nuestras vistas antes de la ventana
+    for r in leer("datos/vector_profundo.tsv"):
+        try:
+            if int(float(r.get("primera_compra") or 0)) < ahora - ventana:
+                previas[r["token"]].add(r["billetera"])
+        except ValueError:
+            pass
+    for r in leer("datos/fotos_saldos.tsv"):
+        try:
+            if int(float(r["ts"])) < ahora - ventana and float(r.get("usd") or 0) > 0:
+                previas[r["token"]].add(r["billetera"])
+        except (TypeError, ValueError):
+            pass
+    compras = defaultdict(list)
+    for f in ("datos/consenso_A_compras.tsv", "datos/h22_compras.tsv", "datos/h23_compras.tsv", "datos/watchlist_compras.tsv"):
+        for r in leer(f):
+            try:
+                ts = int(r["ts"])
+            except (TypeError, ValueError):
+                continue
+            compras[r["token"]].append((ts, r.get("billetera"), f))
+            if ts < ahora - ventana:
+                previas[r["token"]].add(r.get("billetera"))
+    cand = {}
+    for t, l in compras.items():
+        if t in ya or previas.get(t):
+            continue
+        rec = sorted(x for x in l if ahora - x[0] <= ventana)
+        if not rec:
+            continue
+        b = rec[0][1]
+        o = op.get(b, {})
+        if o.get("grupo") == "A" and o.get("bot") != "si":
+            cand[t] = (b, o.get("operador", b[:6]), len({x[1] for x in rec}))
+    if not cand:
+        return []
+    info = dex(list(cand))
+    filas = []
+    for t, (b, oper, n) in cand.items():
+        p = info.get(t)
+        if not p:
+            continue
+        liq = (p.get("liquidity") or {}).get("usd") or 0
+        mc = p.get("marketCap") or p.get("fdv") or 0
+        if 60e3 <= mc <= 150e3:
+            edad = (ahora * 1000 - (p.get("pairCreatedAt") or ahora * 1000)) / 8.64e7
+            ch = p.get("priceChange") or {}
+            filas.append(dict(ts=ahora, hora_utc=hora, cadena="solana", token=t, sym=p["baseToken"]["symbol"], precio=p.get("priceUsd"),
+                              liq=round(liq), mc=round(mc), liq_mc_pct=round(100 * liq / mc, 1) if mc else "", edad_d=round(edad, 2),
+                              n_elite=n, elite=oper, pool=p.get("pairAddress"),
+                              motivo=f"primera A ({oper}) sin otra nuestra antes, MC {round(mc):,} al detectar, c1 {ch.get('h1')} %, c24 {ch.get('h24')} % (detección con retraso del escaneo)"))
+            print(f"H34 entrada sombra: {p['baseToken']['symbol']} {t} primera A {oper}, MC {round(mc):,}, liq {round(liq):,}")
+    return filas
+
+
 def bundles():
     m = mapa()
     compras = defaultdict(dict)  # token -> billetera -> ts primera compra
@@ -268,12 +334,17 @@ def main():
         print(f"H33: {len(c)} entradas nuevas (élite sola en lanzamiento)")
     except Exception as e:
         print("h33 falló:", e)
+    try:
+        d = h34(ahora, hora); guardar("datos/h34_sombra.tsv", C27, d)
+        print(f"H34: {len(d)} entradas nuevas (primera A con MC 60-150 mil)")
+    except Exception as e:
+        print("h34 falló:", e)
     if "--sin-bundles" not in sys.argv:
         bundles()
     print(f"H27: {len(a)} entradas nuevas; IMIT: {len(b)} nuevos")
     if os.environ.get("GITHUB_ACTIONS"):  # el reloj solo hace git add de algunos archivos
         import subprocess
-        subprocess.run(["git", "add"] + [f for f in ("datos/h27_sombra.tsv", "datos/h33_sombra.tsv", "datos/imitadores.tsv", "datos/bundles_eventos.tsv",
+        subprocess.run(["git", "add"] + [f for f in ("datos/h27_sombra.tsv", "datos/h33_sombra.tsv", "datos/h34_sombra.tsv", "datos/imitadores.tsv", "datos/bundles_eventos.tsv",
                                                     "datos/bundle_grupos.tsv", "datos/elite.tsv") if os.path.exists(f)], check=False)
 
 

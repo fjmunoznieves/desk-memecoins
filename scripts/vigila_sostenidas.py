@@ -67,7 +67,7 @@ def avisar():
     if nuevas and repo:
         cuerpo = "\n".join(f"- **{a['sym']}** `{a['token']}`: +{a['h6']} % en 6 h (+{a['h1']} % en 1 h), MC {a['mc']:,}, liq {a['liq']:,}, "
                            f"siguen dentro (saldo real): {a['dentro']}. {a['dexscreener']}" for a in nuevas)
-        r = subprocess.run(["gh", "issue", "create", "--repo", repo, "--title", f"Sube token que nuestras A sostienen ({nuevas[0]['hora_utc']} UTC)",
+        r = subprocess.run(["gh", "issue", "create", "--repo", repo, "--title", f"[registro] Sube token que nuestras A sostienen ({nuevas[0]['hora_utc']} UTC)",
                             "--body", cuerpo + "\n\nSolo aviso, paper trading."], check=False)
         if r.returncode == 0:
             os.remove(PEND)

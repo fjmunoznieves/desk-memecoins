@@ -32,7 +32,7 @@ def avisar():
     cuerpo = "\n".join(f"- **{a['sym']}** `{a['token']}`: {a['n_oper']} operadores A ({a['operadores']}), MC {a['mc']:,} USD, "
                        f"liq {a['liq']:,} USD, edad {a['edad_d']} d, pool contra {a['quote']}. https://dexscreener.com/solana/{a['token']}"
                        for a in nuevas)
-    r = subprocess.run(["gh", "issue", "create", "--repo", repo, "--title", f"Consenso A: {', '.join(a['sym'] for a in nuevas)[:80]}",
+    r = subprocess.run(["gh", "issue", "create", "--repo", repo, "--title", f"[registro, no entrada] Consenso A: {', '.join(a['sym'] for a in nuevas)[:80]}",
                         "--body", cuerpo + "\n\nPunto de seguimiento, no es entrada. Queda como entrada en sombra (paper)."], check=False)
     if r.returncode == 0:
         os.remove(PEND)

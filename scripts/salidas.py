@@ -46,7 +46,7 @@ def senales():
         out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip="SOST", cadena="solana", token=r["token"], sym=r["sym"],
                         precio=r["precio"], n_billeteras=len(r["billeteras"].split(",")), n_oper=r["operadores"], c24="", c7d="", pool=""))
     for f, hip in (("datos/h25_sombra.tsv", "H25"), ("datos/h26_sombra.tsv", "H26"), ("datos/h27_sombra.tsv", "H27"),
-                   ("datos/imitadores.tsv", "IMIT"), ("datos/h28_sombra.tsv", "H28"), ("datos/h29_sombra.tsv", "H29"), ("datos/h30_sombra.tsv", "H30"), ("datos/h31_sombra.tsv", "H31"), ("datos/h31p_sombra.tsv", "H31p"), ("datos/h32_sombra.tsv", "H32"), ("datos/h33_sombra.tsv", "H33"), ("datos/h31s_sombra.tsv", "H31s")):  # 17-nov (Fran): estudios en sombra
+                   ("datos/imitadores.tsv", "IMIT"), ("datos/h28_sombra.tsv", "H28"), ("datos/h29_sombra.tsv", "H29"), ("datos/h30_sombra.tsv", "H30"), ("datos/h31_sombra.tsv", "H31"), ("datos/h31p_sombra.tsv", "H31p"), ("datos/h32_sombra.tsv", "H32"), ("datos/h33_sombra.tsv", "H33"), ("datos/h31s_sombra.tsv", "H31s"), ("datos/h34_sombra.tsv", "H34")):  # 17-nov (Fran): estudios en sombra
         for r in leer(f):
             out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip=hip, cadena=r["cadena"], token=r["token"], sym=r["sym"],
                             precio=r["precio"], n_billeteras="", n_oper=r.get("n_oper", r.get("n_elite", "")), c24="", c7d="", pool=r.get("pool", "")))
