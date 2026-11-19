@@ -38,6 +38,10 @@ export default {
       const r = await env.DB.prepare("SELECT * FROM det WHERE ts_det > ? ORDER BY ts_det LIMIT 20000").bind(ahora() - 14 * 86400).all();
       return Response.json(r.results || []);
     }
+    if (req.method === "GET" && url.pathname === "/muestra") {
+      const r = await env.DB.prepare("SELECT ts, cuerpo FROM muestra ORDER BY id DESC LIMIT 5").all();
+      return Response.json(r.results || []);
+    }
     if (req.method === "GET" && url.pathname === "/estado") {
       const r = await env.DB.prepare("SELECT COUNT(*) n, SUM(mc IS NOT NULL) con_precio, SUM(mc IS NULL AND COALESCE(intentos,0) >= 6) sin_dex, SUM(fuente='alchemy') alchemy, SUM(fuente='helius') helius, SUM(fuente='shyft') shyft, MAX(ts_det) ultimo, MAX(ts_precio) ultimo_precio FROM det").first();
       let err = "";
@@ -159,7 +163,7 @@ async function sondear(env) {
   const ws = [...A], dia = Math.floor(ahora() / 86400);
   const u = await env.DB.prepare("SELECT w, sig, dia, cnt FROM ult").all();
   const ult = new Map((u.results || []).map((x) => [x.w, x]));
-  const nuevas = [], upd = [];
+  const nuevas = [], upd = [], dbg = [];
   let bots = 0;
   for (let i = 0; i < ws.length; i += 50) {
     const parte = ws.slice(i, i + 50);
@@ -169,13 +173,14 @@ async function sondear(env) {
         const o = { limit: 15 }; const x = ult.get(w); if (x && x.sig) o.until = x.sig;
         return { jsonrpc: "2.0", id: j, method: "getSignaturesForAddress", params: [w, o] };
       }));
-    } catch (e) { await contar(env, "shyft_error_firmas"); continue; }
+    } catch (e) { await contar(env, "shyft_error_firmas"); dbg.push({ err_firmas: String(e).slice(0, 200) }); continue; }
     for (const x of res) {
       const w = parte[x.id]; let l = x.result;
       if (!w || !Array.isArray(l) || !l.length) continue;
       const prev = ult.get(w) || {};
       // Shyft no respeta "until": se corta a mano en la última firma ya vista (y por tiempo, por si no aparece)
       const k = prev.sig ? l.findIndex((s) => s.signature === prev.sig) : -1;
+      if (dbg.length < 6 && prev.sig) dbg.push({ w: w.slice(0, 6), n: l.length, k, t0: l[0].blockTime, tN: l[l.length - 1].blockTime, pts: prev.ts });
       if (k >= 0) l = l.slice(0, k);
       else if (prev.ts) l = l.filter((s) => (s.blockTime || 0) >= prev.ts - 120);
       if (!l.length) continue;
@@ -200,13 +205,18 @@ async function sondear(env) {
     try {
       res = await rpc(env, parte.map((n, j) => ({ jsonrpc: "2.0", id: j, method: "getTransaction",
         params: [n.sig, { encoding: "json", maxSupportedTransactionVersion: 0, commitment: "confirmed" }] })));
-    } catch (e) { await contar(env, "shyft_error_tx"); continue; }
+    } catch (e) { await contar(env, "shyft_error_tx"); dbg.push({ err_tx: String(e).slice(0, 200) }); continue; }
+    const malos = res.filter((x) => x.error);
+    if (malos.length) dbg.push({ err_items: malos.length, e: JSON.stringify(malos[0].error).slice(0, 200) });
     for (const x of res) {
       const n = parte[x.id];
       if (n && x.result) await compraShyft(env, x.result, n);
     }
   }
   await sumar(env, "shyft_tx_leidas", leer.length);
+  dbg.push({ nuevas: nuevas.length, bots });
+  await env.DB.prepare("INSERT INTO muestra(ts, cuerpo) VALUES (?, ?)").bind(ahora(), JSON.stringify(dbg)).run();
+  await env.DB.prepare("DELETE FROM muestra WHERE ts < ?").bind(ahora() - 3600).run();
 }
 // misma regla que watch_solana.compra_de: recibe un token no base sin entregar otro no base, y gasta ≥0,05 SOL o entrega USDC/USDT
 async function compraShyft(env, t, n) {
