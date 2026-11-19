@@ -22,7 +22,9 @@ export default {
       return new Response("ok");
     }
     if (req.method === "POST" && url.pathname === "/alchemy") {
+      await contar(env, "alchemy_llega");
       const cuerpo = await req.text();
+      await contar(env, cuerpo.length > 200000 ? "alchemy_cuerpo_grande" : "alchemy_cuerpo_normal");
       if (!env.ALCHEMY_SIGNING_KEY || !(await firmaOk(cuerpo, req.headers.get("X-Alchemy-Signature") || "", env.ALCHEMY_SIGNING_KEY))) {
         await contar(env, "alchemy_firma_mala");
         return new Response("no", { status: 401 });
