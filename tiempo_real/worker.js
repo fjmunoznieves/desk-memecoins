@@ -163,7 +163,7 @@ async function sondear(env) {
   const ws = [...A], dia = Math.floor(ahora() / 86400);
   const u = await env.DB.prepare("SELECT w, sig, ts, dia, cnt FROM ult").all();
   const ult = new Map((u.results || []).map((x) => [x.w, x]));
-  const nuevas = [], upd = [], dbg = [];
+  const nuevas = [], upd = [], dbg = [], est = { sin_id: 0, nulos: 0, leidas: 0 };
   let bots = 0;
   for (let i = 0; i < ws.length; i += 50) {
     const parte = ws.slice(i, i + 50);
@@ -213,18 +213,22 @@ async function sondear(env) {
     if (malos.length) dbg.push({ err_items: malos.length, e: JSON.stringify(malos[0].error).slice(0, 200) });
     for (const x of res) {
       const n = parte[x.id];
-      if (n && x.result) await compraShyft(env, x.result, n);
+      if (!n) { est.sin_id++; continue; }
+      if (!x.result) { est.nulos++; continue; }
+      est.leidas++;
+      const r = await compraShyft(env, x.result, n);
+      est[r] = (est[r] || 0) + 1;
     }
   }
   await sumar(env, "shyft_tx_leidas", leer.length);
-  dbg.push({ nuevas: nuevas.length, bots });
+  dbg.push({ nuevas: nuevas.length, bots, est });
   await env.DB.prepare("INSERT INTO muestra(ts, cuerpo) VALUES (?, ?)").bind(ahora(), JSON.stringify(dbg)).run();
   await env.DB.prepare("DELETE FROM muestra WHERE ts < ?").bind(ahora() - 3600).run();
 }
 // misma regla que watch_solana.compra_de: recibe un token no base sin entregar otro no base, y gasta ≥0,05 SOL o entrega USDC/USDT
 async function compraShyft(env, t, n) {
   const meta = t.meta || {};
-  if (meta.err != null) return;
+  if (meta.err != null) return "fallida";
   const w = n.w, dif = new Map();
   for (const [lado, sg] of [["preTokenBalances", -1], ["postTokenBalances", 1]])
     for (const b of meta[lado] || []) {
@@ -233,13 +237,16 @@ async function compraShyft(env, t, n) {
     }
   const recibe = [...dif].filter(([m, v]) => !BASES.has(m) && v > 0).map(([m]) => m);
   const entrega = [...dif].some(([m, v]) => !BASES.has(m) && v < 0);
-  if (!recibe.length || entrega) return;
+  if (!dif.size) return "sin_saldos_dueño";
+  if (!recibe.length) return "no_recibe";
+  if (entrega) return "entrega_token";
   const ks = ((t.transaction || {}).message || {}).accountKeys || [];
   const i = ks.indexOf(w);
   let sol = i >= 0 ? Math.max(0, ((meta.preBalances || [])[i] - (meta.postBalances || [])[i]) / 1e9 || 0) : 0;
   sol += Math.max(0, -(dif.get("So11111111111111111111111111111111111111112") || 0));
   const baseOut = [...dif].some(([m, v]) => BASES.has(m) && v < 0);
-  if (sol < 0.05 && !baseOut) return;
+  if (sol < 0.05 && !baseOut) return "poco_sol";
   await contar(env, "shyft_compras");
   for (const m of recibe) await registrar(env, m, w, t.blockTime || n.ts, n.sig, "shyft");
+  return "compra";
 }
