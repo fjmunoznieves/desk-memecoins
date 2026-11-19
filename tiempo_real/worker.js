@@ -38,6 +38,10 @@ export default {
       const r = await env.DB.prepare("SELECT * FROM det WHERE ts_det > ? ORDER BY ts_det LIMIT 20000").bind(ahora() - 14 * 86400).all();
       return Response.json(r.results || []);
     }
+    if (req.method === "GET" && url.pathname === "/ult") {
+      const r = await env.DB.prepare("SELECT w, dia, cnt, ts FROM ult ORDER BY cnt DESC LIMIT 15").all();
+      return Response.json(r.results || []);
+    }
     if (req.method === "GET" && url.pathname === "/muestra") {
       const r = await env.DB.prepare("SELECT ts, cuerpo FROM muestra ORDER BY id DESC LIMIT 5").all();
       return Response.json(r.results || []);
