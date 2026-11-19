@@ -20,3 +20,5 @@ ts	hora_utc	cadena	token	sym	precio	liq	mc	motivo	estado_escaneo	fallos
 1794953991	2026-11-17 22:19	bsc	0xCd75184984423e2EB4723bE38d7Ee0b3783213FF	NFLXc	0.000002602	39277	26024	imita marca NFLX	pendiente	vol5m
 1794953991	2026-11-17 22:19	bsc	0x09bff94E35e83a625725817fD65B09390dEd916b	TRUMP	0.02129	37810	5963799901	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m+5m>=50
 1795079376	2026-11-19 09:09	bsc	0x83860f7Ab345ddc30581B0093e4BE5A06A010C15	Trump	0.4750	832957	47501080	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	5m>=50
+1795122535	2026-11-19 21:08	solana	82u71wqQSa4NmD1UTTDwKyh5EUm3xe9pMp4UZXhFpump	DAINU	0.0006060	55459	605964	imita moneda estable	pendiente	top10
+1795122535	2026-11-19 21:08	bsc	0x649D782c3Ea56eF64AC474CF262BC23d40452e9C	TRUMP	0.05717	52967	12007109299	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m

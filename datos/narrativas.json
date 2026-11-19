@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-19 14:46",
+ "hora_utc": "2026-11-19 21:29",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -9,27 +9,6 @@
   "x_chainbase"
  ],
  "narrativas": [
-  {
-   "tema": "EVAA Protocol",
-   "fuentes": [
-    "coingecko",
-    "coinmarketcap"
-   ],
-   "calor": 80,
-   "porque": [
-    "entre lo más buscado en CoinGecko (EVAA, puesto de capitalización 546)",
-    "entre lo más buscado en CoinMarketCap (EVAA, puesto 264)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "Ej4cuBwfc36DZH1TiMcX29cTTxM9jgVYJaKF5XtUtZhv",
-    "sym": "EVAA",
-    "liq": 29922460,
-    "vol24": 210621,
-    "c24": 0,
-    "edad_h": 526.5
-   }
-  },
   {
    "tema": "Dancing with the Stars (American TV series) season 35",
    "fuentes": [
@@ -53,46 +32,46 @@
    "token": null
   },
   {
-   "tema": "Bitcoin Support Test Fed Fear",
+   "tema": "Crypto Asset Financial Loss Report",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): Bitcoin prices have declined to the $60,000-$62,000 range, triggering extreme fear sentiment across the market as the Crypto Fear & Greed Index hits multi-month…"
+    "tema caliente en X según Chainbase Tops (puesto 1): Spot Bitcoin ETFs recorded significant net outflows totaling over $300 million in a single day, with broad weakness observed across multiple issuers beyond just…"
    ],
    "token": null
   },
   {
-   "tema": "GTA VI Absenteeism",
+   "tema": "Market Sentiment Shift GTA",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): Grand Theft Auto VI has officially launched globally, achieving a Metacritic score of 99 and generating over $1.65 billion in initial sales from approximately 1…"
+    "tema caliente en X según Chainbase Tops (puesto 2): Cryptocurrency traders express mixed sentiments ranging from capitulation to optimism as market activity coincides with the release of Grand Theft Auto VI and r…"
    ],
    "token": null
   },
   {
-   "tema": "Nvidia Board Seeks New CEO",
+   "tema": "GTA VI Gameplay Criticism",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 86,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): Nvidia's board has approached Arm Holdings CEO Rene Haas regarding the permanent CEO role, while simultaneously confirming that former CEO Jensen Huang will not…"
+    "tema caliente en X según Chainbase Tops (puesto 3): Rockstar Games has officially released Grand Theft Auto VI globally, ending a 13-year wait for the franchise. The launch generated immediate financial success, …"
    ],
    "token": null
   },
   {
-   "tema": "Variational Bain Capital Crypto Raise",
+   "tema": "Musk Regrets Republican Midterm Spending",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 84,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): Perpetual DEX Variational has secured a $110 million Series B funding round led by Bain Capital Crypto, achieving a $1.5 billion valuation. The platform reports…"
+    "tema caliente en X según Chainbase Tops (puesto 4): US officials report that Iranian-linked hackers have targeted critical infrastructure sectors including energy, healthcare, and finance since February, though r…"
    ],
    "token": null
   },
@@ -109,107 +88,88 @@
     "cadena": "solana",
     "token": "EpVHyKK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump",
     "sym": "GTAVI",
-    "liq": 17801,
-    "vol24": 11171,
-    "c24": -49.34,
-    "edad_h": 3697.7
+    "liq": 16127,
+    "vol24": 8772,
+    "c24": -40.98,
+    "edad_h": 3704.4
    }
   },
   {
-   "tema": "Trump Xi Putin Trilateral Meeting",
+   "tema": "US Crypto Russia Futures",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 82,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): US President Donald Trump, Chinese President Xi Jinping, and Russian President Vladimir Putin held their first-ever formal trilateral meeting in Shenzhen during…"
+    "tema caliente en X según Chainbase Tops (puesto 5): The Trump administration has established the Threat Disruption Center (TDC), a new operational unit co-led by the Department of Homeland Security and the Depart…"
    ],
    "token": null
   },
   {
-   "tema": "Crypto Volatility Bank Outage",
+   "tema": "Musk Shenzhen Shanghai Visit",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): Cryptocurrency and stock markets experienced a downturn, with traders noting significant drops in asset values coinciding with the release of GTA VI. Market par…"
+    "tema caliente en X según Chainbase Tops (puesto 6): Elon Musk traveled to China to attend the APEC summit in Shenzhen, where he met with government officials and accompanied President Trump’s delegation. During t…"
    ],
    "token": null
   },
   {
-   "tema": "Senators Warn AI Cyber",
+   "tema": "Telegram Group USDT Reward",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 78,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): US officials and intelligence agencies stated that recent widespread technology outages affecting Microsoft, airlines, and financial systems were caused by sepa…"
+    "tema caliente en X según Chainbase Tops (puesto 7): Multiple cryptocurrency platforms and influencers are launching initiatives to engage active traders through rewards and community building. Bybit hosts the WSO…"
    ],
    "token": null
   },
   {
-   "tema": "Trump Considers Iran Military Action",
+   "tema": "NEAR Ratifies HSP-029",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 76,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): Tensions have escalated in the Middle East as Iran continues to target vessels in the Strait of Hormuz, with reports indicating three tankers were set on fire a…"
+    "tema caliente en X según Chainbase Tops (puesto 8): The NEAR Protocol community has ratified proposal HSP-029, which reduces the network's maximum annual token issuance from 2.5% to 1.6% over a 24-month period. C…"
    ],
    "token": null
   },
   {
-   "tema": "Senators Urge Stablecoin Safe Harbor",
+   "tema": "Memecoin Noise Debate",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 74,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): Anchorage Digital Bank, supported by Tether, has launched the regulated stablecoin USA₮ on the Avalanche network. This issuance aims to provide dollar liquidity…"
+    "tema caliente en X según Chainbase Tops (puesto 9): Discussions within the crypto space highlight growing frustration with memecoin volatility and performative media narratives. Participants emphasize a preferenc…"
    ],
    "token": null
   },
   {
-   "tema": "Gold Drops Below 3800 Dollar Strong",
+   "tema": "MoonPay Applies for Bank Charter",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 72,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): Gold and silver prices have fallen significantly, with gold dropping below $3,750 per ounce and silver falling below $45 per ounce. This decline coincides with …"
+    "tema caliente en X según Chainbase Tops (puesto 10): Crypto payments firm MoonPay has submitted an application to the Office of the Comptroller of the Currency (OCC) for a U.S. national trust bank charter. The pro…"
    ],
    "token": null
   },
   {
-   "tema": "Trader Leverage Multi Timeframe Strategy",
+   "tema": "Sui Hashi Mainnet BTC",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): Market participants are sharing insights on trading mechanics, emphasizing the use of leverage for capital efficiency rather than oversized positions. Discussio…"
+    "tema caliente en X según Chainbase Tops (puesto 11): Hashi has officially launched its mainnet on the Sui Network, allowing Bitcoin holders to mint hBTC, a 1:1 backed asset derived from their BTC holdings. This in…"
    ],
    "token": null
-  },
-  {
-   "tema": "Official Trump",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (TRUMP, puesto de capitalización 134)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
-    "sym": "TRUMP",
-    "liq": 4477234,
-    "vol24": 1258151,
-    "c24": 3.73,
-    "edad_h": 16085.6
-   }
   },
   {
    "tema": "WASTED",
@@ -218,16 +178,16 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (WASTED, puesto de capitalización 786)"
+    "entre lo más buscado en CoinGecko (WASTED, puesto de capitalización 776)"
    ],
    "token": {
     "cadena": "solana",
     "token": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
     "sym": "WASTED",
-    "liq": 90689,
-    "vol24": 775610,
-    "c24": -53.2,
-    "edad_h": 476.6
+    "liq": 97931,
+    "vol24": 513845,
+    "c24": -0.1,
+    "edad_h": 483.3
    }
   },
   {
@@ -237,35 +197,35 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (LUCIA, puesto de capitalización 757)"
+    "entre lo más buscado en CoinGecko (LUCIA, puesto de capitalización 889)"
    ],
    "token": {
     "cadena": "robinhood",
     "token": "0xAE12303Bd73442d3C8Dba9a58b164070d78a1E18",
     "sym": "LUCIA",
-    "liq": 50109,
-    "vol24": 15516,
-    "c24": -27.74,
-    "edad_h": 1977.6
+    "liq": 48729,
+    "vol24": 7999,
+    "c24": -12.79,
+    "edad_h": 1984.3
    }
   },
   {
-   "tema": "Wanted Star",
+   "tema": "Official Trump",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (WSTAR, puesto de capitalización 893)"
+    "entre lo más buscado en CoinGecko (TRUMP, puesto de capitalización 135)"
    ],
    "token": {
-    "cadena": "robinhood",
-    "token": "0x2d3E65142bf632eD90e8EE43225CE543E7AACf58",
-    "sym": "WANTED",
-    "liq": 170942,
-    "vol24": 55995,
-    "c24": 1883,
-    "edad_h": 4.3
+    "cadena": "bsc",
+    "token": "0x172eb459C85f82Cb2a2E007a8DbA26402ed75BF4",
+    "sym": "TRUMP",
+    "liq": 936094042,
+    "vol24": 0,
+    "c24": -2.86,
+    "edad_h": 7585.9
    }
   },
   {
@@ -275,16 +235,16 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 124)"
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 129)"
    ],
    "token": {
     "cadena": "solana",
     "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
     "sym": "PENGU",
-    "liq": 2251883,
-    "vol24": 271776,
-    "c24": 1.49,
-    "edad_h": 16849.8
+    "liq": 2138971,
+    "vol24": 212946,
+    "c24": -3.65,
+    "edad_h": 16856.5
    }
   },
   {
@@ -294,16 +254,73 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 176)"
+    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 178)"
    ],
    "token": {
     "cadena": "solana",
     "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
     "sym": "MON",
-    "liq": 31943878,
-    "vol24": 256619,
+    "liq": 31943887,
+    "vol24": 261408,
     "c24": 0,
-    "edad_h": 1186.0
+    "edad_h": 1192.7
+   }
+  },
+  {
+   "tema": "Terra Luna Classic",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (LUNC, puesto de capitalización 137)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "EHngp44ZbNPLJCPLSypboZz7SLXCjfsVkx4gEnp7pump",
+    "sym": "LUNC",
+    "liq": 21808,
+    "vol24": 3271,
+    "c24": 58.75,
+    "edad_h": 2883.7
+   }
+  },
+  {
+   "tema": "Backpack",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (BP, puesto de capitalización 149)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "GMWrcQ185wqe7HNKg5m4qCtC3NQhAwS5fFMhbEgm8BiN",
+    "sym": "BP",
+    "liq": 1249791625,
+    "vol24": 261503,
+    "c24": 0,
+    "edad_h": 988.6
+   }
+  },
+  {
+   "tema": "MegaETH",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (MEGA, puesto de capitalización 329)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "megaA5QDK1qLXtjpvg9oCFMvxT9d5BCMrVTBddnM5kV",
+    "sym": "MEGA",
+    "liq": 55589,
+    "vol24": 24534,
+    "c24": 9.9,
+    "edad_h": 1444.6
    }
   },
   {
@@ -322,88 +339,113 @@
     "liq": 64151884,
     "vol24": 1,
     "c24": 0,
-    "edad_h": 4011.8
+    "edad_h": 4018.5
    }
   },
   {
-   "tema": "Irys",
+   "tema": "LAB",
    "fuentes": [
     "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (IRYS, puesto 312)"
+    "entre lo más buscado en CoinMarketCap (LAB, puesto 511)"
    ],
-   "token": {
-    "cadena": "solana",
-    "token": "Eb76N1YECfRrSWJUU1kJbE17jErjEZ89rot65pfcepHJ",
-    "sym": "IRYS",
-    "liq": 22260663,
-    "vol24": 127807,
-    "c24": 0.01,
-    "edad_h": 2.6
-   }
+   "token": null
   },
   {
-   "tema": "Velvet",
+   "tema": "YieldBasis",
    "fuentes": [
     "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (VELVET, puesto 390)"
+    "entre lo más buscado en CoinMarketCap (YB, puesto 785)"
    ],
-   "token": {
-    "cadena": "solana",
-    "token": "41TK1R18KrkESEGLBx6yLzXUn8tGR9EphMYo8j85LxcB",
-    "sym": "VELVET",
-    "liq": 82327951,
-    "vol24": 214631,
-    "c24": 0,
-    "edad_h": 1125.4
-   }
-  },
-  {
-   "tema": "Starknet",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (STRK, puesto 107)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "8SnedPft1eMMMaDYjYiFZk36nP8xkS7S687Aeqp6Bp71",
-    "sym": "STRK",
-    "liq": 52145814,
-    "vol24": 256619,
-    "c24": 0,
-    "edad_h": 1115.1
-   }
+   "token": null
   }
  ],
  "cruces_h18": [
   {
-   "ts": 1795099600,
-   "hora_utc": "2026-11-19 14:46",
+   "ts": 1795123746,
+   "hora_utc": "2026-11-19 21:29",
    "tema": "WASTED",
-   "fuentes": "coingecko,trending 1h",
+   "fuentes": "coingecko,trending 24h",
    "cadena": "solana",
    "token": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
    "sym": "WASTED",
-   "liq": 88795,
-   "mc": 802205,
-   "c1": 5.11,
+   "liq": 99008,
+   "mc": 1014762,
+   "c1": -17.87,
    "seguridad": "top10",
    "aviso": "no",
    "nuestras": "A5 B11 C1"
+  },
+  {
+   "ts": 1795123746,
+   "hora_utc": "2026-11-19 21:29",
+   "tema": "Official Trump",
+   "fuentes": "coingecko,trending 24h",
+   "cadena": "solana",
+   "token": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+   "sym": "TRUMP",
+   "liq": 126274,
+   "mc": 265831485,
+   "c1": -0.67,
+   "seguridad": "top10",
+   "aviso": "no",
+   "nuestras": "A2 B3 C0"
+  },
+  {
+   "ts": 1795123746,
+   "hora_utc": "2026-11-19 21:29",
+   "tema": "Backpack",
+   "fuentes": "coingecko,trending 5m",
+   "cadena": "solana",
+   "token": "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo",
+   "sym": "TTWO",
+   "liq": 554549,
+   "mc": 89,
+   "c1": -1.59,
+   "seguridad": "top10,lp,mint/freeze",
+   "aviso": "no",
+   "nuestras": "A20 B10 C4"
+  },
+  {
+   "ts": 1795123746,
+   "hora_utc": "2026-11-19 21:29",
+   "tema": "Backpack",
+   "fuentes": "coingecko,trending 5m",
+   "cadena": "solana",
+   "token": "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb",
+   "sym": "SPCX",
+   "liq": 2566819,
+   "mc": 0,
+   "c1": 0.88,
+   "seguridad": "top10,mint/freeze",
+   "aviso": "no",
+   "nuestras": "A19 B7 C1"
+  },
+  {
+   "ts": 1795123746,
+   "hora_utc": "2026-11-19 21:29",
+   "tema": "Backpack",
+   "fuentes": "coingecko,trending 1h",
+   "cadena": "solana",
+   "token": "DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF",
+   "sym": "DJT",
+   "liq": 80949,
+   "mc": 78064,
+   "c1": 0.79,
+   "seguridad": "top10,mint/freeze",
+   "aviso": "no",
+   "nuestras": "A12 B6 C0"
   }
  ],
  "huecos_h19": [
   {
-   "ts": 1795099600,
-   "hora_utc": "2026-11-19 14:46",
+   "ts": 1795123746,
+   "hora_utc": "2026-11-19 21:29",
    "tema": "Dancing with the Stars (American TV series) season 35",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -411,8 +453,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795099600,
-   "hora_utc": "2026-11-19 14:46",
+   "ts": 1795123746,
+   "hora_utc": "2026-11-19 21:29",
    "tema": "Mary Peltola",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -420,57 +462,57 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795099600,
-   "hora_utc": "2026-11-19 14:46",
-   "tema": "Bitcoin Support Test Fed Fear",
+   "ts": 1795123746,
+   "hora_utc": "2026-11-19 21:29",
+   "tema": "Crypto Asset Financial Loss Report",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Bitcoin prices have declined to the $60,000-$62,000 range, triggering extreme fear sentiment across the market as the Crypto Fear & Greed Index hits multi-month…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Spot Bitcoin ETFs recorded significant net outflows totaling over $300 million in a single day, with broad weakness observed across multiple issuers beyond just…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795099600,
-   "hora_utc": "2026-11-19 14:46",
-   "tema": "GTA VI Absenteeism",
+   "ts": 1795123746,
+   "hora_utc": "2026-11-19 21:29",
+   "tema": "Market Sentiment Shift GTA",
    "fuentes": "x_chainbase",
    "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Grand Theft Auto VI has officially launched globally, achieving a Metacritic score of 99 and generating over $1.65 billion in initial sales from approximately 1…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Cryptocurrency traders express mixed sentiments ranging from capitulation to optimism as market activity coincides with the release of Grand Theft Auto VI and r…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795099600,
-   "hora_utc": "2026-11-19 14:46",
-   "tema": "Nvidia Board Seeks New CEO",
+   "ts": 1795123746,
+   "hora_utc": "2026-11-19 21:29",
+   "tema": "GTA VI Gameplay Criticism",
    "fuentes": "x_chainbase",
    "calor": 86,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 3): Nvidia's board has approached Arm Holdings CEO Rene Haas regarding the permanent CEO role, while simultaneously confirming that former CEO Jensen Huang will not…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): Rockstar Games has officially released Grand Theft Auto VI globally, ending a 13-year wait for the franchise. The launch generated immediate financial success, …",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795099600,
-   "hora_utc": "2026-11-19 14:46",
-   "tema": "Variational Bain Capital Crypto Raise",
+   "ts": 1795123746,
+   "hora_utc": "2026-11-19 21:29",
+   "tema": "Musk Regrets Republican Midterm Spending",
    "fuentes": "x_chainbase",
    "calor": 84,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 4): Perpetual DEX Variational has secured a $110 million Series B funding round led by Bain Capital Crypto, achieving a $1.5 billion valuation. The platform reports…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 4): US officials report that Iranian-linked hackers have targeted critical infrastructure sectors including energy, healthcare, and finance since February, though r…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795099600,
-   "hora_utc": "2026-11-19 14:46",
-   "tema": "Trump Xi Putin Trilateral Meeting",
+   "ts": 1795123746,
+   "hora_utc": "2026-11-19 21:29",
+   "tema": "US Crypto Russia Futures",
    "fuentes": "x_chainbase",
    "calor": 82,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 5): US President Donald Trump, Chinese President Xi Jinping, and Russian President Vladimir Putin held their first-ever formal trilateral meeting in Shenzhen during…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 5): The Trump administration has established the Threat Disruption Center (TDC), a new operational unit co-led by the Department of Homeland Security and the Depart…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795099600,
-   "hora_utc": "2026-11-19 14:46",
-   "tema": "Crypto Volatility Bank Outage",
+   "ts": 1795123746,
+   "hora_utc": "2026-11-19 21:29",
+   "tema": "Musk Shenzhen Shanghai Visit",
    "fuentes": "x_chainbase",
    "calor": 80,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 6): Cryptocurrency and stock markets experienced a downturn, with traders noting significant drops in asset values coinciding with the release of GTA VI. Market par…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 6): Elon Musk traveled to China to attend the APEC summit in Shenzhen, where he met with government officials and accompanied President Trump’s delegation. During t…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
