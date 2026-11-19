@@ -171,9 +171,14 @@ async function sondear(env) {
       }));
     } catch (e) { await contar(env, "shyft_error_firmas"); continue; }
     for (const x of res) {
-      const w = parte[x.id], l = x.result;
+      const w = parte[x.id]; let l = x.result;
       if (!w || !Array.isArray(l) || !l.length) continue;
       const prev = ult.get(w) || {};
+      // Shyft no respeta "until": se corta a mano en la última firma ya vista (y por tiempo, por si no aparece)
+      const k = prev.sig ? l.findIndex((s) => s.signature === prev.sig) : -1;
+      if (k >= 0) l = l.slice(0, k);
+      else if (prev.ts) l = l.filter((s) => (s.blockTime || 0) >= prev.ts - 120);
+      if (!l.length) continue;
       const ok = l.filter((s) => s.err == null);
       const cnt = (prev.dia === dia ? prev.cnt || 0 : 0) + l.length;
       upd.push(env.DB.prepare("INSERT INTO ult(w, sig, ts, dia, cnt) VALUES (?, ?, ?, ?, ?) ON CONFLICT(w) DO UPDATE SET sig = excluded.sig, ts = excluded.ts, dia = excluded.dia, cnt = excluded.cnt")
@@ -222,5 +227,6 @@ async function compraShyft(env, t, n) {
   sol += Math.max(0, -(dif.get("So11111111111111111111111111111111111111112") || 0));
   const baseOut = [...dif].some(([m, v]) => BASES.has(m) && v < 0);
   if (sol < 0.05 && !baseOut) return;
+  await contar(env, "shyft_compras");
   for (const m of recibe) await registrar(env, m, w, t.blockTime || n.ts, n.sig, "shyft");
 }
