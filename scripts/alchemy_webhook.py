@@ -27,6 +27,9 @@ if mio:
     w = mio[0]
     print(f"webhook Alchemy ya existe ({w.get('network')}, activo={w.get('is_active')}); se actualizan direcciones")
     pedir("PATCH", "/update-webhook-addresses", {"webhook_id": w["id"], "addresses_to_add": dirs, "addresses_to_remove": []})
+    if not w.get("is_active"):
+        pedir("PUT", "/update-webhook", {"webhook_id": w["id"], "is_active": True})
+        print("webhook Alchemy estaba desactivado (Alchemy lo apaga si fallan entregas): reactivado")
 else:
     for red in ("SOLANA_MAINNET", "SOL_MAINNET"):
         try:
