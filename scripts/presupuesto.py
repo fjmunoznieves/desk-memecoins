@@ -39,7 +39,14 @@ usado = minutos()
 dias = calendar.monthrange(hoy.year, hoy.month)[1]
 ritmo = TOPE * hoy.day / dias
 manual = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
-if usado is None or manual:
+# 19-nov: si el repo es público, GitHub no cobra minutos: todo corre (Fran lo hará público durante el análisis)
+publico = False
+try:
+    rr = subprocess.run(["gh", "api", f"repos/{repo}", "--jq", ".private"], capture_output=True, text=True)
+    publico = rr.returncode == 0 and rr.stdout.strip() == "false"
+except Exception:
+    pass
+if usado is None or manual or publico:
     corre = True
 elif tipo == "escaneo_opcional":
     corre = usado < ritmo and usado < 1900
@@ -50,7 +57,7 @@ else:
 # 19-nov (Fran eligió "recortar a 1 escaneo diario" para no pasar 2.000 min en noviembre): hasta fin de mes solo
 # corre el escaneo programado de las 9:07 AM Bogotá (cron "7 14 * * *"); el resto de programados (otros escaneos,
 # reloj 1:07 AM, muertos 1:23 AM) se salta. Las corridas manuales siguen corriendo. Se apaga solo el 1-dic.
-if not manual and hoy.strftime("%Y-%m") == "2026-11" and hoy.day >= 19:
+if not manual and not publico and hoy.strftime("%Y-%m") == "2026-11" and hoy.day >= 19:
     try:
         cron = json.load(open(os.environ.get("GITHUB_EVENT_PATH", ""))).get("schedule", "")
     except Exception:
