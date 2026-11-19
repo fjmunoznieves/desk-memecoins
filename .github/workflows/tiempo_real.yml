@@ -68,6 +68,9 @@ jobs:
         run: |
           npx --yes wrangler@3.114.0 deploy
           printf '%s' "$WEBHOOK_AUTH" | npx --yes wrangler@3.114.0 secret put WEBHOOK_AUTH
+          if [ -n "$SHYFT_API_KEY" ]; then printf '%s' "$SHYFT_API_KEY" | npx --yes wrangler@3.114.0 secret put SHYFT_API_KEY; fi
+        env:
+          SHYFT_API_KEY: ${{ secrets.SHYFT_API_KEY }}
       - name: Webhook Alchemy (227 A)
         if: ${{ inputs.alchemy == 'si' }}
         env:
