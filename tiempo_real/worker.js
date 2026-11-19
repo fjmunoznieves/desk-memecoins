@@ -38,6 +38,11 @@ export default {
       const r = await env.DB.prepare("SELECT * FROM det WHERE ts_det > ? ORDER BY ts_det LIMIT 20000").bind(ahora() - 14 * 86400).all();
       return Response.json(r.results || []);
     }
+    if (req.method === "GET" && url.pathname === "/banda") {
+      // detecciones de las últimas 24 h en la banda de MC de H34 (60-150 mil), compacto
+      const r = await env.DB.prepare("SELECT mint, sym, billetera, fuente, ts_tx, mc, liq, creado, precio FROM det WHERE ts_det > ? AND mc BETWEEN 60000 AND 150000 ORDER BY ts_det").bind(ahora() - 86400).all();
+      return new Response((r.results || []).map((x) => [x.mint, x.sym, x.billetera.slice(0, 6), x.fuente, x.ts_tx, x.mc, x.liq, x.creado, x.precio].join(",")).join("\n"));
+    }
     if (req.method === "GET" && url.pathname === "/ult") {
       const r = await env.DB.prepare("SELECT w, dia, cnt, ts FROM ult ORDER BY cnt DESC LIMIT 15").all();
       return Response.json(r.results || []);
