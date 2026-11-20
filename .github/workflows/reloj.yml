@@ -28,6 +28,8 @@ jobs:
         if: steps.freno.outputs.corre == 'true'
         env:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+          SHYFT_API_KEY: ${{ secrets.SHYFT_API_KEY }}
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
         run: python3 scripts/watch_solana.py
       - name: Aviso si 2+ billeteras compran el mismo token
         if: steps.freno.outputs.corre == 'true'
