@@ -6,25 +6,20 @@ sys.path.insert(0, os.path.dirname(__file__))
 from h24 import billeteras
 
 K = os.environ.get("HELIUS_API_KEY", "").strip()
-RPC = f"https://mainnet.helius-rpc.com/?api-key={K}"
+RPC = "rpc_sol"
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import rpc_sol
 SALIDA = "datos/fotos_saldos.tsv"
 MAX_CONSULTAS = int(os.environ.get("FOTO_MAX") or 900)
 CAMPOS = ["ts", "hora_utc", "hip", "token", "sym", "grupo", "billetera", "cantidad", "usd", "precio"]
 
 
 def rpc(m, p):
-    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": m, "params": p}).encode()
-    for i in range(6):
-        try:
-            req = urllib.request.Request(RPC, data=body, headers={"Content-Type": "application/json"})
-            with urllib.request.urlopen(req, timeout=30) as r:
-                return json.load(r).get("result")
-        except urllib.error.HTTPError as e:
-            if e.code != 429: return None
-            time.sleep(2 + 2 * i)
-        except Exception:
-            time.sleep(1)
-    return None
+    # 20-nov: Shyft primero, Helius de respaldo (rpc_sol)
+    try:
+        return rpc_sol.post_json({"jsonrpc": "2.0", "id": 1, "method": m, "params": p}, intentos=6, timeout=30).get("result")
+    except Exception:
+        return None
 
 
 def leer(f):
@@ -32,7 +27,7 @@ def leer(f):
 
 
 def main():
-    if not K:
+    if not rpc_sol.hay():
         print("fotos: falta HELIUS_API_KEY"); return
     W = billeteras()  # token -> {A, B, C}
     toks = {}  # token -> (hip, sym, {grupo: set})

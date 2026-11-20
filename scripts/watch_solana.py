@@ -7,8 +7,11 @@ La clave sale del secreto HELIUS_API_KEY y nunca se imprime."""
 import csv, json, os, sys, time, urllib.request, urllib.error
 T0 = time.time()
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import rpc_sol  # 20-nov: Shyft primero, Helius de respaldo
+import atexit; atexit.register(lambda: print(rpc_sol.resumen()))
 KEY = os.environ.get("HELIUS_API_KEY", "").strip()
-RPC = f"https://mainnet.helius-rpc.com/?api-key={KEY}"
+RPC = "PRINCIPAL"  # marcador: post() lo envía por rpc_sol
 ALC = os.environ.get("ALCHEMY_API_KEY", "").strip()
 RPC_TX = f"https://solana-mainnet.g.alchemy.com/v2/{ALC}" if ALC else RPC
 WL = os.environ.get("WL_FILE", "datos/watchlist_solana.tsv")
@@ -21,6 +24,8 @@ COLS = ["hora_utc", "ts", "billetera", "token", "cantidad", "sol_gastado", "firm
 
 
 def post(url, body):
+    if url == RPC:
+        return rpc_sol.post_json(body)
     req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "User-Agent": "desk-scan"})
     for i in range(5):  # 16-nov: reintenta ante 429 (límite de Helius cuando corren varias cosas a la vez)
         try:
@@ -34,13 +39,13 @@ def post(url, body):
 
 def safe(e):  # nunca mostrar las claves en los errores
     m = str(e)
-    for k in (KEY, ALC):
+    for k in (KEY, ALC, os.environ.get("SHYFT_API_KEY", "").strip()):
         if k: m = m.replace(k, "***")
     return m
 
 
-if not KEY:
-    print("Falta el secreto HELIUS_API_KEY: no se revisa nada todavía"); json.dump([], open(AL, "w")); sys.exit(0)
+if not rpc_sol.hay():
+    print("Falta el secreto HELIUS_API_KEY / SHYFT_API_KEY: no se revisa nada todavía"); json.dump([], open(AL, "w")); sys.exit(0)
 wl = [r["direccion"] for r in csv.DictReader(open(WL), delimiter="\t")]
 st = json.load(open(ST)) if os.path.exists(ST) else {"ultima": {}, "alertados": []}
 primera = not st["ultima"]
@@ -217,7 +222,7 @@ else:
         for w, t in ex.map(una, pares):
             if t:
                 compras += compra_de(t, w)
-    print(f"getTransaction: {NTX} ({'Alchemy' if ALC else 'Helius RPC, 1 crédito c/u'})")
+    print(f"getTransaction: {NTX} ({'Alchemy' if ALC else ('Shyft' if rpc_sol.SHYFT else 'Helius RPC, 1 crédito c/u')})")
 
 
 if compras:

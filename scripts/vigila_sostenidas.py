@@ -42,20 +42,14 @@ K = os.environ.get("HELIUS_API_KEY", "").strip()
 
 
 def saldo_usd(w, t, precio):
-    """Saldo real ahora (Helius, solo lectura). None si no se pudo consultar."""
-    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "getTokenAccountsByOwner",
-                       "params": [w, {"mint": t}, {"encoding": "jsonParsed"}]}).encode()
-    for i in range(5):
-        try:
-            req = urllib.request.Request(f"https://mainnet.helius-rpc.com/?api-key={K}", data=body, headers={"Content-Type": "application/json"})
-            r = json.load(urllib.request.urlopen(req, timeout=20)).get("result") or {}
-            return sum(float(a["account"]["data"]["parsed"]["info"]["tokenAmount"]["uiAmount"] or 0) for a in r.get("value", [])) * precio
-        except urllib.error.HTTPError as e:
-            if e.code != 429: return None
-            time.sleep(2 + 2 * i)
-        except Exception:
-            time.sleep(1)
-    return None
+    """Saldo real ahora (solo lectura; 20-nov: Shyft primero, Helius de respaldo). None si no se pudo consultar."""
+    import rpc_sol
+    try:
+        r = rpc_sol.post_json({"jsonrpc": "2.0", "id": 1, "method": "getTokenAccountsByOwner",
+                               "params": [w, {"mint": t}, {"encoding": "jsonParsed"}]}, intentos=5, timeout=20).get("result") or {}
+        return sum(float(a["account"]["data"]["parsed"]["info"]["tokenAmount"]["uiAmount"] or 0) for a in r.get("value", [])) * precio
+    except Exception:
+        return None
 
 
 def avisar():
