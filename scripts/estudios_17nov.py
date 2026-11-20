@@ -377,106 +377,6 @@ def bundles():
           f"{len({g['grupo_bundle'] for g in filas_g})} grupos que se repiten ({len(filas_g)} billeteras)")
 
 
-def pnl_anio():
-    """PnL en SOL del año por billetera: suma vector_ops_A_289 + vector_profundo por billetera×token (regla del desk)."""
-    agg = defaultdict(lambda: [0.0, 0.0])
-    for f in ("datos/vector_ops_A_289.tsv", "datos/vector_profundo.tsv"):
-        for r in leer(f):
-            try:
-                a = agg[(r["billetera"], r["token"])]
-                a[0] += float(r.get("sol_in") or 0); a[1] += float(r.get("sol_out") or 0)
-            except (KeyError, ValueError):
-                pass
-    out = defaultdict(float)
-    for (b, _), (i, o) in agg.items():
-        out[b] += o - i
-    return out
-
-
-def rugcheck(t):
-    try:
-        req = urllib.request.Request(f"https://api.rugcheck.xyz/v1/tokens/{t}/report", headers={"User-Agent": "desk-h35"})
-        d = json.load(urllib.request.urlopen(req, timeout=25))
-    except Exception:
-        return None
-    th = d.get("topHolders") or []
-    return dict(score=d.get("score_normalised"), top1=th[0]["pct"] if th else 0, top10=sum(h.get("pct", 0) for h in th[:10]),
-                red_max=max([n.get("size", 0) for n in d.get("insiderNetworks") or []] or [0]))
-
-
-def h35(ahora, hora, ventana=12 * 3600):
-    """H35 "primer operador A bueno, solo, con contrato sano" (20-nov, estudio quién compra + RugCheck sobre 498 tokens del escaneo
-    18-19 nov, desenlace 24 h; Fran: "procede, hay que encontrar la forma de generar $"). En memes MC <2 M: 1 solo operador A
-    x2 21 % / cae a la mitad 18 % (n=34); élite 18/24 (n=17); consenso 2+ A 15/54 (n=13); solo B/C 14/43 (n=42); nadie 5/11.
-    Contrato: mayor holder ≥40 % cae 35 % (n=85), top10 ≥70 % cae 29 % (n=91), score RugCheck 10-59 cae 46-69 % (n=55).
-    Regla (todo del estudio): la PRIMERA billetera nuestra (A/B/C) que entra al token es un operador A sin bots (el PnL del año
-    va como etiqueta, no filtra: no separó en el estudio) y ningún otro operador A entró aún; token <7 días, liq ≥10 mil, MC <2 M; RugCheck mayor holder <40 %, top10 <70 %,
-    score fuera de 10-59. Entra una vez al precio del momento → datos/h35_sombra.tsv; salidas.py la mide. Solo registro."""
-    op = {r["billetera"]: r for r in leer("datos/operadores.tsv")}
-    el = {r["billetera"] for r in leer("datos/elite.tsv")}
-    ya = {r["token"] for r in leer("datos/h35_sombra.tsv")}
-    previas = defaultdict(set)
-    compras = defaultdict(list)
-    for f in ("datos/consenso_A_compras.tsv", "datos/h22_compras.tsv", "datos/h23_compras.tsv", "datos/watchlist_compras.tsv"):
-        for r in leer(f):
-            try:
-                ts = int(r["ts"])
-            except (TypeError, ValueError):
-                continue
-            compras[r["token"]].append((ts, r.get("billetera")))
-            if ts < ahora - ventana:
-                previas[r["token"]].add(r.get("billetera"))
-    for r in leer("datos/fotos_saldos.tsv"):
-        try:
-            if int(float(r["ts"])) < ahora - ventana and float(r.get("usd") or 0) > 0:
-                previas[r["token"]].add(r["billetera"])
-        except (TypeError, ValueError, KeyError):
-            pass
-    pnl = None
-    cand = {}
-    for t, l in compras.items():
-        if t in ya or previas.get(t):
-            continue
-        rec = sorted(x for x in l if ahora - x[0] <= ventana)
-        if not rec:
-            continue
-        b = rec[0][1]; o = op.get(b, {})
-        if o.get("grupo") != "A" or o.get("bot") == "si":
-            continue
-        opers = {op.get(x[1], {}).get("operador", x[1][:6]) for x in rec if op.get(x[1], {}).get("grupo") == "A"}
-        if len(opers) > 1:
-            continue  # ya es consenso: el estudio dice que llega tarde
-        if pnl is None:
-            pnl = pnl_anio()
-        # PnL del año solo como etiqueta: en el estudio no separó (1 operador A, MC <2 M: año + x2 18 %/cae 24 % n=17;
-        # año ≤0 18 %/27 % n=22; élite 20 %/40 % n=10), así que no filtra.
-        cand[t] = (b, o.get("operador", b[:6]), round(pnl.get(b, 0)), b in el)
-    if not cand:
-        return []
-    info = dex(list(cand))
-    filas = []
-    for t, (b, oper, pa, es_el) in cand.items():
-        p = info.get(t)
-        if not p:
-            continue
-        liq = (p.get("liquidity") or {}).get("usd") or 0
-        mc = p.get("marketCap") or p.get("fdv") or 0
-        edad = (ahora * 1000 - (p.get("pairCreatedAt") or ahora * 1000)) / 8.64e7
-        if not (edad < 7 and liq >= 10000 and mc and mc < 2e6):
-            continue
-        rc = rugcheck(t)
-        if not rc or rc["top1"] >= 40 or rc["top10"] >= 70 or 10 <= (rc["score"] or 0) <= 59:
-            print(f"H35 descartado por contrato: {p['baseToken']['symbol']} {t} {rc}")
-            continue
-        ch = p.get("priceChange") or {}
-        filas.append(dict(ts=ahora, hora_utc=hora, cadena="solana", token=t, sym=p["baseToken"]["symbol"], precio=p.get("priceUsd"),
-                          liq=round(liq), mc=round(mc), liq_mc_pct=round(100 * liq / mc, 1), edad_d=round(edad, 2),
-                          n_elite=1, elite=oper, pool=p.get("pairAddress"),
-                          motivo=f"primer operador A solo ({oper}, {'élite' if es_el else 'año +%s SOL' % pa}), RugCheck mayor {round(rc['top1'])} % top10 {round(rc['top10'])} % score {rc['score']}, c1 {ch.get('h1')} %, c24 {ch.get('h24')} %"))
-        print(f"H35 entrada sombra: {p['baseToken']['symbol']} {t} {oper}, MC {round(mc):,}, liq {round(liq):,}")
-    return filas
-
-
 def main():
     ahora = int(time.time()); hora = time.strftime("%Y-%m-%d %H:%M", time.gmtime(ahora))
     a = h27(ahora, hora); guardar("datos/h27_sombra.tsv", C27, a)
@@ -499,17 +399,12 @@ def main():
         print(f"H34rt: {len(e)} entradas nuevas (tiempo real)")
     except Exception as e:
         print("h34 falló:", e)
-    try:
-        h = h35(ahora, hora); guardar("datos/h35_sombra.tsv", C27, h)
-        print(f"H35: {len(h)} entradas nuevas (primer operador A bueno, solo, contrato sano)")
-    except Exception as e:
-        print("h35 falló:", e)
     if "--sin-bundles" not in sys.argv:
         bundles()
     print(f"H27: {len(a)} entradas nuevas; IMIT: {len(b)} nuevos")
     if os.environ.get("GITHUB_ACTIONS"):  # el reloj solo hace git add de algunos archivos
         import subprocess
-        subprocess.run(["git", "add"] + [f for f in ("datos/h27_sombra.tsv", "datos/h33_sombra.tsv", "datos/h34_sombra.tsv", "datos/h34j_sombra.tsv", "datos/h34rt_sombra.tsv", "datos/h35_sombra.tsv", "datos/imitadores.tsv", "datos/bundles_eventos.tsv",
+        subprocess.run(["git", "add"] + [f for f in ("datos/h27_sombra.tsv", "datos/h33_sombra.tsv", "datos/h34_sombra.tsv", "datos/h34j_sombra.tsv", "datos/h34rt_sombra.tsv", "datos/imitadores.tsv", "datos/bundles_eventos.tsv",
                                                     "datos/bundle_grupos.tsv", "datos/elite.tsv") if os.path.exists(f)], check=False)
 
 
