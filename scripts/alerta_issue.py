@@ -25,6 +25,14 @@ if _os.path.exists("datos/control_cartera_falla.json") and _os.environ.get("GITH
     if r.returncode == 0:
         _os.remove("datos/control_cartera_falla.json")
 
+# 20-nov: control de que las salidas en sombra se miden (salidas.py → datos/control_salidas_falla.json)
+if _os.path.exists("datos/control_salidas_falla.json") and _os.environ.get("GITHUB_REPOSITORY"):
+    f = _json.load(open("datos/control_salidas_falla.json"))
+    r = subprocess.run(["gh", "issue", "create", "--repo", _os.environ["GITHUB_REPOSITORY"], "--title", "CONTROL: hay hipótesis con señales sin medir",
+                        "--body", "\n".join(f"- {x['hip']}: {x['sin_medir']} de {x['total']} señales de más de 24 h sin medir" for x in f) + "\n\nRevisar salidas.py antes de sacar conclusiones de esas hipótesis."], check=False)
+    if r.returncode == 0:
+        _os.remove("datos/control_salidas_falla.json")
+
 # 17-nov (Fran, caso GEKKO avisado 52 min tarde): cada candidato del escaneo abre un aviso al momento.
 import glob as _glob, re as _re
 _esc = sorted(_glob.glob("escaneos/escaneo_*.md"))

@@ -206,6 +206,38 @@ def main():
         w = csv.DictWriter(f, CAMPOS, delimiter="\t", extrasaction="ignore"); w.writeheader(); w.writerows(filas)
     with open(ALERTAS, "w", newline="") as f:
         w = csv.DictWriter(f, CAMPOS_AL, delimiter="\t", extrasaction="ignore"); w.writeheader(); w.writerows(alertas)
+    control(filas)
+
+
+def control(filas):
+    """20-nov (Fran: "una semana pasó y esas hipótesis no fueron analizadas"). Control de que la medición funciona:
+    por hipótesis, señales con más de 24 h, precio y cadena medible que siguen sin escalonada. Si en alguna pasa del
+    20 % (con 3+ señales) se deja datos/control_salidas_falla.json → issue (alerta_issue.py), una vez al día.
+    Historial en datos/control_salidas.tsv."""
+    from collections import Counter
+    tot, sin = Counter(), Counter()
+    for r in filas:
+        try:
+            ok = float(r.get("precio") or 0) > 0 and r.get("cadena") in GNET and time.time() - int(r["ts"]) > 86400
+        except (TypeError, ValueError):
+            ok = False
+        if ok:
+            tot[r["hip"]] += 1
+            if not r.get("esc35_pct"):
+                sin[r["hip"]] += 1
+    malas = [dict(hip=h, sin_medir=sin[h], total=tot[h]) for h in sorted(tot) if tot[h] >= 3 and sin[h] > 0.2 * tot[h]]
+    hoy = time.strftime("%Y-%m-%d", time.gmtime())
+    nuevo = not os.path.exists("datos/control_salidas.tsv")
+    with open("datos/control_salidas.tsv", "a") as f:
+        if nuevo: f.write("fecha_utc\thip\tsin_medir\ttotal\n")
+        for h in sorted(tot):
+            f.write(f"{time.strftime('%Y-%m-%d %H:%M', time.gmtime())}\t{h}\t{sin[h]}\t{tot[h]}\n")
+    marca = "datos/control_salidas_dia.txt"
+    if malas and (not os.path.exists(marca) or open(marca).read().strip() != hoy):
+        import json
+        json.dump(malas, open("datos/control_salidas_falla.json", "w"), indent=1)
+        open(marca, "w").write(hoy)
+    print("control salidas:", ", ".join(f"{h} {sin[h]}/{tot[h]} sin medir" for h in sorted(tot)))
     print(f"salidas: {len(filas)} señales, {sum(1 for r in filas if r.get('esc_pct') not in ('', None))} con escalonada, "
           f"{len(alertas)} avisos de salida A")
 
