@@ -28,8 +28,8 @@ if _os.path.exists("datos/control_cartera_falla.json") and _os.environ.get("GITH
 # 20-nov: control de que las salidas en sombra se miden (salidas.py → datos/control_salidas_falla.json)
 if _os.path.exists("datos/control_salidas_falla.json") and _os.environ.get("GITHUB_REPOSITORY"):
     f = _json.load(open("datos/control_salidas_falla.json"))
-    r = subprocess.run(["gh", "issue", "create", "--repo", _os.environ["GITHUB_REPOSITORY"], "--title", "CONTROL: hay hipótesis con señales sin medir",
-                        "--body", "\n".join(f"- {x['hip']}: {x['sin_medir']} de {x['total']} señales de más de 24 h sin medir" for x in f) + "\n\nRevisar salidas.py antes de sacar conclusiones de esas hipótesis."], check=False)
+    r = subprocess.run(["gh", "issue", "create", "--repo", _os.environ["GITHUB_REPOSITORY"], "--title", "CONTROL: hipótesis sin medir o procesos que dejaron de escribir",
+                        "--body", "\n".join((f"- {x['hip']}: {x['sin_medir']} ({x['total']})" if str(x['hip']).startswith("proceso") else f"- {x['hip']}: {x['sin_medir']} de {x['total']} señales de más de 24 h sin medir") for x in f) + "\n\nRevisar salidas.py antes de sacar conclusiones de esas hipótesis."], check=False)
     if r.returncode == 0:
         _os.remove("datos/control_salidas_falla.json")
 

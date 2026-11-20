@@ -226,6 +226,15 @@ def control(filas):
             if not r.get("esc35_pct"):
                 sin[r["hip"]] += 1
     malas = [dict(hip=h, sin_medir=sin[h], total=tot[h]) for h in sorted(tot) if tot[h] >= 3 and sin[h] > 0.2 * tot[h]]
+    # 20-nov: además, que cada proceso de billeteras siga escribiendo (H22/B se cayó 3,5 días sin que nadie lo viera).
+    for f, horas in (("datos/h22_compras.tsv", 36), ("datos/h23_compras.tsv", 36), ("datos/consenso_A_compras.tsv", 24),
+                     ("datos/fotos_saldos.tsv", 24), ("datos/liquidez_seguimiento.tsv", 24), ("datos/watchlist_compras.tsv", 36)):
+        try:
+            ult = max(int(float(r["ts"])) for r in leer(f) if r.get("ts"))
+        except ValueError:
+            ult = 0
+        if time.time() - ult > horas * 3600:
+            malas.append(dict(hip=f"proceso {os.path.basename(f)}", sin_medir=f"{(time.time() - ult) / 3600:.0f} h sin escribir", total=f"tope {horas} h"))
     hoy = time.strftime("%Y-%m-%d", time.gmtime())
     nuevo = not os.path.exists("datos/control_salidas.tsv")
     with open("datos/control_salidas.tsv", "a") as f:
