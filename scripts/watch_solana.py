@@ -125,7 +125,10 @@ def foto(w):
         except Exception as e:
             print("foto error", w[:6], safe(e)[:80]); return None
         for acc in r.get("value") or []:
-            inf = acc["account"]["data"]["parsed"]["info"]
+            d = acc["account"]["data"]
+            if not isinstance(d, dict):  # 20-nov: cuenta que el RPC no pudo desglosar (llega en base64): se omite
+                continue
+            inf = d["parsed"]["info"]
             v = float(inf["tokenAmount"]["uiAmount"] or 0)
             if v > 0 and inf["mint"] not in BASE:
                 out[inf["mint"]] = out.get(inf["mint"], 0) + v
