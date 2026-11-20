@@ -91,7 +91,12 @@ async function seguir(env) {
     const edad = t - x.ts_det, paso = edad < 3600 ? 60 : edad < 21600 ? 300 : 900;
     return !x.ult || t - x.ult >= paso - 10;
   }).map((x) => x.mint);
-  for (let i = 0; i < toca.length && i < 90; i += 30) {
+  // 20-nov (Fran): también los tokens del consenso sostenido (H25), cada 3 min durante 7 días desde su registro.
+  try { await sincExtra(env); } catch (e) { await contar(env, "extra_error"); }
+  const ex = await env.DB.prepare("SELECT e.mint, (SELECT MAX(v.ts) FROM velas v WHERE v.mint = e.mint) ult FROM extra e WHERE e.desde > ?")
+    .bind(t - 7 * 86400).all();
+  for (const x of ex.results || []) if ((!x.ult || t - x.ult >= 170) && !toca.includes(x.mint)) toca.push(x.mint);
+  for (let i = 0; i < toca.length && i < 150; i += 30) {
     const parte = toca.slice(i, i + 30);
     let d = [];
     try { d = await (await fetch("https://api.dexscreener.com/tokens/v1/solana/" + parte.join(","))).json(); } catch (e) { d = []; }
@@ -111,6 +116,24 @@ async function seguir(env) {
     }
     if (ops.length) await env.DB.batch(ops);
   }
+}
+// Lista H25 desde el repo público (datos/h25_sombra.tsv), refrescada cada 15 min. Solo Solana.
+async function sincExtra(env) {
+  const u = await env.DB.prepare("SELECT ts FROM stats WHERE k = 'extra_sync'").first();
+  if (u && ahora() - u.ts < 900) return;
+  await sumar(env, "extra_sync", 1);
+  const r = await fetch("https://raw.githubusercontent.com/fjmunoznieves/desk-memecoins/main/datos/h25_sombra.tsv", { headers: { "User-Agent": "desk-h34" } });
+  if (!r.ok) throw new Error("h25 " + r.status);
+  const filas = (await r.text()).trim().split("\n"), cab = filas.shift().split("\t");
+  const iT = cab.indexOf("token"), iC = cab.indexOf("cadena"), iS = cab.indexOf("ts");
+  const ops = [];
+  for (const f of filas) {
+    const c = f.split("\t");
+    if (c[iC] !== "solana" || !c[iT]) continue;
+    ops.push(env.DB.prepare("INSERT INTO extra(mint, desde, origen) VALUES (?, ?, 'H25') ON CONFLICT(mint) DO UPDATE SET desde = MAX(desde, excluded.desde)")
+      .bind(c[iT], parseInt(c[iS]) || ahora()));
+  }
+  if (ops.length) await env.DB.batch(ops);
 }
 async function completar(env) {
   // hasta 30 detecciones de los últimos 15 min sin precio, en UNA consulta a DexScreener (acepta 30 tokens por llamada)
@@ -218,6 +241,8 @@ async function sondear(env) {
   const ws = [...A], dia = Math.floor(ahora() / 86400);
   const sg = await env.DB.prepare("SELECT mint FROM det WHERE ts_det > ? AND mc BETWEEN 60000 AND 150000").bind(ahora() - 86400).all();
   SEGUIDOS = new Set((sg.results || []).map((x) => x.mint));
+  try { const ex = await env.DB.prepare("SELECT mint FROM extra WHERE desde > ?").bind(ahora() - 7 * 86400).all();
+        for (const x of ex.results || []) SEGUIDOS.add(x.mint); } catch (e) {}
   const u = await env.DB.prepare("SELECT w, sig, ts, dia, cnt FROM ult").all();
   const ult = new Map((u.results || []).map((x) => [x.w, x]));
   const nuevas = [], upd = [], dbg = [], est = { sin_id: 0, nulos: 0, leidas: 0 };
