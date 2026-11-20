@@ -252,6 +252,7 @@ json.dump(st, open(ST, "w"), indent=1)
 json.dump(alertas, open(AL, "w"), indent=1)
 print(("punto de partida fijado; " if primera else "") + f"billeteras con tx nuevas: {len(nuevas)}, compras: {len(compras)}, alertas: {len(alertas)}")
 
+# 20-nov: límites subidos (job 50 min, repo público): con 16-20 min, consenso A, liquidez y H25 se saltaban en los escaneos de 3:47 (B/C/fotos tardan).
 # 19-nov: el escaneo de 12:27 se cortó por el límite de 30 min antes de llegar a estudios_17nov (H34 en tiempo real).
 # Por eso H27/IMIT/bundles/H34rt corren primero (son baratos, sin Helius) y los pasos opcionales se saltan si no hay tiempo.
 import subprocess
@@ -295,10 +296,10 @@ if not os.environ.get("ES_H23"):
     import subprocess
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "vigila_sostenidas.py")], check=False)
     # Liquidez de lo que está en seguimiento (17-nov, Fran): solo registro, DexScreener.
-    _paso("liquidez.py", opcional=True, limite_min=16)
+    _paso("liquidez.py", opcional=True, limite_min=30)
     # H25 y H26 en sombra (17-nov, Fran): maduros con A sosteniendo / lanzamientos con liquidez 100-250k. Solo registro.
-    _paso("h25_h26.py", opcional=True, limite_min=18)
+    _paso("h25_h26.py", opcional=True, limite_min=31)
     # Consenso A en vivo (16-nov, Fran): 2+ operadores A compran el mismo token en 72 h → seguimiento + aviso.
-    _paso("consenso_A.py", opcional=True, limite_min=19)
-    _paso("mesa_datos.py", opcional=True, limite_min=20)  # datos de la Mesa interactiva
-    _paso("h28_catalizador.py", opcional=True, limite_min=20)  # H28 catalizador (sombra)
+    _paso("consenso_A.py", opcional=True, limite_min=32)
+    _paso("mesa_datos.py", opcional=True, limite_min=33)  # datos de la Mesa interactiva
+    _paso("h28_catalizador.py", opcional=True, limite_min=33)  # H28 catalizador (sombra)
