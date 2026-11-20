@@ -43,6 +43,9 @@ def _uno(url, body, intentos, timeout):
     raise RuntimeError("sin respuesta")
 
 
+CAIDOS = {}
+
+
 def _nombre(url):
     return "shyft" if url == SHYFT else "alchemy" if url == ALCHEMY else "helius"
 
@@ -51,17 +54,19 @@ def post_json(body_dict, intentos=5, timeout=40):
     """Devuelve la respuesta JSON completa. Prueba la cadena de proveedores según el método; lanza excepción si fallan todos."""
     body = json.dumps(body_dict).encode()
     cadena = [ALCHEMY, HELIUS] if body_dict.get("method") in INDICE else [SHYFT, HELIUS]
-    cadena = [u for u in cadena if u] or [HELIUS]
+    cadena = [u for u in cadena if u and CAIDOS.get(u, 0) < 3] or [HELIUS]
     ult = None
     for j, url in enumerate(cadena):
         try:
-            d = _uno(url, body, intentos if j == len(cadena) - 1 else 2, timeout)
+            d = _uno(url, body, intentos if j == len(cadena) - 1 else 1, timeout if j == len(cadena) - 1 else 10)
             USO[_nombre(url)] += 1
+            CAIDOS[url] = 0
             return d
         except Exception as e:
             ult = e
             if j < len(cadena) - 1:
                 USO["fallos"] += 1
+                CAIDOS[url] = CAIDOS.get(url, 0) + 1  # 3 fallos seguidos: se salta ese proveedor el resto de la corrida
                 if not USO["error"]:
                     m = limpio(e)
                     if hasattr(e, "read"):
