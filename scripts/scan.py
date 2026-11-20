@@ -162,5 +162,32 @@ for (ch, a), e in best.items():
                      b=b, s=s, c5=pc.get("m5") or 0, c1=pc.get("h1") or 0, c24=pc.get("h24") or 0,
                      socials=socials, boosts=(p.get("boosts") or {}).get("active", 0), price=p.get("priceUsd"), pair=p.get("pairAddress"),
                      src=src, **jup_campos(a)))
+# 20-nov (Fran aprobó, arreglo de medición, caso RIEMANN FMWYmS…): DexScreener a veces devuelve el pool sin precio ni
+# liquidez (616 filas del universo, 6 %, quedaban con MC 0 y se rechazaban sin evaluar). Se completan con GeckoTerminal
+# (pool de mayor reserva del token) antes de los filtros. No cambia ninguna regla. Tope 80 tokens / 180 s.
+GTNET = {"solana": "solana", "bsc": "bsc"}
+vacios = [r for r in rows if r["chain"] in GTNET and (not r.get("price") or not r.get("liq") or not r.get("mc"))]
+t_ini, rell = time.time(), 0
+for r in vacios[:80]:
+    if time.time() - t_ini > 180:
+        break
+    d = get(G + f"networks/{GTNET[r['chain']]}/tokens/{r['addr']}/pools?page=1") or {}
+    time.sleep(PAUSA[0])
+    pools = d.get("data") or []
+    if not pools:
+        continue
+    a = max(pools, key=lambda x: float((x.get("attributes") or {}).get("reserve_in_usd") or 0))["attributes"]
+    if not a.get("base_token_price_usd") or not float(a.get("reserve_in_usd") or 0):
+        continue
+    vol, tx, pc = a.get("volume_usd") or {}, (a.get("transactions") or {}).get("m5") or {}, a.get("price_change_percentage") or {}
+    f = lambda x: float(x) if x not in (None, "") else 0
+    r.update(price=a.get("base_token_price_usd"), liq=f(a.get("reserve_in_usd")), mc=f(a.get("market_cap_usd")) or f(a.get("fdv_usd")),
+             v5=f(vol.get("m5")), v1h=f(vol.get("h1")), b=tx.get("buys", 0), s=tx.get("sells", 0),
+             c5=f(pc.get("m5")), c1=f(pc.get("h1")), c24=f(pc.get("h24")), pair=a.get("address"), src=r["src"] + "|gt_relleno")
+    if r.get("age_h") is None and a.get("pool_created_at"):
+        import datetime as _dt
+        r["age_h"] = (now / 1000 - _dt.datetime.fromisoformat(a["pool_created_at"].replace("Z", "+00:00")).timestamp()) / 3600
+    rell += 1
+print(f"relleno GeckoTerminal: {rell} de {len(vacios)} tokens sin precio/liquidez en DexScreener", file=sys.stderr)
 json.dump(rows, open("rows.json", "w"))
 print("rows", len(rows), file=sys.stderr)
