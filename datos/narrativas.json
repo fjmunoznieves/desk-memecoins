@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-20 17:40",
+ "hora_utc": "2026-11-20 22:22",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -23,6 +23,19 @@
    "token": null
   },
   {
+   "tema": "New Home Alone movie announced",
+   "fuentes": [
+    "bluesky",
+    "trends"
+   ],
+   "calor": 70,
+   "porque": [
+    "tendencia en Bluesky: Macaulay Culkin is set to return as Kevin McCallister, with Seth Rogen and Evan Goldberg producing.",
+    "búsqueda en tendencia en Google (2000+)"
+   ],
+   "token": null
+  },
+  {
    "tema": "Stephen Wilson Jr.",
    "fuentes": [
     "wikipedia"
@@ -31,15 +44,7 @@
    "porque": [
     "327,962 visitas ayer en Wikipedia, nuevo en el top"
    ],
-   "token": {
-    "cadena": "solana",
-    "token": "5di9EjyN9MQs17BPDCoLKUC3xTAJAPXrH3rh4omupump",
-    "sym": "WILSON",
-    "liq": 1579,
-    "vol24": 271,
-    "c24": 3.69,
-    "edad_h": 961.8
-   }
+   "token": null
   },
   {
    "tema": "Ella Langley",
@@ -79,7 +84,7 @@
     "liq": 9088,
     "vol24": 1456,
     "c24": -31.81,
-    "edad_h": 3186.0
+    "edad_h": 3190.7
    }
   },
   {
@@ -106,119 +111,31 @@
     "cadena": "solana",
     "token": "6bUb1jX4DPrPe1AsmwmsEK7SFz5AVHJNczwKYTcdpump",
     "sym": "FDA",
-    "liq": 28300,
-    "vol24": 3819,
-    "c24": -12.08,
-    "edad_h": 94.5
+    "liq": 25258,
+    "vol24": 8594,
+    "c24": -21.78,
+    "edad_h": 99.2
    }
   },
   {
-   "tema": "GTA VI Launches with Record Sales",
+   "tema": "Kyiv Infrastructure Missile Strike",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): Grand Theft Auto VI has launched globally, achieving an estimated $1.84 billion in first-day sales and setting a new Twitch viewership record with over 50 milli…"
+    "tema caliente en X según Chainbase Tops (puesto 1): Russia launched a massive aerial attack on Ukraine using ballistic missiles and drones, resulting in significant damage to three major bridges in Kyiv and wides…"
    ],
    "token": null
   },
   {
-   "tema": "Market Sentiment Shift GTA",
+   "tema": "Sean Cairncross Replaced Kirsten Davies",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): Crypto traders are actively monitoring the price movements of $ANT, with some executing short positions while others anticipate relief bounces. Discussions also…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Trump Meets Xi Putin Ukraine Deal",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 86,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): President Trump held trilateral summits with Chinese President Xi Jinping and Russian President Vladimir Putin, focusing on negotiations to end the war in Ukrai…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Poland Confirms Russian Missile Strike",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 84,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): Russia launched a massive overnight attack on Ukraine using ballistic missiles, cruise missiles, and drones, resulting in significant damage to three major brid…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "JPMorgan Forecasts Fed Rate Hikes",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 82,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): Chicago Fed President Austan Goolsbee stated that services inflation is key to understanding price pressures, noting no current concern regarding wage impacts. …"
-   ],
-   "token": null
-  },
-  {
-   "tema": "USDA Systems Offline Cyberattack",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 80,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): The US Department of Agriculture took multiple systems offline following a cybersecurity breach that disrupted payment tools for farmers. The agency's security …"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Elon Musk Visits Tesla Shanghai Factory",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 78,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): Tesla CEO Elon Musk visited the Giga Shanghai factory during his trip to Asia, where he personally thanked the team and received a special gift crafted by emplo…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "California Investigates Nvidia China Exports",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 76,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): The California Attorney General has launched an investigation into Nvidia to determine if the company misled investors regarding the transfer of advanced AI chi…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "OPEN Holds Digital Asset Board Meeting",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 74,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): OPEN completed its initial set of board meetings, including governance committee sessions, with leadership expressing confidence in the team's strength and futu…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Trump Buys SpaceX Shares Bonds",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 72,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): SpaceX has priced $32 billion in debt across three tranches as part of a larger chip-financing arrangement. This significant capital raise marks a major financi…"
+    "tema caliente en X según Chainbase Tops (puesto 2): White House National Cyber Director Sean Cairncross has stepped down and been replaced by Pentagon CIO Kirsten Davies in an acting capacity. The leadership chan…"
    ],
    "token": null
   },
@@ -227,9 +144,97 @@
    "fuentes": [
     "x_chainbase"
    ],
+   "calor": 86,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 3): The Hong Kong government has gazetted a bill requiring businesses involved in crypto dealing, advisory, management, and custody services to obtain a license or …"
+   ],
+   "token": null
+  },
+  {
+   "tema": "UK EU Post-Brexit Deal",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 84,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 4): The United Kingdom and the European Union have agreed to a set of deals aimed at deepening their post-Brexit relationship, with UK Business Secretary Jonathan R…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "JPMorgan Fed Rate Hikes Forecast",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 82,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 5): JPMorgan analysts project that the Federal Reserve will implement 25 basis point interest rate increases at its next three meetings in December, January, and Ma…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "ECB Energy Driven Inflation Pressures",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 80,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 6): Officials from the European Central Bank, Federal Reserve, and Bank of England issued statements regarding current inflation trends and monetary policy. ECB mem…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Kristin Johnson Digital Asset Rulemaking",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 78,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 7): Kristin Johnson, nominated by President Trump for the Securities and Exchange Commission (SEC), expressed support for formal rulemaking regarding tokenized stoc…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "OPEN Board Meeting Held",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 76,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 8): OPEN completed its initial set of board meetings, including dinner discussions and committee sessions, with leadership expressing confidence in the team's stren…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "China Maintains Loan Prime Rates",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 74,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 9): China's central bank kept the one-year loan prime rate at 3.00% and the five-year rate at 3.50%, aligning with market expectations. To manage liquidity, the ban…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Carl Race 2 WEEX Partnership",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 72,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 10): Racing driver Carl is set to compete in Race 2 of the Finali Mondiali in Barcelona following a P1 victory. His official racing partner, WEEX, is highlighted in …"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Midnight Network Status Update",
+   "fuentes": [
+    "x_chainbase"
+   ],
    "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): Hong Kong has published a bill requiring firms involved in crypto trading, management, custody, or advisory services to obtain a license or register with the Se…"
+    "tema caliente en X según Chainbase Tops (puesto 11): Discussions surrounding the Midnight network highlight its core architectural distinction between shielded and unshielded data states. This technical differenti…"
    ],
    "token": null
   },
@@ -240,16 +245,16 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (WASTED, puesto de capitalización 780)"
+    "entre lo más buscado en CoinGecko (WASTED, puesto de capitalización 788)"
    ],
    "token": {
     "cadena": "solana",
     "token": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
     "sym": "WASTED",
-    "liq": 94297,
-    "vol24": 317267,
-    "c24": 20.2,
-    "edad_h": 503.5
+    "liq": 89971,
+    "vol24": 146784,
+    "c24": -14.36,
+    "edad_h": 508.2
    }
   },
   {
@@ -259,7 +264,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (TRUMP, puesto de capitalización 138)"
+    "entre lo más buscado en CoinGecko (TRUMP, puesto de capitalización 136)"
    ],
    "token": {
     "cadena": "bsc",
@@ -267,8 +272,8 @@
     "sym": "TRUMP",
     "liq": 819336012,
     "vol24": 0,
-    "c24": -14.98,
-    "edad_h": 7606.1
+    "c24": -9.89,
+    "edad_h": 7610.8
    }
   },
   {
@@ -278,35 +283,16 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (CHUNKEE, puesto de capitalización 941)"
+    "entre lo más buscado en CoinGecko (CHUNKEE, puesto de capitalización 954)"
    ],
    "token": {
     "cadena": "solana",
     "token": "H1fK1zrjVYeMs5FLGUDhqF34usz75UbVynKt4JHZpump",
     "sym": "Chunkee",
-    "liq": 9889,
-    "vol24": 10968,
-    "c24": -19.84,
-    "edad_h": 719.4
-   }
-  },
-  {
-   "tema": "Lucia",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (LUCIA, puesto de capitalización 852)"
-   ],
-   "token": {
-    "cadena": "robinhood",
-    "token": "0xAE12303Bd73442d3C8Dba9a58b164070d78a1E18",
-    "sym": "LUCIA",
-    "liq": 46108,
-    "vol24": 1235,
-    "c24": -7.51,
-    "edad_h": 2004.5
+    "liq": 10430,
+    "vol24": 8866,
+    "c24": -16.94,
+    "edad_h": 724.1
    }
   },
   {
@@ -316,7 +302,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 129)"
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 127)"
    ],
    "token": {
     "cadena": "solana",
@@ -325,7 +311,26 @@
     "liq": 36433324,
     "vol24": 2,
     "c24": -0.02,
-    "edad_h": 2013.6
+    "edad_h": 2018.3
+   }
+  },
+  {
+   "tema": "Lucia",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (LUCIA, puesto de capitalización 786)"
+   ],
+   "token": {
+    "cadena": "robinhood",
+    "token": "0xAE12303Bd73442d3C8Dba9a58b164070d78a1E18",
+    "sym": "LUCIA",
+    "liq": 45657,
+    "vol24": 1263,
+    "c24": -8.16,
+    "edad_h": 2009.2
    }
   },
   {
@@ -335,7 +340,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (AKE, puesto 236)"
+    "entre lo más buscado en CoinMarketCap (AKE, puesto 237)"
    ],
    "token": {
     "cadena": "solana",
@@ -344,48 +349,37 @@
     "liq": 52505765,
     "vol24": 1,
     "c24": 0,
-    "edad_h": 1438.0
+    "edad_h": 1442.7
    }
-  },
-  {
-   "tema": "Stock market sell-off",
-   "fuentes": [
-    "bluesky"
-   ],
-   "calor": 70,
-   "porque": [
-    "tendencia en Bluesky: Stocks drop sharply as tech and chip names like Nvidia fall while traders seek safer sectors."
-   ],
-   "token": null
   }
  ],
  "cruces_h18": [
   {
-   "ts": 1795196454,
-   "hora_utc": "2026-11-20 17:40",
+   "ts": 1795213325,
+   "hora_utc": "2026-11-20 22:22",
    "tema": "WASTED",
    "fuentes": "coingecko,trending 24h",
    "cadena": "solana",
    "token": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
    "sym": "WASTED",
-   "liq": 94604,
-   "mc": 974021,
-   "c1": 8.4,
+   "liq": 90280,
+   "mc": 887284,
+   "c1": 7.64,
    "seguridad": "top10",
    "aviso": "no",
    "nuestras": "A5 B11 C2"
   },
   {
-   "ts": 1795196454,
-   "hora_utc": "2026-11-20 17:40",
+   "ts": 1795213325,
+   "hora_utc": "2026-11-20 22:22",
    "tema": "Official Trump",
-   "fuentes": "coingecko,trending 24h",
+   "fuentes": "coingecko,trending 1h",
    "cadena": "solana",
    "token": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
    "sym": "TRUMP",
-   "liq": 112596,
-   "mc": 232729084,
-   "c1": -0.82,
+   "liq": 115225,
+   "mc": 239615079,
+   "c1": 2.23,
    "seguridad": "top10",
    "aviso": "no",
    "nuestras": "A2 B3 C0"
@@ -393,8 +387,8 @@
  ],
  "huecos_h19": [
   {
-   "ts": 1795196454,
-   "hora_utc": "2026-11-20 17:40",
+   "ts": 1795213325,
+   "hora_utc": "2026-11-20 22:22",
    "tema": "Anthropic debuts on Nasdaq",
    "fuentes": "bluesky,wikipedia",
    "calor": 97,
@@ -402,8 +396,26 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795196454,
-   "hora_utc": "2026-11-20 17:40",
+   "ts": 1795213325,
+   "hora_utc": "2026-11-20 22:22",
+   "tema": "New Home Alone movie announced",
+   "fuentes": "bluesky,trends",
+   "calor": 70,
+   "porque": "tendencia en Bluesky: Macaulay Culkin is set to return as Kevin McCallister, with Seth Rogen and Evan Goldberg producing. | búsqueda en tendencia en Google (2000+)",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795213325,
+   "hora_utc": "2026-11-20 22:22",
+   "tema": "Stephen Wilson Jr.",
+   "fuentes": "wikipedia",
+   "calor": 100,
+   "porque": "327,962 visitas ayer en Wikipedia, nuevo en el top",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795213325,
+   "hora_utc": "2026-11-20 22:22",
    "tema": "Ella Langley",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -411,8 +423,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795196454,
-   "hora_utc": "2026-11-20 17:40",
+   "ts": 1795213325,
+   "hora_utc": "2026-11-20 22:22",
    "tema": "Ken McElroy",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -420,8 +432,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795196454,
-   "hora_utc": "2026-11-20 17:40",
+   "ts": 1795213325,
+   "hora_utc": "2026-11-20 22:22",
    "tema": "International Men's Day",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -429,39 +441,21 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795196454,
-   "hora_utc": "2026-11-20 17:40",
-   "tema": "GTA VI Launches with Record Sales",
+   "ts": 1795213325,
+   "hora_utc": "2026-11-20 22:22",
+   "tema": "Kyiv Infrastructure Missile Strike",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Grand Theft Auto VI has launched globally, achieving an estimated $1.84 billion in first-day sales and setting a new Twitch viewership record with over 50 milli…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Russia launched a massive aerial attack on Ukraine using ballistic missiles and drones, resulting in significant damage to three major bridges in Kyiv and wides…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795196454,
-   "hora_utc": "2026-11-20 17:40",
-   "tema": "Market Sentiment Shift GTA",
+   "ts": 1795213325,
+   "hora_utc": "2026-11-20 22:22",
+   "tema": "Sean Cairncross Replaced Kirsten Davies",
    "fuentes": "x_chainbase",
    "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Crypto traders are actively monitoring the price movements of $ANT, with some executing short positions while others anticipate relief bounces. Discussions also…",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795196454,
-   "hora_utc": "2026-11-20 17:40",
-   "tema": "Trump Meets Xi Putin Ukraine Deal",
-   "fuentes": "x_chainbase",
-   "calor": 86,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 3): President Trump held trilateral summits with Chinese President Xi Jinping and Russian President Vladimir Putin, focusing on negotiations to end the war in Ukrai…",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795196454,
-   "hora_utc": "2026-11-20 17:40",
-   "tema": "Poland Confirms Russian Missile Strike",
-   "fuentes": "x_chainbase",
-   "calor": 84,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 4): Russia launched a massive overnight attack on Ukraine using ballistic missiles, cruise missiles, and drones, resulting in significant damage to three major brid…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): White House National Cyber Director Sean Cairncross has stepped down and been replaced by Pentagon CIO Kirsten Davies in an acting capacity. The leadership chan…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
