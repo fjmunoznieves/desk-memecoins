@@ -25,3 +25,4 @@ ts	hora_utc	cadena	token	sym	precio	liq	mc	motivo	estado_escaneo	fallos
 1795126279	2026-11-19 22:11	bsc	0xF7a894accd684335Ff80E2Ba7400Ce984CC2433e	TRUMP	0.06262	56647	13777305096	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m
 1795140067	2026-11-20 02:01	bsc	0x48f65e3500c923be5DE2E29b90e63753c3CB5097	PEPE	0.000002965	41263	29655	usa el símbolo de PEPE sin ser el contrato oficial	pendiente	vol5m
 1795184965	2026-11-20 14:29	bsc	0x8fbF49D2EBdd462505C3E7DE286272615585f30A	RWUSD	0.00009855	18392	9856	imita moneda estable	pendiente	liq+vol5m
+1795195540	2026-11-20 17:25	bsc	0x24408B9A7Eca334a8B71df67022DfDE121A29b5e	TRUMP	0.01860	40526	7440672310	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m+5m>=50
