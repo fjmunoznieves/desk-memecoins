@@ -47,6 +47,7 @@ jobs:
         
           git config user.name "desk-bot"
           git config user.email "desk-bot@users.noreply.github.com"
-          for f in datos/watchlist_estado.json datos/watchlist_compras.tsv datos/h16_resurrecciones.tsv datos/muertos.json; do [ -f "$f" ] && git add "$f"; done
+          # todo datos/: si un paso se cancela, lo ya escrito igual se guarda (antes el push fallaba por cambios sin preparar)
+          git add datos
           git commit -m "Reloj $(date -u +%Y-%m-%dT%H:%MZ)" || { echo "sin cambios"; exit 0; }
           for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
