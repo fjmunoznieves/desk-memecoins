@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-20 09:32",
+ "hora_utc": "2026-11-20 14:41",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -10,30 +10,28 @@
  ],
  "narrativas": [
   {
-   "tema": "EU Confirms AI Cyberattack",
-   "fuentes": [
-    "x_chainbase",
-    "coingecko",
-    "coinmarketcap"
-   ],
-   "calor": 100,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): The European Commission confirmed it was targeted by an AI-generated cybercampaign, resulting in the compromise of staff personal data and the offline status of…",
-    "entre lo más buscado en CoinGecko (CYBER, puesto de capitalización 799)",
-    "entre lo más buscado en CoinMarketCap (CYBER, puesto 528)"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Kutcher's firm and Anthropic IPO",
+   "tema": "Anthropic debuts on Nasdaq",
    "fuentes": [
     "bluesky",
     "wikipedia"
    ],
    "calor": 97,
    "porque": [
-    "tendencia en Bluesky: Ashton Kutcher's cofounded investment firm reportedly earned billions as the AI company went public.",
+    "tendencia en Bluesky: The AI company priced shares at $83, raising $81.3 billion in the largest IPO ever.",
     "112,202 visitas ayer en Wikipedia, 4.7× anteayer"
+   ],
+   "token": null
+  },
+  {
+   "tema": "UK Conducts Offensive Cyber Ops",
+   "fuentes": [
+    "x_chainbase",
+    "coinmarketcap"
+   ],
+   "calor": 96,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 3): General Sir Rob Magowan confirmed that the United Kingdom is conducting daily offensive cyber operations against Russia, China, Iran, and North Korea through it…",
+    "entre lo más buscado en CoinMarketCap (CYBER, puesto 588)"
    ],
    "token": null
   },
@@ -51,9 +49,9 @@
     "token": "3bzeQJqDPfQQbxJ6VmtMkXyyQEJrj9HS1SMvHR1Hpump",
     "sym": "WILSON",
     "liq": 7374,
-    "vol24": 140,
-    "c24": -4.28,
-    "edad_h": 7079.8
+    "vol24": 105,
+    "c24": 0,
+    "edad_h": 7084.9
    }
   },
   {
@@ -94,7 +92,7 @@
     "liq": 8532,
     "vol24": 366,
     "c24": 13.24,
-    "edad_h": 3624.3
+    "edad_h": 3629.5
    }
   },
   {
@@ -124,7 +122,7 @@
     "liq": 19028,
     "vol24": 83,
     "c24": -17.93,
-    "edad_h": 26.8
+    "edad_h": 32.0
    }
   },
   {
@@ -134,116 +132,211 @@
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): Roaring Kitty made his first public post in 2026, leading to speculation that the crypto bull market may be returning. Concurrently, discussions highlight that …"
+    "tema caliente en X según Chainbase Tops (puesto 1): Discussions within the crypto community focus on current market conditions, with users analyzing price actions for assets like Bitcoin and ANT amid a prolonged …"
    ],
    "token": {
     "cadena": "solana",
     "token": "EKEWAk7hfnwfR8DBb1cTayPPambqyC7pwNiYkaYQKQHp",
     "sym": "KITTY",
-    "liq": 99377,
-    "vol24": 45892,
-    "c24": 33.27,
-    "edad_h": 23150.2
+    "liq": 98415,
+    "vol24": 46128,
+    "c24": 31.96,
+    "edad_h": 23155.4
    }
-  },
-  {
-   "tema": "Trump Faces Senate Roadblocks In 2027",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 88,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): US President Donald Trump, Chinese President Xi Jinping, and Russian President Vladimir Putin convened for a historic trilateral meeting in Shenzhen, China. The…"
-   ],
-   "token": null
   },
   {
    "tema": "Goolsbee Considers Larger Rate Hike",
    "fuentes": [
     "x_chainbase"
    ],
-   "calor": 86,
+   "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): Federal Reserve officials, including Governor Waller and Chicago Fed President Goolsbee, have indicated a potential shift toward raising interest rates in upcom…"
+    "tema caliente en X según Chainbase Tops (puesto 2): Federal Reserve official Austan Goolsbee stated that recent inflation data has been unfavorable, with price pressures proving more persistent than expected due …"
    ],
    "token": null
   },
   {
-   "tema": "GTA VI Launches Globally",
+   "tema": "GTA VI Gameplay Criticism",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 84,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): Grand Theft Auto VI has officially launched, achieving estimated first-day sales of $1.84 billion and breaking Twitch viewership records with over 50 million ho…"
+    "tema caliente en X según Chainbase Tops (puesto 4): Grand Theft Auto VI has launched, generating an estimated $1.84 billion in first-day sales and setting a Twitch viewership record with over 50 million hours wat…"
    ],
    "token": null
   },
   {
-   "tema": "Gold Platinum Multi Month Lows",
+   "tema": "Trump Xi Putin APEC Talks",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 82,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 5): President Donald Trump met with Chinese President Xi Jinping and Russian President Vladimir Putin during the APEC summit in China, marking a significant diploma…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "UK EU Finalize Post-Brexit Deal",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): Gold and silver prices have experienced significant corrections, with gold falling below $3,550 per ounce to its lowest level since September 2025. Silver has a…"
+    "tema caliente en X según Chainbase Tops (puesto 6): UK Prime Minister Andy Burnham met with European Union leaders in Brussels to negotiate a reset of post-Brexit relations, resulting in an agreement on closer ti…"
    ],
    "token": null
   },
   {
-   "tema": "China Maintains Loan Prime Rates",
+   "tema": "California Investigates Nvidia China Exports",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 78,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): The People's Bank of China kept the one-year and five-year loan prime rates unchanged at 3.00% and 3.50% respectively, while injecting 379.5 billion yuan into t…"
+    "tema caliente en X según Chainbase Tops (puesto 7): California Attorney General Rob Bonta has issued a subpoena to Nvidia to investigate whether the company misled investors and the public regarding the export of…"
    ],
    "token": null
   },
   {
-   "tema": "US Senate Passes Energy Permitting Bill",
+   "tema": "CME XRP Futures Volume Hits 81B",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 76,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): The US Senate has passed the Bipartisan American Affordability and Jobs Act, a landmark legislation aimed at overhauling the federal permitting process for larg…"
+    "tema caliente en X según Chainbase Tops (puesto 8): CME Group reported that its XRP and Micro XRP futures achieved $81.2 billion in notional trading volume over their first 18 months, with an average daily volume…"
    ],
    "token": null
   },
   {
-   "tema": "US Restricts Chinese Aerospace Flows",
+   "tema": "Exchanges Launch USDT Futures Earn",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 74,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): A U.S. House committee report recommends sweeping restrictions on China's aerospace sector, including banning the certification of Chinese-made aircraft and res…"
+    "tema caliente en X según Chainbase Tops (puesto 9): Multiple cryptocurrency platforms, including Bitget, WEEX, KuCoin, and others, have introduced or updated earning programs focused on USDT futures and spot hold…"
    ],
    "token": null
   },
   {
-   "tema": "Google Gemini 4 Neon Release",
+   "tema": "CoinMarketCap BTC Price Alert Error",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 72,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): Google has launched the Gemini 4 Neon AI model, positioning it as a cost-effective alternative to the Carbon model with reported lower expenses per task. The ne…"
+    "tema caliente en X según Chainbase Tops (puesto 10): CoinMarketCap, a Binance-owned platform, issued push notifications to app users stating that Bitcoin had reached $57,000. The company confirmed these alerts dis…"
    ],
    "token": null
   },
   {
-   "tema": "SFC Adds Hyperliquid Alert",
+   "tema": "Gold Silver Prices Drop",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): The Hong Kong Securities and Futures Commission (SFC) has added the decentralized perpetual exchange Hyperliquid to its list of suspicious virtual asset trading…"
+    "tema caliente en X según Chainbase Tops (puesto 11): Gold and silver prices have declined significantly, with gold dropping over 30% from its all-time high and silver falling more than 60%. Gold recently reached i…"
    ],
    "token": null
+  },
+  {
+   "tema": "WASTED",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (WASTED, puesto de capitalización 739)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
+    "sym": "WASTED",
+    "liq": 95334,
+    "vol24": 343657,
+    "c24": 13.67,
+    "edad_h": 500.5
+   }
+  },
+  {
+   "tema": "Official Trump",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (TRUMP, puesto de capitalización 136)"
+   ],
+   "token": {
+    "cadena": "bsc",
+    "token": "0x172eb459C85f82Cb2a2E007a8DbA26402ed75BF4",
+    "sym": "TRUMP",
+    "liq": 896924125,
+    "vol24": 0,
+    "c24": -6.93,
+    "edad_h": 7603.1
+   }
+  },
+  {
+   "tema": "Chunkee The Manatee",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (CHUNKEE, puesto de capitalización 922)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "H1fK1zrjVYeMs5FLGUDhqF34usz75UbVynKt4JHZpump",
+    "sym": "Chunkee",
+    "liq": 9511,
+    "vol24": 15754,
+    "c24": -50.7,
+    "edad_h": 716.4
+   }
+  },
+  {
+   "tema": "Lucia",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (LUCIA, puesto de capitalización 825)"
+   ],
+   "token": {
+    "cadena": "robinhood",
+    "token": "0xAE12303Bd73442d3C8Dba9a58b164070d78a1E18",
+    "sym": "LUCIA",
+    "liq": 46092,
+    "vol24": 2631,
+    "c24": -10.68,
+    "edad_h": 2001.5
+   }
+  },
+  {
+   "tema": "Pudgy Penguins",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 129)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "Ejoz1Ny3CLbnTVspPxwP8rNK5QX9TKri8ET3AEkuka9j",
+    "sym": "PENGU",
+    "liq": 36433324,
+    "vol24": 2,
+    "c24": -0.02,
+    "edad_h": 2010.6
+   }
   },
   {
    "tema": "Gravity (by Galxe)",
@@ -252,156 +345,144 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (G, puesto de capitalización 774)"
+    "entre lo más buscado en CoinGecko (G, puesto de capitalización 775)"
    ],
    "token": null
   },
   {
-   "tema": "Monad",
+   "tema": "Backpack",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 175)"
+    "entre lo más buscado en CoinGecko (BP, puesto de capitalización 148)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
-    "sym": "MON",
-    "liq": 31943882,
-    "vol24": 304015,
+    "token": "GMWrcQ185wqe7HNKg5m4qCtC3NQhAwS5fFMhbEgm8BiN",
+    "sym": "BP",
+    "liq": 1249791627,
+    "vol24": 302827,
     "c24": 0,
-    "edad_h": 1204.7
-   }
-  },
-  {
-   "tema": "EVAA Protocol",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (EVAA, puesto de capitalización 486)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "Ej4cuBwfc36DZH1TiMcX29cTTxM9jgVYJaKF5XtUtZhv",
-    "sym": "EVAA",
-    "liq": 29922491,
-    "vol24": 338995,
-    "c24": 0,
-    "edad_h": 545.2
-   }
-  },
-  {
-   "tema": "Akedo",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (AKE, puesto de capitalización 169)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "GjpboAg1KHUyTju9YuxftZbzUKdYu6SVwPTfN9CRMiYw",
-    "sym": "AKE",
-    "liq": 52505765,
-    "vol24": 1,
-    "c24": 0,
-    "edad_h": 1429.9
-   }
-  },
-  {
-   "tema": "Aero",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (AERO, puesto de capitalización 117)"
-   ],
-   "token": null
-  },
-  {
-   "tema": "CyberLeek",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (CYBERLEEK, puesto 1560)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg",
-    "sym": "CYBERLEEK",
-    "liq": 450931,
-    "vol24": 1343362,
-    "c24": 87.58,
-    "edad_h": 2316.4
-   }
-  },
-  {
-   "tema": "Lombard",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (BARD, puesto 365)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "LBTCgU4b3wsFKsPwBn1rRZDx5DoFutM6RPiEt1TPDsY",
-    "sym": "LBTC",
-    "liq": 618410,
-    "vol24": 15021,
-    "c24": -2.91,
-    "edad_h": 10799.7
+    "edad_h": 1005.8
    }
   }
  ],
  "cruces_h18": [
   {
-   "ts": 1795167154,
-   "hora_utc": "2026-11-20 09:32",
-   "tema": "CyberLeek",
-   "fuentes": "coinmarketcap,trending 1h",
+   "ts": 1795185675,
+   "hora_utc": "2026-11-20 14:41",
+   "tema": "WASTED",
+   "fuentes": "coingecko,trending 24h",
    "cadena": "solana",
-   "token": "ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg",
-   "sym": "CYBERLEEK",
-   "liq": 428378,
-   "mc": 2385854,
-   "c1": 11.54,
-   "seguridad": "ok",
-   "aviso": "si",
-   "nuestras": "A2 B25 C3"
+   "token": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
+   "sym": "WASTED",
+   "liq": 95829,
+   "mc": 965995,
+   "c1": 0.58,
+   "seguridad": "top10",
+   "aviso": "no",
+   "nuestras": "A5 B11 C2"
+  },
+  {
+   "ts": 1795185675,
+   "hora_utc": "2026-11-20 14:41",
+   "tema": "Official Trump",
+   "fuentes": "coingecko,trending 1h",
+   "cadena": "solana",
+   "token": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+   "sym": "TRUMP",
+   "liq": 119361,
+   "mc": 248148652,
+   "c1": -0.03,
+   "seguridad": "top10",
+   "aviso": "no",
+   "nuestras": "A2 B3 C0"
+  },
+  {
+   "ts": 1795185675,
+   "hora_utc": "2026-11-20 14:41",
+   "tema": "Backpack",
+   "fuentes": "coingecko,trending 5m",
+   "cadena": "solana",
+   "token": "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb",
+   "sym": "SPCX",
+   "liq": 2476040,
+   "mc": 0,
+   "c1": 1.66,
+   "seguridad": "top10,mint/freeze",
+   "aviso": "no",
+   "nuestras": "A19 B7 C1"
+  },
+  {
+   "ts": 1795185675,
+   "hora_utc": "2026-11-20 14:41",
+   "tema": "Backpack",
+   "fuentes": "coingecko,trending 5m",
+   "cadena": "solana",
+   "token": "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo",
+   "sym": "TTWO",
+   "liq": 558593,
+   "mc": 89,
+   "c1": -2.27,
+   "seguridad": "top10,lp,mint/freeze",
+   "aviso": "no",
+   "nuestras": "A20 B10 C4"
+  },
+  {
+   "ts": 1795185675,
+   "hora_utc": "2026-11-20 14:41",
+   "tema": "Backpack",
+   "fuentes": "coingecko,trending 5m",
+   "cadena": "solana",
+   "token": "AMC1qwR9KhiyrQBRPrxnfo4JfMeMZqEBvt5tgTytNNoc",
+   "sym": "AMC",
+   "liq": 47348,
+   "mc": 95781,
+   "c1": -1.05,
+   "seguridad": "top10,mint/freeze",
+   "aviso": "no",
+   "nuestras": "A2 B2 C0"
+  },
+  {
+   "ts": 1795185675,
+   "hora_utc": "2026-11-20 14:41",
+   "tema": "Backpack",
+   "fuentes": "coingecko,trending 24h",
+   "cadena": "solana",
+   "token": "ANTBTZQ1EUuTxUs3tfeampxdqTWPHmwyJmcWj4xoAyNe",
+   "sym": "ANT",
+   "liq": 1433612,
+   "mc": 1354806,
+   "c1": 2.67,
+   "seguridad": "top10,lp,mint/freeze",
+   "aviso": "no",
+   "nuestras": "A0 B0 C2"
   }
  ],
  "huecos_h19": [
   {
-   "ts": 1795167154,
-   "hora_utc": "2026-11-20 09:32",
-   "tema": "EU Confirms AI Cyberattack",
-   "fuentes": "x_chainbase,coingecko,coinmarketcap",
-   "calor": 100,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 5): The European Commission confirmed it was targeted by an AI-generated cybercampaign, resulting in the compromise of staff personal data and the offline status of… | entre lo más buscado en CoinGecko (CYBER, puesto de capitalización 799) | entre lo más buscado en CoinMarketCap (CYBER, puesto 528)",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795167154,
-   "hora_utc": "2026-11-20 09:32",
-   "tema": "Kutcher's firm and Anthropic IPO",
+   "ts": 1795185675,
+   "hora_utc": "2026-11-20 14:41",
+   "tema": "Anthropic debuts on Nasdaq",
    "fuentes": "bluesky,wikipedia",
    "calor": 97,
-   "porque": "tendencia en Bluesky: Ashton Kutcher's cofounded investment firm reportedly earned billions as the AI company went public. | 112,202 visitas ayer en Wikipedia, 4.7× anteayer",
+   "porque": "tendencia en Bluesky: The AI company priced shares at $83, raising $81.3 billion in the largest IPO ever. | 112,202 visitas ayer en Wikipedia, 4.7× anteayer",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795167154,
-   "hora_utc": "2026-11-20 09:32",
+   "ts": 1795185675,
+   "hora_utc": "2026-11-20 14:41",
+   "tema": "UK Conducts Offensive Cyber Ops",
+   "fuentes": "x_chainbase,coinmarketcap",
+   "calor": 96,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): General Sir Rob Magowan confirmed that the United Kingdom is conducting daily offensive cyber operations against Russia, China, Iran, and North Korea through it… | entre lo más buscado en CoinMarketCap (CYBER, puesto 588)",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795185675,
+   "hora_utc": "2026-11-20 14:41",
    "tema": "Ella Langley",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -409,8 +490,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795167154,
-   "hora_utc": "2026-11-20 09:32",
+   "ts": 1795185675,
+   "hora_utc": "2026-11-20 14:41",
    "tema": "Ken McElroy",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -418,8 +499,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795167154,
-   "hora_utc": "2026-11-20 09:32",
+   "ts": 1795185675,
+   "hora_utc": "2026-11-20 14:41",
    "tema": "International Men's Day",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -427,30 +508,30 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795167154,
-   "hora_utc": "2026-11-20 09:32",
-   "tema": "Trump Faces Senate Roadblocks In 2027",
-   "fuentes": "x_chainbase",
-   "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): US President Donald Trump, Chinese President Xi Jinping, and Russian President Vladimir Putin convened for a historic trilateral meeting in Shenzhen, China. The…",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795167154,
-   "hora_utc": "2026-11-20 09:32",
+   "ts": 1795185675,
+   "hora_utc": "2026-11-20 14:41",
    "tema": "Goolsbee Considers Larger Rate Hike",
    "fuentes": "x_chainbase",
-   "calor": 86,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 3): Federal Reserve officials, including Governor Waller and Chicago Fed President Goolsbee, have indicated a potential shift toward raising interest rates in upcom…",
+   "calor": 88,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Federal Reserve official Austan Goolsbee stated that recent inflation data has been unfavorable, with price pressures proving more persistent than expected due …",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795167154,
-   "hora_utc": "2026-11-20 09:32",
-   "tema": "GTA VI Launches Globally",
+   "ts": 1795185675,
+   "hora_utc": "2026-11-20 14:41",
+   "tema": "GTA VI Gameplay Criticism",
    "fuentes": "x_chainbase",
    "calor": 84,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 4): Grand Theft Auto VI has officially launched, achieving estimated first-day sales of $1.84 billion and breaking Twitch viewership records with over 50 million ho…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 4): Grand Theft Auto VI has launched, generating an estimated $1.84 billion in first-day sales and setting a Twitch viewership record with over 50 million hours wat…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795185675,
+   "hora_utc": "2026-11-20 14:41",
+   "tema": "Trump Xi Putin APEC Talks",
+   "fuentes": "x_chainbase",
+   "calor": 82,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 5): President Donald Trump met with Chinese President Xi Jinping and Russian President Vladimir Putin during the APEC summit in China, marking a significant diploma…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
