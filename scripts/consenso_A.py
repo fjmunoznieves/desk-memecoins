@@ -90,25 +90,6 @@ def main():
                     vivos[op] = (w, d[op][1]); break
         if len(vivos) < 2:
             print(f"consenso A descartado (ya vendieron): {p['baseToken']['symbol']} {t} {len(d)} operadores, {len(vivos)} siguen dentro")
-            # 20-nov (caso Huss CUg7…: 7Mwof5 entró solo a 0,000075 el 18-nov cuando las A previas ya habían salido; el filtro
-            # "2 siguen dentro" lo descartó 7 escaneos y subió x6). H35b en sombra: 1 operador A que entró en las últimas 12 h y
-            # sigue dentro, token <7 días y MC <2 M (franjas del estudio quién compra 20-nov), contrato sano (RugCheck).
-            if len(vivos) == 1:
-                op1, (w1, ts1) = next(iter(vivos.items()))
-                edad = (ahora * 1000 - (p.get("pairCreatedAt") or ahora * 1000)) / 8.64e7
-                ya35 = {r["token"] for r in leer("datos/h35b_sombra.tsv")}
-                if ahora - ts1 <= 12 * 3600 and edad < 7 and mc < 2e6 and t not in ya35:
-                    from estudios_17nov import rugcheck, guardar, C27
-                    rc = rugcheck(t)
-                    if rc and rc["top1"] < 40 and rc["top10"] < 70 and not (10 <= (rc["score"] or 0) <= 59):
-                        liq = (p.get("liquidity") or {}).get("usd") or 0
-                        guardar("datos/h35b_sombra.tsv", C27, [dict(ts=ahora, hora_utc=hora, cadena="solana", token=t, sym=p["baseToken"]["symbol"],
-                                precio=p.get("priceUsd"), liq=round(liq), mc=round(mc), liq_mc_pct=round(100 * liq / mc, 1), edad_d=round(edad, 2),
-                                n_elite=1, elite=op1, pool=p.get("pairAddress"),
-                                motivo=f"1 operador A nuevo y dentro ({op1}) tras salir las A previas ({len(d)} en 72 h); RugCheck mayor {round(rc['top1'])} % top10 {round(rc['top10'])} % score {rc['score']}")])
-                        print(f"H35b entrada sombra: {p['baseToken']['symbol']} {t} {op1} entró solo tras salir las A previas, MC {round(mc):,}")
-                    else:
-                        print(f"H35b descartado por contrato: {p['baseToken']['symbol']} {t} {rc}")
             continue
         d = vivos
         filas.append(dict(ts=ahora, hora_utc=hora, token=t, sym=p["baseToken"]["symbol"], precio=p.get("priceUsd") or "",
@@ -126,7 +107,7 @@ def main():
         previo = json.load(open(PEND)) if os.path.exists(PEND) else []
         json.dump(previo + avisos, open(PEND, "w"), indent=1)
     if os.environ.get("GITHUB_ACTIONS"):
-        subprocess.run(["git", "add", SEG, LOG, "datos/consenso_A_estado.json"] + [f for f in ("datos/liquidez_seguimiento.tsv", "datos/h25_sombra.tsv", "datos/h26_sombra.tsv", "datos/h27_sombra.tsv", "datos/h29_sombra.tsv", "datos/h30_sombra.tsv", "datos/h31_sombra.tsv", "datos/h31p_sombra.tsv", "datos/h32_sombra.tsv", "datos/h31s_sombra.tsv", "datos/universo_escaneos.tsv", "datos/ath_cache.json", "datos/imitadores.tsv", "datos/bundles_eventos.tsv", "datos/bundle_grupos.tsv", "datos/elite.tsv", "datos/h35b_sombra.tsv") if os.path.exists(f)] + (["datos/consenso_A_ventas.tsv"] if os.path.exists("datos/consenso_A_ventas.tsv") else []), check=False)
+        subprocess.run(["git", "add", SEG, LOG, "datos/consenso_A_estado.json"] + [f for f in ("datos/liquidez_seguimiento.tsv", "datos/h25_sombra.tsv", "datos/h26_sombra.tsv", "datos/h27_sombra.tsv", "datos/h29_sombra.tsv", "datos/h30_sombra.tsv", "datos/h31_sombra.tsv", "datos/h31p_sombra.tsv", "datos/h32_sombra.tsv", "datos/h31s_sombra.tsv", "datos/universo_escaneos.tsv", "datos/ath_cache.json", "datos/imitadores.tsv", "datos/bundles_eventos.tsv", "datos/bundle_grupos.tsv", "datos/elite.tsv") if os.path.exists(f)] + (["datos/consenso_A_ventas.tsv"] if os.path.exists("datos/consenso_A_ventas.tsv") else []), check=False)
     print(f"consenso A: {len(filas)} avisos nuevos")
 
 
