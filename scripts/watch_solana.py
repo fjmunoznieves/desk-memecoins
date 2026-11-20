@@ -13,7 +13,7 @@ import atexit; atexit.register(lambda: print(rpc_sol.resumen()))
 KEY = os.environ.get("HELIUS_API_KEY", "").strip()
 RPC = "PRINCIPAL"  # marcador: post() lo envía por rpc_sol
 ALC = os.environ.get("ALCHEMY_API_KEY", "").strip()
-RPC_TX = f"https://solana-mainnet.g.alchemy.com/v2/{ALC}" if ALC else RPC
+RPC_TX = RPC  # 20-nov: getTransaction por Shyft (gratis); Alchemy queda para métodos de índice
 WL = os.environ.get("WL_FILE", "datos/watchlist_solana.tsv")
 ST = os.environ.get("ST_FILE", "datos/watchlist_estado.json")
 LOG = os.environ.get("LOG_FILE", "datos/watchlist_compras.tsv")
@@ -222,7 +222,7 @@ else:
         for w, t in ex.map(una, pares):
             if t:
                 compras += compra_de(t, w)
-    print(f"getTransaction: {NTX} ({'Alchemy' if ALC else ('Shyft' if rpc_sol.SHYFT else 'Helius RPC, 1 crédito c/u')})")
+    print(f"getTransaction: {NTX} ({'Shyft' if rpc_sol.SHYFT else 'Helius RPC, 1 crédito c/u'})")
 
 
 if compras:

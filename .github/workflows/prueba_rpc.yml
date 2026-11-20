@@ -16,6 +16,7 @@ jobs:
         env:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
           SHYFT_API_KEY: ${{ secrets.SHYFT_API_KEY }}
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
         run: |
           cp datos/consenso_A_estado.json /tmp/e.json || echo '{}' > /tmp/e.json
           time CARTERA=1 ES_H23=1 WL_FILE=datos/watchlist_A_oper.tsv ST_FILE=/tmp/e.json LOG_FILE=/tmp/l.tsv AL_FILE=/tmp/a.json python3 scripts/watch_solana.py 2>&1 | tail -25
@@ -25,5 +26,8 @@ jobs:
           from vigila_sostenidas import saldo_usd
           import rpc_sol
           print("saldo 9PS6LG en WEALTH (unidades x1):", saldo_usd("9PS6LG5vb3p36ApkQkAnPEXuZuEpAKfWSKx9CWoQcrLm", "8Mi9E1V2bdPeAaRkR5yxUsAvpzP6UBUEEUrYmgKNpump", 1))
+          f = rpc_sol.post_json({"jsonrpc":"2.0","id":1,"method":"getSignaturesForAddress","params":["9PS6LG5vb3p36ApkQkAnPEXuZuEpAKfWSKx9CWoQcrLm",{"limit":3}]})["result"]
+          t = rpc_sol.post_json({"jsonrpc":"2.0","id":1,"method":"getTransaction","params":[f[0]["signature"],{"encoding":"jsonParsed","maxSupportedTransactionVersion":0}]})["result"]
+          print("firmas:", len(f), "tx leída:", bool(t))
           print(rpc_sol.resumen())
           PY
