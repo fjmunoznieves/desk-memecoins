@@ -20,9 +20,9 @@ from operadores import mapa
 SALIDA = "datos/salidas_sombra.tsv"
 ALERTAS = "datos/alertas_salida.tsv"
 CAMPOS = ["ts", "hora_utc", "hip", "cadena", "token", "sym", "precio", "n_billeteras", "n_oper", "pasa_oper",
-          "c24", "c7d", "max7d_pct", "esc_pct", "esc_detalle", "esc35_pct", "esc35_detalle", "trail30_pct", "trail30_detalle", "copiaA_pct", "copiaA_hora", "copiaA_detalle", "hib_pct", "hib_detalle", "pool", "estado"]
+          "c24", "c7d", "max7d_pct", "esc_pct", "esc_detalle", "esc35_pct", "esc35_detalle", "trail30_pct", "trail30_detalle", "copiaA_pct", "copiaA_hora", "copiaA_detalle", "hib_pct", "hib_detalle", "pool", "estado", "medido"]
 CAMPOS_AL = ["ts", "hora_utc", "hip", "token", "sym", "operadores_con_saldo", "operadores_vendieron", "precio", "cambio_desde_senal"]
-PRESUPUESTO_S = 120  # 17-nov: bajado de 240 (minutos de GitHub)
+PRESUPUESTO_S = 120  # 17-nov (minutos); 20-nov: ahora prioriza filas nunca medidas, ver main()
 
 
 def leer(f):
@@ -147,7 +147,13 @@ def main():
     alertas = leer(ALERTAS)
     ya_al = {(a["hip"], a["token"]) for a in alertas}
     filas = []
-    for s in senales():
+    # 20-nov: BUG corregido. Se recorrían las señales en orden y el presupuesto se gastaba siempre en las mismas filas
+    # viejas (H21-H24): H25-H34 casi nunca se medían. Ahora van primero las nunca medidas y una fila abierta se
+    # vuelve a medir solo si pasaron 6 h desde la última vez.
+    def prioridad(s):
+        r = previas.get((s["hip"], s["token"]), {})
+        return (1 if r.get("esc35_pct") else 0, int(r.get("medido") or 0))
+    for s in sorted(senales(), key=prioridad):
         r = previas.get((s["hip"], s["token"]), {})
         r.update({k: v for k, v in s.items() if v not in ("", None) or k not in r})
         try:
@@ -167,7 +173,8 @@ def main():
                 print(f"salida A: {r['sym']} {r['token']} ({r['hip']}) {a[3]}/{a[2]} operadores vendieron, {r['copiaA_pct']} % desde la señal")
         # escalonada (se recalcula hasta cumplir 7 días)
         edad = time.time() - int(r["ts"])
-        if (r.get("estado") != "cerrado" or not r.get("esc35_pct") or not r.get("hib_pct")) and p0 and r["cadena"] in GNET and edad >= 3600 and time.time() - t_ini < PRESUPUESTO_S:
+        reciente = r.get("esc35_pct") and time.time() - int(r.get("medido") or 0) < 6 * 3600
+        if (r.get("estado") != "cerrado" or not r.get("esc35_pct") or not r.get("hib_pct")) and not reciente and p0 and r["cadena"] in GNET and edad >= 3600 and time.time() - t_ini < PRESUPUESTO_S:
             pool = r.get("pool") or pool_de(r["cadena"], r["token"])
             if pool:
                 r["pool"] = pool
@@ -192,6 +199,7 @@ def main():
                     pct_h, det_h = hibrida(c, p0, sa)
                     r["hib_pct"], r["hib_detalle"] = round(pct_h, 1), det_h
                     r["estado"] = "cerrado" if edad >= 7 * 86400 else "abierto"
+                    r["medido"] = int(time.time())
         r.setdefault("estado", "abierto")
         filas.append(r)
     with open(SALIDA, "w", newline="") as f:
