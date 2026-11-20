@@ -27,7 +27,7 @@ jobs:
           import rpc_sol
           print("saldo 9PS6LG en WEALTH (unidades x1):", saldo_usd("9PS6LG5vb3p36ApkQkAnPEXuZuEpAKfWSKx9CWoQcrLm", "8Mi9E1V2bdPeAaRkR5yxUsAvpzP6UBUEEUrYmgKNpump", 1))
           f = rpc_sol.post_json({"jsonrpc":"2.0","id":1,"method":"getSignaturesForAddress","params":["9PS6LG5vb3p36ApkQkAnPEXuZuEpAKfWSKx9CWoQcrLm",{"limit":3}]})["result"]
-          t = rpc_sol.post_json({"jsonrpc":"2.0","id":1,"method":"getTransaction","params":[f[0]["signature"],{"encoding":"jsonParsed","maxSupportedTransactionVersion":0}]})["result"]
+          t = rpc_sol.post_json({"jsonrpc":"2.0","id":1,"method":"getTransaction","params":[f[0]["signature"],{"encoding":"jsonParsed","maxSupportedTransactionVersion":1}]})["result"]
           print("firmas:", len(f), "tx leída:", bool(t))
           print(rpc_sol.resumen())
           PY
