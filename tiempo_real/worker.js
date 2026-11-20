@@ -43,6 +43,18 @@ export default {
       const r = await env.DB.prepare("SELECT mint, sym, billetera, fuente, ts_tx, mc, liq, creado, precio FROM det WHERE ts_det > ? AND mc BETWEEN 60000 AND 150000 ORDER BY ts_det").bind(ahora() - 86400).all();
       return new Response((r.results || []).map((x) => [x.mint, x.sym, x.billetera.slice(0, 6), x.fuente, x.ts_tx, x.mc, x.liq, x.creado, x.precio].join(",")).join("\n"));
     }
+    if (req.method === "GET" && url.pathname === "/velas") {
+      // CSV: mint,ts,precio,mc,liq,b5,s5,v5 desde ?desde= (por defecto 24 h); ?mint= filtra un token
+      const desde = Number(url.searchParams.get("desde") || ahora() - 86400), m = url.searchParams.get("mint");
+      const q = m ? env.DB.prepare("SELECT * FROM velas WHERE ts > ? AND mint = ? ORDER BY ts").bind(desde, m)
+                  : env.DB.prepare("SELECT * FROM velas WHERE ts > ? ORDER BY mint, ts LIMIT 50000").bind(desde);
+      const r = await q.all();
+      return new Response((r.results || []).map((x) => [x.mint, x.ts, x.precio, x.mc, x.liq, x.b5, x.s5, x.v5].join(",")).join("\n"));
+    }
+    if (req.method === "GET" && url.pathname === "/ventas") {
+      const r = await env.DB.prepare("SELECT mint, w, ts, vendido, antes FROM ventas WHERE ts > ? ORDER BY ts").bind(Number(url.searchParams.get("desde") || ahora() - 86400)).all();
+      return new Response((r.results || []).map((x) => [x.mint, x.w, x.ts, x.vendido, x.antes].join(",")).join("\n"));
+    }
     if (req.method === "GET" && url.pathname === "/ult") {
       const r = await env.DB.prepare("SELECT w, dia, cnt, ts FROM ult ORDER BY cnt DESC LIMIT 15").all();
       return Response.json(r.results || []);
@@ -65,8 +77,41 @@ export default {
   async scheduled(evento, env, ctx) {
     if (env.SHYFT_API_KEY) { try { await sondear(env); } catch (e) { await contar(env, "shyft_error_otro"); } }
     await completar(env);
+    try { await seguir(env); } catch (e) { await contar(env, "seguir_error"); }
   },
 };
+// 20-nov (Fran): salida al minuto. Cada detección en la banda de H34 (MC 60-150 mil) se sigue 24 h en DexScreener:
+// cada minuto la 1.ª hora, cada 5 min hasta las 6 h y cada 15 min hasta las 24 h (cuida el tope de escrituras de D1).
+// Guarda precio, MC, liquidez, compras/ventas y volumen de 5 min en la tabla velas. Las ventas de nuestras A van a ventas.
+async function seguir(env) {
+  const t = ahora();
+  const r = await env.DB.prepare("SELECT d.mint, d.ts_det, (SELECT MAX(v.ts) FROM velas v WHERE v.mint = d.mint) ult FROM det d WHERE d.ts_det > ? AND d.mc BETWEEN 60000 AND 150000")
+    .bind(t - 86400).all();
+  const toca = (r.results || []).filter((x) => {
+    const edad = t - x.ts_det, paso = edad < 3600 ? 60 : edad < 21600 ? 300 : 900;
+    return !x.ult || t - x.ult >= paso - 10;
+  }).map((x) => x.mint);
+  for (let i = 0; i < toca.length && i < 90; i += 30) {
+    const parte = toca.slice(i, i + 30);
+    let d = [];
+    try { d = await (await fetch("https://api.dexscreener.com/tokens/v1/solana/" + parte.join(","))).json(); } catch (e) { d = []; }
+    const mejor = new Map();
+    for (const p of Array.isArray(d) ? d : []) {
+      const m = (p.baseToken || {}).address; if (!m) continue;
+      const q = mejor.get(m);
+      if (!q || ((p.liquidity || {}).usd || 0) > ((q.liquidity || {}).usd || 0)) mejor.set(m, p);
+    }
+    const ops = [];
+    for (const m of parte) {
+      const p = mejor.get(m); if (!p) continue;
+      const tx = ((p.txns || {}).m5) || {};
+      ops.push(env.DB.prepare("INSERT OR IGNORE INTO velas(mint, ts, precio, mc, liq, b5, s5, v5) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")
+        .bind(m, t, String(p.priceUsd || ""), Math.round(p.marketCap || p.fdv || 0), Math.round((p.liquidity || {}).usd || 0),
+              tx.buys || 0, tx.sells || 0, Math.round(((p.volume || {}).m5) || 0)));
+    }
+    if (ops.length) await env.DB.batch(ops);
+  }
+}
 async function completar(env) {
   // hasta 30 detecciones de los últimos 15 min sin precio, en UNA consulta a DexScreener (acepta 30 tokens por llamada)
   const r = await env.DB.prepare("SELECT mint FROM det WHERE mc IS NULL AND COALESCE(intentos, 0) < 6 AND ts_det > ? ORDER BY ts_det DESC LIMIT 30")
@@ -154,6 +199,7 @@ async function precio(env, mint) {
 }
 
 // ---- Sondeo Shyft (19-nov) ----
+let SEGUIDOS = new Set();
 const MAX_TX = 80; // tope de transacciones leídas por minuto (CPU del plan gratis); el resto se cuenta como saltada
 async function rpc(env, lote) {
   const r = await fetch("https://rpc.shyft.to?api_key=" + env.SHYFT_API_KEY, {
@@ -170,6 +216,8 @@ async function sondear(env) {
   // Regla de bots del desk (operadores.tsv): >200 operaciones al día = bot. Se cuenta por billetera y día UTC;
   // pasada esa cifra se siguen avanzando sus firmas pero no se leen sus transacciones (19-nov: is6MTR ~250/h).
   const ws = [...A], dia = Math.floor(ahora() / 86400);
+  const sg = await env.DB.prepare("SELECT mint FROM det WHERE ts_det > ? AND mc BETWEEN 60000 AND 150000").bind(ahora() - 86400).all();
+  SEGUIDOS = new Set((sg.results || []).map((x) => x.mint));
   const u = await env.DB.prepare("SELECT w, sig, ts, dia, cnt FROM ult").all();
   const ult = new Map((u.results || []).map((x) => [x.w, x]));
   const nuevas = [], upd = [], dbg = [], est = { sin_id: 0, nulos: 0, leidas: 0 };
@@ -246,6 +294,15 @@ async function compraShyft(env, t, n) {
     }
   const recibe = [...dif].filter(([m, v]) => !BASES.has(m) && v > 0).map(([m]) => m);
   const entrega = [...dif].some(([m, v]) => !BASES.has(m) && v < 0);
+  // 20-nov: venta de un token seguido (banda H34, 24 h): se guarda cuánto vendió y cuánto tenía antes
+  if (entrega && SEGUIDOS.size) {
+    const pre = new Map();
+    for (const b of meta.preTokenBalances || []) if (b.owner === w) pre.set(b.mint, (pre.get(b.mint) || 0) + Number((b.uiTokenAmount || {}).uiAmount || 0));
+    for (const [m, v] of dif) if (v < 0 && SEGUIDOS.has(m)) {
+      try { await env.DB.prepare("INSERT OR IGNORE INTO ventas(mint, w, ts, vendido, antes, firma) VALUES (?, ?, ?, ?, ?, ?)")
+        .bind(m, w, t.blockTime || n.ts, -v, pre.get(m) || 0, n.sig + ":" + m.slice(0, 6)).run(); await contar(env, "ventas_seguidas"); } catch (e) {}
+    }
+  }
   if (!dif.size) return "sin_saldos_dueño";
   if (!recibe.length) return "no_recibe";
   if (entrega) return "entrega_token";
