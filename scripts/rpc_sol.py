@@ -8,7 +8,7 @@ HELIUS = f"https://mainnet.helius-rpc.com/?api-key={_H}" if _H else ""
 SHYFT = f"https://rpc.shyft.to?api_key={_S}" if _S else ""
 PRINCIPAL = SHYFT or HELIUS
 RESPALDO = HELIUS if SHYFT else ""
-USO = {"shyft": 0, "helius": 0, "fallos": 0}
+USO = {"shyft": 0, "helius": 0, "fallos": 0, "error": ""}
 CLAVES = [k for k in (_H, _S) if k]
 
 
@@ -50,10 +50,16 @@ def post_json(body_dict, intentos=5, timeout=40):
         if not RESPALDO:
             raise RuntimeError(limpio(e))
         USO["fallos"] += 1
+        if not USO["error"]:
+            m = limpio(e)
+            if hasattr(e, "read"):
+                try: m += " " + limpio(e.read().decode()[:200])
+                except Exception: pass
+            USO["error"] = m[:300]
         d = _uno(RESPALDO, body, intentos, timeout)
         USO["helius"] += 1
         return d
 
 
 def resumen():
-    return f"RPC: Shyft {USO['shyft']}, Helius {USO['helius']} (respaldo tras {USO['fallos']} fallos de Shyft)"
+    return f"RPC: Shyft {USO['shyft']}, Helius {USO['helius']} (respaldo tras {USO['fallos']} fallos de Shyft){' — primer error: ' + USO['error'] if USO['error'] else ''}"
