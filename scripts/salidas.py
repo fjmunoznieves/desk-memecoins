@@ -206,10 +206,10 @@ def main():
         w = csv.DictWriter(f, CAMPOS, delimiter="\t", extrasaction="ignore"); w.writeheader(); w.writerows(filas)
     with open(ALERTAS, "w", newline="") as f:
         w = csv.DictWriter(f, CAMPOS_AL, delimiter="\t", extrasaction="ignore"); w.writeheader(); w.writerows(alertas)
-    control(filas)
+    control(filas, len(alertas))
 
 
-def control(filas):
+def control(filas, n_alertas=0):
     """20-nov (Fran: "una semana pasó y esas hipótesis no fueron analizadas"). Control de que la medición funciona:
     por hipótesis, señales con más de 24 h, precio y cadena medible que siguen sin escalonada. Si en alguna pasa del
     20 % (con 3+ señales) se deja datos/control_salidas_falla.json → issue (alerta_issue.py), una vez al día.
@@ -248,7 +248,7 @@ def control(filas):
         open(marca, "w").write(hoy)
     print("control salidas:", ", ".join(f"{h} {sin[h]}/{tot[h]} sin medir" for h in sorted(tot)))
     print(f"salidas: {len(filas)} señales, {sum(1 for r in filas if r.get('esc_pct') not in ('', None))} con escalonada, "
-          f"{len(alertas)} avisos de salida A")
+          f"{n_alertas} avisos de salida A")
 
 
 if __name__ == "__main__":
