@@ -1,11 +1,11 @@
 grupo | n | media sim % | mediana sim % | % ganadoras | suma USD con 12 USD/operación
-2 fallos | 205 | -21.0 | -20.0 | 18 | -517.64
+2 fallos | 212 | -20.3 | -20.0 | 19 | -516.47
 pasa numéricos | 12 | -6.9 | -20.0 | 25 | -9.91
 solo falla 5m>=50 | 10 | -28.0 | -20.0 | 0 | -33.6
 solo falla b/s | 37 | -35.6 | -20.0 | 22 | -158.26
-solo falla liq | 31 | -29.2 | -20.0 | 13 | -108.56
+solo falla liq | 32 | -28.9 | -20.0 | 12 | -110.96
 solo falla lp | 24 | -60.6 | -100.0 | 25 | -174.43
 solo falla pool | 2 | -20.0 | -20.0 | 0 | -4.8
 solo falla seg? | 2 | -20.0 | -20.0 | 0 | -4.8
 solo falla top10 | 6 | -4.6 | -20.0 | 33 | -3.34
-solo falla vol5m | 79 | -22.6 | -20.0 | 22 | -214.33
+solo falla vol5m | 80 | -22.5 | -20.0 | 21 | -216.32
