@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-21 16:45",
+ "hora_utc": "2026-11-21 21:13",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -30,17 +30,17 @@
    ],
    "calor": 80,
    "porque": [
-    "entre lo más buscado en CoinGecko (DRV, puesto de capitalización 115)",
-    "entre lo más buscado en CoinMarketCap (DRV, puesto 220)"
+    "entre lo más buscado en CoinGecko (DRV, puesto de capitalización 113)",
+    "entre lo más buscado en CoinMarketCap (DRV, puesto 219)"
    ],
    "token": {
     "cadena": "solana",
     "token": "DPcz93J8vKiEL2W6dSSUuyonSmMxo8Bm8xS47ADCpbBE",
     "sym": "DRV",
     "liq": 391822602,
-    "vol24": 171252,
+    "vol24": 88848,
     "c24": 0,
-    "edad_h": 874.2
+    "edad_h": 878.7
    }
   },
   {
@@ -56,10 +56,10 @@
     "cadena": "solana",
     "token": "5LgLezmiPBKLU3Smt5yHQKbaEzuTxd7D6NPbUf7pump",
     "sym": "Levent",
-    "liq": 4421,
-    "vol24": 10192,
-    "c24": -45.51,
-    "edad_h": 2985.8
+    "liq": 4322,
+    "vol24": 7303,
+    "c24": 20.46,
+    "edad_h": 2990.3
    }
   },
   {
@@ -129,60 +129,41 @@
    "token": null
   },
   {
+   "tema": "PIPI",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (PIPI, puesto de capitalización 675)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "6MKD1NkLvWRqdbFtqmgACBwUV5o6GJpZry8HkNgzpump",
+    "sym": "PIPI",
+    "liq": 20817,
+    "vol24": 96147,
+    "c24": -63.27,
+    "edad_h": 57.1
+   }
+  },
+  {
    "tema": "WASTED",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (WASTED, puesto de capitalización 779)"
+    "entre lo más buscado en CoinGecko (WASTED, puesto de capitalización 799)"
    ],
    "token": {
     "cadena": "solana",
     "token": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
     "sym": "WASTED",
-    "liq": 99925,
-    "vol24": 110618,
-    "c24": 15.34,
-    "edad_h": 526.6
-   }
-  },
-  {
-   "tema": "Official Trump",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (TRUMP, puesto de capitalización 136)"
-   ],
-   "token": {
-    "cadena": "robinhood",
-    "token": "0xAF8A8A828632Cc88BF917A42d9e1AaB71D5a1994",
-    "sym": "TRUMP",
-    "liq": 1379820299,
-    "vol24": 0,
-    "c24": 1.12,
-    "edad_h": 3174.9
-   }
-  },
-  {
-   "tema": "Backpack",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (BP, puesto de capitalización 149)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "GMWrcQ185wqe7HNKg5m4qCtC3NQhAwS5fFMhbEgm8BiN",
-    "sym": "BP",
-    "liq": 1249791657,
-    "vol24": 299032,
-    "c24": 0,
-    "edad_h": 1031.9
+    "liq": 94057,
+    "vol24": 93926,
+    "c24": 13.85,
+    "edad_h": 531.1
    }
   },
   {
@@ -192,16 +173,35 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (WSTAR, puesto de capitalización 688)"
+    "entre lo más buscado en CoinGecko (WSTAR, puesto de capitalización 789)"
    ],
    "token": {
     "cadena": "robinhood",
     "token": "0x2d3E65142bf632eD90e8EE43225CE543E7AACf58",
     "sym": "WANTED",
-    "liq": 48028,
-    "vol24": 9175,
-    "c24": -11.17,
-    "edad_h": 54.3
+    "liq": 46214,
+    "vol24": 6766,
+    "c24": -7.92,
+    "edad_h": 58.7
+   }
+  },
+  {
+   "tema": "Chunkee The Manatee",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (CHUNKEE, puesto de capitalización 913)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "H1fK1zrjVYeMs5FLGUDhqF34usz75UbVynKt4JHZpump",
+    "sym": "Chunkee",
+    "liq": 9284,
+    "vol24": 2030,
+    "c24": -17.58,
+    "edad_h": 746.9
    }
   },
   {
@@ -220,57 +220,27 @@
     "liq": 207342532,
     "vol24": 0,
     "c24": 1.12,
-    "edad_h": 3165.1
+    "edad_h": 3169.6
    }
   },
   {
-   "tema": "Chunkee The Manatee",
+   "tema": "EVAA Protocol",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (CHUNKEE, puesto de capitalización 881)"
+    "entre lo más buscado en CoinGecko (EVAA, puesto de capitalización 434)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "H1fK1zrjVYeMs5FLGUDhqF34usz75UbVynKt4JHZpump",
-    "sym": "Chunkee",
-    "liq": 9718,
-    "vol24": 4459,
-    "c24": -3.94,
-    "edad_h": 742.5
+    "token": "Ej4cuBwfc36DZH1TiMcX29cTTxM9jgVYJaKF5XtUtZhv",
+    "sym": "EVAA",
+    "liq": 29922529,
+    "vol24": 505848,
+    "c24": -0.03,
+    "edad_h": 580.9
    }
-  },
-  {
-   "tema": "Pons",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (PONS, puesto de capitalización 343)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "2K6N3AwwC9ZXbkBTpkwGCpW9DMasz9686sC2QZHQbuim",
-    "sym": "PONS",
-    "liq": 463410725,
-    "vol24": 253225,
-    "c24": 0,
-    "edad_h": 1739.1
-   }
-  },
-  {
-   "tema": "Aero",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (AERO, puesto de capitalización 123)"
-   ],
-   "token": null
   },
   {
    "tema": "Bless",
@@ -279,16 +249,16 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (BLESS, puesto 427)"
+    "entre lo más buscado en CoinMarketCap (BLESS, puesto 402)"
    ],
    "token": {
     "cadena": "solana",
     "token": "G3kgZkB76seNzxzv39AYV9c8284SdrmX5dUKAR8wWJTJ",
     "sym": "BLESS",
-    "liq": 20811420,
-    "vol24": 170690,
+    "liq": 20811425,
+    "vol24": 187807,
     "c24": -0.03,
-    "edad_h": 2652.0
+    "edad_h": 2656.5
    }
   },
   {
@@ -298,35 +268,16 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (DODO, puesto 365)"
+    "entre lo más buscado en CoinMarketCap (DODO, puesto 364)"
    ],
    "token": {
     "cadena": "solana",
     "token": "8JHfQU7XbT5e4SUFfBDdMxAWCPzL9YMU97Vdmh9gURPp",
     "sym": "DODO",
-    "liq": 28699893,
-    "vol24": 170690,
+    "liq": 28699898,
+    "vol24": 187807,
     "c24": -0.02,
-    "edad_h": 2579.5
-   }
-  },
-  {
-   "tema": "SKYAI",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (SKYAI, puesto 390)"
-   ],
-   "token": {
-    "cadena": "robinhood",
-    "token": "0xb1BDe45826788B9048564260eF50F9b8b60bBD71",
-    "sym": "SKYAI",
-    "liq": 35972807,
-    "vol24": 0,
-    "c24": 0,
-    "edad_h": 3202.9
+    "edad_h": 2584.0
    }
   },
   {
@@ -336,37 +287,75 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (IDOL, puesto 432)"
+    "entre lo más buscado en CoinMarketCap (IDOL, puesto 344)"
    ],
    "token": {
     "cadena": "solana",
     "token": "7wUy677YhnBB9xFNwWZyzR2KiXWQiGaZV8ycXtaqVeg9",
     "sym": "IDOL",
-    "liq": 25271176,
-    "vol24": 170690,
+    "liq": 25271181,
+    "vol24": 187807,
     "c24": -0.02,
-    "edad_h": 2686.9
+    "edad_h": 2691.4
    }
+  },
+  {
+   "tema": "SKYAI",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (SKYAI, puesto 371)"
+   ],
+   "token": {
+    "cadena": "robinhood",
+    "token": "0xb1BDe45826788B9048564260eF50F9b8b60bBD71",
+    "sym": "SKYAI",
+    "liq": 35972807,
+    "vol24": 0,
+    "c24": 0,
+    "edad_h": 3207.4
+   }
+  },
+  {
+   "tema": "Orca",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (ORCA, puesto 182)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE",
+    "sym": "ORCA",
+    "liq": 483810,
+    "vol24": 2620810,
+    "c24": 12.56,
+    "edad_h": 25248.5
+   }
+  },
+  {
+   "tema": "ICE detention video at Seattle airport",
+   "fuentes": [
+    "bluesky"
+   ],
+   "calor": 70,
+   "porque": [
+    "tendencia en Bluesky: Users share footage of immigration agents reportedly detaining people at Seattle-Tacoma International."
+   ],
+   "token": null
   },
   {
    "tema": "Russia's war in Ukraine",
    "fuentes": [
     "bluesky"
    ],
-   "calor": 70,
-   "porque": [
-    "tendencia en Bluesky: Overnight drone and missile strikes, Zaporizhzhia casualties, Kharkiv gains, and reported Russian troop losses."
-   ],
-   "token": null
-  },
-  {
-   "tema": "COP31 draft drops fossil fuels",
-   "fuentes": [
-    "bluesky"
-   ],
    "calor": 68,
    "porque": [
-    "tendencia en Bluesky: Latest Antalya UN talks text omits the climate crisis's main cause, hurting vulnerable nations."
+    "tendencia en Bluesky: Overnight drone and missile strikes, Zaporizhzhia casualties, Kharkiv gains, and reported Russian troop losses."
    ],
    "token": null
   },
@@ -382,83 +371,33 @@
    "token": null
   },
   {
-   "tema": "US cleared China chip sales",
+   "tema": "Unusually warm late November weather",
    "fuentes": [
     "bluesky"
    ],
-   "calor": 64,
+   "calor": 62,
    "porque": [
-    "tendencia en Bluesky: Brian Mast released data showing 879,000 Nvidia and AMD AI chips authorized for Chinese firms."
+    "tendencia en Bluesky: Users report temperatures near 70 degrees, blooming flowers and butterflies across the US."
+   ],
+   "token": null
+  },
+  {
+   "tema": "New Home Alone movie announced",
+   "fuentes": [
+    "bluesky"
+   ],
+   "calor": 60,
+   "porque": [
+    "tendencia en Bluesky: Macaulay Culkin is set to return as Kevin McCallister, with Seth Rogen and Evan Goldberg producing."
    ],
    "token": null
   }
  ],
- "cruces_h18": [
-  {
-   "ts": 1795279558,
-   "hora_utc": "2026-11-21 16:45",
-   "tema": "Official Trump",
-   "fuentes": "coingecko,trending 24h",
-   "cadena": "solana",
-   "token": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
-   "sym": "TRUMP",
-   "liq": 117227,
-   "mc": 243298031,
-   "c1": -0.4,
-   "seguridad": "top10",
-   "aviso": "no",
-   "nuestras": "A2 B3 C0"
-  },
-  {
-   "ts": 1795279558,
-   "hora_utc": "2026-11-21 16:45",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 5m",
-   "cadena": "solana",
-   "token": "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo",
-   "sym": "TTWO",
-   "liq": 692793,
-   "mc": 91,
-   "c1": -0.04,
-   "seguridad": "top10,lp,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A20 B13 C4"
-  },
-  {
-   "ts": 1795279558,
-   "hora_utc": "2026-11-21 16:45",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 1h",
-   "cadena": "solana",
-   "token": "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb",
-   "sym": "SPCX",
-   "liq": 2519446,
-   "mc": 13047007,
-   "c1": -0.37,
-   "seguridad": "top10,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A19 B7 C2"
-  },
-  {
-   "ts": 1795279558,
-   "hora_utc": "2026-11-21 16:45",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 1h",
-   "cadena": "solana",
-   "token": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
-   "sym": "BP",
-   "liq": 2517325,
-   "mc": 201239848,
-   "c1": -0.5,
-   "seguridad": "top10,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A2 B6 C1"
-  }
- ],
+ "cruces_h18": [],
  "huecos_h19": [
   {
-   "ts": 1795279558,
-   "hora_utc": "2026-11-21 16:45",
+   "ts": 1795295631,
+   "hora_utc": "2026-11-21 21:13",
    "tema": "Riemann hypothesis proof claimed",
    "fuentes": "bluesky,wikipedia",
    "calor": 100,
@@ -466,8 +405,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795279558,
-   "hora_utc": "2026-11-21 16:45",
+   "ts": 1795295631,
+   "hora_utc": "2026-11-21 21:13",
    "tema": "O.M: Operation Mole",
    "fuentes": "wikipedia",
    "calor": 93,
@@ -475,8 +414,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795279558,
-   "hora_utc": "2026-11-21 16:45",
+   "ts": 1795295631,
+   "hora_utc": "2026-11-21 21:13",
    "tema": "Visa Jupiter Solana PayFi",
    "fuentes": "x_chainbase",
    "calor": 90,
@@ -484,8 +423,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795279558,
-   "hora_utc": "2026-11-21 16:45",
+   "ts": 1795295631,
+   "hora_utc": "2026-11-21 21:13",
    "tema": "Bitcoin MSTR Halving Debate",
    "fuentes": "x_chainbase",
    "calor": 88,
@@ -493,8 +432,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795279558,
-   "hora_utc": "2026-11-21 16:45",
+   "ts": 1795295631,
+   "hora_utc": "2026-11-21 21:13",
    "tema": "AI Agents BTC Trading",
    "fuentes": "x_chainbase",
    "calor": 86,
@@ -502,8 +441,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795279558,
-   "hora_utc": "2026-11-21 16:45",
+   "ts": 1795295631,
+   "hora_utc": "2026-11-21 21:13",
    "tema": "Base Homebase Event",
    "fuentes": "x_chainbase",
    "calor": 84,
@@ -511,8 +450,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795279558,
-   "hora_utc": "2026-11-21 16:45",
+   "ts": 1795295631,
+   "hora_utc": "2026-11-21 21:13",
    "tema": "Anthropic ANT Token Drop",
    "fuentes": "x_chainbase",
    "calor": 82,
@@ -520,12 +459,12 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795279558,
-   "hora_utc": "2026-11-21 16:45",
-   "tema": "Aero",
-   "fuentes": "coingecko",
+   "ts": 1795295631,
+   "hora_utc": "2026-11-21 21:13",
+   "tema": "ICE detention video at Seattle airport",
+   "fuentes": "bluesky",
    "calor": 70,
-   "porque": "entre lo más buscado en CoinGecko (AERO, puesto de capitalización 123)",
+   "porque": "tendencia en Bluesky: Users share footage of immigration agents reportedly detaining people at Seattle-Tacoma International.",
    "idea": "idea paper (no se crea nada)"
   }
  ]
