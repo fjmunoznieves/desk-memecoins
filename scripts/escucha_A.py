@@ -17,7 +17,9 @@ MINUTOS = float(os.environ.get("ESCUCHA_MINUTOS", "340"))
 SEGUIR_S = 90 * 60          # cuánto seguir un token tras la compra A
 MAX_SEGUIDOS = 120          # tope de tokens seguidos a la vez (carga del RPC público)
 DEBUG = int(os.environ.get("ESCUCHA_DEBUG", "0"))
-POR_CONEXION = int(os.environ.get("ESCUCHA_POR_CONEXION", "40"))
+POR_CONEXION = int(os.environ.get("ESCUCHA_POR_CONEXION", "45"))   # tokens seguidos por conexión T
+CONEX_A = 4; CONEX_T = 1    # el RPC público da 429 con más de ~5 conexiones por IP (prueba 21-nov)
+RUIDO_MAX = int(os.environ.get("ESCUCHA_RUIDO_MAX", "120"))  # notif./min por billetera; prueba 21-nov: 97k notif. en 7 min
 RALENTI_S = 2               # máx 1 fila de "trade" por token cada 2 s
 
 PUMP = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"
@@ -75,7 +77,7 @@ class Conexion:
         self.ws = None; self.nid = 0; self.pend = {}; self.subs = {}; self.sid_de = {}
 
     def libre(self):
-        return self.ws is not None and len(self.fijas) + len(self.dinamicas) < POR_CONEXION
+        return self.ws is not None and len(self.dinamicas) < POR_CONEXION
 
     async def pedir(self, metodo, params, que=None):
         self.nid += 1
@@ -84,7 +86,7 @@ class Conexion:
 
     async def sub(self, que):
         await self.pedir("logsSubscribe", [{"mentions": [que[1]]}, {"commitment": "confirmed"}], que)
-        await asyncio.sleep(0.3)
+        await asyncio.sleep(0.5)
 
     async def limpiar(self):
         ahora = time.time()
@@ -147,8 +149,12 @@ class Escucha:
             self.A[r["direccion"]] = r.get("operador") or r["direccion"][:6]
         os.makedirs("datos/escucha", exist_ok=True)
         ws_ = list(self.A)
-        self.conA = [Conexion(self, f"A{i}", [("A", w) for w in ws_[j:j + POR_CONEXION]]) for i, j in enumerate(range(0, len(ws_), POR_CONEXION))]
-        self.conT = [Conexion(self, f"T{i}", []) for i in range(max(1, MAX_SEGUIDOS // POR_CONEXION))]
+        k = -(-len(ws_) // CONEX_A)
+        self.conA = [Conexion(self, f"A{i}", [("A", w) for w in ws_[j:j + k]]) for i, j in enumerate(range(0, len(ws_), k))]
+        self.conT = [Conexion(self, f"T{i}", []) for i in range(CONEX_T)]
+        self.visto = set()       # (firma, usuario, clave): el mismo evento llega por varias suscripciones
+        self.cuenta = {}         # billetera -> notificaciones en la ventana actual
+        self.ruidosas = set()    # billeteras con > RUIDO_MAX notificaciones en 5 min (bots): se dejan de escuchar
         self.donde = {}       # clave seguida -> Conexion
         self.ult_fila = {}
         self.n = dict(subsA=0, A_compra=0, A_venta=0, trade=0, notif=0, err=0, sin_cupo=0)
@@ -177,6 +183,10 @@ class Escucha:
 
     async def notificacion(self, que, v):
         self.n["notif"] += 1
+        if que[0] == "A":
+            if que[1] in self.ruidosas:
+                return
+            self.cuenta[que[1]] = self.cuenta.get(que[1], 0) + 1
         if v.get("err"):
             return
         recv = round(time.time(), 2)
@@ -191,6 +201,10 @@ class Escucha:
             if e["usuario"] in self.A:
                 tipo = "A_compra" if e["compra"] else "A_venta"
                 self.n[tipo] += 1
+                cl = (firma, e["usuario"], e["clave"], tipo)
+                if cl in self.visto:
+                    continue
+                self.visto.add(cl)
                 self.escribir([recv, e["ts"], tipo, e["dex"], e["usuario"], self.A[e["usuario"]], e["clave"], f"{e['precio']:.6g}", f"{e['sol']:.4f}", firma])
                 if e["compra"]:
                     await self.seguir(e["clave"])
@@ -203,8 +217,23 @@ class Escucha:
                 self.escribir([recv, e["ts"], "trade", e["dex"], "", "", k, f"{e['precio']:.6g}", f"{e['sol']:.4f}", ""])
 
     async def reporte(self, fin):
+        vuelta = 0
         while time.time() < fin:
-            await asyncio.sleep(300)
+            await asyncio.sleep(60); vuelta += 1
+            for w, c in self.cuenta.items():
+                if c > RUIDO_MAX and w not in self.ruidosas:
+                    self.ruidosas.add(w)
+                    print("ruidosa (deja de escucharse):", w, self.A.get(w), c, "notif/min", flush=True)
+                    for con in self.conA:
+                        con.fijas = [q for q in con.fijas if q[1] != w]
+                        for sid, q in list(con.subs.items()):
+                            if q[1] == w and con.ws is not None:
+                                con.subs.pop(sid, None)
+                                try: await con.pedir("logsUnsubscribe", [sid])
+                                except Exception: pass
+            self.cuenta = {}
+            if vuelta % 5: continue
+            if len(self.visto) > 200000: self.visto = set()
             vivas = sum(1 for c in self.conA + self.conT if c.ws is not None)
             print(dt.datetime.now(dt.timezone.utc).strftime("%H:%M"), f"conexiones vivas {vivas}/{len(self.conA)+len(self.conT)}, seguidos {len(self.donde)},", self.n, flush=True)
 
