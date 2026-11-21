@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-21 14:44",
+ "hora_utc": "2026-11-21 16:45",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -23,6 +23,27 @@
    "token": null
   },
   {
+   "tema": "Derive",
+   "fuentes": [
+    "coingecko",
+    "coinmarketcap"
+   ],
+   "calor": 80,
+   "porque": [
+    "entre lo más buscado en CoinGecko (DRV, puesto de capitalización 115)",
+    "entre lo más buscado en CoinMarketCap (DRV, puesto 220)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "DPcz93J8vKiEL2W6dSSUuyonSmMxo8Bm8xS47ADCpbBE",
+    "sym": "DRV",
+    "liq": 391822602,
+    "vol24": 171252,
+    "c24": 0,
+    "edad_h": 874.2
+   }
+  },
+  {
    "tema": "Levent Alpöge",
    "fuentes": [
     "wikipedia"
@@ -35,10 +56,10 @@
     "cadena": "solana",
     "token": "5LgLezmiPBKLU3Smt5yHQKbaEzuTxd7D6NPbUf7pump",
     "sym": "Levent",
-    "liq": 4210,
-    "vol24": 45431,
-    "c24": 81.43,
-    "edad_h": 2983.8
+    "liq": 4421,
+    "vol24": 10192,
+    "c24": -45.51,
+    "edad_h": 2985.8
    }
   },
   {
@@ -108,41 +129,22 @@
    "token": null
   },
   {
-   "tema": "Wanted Star",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (WSTAR, puesto de capitalización 934)"
-   ],
-   "token": {
-    "cadena": "robinhood",
-    "token": "0x2d3E65142bf632eD90e8EE43225CE543E7AACf58",
-    "sym": "WANTED",
-    "liq": 47506,
-    "vol24": 18772,
-    "c24": -50.75,
-    "edad_h": 52.2
-   }
-  },
-  {
    "tema": "WASTED",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (WASTED, puesto de capitalización 831)"
+    "entre lo más buscado en CoinGecko (WASTED, puesto de capitalización 779)"
    ],
    "token": {
     "cadena": "solana",
     "token": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
     "sym": "WASTED",
-    "liq": 97822,
-    "vol24": 102609,
-    "c24": 6.8,
-    "edad_h": 524.6
+    "liq": 99925,
+    "vol24": 110618,
+    "c24": 15.34,
+    "edad_h": 526.6
    }
   },
   {
@@ -152,7 +154,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (TRUMP, puesto de capitalización 135)"
+    "entre lo más buscado en CoinGecko (TRUMP, puesto de capitalización 136)"
    ],
    "token": {
     "cadena": "robinhood",
@@ -161,64 +163,7 @@
     "liq": 1379820299,
     "vol24": 0,
     "c24": 1.12,
-    "edad_h": 3172.9
-   }
-  },
-  {
-   "tema": "Chunkee The Manatee",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (CHUNKEE, puesto de capitalización 942)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "H1fK1zrjVYeMs5FLGUDhqF34usz75UbVynKt4JHZpump",
-    "sym": "Chunkee",
-    "liq": 9778,
-    "vol24": 4619,
-    "c24": -3.58,
-    "edad_h": 740.4
-   }
-  },
-  {
-   "tema": "Pudgy Penguins",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 129)"
-   ],
-   "token": {
-    "cadena": "robinhood",
-    "token": "0xB90C6cA2AafEcBace713e8861C3BB1BbAFaB1377",
-    "sym": "PENGU",
-    "liq": 207342532,
-    "vol24": 0,
-    "c24": 1.12,
-    "edad_h": 3163.1
-   }
-  },
-  {
-   "tema": "Derive",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (DRV, puesto de capitalización 114)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "DPcz93J8vKiEL2W6dSSUuyonSmMxo8Bm8xS47ADCpbBE",
-    "sym": "DRV",
-    "liq": 391822602,
-    "vol24": 171030,
-    "c24": 0,
-    "edad_h": 872.2
+    "edad_h": 3174.9
    }
   },
   {
@@ -237,27 +182,95 @@
     "liq": 1249791657,
     "vol24": 299032,
     "c24": 0,
-    "edad_h": 1029.9
+    "edad_h": 1031.9
    }
   },
   {
-   "tema": "Collector Crypt",
+   "tema": "Wanted Star",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (CARDS, puesto de capitalización 189)"
+    "entre lo más buscado en CoinGecko (WSTAR, puesto de capitalización 688)"
+   ],
+   "token": {
+    "cadena": "robinhood",
+    "token": "0x2d3E65142bf632eD90e8EE43225CE543E7AACf58",
+    "sym": "WANTED",
+    "liq": 48028,
+    "vol24": 9175,
+    "c24": -11.17,
+    "edad_h": 54.3
+   }
+  },
+  {
+   "tema": "Pudgy Penguins",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 130)"
+   ],
+   "token": {
+    "cadena": "robinhood",
+    "token": "0xB90C6cA2AafEcBace713e8861C3BB1BbAFaB1377",
+    "sym": "PENGU",
+    "liq": 207342532,
+    "vol24": 0,
+    "c24": 1.12,
+    "edad_h": 3165.1
+   }
+  },
+  {
+   "tema": "Chunkee The Manatee",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (CHUNKEE, puesto de capitalización 881)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "98ZqwGWzZpWmPYYoEjGRuhjRaVz38dA4Xa5CmLpu3cLX",
-    "sym": "CARDS",
-    "liq": 643867260,
-    "vol24": 36,
-    "c24": -0.02,
-    "edad_h": 4299.2
+    "token": "H1fK1zrjVYeMs5FLGUDhqF34usz75UbVynKt4JHZpump",
+    "sym": "Chunkee",
+    "liq": 9718,
+    "vol24": 4459,
+    "c24": -3.94,
+    "edad_h": 742.5
    }
+  },
+  {
+   "tema": "Pons",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (PONS, puesto de capitalización 343)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "2K6N3AwwC9ZXbkBTpkwGCpW9DMasz9686sC2QZHQbuim",
+    "sym": "PONS",
+    "liq": 463410725,
+    "vol24": 253225,
+    "c24": 0,
+    "edad_h": 1739.1
+   }
+  },
+  {
+   "tema": "Aero",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (AERO, puesto de capitalización 123)"
+   ],
+   "token": null
   },
   {
    "tema": "Bless",
@@ -266,7 +279,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (BLESS, puesto 394)"
+    "entre lo más buscado en CoinMarketCap (BLESS, puesto 427)"
    ],
    "token": {
     "cadena": "solana",
@@ -274,8 +287,8 @@
     "sym": "BLESS",
     "liq": 20811420,
     "vol24": 170690,
-    "c24": 0,
-    "edad_h": 2650.0
+    "c24": -0.03,
+    "edad_h": 2652.0
    }
   },
   {
@@ -285,7 +298,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (DODO, puesto 366)"
+    "entre lo más buscado en CoinMarketCap (DODO, puesto 365)"
    ],
    "token": {
     "cadena": "solana",
@@ -293,27 +306,8 @@
     "sym": "DODO",
     "liq": 28699893,
     "vol24": 170690,
-    "c24": 0,
-    "edad_h": 2577.5
-   }
-  },
-  {
-   "tema": "MEET48",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (IDOL, puesto 449)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "7wUy677YhnBB9xFNwWZyzR2KiXWQiGaZV8ycXtaqVeg9",
-    "sym": "IDOL",
-    "liq": 25271176,
-    "vol24": 170690,
-    "c24": 0,
-    "edad_h": 2684.9
+    "c24": -0.02,
+    "edad_h": 2579.5
    }
   },
   {
@@ -323,7 +317,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (SKYAI, puesto 372)"
+    "entre lo más buscado en CoinMarketCap (SKYAI, puesto 390)"
    ],
    "token": {
     "cadena": "robinhood",
@@ -332,47 +326,47 @@
     "liq": 35972807,
     "vol24": 0,
     "c24": 0,
-    "edad_h": 3200.9
+    "edad_h": 3202.9
    }
   },
   {
-   "tema": "Enso",
+   "tema": "MEET48",
    "fuentes": [
     "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (ENSO, puesto 867)"
+    "entre lo más buscado en CoinMarketCap (IDOL, puesto 432)"
    ],
    "token": {
-    "cadena": "robinhood",
-    "token": "0x59d01ada54E0381B22A3Fb60d031D9b0b4894662",
-    "sym": "ENSO",
-    "liq": 6311760,
-    "vol24": 0,
-    "c24": 1.12,
-    "edad_h": 3149.6
+    "cadena": "solana",
+    "token": "7wUy677YhnBB9xFNwWZyzR2KiXWQiGaZV8ycXtaqVeg9",
+    "sym": "IDOL",
+    "liq": 25271176,
+    "vol24": 170690,
+    "c24": -0.02,
+    "edad_h": 2686.9
    }
   },
   {
-   "tema": "Hegseth memo restricts Canada defense ties",
+   "tema": "Russia's war in Ukraine",
    "fuentes": [
     "bluesky"
    ],
    "calor": 70,
    "porque": [
-    "tendencia en Bluesky: A classified Pete Hegseth directive limits US military cooperation with Ottawa amid Trump's feud."
+    "tendencia en Bluesky: Overnight drone and missile strikes, Zaporizhzhia casualties, Kharkiv gains, and reported Russian troop losses."
    ],
    "token": null
   },
   {
-   "tema": "Trump meets Xi and Putin",
+   "tema": "COP31 draft drops fossil fuels",
    "fuentes": [
     "bluesky"
    ],
    "calor": 68,
    "porque": [
-    "tendencia en Bluesky: Donald Trump, Xi Jinping and Vladimir Putin held three-way talks at a summit in Shenzhen."
+    "tendencia en Bluesky: Latest Antalya UN talks text omits the climate crisis's main cause, hurting vulnerable nations."
    ],
    "token": null
   },
@@ -388,128 +382,83 @@
    "token": null
   },
   {
-   "tema": "Boldest movies seen on dates",
+   "tema": "US cleared China chip sales",
    "fuentes": [
     "bluesky"
    ],
    "calor": 64,
    "porque": [
-    "tendencia en Bluesky: Users share the unusual films they picked for dates, from Cronenberg's Spider to Repo! The Genetic Opera."
+    "tendencia en Bluesky: Brian Mast released data showing 879,000 Nvidia and AMD AI chips authorized for Chinese firms."
    ],
    "token": null
   }
  ],
  "cruces_h18": [
   {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
+   "ts": 1795279558,
+   "hora_utc": "2026-11-21 16:45",
    "tema": "Official Trump",
    "fuentes": "coingecko,trending 24h",
    "cadena": "solana",
    "token": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
    "sym": "TRUMP",
-   "liq": 117827,
-   "mc": 244635925,
-   "c1": 1.98,
+   "liq": 117227,
+   "mc": 243298031,
+   "c1": -0.4,
    "seguridad": "top10",
    "aviso": "no",
    "nuestras": "A2 B3 C0"
   },
   {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 5m",
-   "cadena": "solana",
-   "token": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
-   "sym": "BP",
-   "liq": 2498169,
-   "mc": 199246492,
-   "c1": 3.68,
-   "seguridad": "top10,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A2 B6 C1"
-  },
-  {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
+   "ts": 1795279558,
+   "hora_utc": "2026-11-21 16:45",
    "tema": "Backpack",
    "fuentes": "coingecko,trending 5m",
    "cadena": "solana",
    "token": "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo",
    "sym": "TTWO",
-   "liq": 685852,
+   "liq": 692793,
    "mc": 91,
-   "c1": 0.1,
+   "c1": -0.04,
    "seguridad": "top10,lp,mint/freeze",
    "aviso": "no",
    "nuestras": "A20 B13 C4"
   },
   {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
+   "ts": 1795279558,
+   "hora_utc": "2026-11-21 16:45",
    "tema": "Backpack",
    "fuentes": "coingecko,trending 1h",
    "cadena": "solana",
    "token": "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb",
    "sym": "SPCX",
-   "liq": 2523452,
-   "mc": 13095738,
-   "c1": 0.59,
+   "liq": 2519446,
+   "mc": 13047007,
+   "c1": -0.37,
    "seguridad": "top10,mint/freeze",
    "aviso": "no",
    "nuestras": "A19 B7 C2"
   },
   {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
-   "tema": "Boldest movies seen on dates",
-   "fuentes": "bluesky,trending 5m",
+   "ts": 1795279558,
+   "hora_utc": "2026-11-21 16:45",
+   "tema": "Backpack",
+   "fuentes": "coingecko,trending 1h",
    "cadena": "solana",
-   "token": "3pEoyf8obnyaiBSXWks16j21y1k2582dSmGmByfXoFDP",
-   "sym": "Share",
-   "liq": 5,
-   "mc": 17260,
-   "c1": 16.45,
-   "seguridad": "",
+   "token": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
+   "sym": "BP",
+   "liq": 2517325,
+   "mc": 201239848,
+   "c1": -0.5,
+   "seguridad": "top10,mint/freeze",
    "aviso": "no",
-   "nuestras": "A0 B0 C0"
-  },
-  {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
-   "tema": "Boldest movies seen on dates",
-   "fuentes": "bluesky,trending 5m",
-   "cadena": "solana",
-   "token": "CAvB8PLK5U2WWL5KFbWPE5gYbZe9ir4wHusNmBRarnXK",
-   "sym": "Share",
-   "liq": 9,
-   "mc": 31625,
-   "c1": 139,
-   "seguridad": "",
-   "aviso": "no",
-   "nuestras": "A0 B0 C0"
-  },
-  {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
-   "tema": "Boldest movies seen on dates",
-   "fuentes": "bluesky,trending 5m",
-   "cadena": "solana",
-   "token": "8Wj18dstju6wghWDEsRdRzRmPTz8fD5Z5QwyfHjzpump",
-   "sym": "Share",
-   "liq": 18699,
-   "mc": 77489,
-   "c1": 166,
-   "seguridad": "",
-   "aviso": "no",
-   "nuestras": "A0 B0 C0"
+   "nuestras": "A2 B6 C1"
   }
  ],
  "huecos_h19": [
   {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
+   "ts": 1795279558,
+   "hora_utc": "2026-11-21 16:45",
    "tema": "Riemann hypothesis proof claimed",
    "fuentes": "bluesky,wikipedia",
    "calor": 100,
@@ -517,8 +466,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
+   "ts": 1795279558,
+   "hora_utc": "2026-11-21 16:45",
    "tema": "O.M: Operation Mole",
    "fuentes": "wikipedia",
    "calor": 93,
@@ -526,8 +475,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
+   "ts": 1795279558,
+   "hora_utc": "2026-11-21 16:45",
    "tema": "Visa Jupiter Solana PayFi",
    "fuentes": "x_chainbase",
    "calor": 90,
@@ -535,8 +484,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
+   "ts": 1795279558,
+   "hora_utc": "2026-11-21 16:45",
    "tema": "Bitcoin MSTR Halving Debate",
    "fuentes": "x_chainbase",
    "calor": 88,
@@ -544,8 +493,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
+   "ts": 1795279558,
+   "hora_utc": "2026-11-21 16:45",
    "tema": "AI Agents BTC Trading",
    "fuentes": "x_chainbase",
    "calor": 86,
@@ -553,8 +502,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
+   "ts": 1795279558,
+   "hora_utc": "2026-11-21 16:45",
    "tema": "Base Homebase Event",
    "fuentes": "x_chainbase",
    "calor": 84,
@@ -562,8 +511,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
+   "ts": 1795279558,
+   "hora_utc": "2026-11-21 16:45",
    "tema": "Anthropic ANT Token Drop",
    "fuentes": "x_chainbase",
    "calor": 82,
@@ -571,12 +520,12 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795272244,
-   "hora_utc": "2026-11-21 14:44",
-   "tema": "Hegseth memo restricts Canada defense ties",
-   "fuentes": "bluesky",
+   "ts": 1795279558,
+   "hora_utc": "2026-11-21 16:45",
+   "tema": "Aero",
+   "fuentes": "coingecko",
    "calor": 70,
-   "porque": "tendencia en Bluesky: A classified Pete Hegseth directive limits US military cooperation with Ottawa amid Trump's feud.",
+   "porque": "entre lo más buscado en CoinGecko (AERO, puesto de capitalización 123)",
    "idea": "idea paper (no se crea nada)"
   }
  ]
