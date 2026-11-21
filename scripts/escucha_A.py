@@ -15,7 +15,9 @@ import websockets
 WS = os.environ.get("ESCUCHA_WS", "wss://api.mainnet-beta.solana.com")
 MINUTOS = float(os.environ.get("ESCUCHA_MINUTOS", "340"))
 SEGUIR_S = 90 * 60          # cuánto seguir un token tras la compra A
-MAX_SEGUIDOS = 150          # tope de tokens seguidos a la vez (carga del RPC público)
+MAX_SEGUIDOS = 120          # tope de tokens seguidos a la vez (carga del RPC público)
+DEBUG = int(os.environ.get("ESCUCHA_DEBUG", "0"))
+POR_CONEXION = int(os.environ.get("ESCUCHA_POR_CONEXION", "40"))
 RALENTI_S = 2               # máx 1 fila de "trade" por token cada 2 s
 
 PUMP = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"
@@ -64,18 +66,92 @@ def decodificar(logs):
     return out
 
 
+class Conexion:
+    """Una conexión websocket con hasta POR_CONEXION suscripciones (el RPC público corta si hay más)."""
+    def __init__(self, padre, nombre, fijas):
+        self.p = padre; self.nombre = nombre
+        self.fijas = list(fijas)      # [("A", billetera)] fijas de esta conexión
+        self.dinamicas = {}           # clave -> hasta_ts (tokens seguidos)
+        self.ws = None; self.nid = 0; self.pend = {}; self.subs = {}; self.sid_de = {}
+
+    def libre(self):
+        return self.ws is not None and len(self.fijas) + len(self.dinamicas) < POR_CONEXION
+
+    async def pedir(self, metodo, params, que=None):
+        self.nid += 1
+        if que: self.pend[self.nid] = que
+        await self.ws.send(json.dumps({"jsonrpc": "2.0", "id": self.nid, "method": metodo, "params": params}))
+
+    async def sub(self, que):
+        await self.pedir("logsSubscribe", [{"mentions": [que[1]]}, {"commitment": "confirmed"}], que)
+        await asyncio.sleep(0.3)
+
+    async def limpiar(self):
+        ahora = time.time()
+        for k, hasta in list(self.dinamicas.items()):
+            if hasta < ahora:
+                del self.dinamicas[k]; self.p.donde.pop(k, None)
+                sid = self.sid_de.pop(k, None)
+                if sid is not None:
+                    self.subs.pop(sid, None)
+                    await self.pedir("logsUnsubscribe", [sid])
+
+    async def sesion(self, fin):
+        async with websockets.connect(WS, ping_interval=20, ping_timeout=60, max_size=2**23) as ws:
+            self.ws = ws; self.pend.clear(); self.subs.clear(); self.sid_de.clear()
+            for q in self.fijas: await self.sub(q)
+            for k in list(self.dinamicas): await self.sub(("T", k))
+            ult = time.time()
+            while time.time() < fin:
+                try:
+                    raw = await asyncio.wait_for(ws.recv(), timeout=30)
+                    await self.manejar(json.loads(raw))
+                except asyncio.TimeoutError:
+                    pass
+                if time.time() - ult > 60:
+                    ult = time.time(); await self.limpiar()
+
+    async def manejar(self, msg):
+        if "id" in msg and msg["id"] in self.pend:
+            que = self.pend.pop(msg["id"])
+            if "result" in msg:
+                self.subs[msg["result"]] = que
+                if que[0] == "T": self.sid_de[que[1]] = msg["result"]
+                else: self.p.n["subsA"] += 1
+            else:
+                self.p.n["err"] += 1
+                if self.p.n["err"] <= 5: print("error suscripción", self.nombre, que[0], msg.get("error"), flush=True)
+            return
+        if msg.get("method") != "logsNotification":
+            return
+        pr = msg["params"]; que = self.subs.get(pr["subscription"])
+        if que: await self.p.notificacion(que, pr["result"]["value"])
+
+    async def correr(self, fin):
+        intentos = 0
+        while time.time() < fin:
+            try:
+                await self.sesion(fin); intentos = 0
+            except Exception as ex:
+                self.ws = None; intentos += 1
+                if intentos <= 3 or intentos % 10 == 0:
+                    print("conexión", self.nombre, "caída:", type(ex).__name__, str(ex)[:120], "reintento", intentos, flush=True)
+                await asyncio.sleep(min(60, 5 * intentos))
+            self.ws = None
+
+
 class Escucha:
     def __init__(self):
         self.A = {}
         for r in csv.DictReader(open("datos/watchlist_A_oper.tsv"), delimiter="\t"):
             self.A[r["direccion"]] = r.get("operador") or r["direccion"][:6]
         os.makedirs("datos/escucha", exist_ok=True)
-        self.nid = 0
-        self.pend = {}        # id petición -> ("A", billetera) | ("T", clave)
-        self.subs = {}        # id suscripción -> ("A", billetera) | ("T", clave)
-        self.seguidos = {}    # clave -> (sub_id|None, hasta_ts)
+        ws_ = list(self.A)
+        self.conA = [Conexion(self, f"A{i}", [("A", w) for w in ws_[j:j + POR_CONEXION]]) for i, j in enumerate(range(0, len(ws_), POR_CONEXION))]
+        self.conT = [Conexion(self, f"T{i}", []) for i in range(max(1, MAX_SEGUIDOS // POR_CONEXION))]
+        self.donde = {}       # clave seguida -> Conexion
         self.ult_fila = {}
-        self.n = dict(A_compra=0, A_venta=0, trade=0, notif=0, err=0)
+        self.n = dict(subsA=0, A_compra=0, A_venta=0, trade=0, notif=0, err=0, sin_cupo=0)
         self.f = None; self.dia = None
 
     def escribir(self, fila):
@@ -89,54 +165,26 @@ class Escucha:
                 self.f.write("recv_ts\tblock_ts\ttipo\tdex\tbilletera\toperador\tclave\tprecio_sol\tsol\tfirma\n")
         self.f.write("\t".join(str(x) for x in fila) + "\n")
 
-    async def pedir(self, ws, metodo, params, que):
-        self.nid += 1
-        self.pend[self.nid] = que
-        await ws.send(json.dumps({"jsonrpc": "2.0", "id": self.nid, "method": metodo, "params": params}))
+    async def seguir(self, clave):
+        c = self.donde.get(clave)
+        if c:
+            c.dinamicas[clave] = time.time() + SEGUIR_S; return
+        c = next((c for c in self.conT if c.libre()), None)
+        if not c:
+            self.n["sin_cupo"] += 1; return
+        c.dinamicas[clave] = time.time() + SEGUIR_S; self.donde[clave] = c
+        await c.sub(("T", clave))
 
-    async def seguir(self, ws, clave):
-        if clave in self.seguidos:
-            sid, _ = self.seguidos[clave]
-            self.seguidos[clave] = (sid, time.time() + SEGUIR_S)
-            return
-        if len(self.seguidos) >= MAX_SEGUIDOS:
-            return
-        self.seguidos[clave] = (None, time.time() + SEGUIR_S)
-        await self.pedir(ws, "logsSubscribe", [{"mentions": [clave]}, {"commitment": "confirmed"}], ("T", clave))
-
-    async def limpiar(self, ws):
-        ahora = time.time()
-        for clave, (sid, hasta) in list(self.seguidos.items()):
-            if hasta < ahora:
-                del self.seguidos[clave]
-                if sid is not None:
-                    self.subs.pop(sid, None)
-                    self.nid += 1
-                    await ws.send(json.dumps({"jsonrpc": "2.0", "id": self.nid, "method": "logsUnsubscribe", "params": [sid]}))
-
-    async def manejar(self, ws, msg):
-        if "id" in msg and msg["id"] in self.pend:
-            que = self.pend.pop(msg["id"])
-            if "result" in msg:
-                self.subs[msg["result"]] = que
-                if que[0] == "T" and que[1] in self.seguidos:
-                    self.seguidos[que[1]] = (msg["result"], self.seguidos[que[1]][1])
-            else:
-                self.n["err"] += 1
-                if self.n["err"] <= 5: print("error suscripción", que[0], msg.get("error"), flush=True)
-                if que[0] == "T": self.seguidos.pop(que[1], None)
-            return
-        if msg.get("method") != "logsNotification":
-            return
+    async def notificacion(self, que, v):
         self.n["notif"] += 1
-        p = msg["params"]; v = p["result"]["value"]
         if v.get("err"):
-            return
-        que = self.subs.get(p["subscription"])
-        if not que:
             return
         recv = round(time.time(), 2)
         firma = v.get("signature", "")
+        if DEBUG and self.n["notif"] <= DEBUG:
+            pd = [l[14:30] for l in v.get("logs") or [] if l.startswith("Program data: ")]
+            progs = sorted({l.split()[1] for l in v.get("logs") or [] if l.startswith("Program ") and " invoke" in l})
+            print("DEBUG", que[0], firma[:12], "progs", [x[:6] for x in progs], "data", pd[:4], flush=True)
         for e in decodificar(v.get("logs")):
             if e["precio"] <= 0:
                 continue
@@ -145,7 +193,7 @@ class Escucha:
                 self.n[tipo] += 1
                 self.escribir([recv, e["ts"], tipo, e["dex"], e["usuario"], self.A[e["usuario"]], e["clave"], f"{e['precio']:.6g}", f"{e['sol']:.4f}", firma])
                 if e["compra"]:
-                    await self.seguir(ws, e["clave"])
+                    await self.seguir(e["clave"])
             elif que[0] == "T" and e["clave"] == que[1]:
                 k = e["clave"]
                 if recv - self.ult_fila.get(k, 0) < RALENTI_S:
@@ -154,38 +202,20 @@ class Escucha:
                 self.n["trade"] += 1
                 self.escribir([recv, e["ts"], "trade", e["dex"], "", "", k, f"{e['precio']:.6g}", f"{e['sol']:.4f}", ""])
 
-    async def sesion(self, fin):
-        async with websockets.connect(WS, ping_interval=20, ping_timeout=60, max_size=2**23) as ws:
-            self.pend.clear(); self.subs.clear()
-            self.seguidos = {k: (None, h) for k, (_, h) in self.seguidos.items()}
-            for i, w in enumerate(self.A):
-                await self.pedir(ws, "logsSubscribe", [{"mentions": [w]}, {"commitment": "confirmed"}], ("A", w))
-                if i % 20 == 19: await asyncio.sleep(0.5)
-            for k in list(self.seguidos):
-                del self.seguidos[k]; await self.seguir(ws, k)
-            ult_rep = time.time()
-            while time.time() < fin:
-                try:
-                    raw = await asyncio.wait_for(ws.recv(), timeout=30)
-                    await self.manejar(ws, json.loads(raw))
-                except asyncio.TimeoutError:
-                    pass
-                if time.time() - ult_rep > 300:
-                    ult_rep = time.time()
-                    await self.limpiar(ws)
-                    na = sum(1 for q in self.subs.values() if q[0] == "A")
-                    print(dt.datetime.now(dt.timezone.utc).strftime("%H:%M"), f"subs A {na}/{len(self.A)}, seguidos {len(self.seguidos)},", self.n, flush=True)
+    async def reporte(self, fin):
+        while time.time() < fin:
+            await asyncio.sleep(300)
+            vivas = sum(1 for c in self.conA + self.conT if c.ws is not None)
+            print(dt.datetime.now(dt.timezone.utc).strftime("%H:%M"), f"conexiones vivas {vivas}/{len(self.conA)+len(self.conT)}, seguidos {len(self.donde)},", self.n, flush=True)
 
     async def correr(self):
         fin = time.time() + MINUTOS * 60
-        intentos = 0
-        while time.time() < fin:
-            try:
-                await self.sesion(fin)
-            except Exception as ex:
-                intentos += 1
-                print("conexión caída:", type(ex).__name__, str(ex)[:150], "reintento", intentos, flush=True)
-                await asyncio.sleep(min(60, 5 * intentos))
+        tareas = []
+        for c in self.conA + self.conT:
+            tareas.append(asyncio.create_task(c.correr(fin)))
+            await asyncio.sleep(2)
+        tareas.append(asyncio.create_task(self.reporte(fin)))
+        await asyncio.gather(*tareas)
         print("FIN", self.n, flush=True)
 
 

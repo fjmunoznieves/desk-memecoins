@@ -7,6 +7,9 @@ on:
       minutos:
         description: "Minutos de escucha (máx ~340)"
         default: "340"
+      debug:
+        description: "Imprimir N notificaciones crudas"
+        default: "0"
 permissions:
   contents: write
 concurrency:
@@ -25,6 +28,7 @@ jobs:
       - name: Escuchar
         env:
           ESCUCHA_MINUTOS: ${{ github.event.inputs.minutos || '340' }}
+          ESCUCHA_DEBUG: ${{ github.event.inputs.debug || '0' }}
         run: python scripts/escucha_A.py
       - name: Guardar
         if: always()
