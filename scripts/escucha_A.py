@@ -19,7 +19,7 @@ MAX_SEGUIDOS = 120          # tope de tokens seguidos a la vez (carga del RPC p�
 DEBUG = int(os.environ.get("ESCUCHA_DEBUG", "0"))
 POR_CONEXION = int(os.environ.get("ESCUCHA_POR_CONEXION", "45"))   # tokens seguidos por conexión T
 CONEX_A = 4; CONEX_T = 1    # el RPC público da 429 con más de ~5 conexiones por IP (prueba 21-nov)
-RUIDO_MAX = int(os.environ.get("ESCUCHA_RUIDO_MAX", "120"))  # notif./min por billetera; prueba 21-nov: 97k notif. en 7 min
+RUIDO_MAX = int(os.environ.get("ESCUCHA_RUIDO_MAX", "60"))  # notif./min (21-nov: con 120 hubo ~100 cortes 1002 en 5,5 h) por billetera; prueba 21-nov: 97k notif. en 7 min
 RALENTI_S = 2               # máx 1 fila de "trade" por token cada 2 s
 
 PUMP = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"
