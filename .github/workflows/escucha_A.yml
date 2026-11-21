@@ -2,6 +2,8 @@ name: Escucha A en segundos (papel)
 # 21-nov (Fran OK "Sí, activar en papel"): websocket público de Solana, gratis, sin clave, no gasta Helius.
 # Solo lectura: registra compras/ventas A y el precio posterior del token en datos/escucha/.
 on:
+  schedule:
+    - cron: "0 0,6,12,18 * * *"   # 4 corridas de ~5,7 h: escucha casi continua (repo público, minutos sin costo)
   workflow_dispatch:
     inputs:
       minutos:
