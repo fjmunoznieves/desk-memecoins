@@ -19,7 +19,7 @@ concurrency:
 jobs:
   escaneo:
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 70  # 20-nov: +15 min de salidas.py (repo público, minutos sin costo)
     env:
       SOMBRA_OUT: datos/estudio_reglas_sombra.tsv
     steps:
@@ -60,6 +60,7 @@ jobs:
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
           SHYFT_API_KEY: ${{ secrets.SHYFT_API_KEY }}
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+          SALIDAS_PRESUPUESTO_S: "900"
         run: python3 scripts/watch_solana.py
       - name: Aviso si 2+ billeteras compran el mismo token
         continue-on-error: true

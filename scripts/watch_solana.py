@@ -201,6 +201,9 @@ if CARTERA:
         ok = sum(1 for w, t in pares if w in prev and t[:12] in prev[w])
         pct = round(100 * ok / len(pares), 1) if pares else None
         estado_c = "sin datos" if pct is None else ("ok" if pct >= 90 else "FALLA")
+        edad_fotos_h = (ahora - ult) / 3600
+        if estado_c == "FALLA" and edad_fotos_h > 1:  # 20-nov (Fran OK): fotos solo a las 3:47 AM/PM; contra fotos viejas la diferencia
+            estado_c = f"dudoso (fotos de {edad_fotos_h:.0f} h)"  # puede ser venta real (B 67,7 % vs fotos de 12 h; 29/29 con fotos frescas). Sin issue.
         print(f"CONTROL cartera vs fotos de saldos: {ok}/{len(pares)} posiciones coinciden ({pct} %) → {estado_c}")
         nuevo_c = not os.path.exists("datos/control_cartera.tsv")
         with open("datos/control_cartera.tsv", "a", newline="") as fc:

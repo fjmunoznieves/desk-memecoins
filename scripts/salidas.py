@@ -22,7 +22,7 @@ ALERTAS = "datos/alertas_salida.tsv"
 CAMPOS = ["ts", "hora_utc", "hip", "cadena", "token", "sym", "precio", "n_billeteras", "n_oper", "pasa_oper",
           "c24", "c7d", "max7d_pct", "esc_pct", "esc_detalle", "esc35_pct", "esc35_detalle", "trail30_pct", "trail30_detalle", "copiaA_pct", "copiaA_hora", "copiaA_detalle", "hib_pct", "hib_detalle", "pool", "estado", "medido"]
 CAMPOS_AL = ["ts", "hora_utc", "hip", "token", "sym", "operadores_con_saldo", "operadores_vendieron", "precio", "cambio_desde_senal"]
-PRESUPUESTO_S = 120  # 17-nov (minutos); 20-nov: ahora prioriza filas nunca medidas, ver main()
+PRESUPUESTO_S = int(os.environ.get("SALIDAS_PRESUPUESTO_S", "120"))  # 17-nov 120 s; 20-nov (Fran OK): escaneo usa 900 s (medía ~6 señales por corrida, 45 de 1.370); el reloj sigue en 120
 
 
 def leer(f):
