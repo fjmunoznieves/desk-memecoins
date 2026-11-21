@@ -1,0 +1,36 @@
+name: Escucha A en segundos (papel)
+# 21-nov (Fran OK "Sí, activar en papel"): websocket público de Solana, gratis, sin clave, no gasta Helius.
+# Solo lectura: registra compras/ventas A y el precio posterior del token en datos/escucha/.
+on:
+  workflow_dispatch:
+    inputs:
+      minutos:
+        description: "Minutos de escucha (máx ~340)"
+        default: "340"
+permissions:
+  contents: write
+concurrency:
+  group: escucha
+  cancel-in-progress: false
+jobs:
+  escuchar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install websockets==12.0
+      - name: Escuchar
+        env:
+          ESCUCHA_MINUTOS: ${{ github.event.inputs.minutos || '340' }}
+        run: python scripts/escucha_A.py
+      - name: Guardar
+        if: always()
+        run: |
+          git config user.name "desk-bot"
+          git config user.email "desk-bot@users.noreply.github.com"
+          git add datos/escucha || true
+          git commit -m "Escucha A $(date -u +%Y-%m-%dT%H:%MZ)" || { echo "sin cambios"; exit 0; }
+          for i in 1 2 3 4; do git pull --rebase && git push && break; sleep 7; done
