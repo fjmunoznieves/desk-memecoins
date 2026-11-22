@@ -33,3 +33,5 @@ ts	hora_utc	cadena	token	sym	precio	liq	mc	motivo	estado_escaneo	fallos
 1795299928	2026-11-21 22:25	bsc	0x7B4D20d54A7835b6f20edBE700064Db51911ca99	TRUMP	0.01609	34817	5473122348	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	top10+impuestos?+lp
 1795358017	2026-11-22 14:33	bsc	0x01f0ff78cd80704124C151c87d7e025828957165	TRUMP	0.1154	81848	30011220870	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m+5m>=50
 1795366130	2026-11-22 16:48	bsc	0x428f0E94a72cb80ad33E50c78DB30b861918f7Cf	TRUMP	0.02267	37889	6349446641	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	seg?+impuestos?+lp
+1795380674	2026-11-22 20:51	solana	Ce8LVXvDnG9BjQvZgsKGeq8Xij1NpaFfn7tueP5jWKWp	AMAZON	0.00005631	15459	56277	imita marca AMAZON	pendiente	liq+vol5m
+1795380674	2026-11-22 20:51	bsc	0xB9A9e7A282A1cCD40C186D9792187C2d33fF79F9	TRUMP	0.1424	101041	45583593928	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m
