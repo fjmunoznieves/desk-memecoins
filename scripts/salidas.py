@@ -152,7 +152,9 @@ def main():
     # vuelve a medir solo si pasaron 6 h desde la última vez.
     def prioridad(s):
         r = previas.get((s["hip"], s["token"]), {})
-        return (1 if r.get("esc35_pct") else 0, int(r.get("medido") or 0))
+        # 22-nov (observatorio liviano): H25 (consenso sostenido) se mide antes que todo; las hipótesis apagadas al final.
+        apagada = s["hip"] in ("H22", "H23", "H24", "H28", "H32")
+        return (0 if s["hip"] == "H25" else 1, 1 if apagada else 0, 1 if r.get("esc35_pct") else 0, int(r.get("medido") or 0))
     for s in sorted(senales(), key=prioridad):
         r = previas.get((s["hip"], s["token"]), {})
         r.update({k: v for k, v in s.items() if v not in ("", None) or k not in r})

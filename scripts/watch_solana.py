@@ -269,7 +269,9 @@ if not os.environ.get("ES_H23"):
 # H23 (15-nov, aprobado por Fran): vigila las 129 billeteras C solo en los escaneos de 3:47 AM y 3:47 PM Bogotá
 # (8:47 y 20:47 UTC; se acepta hasta 2 h de retraso de GitHub). Solo registro, sin avisos.
 import subprocess
-if not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").startswith("Escaneo") and time.gmtime().tm_hour in (8, 9, 10, 20, 21, 22):
+# 22-nov (Fran eligió "Observatorio liviano 4 semanas"): H22, H23, H24, H28 y H32 APAGADOS (ruido). Reactivar: OBS_LIVIANO=0.
+OBS_LIVIANO = os.environ.get("OBS_LIVIANO", "1") == "1"
+if not OBS_LIVIANO and not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").startswith("Escaneo") and time.gmtime().tm_hour in (8, 9, 10, 20, 21, 22):
     e = dict(os.environ, ES_H23="1", WL_FILE="datos/vector_C_entrenadas.tsv", ST_FILE="datos/h23_estado.json",
              LOG_FILE="datos/h23_compras.tsv", AL_FILE="datos/h23_alertas.json", CARTERA="1")
     subprocess.run([sys.executable, __file__], env=e, check=False)
@@ -283,7 +285,7 @@ if not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").starts
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "h22.py")], check=False)
 
 # H24 (15-nov): tokens con pool contra acciones tokenizadas, cruzados con A/B/C. En cada escaneo, solo registro.
-if not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").startswith("Escaneo"):
+if not OBS_LIVIANO and not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").startswith("Escaneo"):
     import subprocess
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "h24.py")], check=False)
 
@@ -305,4 +307,4 @@ if not os.environ.get("ES_H23"):
     # Consenso A en vivo (16-nov, Fran): 2+ operadores A compran el mismo token en 72 h → seguimiento + aviso.
     _paso("consenso_A.py", opcional=True, limite_min=32)
     _paso("mesa_datos.py", opcional=True, limite_min=33)  # datos de la Mesa interactiva
-    _paso("h28_catalizador.py", opcional=True, limite_min=33)  # H28 catalizador (sombra)
+    if not OBS_LIVIANO: _paso("h28_catalizador.py", opcional=True, limite_min=33)  # H28 catalizador (sombra)

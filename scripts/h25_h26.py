@@ -490,6 +490,8 @@ def main():
     except Exception as e:
         print("h31s falló:", e)
     try:
+        if os.environ.get("OBS_LIVIANO", "1") == "1":
+            raise RuntimeError("apagado 22-nov (observatorio liviano)")
         g = h32(ahora, hora, getattr(h31, "sost", {}))
         guardar("datos/h32_sombra.tsv", g)
         print(f"H32: {len(g)} entradas nuevas (tema que despierta)")
