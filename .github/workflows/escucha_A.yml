@@ -31,7 +31,10 @@ jobs:
         env:
           ESCUCHA_MINUTOS: ${{ github.event.inputs.minutos || '340' }}
           ESCUCHA_DEBUG: ${{ github.event.inputs.debug || '0' }}
-        run: python scripts/escucha_A.py
+        run: |
+          # 22-nov (Fran: observatorio liviano): la escucha programada termina el 27-nov; a mano sigue funcionando.
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%Y%m%d)" -gt 20261127 ]; then echo "escucha terminada (27-nov)"; exit 0; fi
+          python scripts/escucha_A.py
       - name: Guardar
         if: always()
         run: |
