@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-23 09:44",
+ "hora_utc": "2026-11-23 14:52",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -9,48 +9,6 @@
   "x_chainbase"
  ],
  "narrativas": [
-  {
-   "tema": "Official Trump",
-   "fuentes": [
-    "coingecko",
-    "coinmarketcap"
-   ],
-   "calor": 80,
-   "porque": [
-    "entre lo más buscado en CoinGecko (TRUMP, puesto de capitalización 136)",
-    "entre lo más buscado en CoinMarketCap (TRUMP, puesto 104)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
-    "sym": "TRUMP",
-    "liq": 3875486,
-    "vol24": 1164772,
-    "c24": 0.3,
-    "edad_h": 16176.6
-   }
-  },
-  {
-   "tema": "Aria.AI",
-   "fuentes": [
-    "coingecko",
-    "coinmarketcap"
-   ],
-   "calor": 80,
-   "porque": [
-    "entre lo más buscado en CoinGecko (ARIA, puesto de capitalización 347)",
-    "entre lo más buscado en CoinMarketCap (ARIA, puesto 237)"
-   ],
-   "token": {
-    "cadena": "bsc",
-    "token": "0x5d3A12c42E5372B2CC3264AB3cdcF660a1555238",
-    "sym": "ARIA",
-    "liq": 2215599,
-    "vol24": 12475235,
-    "c24": 39.11,
-    "edad_h": 11064.6
-   }
-  },
   {
    "tema": "Tom Jackson (American football, born 1951)",
    "fuentes": [
@@ -85,68 +43,123 @@
    "token": null
   },
   {
-   "tema": "GTA VI Gameplay Map Details",
+   "tema": "Trump Urges Nvidia Board",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): Players are actively exploring Grand Theft Auto VI, sharing observations about the game's realistic map accuracy to Florida, NPC behaviors, and hidden secrets s…"
+    "tema caliente en X según Chainbase Tops (puesto 1): President Trump has publicly called for Nvidia's board to reinstate Jensen Huang as CEO, stating it would be beneficial for both the company and the United Stat…"
    ],
    "token": null
   },
   {
-   "tema": "China Margin Cut 80%",
+   "tema": "South Korea Digital Asset Act",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): South Korean financial officials held an emergency meeting to address severe market volatility, announcing the readiness of a stock market stabilization fund fo…"
+    "tema caliente en X según Chainbase Tops (puesto 2): South Korea is set to release the draft text for the Digital Asset Basic Act, establishing a comprehensive regulatory framework that includes licensing regimes …"
    ],
    "token": null
   },
   {
-   "tema": "Russian Ship Explosion Libya",
+   "tema": "South Korea KOSPI Falls",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 86,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): Officials reported that a Russian drone strike hit a building in Kyiv, resulting in at least two deaths, while a separate incident involved an explosion on a Ru…"
+    "tema caliente en X según Chainbase Tops (puesto 3): South Korea's benchmark KOSPI index dropped 3.31 percent, settling at its lowest closing level since January 13. The decline erased approximately 316 trillion w…"
    ],
    "token": null
   },
   {
-   "tema": "Verstappen Vegas Win",
+   "tema": "MoldyRoost Steals Crypto Seeds",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 84,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): Max Verstappen secured his third victory at the Las Vegas Grand Prix, finishing 0.639 seconds ahead of the competition. The race was marked by a significant inc…"
+    "tema caliente en X según Chainbase Tops (puesto 4): A malicious advertising campaign known as MoldyRoost has targeted iPhone users across more than 47 countries using over 480 ad domains since May. The operation …"
    ],
    "token": null
   },
   {
-   "tema": "US Tech Outages Due Glitches",
+   "tema": "FTX Estate Anthropic Stake Sale",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 82,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): US intelligence officials and cybersecurity experts warn that Americans should expect increased technology outages and service interruptions over the next 18 mo…"
+    "tema caliente en X según Chainbase Tops (puesto 5): The FTX bankruptcy estate sold its early investment in AI company Anthropic for $1.34 billion in 2024. Based on Anthropic's latest valuation, the stake would cu…"
    ],
    "token": null
   },
   {
-   "tema": "Delta Flights Delayed Automation Fail",
+   "tema": "Crypto Community Global Meeting",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): Delta Airlines experienced widespread flight delays across the United States following an automation failure in its weight-and-balance calculation system at Atl…"
+    "tema caliente en X según Chainbase Tops (puesto 6): Key figures in the cryptocurrency and blockchain sectors participated in several international gatherings, including the inaugural Investing Through the Cycles …"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Builder Research Priority",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 78,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 7): Industry professionals discuss strategies for product development and career advancement, emphasizing the importance of verifiable research and effective presen…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "AI Drives US Economic Growth",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 76,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 8): AI infrastructure investment has become the primary driver of recent US GDP growth, contributing significantly to economic expansion while altering corporate fi…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Spain General Elections Held",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 74,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 9): Spanish Prime Minister Pedro Sánchez unveiled a €500 million plan for migrant integration, including regularization and vocational training, ahead of the Novemb…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Global Aviation Disruption",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 72,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 10): Flights in Belgium have been grounded due to strikes against austerity measures, while search and rescue teams are operating in Nigeria following a boat tragedy…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Trump Memecoin Holder Dinner",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 70,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 11): President Donald Trump hosted an exclusive dinner for top holders of his $TRUMP memecoin, gifting 18-karat gold watches to the four largest token holders. The e…"
    ],
    "token": null
   },
@@ -157,17 +170,47 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (MINELIUS, puesto de capitalización 830)"
+    "entre lo más buscado en CoinGecko (MINELIUS, puesto de capitalización 853)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "KGFqiExWmPg2V5yaL2UcmHrMM4WNddAhczcRtzio19R",
+    "token": "E9rWKjVhHMxQkxfREr7Li8Yy46rVcWiWHoKVQAe9pump",
     "sym": "MINELIUS",
-    "liq": 434246859,
-    "vol24": 390,
-    "c24": 4270218,
-    "edad_h": 0.7
+    "liq": 316619,
+    "vol24": 5176548,
+    "c24": 25459,
+    "edad_h": 17.4
    }
+  },
+  {
+   "tema": "Cool Dog",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (LOOSY, puesto de capitalización 898)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "47HUoJ3EiL1h8kej8hEcUjFrxUkohNMSSbQHidPCpump",
+    "sym": "LOOSY",
+    "liq": 7239,
+    "vol24": 9813,
+    "c24": 10.73,
+    "edad_h": 90.8
+   }
+  },
+  {
+   "tema": "Pepe Intelligence",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (PEI, puesto de capitalización 933)"
+   ],
+   "token": null
   },
   {
    "tema": "Pudgy Penguins",
@@ -176,16 +219,16 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 129)"
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 123)"
    ],
    "token": {
     "cadena": "solana",
     "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
     "sym": "PENGU",
-    "liq": 2316985,
-    "vol24": 56738,
-    "c24": 1.72,
-    "edad_h": 16940.7
+    "liq": 2494115,
+    "vol24": 187191,
+    "c24": 10.09,
+    "edad_h": 16945.9
    }
   },
   {
@@ -201,29 +244,10 @@
     "cadena": "solana",
     "token": "DPcz93J8vKiEL2W6dSSUuyonSmMxo8Bm8xS47ADCpbBE",
     "sym": "DRV",
-    "liq": 391822618,
-    "vol24": 93014,
+    "liq": 391822622,
+    "vol24": 147214,
     "c24": 0,
-    "edad_h": 915.2
-   }
-  },
-  {
-   "tema": "Bless",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (BLESS, puesto de capitalización 507)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "G3kgZkB76seNzxzv39AYV9c8284SdrmX5dUKAR8wWJTJ",
-    "sym": "BLESS",
-    "liq": 20811396,
-    "vol24": 155467,
-    "c24": -0.02,
-    "edad_h": 2693.0
+    "edad_h": 920.3
    }
   },
   {
@@ -233,65 +257,54 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 189)"
+    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 183)"
    ],
    "token": {
     "cadena": "solana",
     "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
     "sym": "MON",
-    "liq": 31943948,
-    "vol24": 260223,
+    "liq": 31943952,
+    "vol24": 259824,
     "c24": 0,
-    "edad_h": 1276.9
+    "edad_h": 1282.1
    }
   },
   {
-   "tema": "Fusionist",
+   "tema": "AriaAI",
    "fuentes": [
     "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (ACE, puesto 905)"
+    "entre lo más buscado en CoinMarketCap (ARIA, puesto 242)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "E2mP7PUM7awgvowAPTYiodmJWnyJ7PUZpa5MAAWux39y",
-    "sym": "ACE",
-    "liq": 224524866,
-    "vol24": 1,
+    "token": "6wLDakP2Ec9rf6ERwzurQv9VagDh7GC42YJ4KtjZRfaB",
+    "sym": "ARIA",
+    "liq": 199194573,
+    "vol24": 383303,
     "c24": 0,
-    "edad_h": 2308.2
+    "edad_h": 226.7
    }
   },
   {
-   "tema": "Advanced Micro Devices Tokenized bStocks",
+   "tema": "Terra Classic",
    "fuentes": [
     "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (AMDB, puesto 1157)"
-   ],
-   "token": null
-  },
-  {
-   "tema": "HeyElsa",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (ELSA, puesto 469)"
+    "entre lo más buscado en CoinMarketCap (LUNC, puesto 108)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "CSfsKh7q2EDp1CD3dz2NJ9AMNRd2343GacL2gUKFpump",
-    "sym": "ELSA",
-    "liq": 2400,
+    "token": "FqCSrz5qBLWj8gizt9UBaVmiGEya5aGgXzahrChxcJEM",
+    "sym": "LUNC",
+    "liq": 64151884,
     "vol24": 1,
     "c24": 0,
-    "edad_h": 16395.6
+    "edad_h": 4107.9
    }
   },
   {
@@ -310,117 +323,61 @@
     "liq": 123704631,
     "vol24": 48,
     "c24": 0,
-    "edad_h": 808.5
+    "edad_h": 813.6
    }
   },
   {
-   "tema": "Lista DAO",
+   "tema": "Pearl (pearlresearch.ai)",
    "fuentes": [
     "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (LISTA, puesto 375)"
-   ],
-   "token": {
-    "cadena": "bsc",
-    "token": "0xFceB31A79F71AC9CBDCF853519c1b12D379EdC46",
-    "sym": "LISTA",
-    "liq": 51460,
-    "vol24": 17545,
-    "c24": 15.96,
-    "edad_h": 14779.6
-   }
-  },
-  {
-   "tema": "Alphabet Class A Tokenized Stock (Ondo)",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (GOOGLon, puesto 556)"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Bulla",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (BULLA, puesto 529)"
+    "entre lo más buscado en CoinMarketCap (PEARL, puesto 209)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "4eeEismW2HTqXr2tXg44bgpfrb7zGDVPXMEkuoGK7jjh",
-    "sym": "BULLA",
-    "liq": 71150047,
-    "vol24": 137368,
+    "token": "S9egD1gxAf4XCSggftkJxrsq33Gyfq2LMncmEQa3daL",
+    "sym": "PEARL",
+    "liq": 50512305,
+    "vol24": 37,
     "c24": 0,
-    "edad_h": 1890.9
+    "edad_h": 776.9
    }
   },
   {
-   "tema": "Theresa May urges accepting Brexit",
+   "tema": "Nvidia rehires Huang",
    "fuentes": [
     "bluesky"
    ],
    "calor": 70,
    "porque": [
-    "tendencia en Bluesky: In a BBC interview, the former prime minister tells Andy Burnham that Brexit is done and to move on."
-   ],
-   "token": null
-  },
-  {
-   "tema": "Russian warship explodes in Libya",
-   "fuentes": [
-    "bluesky"
-   ],
-   "calor": 68,
-   "porque": [
-    "tendencia en Bluesky: A Steregushchiy-class corvette, possibly the Merkury, reportedly sank after a blast at Benghazi port."
+    "tendencia en Bluesky: Donald Trump had posted that Nvidia's board should bring back ousted CEO Jensen Huang."
    ],
    "token": null
   }
  ],
  "cruces_h18": [
   {
-   "ts": 1795427051,
-   "hora_utc": "2026-11-23 09:44",
-   "tema": "Official Trump",
-   "fuentes": "coingecko,coinmarketcap,trending 5m",
-   "cadena": "solana",
-   "token": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
-   "sym": "TRUMP",
-   "liq": 122462,
-   "mc": 254841302,
-   "c1": 0.68,
-   "seguridad": "top10",
-   "aviso": "no",
-   "nuestras": "A2 B4 C1"
-  },
-  {
-   "ts": 1795427051,
-   "hora_utc": "2026-11-23 09:44",
+   "ts": 1795445528,
+   "hora_utc": "2026-11-23 14:52",
    "tema": "Minelius",
-   "fuentes": "coingecko,trending 5m",
+   "fuentes": "coingecko,trending 1h",
    "cadena": "solana",
    "token": "E9rWKjVhHMxQkxfREr7Li8Yy46rVcWiWHoKVQAe9pump",
    "sym": "MINELIUS",
-   "liq": 308126,
-   "mc": 16388891,
-   "c1": 20.75,
-   "seguridad": "ok",
-   "aviso": "si",
+   "liq": 327448,
+   "mc": 16831602,
+   "c1": 15.32,
+   "seguridad": "",
+   "aviso": "no",
    "nuestras": "A0 B0 C0"
   }
  ],
  "huecos_h19": [
   {
-   "ts": 1795427051,
-   "hora_utc": "2026-11-23 09:44",
+   "ts": 1795445528,
+   "hora_utc": "2026-11-23 14:52",
    "tema": "Tom Jackson (American football, born 1951)",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -428,8 +385,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795427051,
-   "hora_utc": "2026-11-23 09:44",
+   "ts": 1795445528,
+   "hora_utc": "2026-11-23 14:52",
    "tema": "Miley Cyrus",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -437,8 +394,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795427051,
-   "hora_utc": "2026-11-23 09:44",
+   "ts": 1795445528,
+   "hora_utc": "2026-11-23 14:52",
    "tema": "S Club",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -446,48 +403,48 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795427051,
-   "hora_utc": "2026-11-23 09:44",
-   "tema": "GTA VI Gameplay Map Details",
+   "ts": 1795445528,
+   "hora_utc": "2026-11-23 14:52",
+   "tema": "Trump Urges Nvidia Board",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Players are actively exploring Grand Theft Auto VI, sharing observations about the game's realistic map accuracy to Florida, NPC behaviors, and hidden secrets s…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): President Trump has publicly called for Nvidia's board to reinstate Jensen Huang as CEO, stating it would be beneficial for both the company and the United Stat…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795427051,
-   "hora_utc": "2026-11-23 09:44",
-   "tema": "China Margin Cut 80%",
+   "ts": 1795445528,
+   "hora_utc": "2026-11-23 14:52",
+   "tema": "South Korea Digital Asset Act",
    "fuentes": "x_chainbase",
    "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): South Korean financial officials held an emergency meeting to address severe market volatility, announcing the readiness of a stock market stabilization fund fo…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): South Korea is set to release the draft text for the Digital Asset Basic Act, establishing a comprehensive regulatory framework that includes licensing regimes …",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795427051,
-   "hora_utc": "2026-11-23 09:44",
-   "tema": "Russian Ship Explosion Libya",
+   "ts": 1795445528,
+   "hora_utc": "2026-11-23 14:52",
+   "tema": "South Korea KOSPI Falls",
    "fuentes": "x_chainbase",
    "calor": 86,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 3): Officials reported that a Russian drone strike hit a building in Kyiv, resulting in at least two deaths, while a separate incident involved an explosion on a Ru…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): South Korea's benchmark KOSPI index dropped 3.31 percent, settling at its lowest closing level since January 13. The decline erased approximately 316 trillion w…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795427051,
-   "hora_utc": "2026-11-23 09:44",
-   "tema": "Verstappen Vegas Win",
+   "ts": 1795445528,
+   "hora_utc": "2026-11-23 14:52",
+   "tema": "MoldyRoost Steals Crypto Seeds",
    "fuentes": "x_chainbase",
    "calor": 84,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 4): Max Verstappen secured his third victory at the Las Vegas Grand Prix, finishing 0.639 seconds ahead of the competition. The race was marked by a significant inc…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 4): A malicious advertising campaign known as MoldyRoost has targeted iPhone users across more than 47 countries using over 480 ad domains since May. The operation …",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795427051,
-   "hora_utc": "2026-11-23 09:44",
-   "tema": "US Tech Outages Due Glitches",
+   "ts": 1795445528,
+   "hora_utc": "2026-11-23 14:52",
+   "tema": "FTX Estate Anthropic Stake Sale",
    "fuentes": "x_chainbase",
    "calor": 82,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 5): US intelligence officials and cybersecurity experts warn that Americans should expect increased technology outages and service interruptions over the next 18 mo…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 5): The FTX bankruptcy estate sold its early investment in AI company Anthropic for $1.34 billion in 2024. Based on Anthropic's latest valuation, the stake would cu…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
