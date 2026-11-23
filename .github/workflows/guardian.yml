@@ -1,0 +1,17 @@
+name: Guardián de escaneos (sin Claude)
+on:
+  schedule:
+    - cron: "22 6,9,14,21 * * *"   # 1:22, 4:22, 9:22 AM y 4:22 PM Bogotá
+  workflow_dispatch:
+permissions:
+  actions: write
+  contents: read
+jobs:
+  guardian:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/guardian.py
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
