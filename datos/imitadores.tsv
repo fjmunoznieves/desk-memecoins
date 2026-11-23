@@ -38,3 +38,8 @@ ts	hora_utc	cadena	token	sym	precio	liq	mc	motivo	estado_escaneo	fallos
 1795387625	2026-11-22 22:47	solana	fZz5uVNxjzJjUDRFho9efrQD2qcdYcsv4rWhuWbpump	BTC	0.00006155	16468	60936	usa el símbolo de BTC sin ser el contrato oficial	pendiente	liq+vol5m
 1795387625	2026-11-22 22:47	bsc	0x29ebCB205a71bF2B924C6aD7Ba0264De4B831466	TRUMP	0.07272	74323	24726410990	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m+5m>=50
 1795425194	2026-11-23 09:13	bsc	0x5006Fd6f55ADDf69942DB39Da9aB85B981F8B591	TRUMP	0.06302	78999	27732274948	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m+5m>=50
+1795466702	2026-11-23 20:45	solana	51hXvkzJZXcXXpEEmwCLLgBSBFe8Est9A64ranrVMHBp	BTC	0.00007312	72357	73124	usa el símbolo de BTC sin ser el contrato oficial	pendiente	b/s
+1795466702	2026-11-23 20:45	solana	D4W7wtJTFCwJoD9KnuDJ439ncQaSaXwGprWwLNWHHHzt	PEPE	0.000004108777577	115023	410877	usa el símbolo de PEPE sin ser el contrato oficial	pendiente	b/s
+1795466702	2026-11-23 20:45	solana	CTzNBiroBpWnERZEysmDWi54PoQRMkTxdAzKbSGFoiFC	pepe	0.0002703591901	30059	270359	usa el símbolo de PEPE sin ser el contrato oficial	pendiente	ninguno
+1795466702	2026-11-23 20:45	bsc	0xce0964656971ceE99cB25f6F3c89f4cd2c76Dc6B	PEPE	0.00001190	19973	11908	usa el símbolo de PEPE sin ser el contrato oficial	pendiente	liq+vol5m
+1795466702	2026-11-23 20:45	bsc	0x6f34f9802cdd18215f778D690fb3Aed745B67777	NVDAB	190.39	3042033	78463776	imita marca NVDA	pendiente	ninguno
