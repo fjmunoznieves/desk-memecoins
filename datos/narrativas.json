@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-24 02:00",
+ "hora_utc": "2026-11-24 20:04",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -10,156 +10,242 @@
  ],
  "narrativas": [
   {
-   "tema": "Tom Jackson (American football, born 1951)",
+   "tema": "Jensen Huang's \"tortured story\" remark",
+   "fuentes": [
+    "bluesky",
+    "wikipedia"
+   ],
+   "calor": 100,
+   "porque": [
+    "tendencia en Bluesky: Nvidia CEO Jensen Huang claims no story in human history has been more tortured than his.",
+    "234,343 visitas ayer en Wikipedia, 8.4× anteayer"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Monad",
+   "fuentes": [
+    "coingecko",
+    "coinmarketcap"
+   ],
+   "calor": 80,
+   "porque": [
+    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 217)",
+    "entre lo más buscado en CoinMarketCap (MON, puesto 103)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
+    "sym": "MON",
+    "liq": 31943876,
+    "vol24": 319409,
+    "c24": -0.03,
+    "edad_h": 1311.3
+   }
+  },
+  {
+   "tema": "Moon",
    "fuentes": [
     "wikipedia"
    ],
    "calor": 100,
    "porque": [
-    "263,973 visitas ayer en Wikipedia, nuevo en el top"
+    "180,275 visitas ayer en Wikipedia, nuevo en el top"
    ],
-   "token": null
+   "token": {
+    "cadena": "bsc",
+    "token": "0x0Cf1bC9797BE940DC2B3d5616937ED6aAd3C2f57",
+    "sym": "Moon",
+    "liq": 243227,
+    "vol24": 1548,
+    "c24": 1.87,
+    "edad_h": 2263.0
+   }
   },
   {
-   "tema": "Miley Cyrus",
+   "tema": "Linux",
    "fuentes": [
     "wikipedia"
    ],
    "calor": 100,
    "porque": [
-    "170,642 visitas ayer en Wikipedia, 11.4× anteayer"
+    "177,023 visitas ayer en Wikipedia, nuevo en el top"
    ],
    "token": null
   },
   {
-   "tema": "S Club",
+   "tema": "Blood",
    "fuentes": [
     "wikipedia"
    ],
    "calor": 100,
    "porque": [
-    "104,957 visitas ayer en Wikipedia, nuevo en el top"
+    "174,912 visitas ayer en Wikipedia, nuevo en el top"
    ],
    "token": null
   },
   {
-   "tema": "GTA VI PC Files Released",
+   "tema": "Experience machine",
+   "fuentes": [
+    "wikipedia"
+   ],
+   "calor": 100,
+   "porque": [
+    "135,474 visitas ayer en Wikipedia, nuevo en el top"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Fred Warner (American football)",
+   "fuentes": [
+    "wikipedia"
+   ],
+   "calor": 100,
+   "porque": [
+    "107,625 visitas ayer en Wikipedia, nuevo en el top"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Iran Warns Military Response",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): Rockstar Games reported that GTA VI generated $3.79 billion in first-day retail sales and sold 32.5 million units prior to launch, setting a new entertainment i…"
+    "tema caliente en X según Chainbase Tops (puesto 1): Tensions have escalated in the Strait of Hormuz after Iran reported that multiple tankers struck mines despite U.S. escorts, prompting Tehran to warn it will us…"
    ],
    "token": null
   },
   {
-   "tema": "Trump Delays Iran Strike Decision",
+   "tema": "Russia Ukraine Tensions Escalate",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): President Trump has paused potential military action against Iran, citing divided advisory opinions and strategic concerns, while Israeli officials lobby for im…"
+    "tema caliente en X según Chainbase Tops (puesto 2): Geopolitical tensions have intensified as Russian forces targeted infrastructure in Ukraine's Chernihiv region and a drone strayed into Polish airspace, prompti…"
    ],
    "token": null
   },
   {
-   "tema": "Superintelligence Impact Debate",
+   "tema": "China Launches Pakistan Astronaut",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 86,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): Discussions have emerged regarding the societal and economic implications of advanced AI technology. One perspective argues that AI will replace both existing a…"
+    "tema caliente en X según Chainbase Tops (puesto 3): A Pakistani Air Force pilot is set to become the first foreign astronaut in China's manned space program, launching on the Shenzhou-24 spacecraft to the Tiangon…"
    ],
    "token": null
   },
   {
-   "tema": "US Blacklists Megaspeed Nvidia Chips",
+   "tema": "UniCredit Bitcoin Product",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 84,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): The US Commerce Department plans to add Singapore-based Megaspeed to its Entity List, restricting semiconductor exports due to suspected violations of export co…"
+    "tema caliente en X según Chainbase Tops (puesto 4): Italy's second-largest bank, UniCredit, has launched a Bitcoin-linked investment certificate available to retail customers. The product offers 100% capital prot…"
    ],
    "token": null
   },
   {
-   "tema": "Avalanche Focuses Finance",
+   "tema": "Microsoft M365 Code Red",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 82,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): Ava Labs President Charley Cooper announced that Avalanche is narrowing its strategic focus to three core markets: institutional finance, productive tokenized a…"
+    "tema caliente en X según Chainbase Tops (puesto 5): Microsoft has declared a \"Code Red\" status for the health of its Microsoft 365 core services following a significant global outage that occurred on November 12.…"
    ],
    "token": null
   },
   {
-   "tema": "OpenAI Meta Urge Safety Limits",
+   "tema": "Sanofi Acquires Insmed",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): Meta Chief AI Officer Alexandr Wang warns that superintelligence, potentially 1,000 times smarter than humans, poses significant risks to humanity's ability to …"
+    "tema caliente en X según Chainbase Tops (puesto 6): French pharmaceutical company Sanofi has agreed to acquire US biotech firm Insmed Inc. for $41 billion in an all-cash transaction. The acquisition aims to expan…"
    ],
    "token": null
   },
   {
-   "tema": "MoldyRoost Steals Crypto Seeds",
+   "tema": "Stripe Valuation Over 200B",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 78,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): Security firm Confiant has identified a malvertising campaign named MoldyRoost that targets iPhone users across more than 47 countries. The operation utilizes o…"
+    "tema caliente en X según Chainbase Tops (puesto 7): Payment processor Stripe is reportedly in discussions with investors regarding a tender offer that would value the company at more than $200 billion, according …"
    ],
    "token": null
   },
   {
-   "tema": "Fed Rate Hikes Drive Dollar",
+   "tema": "FBI Warns AI Breach Risk",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 76,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): Bank of America Global Research released its 2027 economic outlook, projecting global GDP growth of 3.4% and US GDP growth of 2.3%. The bank forecasts the US 10…"
+    "tema caliente en X según Chainbase Tops (puesto 8): The FBI has issued a warning that AI-powered hacking tools allow cybercriminals to breach company systems in under three hours. This development coincides with …"
    ],
    "token": null
   },
   {
-   "tema": "NFL Week 11 Game Updates",
+   "tema": "Best Buy Raises Guidance",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 74,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): Recent NFL discussions highlight the Buffalo Bills maintaining an undefeated record since their bye week, with victories over Baltimore, Minnesota, New York, an…"
+    "tema caliente en X según Chainbase Tops (puesto 9): Best Buy, Kohl's, and J.M. Smucker reported quarterly earnings that exceeded analyst estimates for revenue and adjusted earnings per share. Best Buy saw a 6% ye…"
    ],
    "token": null
   },
   {
-   "tema": "FTX Estate Anthropic Stake Sale",
+   "tema": "US Army Lead Azide Detonation",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 72,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): Anthropic has achieved a valuation of approximately $500 billion following significant capital inflows, including a $93.5 billion IPO and additional share sales…"
+    "tema caliente en X según Chainbase Tops (puesto 10): The US Army is proceeding with a controlled detonation of 9,773 pounds of degraded lead azide at the Iowa Army Ammunition Plant in Middletown. The operation, sc…"
    ],
    "token": null
   },
   {
-   "tema": "Musk Claims Optimus Ends Poverty",
+   "tema": "Flop Labs Testnet Launch",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): Elon Musk reportedly informed SpaceX employees that the company is falling behind in AI competition, suggesting that renting out computing power may be more pro…"
+    "tema caliente en X según Chainbase Tops (puesto 11): Flop Labs has officially launched its testnet, enabling users to interact with AI agents on the platform. The launch occurred following a brief delay, with the …"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Variational X",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (VAR, puesto de capitalización 849)"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Pepe Intelligence",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (PEI, puesto de capitalización 753)"
    ],
    "token": null
   },
@@ -170,293 +256,258 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 127)"
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 129)"
    ],
    "token": {
     "cadena": "solana",
     "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
     "sym": "PENGU",
-    "liq": 2362781,
-    "vol24": 296550,
-    "c24": 6.25,
-    "edad_h": 16957.0
+    "liq": 2244316,
+    "vol24": 221404,
+    "c24": -5.52,
+    "edad_h": 16975.1
    }
   },
   {
-   "tema": "Monad",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 190)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
-    "sym": "MON",
-    "liq": 31943966,
-    "vol24": 260423,
-    "c24": -0.03,
-    "edad_h": 1293.2
-   }
-  },
-  {
-   "tema": "Aptos",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (APT, puesto de capitalización 115)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "E88itbQfWqe5FS2UH7cfqQwg77cd9t88ZKzkKGG5KYMz",
-    "sym": "APT",
-    "liq": 4797151562,
-    "vol24": 194434,
-    "c24": 0,
-    "edad_h": 223.6
-   }
-  },
-  {
-   "tema": "NVIDIA Tokenized bStocks",
+   "tema": "Momentum",
    "fuentes": [
     "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (NVDAB, puesto 222)"
+    "entre lo más buscado en CoinMarketCap (MMT, puesto 334)"
    ],
-   "token": null
+   "token": {
+    "cadena": "solana",
+    "token": "2SESmE4AN8KSKu3MUtF6QJTFC5LT6WzodGW7JMQRyxvP",
+    "sym": "MMT",
+    "liq": 296885399,
+    "vol24": 152185,
+    "c24": 0,
+    "edad_h": 2798.8
+   }
   },
   {
-   "tema": "November full supermoon",
+   "tema": "Terra Classic",
    "fuentes": [
-    "bluesky"
+    "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "tendencia en Bluesky: Users share moon photos and astrology notes as the first of four supermoons in a row arrives."
+    "entre lo más buscado en CoinMarketCap (LUNC, puesto 104)"
    ],
-   "token": null
+   "token": {
+    "cadena": "solana",
+    "token": "FqCSrz5qBLWj8gizt9UBaVmiGEya5aGgXzahrChxcJEM",
+    "sym": "LUNC",
+    "liq": 64151884,
+    "vol24": 1,
+    "c24": 0,
+    "edad_h": 4137.1
+   }
   },
   {
-   "tema": "South Korea KOSPI Falls",
+   "tema": "EVAA Protocol",
    "fuentes": [
-    "x_chainbase"
+    "coinmarketcap"
    ],
-   "calor": 68,
+   "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 12): South Korea's benchmark KOSPI index dropped 3.31%, closing at its lowest level since January 13, as over ₩190 trillion was wiped from the market. Authorities ha…"
+    "entre lo más buscado en CoinMarketCap (EVAA, puesto 362)"
    ],
-   "token": null
+   "token": {
+    "cadena": "solana",
+    "token": "Ej4cuBwfc36DZH1TiMcX29cTTxM9jgVYJaKF5XtUtZhv",
+    "sym": "EVAA",
+    "liq": 29922460,
+    "vol24": 272435,
+    "c24": 0,
+    "edad_h": 651.8
+   }
   },
   {
-   "tema": "SEC probes Nvidia accounting",
+   "tema": "The Black Bull",
    "fuentes": [
-    "bluesky"
+    "coinmarketcap"
    ],
-   "calor": 68,
+   "calor": 70,
    "porque": [
-    "tendencia en Bluesky: Reuters reports the SEC is investigating the chipmaker over possible accounting issues."
+    "entre lo más buscado en CoinMarketCap (ANSEM, puesto 816)"
    ],
-   "token": null
-  },
-  {
-   "tema": "Professionals Relocate Globally",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 66,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 13): Discussions highlight the extraterritorial reach of American web regulations, noting that foreign users accessing US-based servers remain subject to US laws. Th…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Iowa Army detonation court case",
-   "fuentes": [
-    "bluesky"
-   ],
-   "calor": 66,
-   "porque": [
-    "tendencia en Bluesky: 8th Circuit case on Army plan to blow up degraded bomb-making material at an ammunition plant."
-   ],
-   "token": null
-  },
-  {
-   "tema": "Alice Huang espionage allegations",
-   "fuentes": [
-    "bluesky"
-   ],
-   "calor": 64,
-   "porque": [
-    "tendencia en Bluesky: Allegations involve Jensen Huang's former partner and China's Ministry of State Security."
-   ],
-   "token": null
-  },
-  {
-   "tema": "Grand Theft Auto VI release",
-   "fuentes": [
-    "bluesky"
-   ],
-   "calor": 62,
-   "porque": [
-    "tendencia en Bluesky: Rockstar's Vice City game is out, with players sharing screenshots and record first-day sales."
-   ],
-   "token": null
+   "token": {
+    "cadena": "solana",
+    "token": "GvmPaRxZRRZobbjU41tas3uLXbnB2d98fWEZ54Wa3JJp",
+    "sym": "ANSEM",
+    "liq": 317701550,
+    "vol24": 152185,
+    "c24": 0,
+    "edad_h": 3317.6
+   }
   }
  ],
  "cruces_h18": [
   {
-   "ts": 1795485628,
-   "hora_utc": "2026-11-24 02:00",
-   "tema": "US Blacklists Megaspeed Nvidia Chips",
-   "fuentes": "x_chainbase,trending 5m",
+   "ts": 1795550676,
+   "hora_utc": "2026-11-24 20:04",
+   "tema": "Jensen Huang's \"tortured story\" remark",
+   "fuentes": "bluesky,wikipedia,trending 5m",
    "cadena": "solana",
-   "token": "3GZQBsZiFfF9ivksCuUyADFiTZw8DrrUdqctKu1JF3mH",
-   "sym": "NVIDIA",
-   "liq": 4,
-   "mc": 28943,
-   "c1": 79.73,
+   "token": "Gn3JWxr2sjGXUf3hWNsiqq88ZMcr74HqQ87W1ATmpump",
+   "sym": "Jensen",
+   "liq": 1747,
+   "mc": 1604,
+   "c1": -94.42,
    "seguridad": "",
    "aviso": "no",
    "nuestras": "A0 B0 C0"
   },
   {
-   "ts": 1795485628,
-   "hora_utc": "2026-11-24 02:00",
-   "tema": "NVIDIA Tokenized bStocks",
+   "ts": 1795550676,
+   "hora_utc": "2026-11-24 20:04",
+   "tema": "Jensen Huang's \"tortured story\" remark",
+   "fuentes": "bluesky,wikipedia,trending 5m",
+   "cadena": "solana",
+   "token": "Fx9kSdNyHQpLfubsFXeW8EhXaBQw4tKF8SFuDqB9ZjdL",
+   "sym": "NVIDIA",
+   "liq": 4,
+   "mc": 20503,
+   "c1": 82.62,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1795550676,
+   "hora_utc": "2026-11-24 20:04",
+   "tema": "Jensen Huang's \"tortured story\" remark",
+   "fuentes": "bluesky,wikipedia,trending 5m",
+   "cadena": "solana",
+   "token": "CFjQFZmPzsh324yXSNubLSjwq5vTkKP93qHzCMbLvizg",
+   "sym": "JENSEN",
+   "liq": 0,
+   "mc": 167,
+   "c1": -99.49,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1795550676,
+   "hora_utc": "2026-11-24 20:04",
+   "tema": "Jensen Huang's \"tortured story\" remark",
+   "fuentes": "bluesky,wikipedia,trending 5m",
+   "cadena": "solana",
+   "token": "F5MPzdiZ51fCm2vUz18o2ahU6vFh2VpVSJHtiSP4pcNF",
+   "sym": "JENSEN",
+   "liq": 0,
+   "mc": 14370,
+   "c1": -56.4,
+   "seguridad": "",
+   "aviso": "no",
+   "nuestras": "A0 B0 C0"
+  },
+  {
+   "ts": 1795550676,
+   "hora_utc": "2026-11-24 20:04",
+   "tema": "The Black Bull",
    "fuentes": "coinmarketcap,trending 5m",
    "cadena": "solana",
-   "token": "3GZQBsZiFfF9ivksCuUyADFiTZw8DrrUdqctKu1JF3mH",
-   "sym": "NVIDIA",
-   "liq": 4,
-   "mc": 28943,
-   "c1": 79.73,
-   "seguridad": "",
-   "aviso": "no",
-   "nuestras": "A0 B0 C0"
-  },
-  {
-   "ts": 1795485628,
-   "hora_utc": "2026-11-24 02:00",
-   "tema": "SEC probes Nvidia accounting",
-   "fuentes": "bluesky,trending 5m",
-   "cadena": "solana",
-   "token": "3GZQBsZiFfF9ivksCuUyADFiTZw8DrrUdqctKu1JF3mH",
-   "sym": "NVIDIA",
-   "liq": 4,
-   "mc": 28943,
-   "c1": 79.73,
-   "seguridad": "",
-   "aviso": "no",
-   "nuestras": "A0 B0 C0"
-  },
-  {
-   "ts": 1795485628,
-   "hora_utc": "2026-11-24 02:00",
-   "tema": "Alice Huang espionage allegations",
-   "fuentes": "bluesky,trending 5m",
-   "cadena": "solana",
-   "token": "9vLdkMGZ9jbKAZZKrxVzShEBuafLkjB7UgHfNh3xpump",
-   "sym": "JENSEN",
-   "liq": 21930,
-   "mc": 90853,
-   "c1": 198,
-   "seguridad": "",
-   "aviso": "no",
-   "nuestras": "A0 B0 C0"
-  },
-  {
-   "ts": 1795485628,
-   "hora_utc": "2026-11-24 02:00",
-   "tema": "Alice Huang espionage allegations",
-   "fuentes": "bluesky,trending 1h",
-   "cadena": "solana",
-   "token": "HKiMA2mKQHU2cjfZ4Kbmru5GBGCauSNqPtpu8cfmpump",
-   "sym": "JENSEN",
-   "liq": 62836,
-   "mc": 696992,
-   "c1": -15.62,
+   "token": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+   "sym": "ANSEM",
+   "liq": 798032,
+   "mc": 21638507,
+   "c1": 0.81,
    "seguridad": "top10",
+   "aviso": "no",
+   "nuestras": "A17 B24 C0"
+  },
+  {
+   "ts": 1795550676,
+   "hora_utc": "2026-11-24 20:04",
+   "tema": "The Black Bull",
+   "fuentes": "coinmarketcap,trending 5m",
+   "cadena": "solana",
+   "token": "B1dZxka8tVGYHm3DwS8kbxHiLZ9mAh2QMpo61cUVjvzZ",
+   "sym": "ANSEM",
+   "liq": 63,
+   "mc": 25,
+   "c1": -99.74,
+   "seguridad": "",
    "aviso": "no",
    "nuestras": "A0 B0 C0"
   }
  ],
  "huecos_h19": [
   {
-   "ts": 1795485628,
-   "hora_utc": "2026-11-24 02:00",
-   "tema": "Tom Jackson (American football, born 1951)",
-   "fuentes": "wikipedia",
+   "ts": 1795550676,
+   "hora_utc": "2026-11-24 20:04",
+   "tema": "Jensen Huang's \"tortured story\" remark",
+   "fuentes": "bluesky,wikipedia",
    "calor": 100,
-   "porque": "263,973 visitas ayer en Wikipedia, nuevo en el top",
+   "porque": "tendencia en Bluesky: Nvidia CEO Jensen Huang claims no story in human history has been more tortured than his. | 234,343 visitas ayer en Wikipedia, 8.4× anteayer",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795485628,
-   "hora_utc": "2026-11-24 02:00",
-   "tema": "Miley Cyrus",
+   "ts": 1795550676,
+   "hora_utc": "2026-11-24 20:04",
+   "tema": "Linux",
    "fuentes": "wikipedia",
    "calor": 100,
-   "porque": "170,642 visitas ayer en Wikipedia, 11.4× anteayer",
+   "porque": "177,023 visitas ayer en Wikipedia, nuevo en el top",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795485628,
-   "hora_utc": "2026-11-24 02:00",
-   "tema": "S Club",
+   "ts": 1795550676,
+   "hora_utc": "2026-11-24 20:04",
+   "tema": "Blood",
    "fuentes": "wikipedia",
    "calor": 100,
-   "porque": "104,957 visitas ayer en Wikipedia, nuevo en el top",
+   "porque": "174,912 visitas ayer en Wikipedia, nuevo en el top",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795485628,
-   "hora_utc": "2026-11-24 02:00",
-   "tema": "GTA VI PC Files Released",
+   "ts": 1795550676,
+   "hora_utc": "2026-11-24 20:04",
+   "tema": "Experience machine",
+   "fuentes": "wikipedia",
+   "calor": 100,
+   "porque": "135,474 visitas ayer en Wikipedia, nuevo en el top",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795550676,
+   "hora_utc": "2026-11-24 20:04",
+   "tema": "Fred Warner (American football)",
+   "fuentes": "wikipedia",
+   "calor": 100,
+   "porque": "107,625 visitas ayer en Wikipedia, nuevo en el top",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795550676,
+   "hora_utc": "2026-11-24 20:04",
+   "tema": "Iran Warns Military Response",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Rockstar Games reported that GTA VI generated $3.79 billion in first-day retail sales and sold 32.5 million units prior to launch, setting a new entertainment i…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Tensions have escalated in the Strait of Hormuz after Iran reported that multiple tankers struck mines despite U.S. escorts, prompting Tehran to warn it will us…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795485628,
-   "hora_utc": "2026-11-24 02:00",
-   "tema": "Trump Delays Iran Strike Decision",
+   "ts": 1795550676,
+   "hora_utc": "2026-11-24 20:04",
+   "tema": "Russia Ukraine Tensions Escalate",
    "fuentes": "x_chainbase",
    "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): President Trump has paused potential military action against Iran, citing divided advisory opinions and strategic concerns, while Israeli officials lobby for im…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Geopolitical tensions have intensified as Russian forces targeted infrastructure in Ukraine's Chernihiv region and a drone strayed into Polish airspace, prompti…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795485628,
-   "hora_utc": "2026-11-24 02:00",
-   "tema": "Superintelligence Impact Debate",
+   "ts": 1795550676,
+   "hora_utc": "2026-11-24 20:04",
+   "tema": "China Launches Pakistan Astronaut",
    "fuentes": "x_chainbase",
    "calor": 86,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 3): Discussions have emerged regarding the societal and economic implications of advanced AI technology. One perspective argues that AI will replace both existing a…",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795485628,
-   "hora_utc": "2026-11-24 02:00",
-   "tema": "US Blacklists Megaspeed Nvidia Chips",
-   "fuentes": "x_chainbase",
-   "calor": 84,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 4): The US Commerce Department plans to add Singapore-based Megaspeed to its Entity List, restricting semiconductor exports due to suspected violations of export co…",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795485628,
-   "hora_utc": "2026-11-24 02:00",
-   "tema": "Avalanche Focuses Finance",
-   "fuentes": "x_chainbase",
-   "calor": 82,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 5): Ava Labs President Charley Cooper announced that Avalanche is narrowing its strategic focus to three core markets: institutional finance, productive tokenized a…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): A Pakistani Air Force pilot is set to become the first foreign astronaut in China's manned space program, launching on the Shenzhou-24 spacecraft to the Tiangon…",
    "idea": "idea paper (no se crea nada)"
   }
  ]

@@ -46,3 +46,4 @@ ts	hora_utc	cadena	token	sym	precio	liq	mc	motivo	estado_escaneo	fallos
 1795491245	2026-11-24 03:34	bsc	0xE0d75BB968d242355808479f40416d21390BE66d	TRUMP	0.1453	104714	49433628969	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m
 1795496991	2026-11-24 05:09	solana	47we9WnmawtzZvmzNQKyKCW1853LrErftXzdxaxhEzKs	BTC	0.00001619	18903	16196	usa el símbolo de BTC sin ser el contrato oficial	pendiente	liq
 1795496991	2026-11-24 05:09	bsc	0x57552960688b5eae0DC3260003c32Acd6fa6c875	NVDAB	0.2168	29463	21682	imita marca NVDA	pendiente	liq+vol5m
+1795550009	2026-11-24 19:53	bsc	0xD018974d9B8665Cf9988c5C714169aaD63Fe2D3e	TRUMP	0.03319	50137	11286774932	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m+5m>=50
