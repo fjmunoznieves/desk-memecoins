@@ -20,7 +20,7 @@ from operadores import mapa
 SALIDA = "datos/salidas_sombra.tsv"
 ALERTAS = "datos/alertas_salida.tsv"
 CAMPOS = ["ts", "hora_utc", "hip", "cadena", "token", "sym", "precio", "n_billeteras", "n_oper", "pasa_oper",
-          "c24", "c7d", "max7d_pct", "esc_pct", "esc_detalle", "esc35_pct", "esc35_detalle", "trail30_pct", "trail30_detalle", "copiaA_pct", "copiaA_hora", "copiaA_detalle", "hib_pct", "hib_detalle", "pool", "estado", "medido"]
+          "c24", "c7d", "max7d_pct", "esc_pct", "esc_detalle", "esc35_pct", "esc35_detalle", "trail30_pct", "trail30_detalle", "copiaA_pct", "copiaA_hora", "copiaA_detalle", "hib_pct", "hib_detalle", "liq20_pct", "liq20_detalle", "pool", "estado", "medido"]
 CAMPOS_AL = ["ts", "hora_utc", "hip", "token", "sym", "operadores_con_saldo", "operadores_vendieron", "precio", "cambio_desde_senal"]
 PRESUPUESTO_S = int(os.environ.get("SALIDAS_PRESUPUESTO_S", "120"))  # 17-nov 120 s; 20-nov (Fran OK): escaneo usa 900 s (medía ~6 señales por corrida, 45 de 1.370); el reloj sigue en 120
 
@@ -53,7 +53,38 @@ def senales():
     for r in leer("datos/seguimiento.tsv"):  # 16-nov: puntos de seguimiento (consenso A con saldo real)
         out.append(dict(ts=r["ts"], hora_utc=r["hora_utc"], hip="SEG", cadena="solana", token=r["token"], sym=r["sym"],
                         precio=r["precio"], n_billeteras=len(r["billeteras"].split(",")), n_oper="", c24="", c7d="", pool=""))
+    # 24-nov (Fran, mejora 1): H25 sin estables ni acciones tokenizadas; las 4 filas del 17-nov antes del filtro no_meme
+    out = [s for s in out if not (s["hip"] == "H25" and s["token"] in H25_EXCLUIDOS)]
     return out
+
+
+H25_EXCLUIDOS = {"2u1tszSeqZ3qBWF3uNGPFc8TzMk2tdiwknnRMWGWjGWH", "HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr",
+                 "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo", "Pren1FvFX6J3E4kXhJuCiAD5aDmGEb7qJRncwA8Lkhw"}  # USDG, EURC, TTWO, ANTHROPIC
+
+
+def serie_liquidez():
+    """24-nov (Fran, mejora 2): series de liquidez/precio por token desde datos/liquidez_seguimiento.tsv (sin consultas)."""
+    ser = defaultdict(list)
+    for r in leer("datos/liquidez_seguimiento.tsv"):
+        try:
+            ser[r["token"]].append((int(float(r["ts"])), float(r["precio"]), float(r["liq"])))
+        except (KeyError, ValueError):
+            pass
+    for k in ser:
+        ser[k].sort()
+    return ser
+
+
+def salida_liquidez(ser, t0, p0, caida=0.2):
+    """Sale en la primera foto en que la liquidez cae >= 20 % frente a la primera foto tras la señal. Solo medición."""
+    v = [x for x in ser if x[0] >= t0 and x[1] > 0 and x[2] > 0]
+    if not v or not p0:
+        return None, ""
+    l0 = v[0][2]
+    for t, p, l in v[1:]:
+        if l <= l0 * (1 - caida):
+            return round((p / p0 - 1) * 100, 1), f"liq {round(l0):,}→{round(l):,} el " + time.strftime("%m-%d %H:%M", time.gmtime(t))
+    return round((v[-1][1] / p0 - 1) * 100, 1), f"abierta (liq {round(l0):,}→{round(v[-1][2]):,}, {len(v)} fotos)"
 
 
 def escalonada(c, p0, stop_ini=0.8):
@@ -144,6 +175,7 @@ def main():
     t_ini = time.time()
     previas = {(r["hip"], r["token"]): r for r in leer(SALIDA)}
     salida_A = copiar_A()
+    liqser = serie_liquidez()
     alertas = leer(ALERTAS)
     ya_al = {(a["hip"], a["token"]) for a in alertas}
     filas = []
@@ -173,6 +205,9 @@ def main():
                 alertas.append(dict(ts=a[0], hora_utc=r["copiaA_hora"], hip=r["hip"], token=r["token"], sym=r["sym"],
                                     operadores_con_saldo=a[2], operadores_vendieron=a[3], precio=a[1], cambio_desde_senal=r["copiaA_pct"]))
                 print(f"salida A: {r['sym']} {r['token']} ({r['hip']}) {a[3]}/{a[2]} operadores vendieron, {r['copiaA_pct']} % desde la señal")
+        # 24-nov: salida por caída de liquidez >= 20 % (datos ya guardados, sin API)
+        if p0 and r["token"] in liqser:
+            r["liq20_pct"], r["liq20_detalle"] = salida_liquidez(liqser[r["token"]], int(r["ts"]), p0)
         # escalonada (se recalcula hasta cumplir 7 días)
         edad = time.time() - int(r["ts"])
         reciente = r.get("esc35_pct") and time.time() - int(r.get("medido") or 0) < 6 * 3600

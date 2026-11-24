@@ -2,6 +2,7 @@
 
 Señal = primera compra de un operador A en un token (pump.fun o PumpSwap) en 60 min.
 Entrada = primer precio visto >= recv + retraso (5/10/30/60 s). 12 USD por entrada, 6 % de costos ida y vuelta.
+Tope +3 %: también se reporta el subconjunto que entra a ≤ +3 % del precio de A (24-nov).
 Salidas: copiar (cuando ese operador vende, + mismo retraso), stop −35 %, trailing 30 %, 5 min, 30 min, fin (≤90 min).
 """
 import csv, glob, statistics, sys
@@ -70,6 +71,7 @@ def simular(sen, d):
         res[nom] = (x[-1] if x else tras[0])["p"] / pe
     res["fin"] = tras[-1]["p"] / pe
     res["max"] = max(r["p"] for r in tras) / pe
+    res["sobre_A"] = pe / sen["p"]  # 24-nov: cuánto más caro entramos que la compra de A
     return res
 
 
@@ -82,3 +84,10 @@ for d in RETRASOS:
     for sal in ("copiar", "stop35", "trail30", "5min", "30min", "fin"):
         pnl = sorted(12 * (r[sal] - 1 - COSTO) for r in rs)
         print(f"  {sal:8s} total {sum(pnl):+8.1f} USD  mediana {100*statistics.median(r[sal]-1-COSTO for r in rs):+6.1f} %  ganan {sum(p>0 for p in pnl)}/{len(pnl)}  sin top3 {sum(pnl[:-3]):+8.1f}")
+    # 24-nov (Fran, mejora 2): mismo cálculo solo con entradas a no más de +3 % sobre el precio de compra de A
+    t3 = [r for r in rs if r["sobre_A"] <= 1.03]
+    if t3:
+        print(f"  tope +3 % sobre A: n={len(t3)}")
+        for sal in ("copiar", "stop35", "trail30", "fin"):
+            pnl = sorted(12 * (r[sal] - 1 - COSTO) for r in t3)
+            print(f"    {sal:8s} total {sum(pnl):+8.1f} USD  mediana {100*statistics.median(r[sal]-1-COSTO for r in t3):+6.1f} %  ganan {sum(p>0 for p in pnl)}/{len(pnl)}  sin top3 {sum(pnl[:-3]):+8.1f}")
