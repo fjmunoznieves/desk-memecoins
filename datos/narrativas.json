@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-24 20:04",
+ "hora_utc": "2026-11-24 23:49",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -10,19 +10,6 @@
  ],
  "narrativas": [
   {
-   "tema": "Jensen Huang's \"tortured story\" remark",
-   "fuentes": [
-    "bluesky",
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "tendencia en Bluesky: Nvidia CEO Jensen Huang claims no story in human history has been more tortured than his.",
-    "234,343 visitas ayer en Wikipedia, 8.4× anteayer"
-   ],
-   "token": null
-  },
-  {
    "tema": "Monad",
    "fuentes": [
     "coingecko",
@@ -30,17 +17,36 @@
    ],
    "calor": 80,
    "porque": [
-    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 217)",
+    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 221)",
     "entre lo más buscado en CoinMarketCap (MON, puesto 103)"
    ],
    "token": {
     "cadena": "solana",
     "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
     "sym": "MON",
-    "liq": 31943876,
-    "vol24": 319409,
-    "c24": -0.03,
-    "edad_h": 1311.3
+    "liq": 31943881,
+    "vol24": 320420,
+    "c24": 0,
+    "edad_h": 1315.0
+   }
+  },
+  {
+   "tema": "Jensen Huang",
+   "fuentes": [
+    "wikipedia"
+   ],
+   "calor": 100,
+   "porque": [
+    "234,343 visitas ayer en Wikipedia, 8.4× anteayer"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "9MtFSBXTd4MBNJ5AcdHuURWNCMZ4f2ggSc3898yPVeS7",
+    "sym": " Huang",
+    "liq": 38506,
+    "vol24": 55473,
+    "c24": 83.99,
+    "edad_h": 0.4
    }
   },
   {
@@ -57,9 +63,9 @@
     "token": "0x0Cf1bC9797BE940DC2B3d5616937ED6aAd3C2f57",
     "sym": "Moon",
     "liq": 243227,
-    "vol24": 1548,
-    "c24": 1.87,
-    "edad_h": 2263.0
+    "vol24": 1545,
+    "c24": 1.9,
+    "edad_h": 2266.7
    }
   },
   {
@@ -107,46 +113,24 @@
    "token": null
   },
   {
-   "tema": "Iran Warns Military Response",
+   "tema": "Iran Targets Hormuz Tankers",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): Tensions have escalated in the Strait of Hormuz after Iran reported that multiple tankers struck mines despite U.S. escorts, prompting Tehran to warn it will us…"
+    "tema caliente en X según Chainbase Tops (puesto 1): Tensions escalate in the Middle East as Iran reports multiple tankers hitting mines in the Strait of Hormuz, while US officials debate potential military target…"
    ],
    "token": null
   },
   {
-   "tema": "Russia Ukraine Tensions Escalate",
+   "tema": "CIA ODNI Cyber Breach Leak",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): Geopolitical tensions have intensified as Russian forces targeted infrastructure in Ukraine's Chernihiv region and a drone strayed into Polish airspace, prompti…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "China Launches Pakistan Astronaut",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 86,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): A Pakistani Air Force pilot is set to become the first foreign astronaut in China's manned space program, launching on the Shenzhou-24 spacecraft to the Tiangon…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "UniCredit Bitcoin Product",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 84,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): Italy's second-largest bank, UniCredit, has launched a Bitcoin-linked investment certificate available to retail customers. The product offers 100% capital prot…"
+    "tema caliente en X según Chainbase Tops (puesto 2): The CIA and the Office of the Director of National Intelligence (ODNI) discovered a cybersecurity breach that exposed unclassified intelligence information, acc…"
    ],
    "token": null
   },
@@ -155,53 +139,20 @@
    "fuentes": [
     "x_chainbase"
    ],
-   "calor": 82,
+   "calor": 86,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): Microsoft has declared a \"Code Red\" status for the health of its Microsoft 365 core services following a significant global outage that occurred on November 12.…"
+    "tema caliente en X según Chainbase Tops (puesto 3): Microsoft has declared an internal \"Code Red\" following a historic 24-hour outage of its Microsoft 365 core services on November 12. The disruption affected cri…"
    ],
    "token": null
   },
   {
-   "tema": "Sanofi Acquires Insmed",
+   "tema": "Wendys Price Inflation Lawsuit",
    "fuentes": [
     "x_chainbase"
    ],
-   "calor": 80,
+   "calor": 84,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): French pharmaceutical company Sanofi has agreed to acquire US biotech firm Insmed Inc. for $41 billion in an all-cash transaction. The acquisition aims to expan…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Stripe Valuation Over 200B",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 78,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): Payment processor Stripe is reportedly in discussions with investors regarding a tender offer that would value the company at more than $200 billion, according …"
-   ],
-   "token": null
-  },
-  {
-   "tema": "FBI Warns AI Breach Risk",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 76,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): The FBI has issued a warning that AI-powered hacking tools allow cybercriminals to breach company systems in under three hours. This development coincides with …"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Best Buy Raises Guidance",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 74,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): Best Buy, Kohl's, and J.M. Smucker reported quarterly earnings that exceeded analyst estimates for revenue and adjusted earnings per share. Best Buy saw a 6% ye…"
+    "tema caliente en X según Chainbase Tops (puesto 4): Wendy's is facing a class-action lawsuit alleging the fast-food chain conspired with a software company to artificially inflate menu prices. This legal challeng…"
    ],
    "token": null
   },
@@ -210,20 +161,75 @@
    "fuentes": [
     "x_chainbase"
    ],
-   "calor": 72,
+   "calor": 82,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): The US Army is proceeding with a controlled detonation of 9,773 pounds of degraded lead azide at the Iowa Army Ammunition Plant in Middletown. The operation, sc…"
+    "tema caliente en X según Chainbase Tops (puesto 5): The US Army is scheduled to conduct a controlled detonation of approximately 5 tons of degraded lead azide at the Iowa Army Ammunition Plant in Middletown. This…"
    ],
    "token": null
   },
   {
-   "tema": "Flop Labs Testnet Launch",
+   "tema": "Tesla Robotaxi Fleet Hits 6M Miles",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 80,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 6): Tesla's global fleet has surpassed 18 billion miles driven using Full Self-Driving software, marking a significant data milestone for its autonomous driving cap…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Democrats Question FAA AI Tool",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 78,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 7): House Democrats have issued a letter expressing concerns regarding the Federal Aviation Administration's decision to deploy an AI tool to assist air traffic con…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Pentagon Drone Talks",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 76,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 8): The Pentagon is in preliminary discussions with General Motors, Ford, and other automotive manufacturers to leverage their industrial capacity for the mass prod…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Pope Francis Diaries Devil",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 74,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 9): Newly released notes attributed to the late Pope Francis describe personal encounters with the devil, including visions of hell and a figure with fiery eyes. Th…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Senegal Cup Win",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 72,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 10): President Trump announced that the United States will host the 2031 FIFA Women's World Cup in partnership with Mexico, Costa Rica, and Jamaica. The tournament w…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Prosecutors Investigate Ilhan Omar",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): Flop Labs has officially launched its testnet, enabling users to interact with AI agents on the platform. The launch occurred following a brief delay, with the …"
+    "tema caliente en X según Chainbase Tops (puesto 11): Federal prosecutors are investigating Representative Ilhan Omar for alleged violations spanning from 1980 to the present, according to unsealed court documents …"
    ],
    "token": null
   },
@@ -234,18 +240,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (VAR, puesto de capitalización 849)"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Pepe Intelligence",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (PEI, puesto de capitalización 753)"
+    "entre lo más buscado en CoinGecko (VAR, puesto de capitalización 900)"
    ],
    "token": null
   },
@@ -262,10 +257,29 @@
     "cadena": "solana",
     "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
     "sym": "PENGU",
-    "liq": 2244316,
-    "vol24": 221404,
-    "c24": -5.52,
-    "edad_h": 16975.1
+    "liq": 2247175,
+    "vol24": 207784,
+    "c24": -4.77,
+    "edad_h": 16978.8
+   }
+  },
+  {
+   "tema": "Plume",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (PLUME, puesto de capitalización 294)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "EorgVKZJABjaCGXD21k5HVhviRXVNZuYxjDAU4XCDAbS",
+    "sym": "PLUME",
+    "liq": 21599156,
+    "vol24": 274429,
+    "c24": 0,
+    "edad_h": 1040.1
    }
   },
   {
@@ -275,16 +289,46 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (MMT, puesto 334)"
+    "entre lo más buscado en CoinMarketCap (MMT, puesto 337)"
    ],
    "token": {
     "cadena": "solana",
     "token": "2SESmE4AN8KSKu3MUtF6QJTFC5LT6WzodGW7JMQRyxvP",
     "sym": "MMT",
-    "liq": 296885399,
-    "vol24": 152185,
+    "liq": 296885401,
+    "vol24": 145028,
     "c24": 0,
-    "edad_h": 2798.8
+    "edad_h": 2802.6
+   }
+  },
+  {
+   "tema": "SUPERFORTUNE",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (GUA, puesto 1133)"
+   ],
+   "token": null
+  },
+  {
+   "tema": "EVAA Protocol",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (EVAA, puesto 373)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "Ej4cuBwfc36DZH1TiMcX29cTTxM9jgVYJaKF5XtUtZhv",
+    "sym": "EVAA",
+    "liq": 29922465,
+    "vol24": 274447,
+    "c24": -0.03,
+    "edad_h": 655.5
    }
   },
   {
@@ -303,153 +347,15 @@
     "liq": 64151884,
     "vol24": 1,
     "c24": 0,
-    "edad_h": 4137.1
-   }
-  },
-  {
-   "tema": "EVAA Protocol",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (EVAA, puesto 362)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "Ej4cuBwfc36DZH1TiMcX29cTTxM9jgVYJaKF5XtUtZhv",
-    "sym": "EVAA",
-    "liq": 29922460,
-    "vol24": 272435,
-    "c24": 0,
-    "edad_h": 651.8
-   }
-  },
-  {
-   "tema": "The Black Bull",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (ANSEM, puesto 816)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "GvmPaRxZRRZobbjU41tas3uLXbnB2d98fWEZ54Wa3JJp",
-    "sym": "ANSEM",
-    "liq": 317701550,
-    "vol24": 152185,
-    "c24": 0,
-    "edad_h": 3317.6
+    "edad_h": 4140.9
    }
   }
  ],
- "cruces_h18": [
-  {
-   "ts": 1795550676,
-   "hora_utc": "2026-11-24 20:04",
-   "tema": "Jensen Huang's \"tortured story\" remark",
-   "fuentes": "bluesky,wikipedia,trending 5m",
-   "cadena": "solana",
-   "token": "Gn3JWxr2sjGXUf3hWNsiqq88ZMcr74HqQ87W1ATmpump",
-   "sym": "Jensen",
-   "liq": 1747,
-   "mc": 1604,
-   "c1": -94.42,
-   "seguridad": "",
-   "aviso": "no",
-   "nuestras": "A0 B0 C0"
-  },
-  {
-   "ts": 1795550676,
-   "hora_utc": "2026-11-24 20:04",
-   "tema": "Jensen Huang's \"tortured story\" remark",
-   "fuentes": "bluesky,wikipedia,trending 5m",
-   "cadena": "solana",
-   "token": "Fx9kSdNyHQpLfubsFXeW8EhXaBQw4tKF8SFuDqB9ZjdL",
-   "sym": "NVIDIA",
-   "liq": 4,
-   "mc": 20503,
-   "c1": 82.62,
-   "seguridad": "",
-   "aviso": "no",
-   "nuestras": "A0 B0 C0"
-  },
-  {
-   "ts": 1795550676,
-   "hora_utc": "2026-11-24 20:04",
-   "tema": "Jensen Huang's \"tortured story\" remark",
-   "fuentes": "bluesky,wikipedia,trending 5m",
-   "cadena": "solana",
-   "token": "CFjQFZmPzsh324yXSNubLSjwq5vTkKP93qHzCMbLvizg",
-   "sym": "JENSEN",
-   "liq": 0,
-   "mc": 167,
-   "c1": -99.49,
-   "seguridad": "",
-   "aviso": "no",
-   "nuestras": "A0 B0 C0"
-  },
-  {
-   "ts": 1795550676,
-   "hora_utc": "2026-11-24 20:04",
-   "tema": "Jensen Huang's \"tortured story\" remark",
-   "fuentes": "bluesky,wikipedia,trending 5m",
-   "cadena": "solana",
-   "token": "F5MPzdiZ51fCm2vUz18o2ahU6vFh2VpVSJHtiSP4pcNF",
-   "sym": "JENSEN",
-   "liq": 0,
-   "mc": 14370,
-   "c1": -56.4,
-   "seguridad": "",
-   "aviso": "no",
-   "nuestras": "A0 B0 C0"
-  },
-  {
-   "ts": 1795550676,
-   "hora_utc": "2026-11-24 20:04",
-   "tema": "The Black Bull",
-   "fuentes": "coinmarketcap,trending 5m",
-   "cadena": "solana",
-   "token": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
-   "sym": "ANSEM",
-   "liq": 798032,
-   "mc": 21638507,
-   "c1": 0.81,
-   "seguridad": "top10",
-   "aviso": "no",
-   "nuestras": "A17 B24 C0"
-  },
-  {
-   "ts": 1795550676,
-   "hora_utc": "2026-11-24 20:04",
-   "tema": "The Black Bull",
-   "fuentes": "coinmarketcap,trending 5m",
-   "cadena": "solana",
-   "token": "B1dZxka8tVGYHm3DwS8kbxHiLZ9mAh2QMpo61cUVjvzZ",
-   "sym": "ANSEM",
-   "liq": 63,
-   "mc": 25,
-   "c1": -99.74,
-   "seguridad": "",
-   "aviso": "no",
-   "nuestras": "A0 B0 C0"
-  }
- ],
+ "cruces_h18": [],
  "huecos_h19": [
   {
-   "ts": 1795550676,
-   "hora_utc": "2026-11-24 20:04",
-   "tema": "Jensen Huang's \"tortured story\" remark",
-   "fuentes": "bluesky,wikipedia",
-   "calor": 100,
-   "porque": "tendencia en Bluesky: Nvidia CEO Jensen Huang claims no story in human history has been more tortured than his. | 234,343 visitas ayer en Wikipedia, 8.4× anteayer",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795550676,
-   "hora_utc": "2026-11-24 20:04",
+   "ts": 1795564145,
+   "hora_utc": "2026-11-24 23:49",
    "tema": "Linux",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -457,8 +363,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795550676,
-   "hora_utc": "2026-11-24 20:04",
+   "ts": 1795564145,
+   "hora_utc": "2026-11-24 23:49",
    "tema": "Blood",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -466,8 +372,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795550676,
-   "hora_utc": "2026-11-24 20:04",
+   "ts": 1795564145,
+   "hora_utc": "2026-11-24 23:49",
    "tema": "Experience machine",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -475,8 +381,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795550676,
-   "hora_utc": "2026-11-24 20:04",
+   "ts": 1795564145,
+   "hora_utc": "2026-11-24 23:49",
    "tema": "Fred Warner (American football)",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -484,30 +390,39 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795550676,
-   "hora_utc": "2026-11-24 20:04",
-   "tema": "Iran Warns Military Response",
+   "ts": 1795564145,
+   "hora_utc": "2026-11-24 23:49",
+   "tema": "Iran Targets Hormuz Tankers",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Tensions have escalated in the Strait of Hormuz after Iran reported that multiple tankers struck mines despite U.S. escorts, prompting Tehran to warn it will us…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Tensions escalate in the Middle East as Iran reports multiple tankers hitting mines in the Strait of Hormuz, while US officials debate potential military target…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795550676,
-   "hora_utc": "2026-11-24 20:04",
-   "tema": "Russia Ukraine Tensions Escalate",
+   "ts": 1795564145,
+   "hora_utc": "2026-11-24 23:49",
+   "tema": "CIA ODNI Cyber Breach Leak",
    "fuentes": "x_chainbase",
    "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Geopolitical tensions have intensified as Russian forces targeted infrastructure in Ukraine's Chernihiv region and a drone strayed into Polish airspace, prompti…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): The CIA and the Office of the Director of National Intelligence (ODNI) discovered a cybersecurity breach that exposed unclassified intelligence information, acc…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795550676,
-   "hora_utc": "2026-11-24 20:04",
-   "tema": "China Launches Pakistan Astronaut",
+   "ts": 1795564145,
+   "hora_utc": "2026-11-24 23:49",
+   "tema": "Microsoft M365 Code Red",
    "fuentes": "x_chainbase",
    "calor": 86,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 3): A Pakistani Air Force pilot is set to become the first foreign astronaut in China's manned space program, launching on the Shenzhou-24 spacecraft to the Tiangon…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): Microsoft has declared an internal \"Code Red\" following a historic 24-hour outage of its Microsoft 365 core services on November 12. The disruption affected cri…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795564145,
+   "hora_utc": "2026-11-24 23:49",
+   "tema": "Wendys Price Inflation Lawsuit",
+   "fuentes": "x_chainbase",
+   "calor": 84,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 4): Wendy's is facing a class-action lawsuit alleging the fast-food chain conspired with a software company to artificially inflate menu prices. This legal challeng…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
