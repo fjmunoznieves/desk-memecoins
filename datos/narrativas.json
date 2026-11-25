@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-25 19:12",
+ "hora_utc": "2026-11-25 21:55",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -9,57 +9,24 @@
  ],
  "narrativas": [
   {
-   "tema": "Crypto Sentiment Shifts Inflation",
+   "tema": "US PCE Inflation Drives Volatility",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): Discussions across social media highlight a mix of bearish sentiment in crypto markets, with users noting despair modes and potential fire sales for Bitcoin. Co…"
+    "tema caliente en X según Chainbase Tops (puesto 1): The US Personal Consumption Expenditures (PCE) price index rose 3.8% year-over-year in October, matching expectations, while the core PCE index increased to 3.3…"
    ],
    "token": null
   },
   {
-   "tema": "CIA FinCEN Data Breach",
+   "tema": "Putin Warns Europe Energy Consequences",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): The CIA and the Office of the Director of National Intelligence (ODNI) confirmed a cybersecurity breach affecting an open-source intelligence system, which expo…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "FCC Approves SpaceX Satellites",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 86,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): The US Federal Communications Commission (FCC) has authorized SpaceX to deploy up to one million satellites designed to function as orbital data centers. This a…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Ukraine Passes Crypto Tax Law",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 84,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): Ukraine's parliament has passed legislation establishing a regulatory and tax framework for cryptocurrencies, including Bitcoin. The law allows citizens to hold…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Trump Releases USAID Files",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 82,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): The Trump administration has released internal USAID documents revealing the agency's coordination with major technology companies, including Google, YouTube, a…"
+    "tema caliente en X según Chainbase Tops (puesto 2): Russian President Vladimir Putin warned that European efforts to restrict Russian energy exports will result in serious consequences for Europeans, while conven…"
    ],
    "token": null
   },
@@ -68,9 +35,75 @@
    "fuentes": [
     "x_chainbase"
    ],
+   "calor": 86,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 3): The US administration has proposed new tariffs on imports from China, the European Union, and over a dozen other economies, citing industrial subsidies and stru…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "FCC Authorizes SpaceX Satellites",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 84,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 4): The US Federal Communications Commission has authorized SpaceX to deploy up to one million satellites designed to function as orbital data centers. This approva…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Ukraine Crypto Law 2027",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 82,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 5): Ukraine's parliament has passed a legislative bill to legalize and regulate the cryptocurrency market, with the framework set to take effect on July 1, 2027. Th…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "FinCEN Systems Go Offline",
+   "fuentes": [
+    "x_chainbase"
+   ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): The United States has proposed new tariff plans targeting imports from China, the European Union, and over a dozen other economies, including India, Vietnam, an…"
+    "tema caliente en X según Chainbase Tops (puesto 6): The CIA and the US Treasury's Financial Crimes Enforcement Network (FinCEN) reported cybersecurity breaches involving unauthorized access to unclassified system…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "NFL Netflix November Predictions",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 78,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 7): Pittsburgh Steelers quarterback Aaron Rodgers has been benched for the upcoming Black Friday game against the Denver Broncos, with Mason Rudolph named as the st…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "US Treasury Iran Oil Exports Drop",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 76,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 8): US Treasury Secretary Scott Bessent stated that Iranian oil exports have fallen to zero following the launch of Operation Economic Outcast in August. The declin…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Anthropic CEO Warns On AI Governance",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 74,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 9): Anthropic CEO Dario Amodei has clarified his stance on artificial intelligence governance, stating that humans should never surrender their free will or politic…"
    ],
    "token": null
   },
@@ -79,86 +112,20 @@
    "fuentes": [
     "x_chainbase"
    ],
-   "calor": 78,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): The French Senate has rejected an amendment to the 2027 finance bill that would have mandated taxpayers to declare self-hosted cryptocurrency wallets with holdi…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Iran Lists Tugboats Non-Compliant",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 76,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): Iranian authorities have added tugboats to a non-compliance list, signaling increased pressure on maritime traffic in the Strait of Hormuz. Concurrently, the IR…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Michael Burry Goes Long Nasdaq",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 74,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): Investor Michael Burry has sold his remaining Nasdaq 100 put positions, signaling a shift to an almost entirely long market stance. He plans to deploy the rest …"
-   ],
-   "token": null
-  },
-  {
-   "tema": "US New Home Sales Rise",
-   "fuentes": [
-    "x_chainbase"
-   ],
    "calor": 72,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): U.S. new single-family home sales rose 14.2% in October to an annualized rate of 701,000 units, exceeding market expectations of 650,000. September figures were…"
+    "tema caliente en X según Chainbase Tops (puesto 10): The French Senate has rejected an amendment to the 2027 finance bill that would have required taxpayers to declare self-hosted cryptocurrency wallets with holdi…"
    ],
    "token": null
   },
   {
-   "tema": "US Treasury Auction Tail Continues",
+   "tema": "US Japan Bond Weak Demand",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): The US Treasury 7-year note auction resulted in a 1-basis-point tail with a high yield of 4.708%, marking the 13th consecutive auction to tail. Demand indicator…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Pepe Intelligence",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (PEI, puesto de capitalización 780)"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Non-Playable Shiba",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (NPS, puesto de capitalización 898)"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Variational X",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (VAR, puesto de capitalización 943)"
+    "tema caliente en X según Chainbase Tops (puesto 11): The US Treasury sold $44 billion in 7-year notes at a high yield of 4.708%, resulting in a 1-basis-point tail that signals weaker-than-expected demand. Concurre…"
    ],
    "token": null
   },
@@ -169,16 +136,16 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 129)"
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 128)"
    ],
    "token": {
     "cadena": "solana",
     "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
     "sym": "PENGU",
-    "liq": 2272496,
-    "vol24": 142051,
-    "c24": 0.53,
-    "edad_h": 16998.2
+    "liq": 2313346,
+    "vol24": 148198,
+    "c24": 2.93,
+    "edad_h": 17000.9
    }
   },
   {
@@ -188,92 +155,46 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 191)"
+    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 195)"
    ],
    "token": {
     "cadena": "solana",
     "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
     "sym": "MON",
-    "liq": 31943903,
-    "vol24": 263825,
+    "liq": 31943907,
+    "vol24": 308836,
     "c24": 0,
-    "edad_h": 1334.4
+    "edad_h": 1337.1
    }
   },
   {
-   "tema": "Backpack",
+   "tema": "Non-Playable Shiba",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (BP, puesto de capitalización 148)"
+    "entre lo más buscado en CoinGecko (NPS, puesto de capitalización 868)"
    ],
-   "token": {
-    "cadena": "solana",
-    "token": "GMWrcQ185wqe7HNKg5m4qCtC3NQhAwS5fFMhbEgm8BiN",
-    "sym": "BP",
-    "liq": 1249791641,
-    "vol24": 308837,
-    "c24": 0,
-    "edad_h": 1130.3
-   }
+   "token": null
   },
   {
-   "tema": "Pons",
+   "tema": "peaq",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PONS, puesto de capitalización 356)"
-   ],
-   "token": {
-    "cadena": "robinhood",
-    "token": "0x39dBED3a2bd333467115dE45665cC57F813C4571",
-    "sym": "PONS",
-    "liq": 1088501,
-    "vol24": 187433,
-    "c24": 2.98,
-    "edad_h": 3238.5
-   }
-  },
-  {
-   "tema": "Zylo Ecosystem",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (ZYLO, puesto 1480)"
+    "entre lo más buscado en CoinGecko (PEAQ, puesto de capitalización 373)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "HnGCbLLonRzNRAFHqv5AbvZ4FixMkUQztE2egh4sAmqZ",
-    "sym": "ZYLO",
-    "liq": 42301,
-    "vol24": 857,
-    "c24": 14.96,
-    "edad_h": 1809.4
-   }
-  },
-  {
-   "tema": "Subsquid",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (SQD, puesto 644)"
-   ],
-   "token": {
-    "cadena": "bsc",
-    "token": "0xe50E3d1A46070444F44df911359033F2937fcC13",
-    "sym": "SQD",
-    "liq": 194746,
-    "vol24": 242125,
-    "c24": 3.21,
-    "edad_h": 13162.2
+    "token": "5L6SG49fdzLjFSS3Rq9Rk2F6oQiWFKMz7S11cXwFMKUC",
+    "sym": "PEAQ",
+    "liq": 93518121,
+    "vol24": 130408,
+    "c24": 0,
+    "edad_h": 2214.6
    }
   },
   {
@@ -283,16 +204,35 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (BIGTIME, puesto 583)"
+    "entre lo más buscado en CoinMarketCap (BIGTIME, puesto 585)"
    ],
    "token": {
     "cadena": "solana",
     "token": "5hpq7orrotvUv8WTcaKXQ6EeMPzj162RUSBPMC7mZiMv",
     "sym": "BIGTIME",
-    "liq": 68398092,
-    "vol24": 64135,
+    "liq": 68398098,
+    "vol24": 121231,
     "c24": 0,
-    "edad_h": 1.2
+    "edad_h": 3.9
+   }
+  },
+  {
+   "tema": "Subsquid",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (SQD, puesto 622)"
+   ],
+   "token": {
+    "cadena": "bsc",
+    "token": "0xe50E3d1A46070444F44df911359033F2937fcC13",
+    "sym": "SQD",
+    "liq": 203174,
+    "vol24": 402894,
+    "c24": 14.05,
+    "edad_h": 13164.9
    }
   },
   {
@@ -302,7 +242,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (SLX, puesto 902)"
+    "entre lo más buscado en CoinMarketCap (SLX, puesto 921)"
    ],
    "token": {
     "cadena": "solana",
@@ -311,169 +251,167 @@
     "liq": 108898452,
     "vol24": 3,
     "c24": 0,
-    "edad_h": 3120.7
+    "edad_h": 3123.4
    }
   },
   {
-   "tema": "Figure HELOC",
+   "tema": "MANTRA",
    "fuentes": [
     "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (FIGR_HELOC, puesto 4002)"
-   ],
-   "token": null
-  },
-  {
-   "tema": "OpenGradient",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (OPG, puesto 358)"
+    "entre lo más buscado en CoinMarketCap (MANTRA, puesto 552)"
    ],
    "token": {
-    "cadena": "solana",
-    "token": "4mn37MxHLn7VWVy3wEE6RUaT2SeeAwFSWprM6NMsnD3d",
-    "sym": "OPG",
-    "liq": 174408115,
-    "vol24": 267344,
-    "c24": 0,
-    "edad_h": 14.2
+    "cadena": "bsc",
+    "token": "0x05E666c0b03e054f7798736980D263DE6f417777",
+    "sym": "OM",
+    "liq": 3720,
+    "vol24": 2,
+    "c24": 1.11,
+    "edad_h": 1906.7
    }
   },
   {
-   "tema": "KiiChain",
+   "tema": "Macy's parade turns 100",
    "fuentes": [
-    "coinmarketcap"
+    "bluesky"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (KII, puesto 476)"
+    "tendencia en Bluesky: The Thanksgiving Day tradition marks its centennial with Blue Hippo, Bluey, and wind worries."
+   ],
+   "token": null
+  },
+  {
+   "tema": "motiejus krivas",
+   "fuentes": [
+    "trends"
+   ],
+   "calor": 70,
+   "porque": [
+    "búsqueda en tendencia en Google (1000+)"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Michael Burry Shifts Long",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 68,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 12): Investor Michael Burry has sold his remaining Nasdaq 100 put positions and stated he is now almost entirely long on the stock market. He plans to deploy his rem…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Mike McCarthy's ice cream sandwich assistant",
+   "fuentes": [
+    "bluesky"
+   ],
+   "calor": 68,
+   "porque": [
+    "tendencia en Bluesky: A Steelers player reportedly says Mike McCarthy has an aide who brings him ice cream sandwiches on demand."
+   ],
+   "token": null
+  },
+  {
+   "tema": "US Army Iowa Detonation Plan",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 66,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 13): The US Army conducted a controlled detonation of nearly five tons of degraded lead azide at the Iowa Army Ammunition Plant in Middletown. Health officials advis…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Medicare for All and universal healthcare",
+   "fuentes": [
+    "bluesky"
+   ],
+   "calor": 66,
+   "porque": [
+    "tendencia en Bluesky: Users discuss single-payer plans, US health spending, and how other countries cover care."
    ],
    "token": null
   }
  ],
- "cruces_h18": [
-  {
-   "ts": 1795633943,
-   "hora_utc": "2026-11-25 19:12",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 1h",
-   "cadena": "solana",
-   "token": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
-   "sym": "BP",
-   "liq": 2314206,
-   "mc": 212593594,
-   "c1": 0,
-   "seguridad": "top10,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A2 B6 C1"
-  },
-  {
-   "ts": 1795633943,
-   "hora_utc": "2026-11-25 19:12",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 1h",
-   "cadena": "solana",
-   "token": "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb",
-   "sym": "SPCX",
-   "liq": 2368982,
-   "mc": 13640527,
-   "c1": 2.37,
-   "seguridad": "top10,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A19 B7 C2"
-  },
-  {
-   "ts": 1795633943,
-   "hora_utc": "2026-11-25 19:12",
-   "tema": "Backpack",
-   "fuentes": "coingecko,trending 1h",
-   "cadena": "solana",
-   "token": "NVDAVuiB7hwd3m5Wa1JuHNovPaPG6BH1QNztbKFxNjv",
-   "sym": "NVDA",
-   "liq": 731795,
-   "mc": 583335,
-   "c1": 1.41,
-   "seguridad": "top10,mint/freeze",
-   "aviso": "no",
-   "nuestras": "A12 B2 C0"
-  }
- ],
+ "cruces_h18": [],
  "huecos_h19": [
   {
-   "ts": 1795633943,
-   "hora_utc": "2026-11-25 19:12",
-   "tema": "Crypto Sentiment Shifts Inflation",
+   "ts": 1795643745,
+   "hora_utc": "2026-11-25 21:55",
+   "tema": "US PCE Inflation Drives Volatility",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Discussions across social media highlight a mix of bearish sentiment in crypto markets, with users noting despair modes and potential fire sales for Bitcoin. Co…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): The US Personal Consumption Expenditures (PCE) price index rose 3.8% year-over-year in October, matching expectations, while the core PCE index increased to 3.3…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795633943,
-   "hora_utc": "2026-11-25 19:12",
-   "tema": "CIA FinCEN Data Breach",
+   "ts": 1795643745,
+   "hora_utc": "2026-11-25 21:55",
+   "tema": "Putin Warns Europe Energy Consequences",
    "fuentes": "x_chainbase",
    "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): The CIA and the Office of the Director of National Intelligence (ODNI) confirmed a cybersecurity breach affecting an open-source intelligence system, which expo…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Russian President Vladimir Putin warned that European efforts to restrict Russian energy exports will result in serious consequences for Europeans, while conven…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795633943,
-   "hora_utc": "2026-11-25 19:12",
-   "tema": "FCC Approves SpaceX Satellites",
-   "fuentes": "x_chainbase",
-   "calor": 86,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 3): The US Federal Communications Commission (FCC) has authorized SpaceX to deploy up to one million satellites designed to function as orbital data centers. This a…",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795633943,
-   "hora_utc": "2026-11-25 19:12",
-   "tema": "Ukraine Passes Crypto Tax Law",
-   "fuentes": "x_chainbase",
-   "calor": 84,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 4): Ukraine's parliament has passed legislation establishing a regulatory and tax framework for cryptocurrencies, including Bitcoin. The law allows citizens to hold…",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795633943,
-   "hora_utc": "2026-11-25 19:12",
-   "tema": "Trump Releases USAID Files",
-   "fuentes": "x_chainbase",
-   "calor": 82,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 5): The Trump administration has released internal USAID documents revealing the agency's coordination with major technology companies, including Google, YouTube, a…",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795633943,
-   "hora_utc": "2026-11-25 19:12",
+   "ts": 1795643745,
+   "hora_utc": "2026-11-25 21:55",
    "tema": "Trump Proposes New China Tariffs",
    "fuentes": "x_chainbase",
-   "calor": 80,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 6): The United States has proposed new tariff plans targeting imports from China, the European Union, and over a dozen other economies, including India, Vietnam, an…",
+   "calor": 86,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): The US administration has proposed new tariffs on imports from China, the European Union, and over a dozen other economies, citing industrial subsidies and stru…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795633943,
-   "hora_utc": "2026-11-25 19:12",
-   "tema": "France Rejects Wallet Rule",
+   "ts": 1795643745,
+   "hora_utc": "2026-11-25 21:55",
+   "tema": "FCC Authorizes SpaceX Satellites",
+   "fuentes": "x_chainbase",
+   "calor": 84,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 4): The US Federal Communications Commission has authorized SpaceX to deploy up to one million satellites designed to function as orbital data centers. This approva…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795643745,
+   "hora_utc": "2026-11-25 21:55",
+   "tema": "Ukraine Crypto Law 2027",
+   "fuentes": "x_chainbase",
+   "calor": 82,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 5): Ukraine's parliament has passed a legislative bill to legalize and regulate the cryptocurrency market, with the framework set to take effect on July 1, 2027. Th…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795643745,
+   "hora_utc": "2026-11-25 21:55",
+   "tema": "FinCEN Systems Go Offline",
+   "fuentes": "x_chainbase",
+   "calor": 80,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 6): The CIA and the US Treasury's Financial Crimes Enforcement Network (FinCEN) reported cybersecurity breaches involving unauthorized access to unclassified system…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795643745,
+   "hora_utc": "2026-11-25 21:55",
+   "tema": "NFL Netflix November Predictions",
    "fuentes": "x_chainbase",
    "calor": 78,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 7): The French Senate has rejected an amendment to the 2027 finance bill that would have mandated taxpayers to declare self-hosted cryptocurrency wallets with holdi…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 7): Pittsburgh Steelers quarterback Aaron Rodgers has been benched for the upcoming Black Friday game against the Denver Broncos, with Mason Rudolph named as the st…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795633943,
-   "hora_utc": "2026-11-25 19:12",
-   "tema": "Iran Lists Tugboats Non-Compliant",
+   "ts": 1795643745,
+   "hora_utc": "2026-11-25 21:55",
+   "tema": "US Treasury Iran Oil Exports Drop",
    "fuentes": "x_chainbase",
    "calor": 76,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 8): Iranian authorities have added tugboats to a non-compliance list, signaling increased pressure on maritime traffic in the Strait of Hormuz. Concurrently, the IR…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 8): US Treasury Secretary Scott Bessent stated that Iranian oil exports have fallen to zero following the launch of Operation Economic Outcast in August. The declin…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
