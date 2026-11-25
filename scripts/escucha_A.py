@@ -132,9 +132,13 @@ class Conexion:
     async def correr(self, fin):
         intentos = 0
         while time.time() < fin:
+            t_ini = time.time()
             try:
                 await self.sesion(fin); intentos = 0
             except Exception as ex:
+                # 25-nov: si la sesión duró >2 min, el corte es nuevo: reintentar rápido. Antes el contador nunca se
+                # reiniciaba y tras ~12 cortes cada reconexión esperaba 60 s (tarde 25-nov: 0-3 de 5 conexiones vivas).
+                if time.time() - t_ini > 120: intentos = 0
                 self.ws = None; intentos += 1
                 if intentos <= 3 or intentos % 10 == 0:
                     print("conexión", self.nombre, "caída:", type(ex).__name__, str(ex)[:120], "reintento", intentos, flush=True)
