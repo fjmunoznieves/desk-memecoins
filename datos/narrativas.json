@@ -1,229 +1,164 @@
 {
- "hora_utc": "2026-11-25 00:51",
+ "hora_utc": "2026-11-25 15:59",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
   "coinmarketcap",
   "trends",
-  "wikipedia",
   "x_chainbase"
  ],
  "narrativas": [
   {
-   "tema": "Jensen Huang's \"tortured story\" remark",
-   "fuentes": [
-    "bluesky",
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "tendencia en Bluesky: Nvidia CEO Jensen Huang claims no story in human history has been more tortured than his.",
-    "234,343 visitas ayer en Wikipedia, 8.4× anteayer"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Monad",
-   "fuentes": [
-    "coingecko",
-    "coinmarketcap"
-   ],
-   "calor": 80,
-   "porque": [
-    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 222)",
-    "entre lo más buscado en CoinMarketCap (MON, puesto 104)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
-    "sym": "MON",
-    "liq": 31943881,
-    "vol24": 274412,
-    "c24": 0,
-    "edad_h": 1316.1
-   }
-  },
-  {
-   "tema": "Moon",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "180,275 visitas ayer en Wikipedia, nuevo en el top"
-   ],
-   "token": {
-    "cadena": "bsc",
-    "token": "0x0Cf1bC9797BE940DC2B3d5616937ED6aAd3C2f57",
-    "sym": "Moon",
-    "liq": 243227,
-    "vol24": 1546,
-    "c24": 1.9,
-    "edad_h": 2267.7
-   }
-  },
-  {
-   "tema": "Linux",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "177,023 visitas ayer en Wikipedia, nuevo en el top"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Blood",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "174,912 visitas ayer en Wikipedia, nuevo en el top"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Experience machine",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "135,474 visitas ayer en Wikipedia, nuevo en el top"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Fred Warner (American football)",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "107,625 visitas ayer en Wikipedia, nuevo en el top"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Iran Targets Hormuz Tankers",
+   "tema": "Trump Debates Iran Targets",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): The Trump administration is debating military strikes targeting senior Iranian leaders as tensions escalate over cyberattacks on energy tankers and a US naval b…"
+    "tema caliente en X según Chainbase Tops (puesto 1): Trump administration officials are debating military strikes targeting senior Iranian leaders, according to sources cited by NBC News, though no final decision …"
    ],
    "token": null
   },
   {
-   "tema": "Pope Francis Diaries Devil",
+   "tema": "Ukraine Hungary PM Meet Cooperation",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): Newly released notes from the late Pope Francis describe personal encounters with the devil, including visions of hell and a figure with fiery eyes during his p…"
+    "tema caliente en X según Chainbase Tops (puesto 2): Ukrainian President Volodymyr Zelenskyy met with Hungarian Prime Minister Péter Magyar in Zakarpattia to discuss energy supplies, infrastructure cooperation, an…"
    ],
    "token": null
   },
   {
-   "tema": "Netflix Acquires Radford Studio",
+   "tema": "Trump Proposes New Tariffs",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 86,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): Netflix has purchased the Radford Studio Center in Los Angeles for $380 million. The property came under the control of lender Goldman Sachs after the previous …"
+    "tema caliente en X según Chainbase Tops (puesto 3): The Trump administration is set to announce new targeted tariffs on goods from China, the European Union, and over a dozen other economies, citing concerns over…"
    ],
    "token": null
   },
   {
-   "tema": "Trump Prepares New Tariffs",
+   "tema": "Microsoft CIA Services Outage Cyber Attack",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 84,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): The United States is preparing to announce increased tariffs on imports from China, the European Union, and 14 other economies, including Japan, South Korea, In…"
+    "tema caliente en X según Chainbase Tops (puesto 4): The CIA, Office of the Director of National Intelligence, and the US Treasury's FinCEN agency experienced cybersecurity breaches exposing unclassified informati…"
    ],
    "token": null
   },
   {
-   "tema": "US Army Detonates Explosives",
+   "tema": "France Rejects Wallet Rule",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 82,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): The US Army is proceeding with a controlled detonation of approximately 5 tons of degraded lead azide at the Iowa Army Ammunition Plant in Middletown. The opera…"
+    "tema caliente en X según Chainbase Tops (puesto 5): The French Senate has rejected an amendment to the 2027 finance bill that would have required taxpayers to declare self-hosted cryptocurrency wallets with holdi…"
    ],
    "token": null
   },
   {
-   "tema": "Stripe Tender Offer Talks",
+   "tema": "Ukraine Passes Crypto Law",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): Stripe is currently in discussions with investors regarding a tender offer that would value the company at more than $200 billion, according to sources cited by…"
+    "tema caliente en X según Chainbase Tops (puesto 6): Ukraine's parliament has passed a legislative framework to legalize and regulate cryptocurrencies, with the law scheduled to take effect on July 1, 2027. The le…"
    ],
    "token": null
   },
   {
-   "tema": "US Raises Tariffs Plan",
+   "tema": "Japan Bond Auction Weak Demand",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 78,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): The United States is preparing to raise tariffs on imports from China, the European Union, and 14 other countries, according to reports from the Wall Street Jou…"
+    "tema caliente en X según Chainbase Tops (puesto 7): Japan's latest auction of 40-year government bonds attracted weaker than average demand, causing yields to rise by 5.5 basis points to 4.175%. The subdued inves…"
    ],
    "token": null
   },
   {
-   "tema": "Trump Pardons Turkeys",
+   "tema": "Houthi Strikes Disrupt Oil",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 76,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): President Trump granted a full pardon to two Thanksgiving turkeys named Freedom and Feathers during the annual ceremony at the White House. The event marks the …"
+    "tema caliente en X según Chainbase Tops (puesto 8): Houthi drone strikes have targeted critical Saudi oil infrastructure, causing disruptions that affect global oil prices and trading sessions. These attacks, com…"
    ],
    "token": null
   },
   {
-   "tema": "CIA ODNI Cyber Breach Leak",
+   "tema": "Huawei Guilty US Court",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 74,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): US intelligence agencies, including the CIA, experienced a cyberattack that compromised an open-source intelligence system containing unclassified government da…"
+    "tema caliente en X según Chainbase Tops (puesto 9): A federal jury in Brooklyn has found Chinese tech giant Huawei and three of its subsidiaries guilty on 10 of 12 criminal counts, including conspiracy to steal t…"
    ],
    "token": null
   },
   {
-   "tema": "Sheila Mangubat Dies At 35",
+   "tema": "Tesla SpaceX Appoint Merger Directors",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 72,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): Senator Ron Johnson released an internal FDA memo reviewing death reports among individuals aged 18 to 24 following COVID-19 vaccinations. The document highligh…"
+    "tema caliente en X según Chainbase Tops (puesto 10): Tesla and SpaceX have named five directors to form special committees for negotiating a potential merger agreement between the two companies. The proposed all-e…"
    ],
    "token": null
   },
   {
-   "tema": "Microsoft M365 Code Red",
+   "tema": "Boeing Secures China Orders",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): Microsoft has declared a \"Code Red\" alert, its most severe internal status, following a significant global outage affecting its services. The disruption exposed…"
+    "tema caliente en X según Chainbase Tops (puesto 11): Boeing has secured significant aircraft orders, with Malaysia Aviation Group selecting the 787 Dreamliner to expand its wide-body fleet and Xiamen Airlines plac…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Pepe Intelligence",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (PEI, puesto de capitalización 792)"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Non-Playable Shiba",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (NPS, puesto de capitalización 853)"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Variational X",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (VAR, puesto de capitalización 922)"
    ],
    "token": null
   },
@@ -240,207 +175,283 @@
     "cadena": "solana",
     "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
     "sym": "PENGU",
-    "liq": 2230880,
-    "vol24": 194755,
-    "c24": -6.01,
-    "edad_h": 16979.9
+    "liq": 2171536,
+    "vol24": 138965,
+    "c24": -2.39,
+    "edad_h": 16995.0
    }
   },
   {
-   "tema": "peaq",
+   "tema": "LayerZero",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PEAQ, puesto de capitalización 375)"
+    "entre lo más buscado en CoinGecko (ZRO, puesto de capitalización 108)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "5L6SG49fdzLjFSS3Rq9Rk2F6oQiWFKMz7S11cXwFMKUC",
-    "sym": "PEAQ",
-    "liq": 93518110,
-    "vol24": 167276,
-    "c24": -0.01,
-    "edad_h": 2193.5
-   }
-  },
-  {
-   "tema": "Geodnet",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (GEOD, puesto de capitalización 188)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "H6zWBQob5kZxm7iPB8jUKLyZ7rT8zCZ4GA4fJtbaHUHu",
-    "sym": "GEOD",
-    "liq": 261207776,
-    "vol24": 1,
+    "token": "FK8rddNbxkfs8vBf5p18QMhEGgwJdVLkX7ByriNBDxhN",
+    "sym": "ZRO",
+    "liq": 1889859163,
+    "vol24": 308837,
     "c24": 0,
-    "edad_h": 2889.0
+    "edad_h": 883.7
    }
   },
   {
-   "tema": "Derive",
+   "tema": "Maple Finance",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (DRV, puesto de capitalización 115)"
+    "entre lo más buscado en CoinGecko (SYRUP, puesto de capitalización 276)"
    ],
    "token": {
-    "cadena": "solana",
-    "token": "DPcz93J8vKiEL2W6dSSUuyonSmMxo8Bm8xS47ADCpbBE",
-    "sym": "DRV",
-    "liq": 391819891,
-    "vol24": 85465,
-    "c24": 0,
-    "edad_h": 954.3
+    "cadena": "robinhood",
+    "token": "0x10B409f69989BC34E36a5105874f6d64E3eb0BfF",
+    "sym": "Maple",
+    "liq": 6545,
+    "vol24": 2,
+    "c24": -0.1,
+    "edad_h": 1782.4
    }
   },
   {
-   "tema": "SUPERFORTUNE",
+   "tema": "Big Time",
    "fuentes": [
     "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (GUA, puesto 1127)"
+    "entre lo más buscado en CoinMarketCap (BIGTIME, puesto 589)"
+   ],
+   "token": {
+    "cadena": "bsc",
+    "token": "0x9f96c33C7CcFFd7f37461a30F0344dc98Dc77777",
+    "sym": "BIGTIME",
+    "liq": 6652,
+    "vol24": 39,
+    "c24": -1.34,
+    "edad_h": 9.6
+   }
+  },
+  {
+   "tema": "MANTRA",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (MANTRA, puesto 608)"
+   ],
+   "token": {
+    "cadena": "bsc",
+    "token": "0xF78D2e7936F5Fe18308A3B2951A93b6c4a41F5e2",
+    "sym": "OM",
+    "liq": 2301,
+    "vol24": 19,
+    "c24": 0.71,
+    "edad_h": 48940.9
+   }
+  },
+  {
+   "tema": "OpenGradient",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (OPG, puesto 349)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "4mn37MxHLn7VWVy3wEE6RUaT2SeeAwFSWprM6NMsnD3d",
+    "sym": "OPG",
+    "liq": 174408109,
+    "vol24": 210155,
+    "c24": 0,
+    "edad_h": 11.0
+   }
+  },
+  {
+   "tema": "Solstice",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (SLX, puesto 910)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "BqVLi1scpSc51LTbh6y57S2kTVCJgbChPFc5tMcktbds",
+    "sym": "SLX",
+    "liq": 108898452,
+    "vol24": 3,
+    "c24": 0,
+    "edad_h": 3117.5
+   }
+  },
+  {
+   "tema": "SKYAI",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (SKYAI, puesto 394)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "Gx9zHSrCAfoq3xqwfJaKYo5BoqtqdU7tLuNNmfg1Dm5x",
+    "sym": "SKYAI",
+    "liq": 29635446,
+    "vol24": 1,
+    "c24": 0,
+    "edad_h": 2747.1
+   }
+  },
+  {
+   "tema": "DAPPOS",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (DOS, puesto 663)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "65XLjE19QHJhR87zJ49MhGhds7JEqvJUE3VvWhMz62fN",
+    "sym": "DOS",
+    "liq": 390365592,
+    "vol24": 1,
+    "c24": 0,
+    "edad_h": 2568.1
+   }
+  },
+  {
+   "tema": "Bitway",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (BTW, puesto 202)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "Gj8zxjKyqPzWpSvMA7TF4x3eW2tGzcEBZzwnufLfMVCs",
+    "sym": "BTW",
+    "liq": 1939806417,
+    "vol24": 65,
+    "c24": 0,
+    "edad_h": 1033.1
+   }
+  },
+  {
+   "tema": "Moo Deng (moodengsol.com)",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (MOODENG, puesto 447)"
    ],
    "token": null
-  },
-  {
-   "tema": "Terra Classic",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (LUNC, puesto 103)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "FqCSrz5qBLWj8gizt9UBaVmiGEya5aGgXzahrChxcJEM",
-    "sym": "LUNC",
-    "liq": 64151884,
-    "vol24": 1,
-    "c24": 0,
-    "edad_h": 4141.9
-   }
-  },
-  {
-   "tema": "EVAA Protocol",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (EVAA, puesto 376)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "Ej4cuBwfc36DZH1TiMcX29cTTxM9jgVYJaKF5XtUtZhv",
-    "sym": "EVAA",
-    "liq": 29922470,
-    "vol24": 321444,
-    "c24": -0.03,
-    "edad_h": 656.6
-   }
   }
  ],
  "cruces_h18": [
   {
-   "ts": 1795567894,
-   "hora_utc": "2026-11-25 00:51",
-   "tema": "Jensen Huang's \"tortured story\" remark",
-   "fuentes": "bluesky,wikipedia,trending 5m",
+   "ts": 1795622392,
+   "hora_utc": "2026-11-25 15:59",
+   "tema": "Moo Deng (moodengsol.com)",
+   "fuentes": "coinmarketcap,trending 1h",
    "cadena": "solana",
-   "token": "DVZxRKuGqhqhkGqRyz5V7XkCadTd7UB5JXrSQC9UYHwQ",
-   "sym": "NVIDIA",
-   "liq": 2,
-   "mc": 15136,
-   "c1": 27.9,
-   "seguridad": "",
+   "token": "ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY",
+   "sym": "MOODENG",
+   "liq": 1749298,
+   "mc": 26405328,
+   "c1": -1.47,
+   "seguridad": "top10",
    "aviso": "no",
-   "nuestras": "A0 B0 C0"
+   "nuestras": "A1 B4 C0"
   }
  ],
  "huecos_h19": [
   {
-   "ts": 1795567894,
-   "hora_utc": "2026-11-25 00:51",
-   "tema": "Jensen Huang's \"tortured story\" remark",
-   "fuentes": "bluesky,wikipedia",
-   "calor": 100,
-   "porque": "tendencia en Bluesky: Nvidia CEO Jensen Huang claims no story in human history has been more tortured than his. | 234,343 visitas ayer en Wikipedia, 8.4× anteayer",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795567894,
-   "hora_utc": "2026-11-25 00:51",
-   "tema": "Linux",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "177,023 visitas ayer en Wikipedia, nuevo en el top",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795567894,
-   "hora_utc": "2026-11-25 00:51",
-   "tema": "Blood",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "174,912 visitas ayer en Wikipedia, nuevo en el top",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795567894,
-   "hora_utc": "2026-11-25 00:51",
-   "tema": "Experience machine",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "135,474 visitas ayer en Wikipedia, nuevo en el top",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795567894,
-   "hora_utc": "2026-11-25 00:51",
-   "tema": "Fred Warner (American football)",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "107,625 visitas ayer en Wikipedia, nuevo en el top",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795567894,
-   "hora_utc": "2026-11-25 00:51",
-   "tema": "Iran Targets Hormuz Tankers",
+   "ts": 1795622392,
+   "hora_utc": "2026-11-25 15:59",
+   "tema": "Trump Debates Iran Targets",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): The Trump administration is debating military strikes targeting senior Iranian leaders as tensions escalate over cyberattacks on energy tankers and a US naval b…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Trump administration officials are debating military strikes targeting senior Iranian leaders, according to sources cited by NBC News, though no final decision …",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795567894,
-   "hora_utc": "2026-11-25 00:51",
-   "tema": "Pope Francis Diaries Devil",
+   "ts": 1795622392,
+   "hora_utc": "2026-11-25 15:59",
+   "tema": "Ukraine Hungary PM Meet Cooperation",
    "fuentes": "x_chainbase",
    "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Newly released notes from the late Pope Francis describe personal encounters with the devil, including visions of hell and a figure with fiery eyes during his p…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Ukrainian President Volodymyr Zelenskyy met with Hungarian Prime Minister Péter Magyar in Zakarpattia to discuss energy supplies, infrastructure cooperation, an…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795567894,
-   "hora_utc": "2026-11-25 00:51",
-   "tema": "Netflix Acquires Radford Studio",
+   "ts": 1795622392,
+   "hora_utc": "2026-11-25 15:59",
+   "tema": "Trump Proposes New Tariffs",
    "fuentes": "x_chainbase",
    "calor": 86,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 3): Netflix has purchased the Radford Studio Center in Los Angeles for $380 million. The property came under the control of lender Goldman Sachs after the previous …",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): The Trump administration is set to announce new targeted tariffs on goods from China, the European Union, and over a dozen other economies, citing concerns over…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795622392,
+   "hora_utc": "2026-11-25 15:59",
+   "tema": "Microsoft CIA Services Outage Cyber Attack",
+   "fuentes": "x_chainbase",
+   "calor": 84,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 4): The CIA, Office of the Director of National Intelligence, and the US Treasury's FinCEN agency experienced cybersecurity breaches exposing unclassified informati…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795622392,
+   "hora_utc": "2026-11-25 15:59",
+   "tema": "France Rejects Wallet Rule",
+   "fuentes": "x_chainbase",
+   "calor": 82,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 5): The French Senate has rejected an amendment to the 2027 finance bill that would have required taxpayers to declare self-hosted cryptocurrency wallets with holdi…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795622392,
+   "hora_utc": "2026-11-25 15:59",
+   "tema": "Ukraine Passes Crypto Law",
+   "fuentes": "x_chainbase",
+   "calor": 80,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 6): Ukraine's parliament has passed a legislative framework to legalize and regulate cryptocurrencies, with the law scheduled to take effect on July 1, 2027. The le…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795622392,
+   "hora_utc": "2026-11-25 15:59",
+   "tema": "Japan Bond Auction Weak Demand",
+   "fuentes": "x_chainbase",
+   "calor": 78,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 7): Japan's latest auction of 40-year government bonds attracted weaker than average demand, causing yields to rise by 5.5 basis points to 4.175%. The subdued inves…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795622392,
+   "hora_utc": "2026-11-25 15:59",
+   "tema": "Houthi Strikes Disrupt Oil",
+   "fuentes": "x_chainbase",
+   "calor": 76,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 8): Houthi drone strikes have targeted critical Saudi oil infrastructure, causing disruptions that affect global oil prices and trading sessions. These attacks, com…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
