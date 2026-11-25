@@ -290,7 +290,18 @@ if not OBS_LIVIANO and not os.environ.get("ES_H23") and os.environ.get("GITHUB_W
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "h24.py")], check=False)
 
 # Foto de saldos (16-nov, aprobado por Fran): a las 3:47 AM y PM, después de H22/H23/H24. Solo registro.
-if not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").startswith("Escaneo") and time.gmtime().tm_hour in (8, 9, 10, 20, 21, 22):
+def _foto_vieja(horas=10):
+    """25-nov: GitHub atrasó horas los escaneos y las fotos (solo por hora UTC) no se tomaron en 27 h. Si la última foto
+    tiene más de 10 h, se toma en cualquier escaneo."""
+    try:
+        with open("datos/fotos_saldos.tsv", "rb") as f:
+            f.seek(-2000, 2); ult = f.read().decode(errors="ignore").strip().splitlines()[-1]
+        return time.time() - int(ult.split("\t")[0]) > horas * 3600
+    except Exception:
+        return True
+
+
+if not os.environ.get("ES_H23") and os.environ.get("GITHUB_WORKFLOW", "").startswith("Escaneo") and (time.gmtime().tm_hour in (8, 9, 10, 20, 21, 22) or _foto_vieja()):
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "fotos_saldos.py")], check=False)
     # Salidas en sombra (16-nov, aprobado por Fran): escalonada, "copiar A" y consenso por operadores. Solo registro.
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "salidas.py")], check=False)

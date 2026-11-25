@@ -22,8 +22,10 @@ for wf, slots in SLOTS.items():
     pasados = [now.replace(hour=h, minute=m, second=0, microsecond=0) for h, m in slots]
     pasados = [t if t <= now else t - dt.timedelta(days=1) for t in pasados]
     slot = max(pasados)
-    if now - slot > dt.timedelta(hours=3):
-        print(f"{wf}: último horario {slot:%H:%M} hace >3 h, no aplica"); continue
+    # 25-nov: GitHub atrasó también al guardián (corrió 3-4 h tarde y no aplicaba). Ventana 12 h; ahora además corre
+    # cada 15 min dentro de la escucha (casi continua). Solo dispara si pasaron 15 min desde la hora programada.
+    if now - slot > dt.timedelta(hours=12) or now - slot < dt.timedelta(minutes=15):
+        print(f"{wf}: último horario {slot:%H:%M}, fuera de ventana"); continue
     runs = api(f"actions/workflows/{wf}/runs?per_page=5")["workflow_runs"]
     desde = slot - dt.timedelta(minutes=10)
     ok = [r for r in runs if dt.datetime.fromisoformat(r["created_at"].replace("Z", "+00:00")) >= desde]

@@ -8,7 +8,7 @@ Fuente gratis: websocket público de Solana (logsSubscribe), sin clave, no gasta
   para tener el precio a +10 s, +30 s, +60 s... y medir en papel copiar con distintas salidas.
 Salida: datos/escucha/ev_AAAAMMDD.tsv (lo analiza scripts/escucha_an.py). No opera, no firma nada.
 """
-import asyncio, base64, csv, json, os, struct, sys, time, datetime as dt
+import asyncio, base64, csv, json, os, struct, subprocess, sys, time, datetime as dt
 
 import websockets
 
@@ -232,6 +232,13 @@ class Escucha:
                                 try: await con.pedir("logsUnsubscribe", [sid])
                                 except Exception: pass
             self.cuenta = {}
+            if vuelta % 15 == 0 and os.environ.get("GH_TOKEN"):  # 25-nov: guardián de escaneos cada 15 min (sin Claude)
+                try:
+                    r = await asyncio.to_thread(subprocess.run, [sys.executable, os.path.join(os.path.dirname(__file__), "guardian.py")],
+                                                capture_output=True, text=True, timeout=60)
+                    if "DISPARADA" in r.stdout: print("guardián:", r.stdout.strip(), flush=True)
+                except Exception as e:
+                    print("guardián falló:", str(e)[:80], flush=True)
             if vuelta % 5: continue
             if len(self.visto) > 200000: self.visto = set()
             vivas = sum(1 for c in self.conA + self.conT if c.ws is not None)

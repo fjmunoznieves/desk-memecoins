@@ -14,6 +14,7 @@ on:
         default: "0"
 permissions:
   contents: write
+  actions: write   # 25-nov: el guardián (scripts/guardian.py) corre dentro de la escucha cada 15 min
 concurrency:
   group: escucha
   cancel-in-progress: false
@@ -31,6 +32,7 @@ jobs:
         env:
           ESCUCHA_MINUTOS: ${{ github.event.inputs.minutos || '340' }}
           ESCUCHA_DEBUG: ${{ github.event.inputs.debug || '0' }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # 22-nov (Fran: observatorio liviano): la escucha programada termina el 27-nov; a mano sigue funcionando.
           if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%Y%m%d)" -gt 20261211 ]; then echo "escucha terminada (11-dic, extendida 24-nov por Fran)"; exit 0; fi
