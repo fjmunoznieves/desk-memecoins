@@ -49,3 +49,4 @@ ts	hora_utc	cadena	token	sym	precio	liq	mc	motivo	estado_escaneo	fallos
 1795550009	2026-11-24 19:53	bsc	0xD018974d9B8665Cf9988c5C714169aaD63Fe2D3e	TRUMP	0.03319	50137	11286774932	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m+5m>=50
 1795563474	2026-11-24 23:37	solana	GkSZVKcXcgodewdZd5CbGxFJoUUcazrf1GayrNv3pump	BTC	0.0001742	28546	172821	usa el símbolo de BTC sin ser el contrato oficial	pendiente	liq+vol5m
 1795563474	2026-11-24 23:37	bsc	0xA4743B7c9bfc233A4B932B09778E3EBCbD120240	TRUMP	0.02219	43219	8435220556	usa el símbolo de TRUMP sin ser el contrato oficial	pendiente	vol5m+5m>=50
+1795566150	2026-11-25 00:22	solana	29idLUrSpXWHB7AfLQmcsHq6jyiduxqnJrq9weSeoSEq	Starlink	0.0001115	190319	111539	imita marca STARLINK	pendiente	b/s
