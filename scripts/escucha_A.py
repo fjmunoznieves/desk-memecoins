@@ -179,6 +179,7 @@ class Escucha:
         self.ruidosas = set()    # billeteras con > RUIDO_MAX notificaciones en 5 min (bots): se dejan de escuchar
         self.donde = {}       # clave seguida -> Conexion
         self.ult_fila = {}
+        self.minuto = {}; self.visto_min = set(); self.vistos_glob = set()
         self.caidas_srv = {}     # servidor -> caídas (25-nov)
         self.n = dict(subsA=0, A_compra=0, A_venta=0, O_compra=0, O_venta=0, trade=0, notif=0, err=0, sin_cupo=0)
         self.f = None; self.dia = None
@@ -235,6 +236,18 @@ class Escucha:
                     await self.seguir(e["clave"])
             elif que[0] == "T" and e["clave"] == que[1]:
                 k = e["clave"]
+                # 26-nov (Fran, estudio compradores únicos): resumen por minuto ANTES del ralentí, así no se pierde ninguno
+                u = e.get("usuario") or ""
+                if (firma, u, k) not in self.visto_min:
+                    self.visto_min.add((firma, u, k))
+                    a = self.minuto.setdefault(k, dict(c=set(), v=set(), sc=0.0, sv=0.0, nuevos=0, p=0.0, dex=e["dex"]))
+                    if e["compra"]:
+                        if u not in self.vistos_glob:
+                            a["nuevos"] += 1; self.vistos_glob.add(u)
+                        a["c"].add(u); a["sc"] += e["sol"]
+                    else:
+                        a["v"].add(u); a["sv"] += e["sol"]
+                    a["p"] = e["precio"]
                 if recv - self.ult_fila.get(k, 0) < RALENTI_S:
                     continue
                 self.ult_fila[k] = recv
@@ -246,6 +259,11 @@ class Escucha:
         relevo = False
         while time.time() < fin:
             await asyncio.sleep(60); vuelta += 1
+            ahora_m, self.minuto = self.minuto, {}
+            if len(self.visto_min) > 200000: self.visto_min = set()
+            for k, a in ahora_m.items():   # fila "min": compradores únicos del minuto (billetera = lista), operador = n vendedores
+                self.escribir([f"{time.time():.3f}", "", "min", a["dex"], ",".join(sorted(a["c"])), len(a["v"]), k, f"{a['p']:.6g}", f"{a['sc']:.4f}",
+                               f"nc={len(a['c'])};nv={len(a['v'])};nuevos={a['nuevos']};sv={a['sv']:.4f}"])
             if not relevo and time.time() >= fin - SOLAPE_MIN * 60 and os.environ.get("GH_TOKEN"):
                 relevo = True
                 otro = "b" if TURNO == "a" else "a"
