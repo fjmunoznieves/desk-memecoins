@@ -35542,3 +35542,706 @@ ts	hora_utc	cadena	token	sym	banda	edad_h	mc	liq	v5	c5	c1	bs	fallos	fuente	holde
 1795704275	2026-11-26 14:44	robinhood	0x48447cE272824776c7F21D8741dba38ca1586475	RUBY	C	19.8	49804	17151	91	1.89	13.01	2.0	liq,vol5m									
 1795704275	2026-11-26 14:44	robinhood	0x000DE658153f47f23e92973C8EB1e89762703676	FOBO	>7d	741.6	1799173	1314864	0	0	-4.79	0	vol5m,b/s									
 1795704275	2026-11-26 14:44	robinhood	0x8cAE1f1d7517331907c5d4d6bD74835c7B68c1a2	HOOD	>7d	3028.3	8824	194	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	solana	HXxJdaQbrYRvwTAM8M8mUPyoRPvmyuUbPFBRkiAAMASS	Ansemmas	>7d	1345.8	279708	51575	249	-2.77	-11.31	0.7	vol5m,b/s	networks/solana/trending_pools?duration=5m&page=1	2352	-0.591715976331361	-0.08496176720475786	95	6	260	45.92934519579275	25.79269269939648
+1795718926	2026-11-26 18:48	solana	9TKbd3VFaMSXsEAicD9JVQWpWwAoLi4fSgWmZL2cpump	Snowball	D	24.4	194983	32378	10305	-11.57	119	1.49	vol5m	networks/solana/trending_pools?duration=5m&page=1	50595	24.183888861617003	2.852089770694422	519	24	1290	76.89543807670854	21.979808051227995
+1795718926	2026-11-26 18:48	solana	DTSkmo3sCCKLCh91dJLiWCpwcKtK3yDBZMqZGSV1pump	Zero	C	18.5	130243	29704	946	-6.06	-9.1	0.94	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=1	2321	-1.7774016081252644	-0.30068728522336774	114	7	281	75	28.681276971132252
+1795718926	2026-11-26 18:48	solana	WXMRyRZhsa19ety5erZhHg4N3xj3EVN92u94422teJp	XMR	>7d	5087.7	1640870	34851	40	0.32	3.55	13.0	vol5m	networks/solana/trending_pools?duration=5m&page=1	51165	1.3650051509628338	0.8197205856273031	3016	7	3630	84.46391092093477	17.505163645035232
+1795718926	2026-11-26 18:48	solana	H8cK98tzYZka3XUhud9thEXx37mCpjmxvDiq4mLPpuuo	George	A	0.2	12443	5	0	0	26.3	0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=1								
+1795718926	2026-11-26 18:48	solana	CmafKBDAeQ5StM7iswE3yEcqGuZRoa4dFa6hcU5CwuQ1	Criminul	A	0.2	126879	0	0	74.26	137.97	0	liq,vol5m,b/s,5m>=50	networks/solana/trending_pools?duration=5m&page=1|gt_relleno								
+1795718926	2026-11-26 18:48	solana	Acci29AP5gqtRrhKg91UuHE3r4GxWjuk9R2Xbpt5XFAd	PAIR	A	0.2	1331	2	3	-98.46	-7.07	1.13	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=1|gt_relleno								
+1795718926	2026-11-26 18:48	solana	8f41yrexWvYVBR1PrpWmJiyp6V8cFQGZtnMhwZqU4m2s	George	A	0.3	59482	15	0	0	397	0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=1								
+1795718926	2026-11-26 18:48	solana	8oPYB68kXWttLGrvNXakAQeMLv6t9mMVNNXRbQDq7RSf	George	A	0.2	48109	9	0	0	205	0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=1								
+1795718926	2026-11-26 18:48	solana	2BY79s5qWb1JMESVbDF3Z1T2bRDTK9X9DcH61188588s	George	A	0.4	16887	7	0	0	72.03	0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=1								
+1795718926	2026-11-26 18:48	solana	86kB7aA7Ks2to8AoRKtkJQ9TkkvPPC483axV73GFLAn1	FSD V15	A	0.4	63912	0	0	0.0	11.62	0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=1|gt_relleno								
+1795718926	2026-11-26 18:48	solana	aHDePRQP7CduXvktTdisKrGLkqYc6bS1KKsjnzYpump	Coca-Cola	A	0.3	1396	1412	14193	-98.03	-95.28	0.46	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=1								
+1795718926	2026-11-26 18:48	solana	BRWJ2wPtTqy2P5p4cUUnjY2HyHxUwe7zcUN4EtvCbpSq	PAIR	A	0.3	184935	24443	237633	75.01	154.26	1.77	liq,5m>=50	networks/solana/trending_pools?duration=5m&page=1|gt_relleno								
+1795718926	2026-11-26 18:48	solana	5iFfP5UMXsdhmE8ee8QT7pZA5g87uYBCwUxs4NanToRP	SBF	A	0.2	13201	6	0	0	34.16	0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=1								
+1795718926	2026-11-26 18:48	solana	4ZosVumUi3KxHa4UqVt3igWkf7nruHu5hbhQSgFdpump	SITTINGDUK	B	4.0	144078	25988	2749	1.32	35.05	1.04	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=1								
+1795718926	2026-11-26 18:48	solana	pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn	PUMP	>7d	12001.8	904996295	18170481	39	0	0.51	0.2	vol5m,b/s	networks/solana/trending_pools?duration=5m&page=1	455063	0.04682862482136968	0.0037358860422902302	2014	55	2900	98.35978378261123	59.53665446132766
+1795718926	2026-11-26 18:48	solana	FVBzzG4ZcAgxSLW1rWjNC9EH9CgEgz1A4puNYexMpump	bolphante	B	1.5	22553	9572	2614	-31.89	1.87	1.33	liq,vol5m	networks/solana/trending_pools?duration=5m&page=1								
+1795718926	2026-11-26 18:48	solana	3aZQGFzJAn9juUpx2488Za8ehkNMonTXUqNBPgCQNEBw	George	A	0.3	12808	2	0	0	30.37	0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=1								
+1795718926	2026-11-26 18:48	solana	DdPvmpmRKgv6k9BkkrbAYsWCQefaik42XSwv3UtjFBjg	Optimus	A	0.7	330017	112475	284837	4.22	47.3	1.18	b/s	networks/solana/trending_pools?duration=5m&page=1|gt_relleno								
+1795718926	2026-11-26 18:48	solana	NJMMnzWpQHww54jRBa3VDkfcgzWW1f2SRom9S5cTBxD	George	A	0.4	43937	78973	138347	1.73	29.73	2.37		networks/solana/trending_pools?duration=5m&page=2								
+1795718926	2026-11-26 18:48	solana	8nY9aCkc1XQi64X7UhUoLKgPoHDbFFypgaDyjvWqRKaS	FSD V15	A	0.3	70513	123024	447289	4.46	39.26	1.58		networks/solana/trending_pools?duration=5m&page=2								
+1795718926	2026-11-26 18:48	solana	9fop4EKutBd1WckjjNFh3i4C4D5WBbG61nxgvsabpump	George	A	0.4	14671	7613	11409	-44.34	-50.47	1.66	liq,vol5m	networks/solana/trending_pools?duration=5m&page=2								
+1795718926	2026-11-26 18:48	solana	CMrRSBXFwPrtXxNeaUjZVpxgdyUmN4yQT8Ntjhse7w6F	Maya	<10m	0.2	2570	2001	7913	-77.9	7.72	0.91	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=2|gt_relleno								
+1795718926	2026-11-26 18:48	solana	GAJ9dDUBRjrYjMfSbaU5yrSbGgUiRrs1SbadJ3DNFybf	PHISH	A	0.2	11934	6498	52608	-65.16	180.1	1.1	liq,b/s,pool	networks/solana/trending_pools?duration=5m&page=2|gt_relleno	417	321.2121212121212	26.74772036474164	364	None	970	0	21.121223796567104
+1795718926	2026-11-26 18:48	solana	3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump	NORFEATH	C	21.7	299600	41755	3166	13.69	12.82	4.62	vol5m	networks/solana/trending_pools?duration=5m&page=2	12175	6.127963737796374	0.7197220383851755	1350	2	1980	45.29983083969374	1.129787446112147
+1795718926	2026-11-26 18:48	solana	6NKWzyNZozhc6PNgpZTRi1BoZ2s89pD1gH7UFJP7s5w4	George	A	0.3	18032	5	0	0	83.39	0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=2								
+1795718926	2026-11-26 18:48	solana	HiR4BVR29mjskESKKVYqTivbDeYsyWsfjZL53iv5pump	Speed	A	0.5	37467	12468	1031	9.78	20.36	1.0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=2								
+1795718926	2026-11-26 18:48	solana	HoxYDbb4Tx271vtk7PKKeYs3zxtWAN3obG8groA2vp3F	QILIN	B	2.1	138804	192778	423346	1.58	24.99	1.16	b/s	networks/solana/trending_pools?duration=5m&page=2								
+1795718926	2026-11-26 18:48	solana	AqWGR4sXRxUfgzmyDhcCy1jqRs51jdNF7Y1KM7LWAdHo	PNP	B	2.0	259073	106750	261472	5.56	65.26	1.0	b/s	networks/solana/trending_pools?duration=5m&page=2								
+1795718926	2026-11-26 18:48	solana	BkngbGkNwbAL5Nv3k51zBaMQFPh17nQwQc29QFF5F87J	KURO	A	0.9	161189	2464	4977	36.66	123.71	0.84	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=2|gt_relleno								
+1795718926	2026-11-26 18:48	solana	Ag69D3dhHdNm9BbfzLfHrADezgW9Kk64JsQaxfb56KrE	PHISH	A	0.2	18695	4	0	0	62.85	0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=2								
+1795718926	2026-11-26 18:48	solana	Gk9dFHCayoGm16R3nX1HXqJki18eLh62KeqS6ZPkEcDb	TURKE	A	0.4	14565	44	0	0	67.86	0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=2								
+1795718926	2026-11-26 18:48	solana	DwpbWD1akPpLnsrp5FaCVg2TjrUk4SZ8bmS7npG4YYcf	Life	A	0.6	1151700294	0	0	0.0	8538663.48	0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=2|gt_relleno								
+1795718926	2026-11-26 18:48	solana	ADh8QVLjJzDYVcrE2tZjogozLfz9tCDYsroSaGr5tvRX	Snowball	A	0.5	2309	2153	62	-6.97	-92.07	0.0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=2								
+1795718926	2026-11-26 18:48	solana	8UVeVcM4ZTM7FY1uWhoyWY1hYHfR6mcS7uriuWwKyVk	蚁巢	A	0.2	17028	0	12681	19.1	19.1	6.39	liq,vol5m	networks/solana/trending_pools?duration=5m&page=2|gt_relleno								
+1795718926	2026-11-26 18:48	solana	EavcpYhRfzwQ3TsA8xkTgd36fLK9EigygCZFWoNW7CcF	PILLMAN	A	0.3	82604	19	0	0	757	0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=2								
+1795718926	2026-11-26 18:48	solana	5fjQCgqDMYHECeqzNexhxd8fH6cuQRrfgRwgXnyFRwK8	Datacat	A	0.4	0	0	0	0.0	-100.0	1.0	liq,vol5m,b/s	networks/solana/trending_pools?duration=5m&page=2|gt_relleno								
+1795718926	2026-11-26 18:48	solana	32rBxcFjCFnyqZ41CEPM5AL67X1dcw8w83vZt6Kxpump	PAIR	B	5.3	236123	38097	8011	7.66	-25.85	1.09	vol5m,b/s	networks/solana/trending_pools?duration=1h&page=1	4196	-0.2140309155766944	-0.119019281123542	728	44	1738	79.19056721283579	13.976360567618574
+1795718926	2026-11-26 18:48	solana	Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump	PUMPCHAN	C	17.2	9010262	226699	3419	1.73	2.42	0.44	vol5m,b/s	networks/solana/trending_pools?duration=1h&page=1								
+1795718926	2026-11-26 18:48	solana	38M2z4UCfZEkUHFzD48vhKQhFhNyRGto8pZbLjNipump	JIMMY	E	69.6	727310	79565	3075	-4.47	-17.75	1.83	vol5m	networks/solana/trending_pools?duration=1h&page=1	5779	-0.3792449577659024	-0.05188516084399862	243	21	554	82.72327681368114	19.78997815068679
+1795718926	2026-11-26 18:48	solana	zcRvzm7gAfYGde8gRwaSYxNryL47SjLVUQLAf1bdoor	SIDOOR	E	118.0	413992	50566	1249	4.63	11.51	3.67	vol5m	networks/solana/trending_pools?duration=1h&page=1	1240	3.678929765886288	0.4048582995951417	96	5	222	59.48710547767586	28.89877089431268
+1795718926	2026-11-26 18:48	solana	SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb	SPCX	>7d	4010.8	13747194	2382475	161	0	-0.02	0.43	vol5m,b/s	networks/solana/trending_pools?duration=1h&page=1	166022	-0.13714285714285715	-0.0024092612000530035	934	90	1783	93.0012595513051	25.926786347025686
+1795718926	2026-11-26 18:48	solana	A7bdiYdS5GjqGFtxf17ppRHtDKPkkRqbKtR27dxvQXaS	ZEC	>7d	9687.3	17570	2005705	29911	0.6	1.7	4.83		networks/solana/trending_pools?duration=1h&page=1	147203	0.006114379662214493	0.0027174097650119904	285	7	669	96.78640634409686	35.537949321365524
+1795718926	2026-11-26 18:48	solana	4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump	mihao	>7d	770.0	5657688	305386	13359	0.63	10.59	0.62	vol5m,b/s	networks/solana/trending_pools?duration=1h&page=1	33455	0.17966761491241204	0.11071877431324435	305	13	636	82.20112109912745	21.438047773265055
+1795718926	2026-11-26 18:48	solana	B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump	FIONA	E	165.9	1332302	128916	751	-0.25	-2.37	0.88	vol5m,b/s	networks/solana/trending_pools?duration=1h&page=1	10107	-0.384387936132466	0.01979218208807521	165	11	396	75	14.778533092919083
+1795718926	2026-11-26 18:48	solana	Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump	pippin	>7d	17926.3	19110093	3451878	5379	0.5	4.72	3.2	vol5m	networks/solana/trending_pools?duration=1h&page=1	49345	0.010133765707336847	0.008106848260067693	28	None	80	66.06076897418167	58.981024870670204
+1795718926	2026-11-26 18:48	solana	7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs	WETH	>7d	35032.3	147915513	3711136	5141	0.03	0.62	99	vol5m	networks/solana/trending_pools?duration=1h&page=1	137812	-0.0036279994485440836	None	42	5	501	93.16552092638129	8.319718070170286
+1795718926	2026-11-26 18:48	solana	9QT8K685Hrae4k11dhGXirdtpfAaimExtyfwt8cPpump	DIGS	>7d	702.2	249791	61293	2893	3.28	3.27	1.0	vol5m,b/s	networks/solana/trending_pools?duration=1h&page=1	5959	0.2523553162853297	0.13443118803562426	149	3	634	46.29895655949999	15.718529261183797
+1795718926	2026-11-26 18:48	solana	EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm	$WIF	>7d	22126.0	140128105	101884	547	0.36	2.62	0.7	vol5m,b/s	networks/solana/trending_pools?duration=1h&page=2	268572	0.0022340877102835057	None	36	2	259	74.45822611866984	33.17061943872248
+1795718926	2026-11-26 18:48	solana	he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A	hSOL	>7d	1849.3	41981819	36617	13154	0.02	0.52	1.52	vol5m	networks/solana/trending_pools?duration=1h&page=2	26153	-4.173384141873076	0.0038237993270113188	1430	15	1942	88.33551981310454	31.6052822130785
+1795718926	2026-11-26 18:48	solana	Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr	FLOAT	>7d	692.5	3137722	315287	6028	-5.32	-10.91	6.0	vol5m	networks/solana/trending_pools?duration=1h&page=2	12895	-0.031010155826033024	-0.023259420065126376	53	2	221	68.96778322288853	24.70370957057796
+1795718926	2026-11-26 18:48	solana	6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN	TRUMP	>7d	16250.9	256262128	118825	274	0.02	0.53	1.67	vol5m	networks/solana/trending_pools?duration=1h&page=2	692170	-0.023832393277820708	0.001155798786989173	44	1	233	77.34157321362171	80.34093802524418
+1795718926	2026-11-26 18:48	solana	98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g	HYPE	>7d	9508.4	43879570	521566	2810	0.08	1.26	99	vol5m	networks/solana/trending_pools?duration=1h&page=2	85754	0.0023323071182013246	None	59	6	327	90.84141092393367	23.985171524669145
+1795718926	2026-11-26 18:48	solana	DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263	Bonk	>7d	34371.7	194338970	217039	290	-0.11	0.33	1.6	vol5m	networks/solana/trending_pools?duration=1h&page=2	1026208	0.0019489606193017265	0.0005846802091596002	94	8	492	80.6233308044581	30.410260389138287
+1795718926	2026-11-26 18:48	solana	4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R	RAY	>7d	35032.3	351215877	3484353	315	-0.03	-0.44	0.0	vol5m,b/s	networks/solana/trending_pools?duration=1h&page=2	267003	0.0014981329518088083	0.0007490608649405808	30	6	127	87.29724330690117	79.46326976906742
+1795718926	2026-11-26 18:48	solana	65iH8k736QNhuUHm1tt8X7yJXpJ517HPPq8BrVdwring	Rings	>7d	383.6	1887179	215788	0	-0.1	11.99	99	vol5m	networks/solana/trending_pools?duration=1h&page=2	3279	-0.45537340619307837	-0.12183978068839477	83	15	329	70.8438425420579	22.255884761393265
+1795718926	2026-11-26 18:48	solana	BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy	BP	>7d	5958.1	200251910	2220264	0	0	-0.98	0	vol5m,b/s	networks/solana/trending_pools?duration=24h&page=1	31656	0.012637432073802603	None	27	6	88	86.39409202057962	94.58894471636773
+1795718926	2026-11-26 18:48	solana	3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f	BASKET	D	38.0	596724	111208	420	0.54	-2.4	2.0	vol5m	networks/solana/trending_pools?duration=24h&page=1	4972	-0.7782877669127919	-0.1606425702811245	85	6	235	80.87861652087652	19.26349327102086
+1795718926	2026-11-26 18:48	solana	5EmvWDizkpjAXbcfCcVq69w1id8GaLzi4LLwtuSgpump	Pompom	D	31.5	31218	14301	69	-2.68	-2.79	1.0	liq,vol5m,b/s	networks/solana/trending_pools?duration=24h&page=1								
+1795718926	2026-11-26 18:48	solana	6B5X3keXJ4J8LLvswa2mbqMhrRDbt85Jo88sbB6apump	Elonmas	C	13.7	59227	18419	1054	1.88	11.44	1.2	liq,vol5m	networks/solana/trending_pools?duration=24h&page=1								
+1795718926	2026-11-26 18:48	solana	9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump	ANSEM	>7d	3909.7	19166224	768225	1717	-1.21	-0.11	1.4	vol5m	networks/solana/trending_pools?duration=24h&page=1	154992	0.008388233244504094	-0.0012903725305495697	72	7	172	85.02823207641649	57.96824988842516
+1795718926	2026-11-26 18:48	solana	Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump	CATE	>7d	2954.2	17061236	1300888	115	0.59	2.24	0.67	vol5m,b/s	networks/solana/trending_pools?duration=24h&page=1	142746	-0.023812858943829666	0.004203446826397646	43	2	126	70.5760995983006	14.762900245582813
+1795718926	2026-11-26 18:48	solana	2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM	CLAUDIA	>7d	1217.0	8731851	445235	2191	0.7	3.31	0.69	vol5m,b/s	networks/solana/trending_pools?duration=24h&page=1	15351	0.2088909197728311	0.05214104151730431	71	5	193	78.42684808295462	19.77446166142515
+1795718926	2026-11-26 18:48	solana	6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump	VINE	>7d	16146.4	9018721	1446231	180	-0.1	1.63	0.0	vol5m,b/s	networks/solana/trending_pools?duration=24h&page=1	94102	-0.003187928377875777	None	10	None	29	68.64544389230058	18.710396900349636
+1795718926	2026-11-26 18:48	solana	5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2	TROLL	>7d	14040.2	22074506	1853929	861	0.68	-0.31	2.0	vol5m	networks/solana/trending_pools?duration=24h&page=1	68664	-0.00873743993010048	0.001456388447926831	27	3	67	75	27.46151545009823
+1795718926	2026-11-26 18:48	solana	9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump	DCTY	>7d	903.7	914512	150054	527	0.99	1.73	3.5	vol5m,pool	networks/solana/trending_pools?duration=24h&page=1	33554	-0.07742703990470517	-0.0029801817910892563	82	4	144	73.35301685764689	15.555697686609015
+1795718926	2026-11-26 18:48	solana	ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY	MOODENG	>7d	19367.9	28948397	1891760	3	0.5	0.86	3.0	vol5m	networks/solana/trending_pools?duration=24h&page=2	94221	-0.0042451578668081715	None	10	1	39	73.20828454980516	46.06719065052993
+1795718926	2026-11-26 18:48	solana	2Lw9FQA1iAwg5Wo1NTh8GTs3zmVQc7XHGBbexqZgqtWJ	hello	>7d	245.6	322374	46004	2155	-5.27	-8.06	1.53	vol5m	networks/solana/trending_pools?duration=24h&page=2	1320	0.5331302361005331	0.303951367781155	112	7	199	67.70152600240043	24.350500472281233
+1795718926	2026-11-26 18:48	solana	J9eBkCb4UtquAMQqB6duwBmR99fFSMoTnDcaMB9Wpump	Investor	D	25.7	125700	26865	2220	0.62	13.58	0.73	liq,vol5m,b/s	networks/solana/trending_pools?duration=24h&page=2	993	-0.7992007992007992	0.10080645161290322	142	14	355	71.50020679933047	19.414800344668638
+1795718926	2026-11-26 18:48	solana	Dz9mQ9NzkBcCsuGPFJ3r1bS4wgqKMHBPiVuniW8Mbonk	USELESS	>7d	13564.4	72984866	2342593	967	-0.09	0.15	0.11	vol5m,b/s	networks/solana/trending_pools?duration=24h&page=2	69375	-0.010089072093626588	None	27	2	77	84.06985114460683	38.78301433634057
+1795718926	2026-11-26 18:48	solana	AyrQpt5xsVYiN4BqgZdd2tZJAWswT9yLUZmP1jKqpump	jobcoin	>7d	14180.5	12973412	515603	187	0.65	3.15	1.5	vol5m	networks/solana/trending_pools?duration=24h&page=2	3932	0.40858018386108275	None	20	1	74	65.48587922529163	24.76692251138867
+1795718926	2026-11-26 18:48	solana	6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx	STONK	>7d	2551.9	31513306	813013	486	-0.06	0.94	99	vol5m	networks/solana/trending_pools?duration=24h&page=2	108184	0.0018487363886783383	-0.0018486680346810123	49	7	217	87.08723603578049	23.72527309993349
+1795718926	2026-11-26 18:48	solana	DVdWuNK8ncn79B6z8nCiwcNAiwyFcmBPfChgxJGTpump	4CHAN	D	44.7	71564	22961	864	-3.65	-23.21	4.4	liq,vol5m	networks/solana/trending_pools?duration=24h&page=2	5072	-0.4123306499116434	0.05918327086210298	61	3	141	70.3170187947052	21.88520894792343
+1795718926	2026-11-26 18:48	solana	CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp	CARDS	>7d	10895.8	150793854	3393843	1639	0	0.62	1.0	vol5m,b/s	networks/solana/trending_pools?duration=24h&page=2	63000	0.011112345816201801	None	78	15	270	89.27557189350082	72.56107942966143
+1795718926	2026-11-26 18:48	solana	4vMsoUT2BWatFweudnQM1xedRLfJgJ7hswhcpz4xgBTy	HONEY	>7d	2998.3	1318512	20157	0	0	0	0	liq,vol5m,b/s	networks/solana/trending_pools?duration=24h&page=2	91576	-0.01419384423893699	-0.005459647743527587	33	5	130	80.87609104114816	57.10424007953224
+1795718926	2026-11-26 18:48	solana	Hg5Ja55T5wESq4vyFoiVCMeHXtGyVA69X2UHq8hgpump	baton	>7d	1870.2	3638817	288957	408	-0.64	1.74	99	vol5m,pool	networks/solana/trending_pools?duration=24h&page=2	22764	0.035155563367902966	None	33	3	65	66.058050515036	16.6911709929683
+1795718926	2026-11-26 18:48	solana	85cQsFgbi8mBZxiPppbpPXuV7j1hA8tBwhjF4gKW6mHg	Rizzmas	>7d	25632.7	616450	215724	17	0.46	2.77	2.0	vol5m	networks/solana/trending_pools?duration=24h&page=2	129677	0.007712062436857489	-0.0007711408257375963	29	1	48	70.57683256609553	14.615060188607853
+1795718926	2026-11-26 18:48	solana	33jENUQnjoitkMFpvNJcSHyLAHFWJuHwT6E3E8CNpump	DOPE	>7d	1109.2	774620	104855	54	0.06	2.68	2.0	vol5m	networks/solana/trending_pools?duration=24h&page=2								
+1795718926	2026-11-26 18:48	solana	5tCju6YNxHq5zrA6tGndr6F7TK42mpUFmeE31cSFpump	swordcat	>7d	1425.5	481772	86236	56	0.26	-3.59	99	vol5m	networks/solana/trending_pools?duration=24h&page=2	10549	0.10438413361169101	0.01896273821939888	24	2	37	58.6648588079361	24.599532099333132
+1795718926	2026-11-26 18:48	solana	3jtiu5UGZ39CBZyBfLdTTykvUUUGXXSkED7t2nE8CqsF	RUGCOIN	<10m	0.1	1998	1584	16	0.02	0.02	1.0	liq,vol5m,b/s	networks/solana/new_pools?page=1|gt_relleno								
+1795718926	2026-11-26 18:48	solana	Hc4NeWgeuDPytXoioN8LAy6Xwe5K5LVF2JhTH7iKpump	BUCK	<10m	0.1	2004	1591	0	0.0	-28.4	0	liq,vol5m,b/s	networks/solana/new_pools?page=1|gt_relleno								
+1795718926	2026-11-26 18:48	solana	GiuPVRXUk4kY31Zo7oaWZtNsYTtLD9jLHr3X8Safpump	GI	<10m	0.1	2024	1581	0	0.0	-0.02	0	liq,vol5m,b/s	networks/solana/new_pools?page=1|gt_relleno								
+1795718926	2026-11-26 18:48	solana	2FDhDqGPBMH8x4dKFWYcRxTT8hZEqeJbRSpDYXWSpump	PS5	<10m	0.1	274	116	349	-93.17	-93.17	1.18	liq,vol5m,b/s	networks/solana/new_pools?page=1|gt_relleno								
+1795718926	2026-11-26 18:48	solana	ZNhwwPmXZE5sbZvo81c31rcoA6QUDma8xyuYd2DTsCA	Maya	<10m	0.1	25361	21267	1477	18.15	20.83	0.87	liq,vol5m,b/s	networks/solana/new_pools?page=1|gt_relleno								
+1795718926	2026-11-26 18:48	solana	5pw2UZBkJDuPUQaQCHso9sJu738gyyzNSpzEV1Topump	SENTAI	<10m	0.1	5003	1670	105	-0.12	11.56	1.38	liq,vol5m	networks/solana/new_pools?page=1|gt_relleno								
+1795718926	2026-11-26 18:48	solana	4Pp4QKbKxU8N44AmRRbM9kHCMy3y7XnGHkM2jgfWpump	bro	<10m	0.1	189	0	0	0	-90.56	0	liq,vol5m,b/s	networks/solana/new_pools?page=1								
+1795718926	2026-11-26 18:48	solana	GyxmTguHzwiE7rQKVN1EoBPmic5RcBxhm4NUWyvXLyjM	BUCK	<10m	0.1	4000	0	13	-0.27	-9.14	0.5	liq,vol5m,b/s	networks/solana/new_pools?page=1								
+1795718926	2026-11-26 18:48	solana	A7MP1oETQyaH23dZNa1gKr3cdm5hFvTkNmnY3GJBpump	PCC	<10m	0.1	2024	0	1	0.06	0.14	99	liq,vol5m	networks/solana/new_pools?page=1								
+1795718926	2026-11-26 18:48	solana	5icsEcAQvEoPspdHBTV8PFC1Y2HbEjMLE9n6bsUaNRDX	MAYACAT	<10m	0.1	10913	11	0	0	29.82	0	liq,vol5m,b/s	networks/solana/new_pools?page=1								
+1795718926	2026-11-26 18:48	solana	4EXjuxPAwiRJYUVaZNhtRJy1LLTaZjvBgseWAMiTpump	buckme	<10m	0.1	29	0	0	0	-98.55	0	liq,vol5m,b/s	networks/solana/new_pools?page=1								
+1795718926	2026-11-26 18:48	solana	DGpie3eLJ5ieUBkdiCwHDrVfxoZsD4b6ognhS5CEpump	MANLETS	<10m	0.1	0	0	0	0	0	2.0	liq,vol5m,pool	networks/solana/new_pools?page=1								
+1795718926	2026-11-26 18:48	solana	D3jwLXDAo2A5PL6m3FFQzN8xgGXWJwuLk7mKLH7zpump	DERP	<10m	0.1	2206	0	0	0	10.39	0	liq,vol5m,b/s	networks/solana/new_pools?page=1								
+1795718926	2026-11-26 18:48	solana	GWnwkwXsgKtF5CZLXk4hxPJuBoh88LQxXnr4eydcw95w	BUCK	<10m	0.1	1991	0	0	0	-17.17	0	liq,vol5m,b/s	networks/solana/new_pools?page=1								
+1795718926	2026-11-26 18:48	solana	EiyAsdHHvUdYD2BjCELKWGcWzkU1VDmnFHvsTnBapump	CBI	<10m	0.1	327	0	0	-0.01	-83.65	0.0	liq,vol5m,b/s	networks/solana/new_pools?page=1								
+1795718926	2026-11-26 18:48	solana	H7VF6HRYbW1dqqQFkuASzBZZxUF9or6KygVuNXhPpump	COOKED	<10m	0.1	29238	0	0	0	1292	0	liq,vol5m,b/s	networks/solana/new_pools?page=1								
+1795718926	2026-11-26 18:48	solana	6RCGLJ9H4MwSkfccBJD8CWpm7kyLGiDkyCodPWFKKbvv	Criminul	<10m	0.1	26367	6	103094	20.73	174	2.07	liq	networks/solana/new_pools?page=1								
+1795718926	2026-11-26 18:48	solana	FMug4AoNPPpsKgExgmL9A5p6Yn2V8K4zftbQy2vn3z4Z	George	<10m	0.1	23146	0	280	26.2	158	99	liq,vol5m	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	8qR98q5G4TDWPgxbya6dPr91ntqA5ejMVGiZZfAxpump	:(	<10m	0.1	2024	0	4	-0.33	-10.65	0.0	liq,vol5m,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	9CrSkupeMiJMHUeysuVhZjp7oePxR2Eb3a4NNvafpump	SmileFace	<10m	0.1	2006	0	0	0	0.41	0	liq,vol5m,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	H9RAST4JYyb27PGzGt9BDKJGJmaYHtGGXyiRHrbJuVMm	Criminul	A	0.2	129740	0	0	0	73.81	0	liq,vol5m,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	9hY8o5hTYmRgxm8NAJ5kHUjR2SdRH619FB1ZVvaXpump	FCAT	<10m	0.1	2024	0	0	0	-0.21	0	liq,vol5m,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	HJ3bnaL55cRfN91i1tTWwXUbjq69PcmBcoqGQPXupump	MINT	<10m	0.1	1994	0	0	-0.01	-0.04	0.0	liq,vol5m,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	ALQmWwrvo2BB9f5wpUp9JwSf1c3iwVTDrhc3tBCAZLeX	George	<10m	0.1	23180	0	0	0	159	0	liq,vol5m,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	HhwjXy7yRTNbkbG5P8JEaWqCgYLw7p3t9JfgHMGKpump	RICK	<10m	0.1	69	0	529	-86.8	-96.55	0.93	liq,vol5m,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	CtnZ7E5UNxVsziX3Qdf1XWqb2VwTk9S5r3kfcpNoNoCy	SCAT	D	24.4	14747	0	8310	96.52	347	1.8	liq,vol5m,5m>=50	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	GxkhGuC2Yx7DcTyqhr9msVKUdmenxybEBsdCkwVKAdNf	GI	<10m	0.1	11118	16610	27583	24.44	79.35	1.07	liq,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	FSA5tK3bhZSo9wwQEe1kfoK9es97UdXBnxYM8bHkpump	DeadBoltap	<10m	0.1	2023	0	2	-0.22	-3.53	0.0	liq,vol5m,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	9zw6qqpkhx9qeiRwuiEsjFGHkPjUqoVRRg3gSVjwpump	Crimeinu	<10m	0.1	1990	0	0	-0.07	-0.3	0.0	liq,vol5m,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	6RgDbuVx6RNYFTFUD3QLGmhjac7UDBUQfXxG9dtppump	SOCK	<10m	0.1	2034	0	0	0	0.19	0	liq,vol5m,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	EzC4nZHAL2LY2K3qWHPHtxBg79uWZeyEtsoUstpXpump	GI	<10m	0.1	2011	0	353	-26	-11.06	0.2	liq,vol5m,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	8LoJwCXLiHGSbchh6Dv7VvWT3HPZQ4gG68EAGMWwpump	MAYHEM	<10m	0.1	13	0	0	-0.99	-99.35	0.0	liq,vol5m,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	4dzd8b2cb1tMe3PhftLbKjtouPz9mtr2qFZcWqj3pump	COOKED	<10m	0.1	1990	0	5	-0.45	-5.55	1.0	liq,vol5m,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	28CjdqX2SToScUcBkQvyjUVhUftTcTfqtrgbS4uApump	GI	<10m	0.1	2024	0	0	0	1.56	0	liq,vol5m,b/s	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	E9aFL68uZHsKKMhFGq13aHBXKzcUxtFhiQH5wVfLpump	MANLETS	<10m	0.1	3082	0	0	0	-11.62	0	liq,vol5m,b/s,pool	networks/solana/new_pools?page=2								
+1795718926	2026-11-26 18:48	solana	gSDPSfkhjDKCJ5rrx4p5FLEchjV6Utg7JmcbFcW7ory	KEYRON	<10m	0.1	5031	0	0	0	0	0	liq,vol5m,b/s	networks/solana/new_pools?page=3								
+1795718926	2026-11-26 18:48	solana	DwXU52mgTftRRiTUMfooECrFHbFEUeq9kaP3i7CPpump	EVIL	<10m	0.1	25	0	38	-89.74	-98.75	0.69	liq,vol5m,b/s	networks/solana/new_pools?page=3								
+1795718926	2026-11-26 18:48	solana	DbKPkKiPBYU2qPSSQV7qoqQ8ajMTq5rR1DgcHRMPpump	CrimePEPE	<10m	0.1	1991	0	0	0	-2.44	0	liq,vol5m,b/s	networks/solana/new_pools?page=3								
+1795718926	2026-11-26 18:48	solana	FUZS8Gd81mqrrTp2ETwUdydLFKazaDzouMsZeRJDpump	TIKI	<10m	0.1	183	0	15	-75.73	-90.84	0.69	liq,vol5m,b/s	networks/solana/new_pools?page=3								
+1795718926	2026-11-26 18:48	solana	B7Y355dvwih4k9AmFC1dZUpYPHv6BgaPY1D49zMmpump	CBI	<10m	0.1	1990	0	2	-0.22	-0.45	0.0	liq,vol5m,b/s	networks/solana/new_pools?page=3								
+1795718926	2026-11-26 18:48	solana	4c7sytNF8vRJai6ZjdDET8YuTR6ng2s1RioBbbc8pump	2011	<10m	0.1	2004	0	2	-0.06	0.1	1.0	liq,vol5m,b/s	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	8A5PS2TR1YZ87SFkrP3vSLSpjuwvTq2YfXVs3yyVpump	$SLJK	<10m	0.1	589	0	0	0	-70.8	0	liq,vol5m,b/s	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	6DwdYmMNpdw1NVmSzdaxMvJPP9hra3MiDPWyuE89pump	GI	<10m	0.1	2031	0	5118	-55.39	-18.16	0.74	liq,vol5m,b/s	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	9Vf3zTVJ7ZS7gRcWTMnY9Qeai6HdTQKzGGkGKnDF86MZ	duk	<10m	0.1	29034	0	1	0.04	20.81	99	liq,vol5m	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	7HEH6JNat5J5EEMLMS7F5x6Jh9MAxomQo2TPTncZpump	SENTAI	<10m	0.1	124	0	0	0	-94.4	0	liq,vol5m,b/s	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	42syG4ASnLriw8imnERtzReamseSw1yvt5S4LoNRwVEb	Criminul	<10m	0.1	46940	16365	56491	117	1142	1.2	liq,5m>=50	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	9UgUiQkRvD3Ld9R5uV6wcwjFdJ1PeBHUaJsmyD4Npump	TC	<10m	0.1	2007	0	0	0	0.23	0	liq,vol5m,b/s	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	BZiPXqTKJ8pABYNJiN86NSGTWmMbqa8ZZtAnf9qzpump	MANTLE	<10m	0.1	1990	0	0	-0.01	-21.96	0.0	liq,vol5m,b/s	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	FkLgwc9PL74jMtVdNiT6gQTzy7AtfsF98mXn19kbpump	PS5	<10m	0.1	8	0	0	0	-99.58	0	liq,vol5m,b/s	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	BGx7CtZKq3b4NM4hMSajPV63Rk32AHopvFKGDXoTpump	MANLETS	<10m	0.1	0	0	0	0	0	0	liq,vol5m,b/s,pool	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	Bt6Co1HQu2Hp7E1Yo1zyQDY96LbK4SwMYn2sVptfpump	COOKED	<10m	0.1	1991	0	0	0	-4.1	0	liq,vol5m,b/s	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	scUcfLUkZPWAeBqdhGA2n9kfCaB9RQ8Zrfm2wYNxrjF	Claws	<10m	0.1	38	0	2320	-99.37	-99.12	1.29	liq,vol5m	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	8QTEiXmysNUffJ3rcyEPhX3ntV6AUuhts8KFCXrB3cH6	duk	<10m	0.1	9669	12328	4457	53.69	126	1.5	liq,vol5m,5m>=50	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	FFPVzKQCANH2VCsfUt5R8CA9XFFh5cZhrfUqnJnhHMyR	MEOWI	<10m	0.1	11728	17060	29601	16.59	89.12	1.0	liq,b/s	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	6RsC9SeZq7DhyYAgQwE5CCanLr22QPXUxTuG8MaMpump	USMS	<10m	0.1	14	0	0	0	-99.3	0	liq,vol5m,b/s	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	yUJoka1M1qxJrnH9siRyheQEfC984i7DbshnTbZring	RINGPAD	<10m	0.1	0	0	0	0	0	0	liq,vol5m,b/s,pool	networks/solana/new_pools?page=4								
+1795718926	2026-11-26 18:48	solana	FNwY4wJCRwtf5o7fnUMkWNFGMbzgPKkaawaKxZA1pump	MANTLE	<10m	0.1	1991	0	0	0	-21.92	0	liq,vol5m,b/s	networks/solana/new_pools?page=5								
+1795718926	2026-11-26 18:48	solana	AWrftmx6pSXwkNpVjFukNaPzspXr8G7QSBSdse35Nk8Y	KURO	<10m	0.1	28755	0	1	-0.02	5.49	99	liq,vol5m	networks/solana/new_pools?page=5								
+1795718926	2026-11-26 18:48	solana	HQs1tRPv8dxpFgBXrmUGpDogUycPcqVhrdPzLGgkpump	HEKNITT	<10m	0.1	2061	0	0	0	0.23	0	liq,vol5m,b/s	networks/solana/new_pools?page=5								
+1795718926	2026-11-26 18:48	solana	7gcjqrsuQgPSxHRz18RjgYcgKCvB1s1jt627dmVgZKPJ	Maya3	<10m	0.1	2102	0	0	0	-22.41	0	liq,vol5m,b/s	networks/solana/new_pools?page=5								
+1795718926	2026-11-26 18:48	solana	2CJkybd8rrWFeVvivjzbtaJbosWMvXZ4pcSEA5J88Yxa	George	<10m	0.2	23190	0	0	0	159	0	liq,vol5m,b/s	networks/solana/new_pools?page=5								
+1795718926	2026-11-26 18:48	solana	CGmRmva7eBANtEvn4z5ggPmMexga2sMjoCjiLQEZpump	NWI	<10m	0.1	1991	0	0	0	-0.06	0.0	liq,vol5m,b/s	networks/solana/new_pools?page=6								
+1795718926	2026-11-26 18:48	solana	CsUhLFkutitvGmiFgPTJ1WJZEXSwntNXp1BBGZ4Ypump	KURO SOL	<10m	0.1	2057	0	0	0	0	0	liq,vol5m,b/s	networks/solana/new_pools?page=6								
+1795718926	2026-11-26 18:48	solana	2oaCdNyuTJZYiSjYRSNY51MCp2DLiAqQ1ZaX8x84pump	KYC	<10m	0.1	3159	0	0	0	-6.88	0	liq,vol5m,b/s,pool	networks/solana/new_pools?page=6								
+1795718926	2026-11-26 18:48	solana	AdtNc5PWn7ZpDkZRGzUebPCZvBTYPqWR7akN4jdPFf6Q	Criminul	<10m	0.1	19061	2	0	0	98.1	0	liq,vol5m,b/s	networks/solana/new_pools?page=6								
+1795718926	2026-11-26 18:48	solana	HBzd4FD5hyHzG65grtXRfZGCx4ufpjmKfg7kNWYJpump	MANTLE	<10m	0.1	1991	0	0	0	-21.92	0	liq,vol5m,b/s	networks/solana/new_pools?page=6								
+1795718926	2026-11-26 18:48	solana	CKfRiKEGp3ytEyW8PgpHX5zk1Uwp1v4ZugPjhn7o9GT2	RUGCOIN	<10m	0.1	1991	0	0	0	-0.66	0	liq,vol5m,b/s	networks/solana/new_pools?page=6								
+1795718926	2026-11-26 18:48	solana	5xWkVEsosQPoaqegdhA6F6L97xJViZUdmS8Bwisopump	MANLETS	<10m	0.1	3082	0	0	0	-17.2	0	liq,vol5m,b/s,pool	networks/solana/new_pools?page=6								
+1795718926	2026-11-26 18:48	solana	A9rasFVhXGt1bsMoZsDRyrgUgDW8VJrHxL9mdgQMpump	PS5	<10m	0.1	2	0	0	0	-99.9	0	liq,vol5m,b/s	networks/solana/new_pools?page=6								
+1795718926	2026-11-26 18:48	solana	AzxzRoSJohH5j1MrnQuM1ZaVDL7XBuvGixxfiJt5pump	USMS	<10m	0.1	225	0	0	0	-88.76	0	liq,vol5m,b/s	networks/solana/new_pools?page=6								
+1795718926	2026-11-26 18:48	solana	4Tss5TS9X9SPoRfKPmR3ktKuPbjrbmLGjHgYSKwQpump	CBI	<10m	0.1	2178	0	0	-0.07	8.99	0.0	liq,vol5m,b/s	networks/solana/new_pools?page=6								
+1795718926	2026-11-26 18:48	solana	Bwwc9n2mPn1k5rGv6UjAudiPPYmQpSzYevddjdmHpump	MEOWI	<10m	0.1	2339	0	0	0	8.38	0	liq,vol5m,b/s	networks/solana/new_pools?page=8								
+1795718926	2026-11-26 18:48	solana	2ck5P5tGNLQQ5PLRerunXSJmpHY7MCC8ULZfeYv5CnbL	LANA	<10m	0.1	2024	0	0	0	0.89	0	liq,vol5m,b/s	networks/solana/new_pools?page=8								
+1795718926	2026-11-26 18:48	solana	J3FoD4NWKAHKJb4FG4T3EaheKmX9sHxridDYnM3dJhLh	DWE	<10m	0.1	2429	0	0	0	21.2	0	liq,vol5m,b/s	networks/solana/new_pools?page=8								
+1795718926	2026-11-26 18:48	solana	6PEgzA4t85tgZMHvo7UGHqz7KX8fXymJBtrnFDgkpump	Cool Cat	<10m	0.1	3116	0	0	0	-9.78	0	liq,vol5m,b/s,pool	networks/solana/new_pools?page=8								
+1795718926	2026-11-26 18:48	solana	B6MXUydYLpDb11bWaNzvv8tTe9kMw9VDgKeT6WMmpump	AFK	<10m	0.1	2056	0	42	-3.77	1.66	0.0	liq,vol5m,b/s	networks/solana/new_pools?page=8								
+1795718926	2026-11-26 18:48	solana	HZJJMmALHcR7ipYSmgzhbW7Npr6xfBHDG6CtJbRPuXaT	Maya	<10m	0.1	1990	0	1	-0.12	-43.78	0.0	liq,vol5m,b/s	networks/solana/new_pools?page=8								
+1795718926	2026-11-26 18:48	solana	AKb8oNK8H2biLjYy4wdDsEaWZsuHa9vQpioUq8aLpump	MCH	<10m	0.1	222	0	0	0	-88.92	0	liq,vol5m,b/s	networks/solana/new_pools?page=8								
+1795718926	2026-11-26 18:48	solana	FFwWEMhN6P1ebXDT4hxxXcDVRiEx6NYzcdgXaC5rpump	GOLDCAT	<10m	0.1	1990	0	8	-0.84	-0.64	0.0	liq,vol5m,b/s	networks/solana/new_pools?page=8								
+1795718926	2026-11-26 18:48	solana	H1rr3mfxsidAqfkUwr4C8zkbx1uo2Wg2A1asnMiWYfdH	MayaCat	<10m	0.1	3049	0	0	0	-46.81	0	liq,vol5m,b/s,pool	networks/solana/new_pools?page=8								
+1795718926	2026-11-26 18:48	solana	FcUnmZwctagJSgFTYsGogbboHkVjBa861w6ehDYFpump	GBBL	<10m	0.1	1990	0	0	-0.08	-0.71	0.0	liq,vol5m,b/s	networks/solana/new_pools?page=8								
+1795718926	2026-11-26 18:48	solana	CKNFvEA1SJXRiT4i2J9pfCWKwSypWKwJkY4PBKu7pump	NICK	<10m	0.1	1991	0	0	0	-1.11	0	liq,vol5m,b/s	networks/solana/new_pools?page=8								
+1795718926	2026-11-26 18:48	solana	C1mYAyMQQutqgmTjzJc44Hq82DB1XnNKgmxGsxjXpump	$LKOALA	<10m	0.1	2237	0	66	6.02	6.02	99	liq,vol5m	networks/solana/new_pools?page=8								
+1795718926	2026-11-26 18:48	solana	So11111111111111111111111111111111111111112	SOL	>7d	29892.4	0	18028836	129715	0.14	0.69	5.14		networks/solana/pools?sort=h24_volume_usd_desc&page=1	3820662	None	None	18216	667	152156	98.90804844526093	0.5787244405990802
+1795718926	2026-11-26 18:48	solana	XsYzw7XHj8K2WHeoeNQVyevMmzjzXfcJ8tQ4FmdN1DL	ANTx	>7d	168.3	2264769388	98501	100808	0.01	0.21	1.07	b/s,pool	networks/solana/pools?sort=h24_volume_usd_desc&page=1	1473	0.2722940776038121	-0.06784260515603799	14	None	32	75	99.71663182735708
+1795718926	2026-11-26 18:48	solana	3aGDeS1VmffiS4wR62AZfpbb1eVcq7cAizAQC441HvNm	FLOP	D	27.4	104025	2	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=1								
+1795718926	2026-11-26 18:48	solana	4ydChDtus8woiX9TZMhnUQ6uiRoit4h24HJNfwxp6T2	SIMPS	D	26.5	64851	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=1								
+1795718926	2026-11-26 18:48	solana	7xQpidRScDCNmTe7oTimPmwQ9sYHkbj8no15wpUneGML	NIAN	C	22.7	26968	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=1								
+1795718926	2026-11-26 18:48	solana	3nsEzgrXoGWWBgQLZ11cY22mtoXLM9Pfi36oB1ReBiKe	DOG	C	10.0	27110	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=1								
+1795718926	2026-11-26 18:48	solana	25WMvnpEqe1t5E3DdT8Fc5CtqycmJV24n2ZTakGfz6ru	Elonmas	C	12.2	33610	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=1								
+1795718926	2026-11-26 18:48	solana	3cx4SVvyfEywbcLrvvAzR1JmssAmKwgmWiXBCEpb9VpE	MONEY	C	17.5	28629	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=1								
+1795718926	2026-11-26 18:48	solana	FS7VE3wTpvbkB5j3t6vGYL8k3DnqnHrSdY4vJnkKFvG6	DOG	C	14.5	26917	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=1								
+1795718926	2026-11-26 18:48	solana	Bk3LWffqHxMr3goQC4JmHVqyYiFr5xqJcDueQSNVfzLj	NIAN	C	17.5	27078	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=1								
+1795718926	2026-11-26 18:48	solana	8UUZRSJumyduoYFrdEAmY73m5PgGagrZxcH8nX8TSSLU	KOOP	C	21.0	25510	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=1								
+1795718926	2026-11-26 18:48	solana	6fnowXxtdKwGqBz1tKUWdZXNehmFDFBthuA7SnMzDaS3	FSD V15	C	9.7	26901	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=1								
+1795718926	2026-11-26 18:48	solana	Evjt31qD83BBWGA2UuywYmXHMrAPCueym9bkC5XJz9XY	DOG	B	5.3	26660	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=1								
+1795718926	2026-11-26 18:48	solana	C5wkuysJ3iyq8BVgBibPjfBxYgZUXSBh2cTHH4yvahea	Grok Bot	C	16.4	25040	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=1								
+1795718926	2026-11-26 18:48	solana	cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij	cbBTC	>7d	12918.3	167124055	94924	3491	-0.04	0.34	0.7	vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=1	79686	0.0188274277968144	0.0012549413314927526	64	6	653	94.44590619917062	14.158318034422072
+1795718926	2026-11-26 18:48	solana	BUqoTwfSgrrF8MSn9XV86XyDtkhYa8q9KAsbMxE3yXSm	FSD V15	C	8.1	25126	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=1								
+1795718926	2026-11-26 18:48	solana	pETFfZdFkJzFWJHsxa5q1kJCPnBNWnmZp4vYeqZ8tbh	PNP	B	4.3	36851	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	BooKBEXvcj1A71JQJzYWebDHBSXvKZ3FjhALSdFyVUva	Santa Clau	C	13.0	25292	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	29KEzraeitfWXT4U1yfvmgiT8UPAmRWuvU7EUzQMdhjx	KOOP	C	19.3	26567	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	7FZY18mAC4ta3oEjwc7pSkLcBWKhodGtNryP56VVyKLC	SuperELON	C	23.7	24008	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	EJgWdh8XHQRByoBRDDrD1CTtmgjuxJ5UNUr7hxAZ8pGk	shares	C	14.7	23961	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	8Di9FbUApRwpaEoTBh8xdDtqeq5nhn6mbyXetbLiDanA	Anthropic	C	9.3	28367	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	8e3ZphcWCiZDtqS2ZTxDZC3Bh33evT8tYJp2VXE9iKoB	philanthro	C	11.7	23866	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	JAeqCAY8zGY6xz6YaWiH2QU8w4CiZoA8GGqLpVo5uMew	miuu	C	13.9	27355	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	8KsuTdpbgLZq3S2DMSaab9x18waZY2e6yaHrWDtf8AUr	Sol	C	10.2	27603	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	14A886v8uZh8v7g7HYKHKwXnLnZ1qccRXJ74vU1aTNSu	Zero	C	15.4	74897	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	B6cZ6Vt5cQSWytW6j7ZNcrnywh7UDU5DgYz2CfL7mnH1	Optimus	C	17.6	23712	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	FYkyaog19L8DoCbsAJSZf2WuWSf5u8uyv83SusFUJDLZ	PAIR	B	1.9	204370	98956	260445	-0.71	129	1.0	b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	EPoCVpLXmvJMoZzyUzegqpvAXVy5FT91GCFyt58xgdur	CATE	C	14.3	27940	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	8PvmJuzqhxDBLD4JAHwXQE2zaah8tieLupq8GvriLNHy	Jensenmas	C	12.3	8	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	67AzADQ19vSefBKpjTBEd4dJFMavyRBAF7KAU8Nn8PQM	Optimus	B	1.4	23928	0	0	0	-69.26	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	74FGkxEW1X5TEFmBJYmF9W9o7Y94EJBhP9QnpXA9egM4	Grok AI	B	3.7	2792090	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=2								
+1795718926	2026-11-26 18:48	solana	6sz6PC2iXeQXfZ58Xy2qgjnhWjb2rMrMSXNehvyGxt1j	MONER0	C	8.6	25819	1	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	2u1tszSeqZ3qBWF3uNGPFc8TzMk2tdiwknnRMWGWjGWH	USDG	>7d	9087.6	26979029	3470066	2789	-0.2	-0.06	0.09	vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3	29367	0.006810829218457347	0.0034052986446911396	23	4	154	89.17589752803084	63.42607393353018
+1795718926	2026-11-26 18:48	solana	9iQgjvqpGUVyVREuCnGPU2qcunPmixkE6uV6LMC3dp8M	NUBU	C	7.2	43143	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	6jH6yvnDkd1j3GMt7xdMVUvrLXDkpRmRpWB12NV61Fws	BossJensen	B	4.3	23369	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	9qAQTdkyS5myxH6wMqxLnDXwS9nCmJLxjqyGRPCRcfzv	ATX	C	15.1	987	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	8PfvQMxJpNn1cB4EYHY23xf8WMM93mVh2pQmHncMoxBM	GOTF	C	16.1	25911	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	4wyX62Cw2dQtodsXZb7p875Ua2n2aCibUeUsHiJJSSav	Optimus	B	3.1	22561	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	GULnNiRjwZJSyfmBn9mtbtML4bFPKJLqd3Z9AhapvD4	SPACEXLIFE	C	14.7	58651	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	2zZ6FWcGdY3heGg2UABUPJasYVWA4HRtWeaQ6avwD6y3	Opus 5.6	C	10.5	22861	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	GHTyzFtJRnkRXLkJ78byw2Ru9pnq4oKsBHBBzvY9WAnM	Zero	C	13.9	0	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	69BK1QZEqQUpi66H6iVS7gXWs3wa4799cYD1DxK4rDLt	DOG	C	6.3	25824	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	JDgMTJD4nzhNSSXrWXRZxCmjsinXBiQvTX29B2e6FJc7	ATX	C	7.5	14885162	14439005	0	0	0	0	vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	CkzG2Fdg1Qs7Uvx7aQu2kYockXK73pHk4Z8QFxxZCkm	Pompom	C	21.4	91558	112	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	6LCHhuuee9BjsXjZxX7svCzAUmJQQYQCegAuFZ9RYATX	ATX	C	6.1	27595011	27457398	0	0	0	0	vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	BZTWniNCumGKofkwXCcQzhYBDU7fkYxrsyYgH1t7CATX	ATX	B	5.9	28695292	28552171	202	0	0	4.0	vol5m	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	A7G4wLdhxDZrxaBEzhkhWt7iqvC5SSWUSwscMpAVzrms	BossJensen	C	22.4	22792	0	0	0	0	0	liq,vol5m,b/s	networks/solana/pools?sort=h24_volume_usd_desc&page=3								
+1795718926	2026-11-26 18:48	solana	FgLfLhT3QoPWynZ53L3KUUsPhspWbdPUfMtmPfezXci6	xZEC	>7d	483.2	4662	165	1	-0.24	2.53	99	liq,vol5m	jupiter_toptrending/5m	1702	-0.05871990604815032	None	3	None	24	52.216901160496334	79.9826329080771
+1795718926	2026-11-26 18:48	solana	FaWBF7djnFysJVHptwUAHLN7ZqM1BUis3QMnbsM1pump	PHISH	>7d	1486.0	18544	12305	23140	39.77	413	1.8	liq,pool	jupiter_toptrending/5m	329	47.53363228699551	44.93392070484582	108	None	185	0	23.650929135332017
+1795718926	2026-11-26 18:48	solana	1zJX5gRnjLgmTpq5sVwkq69mNDQkCemqoasyjaPW6jm	KLED	>7d	13290.1	10889614	425311	240	0.73	3.4	99	vol5m	jupiter_toptrending/5m	14667	0.061399918133442484	0.03410175965079798	6	None	21	59.80085148916614	23.384533923672198
+1795718926	2026-11-26 18:48	solana	Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ	QQQx	>7d	6920.8	79037551	2249082	10872	0.05	0.06	1.17	vol5m,b/s	jupiter_toptrending/5m	42600	0.12692144972500352	0.04462084028087644	163	None	310	75	76.02486253098142
+1795718926	2026-11-26 18:48	solana	SQQQAa3gUxgnqcEsdjPA4RQNQBgB97TnG2hJhk2WaGE	SQQQ	>7d	1492.0	580137	109742	0	0	0	0	vol5m,b/s	jupiter_toptrending/5m	13837	0.014456089627755693	0.12301013024602027	60	None	111	63.137565130834886	38.93786990996977
+1795718926	2026-11-26 18:48	solana	TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo	TTWO	>7d	1900.9	96	347200	71	0	-0.05	1.0	vol5m,b/s	jupiter_toptrending/5m	236529	-0.040992959353579064	-0.0025366224871583485	145	8	597	86.04049549073332	32.08656173165828
+1795718926	2026-11-26 18:48	solana	DKu9kykSfbN5LBfFXtNNDPaX35o4Fv6vJ9FKk7pZpump	AVA	>7d	17831.7	6345493	901548	1370	0.63	1.39	29.0	vol5m	jupiter_toptrending/5m	47140	0.002121385689132141	-0.0021212956874058675	5	None	9	0	71.87672705472096
+1795718926	2026-11-26 18:48	solana	5qYyTjP1Y2xfSUUayyEfXP5mxxBg1CEKcdPvmYEApump	Criminul	A	0.3	65386	21683	29462	82.45	52.47	1.22	liq,5m>=50,pool	jupiter_toptrending/5m	762	2016.6666666666667	8.547008547008547	637	None	1602	0	22.778992930698465
+1795718926	2026-11-26 18:48	solana	HuAXPyDWDaMYFKuwQHpqL1oPnj93zdzWmtvFGzCeCUa7	MASK	>7d	1543.7	7705183	406544	992	0.85	1.81	2.0	vol5m,pool	jupiter_toptrending/5m	17322	0.03465003465003465	0.005773338721782807	38	1	55	70.67819795200445	56.560740040699486
+1795718926	2026-11-26 18:48	solana	AQfw8J74V17erZsmMz4oK474eVLBaP44gD33vVbhtHo5	ZOL	E	92.2	104081	22676	2495	21.07	29.87	1.19	liq,vol5m,b/s,pool	jupiter_toptrending/5m	880	0.9174311926605505	0.8018327605956471	15	1	43	43.0449923324509	28.615193901075074
+1795718926	2026-11-26 18:48	solana	8ryRQD6jWfxnSdvvVbQ8Tzwo1NgGP7w1X1nQPpb4pump	meowl	>7d	13515.9	307761	60920	1351	5.39	5.87	1.2	vol5m	jupiter_toptrending/5m	984	0.20366598778004072	None	9	None	17	0	24.86265339575799
+1795718926	2026-11-26 18:48	solana	DG2EJSEtPBge5F7zBCTZG78p27LTCiq8tUkJ39qupump	duk	C	8.6	117038	30701	821	1.94	15.05	1.58	vol5m	jupiter_toptrending/5m	677	-8.389715832205685	0.5943536404160475	101	18	295	66.07813252877888	26.8329390448873
+1795718926	2026-11-26 18:48	solana	7mH4PaR9BMxAid2i1QNDBmziAwxyXBsPNKSMiWySpump	worth	>7d	281.7	174100	31328	266	4.7	25.77	1.0	vol5m,b/s	jupiter_toptrending/5m	421	3.43980343980344	0.9592326139088728	16	None	23	0	29.033440777668062
+1795718926	2026-11-26 18:48	solana	6gnB2H2hbTVvKUWCzNuqjWY8Rod6EVBmfHi7YxZpTWa7	MEOWNERO	>7d	554.2	233238	36119	10	0.99	-23.68	99	vol5m,pool	jupiter_toptrending/5m	482	4.329004329004329	-0.2070393374741201	81	None	92	45.829561568518315	28.090702827311503
+1795718926	2026-11-26 18:48	solana	9Pq7aLAbhDG2tTnS22cm6kuysZVcZpLFE368HWuypump	JOB	>7d	719.5	1662472	138782	610	-0.61	0.26	1.6	vol5m	jupiter_toptrending/5m	2141	0.09350163627863488	0.04672897196261683	15	4	29	42.427983260852926	7.297551316167585
+1795718926	2026-11-26 18:48	solana	A4ScEozJhNUqSypR1v39PGWerUzTRK5RKJtjZN3epump	POMPD	D	24.0	21338	0	1896	-11.02	66.59	0.87	liq,vol5m,b/s	jupiter_toptrending/5m	110	22.22222222222222	1.8518518518518516	33	None	110	48.06986202790819	28.84189177536653
+1795718926	2026-11-26 18:48	solana	393hvaznatMETgsCn6pzzvVBFresjF1CEiYCQDdrTRiX	COPE	>7d	2834.9	42198	15701	442	12.24	90.42	99	liq,vol5m	jupiter_toptrending/5m	336	3.067484662576687	0.9009009009009009	21	None	22	0	46.01009955636054
+1795718926	2026-11-26 18:48	solana	Grass7B4RdKfBCjTKgSqnXkqjwiGvQyFbuSCUJr3XXjs	GRASS	>7d	18210.8	273516537	80623	677	0.12	1.38	99	vol5m	jupiter_toptrending/5m	377320	-0.0007950747767827564	-0.000530051255956451	16	2	37	67.03128233815697	49.51419884570779
+1795718926	2026-11-26 18:48	solana	5GDX5fJTQns4arM1J94wjxdA8KXFsV5qW46MLFpHpump	OMNI	>7d	1319.8	110977	30195	18	0.17	-8.53	1.0	vol5m,b/s,pool	jupiter_toptrending/5m	2061	0.1457725947521866	0.04854368932038835	18	1	30	47.392215502430595	27.477025118487536
+1795718926	2026-11-26 18:48	solana	3JgFwoYV74f6LwWjQWnr3YDPFnmBdwQfNyubv99jqUoq	wPOND	>7d	18670.5	1624024	29434	511	2.37	9.07	1.0	liq,vol5m,b/s	jupiter_toptrending/5m	6555	0.045787545787545784	0.015257857796765334	7	3	27	57.31777978224765	28.386011203837537
+1795718926	2026-11-26 18:48	solana	BiLAn35QaVqQC8f8BGrE92r2n5dcDEJmqJcx1v9Apump	ATX	E	123.6	587058	76570	1850	0.51	10.93	0.79	vol5m,b/s	jupiter_toptrending/5m	6415	1.3588244588402592	0.12486343062275637	63	None	111	0	26.076404104447974
+1795718926	2026-11-26 18:48	solana	ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg	CYBERLEEK	>7d	2469.6	1152893	299008	266	0.26	-1.09	1.0	vol5m,b/s	jupiter_toptrending/5m	52312	-0.017201506087421877	-0.0038230683946935805	11	1	36	65.2489739693565	19.212237026779068
+1795718926	2026-11-26 18:48	solana	EyscKnGPbxVjGx4AgJqpYqtWmtnw2PpzRpvqShBQpump	POMPOMPURIN	>7d	3595.4	18124	10610	531	21.65	25.39	3.0	liq,vol5m	jupiter_toptrending/5m	273	1.1111111111111112	-0.36496350364963503	7	None	9	0	25.759751667078625
+1795718926	2026-11-26 18:48	solana	7R4MP6VX7n3RMNhL9zsk5Zu5ibZvwq8npUYnRq7epump	Singularity	E	142.6	107442	30436	324	2.69	9.45	0.75	vol5m,b/s	jupiter_toptrending/5m	3334	-0.5963029218843172	None	26	None	65	56.94725258434147	16.287440916219317
+1795718926	2026-11-26 18:48	solana	5ZBdUzozdJPAbReBYTsjkDkssrnmPky2Ks4kdKaART5K	UHI	>7d	922.9	23369	12717	2	0.05	16.07	0.0	liq,vol5m,b/s,pool	jupiter_toptrending/5m	199	-2.450980392156863	0.5050505050505051	2	None	15	52.060217868946296	29.212152579019058
+1795718926	2026-11-26 18:48	solana	PEPEqnuuCDbBC89p1u9vpnP1KQ2oj1xTcQBsjt9X55m	PEPE	>7d	1652.6	514692	47952	388	0.29	0.78	99	vol5m	jupiter_toptrending/5m	28169	None	0.0035501278046009654	22	1	96	59.680390367969174	20.532169659076118
+1795718926	2026-11-26 18:48	solana	FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump	HOGE	>7d	275.8	505012	92647	344	3.43	1.82	99	vol5m	jupiter_toptrending/5m	4224	-0.3538570417551309	-0.07097232079488999	27	2	59	63.27788272722076	18.4760024351038
+1795718926	2026-11-26 18:48	solana	EVbsBwxqdbMqadwAsVZ6KP9SJiaNmLSHAAb4W2mUpump	LUNO	>7d	214.0	365841	47544	454	1.24	-2.61	1.5	vol5m	jupiter_toptrending/5m	1844	0.38105606967882416	-0.05420054200542006	37	None	49	0	11.547022063217813
+1795718926	2026-11-26 18:48	solana	CA8q2mkYWZnUNqYmf6pxyxAPZsmSe2EG9P7hHMW5pump	REMUS	>7d	811.6	375365	55974	454	2.4	5.75	1.57	vol5m	jupiter_toptrending/5m	6184	0.03235198964736331	0.016173378618793467	22	None	36	0	19.477711505425223
+1795718926	2026-11-26 18:48	solana	Df6yfrKC8kZE3KNkrHERKzAetSxbrWeniQfyJY4Jpump	CHILLGUY	>7d	17782.6	7328461	924066	0	0	0.58	0	vol5m,b/s	jupiter_toptrending/5m	117920	None	0.000848039756103766	4	None	5	47.75538043923002	42.47492998238366
+1795718926	2026-11-26 18:48	solana	CajDcXd6rbCCemwX1XXVHyG2UYypFtoFDFo7imahpump	ATX	E	60.1	4317134000	4653381	723	0.03	0.69	16.5	vol5m	jupiter_toptrending/5m	3453	0.17406440382941687	None	21	None	29	0	0.4997092681516554
+1795718926	2026-11-26 18:48	solana	Ya9PEJA9UZmbT5aim46TA6cPCkTNfsqEn1aEVrnpump	ATX	D	34.4	3200399550	4008429	872	-0.01	1.69	2.64	vol5m	jupiter_toptrending/5m	3667	1.8045530260966132	0.054570259208731244	1483	None	1803	0	0.44295008080472015
+1795718926	2026-11-26 18:48	solana	7CvW68FD9KjNYGByfykhaNps7VNPLN8dFwMRfmgQpump	CUNTS	E	114.7	67923	19436	590	8.55	-2.98	3.0	liq,vol5m	jupiter_toptrending/5m	413	4.556962025316456	None	40	None	52	54.49604464221486	24.26042146196933
+1795718926	2026-11-26 18:48	solana	EiQ1JvEUZCXN5kQi2UdS4CdQapidqC7MCXd5sRTPpump	Doomcat	E	70.0	56521	16135	82	5.21	28.08	0.67	liq,vol5m,b/s	jupiter_toptrending/5m	220	-0.4524886877828055	None	16	1	26	35.713226672688364	29.908270649695357
+1795718926	2026-11-26 18:48	solana	7Evw4uxTxLGGEFEvXLUNYyc1J7PnFk9EYwTUFagARUX	ACRUX	>7d	217.2	80573	18803	119	2.49	-2.3	99	liq,vol5m	jupiter_toptrending/5m	380	-1.0416666666666665	None	7	None	11	0	41.923467488190916
+1795718926	2026-11-26 18:48	solana	3rLbP63g74ugwqpwqTpwsELmRkQR9wnR2fv5mhtGHNZi	PHISH	>7d	1468.6	13805	11360	0	0.57	12.24	99	liq,vol5m,pool	jupiter_toptrending/5m	256	1.185770750988142	0.39215686274509803	5	None	6	0	28.52317345233847
+1795718926	2026-11-26 18:48	solana	MukLDtJ8Cx9DxLbeyLRSWPSposTMWuwHANbuaudpump	OTC	>7d	2165.2	982204	211933	278	2.05	1.48	99	vol5m	jupiter_toptrending/5m	19765	None	None	7	None	13	62.19124164972472	26.529923451843988
+1795718926	2026-11-26 18:48	solana	EV7J2QaPXPytSkM1LD9GPRkgAbmSEr9R3kYiXBzbpump	chud	E	141.5	287861	40613	255	1.71	4.56	1.0	vol5m,b/s	jupiter_toptrending/5m	673	0.29806259314456035	0.29806259314456035	6	None	24	0	65.71285966757799
+1795718926	2026-11-26 18:48	solana	8RNUw4N655VSrZKuhGdywhbSMDTrheguFPfxbpE2NZHQ	PURR	>7d	2369.6	1739786	164477	201	0.45	0.31	1.0	vol5m,b/s,pool	jupiter_toptrending/5m	13964	0.03581918475535497	0.014324595330181922	11	None	15	55.40701342776456	26.969158371658512
+1795718926	2026-11-26 18:48	solana	65q7e9mAe8sNG4y23A8ngy7dibUBet8Z3aYutBjgpump	fineshyt	>7d	377.0	24547	8845	236	8.16	-19.62	0.25	liq,vol5m,b/s,pool	jupiter_toptrending/5m	362	21.885521885521886	-0.27548209366391185	30	None	57	0	41.51103025773022
+1795718926	2026-11-26 18:48	solana	HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx	HIMS	>7d	1871.4	94290	31551	0	0	0.13	0	vol5m,b/s	jupiter_toptrending/5m	22083	-0.013583265417006248	None	8	1	18	55.367174819725385	19.017035508616107
+1795718926	2026-11-26 18:48	solana	FMGe8RStdPc1YR59BBuV5Ui12DEe3Q2zVoihrJBbpump	ZENO	>7d	935.4	26215	11746	1	0.97	6.82	1.0	liq,vol5m,b/s	jupiter_toptrending/5m	428	1.1820330969267139	0.234192037470726	9	None	15	0	26.321679255972835
+1795718926	2026-11-26 18:48	solana	8s11PkgQt4ZzdZ7oo84hK5t9HG1EvdgAjcg4W7Lpump	BLOB	>7d	627.2	1681920	119502	177	0.58	5.15	99	vol5m	jupiter_toptrending/5m	31152	0.02889895000481649	0.016052910392654187	17	None	33	0	2.8442839147889156
+1795718926	2026-11-26 18:48	solana	27oigFPt9uXqDYkMETm1KBwwMrAvrk4XtsbKJgT9pump	stickman	>7d	296.1	20792	9953	73	3.35	8.89	99	liq,vol5m	jupiter_toptrending/5m	171	0.5882352941176471	0.5882352941176471	5	None	7	0	30.597527309889323
+1795718926	2026-11-26 18:48	solana	BQTG5qcyt3YpU1nJ37RAsTwd4fJa3cZXKAp9WjMETQu6	PVE	C	20.2	12461	9374	233	8.54	4.12	0.67	liq,vol5m,b/s,pool	jupiter_toptrending/5m	1468	-1.6744809109176158	-0.20394289598912305	6	2	35	74.28581997456521	18.88790851112194
+1795718926	2026-11-26 18:48	solana	8g7BgshVGoSQzrXRkX83K4WBYr22FhPUttETF6RJpump	青鬼	C	21.1	56794	15840	349	5.04	18.9	99	liq,vol5m	jupiter_toptrending/5m	249	6.866952789699571	0.4032258064516129	52	4	146	52.200962210429026	26.210028063043307
+1795718926	2026-11-26 18:48	solana	3umHFkiMHyphCkLxtbf8Aabie8r5hxn86QeBAovTpump	HUSS	E	146.6	34989	14974	9	-1.5	0.55	0.0	liq,vol5m,b/s	jupiter_toptrending/5m	585	0.6884681583476765	None	17	None	29	51.79446013402712	23.069034603340334
+1795718926	2026-11-26 18:48	solana	utLyQQCPvjuCc6zeaXdsFeEC3JNdxKS3vxaZWoGdoge	OGDOGE	>7d	4871.0	560349	73018	0	0.01	16.83	99	vol5m	jupiter_toptrending/5m	3167	0.31675641431738993	0.03158559696778269	16	None	62	0	23.714329563521115
+1795718926	2026-11-26 18:48	solana	Cogito6Ss5vhwAqjkrB5jVRr3GXwtmseJqZm9CyUy4di	COGITO	>7d	185.4	110804	20996	80	1.5	2.76	99	liq,vol5m	jupiter_toptrending/5m	163	3.1645569620253164	2.515723270440252	5	1	8	43.11525319733593	55.35426540591823
+1795718926	2026-11-26 18:48	solana	FS8ZSohYyG5tNm1ZAHzpvRgK2tJsCLSCDYX4xigNpump	250	>7d	983.4	9483	6348	188	9.74	6.11	1.0	liq,vol5m,b/s,pool	jupiter_toptrending/5m	565	0.1773049645390071	0.1773049645390071	2	None	9	0	26.1855151277011
+1795718926	2026-11-26 18:48	solana	8rjgC1GsBo4fwuXjq7Hy12SAFxgFxbtSJJSFBYkVpump	WW	>7d	194.3	472209	52815	253	0.4	-8.12	1.0	vol5m,b/s	jupiter_toptrending/5m	835	-0.713436385255648	None	2	3	13	59.309460072206605	19.79272548300322
+1795718926	2026-11-26 18:48	solana	8PdoiB3jXkkJXoBtHnDsEGL4TuP8nSYoQskk97nQV7sX	UHI	>7d	929.6	10970	10128	0	0	-0.36	0	liq,vol5m,b/s,pool	jupiter_toptrending/5m	367	0.273224043715847	None	2	None	3	0	24.396535428388344
+1795718926	2026-11-26 18:48	solana	ASTERYpc2EhivYWSbtuWPuCMdXtZGmHwtH93NqYVw45Z	ASTER	>7d	1105.5	314779	3088	0	0	0	0	liq,vol5m,b/s	jupiter_toptrending/5m	1196	None	None	3	None	3	0	33.73333170502266
+1795718926	2026-11-26 18:48	solana	7fmD1p3jzva28EPP9bPqbDoxZGj5j398yJoE3EVypump	DUVAL	E	56.6	22766	11808	102	5.21	0.82	99	liq,vol5m	jupiter_toptrending/5m	1315	-0.15186028853454822	-0.07598784194528875	17	1	28	55.53907914527465	20.88184115038622
+1795718926	2026-11-26 18:48	solana	kPqBsUZuogprbq15ZpACwDzbUHSAxTxbhRrxmrDpump	CATEMAS	E	112.6	33642	16506	21	1.71	9.66	99	liq,vol5m,pool	jupiter_toptrending/5m	1427	0.49295774647887325	0.14035087719298245	9	None	9	0	22.64879572888727
+1795718926	2026-11-26 18:48	solana	BSe1q3SL6KQPLeZHFG9nNw5VFbDL3ZXvBmtjBVpYpump	SMOOVE	>7d	650.0	82286	30837	96	2.39	2.61	99	vol5m,pool	jupiter_toptrending/5m	587	0.6861063464837049	0.17064846416382254	5	None	13	45.6353045408931	24.701016390551203
+1795718926	2026-11-26 18:48	solana	3ZLekZYq2qkZiSpnSvabjit34tUkjSwD1JFuW9as9wBG	NEAR	>7d	1583.1	3951584354	108089	0	0	0.52	0	vol5m,b/s	jupiter_toptrending/5m	21328	-0.018751171948246766	None	17	3	193	75	30.376489770154137
+1795718926	2026-11-26 18:48	solana	4eiNbSrXgtbeuBSvyKLvZjZB1NTz1DsLrUrHXS3Npump	files	>7d	357.7	53975	17264	95	3.43	1.84	99	liq,vol5m	jupiter_toptrending/5m	368	0.546448087431694	0.2724795640326975	5	None	10	0	31.86281921286672
+1795718926	2026-11-26 18:48	solana	BTCmcoKg6J767Bum7nXVDPLsWAZs3ZdYwTQr7YnXpump	SIRIUS	>7d	302.9	27434	12972	0	0	7.44	0	liq,vol5m,b/s,pool	jupiter_toptrending/5m	238	1.276595744680851	None	6	None	10	0	33.099542440385655
+1795718926	2026-11-26 18:48	solana	SKHYhSjuRWHgikq8eRKbtBbpABgJSkd7ytQV14i9EQ3	SKHY	>7d	3338.3	1222	197418	60	0	0.15	99	vol5m,pool	jupiter_toptrending/5m	11410	0.09649969295552241	0.04384042086804033	7	None	37	56.75127424859839	9.934798624871497
+1795718926	2026-11-26 18:48	solana	4W7BNgGspH3YFbLsP5T7AnKAzr6REGMMBGK9xDZKpump	chudhaos	>7d	331.7	35858	9312	161	3.73	31.34	0.67	liq,vol5m,b/s,pool	jupiter_toptrending/5m	611	0.6589785831960462	None	13	None	26	0	44.63204269272822
+1795718926	2026-11-26 18:48	solana	4jPVfKpDNzZ9WrVrPoDBAGPsVcu8zbkN2WUw5GiCpump	Wow	E	114.7	23529	10061	53	1.2	-6.03	1.0	liq,vol5m,b/s	jupiter_toptrending/5m	286	0.3508771929824561	None	37	2	74	49.59955378849856	22.874155190468024
+1795718926	2026-11-26 18:48	solana	6AUURRdHb9TrfPHv9AMofa8NEVoZDXcsbWKcUBpFSRXs	CYPHERCAT	>7d	1658.1	296836	37597	70	0.8	-0.8	99	vol5m,pool	jupiter_toptrending/5m	1214	None	None	1	None	2	0	26.748950999200567
+1795718926	2026-11-26 18:48	solana	4Cnk9EPnW5ixfLZatCPJjDB1PUtcRpVVgTQukm9epump	DADDY	>7d	21598.5	3274498	534079	0	0	0.18	0	vol5m,b/s	jupiter_toptrending/5m	64606	None	None	3	1	6	59.6883744884596	10.77324057681914
+1795718926	2026-11-26 18:48	solana	8mnJZnxaNLqVwkaWWGH7dKmoEzyYzGJx5pHaCp7spump	PATRICK	E	155.8	49442	19268	20	0.86	2.47	99	liq,vol5m	jupiter_toptrending/5m	1869	-0.32	None	7	1	16	52.04779850381477	23.944880773372407
+1795718926	2026-11-26 18:48	solana	3jAB5ksB13Kgm2Q39NU6d2USUxBy2f9LaTvyay6Gpump	ccat	C	20.3	28739	13487	85	0.21	16.65	1.0	liq,vol5m,b/s,pool	jupiter_toptrending/5m	240	-1.2345679012345678	-0.4149377593360996	72	2	82	54.86153759177679	32.5290822837359
+1795718926	2026-11-26 18:48	solana	mskd5wF6mtkcrEppzg3FgpDgG7kRMX8g95HSV7v1MA5	MSKD	D	30.1	26004	10926	111	2.47	15.74	3.0	liq,vol5m	jupiter_toptrending/5m	115	0.8771929824561403	1.7699115044247788	8	1	18	41.11331482296009	35.75202504900301
+1795718926	2026-11-26 18:48	solana	6jmhyHEy1rDyYHyRkr1rbVVQnckKpMYWh3zoX7zLpump	CHRISTMAS	E	49.3	63747	18998	88	3.31	2.98	6.0	liq,vol5m	jupiter_toptrending/5m	961	-0.6204756980351602	0.31315240083507306	14	1	37	57.90288668225152	21.872516469179054
+1795718926	2026-11-26 18:48	solana	7SL2VnfYsChvog5oQY9Nmtqu1wceaMiQzWoqoLQpump	NIO	>7d	866.8	991704	121008	50	1.87	-1.99	1.0	vol5m,b/s	jupiter_toptrending/5m	9078	0.12131906915186941	0.05510856387082552	57	4	112	70.07899267875705	16.66570361286279
+1795718926	2026-11-26 18:48	solana	7mEhH5gsuwPeBC9n9C2XQJdXinWhKGfNhrt4r8db47Cn	Snoopy	>7d	1350.4	65547	21663	41	2.28	4.96	99	liq,vol5m	jupiter_toptrending/5m	3189	0.031367628607277286	0.031367628607277286	6	None	11	48.659756176565246	24.781884707948947
+1795718926	2026-11-26 18:48	solana	D4CzGsZgusVj2K8R1its5H8WWdo9mazbDwBc6qvsmfun	LAMPORT	>7d	503.1	35655	15962	50	1.59	1.59	99	liq,vol5m	jupiter_toptrending/5m	483	None	None	1	None	1	0	36.80901641808363
+1795718926	2026-11-26 18:48	solana	MRNAzXzhNcaEXJPibHEn8cd4vyekCDiivTyEwswLUCT	MRNA	>7d	1699.6	349160	72167	0	0	0	0	vol5m,b/s	jupiter_toptrending/5m	4128	-0.02421893921046258	None	4	None	10	0	22.245869547382764
+1795718926	2026-11-26 18:48	solana	FVWXgqKp1sD5YtNL2LtYEyN52tPX1RrYSsNugvvfLoat	FEDORA	C	14.4	63760	46580	317	0.68	10.68	1.0	vol5m,b/s,pool	jupiter_toptrending/5m	489	2.0876826722338206	None	41	2	95	57.51767565456036	23.01210998825897
+1795718926	2026-11-26 18:48	solana	3w2TvVmTrtq4kSkoFVrTFQgz6MX7ThzDVrx9r5c3pump	HI	>7d	674.1	177822	37346	38	0.24	8.21	99	vol5m,pool	jupiter_toptrending/5m	2086	None	0.047961630695443645	7	3	13	54.524994569035016	46.55258344064044
+1795718926	2026-11-26 18:48	solana	GTBxUiw6wJdmmkCGZgRHLyYxqu1vG4KtRpeox6yDpump	JEANPHIL	>7d	1631.6	1990434	196825	1067	0.1	-5.88	5.0	vol5m	jupiter_toptrending/5m	19315	0.04661763182430333	0.015534382767191384	25	None	48	65.4794369310391	24.609974633393016
+1795718926	2026-11-26 18:48	solana	7FxGzQZjdxL87R9hTvtghmtn1vCUc79oVvKiV31azZrQ	NEVERDOOM	>7d	359.1	73061	36623	44	0.71	0.18	99	vol5m	jupiter_toptrending/5m	314	-1.5673981191222568	None	5	None	12	41.074667911819645	23.17995467097489
+1795718926	2026-11-26 18:48	solana	63GvNqZ59CRwtPw5NP2yULqqYuZzFcectoVdjw7YRFT4	SINU	>7d	408.0	8068	15641	42	0.2	0.2	99	liq,vol5m,pool	jupiter_toptrending/5m	548	0.18281535648994515	0.18281535648994515	None	None	None	0	0.8747880170956068
+1795718926	2026-11-26 18:48	solana	JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN	JUP	>7d	24734.2	786295172	494002	1134	-0.03	0.41	0.5	vol5m,b/s	jupiter_toptrending/1h	835695	-0.00011966073787597404	0.0007179704411569375	50	12	409	98.700142147973	14.873521394305747
+1795718926	2026-11-26 18:48	solana	27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4	JLP	>7d	23436.5	51189534	452598	383	0.11	0.36	20.0	vol5m	jupiter_toptrending/1h	89063	0.002245651856592672	0.001122813321057241	19	4	382	91.92772585450281	54.05523183056531
+1795718926	2026-11-26 18:48	solana	G7vQWurMkMMm2dU3iZpXYFTHT9Biio4F4gZCrwFpKNwG	BIRB	>7d	7255.9	15214359	1470205	4212	0.03	1.11	1.12	vol5m,b/s	jupiter_toptrending/1h	16334	0.01224589762429586	-0.006121824303642486	9	2	16	74.98022924777112	88.12642752631757
+1795718926	2026-11-26 18:48	solana	XsP7xzNPvEHS1m6qfanPUGjNmdnmsLKEoNAnHjdxxyZ	MSTRx	>7d	12262.0	85163097	506043	8	-0.06	0.61	99	vol5m	jupiter_toptrending/1h	15984	0.6359000188881194	None	211	10	271	69.92745431878159	72.56113607120224
+1795718926	2026-11-26 18:48	solana	CgJkmr87iVzgCNnsYyaqoj9WmBee9tw7uQU2pKM4QYFe	PILLMAN	A	0.6	20053	0	5101	-11.18	397	1.08	liq,vol5m,b/s,pool	jupiter_toptrending/1h	353	1160.7142857142858	-6.613756613756613	385	20	1284	44.081096590341254	21.5885799016312
+1795718926	2026-11-26 18:48	solana	MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5	MEW	>7d	23413.4	26708533	6241288	1065	-0.14	0.85	0.2	vol5m,b/s	jupiter_toptrending/1h	158933	-0.0006291919916443303	None	6	None	18	0	55.47657219155757
+1795718926	2026-11-26 18:48	solana	XsueG8BtpquVJX9LVLLEGuViXUungE6WmK5YZ3p3bd1	CRCLx	>7d	6918.7	97876154	2504750	310	0.02	0.44	99	vol5m	jupiter_toptrending/1h	20169	0.00991719145138097	None	12	1	57	75	55.700797546661676
+1795718926	2026-11-26 18:48	solana	MSTRdWXMeZxdE8osAQy3fA4rvTY5rgummDSMEx6U7Nz	MSTR	>7d	2909.3	427805	205246	0	0	0.97	0	vol5m,b/s	jupiter_toptrending/1h	373	None	None	1	None	25	59.78854372871051	37.65137243807882
+1795718926	2026-11-26 18:48	solana	xmraCcXf1qpZgkwaQn5myc7Q6SZ7He7sXQhXUBYNXMR	CRIME	C	23.9	59173	18243	2676	-11.86	191	1.13	liq,vol5m,b/s,pool	jupiter_toptrending/1h	339	15.306122448979592	5.607476635514018	69	None	113	59.75461509390803	33.44090930750927
+1795718926	2026-11-26 18:48	solana	H74CYmXgMkYHYuSRsZt6RJb4NYp2u72Vw8BS5huApump	LMAO!	>7d	9711.8	535599	120951	127	-2.3	5.55	0.67	vol5m,b/s	jupiter_toptrending/1h	15724	0.057270124085268846	0.012721027859051012	26	3	53	49.12840100227537	17.413223457150593
+1795718926	2026-11-26 18:48	solana	rndrizKT3MK1iimdxRdWabcF7Zg7AR5T4nud4EkHBof	RENDER	>7d	20005.3	547339356	282954	3	0	0.88	0.0	vol5m,b/s	jupiter_toptrending/1h	131359	0.0030451829012980093	-0.0007612667478684532	23	1	37	67.30335937650356	39.26586156296843
+1795718926	2026-11-26 18:48	solana	9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump	Fartcoin 	>7d	18468.6	81695053	4685460	0	-0.54	0.24	0.0	vol5m,b/s	jupiter_toptrending/1h	193235	-0.00310493114815179	0.0005175072709771572	18	1	135	74.3300422653974	35.041577420633764
+1795718926	2026-11-26 18:48	solana	orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE	ORCA	>7d	25366.0	72356280	518383	0	0	0.37	0	vol5m,b/s	jupiter_toptrending/1h	92778	-0.002155636990730761	0.00107785334727357	11	None	37	73.11510172810546	50.32606381987671
+1795718926	2026-11-26 18:48	solana	taoC6xyv2v8tDLcev4uaGUgV4vdQsWJrGft2kcBRrBY	TAO	>7d	1912.6	375124	229614	0	0	1.83	0	vol5m,b/s	jupiter_toptrending/1h	11085	0.009022013713460843	None	12	None	24	60.22051167533169	18.456082005770714
+1795718926	2026-11-26 18:48	solana	9PR7nCP9DpcUotnDPVLUBUZKu5WAYkwrCUx9wDnSpump	Ban	>7d	18291.8	43724597	1929747	0	0	1.35	0	vol5m,b/s	jupiter_toptrending/1h	28678	0.00348711510966977	None	4	None	18	0	61.055317334511564
+1795718926	2026-11-26 18:48	solana	TSLAqBbv4CNCnzWFeB7LmydAyEiNMJtve7DYKLpdK4S	TSLA	>7d	887.6	1027979	922013	0	0	0.38	0	vol5m,b/s	jupiter_toptrending/1h	940	None	None	2	None	14	0	17.728263345672534
+1795718926	2026-11-26 18:48	solana	AGazYig7A8Co6ZapAPterBRLitdiP6AAaWiPH8jWLend	LENDR	D	25.3	691777	62433	3325	-1.09	12.04	3.38	vol5m	jupiter_toptrending/1h	649	3.343949044585987	1.0903426791277258	85	2	144	62.28629164921246	29.69951762731011
+1795718926	2026-11-26 18:48	solana	6UpQcMAb5xMzxc7ZfPaVMgx3KqsvKZdT5U718BzD5We2	wXRP	>7d	6539.1	1	421478	105	0.06	0.56	99	vol5m	jupiter_toptrending/1h	21292	None	0.00469682025268893	31	2	48	51.56705332135191	34.64919630534517
+1795718926	2026-11-26 18:48	solana	HHf2VfXSPUVqQth6tXypfdUX2vawCiVKfkbAX4CJpump	MAXIS	>7d	7204.7	147067	34637	0	0	0.21	0	vol5m,b/s	jupiter_toptrending/1h	831	-0.1201923076923077	None	1	None	7	0	52.53225320169989
+1795718926	2026-11-26 18:48	solana	ejrz94zR4A2ScS8LdvRaQih2xUxaE2ydreqUNKmpump	ANTS	>7d	483.8	1703069	114488	23	1.04	9.45	2.0	vol5m	jupiter_toptrending/1h	30580	0.003270218123548841	0.003270218123548841	5	None	26	0	3.0728968894548885
+1795718926	2026-11-26 18:48	solana	ARMYxiiNbzToMCrhH6dNE5rb5oq2v8iGZUx6uHfcopQh	ARMY	>7d	331.7	77401	27599	3019	-14.64	70.8	1.25	liq,vol5m	jupiter_toptrending/1h	355	146.52777777777777	-5.333333333333334	267	15	953	54.11679028998179	20.752734069791977
+1795718926	2026-11-26 18:48	solana	9AvytnUKsLxPxFHFqS6VLxaxt5p6BhYNr53SD2Chpump	67	>7d	10401.2	1057784	218540	45	-1.8	2.82	0.0	vol5m,b/s	jupiter_toptrending/1h	18733	-0.03201878435348738	-0.005337888331376107	11	2	40	56.868671102093494	15.619060017815148
+1795718926	2026-11-26 18:48	solana	As3XtYSstuVdrVyb6sJZZ77Tu8JvjTBg6S6hgPv4pump	BIAO	D	27.6	232746	35104	1014	3.22	25.67	1.12	vol5m,b/s	jupiter_toptrending/1h	1232	2.240663900414938	None	60	6	105	62.835004900644925	16.76674964607903
+1795718926	2026-11-26 18:48	solana	DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump	CBUCKS	>7d	1224.3	6016033	284819	112	-1.47	2.76	1.5	vol5m	jupiter_toptrending/1h	3028	0.13227513227513227	0.033036009250082585	21	2	38	71.32893709325681	34.37927431804965
+1795718926	2026-11-26 18:48	solana	4Zp52aF4hZi9fzH19xpbWKYKQvgLyCN67KFbrQDqeTKh	ZAMA	>7d	1515.6	139580661	101175	0	0	1.46	0	vol5m,b/s	jupiter_toptrending/1h	2371	None	None	4	None	4	0	51.879667456219615
+1795718926	2026-11-26 18:48	solana	8x5VqbHA8D7NkD52uNuS5nnt3PwA8pLD34ymskeSo2Wn	ZEREBRO	>7d	18215.6	19782022	2072158	0	0	0.11	0	vol5m,b/s	jupiter_toptrending/1h	53008	0.0018865432867357142	None	5	None	8	53.81881077652429	26.978994595994482
+1795718926	2026-11-26 18:48	solana	Pre5Ygpr1i66wM2Jgx22KSXfqG1nzbu6MidxjWkDWht	RAMP	B	5.5	96993	87225	0	0	0.66	0	vol5m,b/s	jupiter_toptrending/1h	16	6.666666666666667	None	2	None	2	0	15.185346408467604
+1795718926	2026-11-26 18:48	solana	Xs3oZwbHvqis4NYcf4YKWmEia2eC84wSiVrcYcTqpH8	SPCXx	>7d	1560.7	77432085	130465	51	0.11	0.26	99	vol5m	jupiter_toptrending/1h	66901	0.010464316680120787	0.0014947683109118087	20	1	100	75	68.11668773933613
+1795718926	2026-11-26 18:48	solana	2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv	PENGU	>7d	17021.7	280301223	2357007	0	0	0.79	0	vol5m,b/s	jupiter_toptrending/1h	562176	0.0014230621451238777	None	21	1	137	77.27839351016691	36.987031143524064
+1795718926	2026-11-26 18:48	solana	6W3H5nEzuLUpTbcMrhRfMiDPCZ4QuBmZPBkeAMzypump	wizardcat	D	46.9	50778	15712	95	-1.13	42.91	1.0	liq,vol5m,b/s	jupiter_toptrending/1h	477	-6.653620352250488	-0.41753653444676403	48	7	150	62.95749138476724	24.538955069097522
+1795718926	2026-11-26 18:48	solana	FZxHLUGiGchY5uvvoeqh1EKiXTrGdN67WUBhUc1fLoat	PUSSY	>7d	430.3	72901	46584	2	-0.02	13.36	0.0	vol5m,b/s,pool	jupiter_toptrending/1h	6414	0.04679457182966776	None	11	None	26	0	22.26646185125901
+1795718926	2026-11-26 18:48	solana	CUg7AzWL5p8imZVqqdjEPgRhUsXAkBMW5JxkSJ9fpump	Huss	>7d	241.3	605005	68957	216	-0.1	0.17	0.36	vol5m,b/s	jupiter_toptrending/1h	4203	0.35816618911174786	-0.14255167498218105	98	10	208	71.30643738106855	17.347171147742806
+1795718926	2026-11-26 18:48	solana	HWqqNLpcHvxJpNy43FJwnS1xDNsvobYtpLK8ostWhQwM	PLAZA	C	20.0	50952	14450	133	1.24	41.35	0.75	liq,vol5m,b/s	jupiter_toptrending/1h	346	-3.35195530726257	-0.5747126436781609	27	3	86	62.25469026698113	39.75049134659052
+1795718926	2026-11-26 18:48	solana	BANKJmvhT8tiJRsBSS1n2HryMBPvT5Ze4HU95DUAmeta	AVICI	>7d	9697.8	3063659	1153267	0	0	0.48	0	vol5m,b/s	jupiter_toptrending/1h	11939	0.016754628466113766	None	5	None	11	48.52777347249035	25.421778570006886
+1795718926	2026-11-26 18:48	solana	3dQTr7ror2QPKQ3GbBCokJUmjErGg8kTJzdnYjNfvi3Z	BORG	>7d	22428.1	2223479	358027	9	0	0.48	99	vol5m	jupiter_toptrending/1h	3511	0.028490028490028487	None	2	None	3	0	64.80291252402807
+1795718926	2026-11-26 18:48	solana	2FYs4vApfj4ErsggpFDfzMv1WvxnyiLtzNEj84mS6TLh	hCAT	E	87.9	55296	16395	929	23.59	40.42	1.0	liq,vol5m,b/s,pool	jupiter_toptrending/1h	359	-0.2777777777777778	-0.2777777777777778	11	2	31	54.79115928704667	27.666268420327583
+1795718926	2026-11-26 18:48	solana	XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB	TSLAx	>7d	6919.0	381986	2302178	0	0	0.07	0	vol5m,b/s	jupiter_toptrending/1h	66385	-0.03463438139983135	None	38	2	110	75	62.648537376844715
+1795718926	2026-11-26 18:48	solana	Ez7eEs53hQiXgCGmcbhdX5i1jgg2gC3F6MoeosuVpump	LUKE	>7d	937.7	38432	19408	122	1.21	26.9	99	liq,vol5m,pool	jupiter_toptrending/1h	1626	0.30845157310302285	0.06153846153846154	12	None	22	47.75057874769879	27.211746020285823
+1795718926	2026-11-26 18:48	solana	CB9dDufT3ZuQXqqSfa1c5kY935TEreyBw9XJXxHKpump	USDUC	>7d	13364.3	1461569	277145	0	0	3.74	0	vol5m,b/s	jupiter_toptrending/1h	14890	0.03359086328518643	0.0067163677883000875	8	None	9	49.32000578660219	42.014372797313484
+1795718926	2026-11-26 18:48	solana	DvjbEsdca43oQcw2h3HW1CT7N3x5vRcr3QrvTUHnXvgV	DOOD	>7d	13589.8	10803203	490147	0	0	0.7	0	vol5m,b/s	jupiter_toptrending/1h	108914	None	None	6	None	9	44.754019805681445	59.94780181028617
+1795718926	2026-11-26 18:48	solana	KMNo3nJsBXfcpJTVhZcXLW7RmTwTt4GVFE7suUBo9sS	KMNO	>7d	18656.5	142305645	1419393	946	0.11	0.18	99	vol5m	jupiter_toptrending/1h	56195	-0.003558908838550101	None	15	3	129	71.49387815504824	52.60520810054759
+1795718926	2026-11-26 18:48	solana	FQgtfugBdpFN7PZ6NdPrZpVLDBrPGxXesi4gVu3vErhY	BMT	>7d	8116.9	13970392	110339	0	0	0.78	0	vol5m,b/s	jupiter_toptrending/1h	5361	None	None	5	None	5	0	70.07419805494878
+1795718926	2026-11-26 18:48	solana	85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ	W	>7d	14786.9	57706267	101975	0	0	0.42	0	vol5m,b/s	jupiter_toptrending/1h	100656	-0.0009934728831576542	-0.003973773097556129	5	None	19	55.177966033683504	28.725125281290715
+1795718926	2026-11-26 18:48	solana	Cocrz7BR2xE2sgKn3VbmaTXH6HTVgCiVFWTVWmyTpump	Mogmas	E	67.6	60263	18645	0	0	-3.49	0	liq,vol5m,b/s	jupiter_toptrending/1h	641	-1.2326656394453006	-0.3110419906687403	22	1	91	49.214316054361355	28.25430153531101
+1795718926	2026-11-26 18:48	solana	LinkhB3afbBKb2EQQu7s7umdZceV3wcvAUJhQAfQ23L	LINK	>7d	13109.4	369583	514	0	0	0.21	0	liq,vol5m,b/s	jupiter_toptrending/1h	6747	0.014823599169878446	None	4	None	10	0	30.1528659544278
+1795718926	2026-11-26 18:48	solana	9cmXfuC26anZtH9AUWVzpUxU1UJ7PPogYxftYTepump	WISHMAS	>7d	309.0	168436	37150	31	-0.08	8.06	1.67	vol5m	jupiter_toptrending/1h	1508	0.332667997338656	-0.06626905235255136	17	None	34	41.299710481646095	24.911827801098855
+1795718926	2026-11-26 18:48	solana	FRySi8LPkuByB7VPSCCggxpewFUeeJiwEGRKKuhwpKcX	NATIX	>7d	20357.2	8327424	207997	0	0	2.61	0	vol5m,b/s	jupiter_toptrending/1h	14368	0.020884093282283328	None	3	2	39	67.79830712915088	58.358347810022636
+1795718926	2026-11-26 18:48	solana	XsbEhLAtcf6HdfpFZ5xEMdqW8nfAvcsP5bdudRLJzJp	AAPLx	>7d	12412.2	357315	304712	0	0	0	0	vol5m,b/s	jupiter_toptrending/1h	54079	None	-0.001849112426035503	28	2	90	64.32599153849148	93.08353956580939
+1795718926	2026-11-26 18:48	solana	EsSzJa8xsyehSvVsNUy6t1KxMXgZYYaJKBAqyJxT3bid	DSP	>7d	241.7	453383	66288	355	1.94	5.83	99	vol5m	jupiter_toptrending/1h	601	0.16666666666666669	None	5	2	8	49.57234472371793	57.982541969396074
+1795718926	2026-11-26 18:48	solana	GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump	WASTED	>7d	648.6	903459	95181	581	-2.49	16.2	0.6	vol5m,b/s	jupiter_toptrending/1h	9126	-0.04381161007667032	-0.021910604732690624	42	None	105	60.39305181438368	26.095837959224006
+1795718926	2026-11-26 18:48	solana	C1MHyoTJpRTeS9AQCyspNVu2EWAYCZwmJ1jNkEArFP1f	APE	E	70.5	87319	43604	0	0	0.98	0.0	vol5m,b/s	jupiter_toptrending/1h	9671	-0.01033912324234905	-0.01033912324234905	5	None	6	40.600998570644386	22.701895783612525
+1795718926	2026-11-26 18:48	solana	42PZx7bPF1EMnP9L7vcjihTx7Nryxh81GG9Xs6fdpump	SHITCOIN	>7d	17083.5	69164	40130	0	0	8.83	0	vol5m,b/s	jupiter_toptrending/1h	6612	None	None	1	None	8	0	26.227017175003738
+1795718926	2026-11-26 18:48	solana	6NwarBvDkXhByqVp2Qkq5i9XbtA2B3Bwe8SWGu9vpump	Cupsey	>7d	7439.8	1825286	187759	116	-0.18	1.88	0.0	vol5m,b/s	jupiter_toptrending/1h	14227	0.0140597539543058	-0.007028394714647174	7	None	16	58.80337213784369	31.27378937199573
+1795718926	2026-11-26 18:48	solana	CqpUBhhSxHsXbq6AGPKnbxDpWgECUXAVy3BCrwhGpump	ber	>7d	794.9	341756	54343	0	-0.24	2.13	0.0	vol5m,b/s	jupiter_toptrending/1h	2319	-0.04310344827586207	-0.25806451612903225	25	2	49	58.956245949147664	25.50670117381947
+1795718926	2026-11-26 18:48	solana	Xsv9hRk1z5ystj9MhnA7Lq4vjSsLwzL2nxrwmwtD3re	GLDx	>7d	1531.6	9788158	119235	3	0.01	0.15	9.0	vol5m	jupiter_toptrending/6h	43870	-0.011396011396011395	0.0022795140076135767	64	1	142	76.7882258830484	91.29285626607353
+1795718926	2026-11-26 18:48	solana	ZBCNpuD7YMXzTHB2fhGkGi78MNsHGLRXUhRewNRm9RU	ZBCN	>7d	13204.9	163217979	198571	0	0	0.3	0	vol5m,b/s	jupiter_toptrending/6h	112374	0.007119591335457345	0.0008898934797504738	20	3	30	68.12254163974984	43.83625352300596
+1795718926	2026-11-26 18:48	solana	DoGEV7LASBkQbibMc5k5vKnTZoMg423GpJ5QtJEGfm7R	DOGE	>7d	1923.6	175	128734	0	0	0.37	0	vol5m,b/s	jupiter_toptrending/6h	46049	-0.013027901422212572	None	31	6	79	75	26.844722333665942
+1795718926	2026-11-26 18:48	solana	DBRiDgJAMsM95moTzJs7M9LnkGErpbv9v6CUR1DXnUu5	DBR	>7d	18507.3	94629236	5165848	0	0.06	-0.5	0.0	vol5m,b/s	jupiter_toptrending/6h	81734	-0.0012234660794029485	None	4	1	6	68.51307114404338	82.14661726296859
+1795718926	2026-11-26 18:48	solana	Pren1FvFX6J3E4kXhJuCiAD5aDmGEb7qJRncwA8Lkhw	ANTHROPIC	>7d	4009.3	4629027	118189	138	1.12	0.71	2.0	vol5m	jupiter_toptrending/6h	116809	-0.022253605512046904	-0.000856091088091773	28	2	46	71.78058412995458	46.64089881819696
+1795718926	2026-11-26 18:48	solana	J6pQQ3FAcJQeWPPGppWRb4nM8jU3wLyYbRrLh7feMfvd	2Z	>7d	5208.7	93229364	523911	87	0.03	-0.85	6.0	vol5m	jupiter_toptrending/6h	9720	0.010289124395513941	-0.010287007509515483	6	None	52	68.22128722860714	43.81843017925147
+1795718926	2026-11-26 18:48	solana	7ZCm8WBN9aLa3o47SoYctU6iLdj7wkGG5SV2hE5CgtD5	ELON	E	79.6	118254	45703	329	1.25	3.61	0.0	vol5m,b/s,pool	jupiter_toptrending/6h	10729	0.009321401938851602	0.009321401938851602	4	1	63	64.078217293613	25.451826575375225
+1795718926	2026-11-26 18:48	solana	2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump	Pnut 	>7d	18147.6	27199549	2044445	606	-0.11	0.4	0.0	vol5m,b/s	jupiter_toptrending/6h	88658	-0.0011279170755366067	None	1	None	10	48.8086391514244	41.94332797757249
+1795718926	2026-11-26 18:48	solana	6ZbWPYxFf8XyQ6dncrPAef1yz4W9nRF6rX3CYuE7pump	攀豹豹	>7d	219.1	120247	26695	335	0.12	-21.2	0.73	liq,vol5m,b/s	jupiter_toptrending/6h	523	4.809619238476954	-0.7590132827324478	89	7	191	58.009704424111014	29.674503557315212
+1795718926	2026-11-26 18:48	solana	3wtGGWZ8wLWW6BqtC5rxmkHdqvM62atUcGTH4cw3pump	ALPHA	>7d	9123.3	3573702	152393	4	0.16	0.24	1.0	vol5m,b/s	jupiter_toptrending/6h	2674	-0.037383177570093455	-0.037383177570093455	2	None	3	0	45.83101748963935
+1795718926	2026-11-26 18:48	solana	HgBRWfYxEfvPhtqkaeymCQtHCrKE46qQ43pKe8HCpump	Bert	>7d	18882.3	8078633	676889	0	0	-0.37	0	vol5m,b/s	jupiter_toptrending/6h	25878	0.0038644355991807396	None	9	None	11	0	23.666287265090833
+1795718926	2026-11-26 18:48	solana	3RXnsrd9M5w9AGsSFBeH88yhssmqEswM22FZjnpxpump	WYNX	>7d	2072.3	133828	26650	28	-2.6	-7.16	0.0	liq,vol5m,b/s	jupiter_toptrending/6h	1880	0.05321979776476849	None	5	None	10	0	21.033990700877688
+1795718926	2026-11-26 18:48	solana	BZFYNPeQAEW3HWQ4DNsTVahC1n4ZjTgn6jB2nnBbB96W	SAPLING	>7d	1485.1	682488	138637	193	-4.25	-0.67	1.0	vol5m,b/s,pool	jupiter_toptrending/6h	4621	-0.021635655560363478	0.021645021645021644	11	None	24	55.44503834885729	20.802716317775293
+1795718926	2026-11-26 18:48	solana	9VY2rDbtsBmTsBxoRF8hWSEUKGqnoQoe9V6W3JnjNgfm	JTVO	>7d	13032.8	159278	54100	0	0	0.45	0	vol5m,b/s	jupiter_toptrending/6h	3774	None	None	1	None	1	0	26.62735725761681
+1795718926	2026-11-26 18:48	solana	NBiSF3UaVUFtRzHwAfxyHsBCAZWGEKnMpewAE4oh7BG	NBIS	>7d	1700.6	165405	67700	0	0	0	0	vol5m,b/s	jupiter_toptrending/6h	1431	None	None	1	None	1	0	48.102277364949316
+1795718926	2026-11-26 18:48	solana	ei5DwkdJy6ewCW4tgxmiRfoJjU3CyXJdEtL23uHpump	NORA	E	144.7	30510	11731	3	0.28	-13.93	99	liq,vol5m	jupiter_toptrending/6h	179	-2.717391304347826	None	24	1	81	37.976703929555406	28.70456009163705
+1795718926	2026-11-26 18:48	solana	xorcaYqbXUNz3474ubUMJAdu2xgPsew3rUCe5ughT3N	xORCA	>7d	10150.4	92444	339573	0	0	0.49	0	vol5m,b/s,pool	jupiter_toptrending/6h	2251	None	None	4	1	7	52.05494942295245	67.02884553927376
+1795718926	2026-11-26 18:48	solana	6HHzBVkxtoz86Bjy2duaUw77hVfJzQkuoLizWeEMBLEM	EMBLEM	>7d	5424.4	1699888	143439	0	0	0	0	vol5m,b/s	jupiter_toptrending/6h	2028	None	None	None	None	None	0	12.116175731548863
+1795718926	2026-11-26 18:48	solana	XkeTXo1125vz5H9svJpGiw4JvLbN8VmMu9cmMvspump	DREGG	>7d	3651.4	743533	91538	22	-0.12	0.49	0.0	vol5m,b/s	jupiter_toptrending/6h	1906	None	None	2	None	5	0	28.4641434405008
+1795718926	2026-11-26 18:48	solana	CTPoyCwkjMvoJwU4xvZZqoD8tiYk6yDchySiN5gGpump	fone	>7d	2202.7	654575	165990	8	1.92	-0.32	99	vol5m	jupiter_toptrending/6h	24678	-0.01620614212786646	None	3	2	13	59.65303722374041	17.58613775742178
+1795718926	2026-11-26 18:48	solana	CSRRgTwf9o5KLgguS2M16aEAhV5PUUzfshrAAQ8opump	RETARDIO	>7d	2062.5	969977	84385	67	-0.03	-0.83	0.25	vol5m,b/s	jupiter_toptrending/6h	2063	-0.5303760848601736	-0.14520813165537272	8	6	25	49.59531479134457	43.18582947506786
+1795718926	2026-11-26 18:48	solana	GKg5RfhuCVprXSyESwpNznuzrWD5mCmjeg1eb1LejyZP	PRV	E	79.7	45885	16572	29	-0.35	-9.94	2.0	liq,vol5m	jupiter_toptrending/6h	582	0.5181347150259068	-0.17152658662092624	12	1	23	52.46780596274026	25.443570016937468
+1795718926	2026-11-26 18:48	solana	7pZ5HMPTFQsLP6D8Zg6VfgjbKRycitG3H4Dq7cmBpump	DPRF	>7d	222.6	51164	15361	0	0	9.93	0	liq,vol5m,b/s	jupiter_toptrending/6h	249	0.4032258064516129	-0.4	20	None	55	0	28.55048169563677
+1795718926	2026-11-26 18:48	solana	LAYER4xPpTCb3QL8S9u41EAhAX7mhBn8Q6xMTwY2Yzc	LAYER	>7d	277.3	10084847	12986	0	0	0.49	0	liq,vol5m,b/s	jupiter_toptrending/6h	59177	-0.011827520951608543	None	3	None	6	63.7913361112836	75.52209621515055
+1795718926	2026-11-26 18:48	solana	EJAxERvKU4kEVXn3NarjvRtgaMaJyP9ZuMeKA7JJpump	CHOO	>7d	863.9	683799	81568	268	1.26	-2.04	3.0	vol5m,pool	jupiter_toptrending/6h	5745	0.03482500435312555	-0.017403411068569442	12	None	26	49.80342948127401	24.901614335498277
+1795718926	2026-11-26 18:48	solana	6yjNqPzTSanBWSa6dxVEgTjePXBrZ2FoHLDQwYwEsyM6	Chud	>7d	22451.7	604018	176544	0	0	0.74	0	vol5m,b/s	jupiter_toptrending/6h	6633	None	None	2	None	8	0	24.944681733090782
+1795718926	2026-11-26 18:48	solana	69LjZUUzxj3Cb3Fxeo1X4QpYEQTboApkhXTysPpbpump	CODEC	>7d	13940.8	3553417	234818	0	0	-0.07	0	vol5m,b/s	jupiter_toptrending/6h	5887	None	None	None	None	1	53.60064374355276	38.88183817275958
+1795718926	2026-11-26 18:48	solana	Cqojv7y5HokxxjRGcBLNMdMgerVyQyu2SMbGoAbiWire	TRIPWIRE	C	21.6	52204	14328	28	-1.02	22.87	0.0	liq,vol5m,b/s	jupiter_toptrending/6h	163	-1.2121212121212122	-0.6097560975609756	10	None	21	50.04882977588845	45.32156073035947
+1795718926	2026-11-26 18:48	solana	FhGHZixq2fGzd3XZjf8rvM3bjKmezZK38mcaDkvgwuay	MERT	>7d	242.5	43286	15504	199	-6.98	15.82	0.0	liq,vol5m,b/s,pool	jupiter_toptrending/6h	271	15.319148936170212	-1.8115942028985508	66	4	138	41.19406911458026	28.249352803088605
+1795718926	2026-11-26 18:48	solana	BCNT4t3rv5Hva8RnUtJUJLnxzeFAabcYp8CghC1SmWin	BC	>7d	16811.3	108100626	2978573	2560	-0.41	-0.06	0.0	vol5m,b/s	jupiter_toptrending/6h	50783	-0.01378224059854302	None	None	None	12	57.824062729242414	83.25787924092046
+1795718926	2026-11-26 18:48	solana	Eg2ymQ2aQqjMcibnmTt8erC6Tvk9PVpJZCxvVPJz2agu	PUMPCADE	>7d	10362.6	14047239	420296	0	0	-0.19	0	vol5m,b/s	jupiter_toptrending/6h	5171	-0.019334880123743233	-0.019334880123743233	None	None	15	0	26.268180567605263
+1795718926	2026-11-26 18:48	solana	9msLfYfXBrSbrApCZAPuPMCNmPqNtEL1VPKh1AEYpump	enu	E	158.9	206192	35263	1335	-6.23	-10.09	2.75	vol5m	jupiter_toptrending/6h	495	1.0204081632653061	None	30	1	66	57.120003008203454	26.70034644469656
+1795718926	2026-11-26 18:48	solana	XSTuo1fV7HHMhs4BYiwtrWSLsMCJNrooH2AssWTYZqP	XST	>7d	3020.7	1069350	80841	0	0	0.65	0.0	vol5m,b/s	jupiter_toptrending/6h	67584	0.001479662045188879	None	8	None	18	0	8.360660770989998
+1795718926	2026-11-26 18:48	solana	HgTGdc29D5bDMrDvsCLnorxz899VyDj7ZN7FPa6vpump	VEIL	>7d	1079.7	166416	36366	331	0.49	0.71	1.0	vol5m,b/s	jupiter_toptrending/6h	8317	0.024052916416115455	0.012025012025012025	10	None	18	0	20.2203250649965
+1795718926	2026-11-26 18:48	solana	WLFinEv6ypjkczcS83FZqFpgFZYwQXutRbxGe7oC16g	WLFI	>7d	10830.8	4234936212	9810	0	0	-0.02	0	liq,vol5m,b/s	jupiter_toptrending/6h	30631	0.0032647730982696705	None	3	None	19	0	8.720369857250777
+1795718926	2026-11-26 18:48	solana	FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump	three	>7d	5075.6	402124	115967	0	-0.04	2.66	99	vol5m	jupiter_toptrending/6h	15103	-0.019859658413875284	None	6	None	18	61.49538797671125	13.992960615827274
+1795718926	2026-11-26 18:48	solana	CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump	GOAT	>7d	18645.4	11113336	1069854	150	0.44	0.95	99	vol5m	jupiter_toptrending/6h	89012	-0.00112343140889533	-0.00112343140889533	10	None	27	54.93138902412581	44.39597709201386
+1795718926	2026-11-26 18:48	solana	EpXtn6xGoZ4Y45vRjiDUHSCGbBoJD5FaEqZbF98YswH1	MADE	>7d	2369.2	178570	49373	0	0	0.28	0	vol5m,b/s	jupiter_toptrending/6h	3655	-0.02735229759299781	None	None	None	1	0	31.760376031841904
+1795718926	2026-11-26 18:48	solana	HtTYHz1Kf3rrQo6AqDLmss7gq5WrkWAaXn3tupUZbonk	KORI	>7d	13493.5	1761586	297639	0	0	0	0	vol5m,b/s	jupiter_toptrending/6h	10688	None	None	1	None	5	0	19.65004966388059
+1795718926	2026-11-26 18:48	solana	DKNGQFNGQmoBdXSRGKJ8tTu7uPDasw5JDcfMmWniNfow	DKNG	>7d	1821.7	448355	8156	0	0	0	0	liq,vol5m,b/s	jupiter_toptrending/6h	14832	0.006742633672712562	None	2	None	8	37.513154566096276	21.526146479318243
+1795718926	2026-11-26 18:48	solana	EsP4kJfKUDLfX274WoBSiiEy74Sh4tZKUCDjfULHpump	FRIC	>7d	17555.9	288208	119777	0	0	0	0	vol5m,b/s	jupiter_toptrending/6h	12632	None	None	None	None	None	0	16.051388315044886
+1795718926	2026-11-26 18:48	solana	DtR4D9FtVoTX2569gaL837ZgrB6wNjj6tkmnX9Rdk9B2	aura	>7d	21838.7	4181379	830257	0	0	0.44	0	vol5m,b/s	jupiter_toptrending/6h	40033	0.002498001598721023	None	6	1	11	65.20156624693153	7.836979302237331
+1795718926	2026-11-26 18:48	solana	ngwxpGYdkauMcxLFrNTKp8qBgK7JV53zVvd7F2spump	duh	>7d	384.4	383926	52465	494	-5.51	-3.57	0.25	vol5m,b/s	jupiter_toptrending/6h	1042	0.8712487899322363	-0.3824091778202677	31	None	62	60.95558680002674	24.469071722007758
+1795718926	2026-11-26 18:48	solana	NV2RYH954cTJ3ckFUpvfqaQXU4ARqqDH3562nFSpump	Punch	>7d	7065.7	211824	101715	0	-0.06	3.13	99	vol5m	jupiter_toptrending/6h	23692	0.008442380751371888	0.004221012198725255	7	1	17	52.909274949849184	20.251050657756473
+1795718926	2026-11-26 18:48	solana	uHMWNFjUNxbPy1q43WrdbzygmJwdeh6AiQm1NKdxPAY	PAYDAY	>7d	407.7	84022	24139	90	-0.89	3.08	0.0	liq,vol5m,b/s	jupiter_toptrending/6h	1230	None	None	6	None	11	0	29.74825721708732
+1795718926	2026-11-26 18:48	solana	EkFRff9a2jKztJHML1LG9FRmEkPJDR6XAYp3uCPdpump	SLOPCORE	>7d	1434.7	163668	40885	0	0	-0.12	0	vol5m,b/s	jupiter_toptrending/6h	1673	-0.05973715651135006	None	None	None	2	0	26.67716484954457
+1795718926	2026-11-26 18:48	solana	BoGkuR3drddPvf9kDxLMTXq1UQnashReTC9kM9wCqmVT	ADYTUM	E	49.0	52609	16968	184	-2.31	-9.78	1.5	liq,vol5m	jupiter_toptrending/6h	314	-1.5673981191222568	0.3194888178913738	16	None	49	48.32544919547608	30.719317032786027
+1795718926	2026-11-26 18:48	solana	sUSDai6Y3GxysDEtA9BVcEFTaog6UZpYUVxJiMhAKYE	sUSDai	>7d	1374.9	20164245	28202	0	0	0	0	liq,vol5m,b/s	jupiter_toptrending/24h	390	None	None	1	None	2	0	99.70971480763181
+1795718926	2026-11-26 18:48	solana	NVDAVuiB7hwd3m5Wa1JuHNovPaPG6BH1QNztbKFxNjv	NVDA	>7d	722.9	591896	131055	0	0	0.24	0	vol5m,b/s,pool	jupiter_toptrending/24h	21238	-0.06587615283267458	0.02825923134890731	16	1	101	66.96912169634771	15.471636932272814
+1795718926	2026-11-26 18:48	solana	Xs7ZdzSHLU9ftNJsii5fCeJhoRWSC32SQGzGQtePxNu	COINx	>7d	7401.0	105696	102111	0	0	-0.08	0	vol5m,b/s	jupiter_toptrending/24h	14597	-0.020547945205479454	-0.006850253459377997	7	1	36	46.079571741321914	67.31399210217134
+1795718926	2026-11-26 18:48	solana	GoLDppdjB1vDTPSGxyMJFqdnj134yH6Prg9eqsGDiw6A	GOLD	>7d	1425.6	492875	806755	0	0	0	0	vol5m,b/s,pool	jupiter_toptrending/24h	12460	0.008026326350429408	None	2	None	2	0	50.24110550319523
+1795718926	2026-11-26 18:48	solana	7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr	POPCAT	>7d	25917.7	26710680	2284661	300	-0.53	-0.22	0.0	vol5m,b/s	jupiter_toptrending/24h	142259	0.004920844698141327	0.0007029481646023422	27	None	139	69.88439396955393	38.36516339643607
+1795718926	2026-11-26 18:48	solana	XsvNBAYkrDRNhA7wPHQfX3ZUXZyZLdnCQDfHZ56bzpg	HOODx	>7d	12266.4	740107	873007	0	0	0	0	vol5m,b/s	jupiter_toptrending/24h	13735	-0.029114200451270108	None	3	None	17	47.047227185844214	90.00157270989513
+1795718926	2026-11-26 18:48	solana	XsCPL9dNWBMvFtTmwcCA5v3xWPSMEBCszbQdiLLq6aN	GOOGLx	>7d	12116.6	276164	105406	285	-0.06	0.16	0.18	vol5m,b/s	jupiter_toptrending/24h	63549	0.08189363277005213	0.02833262501770789	267	4	321	74.90110034144946	67.76794499881017
+1795718926	2026-11-26 18:48	solana	Xsa62P5mvPszXL1krVUnU5ar38bBSVcWAB6fmPCo5Zu	METAx	>7d	11306.8	614409	890794	0	0	-0.02	0	vol5m,b/s	jupiter_toptrending/24h	42553	-0.0023499553508483343	None	16	None	36	65.72877263320477	88.36515430278774
+1795718926	2026-11-26 18:48	solana	XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo	AVGOx	>7d	6777.1	5575987	308389	0	0	0	0	vol5m,b/s	jupiter_toptrending/24h	12895	-0.09297280545440459	0.023270245113248527	16	1	61	53.44122026500418	92.6318321763088
+1795718926	2026-11-26 18:48	solana	J3NKxxXZcnNiMjKw9hYb2K4LUxgwB6t1FtPtQVsv3KFr	SPX	>7d	25719.1	38478218	1599742	0	0	10.51	0	vol5m,b/s	jupiter_toptrending/24h	82262	-0.004862276031410304	None	14	1	60	67.97754921452751	15.735674481284995
+1795718926	2026-11-26 18:48	solana	SKRbvo6Gf7GondiT3BbTfuRDPqLWei4j2Qy2NPGZhW3	SKR	>7d	7432.8	67297518	492721	0	0	0.97	0	vol5m,b/s	jupiter_toptrending/24h	46504	-0.0021503064186646596	-0.0021503064186646596	28	5	55	70.28458373730778	60.67669110026544
+1795718926	2026-11-26 18:48	solana	ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82	BOME	>7d	23699.3	32397666	9569072	933	-0.04	-0.23	0.0	vol5m,b/s	jupiter_toptrending/24h	93246	-0.10605817130001607	None	None	None	12	50.90369936820555	15.508678565071676
+1795718926	2026-11-26 18:48	solana	7M3gDRgozcumFsiTeXwjB8cYxpg7Q9R7rH7rkw2Fpump	CRIME	>7d	17891.1	3212388	239899	0	-0.42	-0.62	0.0	vol5m,b/s	jupiter_toptrending/24h	2718	0.07363770250368189	None	2	None	3	52.22678084535718	26.12538574018577
+1795718926	2026-11-26 18:48	solana	Bn9oW3GVKQdgNJG5w5P53dbuZfUtAehwFAniZYry68T8	QTC	>7d	339.3	10725575	503985	0	0	-0.12	0	vol5m,b/s	jupiter_toptrending/24h	374	-0.26666666666666666	None	2	None	5	50.369376767366674	7.0247887205291155
+1795718926	2026-11-26 18:48	solana	BoTx8y9ynfdxf5ZjWtCoBVkff52qKA82ysaLU8ZM6d8T	BOT	>7d	3533.3	221046	73059	0	0	0.22	0	vol5m,b/s	jupiter_toptrending/24h	8451	None	None	3	None	8	0	47.415568267548984
+1795718926	2026-11-26 18:48	solana	QQQvDYxG7g11Rr4rnaJqDddmP9ocH74YhE3mDaG37R9	QQQ	>7d	383.0	477471	146015	0	0	0	0	vol5m,b/s	jupiter_toptrending/24h	226	None	None	None	None	8	0	45.31308265186715
+1795718926	2026-11-26 18:48	solana	PrekqLJvJ3qVdXmBGDiexvwUTF4rLFDa6HWS4HJbw9S	NEURALINK	>7d	992.5	552338	325326	25	0	-0.14	0.0	vol5m,b/s	jupiter_toptrending/24h	27099	-0.2356146228325295	-0.01844746162927981	13	2	79	79.49927341686899	47.52121870665558
+1795718926	2026-11-26 18:48	solana	AymATz4TCL9sWNEEV9Kvyz45CHVhDZ6kUgjTJPzLpU9P	XAUt0	>7d	7037.7	97396365	451563	0	0	-0.12	0	vol5m,b/s,pool	jupiter_toptrending/24h	7185	-0.027828022818978712	None	2	1	26	55.873921574910796	22.461279445931766
+1795718926	2026-11-26 18:48	solana	96egraTCizRpzNx4WvMMhPJf7TKS7W5kUHeenmd1XfuN	XFEE	>7d	4849.1	1876373	494270	1475	0.14	1.2	2.0	vol5m	jupiter_toptrending/24h	6115	0.4765034505422281	0.04908376963350785	7	None	64	50.76517305040056	95.62798633379198
+1795718926	2026-11-26 18:48	solana	PRVT6TB7uss3FrUd2D9xs2zqDBsa3GbMJMwCQsgmeta	UMBRA	>7d	9891.7	3926454	1166769	0	0	0.03	0	vol5m,b/s	jupiter_toptrending/24h	6511	0.015360983102918587	None	1	None	3	0	64.85670095820475
+1795718926	2026-11-26 18:48	solana	HkRQ6Qcadi5yuoNpZdA1Q7yVF3r7LdEmAw1aKkSxpump	Marvin	>7d	255.0	167410	41506	49	2.7	-3.45	99	vol5m,pool	jupiter_toptrending/24h	1856	-0.322234156820623	None	1	None	14	56.43225293331575	28.181652935409108
+1795718926	2026-11-26 18:48	solana	jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL	JTO	>7d	26055.7	124193455	666189	0	0	-0.85	0	vol5m,b/s,pool	jupiter_toptrending/24h	90269	-0.0011077877478675086	0.0011078122922851953	10	None	38	71.21986927322313	48.09326146862463
+1795718926	2026-11-26 18:48	solana	myrcAs6bpP2g5oGHZ3qpgrfZQAFkbo9KUHdqYDXMjGv	MYRC	>7d	3232.2	51132	87688	0	0	0	0	vol5m,b/s	jupiter_toptrending/24h	323	-0.30864197530864196	None	None	None	7	0	37.69213187167
+1795718926	2026-11-26 18:48	solana	omfgRBnxHsNJh6YeGbGAmWenNkenzsXyBXm3WDhmeta	OMFG	>7d	6720.2	1765033	487019	0	0	0.99	0	vol5m,b/s	jupiter_toptrending/24h	1726	None	None	1	None	5	0	34.59035309692944
+1795718926	2026-11-26 18:48	solana	2zCo6bUowJMvr89ajxuWsPadAqJ2F9akCkxumNsSdgsL	xBTC	>7d	2545.1	36241	19382	0	0	1	0	liq,vol5m,b/s	jupiter_toptrending/24h	6210	None	None	4	None	4	60.983799326501924	33.29481940086167
+1795718926	2026-11-26 18:48	solana	4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz	GTA6	>7d	2693.2	1852394	182052	53	-0.11	-8.47	0.0	vol5m,b/s,pool	jupiter_toptrending/24h	83899	-0.07622405107011422	-0.004767409985340214	57	4	202	76.55444197987794	10.01093701269001
+1795718926	2026-11-26 18:48	solana	nosXBVoaCTtYdLvKY6Csb4AC8JCdQKKAaWYtx2ZMoo7	NOS	>7d	8814.3	30905923	526313	0	0	0.03	0	vol5m,b/s	jupiter_toptrending/24h	50045	0.0019982415474382544	None	6	1	15	74.241682099341	41.3004943880164
+1795718926	2026-11-26 18:48	solana	Cm6fNnMk7NfzStP9CZpsQA2v3jjzbcYGAxdJySmHpump	Buttcoin	>7d	7709.2	5454229	492967	0	0	-1.88	99	vol5m	jupiter_toptrending/24h	22539	-0.008872720819839404	None	14	1	56	61.95055458969149	13.644646826446674
+1795718926	2026-11-26 18:48	solana	XsjQP3iMAaQ3kQScQKthQpx9ALRbjKAjQtHg6TFomoc	TQQQx	>7d	4340.0	4135322	66124	0	0	0	0	vol5m,b/s,pool	jupiter_toptrending/24h	842	None	None	1	None	1	0	98.32684117750975
+1795718926	2026-11-26 18:48	solana	AMC1qwR9KhiyrQBRPrxnfo4JfMeMZqEBvt5tgTytNNoc	AMC	>7d	1996.8	111284	53173	99	0	0.08	0.5	vol5m,b/s	jupiter_toptrending/24h	12470	-0.056103229943095294	0.02406352771316275	18	2	1753	58.918725983947574	11.02070447603345
+1795718926	2026-11-26 18:48	solana	9223LqDuoJXyhCtvi54DUQPGS8Xf29kUEQRr7Sfhmoon	LOOK	>7d	10772.6	1252589	56127	16	-0.15	1.11	99	vol5m	jupiter_toptrending/24h	12267	0.04077638231936063	0.008152616990053808	7	1	10	53.17112455368448	23.29689643252804
+1795718926	2026-11-26 18:48	solana	DRAMjSWR7HRfJKjRkvQWYL2bcaejaVhuxEcjf4pAY4Cw	DRAM	>7d	3677.3	365019	131062	0	0	0.03	0	vol5m,b/s	jupiter_toptrending/24h	3503	None	None	1	None	6	51.73545108247907	47.52231607144109
+1795718926	2026-11-26 18:48	solana	oreoU2P8bN6jkk3jbaiVxYnG1dCXcYxwhwyK9jSybcp	ORE	>7d	20187.9	41791417	171925	0	0	0.63	0	vol5m,b/s	jupiter_toptrending/24h	34723	-0.005759539236861051	-0.0028798525515493605	8	None	60	75	29.24015131102683
+1795718926	2026-11-26 18:48	solana	5d3fjPDdkYbtYcAMR9PC2TANaEyhzuyP8JxTEwqjVgBZ	AKT	>7d	344.9	817783	462573	49	0.06	1.26	99	vol5m	jupiter_toptrending/24h	394	0.2544529262086514	0.2544529262086514	3	None	29	0	50.49509011952562
+1795718926	2026-11-26 18:48	solana	cbLTC4T5NpzSUtQ7ekgEMZGaUPVJY1ko6BUikqa4gGf	cbLTC	>7d	1488.6	194660	50650	0	0	0	0	vol5m,b/s	jupiter_toptrending/24h	3231	-0.06186204763377668	None	None	None	7	0	8.890236542229625
+1795718926	2026-11-26 18:48	solana	HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump	GATO	>7d	2238.3	1531154	136193	12	-1.63	-0.72	2.0	vol5m	jupiter_toptrending/24h	11489	-0.08696408383337681	None	19	2	46	66.04476638687463	19.04383248376491
+1795718926	2026-11-26 18:48	solana	Pre8AREmFPtoJFT8mQSXQLh56cwJmM7CFDRuoGBZiUP	POLYMARKET	>7d	993.4	378963	158620	0	0	-0.02	0	vol5m,b/s	jupiter_toptrending/24h	31904	0.1412473712294799	None	14	None	25	72.14913360808877	46.699437499997835
+1795718926	2026-11-26 18:48	solana	qntUzPUsJ51abNP7VYNxkmsQ4RnvEZAhavUxsCxpxH4	QNT	>7d	1367.1	286502	47137	0	0	-0.03	0	vol5m,b/s	jupiter_toptrending/24h	4128	-0.14513788098693758	None	2	None	12	0	29.814823347317688
+1795718926	2026-11-26 18:48	solana	ysPp2Bt2j2UQu2tZwtSJz7JxyrmQ8GJcNJE5NyDoS5a	MUSK4	>7d	985.7	3540	30469	0	0.18	0.54	0.0	vol5m,b/s	jupiter_toptrending/24h	10202	-0.03919263178522438	0.009802960494069209	2	None	36	47.23369853112651	10.623044789814085
+1795718926	2026-11-26 18:48	solana	7HgfXftRBBqsYtAEYcqjGLQrNJLL6Tww9ek4rE3Apump	RKC	>7d	4773.5	1229851	178102	41	0.66	-0.77	99	vol5m	jupiter_toptrending/24h	7155	None	None	2	1	7	50.2895184256472	19.063813968860355
+1795718926	2026-11-26 18:48	solana	AAPLEDt8RpzPgXyhvFzkMBofvFSQw9gpeMCoUdPdLnB8	AAPL	>7d	815.7	256154	898	0	0	0	0	liq,vol5m,b/s	jupiter_toptrending/24h	1498	0.06680026720106881	0.06680026720106881	None	None	5	0	12.045598706833081
+1795718926	2026-11-26 18:48	solana	HAYQtfJEQ9DbDbaHEhxfGsWbSZ3ywthdsVB3PuB72DYe	apxUSD	>7d	2877.4	305901878	1495013	0	0	-0.34	0	vol5m,b/s	jupiter_toptrending/24h	179	None	None	None	None	2	0	19.815253070490236
+1795718926	2026-11-26 18:48	solana	SPYBo66VJPFjh1pXMb9Le53kDYWTK1zzYVDeVRWtsbi	SPY	>7d	575.3	282853	193996	0	0	0	0	vol5m,b/s	jupiter_toptrending/24h	1265	None	None	None	None	6	0	69.78757411531413
+1795718926	2026-11-26 18:48	solana	J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump	WOULD	>7d	20542.3	3795844	271432	0	0	0.17	0	vol5m,b/s	jupiter_toptrending/24h	6476	None	None	None	None	1	0	12.623939389157943
+1795718926	2026-11-26 18:48	solana	MSFThX899B1DddH5jkyMpdArWXzP85VXLYDrbGGcRJM	MSFT	>7d	745.8	281425	220296	0	0	0	0	vol5m,b/s	jupiter_toptrending/24h	307	None	None	2	None	3	0	17.080384505328364
+1795718926	2026-11-26 18:48	solana	ANTBTZQ1EUuTxUs3tfeampxdqTWPHmwyJmcWj4xoAyNe	ANT	>7d	169.8	1278425	109501	510	0.04	0.24	0.67	vol5m,b/s	jupiter_toptraded/5m	17139	0.029181743901015526	0.011670654140164556	56	None	183	85.60833458211515	25.39648462393974
+1795718926	2026-11-26 18:48	solana	VVV4UdRywr7SLafPHzqXwRCw7myXkmgCtitXUvj8g8c	VVV	>7d	1227.2	519330	134418	2257	-0.08	0.55	0.62	vol5m,b/s	jupiter_toptraded/5m	5164	0.408321991055804	0.5255985984037376	90	2	140	80.87592609319928	39.26905673982188
+1795718926	2026-11-26 18:48	solana	Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh	NVDAx	>7d	12290.8	133405697	252667	975	0.06	0.3	1.06	vol5m,b/s	jupiter_toptraded/5m	230735	-0.009967151734717756	0.0008668027546991544	229	7	528	91.20276181980965	60.2920997553303
+1795718926	2026-11-26 18:48	solana	EWY4owSJYMpwN33qGDu5gGxpkQkpMJu8ZUsQJaNZG5dv	EWY	>7d	1467.5	350962	62815	4944	0.74	0.74	0.46	vol5m,b/s	jupiter_toptraded/5m	1934	0.7291666666666666	-0.05167958656330749	16	None	29	0	29.363038050251948
+1795718926	2026-11-26 18:48	solana	XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W	SPYx	>7d	6076.1	78500430	222476	2923	0	0.04	0.93	vol5m,b/s	jupiter_toptraded/5m	85216	-0.004693733865289838	0.0011735023176670774	18	2	126	83.51285251308958	66.15464752049054
+1795718926	2026-11-26 18:48	solana	C5xph2yL6gMdxmuLGxJBkGpmuDFfyi5fqkBNhvL6pump	BTC	>7d	1774.6	1896063	162698	5	0.25	-8.31	0.5	vol5m,b/s,pool	jupiter_toptraded/5m	28793	0.027792252909501478	-0.0069456502865080745	116	6	228	70.01807225424308	20.94085334488298
+1795718926	2026-11-26 18:48	solana	METvsvVRapdj9cFLzq4Tr43xK4tAjQfwX76z3n6mWQL	MET	>7d	383.8	118659262	951574	0	0	0	0	vol5m,b/s	jupiter_toptraded/5m	43911	None	0.002277385561375541	17	4	82	81.68214216668548	29.598266123915153
+1795718926	2026-11-26 18:48	solana	DEW9dSN6QpWyNthphCpMmAbZP1Q4cEKR9xQXAri98WDP	SI	>7d	1587.0	7216131	333784	122	0.14	-6.43	99	vol5m,pool	jupiter_toptraded/5m	48441	-0.049520272361497995	-0.010320769516575156	62	5	108	78.5011685423992	17.543747612586774
+1795718926	2026-11-26 18:48	solana	GxRPJsRK9TE9EgBhLxrFGcRYLGqPJe4fxtiPmdXCpump	Hope	>7d	392.7	29754	13949	2805	-15.18	-34.38	2.4	liq,vol5m	jupiter_toptraded/5m	500	9.409190371991247	2.2494887525562373	60	None	93	45.08747792572112	19.830506573828227
+1795718926	2026-11-26 18:48	solana	58QyXQ1UDgHh64EiTsCeevVM9cLPqBDNf3qZE6EdfUhZ	FRONTIER	>7d	1008.3	543	39629	0	0	-0.51	0	vol5m,b/s	jupiter_toptraded/5m	8021	-0.062297533017692495	0.0873471425006239	12	None	49	58.63106528386891	36.1947164311979
+1795718926	2026-11-26 18:48	solana	Xs3eBt7uRfJX8QUs4suhyU8p2M6DoUDrJyWBa8LLZsg	AMZNx	>7d	12307.1	9673896	397525	273	0.01	-0.15	4.0	vol5m	jupiter_toptraded/5m	20269	0.1779271487174418	0.03948472434726815	217	None	290	69.20510470138956	90.44801346466225
+1795718926	2026-11-26 18:48	solana	FeR8VBqNRSUD5NtXAj2n3j1dAHkZHfyDktKuLXD4pump	jellyjelly	>7d	15979.2	39286287	3494812	567	0.01	0.3	99	vol5m	jupiter_toptraded/5m	33713	None	None	4	None	11	0	73.49521939818472
+1795718926	2026-11-26 18:48	solana	hntyVP6YFm1Hg25TN9WGLqM12b8TQmcknKrdu1oxWux	HNT	>7d	31537.1	41033407	224876	1262	-0.01	0.26	1.7	vol5m	jupiter_toptraded/5m	537098	None	-0.0003723701359150996	15	None	97	69.02516130860191	28.303845034150893
+1795718926	2026-11-26 18:48	solana	Xsf9mBktVB9BSU5kf4nHxPq5hCBJ2j2ui3ecFGxPRGc	GMEx	>7d	2621.7	160779	413119	46	-1.3	0.03	0.5	vol5m,b/s	jupiter_toptraded/5m	28975	0.21097046413502107	0.05179558011049724	108	None	156	53.67879003335324	96.32752960748499
+1795718926	2026-11-26 18:48	solana	HcRLc9VDgjLeK154xDawfb1dmVJ98DoSqcwTHGqiDeJR	ZCAT	>7d	2107.3	16825529	491059	873	-0.17	1.27	0.0	vol5m,b/s,pool	jupiter_toptraded/5m	28691	-0.010455147417578588	-0.0034852920674752546	10	4	25	77.75902689218267	17.104551603931057
+1795718926	2026-11-26 18:48	solana	2bpT3ksMdwdZ6DuHyq3FDUr7HDwvZ5DRZoT1fUPALJaH	RIV	>7d	5956.2	6067023	267362	1295	0.18	0.66	2.0	vol5m	jupiter_toptraded/5m	4954	None	None	3	None	8	0	86.37373883428634
+1795718926	2026-11-26 18:48	solana	FjPKUGnF5zBpdEv18gT8FJCtxh3MKrFkoeYekgYr1win	1WIN	>7d	573.9	10119283	787510	1315	-0.01	-0.8	0.67	vol5m,b/s	jupiter_toptraded/5m	5522	-0.1266051727256285	-0.01810610175629187	27	None	74	62.55237233199569	83.64137741722509
+1795718926	2026-11-26 18:48	solana	4WgxC56hGyNXLd14mCgxBuR2DUyDReF8koFDynhepump	NVDA	>7d	765.4	33573	7549	502	23.38	19.31	0.05	liq,vol5m,b/s,pool	jupiter_toptraded/5m	1206	0.33277870216306155	0.5	12	None	30	0	26.368855261274526
+1795718926	2026-11-26 18:48	solana	6PuC6gyVfZAATJwoArT49ajY9dibXc3YX9WyfXZbpmrQ	NO	>7d	4594.3	64297	21449	12	0.11	-12.05	99	liq,vol5m	jupiter_toptraded/5m	488	2.736842105263158	None	20	None	40	0	33.005385495915284
+1795718926	2026-11-26 18:48	solana	METAaH6MMZZgy2CTEJq3QdNi7AFVTV3NxHFBfFgLEDd	META	>7d	866.6	858808	856597	292	0	-0.02	0.0	vol5m,b/s	jupiter_toptraded/1h	572	-0.17452006980802792	None	4	None	19	0	11.743615168817685
+1795718926	2026-11-26 18:48	solana	Ce2gx9KGXJ6C9Mp5b5x1sn9Mg87JwEbrQby4Zqo3pump	neet	>7d	13889.8	19816855	1214553	163	-0.49	-1.59	3.0	vol5m	jupiter_toptraded/1h	35488	-0.016904265509663605	0.0028179333276974667	21	1	92	71.7270117885148	17.34008338272388
+1795718926	2026-11-26 18:48	solana	AMZNw7cwU9L9c7ewZXxTws2PwQYxBGm2Rxg3FLDBJz9B	AMZN	>7d	839.1	344125	298699	0	0	-0.27	0	vol5m,b/s	jupiter_toptraded/1h	1245	None	None	1	None	26	0	7.928953191647102
+1795718926	2026-11-26 18:48	solana	CWZ6BsdnjkDVTGkmL6bGbJXXig6ceef12KvyGQW14cMt	ANTFUN	>7d	3348.0	18498353	11417591	529	0	0.1	1.0	vol5m,b/s	jupiter_toptraded/1h	227591	-0.0004393827551056276	None	4	None	67	0	59.694560730272784
+1795718926	2026-11-26 18:48	solana	GRNDYDpqwpCm6jVxpbh4xT5AM4r3p391qYsKTHqgaET2	GRND	>7d	1852.8	88326	46376	0	0	-0.2	0	vol5m,b/s	jupiter_toptraded/24h	9738	-0.08208495793145906	0.010270103728047654	7	None	21	65.33649541228174	18.060650103528175
+1795718926	2026-11-26 18:48	solana	8XefdyFEBBLwvEWpGZqLmBDR9TmDeon1aLy16x2ipump	MDAQ	B	3.9	3456	3219	12	1.46	-23.28	99	liq,vol5m	jupiter_toptraded/24h	955	-3.9235412474849096	0.2098635886673662	12	None	73	64.6700300093199	17.613141069743005
+1795718926	2026-11-26 18:48	solana	DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF	DJT	>7d	1576.2	70961	49719	0	0	0.2	0	vol5m,b/s	jupiter_toptraded/24h	81395	-0.0159689465408805	None	49	None	82	65.80516934302261	37.06015600432265
+1795718926	2026-11-26 18:48	solana	MUxEsUKSMACyw5fZf68wxf5FLnZVhtU9CwH8uNNGay1	MU	>7d	3772.6	737431	636728	0	0	0	0	vol5m,b/s	jupiter_toptraded/24h	6913	-0.1444460494005489	None	2	None	22	64.95065078151433	17.18977311709886
+1795718926	2026-11-26 18:48	solana	XsoBhf2ufR8fTyNSjqfU71DYGaE6Z3SUGAidpzriAA4	PLTRx	>7d	6090.3	2612685	103898	0	0	0.02	0.0	vol5m,b/s	jupiter_toptraded/24h	11270	0.10659086871558003	None	18	None	51	55.246658556184585	97.33938645312242
+1795718926	2026-11-26 18:48	solana	ANvsL4A6tJKAXJsPg7XVSHQA7KYmFcpW42jPuhVtpump	Slingoor	E	53.2	148455	30911	720	-1.38	-6.45	3.5	vol5m	jupiter_toptraded/24h	1418	-1.2534818941504178	0.14124293785310735	42	4	131	66.71321018091585	17.606148497217138
+1795718926	2026-11-26 18:48	solana	FVRnDCWuYDABm6uLpDvCP1kxtC2jxUWKCc6vdQAWpump	SOLACE	C	18.5	62406	17261	5	-0.14	8.66	0.0	liq,vol5m,b/s	jupiter_toptraded/24h	134	-2.18978102189781	None	6	None	17	47.30609008847173	77.15684028595867
+1795718926	2026-11-26 18:48	solana	MEFNBXixkEbait3xn9bkm8WsJzXtVsaJEn4c8Sam21u	ME	>7d	17187.6	26683622	356102	335	0.04	-0.04	4.25	vol5m	jupiter_toptraded/24h	151284	-0.0013219993918802797	0.0013220343464523208	12	1	42	73.98964121165444	67.19213565743317
+1795718926	2026-11-26 18:48	solana	7JA5eZdCzztSfQbJvS8aVVxMFfd81Rs9VvwnocV1mKHu	GEOD	>7d	18546.6	135071849	133303	0	0	0.26	0	vol5m,b/s	jupiter_toptraded/24h	47528	None	-0.0021039786235771845	16	1	56	71.96683331322998	48.53540636505046
+1795718926	2026-11-26 18:48	solana	euro5sNHrZC2wu2RoLvy6xxoVMc3Qnd1vjxoWf4MftA	EUROP	>7d	2085.8	16101069	1149549	0	0	-0.02	0	vol5m,b/s	jupiter_toptraded/24h	123	None	None	None	None	4	0	57.65956049089955
+1795718926	2026-11-26 18:48	solana	METAewgxyPbgwsseH8T16a39CQ5VyVxZi9zXiDPY18m	MPLX	>7d	9634.0	23511455	2026901	0	0	0.3	0	vol5m,b/s	jupiter_toptraded/24h	27447	0.0072873018764802325	None	8	2	48	62.96660099025637	68.1676663352311
+1795718926	2026-11-26 18:48	solana	816hX5ah459t2z37LPQC8X11uZECsgHwvs8iBRWcpump	NCSP	E	70.2	105712	23870	104	0.02	0.62	1.0	liq,vol5m,b/s	jupiter_toptraded/24h	106	None	0.9523809523809524	3	None	28	0	20.029231338438123
+1795718926	2026-11-26 18:48	solana	XsqE9cRRpzxcGKDXj1BJ7Xmg4GRhZoyY1KpmGSxAWT2	MCDx	>7d	10709.3	2442585	339081	0	0	0	0	vol5m,b/s	jupiter_toptraded/24h	30427	-0.019715440475799297	None	6	None	35	62.25318108008893	93.54448523323427
+1795718926	2026-11-26 18:48	solana	EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v	USDC	?		8792124452	2302643	14892	-0.15	-0.05	0.94	vol5m,b/s	jupiter_toporganicscore/5m	5248202	None	None	2954	262	16498	100	24.19289880228761
+1795718926	2026-11-26 18:48	solana	CASHx9KJUStyftLFWGvEVf59SGeG9sh5FfcnZMVPCASH	CASH	>7d	10573.8	104477	6941138	208	0	-0.02	0.67	vol5m,b/s	jupiter_toporganicscore/5m	794878	0.016986623348680015	0.0027677969342874685	905	52	2164	93.26911218224465	78.1319168667842
+1795718926	2026-11-26 18:48	solana	Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB	USDT	?		183814446070	150129	86	-0.15	-0.04	0.8	vol5m,b/s	jupiter_toporganicscore/5m	2305507	None	None	334	40	3181	100	34.73179410266625
+1795718926	2026-11-26 18:48	solana	3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh	WBTC	>7d	26618.5	234415488	1340657	4699	0.04	0.49	0.68	vol5m,b/s	jupiter_toporganicscore/5m	200550	0.030924544112365827	0.002493206013612905	812	23	1179	95.72836207014332	8.922372824605452
+1795718926	2026-11-26 18:48	solana	JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD	JupUSD	>7d	7802.7	64649003	3856537	0	0	0.17	0	vol5m,b/s	jupiter_toporganicscore/5m	14149	0.021207408454686837	0.007068136839129205	52	18	141	90.58980063426125	43.20110512651213
+1795718926	2026-11-26 18:48	solana	USD1ttGY1N17NEEHLmELoaybftRBUSErhqYiQzvEmuB	USD1	>7d	10872.4	157956185	9912126	23	0	0	0.8	vol5m,b/s	jupiter_toporganicscore/5m	37566	0.013311679667740476	0.002662052442433116	33	3	970	81.6020851759661	3.7944697178121487
+1795718926	2026-11-26 18:48	solana	GKFSuSc9nYioKCjgUPFy2J5K6K2Ur7ZnpXH9XEiQH63R	CC131	>7d	354.5	52100	18562	91	-1.37	0.64	0.67	liq,vol5m,b/s	jupiter_toporganicscore/5m	635	-0.15723270440251574	-0.15723270440251574	17	2	26	48.945614584700685	25.831411841244652
+1795718926	2026-11-26 18:48	solana	jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v	JupSOL	>7d	11305.3	330988482	170671	0	0	0.45	0	vol5m,b/s,pool	jupiter_toporganicscore/5m	33697	-0.008902077151335312	None	8	4	76	91.21673456240165	62.967047793113466
+1795718926	2026-11-26 18:48	solana	STREAMribRwybYpMmSYoCsQUdr6MZNXEqHgm7p1gu9M	STREAM	>7d	10345.2	8102167	40145	0	0	0.48	0	vol5m,b/s	jupiter_toporganicscore/5m	22839	None	-0.0043782837127845885	2	1	6	50.73092551256477	58.78489408460151
+1795718926	2026-11-26 18:48	solana	Q1vecEMQEgDyrw1txmBgFwUrkeQurqkEe1bGMzFpump	ca	>7d	309.3	61648	18634	7	2.15	3.26	99	liq,vol5m	jupiter_toporganicscore/5m	447	None	None	11	2	37	42.3343317756093	31.166622322399185
+1795718926	2026-11-26 18:48	solana	DKYcjobF7HPtL9RyQBRdeRQ2iWvizpfbgWwPWNXdpump	DacityCoin	>7d	1013.3	116534	56555	0	-5.25	-6.56	0.0	vol5m,b/s,pool	jupiter_toporganicscore/5m	13728	-0.05824111822947001	-0.007283851700779372	9	1	19	47.182159903425	18.290369931785282
+1795718926	2026-11-26 18:48	solana	8J69rbLTzWWgUJziFY8jeu5tDwEPBwUz4pKBMr5rpump	WOJAK	>7d	9310.1	953035	200089	2	-1.89	-1.44	0.0	vol5m,b/s	jupiter_toporganicscore/5m	18068	None	-0.005534340583319497	4	1	6	44.69733494057036	23.70267011238273
+1795718926	2026-11-26 18:48	solana	84tAcSK5L9kuQEVM8C8vMHXnfdA83nGBT2nYfSbPUcAc	Fly	E	87.6	5737	5094	105	3.49	-8.76	2.0	liq,vol5m	jupiter_toporganicscore/5m	1052	-0.6610009442870632	-0.18975332068311196	3	1	15	45.334254320567354	17.677243720959968
+1795718926	2026-11-26 18:48	solana	6EHTywfoXpDNhL4JGkeYUhiL6mumpmD7j8ByjQaXpump	CSI	>7d	309.4	0	0	0	-0.39	-3.61	0.5	liq,vol5m,b/s,pool	jupiter_toporganicscore/5m	1614	-0.2472187886279357	-0.061919504643962855	6	1	16	40.1623617057477	25.995384004666946
+1795718926	2026-11-26 18:48	solana	63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9	GIGA	>7d	25365.4	13181633	1089738	100	-0.51	-0.43	1.0	vol5m,b/s	jupiter_toporganicscore/5m	85610	0.001168101484656987	None	6	1	23	57.46746257545442	34.37093288565071
+1795718926	2026-11-26 18:48	solana	J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn	JitoSOL	>7d	30550.7	750108515	253188	493	0.2	0.71	99	vol5m	jupiter_toporganicscore/1h	183730	-0.0032655549266338664	None	20	5	227	90.7517531252015	27.22219716181511
+1795718926	2026-11-26 18:48	solana	5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm	INF	>7d	23741.5	58657550	101155	0	0	0.58	0	vol5m,b/s	jupiter_toporganicscore/1h	41994	0.004762811964183654	0.0023813492724977974	9	5	28	75	67.88736166665427
+1795718926	2026-11-26 18:48	solana	FK7bc3fR8UL8uogN2u8J9yEpEbQJKR7yKsp3G8rvpump	hacked	D	28.7	35436	12817	121	-2.88	-8.59	1.0	liq,vol5m,b/s	jupiter_toporganicscore/1h	537	0.9398496240601504	-0.18587360594795538	37	4	61	57.449322076044126	25.460195559886937
+1795718926	2026-11-26 18:48	solana	4Ye6Y6Vaic8cyPdfW2f9PcLhXkysBtSmV84G8X7spump	greg	>7d	376.3	33378	14907	774	-7.03	-24.08	1.2	liq,vol5m	jupiter_toporganicscore/1h	1341	3.3924441017733233	0.2991772625280479	80	4	112	52.793994652729374	18.548877419171596
+1795718926	2026-11-26 18:48	solana	HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr	EURC	>7d	15031.6	43891653	381128	4254	0.02	-0.01	0.8	vol5m,b/s	jupiter_toporganicscore/1h	63681	0.02041842055663756	0.00157035175879397	15	3	161	75	69.55165265563295
+1795718926	2026-11-26 18:48	solana	Hax9LTgsQkze1YFychnBLtFH8gYbQKtKfWKKg2SP6gdD	TAI	>7d	22520.4	891759	48440	256	-2.19	-2.76	0.0	vol5m,b/s	jupiter_toporganicscore/1h	69641	-0.0028717889809456803	0.0014359563469270534	9	3	17	67.73099198297375	52.32388106722288
+1795718926	2026-11-26 18:48	solana	CcpN5RXTEjbRqbtuHoxyiMZorzsghbfpeyYQjSvTgS27	Santa	E	49.5	193808	25461	168	-2.83	-2.44	0.0	liq,vol5m,b/s	jupiter_toporganicscore/1h	888	2.186421173762946	-0.22471910112359553	36	3	57	64.79998693896972	14.514689611423961
+1795718926	2026-11-26 18:48	solana	9BEcn9aPEmhSPbPQeFGjidRiEKki46fVQDyPpSQXPA2D	jlUSDC	>7d	897.6	1397734	31623	0	0	0	0	vol5m,b/s,pool	jupiter_toporganicscore/1h	13450	None	-0.007434391495056129	8	3	29	85.71830362125704	55.27080623851101
+1795718926	2026-11-26 18:48	solana	2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo	PYUSD	>7d	15547.8	2301662279	17635611	17	0	0	0.0	vol5m,b/s	jupiter_toporganicscore/1h	59661	0.01676417830380044	0.0033523860607787594	18	3	199	89.12056145742429	85.39184703716329
+1795718926	2026-11-26 18:48	solana	poLisWXnNRwC6oBu1vHiuKQzFjGL4XDSu4g9qjz9qVk	POLIS	>7d	35032.2	2084040	63515	0	0	0.14	0	vol5m,b/s,pool	jupiter_toporganicscore/1h	53101	0.0018832391713747645	None	5	2	21	62.67808111566484	38.088868162435915
+1795718926	2026-11-26 18:48	solana	dog1viwbb2vWDpER5FrJ4YFG6gq6XuyFohUe9TXN65u	DOG	>7d	15482.4	69822083	24659	0	0	-0.49	0	liq,vol5m,b/s	jupiter_toporganicscore/1h	12742	-0.015693659761456372	None	4	2	9	58.69889608600378	0.46386090348391507
+1795718926	2026-11-26 18:48	solana	FuKY3dk7QmpbDdQRjzbjB3G6PiCuqKNvN4dAWDpwpump	OpenIndex	E	97.3	23654	11935	0	0	-5.99	0	liq,vol5m,b/s	jupiter_toporganicscore/1h	1598	-0.125	None	18	2	37	56.817290749536944	24.162181962932348
+1795718926	2026-11-26 18:48	solana	4sWNB8zGWHkh6UnmwiEtzNxL4XrN7uK9tosbESbJFfVs	xSOL	>7d	774.4	4349605	21373	0	0	0	0	liq,vol5m,b/s,pool	jupiter_toporganicscore/24h	28007	-0.003570408454727221	None	8	1	27	74.39766185737061	42.44488694061985
+1795718926	2026-11-26 18:48	solana	PreweJYECqtQwBtpxHL171nL2K6umo692gTm7Q3rpgF	OPENAI	>7d	6531.9	1258893	67028	0	0	-0.89	0	vol5m,b/s	jupiter_toporganicscore/24h	84881	-0.03650838515168645	-0.003534234955939871	22	1	54	64.89270198740087	47.167471893213325
+1795718926	2026-11-26 18:48	solana	HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3	PYTH	>7d	26452.6	378757235	60426	31	-0.03	0.31	0.5	vol5m,b/s	jupiter_toporganicscore/24h	299607	0.001335100115819935	None	15	None	54	75	44.630023384287405
+1795718926	2026-11-26 18:48	solana	WENWENvqqNya429ubCdR81ZmD69brwQaaBYY6p3LCpk	WEN	>7d	24858.6	2888489	43798	0	0	0	0	vol5m,b/s	jupiter_toporganicscore/24h	207282	-0.000964859805870207	None	4	None	10	71.99668792160864	18.442817656757224
+1795718926	2026-11-26 18:48	solana	4Di56UJzpnb7E4D7aLXFf7aLF5TrpJYv9Q3mR398pump	PERRO	D	41.4	23285	11832	214	-41.41	-1.92	1.0	liq,vol5m,b/s	jupiter_toporganicscore/24h	1337	-0.4467609828741623	0.07485029940119761	11	None	30	61.39036296556456	25.947891770281966
+1795718926	2026-11-26 18:48	solana	mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So	mSOL	>7d	35032.3	399918173	123369	112	0.17	0.57	99	vol5m	jupiter_toporganicscore/24h	150909	-0.0013252844391727575	None	11	1	186	79.87815928703972	28.199113190584985
+1795718926	2026-11-26 18:48	solana	5wsjHxT5nW5jQuVupXUNnYszF3WoWCfGGk9LMcsCJzY8	STANK	>7d	676.8	587411	40958	14	0.07	1.09	2.0	vol5m,pool	jupiter_toporganicscore/24h	4352	0.29960820465545057	None	27	1	74	66.27116686899133	20.678082425542573
+1795718926	2026-11-26 18:48	solana	FCR6pNs41th5RCrawd4KsvVxtbP15sfdHUrNg9VDpump	LOTZ	<10m	0.1	8165	0	22431	288	288	1.13	liq,b/s,5m>=50	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	CErq2oGNSJWVovVMjx8k1wuL6qR75q1teSxJNqrCpump	JAZZ	A	0.7	25189	10101	1485	11.1	-16.85	2.91	liq,vol5m	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	5puzNQBzsT48UqQAxwxWsTiiGRz5rKVeSJthpiD6pump	TRT	A	0.3	9925	0	739	5.16	75.82	0.91	liq,vol5m,b/s,pool	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	CD3AHwDcZziU85JpxxMLW2xhXHJUgDyjUxJVjmUZpump	PEDALFIN	A	0.5	1685	1747	8	-0.93	-94.24	0.0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	7ELFRkZPVTJRssUkxJm6iy7kbJRjAcSgHLYW6g63pump	Spotify 	>7d	337.7	13714	0	4	-0.11	10.71	99	liq,vol5m	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	133CMybtis6bg987aB1TxZXekai1wYnwtUj1tfiApump	PICKLES	A	0.4	2307	2152	23	2.71	-92.32	1.0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	5UDjHjj9ioX343rgcZkXPHtHtGEDtdD54i2xofi5pump	HELICHAIN	B	1.3	0	0	0	0	0	0.3	liq,vol5m,b/s,pool	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	8TG9KGHbLYdArfk4mBRnbJNGKNXYkLFXDpNLbSeHpump	Kuro	A	0.9	1306	1355	0	0	-96.65	0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	JwTzPo7DYeyyfPT1MNZnEuyn69F3gT69uL3FvR3FPBG	OROS	B	3.1	4178	0	53	2.49	-44.49	3.0	liq,vol5m	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	2va3NUJtEcPemDYg2N1RgA79rPKGTGGJKo3gTY5zpump	WOOPY	>7d	13378.6	183983	31462	4	-2.17	8.52	0.0	vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	9tERTsZZj19ZHAqg7URtfkfPdaCiVeR4JkuPVoHrpump	JANTA	B	1.4	125480	24357	6831	-27.37	-66.12	2.14	liq,vol5m	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	Eu1pWskggRaLpqTYSTV3zokQ2GQSUx1dnoWSBZkipump	THANKFUL	B	1.2	2016	0	0	0	-53.16	0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	8Xdo9sshdudeALCf2ebdm4FdfAYk5xZRxQp8VH7CT9QK	XSEmu	B	1.1	1806	1774	1869	-75.59	-92.3	0.19	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	J25aXtTx91Eg3MNe6P2bP4Qyvu7yYDeEFmRyw3UTpump	FLOKIMAS	B	1.8	10497	0	0	0	2.94	0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	FLkBshUoapVVxZTvn9R4TLRCE5bS3Jk7GMRFoATGpump	PVE	B	1.4	2098	0	0	0	-17.81	0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	G5tyzeGe2ywceZu8wKu5KgroNpGty2gT4uTRxfjq9fyB	TERRY	B	1.7	2484	0	0	0	-2.42	0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	AuVQxjSZt937unfV6ScNca1ZwwqZtjNSq3LfQtv4pump	Kuro	B	1.8	1515	1637	0	0	-98.66	0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	BJvb2NzHwTbTK64qvarRutp48qicwEWUCHmnpidJYBMb	bbtc	>7d	16653.0	7446	4783	84	6.5	62.77	99	liq,vol5m	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	FRkDqw9RBbFLGZDZ4z8D8yszkqA49Mejpzy9vqWtpump	FINANCIAL	B	1.7	2704	0	18	1.26	-22.05	99	liq,vol5m	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	64MWN63e19qaw2HEecX6btUJSSbWwZgrw74bjFVVpump	LLD	>7d	6861.3	37978	14302	0	0	3.5	0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	FKExXiBXL3K5Z1MhkVoE3hJsEJQkGp1gEc1MxUhdKCMS	FRIES	>7d	1128.9	21440	14334	0	0	-8.65	0	liq,vol5m,b/s,pool	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	2rRPzRejo3z8mEopq6Pm5VbTZCQCCNKiRZeKtcfLpump	GROKIRA	>7d	359.6	10287	6202	52	-1.99	-15.35	0.29	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	PgFtGGquvnv2zEkjG2N2QPvBTBrafuExGYEqahRpump	BRUH	>7d	470.2	8301569	225806	659	-0.23	3.49	0.5	vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	6ppi7LfHkAhHkQwS3kT1zjCsGYQyK4uvpp3pE6Xmpump	CRAB	B	3.3	2255	2234	0	0	-1.82	0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	28CHojUCrapfuLZZAvuNUVmJfmHrTQcnuz596X1Epump	sel	B	5.2	2143	0	0	0	-0.78	0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	6zzzG49KX5nksnqfogs31dwoMYSHaJXkropKbv1QZVga	Malfoid	>7d	1351.5	361350	49584	0	2.06	1.42	1.0	vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	6C9r2gzu8Pr54hTevHo3x5gSj9JqtpApj7obJnrtpump	ROCKET	E	127.1	808975	87503	52	-0.02	0.3	1.0	vol5m,b/s,pool	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	ASQAXq3M6N7WKJHdKNFUJMPfRcBCfpjR6qXFRnNjHPAY	HPAY	C	6.6	7675	0	5	-0.22	-15.08	0.0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	DTLJXMxGdD1tMhKXurxbS7aqX3j79YkCkGQsQu5Zpump	xmascoin	C	10.7	14864	7402	74	-0.25	8.23	2.0	liq,vol5m	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	BKnuZTG1YVPi5DC9tUk5TH1mEgwAZgunnvrAx4Ycpump	FUND	B	5.9	2561	2330	0	0	0.03	0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	AC6jhfpFFFYUciEX563ouCiMCZTxvDi1mr6zXhAMogog	OG	C	11.5	1625	1605	0	0	0.14	0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	EwUVBpdM5vw1CJHRMSLywzVjyQSJZpy6qboxEPBKpump	PumpMas	>7d	285.8	93572	22520	13	1.29	4.64	99	liq,vol5m	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump	Grodia	C	20.3	1605	1811	0	0	3.94	0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump	UHI	C	19.4	1364433	85903	4106	3.9	-24.73	1.07	vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	CnozX9VZrfTSCzssxicM4ee86GTuf497G5t94rUvpump	SKINPUSS	C	17.7	1553	1585	0	0	0	0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	solana	GPiHbgbvWbZHKQiVf1v8AupAuST3mqSv3zb2SBJULGND	LGND	>7d	297.0	88576	24769	0	0	-0.22	0	liq,vol5m,b/s	dexscreener_perfil								
+1795718926	2026-11-26 18:48	bsc	0x4B3D30992f003c8167699735F5Ab2831B2A087D3	COLLECT	>7d	8038.9	87331416	1111	13	1.35	4.06	99	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0x7C8217517ed4711fe2DECCdFefFE8d906b9Ae11F	BLESS	>7d	10330.4	30326650	282643	16851	-0.76	-4.4	0.76	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x6bdcCe4A559076e37755a78Ce0c06214E59e4444	B	>7d	14467.6	103796018	1757877	5268	0.4	1.21	1.75	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x55ad16Bd573B3365f43A9dAeB0Cc66A73821b4a5	AIOT	>7d	13831.8	66012518	3225340	13969	-0.11	2.55	0.75	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x0E63B9C287E32A05E6b9AB8ee8dF88A2760225A9	PIEVERSE	>7d	9056.1	1100827550	6728	0	0	0.01	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x2c3a8Ee94dDD97244a93Bc48298f97d2C412F7Db	AKE	>7d	11123.1	33836046	500926	9776	2.03	10.64	1.08	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x000008D2175F9AEAdDb2430c26f8A6f73c5A0000	UP	>7d	6200.3	42203686	314897	931	-1.88	1.27	0.83	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xA991F61940095AEA0724ef54077223B048c5CF7b	DNA	>7d	789.0	12008172	24189	0	0	0.3	0	liq,vol5m,b/s,pool									
+1795718926	2026-11-26 18:48	bsc	0x10D4183389e99233db3cc981c43443Ebd28Ebd5e	DGAI	>7d	2266.8	142946960	3111113	28880	-0.02	-0.38	0.9	b/s									
+1795718926	2026-11-26 18:48	bsc	0x3B4de3c7855C03bB9F50ea252cD2c9FA1125Ab07	IDOL	>7d	12821.2	36764306	994970	12095	-0.08	1.4	1.02	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x783c3f003f172c6Ac5AC700218a357d2D66Ee2a2	B2	>7d	13815.3	17215702	662915	31117	0.3	4.68	0.49	b/s									
+1795718926	2026-11-26 18:48	bsc	0xaa036928c9c0Df07d525B55ea8EE690Bb5a628C1	EVAA	>7d	10089.7	15380273	233518	3301	-0.15	-3.45	0.83	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x5d3A12c42E5372B2CC3264AB3cdcF660a1555238	ARIA	>7d	11145.6	62696201	2234083	4630	0.04	1.28	0.93	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x6bf62ca91e397B5A7d1D6bCe97D9092065d7A510	CROSS	>7d	12325.2	68435577	1155358	3845	0.69	0.52	2.0	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x4fa7C69a7B69f8Bc48233024D546bc299d6B03bf	quq	>7d	14772.3	1426260	137402	0	0	-0.22	0	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x595E21b20E78674F8a64C1566A20b2b316Bc3511	BULLA	>7d	12858.2	13493708	61208	4923	-2.15	-14.15	1.55	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x3d4f0513E8a29669B960f9dBcA61861548A9A760	BANANAS31	>7d	17721.8	48169938	2887849	2099	0.06	0.39	0.56	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xb51d09B75193C35C1eb72D5714453a04051a80bC	WMN	>7d	22711.2	42562	6718	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xa0c56a8c0692bD10B3fA8f8bA79Cf5332B7107F9	MERL	>7d	13354.2	39663559	1873281	6741	0.02	0.1	1.25	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x5845684b49aEf79A5c0F887f50401C247dca7AC6	CYC	>7d	11552.0	8186130	974508	2678	0.01	0.02	1.53	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x9b8E987e6fEc8Cf1380C4dcA7071e2C7853AEEA1	FXIon	>7d	1814.4	2863694	156915	1093	0.11	0.2	0.46	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x011EBe7d75E2C9D1E0bD0be0bEf5C36f0A90075F	STABLE	>7d	8496.7	680445794	842175	1936	-0.16	0.45	0.08	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x5dBde81fcE337FF4bcaaEe4Ca3466C00aeCaE274	AGT	>7d	13445.9	60457248	1244188	2622	0.01	-0.05	0.89	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xc07e1300dc138601FA6B0b59f8D0FA477e690589	Q	>7d	10858.6	125571526	1045746	4471	0.46	0.47	1.82	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x8d0D000Ee44948FC98c9B98A4FA4921476f08B0d	USD1	>7d	14251.1	1098130415	2063495	2365	0.06	0.02	0.06	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xbe9D156892E55e7154BcD3cB0FEA677F9D3103E1	SPCXB	>7d	2812.1	113019890	826629	233	0.12	0.21	0.82	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xc8Fb80fCc03f699C70ff0CC08C09106288888888	CTM	>7d	5763.0	56620104	2122841	1569	-0.24	0.34	1.07	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xA5C8e1513B6A08334b479fe4D71F1253259469BE	GUA	>7d	8746.9	31212213	2834	0	0	0.55	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x6EF2FFB38D64aFE18ce782DA280b300e358CFeAF	ACU	>7d	7202.9	43319436	20179	11	0.15	0.58	99	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0x544028231562a43b106FbceCA722B65Cb5C861b0	OLY	>7d	11593.8	124352937	6870594	286	-0.01	-0.17	1.0	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x6261963EbE9Ff014aAd10eCc3b0238D4D04E8353	HANA	>7d	10264.5	11967686	855233	10244	1.38	2.39	1.4	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x1F12B85aAC097E43Aa1555b2881E98a51090e9A6	GENIUS	>7d	5451.9	92845199	50808	0	0	0.46	0	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xCae117ca6Bc8A341D2E7207F30E180f0e5618B9D	ARK	>7d	10975.5	208852353	58425426	1548	-0.01	-0.16	0.61	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x5D7909f951436D4e6974D841316057dF3a622962	GOATED	>7d	10265.6	1391619	425708	1315	0	0	0.83	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x66661c7229901F568F16BD1551b3bA826F83cE49	DEBIT	>7d	2181.3	55130293	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x0F0df6cB17ee5E883eddFEf9153fC6036BDB4e37	BAS	>7d	11237.8	29425521	1229848	648	-0.09	-0.15	0.33	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x223A20E1B83AA3832E78D4B7B132dF022e739222	R2	>7d	1683.8	1320131	172832	575	0.46	14.38	1.85	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x1a4b499833A79A09ad7Cf1D42D7DacF71e92eb00	AMZNB	>7d	2771.8	4802687	90031	3145	-0.13	-0.27	0.87	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x4902C5ebc598265Ed2212b559B042De8a5Eeec3f	BNCB	>7d	1716.8	24519873	173528	2884	0.04	0.24	1.36	vol5m									
+1795718926	2026-11-26 18:48	bsc	0xA3cfB853339b77F385B994799B015cB04b208Fe6	POP	>7d	10644.5	75259	89112	2599	0.03	-5.95	1.82	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x63dea5aCdbE1F27c968907D08610A5f0A0284bA6	AGC	>7d	585.5	541775	142409	250	0.6	1.59	2.5	vol5m									
+1795718926	2026-11-26 18:48	bsc	0xeA37A8DE1de2d9D10772EEB569e28Bfa5Cb17707	JCT	>7d	9152.3	17035127	58370	530	0.15	0.91	99	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x8e6442663A4F8C50b6132c68d42A30E7DFE4Ae15	JAGENT	>7d	704.4	52847	14294	176	-0.37	-5.78	0.5	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x92aa03137385F18539301349dcfC9EbC923fFb10	SKYAI	>7d	14055.1	32911865	4541115	0	0	0.94	0	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xDDE27483dE8c958e4D2657d64EB7551717457777	SpaceXCoin	C	13.3	488444	68522	2403	7.33	-6.27	1.53	vol5m,pool									
+1795718926	2026-11-26 18:48	bsc	0x444045B0EE1ee319A660a5E3d604CA0ffA35ACaA	BTW	>7d	6464.1	2179995360	139825	167	0.1	1.38	2.0	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x7AB8d02CBb51Ff7223fDe700eAaa2a91Bf750314	TART	>7d	2276.8	5461442	538227	457	0.1	-0.52	2.0	vol5m									
+1795718926	2026-11-26 18:48	bsc	0xB0f09ea9ae0515C3551080D4a745C8115aA30e37	DOS	>7d	2598.3	2994936	605640	3095	0.27	1.09	1.0	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xdA7AD9dea9397cffdDAE2F8a052B82f1484252B3	RIVER	>7d	10329.9	10856062	120874	0	0	-0.12	0	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xbA2aE424d960c26247Dd6c32edC70B295c744C43	DOGE	>7d	31991.8	145605673	462632	0	0	0.39	0	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x5C85D6C6825aB4032337F11Ee92a72DF936b46F6	mubarak	>7d	14961.2	22104350	1710772	0	0	0.16	0	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x4BE35Ec329343d7d9F548d42B0F8c17FFfe07db4	USDT.z	>7d	10371.1	6510806	134353	26	0.02	-1.09	99	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x570A5D26f7765Ecb712C0924E4De545B89fD43dF	SOL	>7d	25961.2	106890859	991441	902	0.02	0.54	3.0	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x41333Df9E7639188BBfca5522dC4844398Af9f9E	wTCENTx	>7d	1405.7	0	0	0	0	-1.32	0	liq,vol5m,b/s,pool									
+1795718926	2026-11-26 18:48	bsc	0x0A43fC31a73013089DF59194872Ecae4cAe14444	4	>7d	10118.6	7636880	843523	1	-0.07	1.3	0.5	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x02bcC4C181B83a8c0A342BC003389CbEcb4BC54D	SLX	>7d	4446.7	16036642	596	17	-0.13	-0.33	0.75	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x02Fca66C1D1aFB4E2A7884261eB00F63598a7436	NVDAB	>7d	2891.0	197440360	3408353	1356	0.01	0.1	1.25	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x870343922fa33588776CB6941B7E6C049B09FFfF	METABOLISM	<10m	0.0	3195	0	0	0	0	99	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0x43AeDdeb3E231305A97Cb38C82ba5D8E8a28BD79	COS	<10m	0.1	4341	7585	638	23.29	23.29	6.0	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0x1c70c2ae8B445D3DaB358A98299d450755914444	LF wallet	<10m	0.1	3199	0	4	0	0	99	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0xFA50aE78AdE1876e60E96BCd35C2056c3Adc0800	💯BULL	<10m	0.1	24416	30043	5888	161	161	25.5	vol5m,5m>=50									
+1795718926	2026-11-26 18:48	bsc	0x0d0eb8F5cAECf7d6D33CB01AdD27FC1B7B06FFff	Bian	<10m	0.1	3192	0	0	0	0	99	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0xd700971b7259268e5Fa74853A6d496462f314611	ITLG	<10m	0.1	522549	1	0	9.26	9.26	1.0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xC5afCc02B98E4D7F2cc7c24B1186633331Eb1BFa	KIMCHI	<10m	0.1	9408	17677	536	9.41	9.41	99	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0xD4Adbc9f25E56E64C6Cbcd60686B5c4F8eAeffFF	백구	<10m	0.1	3195	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x944f77243d287667f0fd576C555f4fd9347e0dBd	RPOOL	<10m	0.1	1	1	0	0	-75.84	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xD29B56Ae3ed92E466d8833485e7c52A99C8eC302	STRAWBERRY	<10m	0.1	5768	9851	645	20.39	37.28	2.0	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0x9bda219EF63874820bD808E36Ee1EdD07a0A7777	BYTE	<10m	0.1	11810	12513	8285	43.82	232	0.95	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xe46D33657DF7315ed17580Bb04DAEdf2F864FFFF	Maya	<10m	0.1	3195	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x413e1e3500E432F1492502886EE19Ed60906fFFf	WINX	<10m	0.1	3196	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x5bd363EB6a8823b870d17bF8cA5717966778fFFF	Maya	<10m	0.1	3196	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x87d7F78585a25e67CC079eEb91b9E89Acf44FfFF	AWAYA	<10m	0.1	3195	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x2f5C18f2c0612093E7BA09fe0A3BCbF35c32FfFf	H100	<10m	0.1	3195	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x1cFA08ef2621d251A103F5d701182DfdFf21fFff	zc	<10m	0.2	3196	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xdb08aeEa094f58298Da4383C11847099d128FffF	zc	<10m	0.2	3196	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x51ce4D2A253E57AfDF0a574eFD945102C5488d42	SKYAI	<10m	0.2	14597245024	57031	9196	99.04	5453766988572	4.0	vol5m,5m>=50									
+1795718926	2026-11-26 18:48	bsc	0x55393EB6778DE2237C815056f6E35ea62D837777	CAT CMC	<10m	0.2	478709	0	27	-100	-99.99	4.0	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0xa9f26371e296ce005ecA7758E89B7Da8A959fFff	PAYCLOAK	A	0.2	3179	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x29D630673dDF67a7da759A6210811E02960F7777	SBF	A	0.2	0	0	1980	-100	-100	1.06	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xce65F25BF0568E89DE7b159a270b37F373C7cE68	Fxsale	A	0.2	79072	144987	2220	6.48	16.65	99	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x341158fA02EBe0E6264743c40422f7F6c95d67dd	CS	A	0.2	0	0	23329	-100	-100	2.29	liq									
+1795718926	2026-11-26 18:48	bsc	0x510b8a19a36abc3E219c103BE96be13eDeea7777	SBF	A	0.2	0	0	2610	-100	-100	1.17	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xf972E310a781733F85b473C198d64916e51c6a3B	CZT	A	0.2	3	2	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x17f882a72BE3324D8E7C5A99d5F996B0cFbAfffF	GMEC	A	0.2	3180	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xA60ee7cb3DF6E2DEA9401fdD24FB6b668326fFFF	CALLUPB	A	0.2	3178	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x1897a52023bDd8aFE1426B72a0BcFAE53F53fFFf	AUCERTS	A	0.2	3180	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x38Dd26788Cf2d901E3aBf04efE3007d459d0Fc53	ANTB	>7d	168.1	13336071	817215	0	0	0.13	0	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x703B3ec69c96430182d64776C13CB51e2424DD00	OSP	A	0.3	11	0	1	-99.75	-99.66	5.0	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0x18757Ae929fc76505D6EFe3dB1F115353F74FFFF	FICOA	A	0.3	3197	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x94723901379Ac0dd7f4054C3E69Cc7A86BbEFFFf	dod	A	0.3	3192	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x32DD798AB2c88dE890CF4C884D7bACcDcd2Bb4cc	ROCKET	A	0.3	0	0	0	0	-100	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x02b627A56E335710338C823D892C16FF51E27777	Kuro	A	0.3	0	0	0	0	-100	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x4c3c9c29c8a43A741d69D2f6C2ca3EE15da6d6bA	SpaceXCoin	A	0.3	379586	2942	2003	-36.49	387450	3.5	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0x7aF8279AF770E3dBacA36b9cd3A150b2B667ffff	FILTHY FLY	A	0.3	3190	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x712fa8395fBeD129E5177a9d34FFd177dCb77D5E	WALNUT	A	0.4	10	0	0	0	-99.76	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xEC2747c5d7e0C27BAD89d7bCECb7C82346dF7777	George	A	0.4	0	0	0	0	-100	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x05644d8536C8b8E5d5D81A9C4559D45058Bb7777	Kuro	A	0.4	0	0	0	0	-100	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xA7B1Ec4491FBedCA5DcF5C24CeB24540E8e59814	PAPER	A	0.4	3811	4600	237	24.45	138	99	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0x8366f7ce918733ea3C3161501a77C0862062Ffff	PICKLES	A	0.4	3189	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xC7105594B822f33F8E36fDAe3b0B4F8DAD9B630f	RBLXc	A	0.4	11628	19663	496	11.05	36.12	99	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0x9A436A343C1052F5aB23af6C19f3D2637C27fFfF	MANTLE	A	0.4	3189	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x4007c487562b8C5Eb0CD39CF510aEa2B4eb9E54B	SmartFi	A	0.4	7	0	249	-99.91	-99.88	6.0	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0x347859771449E42E7d835241575869dF526d9E2A	PLF	A	0.4	28	0	0	0	-99.17	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x8Be1704fdfaecC5E4211d78edB740A8EFFc37777	BYTE	A	0.4	0	0	0	0	-99.99	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x938a1d05beEe1d024876E83D4f01f0193c74fFFF	DOG3	A	0.4	3189	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x2AD5aB75760aB891C235418A31d050e3A04eFFFf	DOG3	A	0.4	3189	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xDf6a15C74c017d8cda0e5c356BF48f6532097777	Kuro	A	0.4	0	0	0	0	-100	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c	BTCB	>7d	32045.5	3958254710	17583202	13394	0.04	0.31	25.0	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x84804055e28862a340fc862BF5CF53905A19173d	RCM	A	0.4	69200	0	0	0	2056	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x62c1ba1e07EE9a87F83226DA309a80d421D30601	KURO	A	0.4	3637	6379	3703	-23.81	31.4	3.5	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0x01019F71B9ca18CbdC466F0ca2AB192fb0916ea5	STUDENT	A	0.4	120032	0	0	0	2049	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xf2B2bA73c3A2eB54C64F205fBF437AF8C3527777	BYTE	A	0.4	1945682	0	0	0	54794	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x7b802Afd6c9deFBAb93E575F5505Eb3c17c27777	Kuro	A	0.4	183535	0	0	0	1711	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x60f8d8771167925e509f23Fce24A74aE87E4407B	RFL	A	0.4	68650	0	0	0	2050	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x73a62B7DDfD865CC13a2927b944104Fa5Cd5FFFf	AMEND	A	0.4	3188	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x446Fb32DE6f5c7aad2C56CF17ef8D3288e857777	Kuro	A	0.5	1	0	0	0	-99.99	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x59fe57E3B4BFc9A176D0e3fef1E1aaf9b304B6C1	MP	A	0.5	0	0	0	0	-100	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xb5d5C9f45633377A4cf0924e5a99AEF343707777	life	A	0.5	1	0	0	0	-99.97	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x87Cd3f0251e9F6a876a6BEf8Ba4E6624C8817777	UAT CAT	A	0.5	9695465	0	0	0	-99.84	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xB13693522580c0378D0da4DeB3d25ED91Ba1fFFF	Plony	A	0.5	3185	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x0534aCe3153b0FffeE1Fa7957f1AD78e498a5Ae6	LADC20	A	0.5	10089994	0	0	0	-0.1	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x50Ada2C9564A817e428dB31b8B9e8f132d16F713	👑CM	A	0.2	1641	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x65ed1b2D4a0F575Cc17Cd96C323B1eFAb4D07777	BYTE	A	0.5	0	0	0	0	-99.99	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xCCe6E612f84B79Ee3Bf56Fbb47c0c0275aAA7777	Kuro	A	0.5	0	0	0	0	-100	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xCC2adC9413f2c5398D799DDeab3ba1193590a8A0	STOC💰	A	0.5	0	0	0	-39.72	-100	3.0	liq,vol5m									
+1795718926	2026-11-26 18:48	bsc	0x8240B661375D75577d2A2A00bD903A207D28ab1e	ANU	>7d	8711.0	43	22	0	0	-57.51	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x6E30554a96FDF55B7f14085e17b0dE9b613C7777	Kuro	A	0.5	0	0	0	0	-99.99	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x37ad11ab7B6C7fea74ff83af7B45Ef0792e34444	proof of stuffing	A	0.5	3188	0	0	0	-8.94	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xa6d38beCc4bc469e6b86e83Ce41aBA39FE1Ddb1C	RPOOL	A	0.5	1	1	0	0	-85.12	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x84274128a1998237423D804B45aD30A064C0ffff	SPCX	A	0.6	0	0	0	0	0	0	liq,vol5m,b/s,pool									
+1795718926	2026-11-26 18:48	bsc	0x81A719290Ee99BEd5aAaf86a658a6D07fFBBFfff	LUNARTOAD	A	0.6	3188	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x9103f1C25362Cb27267d48AeBE3AD739AcaAFFff	PICKLES	A	0.6	3190	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x57B6a2bC6b8ae21AC014Ac6f5BEe53F059C0ffFf	PEDALFIN	A	0.6	3189	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xbFfe24a9d92C5485306CB1D018303182EF545FF7	WULA	>7d	6914.9	417	234	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x92926CAF984E76194B55e03c4E3DC71d8dbF7777	Kuro	B	1.6	7688403	1429990	598567	40.84	46.19	1.24										
+1795718926	2026-11-26 18:48	bsc	0x636C571ba416C0312C74A39f886797414AE97777	1	C	23.4	0	1	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xF89a75A66514FF0A199aa93BaC7437ffB9477777	SPACEXLIFE	C	14.6	0	1	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x55d398326f99059fF775485246999027B3197955	USDT	>7d	3736.0	9174327214	494188	7009	0	0	0.88	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x61F5e8d3E41B8cC04434F61b6E4c2BF83dcf7777	SpaceXCoin	B	5.2	0	0	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x37922A99816cbA52f02415870aD4344ab0948Df0	Zero	C	14.5	248445	52757	338	2.61	-53.03	99	vol5m									
+1795718926	2026-11-26 18:48	bsc	0xa0E28b599DCC5ddb25b6D04f372223d1e91A7777	BOOSTER	D	29.3	0	1	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x65a4fb74CED27d141dC6A8fcdCb737D35E8F453E	GLCS	>7d	23823.3	5909	1054	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x7Df81730b58Abe662C26495B1731D5fb39f57777	TALK	C	22.0	485951	170345	28475	6.18	-9.86	1.18	b/s									
+1795718926	2026-11-26 18:48	bsc	0xbAb528425Edb1E0E36D3719bc3307d9C8ccE8888	Moolah	>7d	9563.4	60202595	278926	24743	0.04	0.87	0.83	b/s									
+1795718926	2026-11-26 18:48	bsc	0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d	USDC	>7d	11474.5	0	255408	4793	0	0	1.05	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0x128C61f56ccaE6219Eb0a463F8047556841F7777	b	D	45.1	449250	146828	3624	-0.68	11.02	2.5	vol5m									
+1795718926	2026-11-26 18:48	bsc	0x2170Ed0880ac9A755fd29B2688956BD959F933F8	ETH	>7d	31692.6	859071266	758440	7676	0.15	0.62	0.95	vol5m,b/s									
+1795718926	2026-11-26 18:48	bsc	0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c	WBNB	>7d	31948.5	865593467	8538275	115036	0.15	0.47	1.05	b/s									
+1795718926	2026-11-26 18:48	bsc	0xe5E5e1d77125Fc910D8f39cDd55B7A24Ec69ce34	SHARE	E	57.7	219377678	119	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	robinhood	0x008Df4b3E857D06c4603Aeb11F267ccD32ce2005	ROBINHOOD	>7d	1879.0	645339	61194	0	0	1.74	0	vol5m,b/s									
+1795718926	2026-11-26 18:48	robinhood	0x8f100e99dDF699320724e37Cb866770381d47382	ROBINHOOD	>7d	3229.5	9073	6917	1	-0.01	0.41	0.5	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	robinhood	0x2932B2f5761cadCa5cB3e09D940092cA723D9EE2	Hood	>7d	715.4	188720	34785	0	0	1.04	0	vol5m,b/s									
+1795718926	2026-11-26 18:48	robinhood	0xa97b2E0314A46B93136E02f3EF26a6468A509395	CHRONARK	B	3.8	4707	2	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	robinhood	0x411bD444b94D70E3B0709D449c9F86Ac5dAf0486	HOOD	>7d	3892.9	5008	4998	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	robinhood	0x6511c233790Ec10f7d673c64DC82C3F941D57828	OAK	>7d	589.8	615291	63920	27	-0.24	-10.46	0.0	vol5m,b/s									
+1795718926	2026-11-26 18:48	robinhood	0x955A96c53AE684182091e64dDC6C60356de701D3	WINX	<10m	0.1	28466	12872	1112	7.17	-18.62	1.6	liq,vol5m									
+1795718926	2026-11-26 18:48	robinhood	0x3F5e952b29bE5D70846FC2bA472BeA05761A769E	HOOD	>7d	3547.7	7350	6607	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	robinhood	0x8cAE1f1d7517331907c5d4d6bD74835c7B68c1a2	HOOD	>7d	3032.4	8824	194	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	robinhood	0x499dC58539BA6869EE15b6c2a3c3c07F1AC4995F	HOOD	>7d	3039.5	4087	3841	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	robinhood	0xa8c53b1dAcFbd07895dC8D2c638F1bFDe10C0122	GMEC	A	0.2	20285	10889	2239	-10.74	-37.82	1.68	liq,vol5m,pool									
+1795718926	2026-11-26 18:48	robinhood	0x32aC8C1D7672667D5EbdEa22935F7B06fC8D496f	HOOD	>7d	2873.5	456586	117780	0	0	0	0	vol5m,b/s,pool									
+1795718926	2026-11-26 18:48	robinhood	0xeEC414174F7dCBA9E3Aa1672A1cf57078E65aE28	ROBINHOOD	>7d	1387.8	4176	5252	0	0	0	0	liq,vol5m,b/s,pool									
+1795718926	2026-11-26 18:48	robinhood	0x9Fd712D156141ac0e63824c959AFfc0e6eb813A3	HOOD	>7d	2171.7	1840	3272	0	0	0	0	liq,vol5m,b/s									
+1795718926	2026-11-26 18:48	robinhood	0x000DE658153f47f23e92973C8EB1e89762703676	FOBO	>7d	745.7	1720471	1261269	0	0	-1.09	0	vol5m,b/s									

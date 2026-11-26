@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-26 14:56",
+ "hora_utc": "2026-11-26 18:59",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -10,14 +10,14 @@
  ],
  "narrativas": [
   {
-   "tema": "Aaron Rodgers reportedly out",
+   "tema": "Steelers Release Aaron Rodgers",
    "fuentes": [
-    "bluesky",
+    "x_chainbase",
     "wikipedia"
    ],
    "calor": 100,
    "porque": [
-    "tendencia en Bluesky: Reporter Gerry Dulac says the star quarterback is gone after a dramatic day of conflict with Mike McCarthy.",
+    "tema caliente en X según Chainbase Tops (puesto 13): The Pittsburgh Steelers have released quarterback Aaron Rodgers after he was benched and subsequently criticized head coach Mike McCarthy on The Pat McAfee Show…",
     "120,910 visitas ayer en Wikipedia, nuevo en el top"
    ],
    "token": null
@@ -35,10 +35,10 @@
     "cadena": "bsc",
     "token": "0x6EDDA9096a4E6c9d310AD94456AdC93725977243",
     "sym": "UNIVERSE",
-    "liq": 14580,
-    "vol24": 120,
-    "c24": 1.76,
-    "edad_h": 912.5
+    "liq": 14563,
+    "vol24": 68,
+    "c24": 0.03,
+    "edad_h": 916.5
    }
   },
   {
@@ -108,125 +108,144 @@
    "token": null
   },
   {
-   "tema": "SpaceX Satellite AI Approval",
+   "tema": "BNB Bangkok Hackathon",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): The US Federal Communications Commission has authorized SpaceX to deploy up to one million satellites for the Starmind constellation, marking the first approval…"
+    "tema caliente en X según Chainbase Tops (puesto 1): Social media discussions within the cryptocurrency sector are dominated by Thanksgiving greetings, with users reflecting on past market cycles, expressing grati…"
    ],
    "token": null
   },
   {
-   "tema": "Packers Rams Play on Netflix",
+   "tema": "SpaceX Musk Donate Trump Shares",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): The Macy's Thanksgiving Day Parade in New York City has been postponed for the first time in its history due to an approaching nor'easter, with organizers tenta…"
+    "tema caliente en X según Chainbase Tops (puesto 2): The US Federal Communications Commission has approved SpaceX's request to deploy up to one million satellites for orbital data centers, marking the first such a…"
    ],
    "token": null
   },
   {
-   "tema": "US Proposes New Tariffs",
+   "tema": "Ossoff Leads 2028 Odds",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 86,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): The US administration has proposed new import tariffs on goods from China, the European Union, and over a dozen other major economies, citing structural industr…"
+    "tema caliente en X según Chainbase Tops (puesto 3): Israeli judges have advised prosecutors to consider dropping the primary corruption case against Prime Minister Benjamin Netanyahu, questioning the validity of …"
    ],
    "token": null
   },
   {
-   "tema": "Bank of England Cuts Capital Req",
+   "tema": "Bank of Korea Raises Rate",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 84,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): The Bank of England has announced new measures to reduce UK lenders' capital requirements by 30 basis points, while warning that further reductions could risk f…"
+    "tema caliente en X según Chainbase Tops (puesto 4): The Bank of Korea raised its benchmark interest rate by 25 basis points to 3.25%, the highest level since November 2024, citing persistent inflation pressures. …"
    ],
    "token": null
   },
   {
-   "tema": "Switzerland Approves Bitcoin ETF",
+   "tema": "Global Crypto Frameworks Advance",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 82,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): Switzerland's first spot Bitcoin ETF has begun trading on the SIX Swiss Exchange under the ticker BBIT. The fund holds Bitcoin directly in cold storage at a Swi…"
+    "tema caliente en X según Chainbase Tops (puesto 5): Spain has granted its financial intelligence unit the authority to freeze cryptocurrency accounts for up to five business days without a judicial order or forei…"
    ],
    "token": null
   },
   {
-   "tema": "US DOJ Freezes $1B Crypto",
+   "tema": "Trump Demands GDP Investigation",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): The US Financial Crimes Enforcement Network (FinCEN) confirmed a cybersecurity incident resulting in unauthorized access to a limited subset of its systems. The…"
+    "tema caliente en X según Chainbase Tops (puesto 6): President Donald Trump has called for an immediate investigation into the revision of US Q3 GDP growth figures, which were updated from an initial estimate of 3…"
    ],
    "token": null
   },
   {
-   "tema": "Japan Bond Sales Criteria",
+   "tema": "Zodia Custody Data Breach",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 78,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): A senior official from Japan's Finance Ministry stated that the short-term bond sector would be the primary candidate for increased sales if the calendar issuan…"
+    "tema caliente en X según Chainbase Tops (puesto 7): Zodia Custody, the cryptocurrency custody subsidiary of Standard Chartered, confirmed a security breach that exposed the names and email addresses of a small nu…"
    ],
    "token": null
   },
   {
-   "tema": "South Korea Stock Crash",
+   "tema": "Global Internet Legislation Enacted",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 76,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): South Korean media reports indicate the government is considering increasing its stock market stabilization fund from ₩10.7 trillion to at least ₩20 trillion to…"
+    "tema caliente en X según Chainbase Tops (puesto 8): The US Department of Justice announced its largest-ever fraud crackdown, targeting over 800 defendants and freezing more than $1 billion in stolen cryptocurrenc…"
    ],
    "token": null
   },
   {
-   "tema": "US Army Iowa Detonation Plan",
+   "tema": "OpenSea Thanks Community Team",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 74,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): The US Army conducted a controlled detonation of nearly five tons of hazardous lead azide at the Iowa Army Ammunition Plant. The operation triggered local evacu…"
+    "tema caliente en X según Chainbase Tops (puesto 9): Multiple cryptocurrency projects and industry figures posted Thanksgiving messages expressing gratitude towards their communities, teams, and users. OpenSea spe…"
    ],
    "token": null
   },
   {
-   "tema": "Judge Blocks FCC Disney Action",
+   "tema": "Fidelity Files Chainlink ETF",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 72,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): A federal judge has temporarily barred the Federal Communications Commission from reviewing the local licenses of eight Disney-owned ABC television stations. Th…"
+    "tema caliente en X según Chainbase Tops (puesto 10): Fidelity has filed an S-1 registration statement with the U.S. Securities and Exchange Commission (SEC) to launch a spot Chainlink ($LINK) exchange-traded fund.…"
    ],
    "token": null
   },
   {
-   "tema": "Michael Burry Shifts Long",
+   "tema": "Tesla Robotaxi Leads Waymo",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): Investor Michael Burry has sold his remaining put options on the Nasdaq 100 Index, shifting his portfolio to an almost entirely long stance. He plans to deploy …"
+    "tema caliente en X según Chainbase Tops (puesto 11): Tesla's Robotaxi fleet has surpassed Waymo in the number of registered driverless vehicles in Texas, with 1,507 units compared to Waymo's 1,390. The shift follo…"
    ],
    "token": null
+  },
+  {
+   "tema": "FOCO",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (FOCO, puesto de capitalización 904)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "7ttfwuBSnbNTgf32gUAT7v9bjdDWsn6pYpp7nmGmpump",
+    "sym": "FOCO",
+    "liq": 25095,
+    "vol24": 2581,
+    "c24": -5.9,
+    "edad_h": 815.1
+   }
   },
   {
    "tema": "Pepe Wojak",
@@ -235,35 +254,16 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PEJAK, puesto de capitalización 914)"
+    "entre lo más buscado en CoinGecko (PEJAK, puesto de capitalización 917)"
    ],
    "token": {
     "cadena": "solana",
     "token": "8J69rbLTzWWgUJziFY8jeu5tDwEPBwUz4pKBMr5rpump",
     "sym": "WOJAK",
-    "liq": 200008,
-    "vol24": 22120,
-    "c24": 12.46,
-    "edad_h": 9306.3
-   }
-  },
-  {
-   "tema": "Zylo Ecosystem",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (ZYLO, puesto de capitalización 728)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "HnGCbLLonRzNRAFHqv5AbvZ4FixMkUQztE2egh4sAmqZ",
-    "sym": "ZYLO",
-    "liq": 45118,
-    "vol24": 818,
-    "c24": 10.41,
-    "edad_h": 1829.2
+    "liq": 202021,
+    "vol24": 10028,
+    "c24": 11.32,
+    "edad_h": 9310.3
    }
   },
   {
@@ -273,16 +273,35 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 128)"
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 127)"
    ],
    "token": {
     "cadena": "solana",
     "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
     "sym": "PENGU",
-    "liq": 2331994,
-    "vol24": 145832,
-    "c24": 7.52,
-    "edad_h": 17017.9
+    "liq": 2357007,
+    "vol24": 126419,
+    "c24": 4.2,
+    "edad_h": 17022.0
+   }
+  },
+  {
+   "tema": "Zylo Ecosystem",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (ZYLO, puesto de capitalización 727)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "HnGCbLLonRzNRAFHqv5AbvZ4FixMkUQztE2egh4sAmqZ",
+    "sym": "ZYLO",
+    "liq": 45815,
+    "vol24": 1094,
+    "c24": 14.96,
+    "edad_h": 1833.2
    }
   },
   {
@@ -292,37 +311,26 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 129)"
+    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 134)"
    ],
    "token": {
     "cadena": "solana",
     "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
     "sym": "MON",
-    "liq": 31943913,
-    "vol24": 302627,
-    "c24": 0,
-    "edad_h": 1354.1
+    "liq": 31943918,
+    "vol24": 305227,
+    "c24": -0.03,
+    "edad_h": 1358.2
    }
   },
   {
-   "tema": "Sei",
+   "tema": "Artificial Superintelligence Alliance",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (SEI, puesto de capitalización 138)"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Non-Playable Shiba",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (NPS, puesto de capitalización 761)"
+    "entre lo más buscado en CoinGecko (FET, puesto de capitalización 130)"
    ],
    "token": null
   }
@@ -330,17 +338,17 @@
  "cruces_h18": [],
  "huecos_h19": [
   {
-   "ts": 1795704990,
-   "hora_utc": "2026-11-26 14:56",
-   "tema": "Aaron Rodgers reportedly out",
-   "fuentes": "bluesky,wikipedia",
+   "ts": 1795719554,
+   "hora_utc": "2026-11-26 18:59",
+   "tema": "Steelers Release Aaron Rodgers",
+   "fuentes": "x_chainbase,wikipedia",
    "calor": 100,
-   "porque": "tendencia en Bluesky: Reporter Gerry Dulac says the star quarterback is gone after a dramatic day of conflict with Mike McCarthy. | 120,910 visitas ayer en Wikipedia, nuevo en el top",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 13): The Pittsburgh Steelers have released quarterback Aaron Rodgers after he was benched and subsequently criticized head coach Mike McCarthy on The Pat McAfee Show… | 120,910 visitas ayer en Wikipedia, nuevo en el top",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795704990,
-   "hora_utc": "2026-11-26 14:56",
+   "ts": 1795719554,
+   "hora_utc": "2026-11-26 18:59",
    "tema": "Ezra Frech",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -348,8 +356,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795704990,
-   "hora_utc": "2026-11-26 14:56",
+   "ts": 1795719554,
+   "hora_utc": "2026-11-26 18:59",
    "tema": "Dancing with the Stars (American TV series) season 35",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -357,8 +365,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795704990,
-   "hora_utc": "2026-11-26 14:56",
+   "ts": 1795719554,
+   "hora_utc": "2026-11-26 18:59",
    "tema": "Jennifer Barreto",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -366,8 +374,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795704990,
-   "hora_utc": "2026-11-26 14:56",
+   "ts": 1795719554,
+   "hora_utc": "2026-11-26 18:59",
    "tema": "Andy Taylor (guitarist)",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -375,8 +383,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795704990,
-   "hora_utc": "2026-11-26 14:56",
+   "ts": 1795719554,
+   "hora_utc": "2026-11-26 18:59",
    "tema": "Mike McCarthy",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -384,8 +392,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795704990,
-   "hora_utc": "2026-11-26 14:56",
+   "ts": 1795719554,
+   "hora_utc": "2026-11-26 18:59",
    "tema": "Martha Firestone Ford",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -393,12 +401,12 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795704990,
-   "hora_utc": "2026-11-26 14:56",
-   "tema": "SpaceX Satellite AI Approval",
+   "ts": 1795719554,
+   "hora_utc": "2026-11-26 18:59",
+   "tema": "BNB Bangkok Hackathon",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): The US Federal Communications Commission has authorized SpaceX to deploy up to one million satellites for the Starmind constellation, marking the first approval…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Social media discussions within the cryptocurrency sector are dominated by Thanksgiving greetings, with users reflecting on past market cycles, expressing grati…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
