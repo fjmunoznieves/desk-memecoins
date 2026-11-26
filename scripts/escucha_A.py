@@ -179,7 +179,7 @@ class Escucha:
         self.ruidosas = set()    # billeteras con > RUIDO_MAX notificaciones en 5 min (bots): se dejan de escuchar
         self.donde = {}       # clave seguida -> Conexion
         self.ult_fila = {}
-        self.minuto = {}; self.visto_min = set(); self.vistos_glob = set()
+        self.minuto = {}; self.visto_min = set(); self.vistos_glob = set(); self.reparto_hecho = set()
         self.caidas_srv = {}     # servidor -> caídas (25-nov)
         self.n = dict(subsA=0, A_compra=0, A_venta=0, O_compra=0, O_venta=0, trade=0, notif=0, err=0, sin_cupo=0)
         self.f = None; self.dia = None
@@ -195,10 +195,34 @@ class Escucha:
                 self.f.write("recv_ts\tblock_ts\ttipo\tdex\tbilletera\toperador\tclave\tprecio_sol\tsol\tfirma\n")
         self.f.write("\t".join(str(x) for x in fila) + "\n")
 
+    def _reparto(self, clave, t_compra):
+        """26-nov (Fran): foto del reparto (RugCheck, gratis) EN el momento de la 1.ª compra A del token (solo pump.fun)."""
+        try:
+            req = urllib.request.Request(f"https://api.rugcheck.xyz/v1/tokens/{clave}/report", headers={"User-Agent": "desk-escucha"})
+            rc = json.load(urllib.request.urlopen(req, timeout=20))
+        except Exception as e:
+            rc = {"_error": str(e)[:60]}
+        top = rc.get("topHolders") or []
+        fila = [f"{t_compra:.3f}", f"{time.time():.3f}", clave, rc.get("creator") or "", rc.get("creatorBalance", ""),
+                round(sum(float(h.get("pct") or 0) for h in top[:10]), 2), round(float((top[0].get("pct") if top else 0) or 0), 2),
+                sum(1 for h in top if h.get("insider")), rc.get("graphInsidersDetected", ""), rc.get("totalHolders", ""),
+                rc.get("totalMarketLiquidity", ""), rc.get("score_normalised", ""), rc.get("detectedAt", ""), rc.get("_error", "")]
+        ruta = f"datos/escucha/reparto_compra_{dt.datetime.now(dt.timezone.utc).strftime('%Y%m%d')}{SUFIJO}.tsv"
+        nuevo = not os.path.exists(ruta)
+        with open(ruta, "a", newline="") as f:
+            w = csv.writer(f, delimiter="\t")
+            if nuevo:
+                w.writerow(["t_compra", "t_foto", "clave", "creador", "saldo_creador", "top10_pct", "top1_pct", "n_insiders_top",
+                            "insiders_grafo", "holders", "liq_usd", "score", "creado", "error"])
+            w.writerow(fila)
+
     async def seguir(self, clave):
         c = self.donde.get(clave)
         if c:
             c.dinamicas[clave] = time.time() + SEGUIR_S; return
+        if clave.endswith("pump") and clave not in self.reparto_hecho and len(self.reparto_hecho) < 3000:
+            self.reparto_hecho.add(clave)
+            asyncio.get_running_loop().run_in_executor(None, self._reparto, clave, time.time())
         c = next((c for c in self.conT if c.libre()), None)
         if not c:
             self.n["sin_cupo"] += 1; return
