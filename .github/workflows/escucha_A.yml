@@ -55,3 +55,5 @@ jobs:
           if [ "$(date -u +%Y%m%d)" -gt 20261211 ]; then echo "fin de la escucha, sin relevo"; exit 0; fi
           curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/actions/workflows/escucha_A.yml/dispatches" -d '{"ref":"main"}' && echo "relevo disparado"
+          curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/velas_escucha.yml/dispatches" -d '{"ref":"main"}' && echo "velas de respaldo disparadas"

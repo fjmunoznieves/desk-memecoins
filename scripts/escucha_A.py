@@ -12,7 +12,9 @@ import asyncio, base64, csv, json, os, struct, subprocess, sys, time, datetime a
 
 import websockets
 
-WS = os.environ.get("ESCUCHA_WS", "wss://api.mainnet-beta.solana.com")
+# 25-nov (Fran OK "1 y 2 gratis"): varios servidores gratuitos sin clave; las conexiones se reparten entre ellos y,
+# si una se cae, la siguiente reconexión prueba el otro servidor. Uso por servidor en ESCUCHA_SERVIDORES del reporte.
+WS_LISTA = [u.strip() for u in os.environ.get("ESCUCHA_WS", "wss://api.mainnet-beta.solana.com,wss://solana-rpc.publicnode.com").split(",") if u.strip()]
 MINUTOS = float(os.environ.get("ESCUCHA_MINUTOS", "340"))
 SEGUIR_S = 90 * 60          # cuánto seguir un token tras la compra A
 MAX_SEGUIDOS = 120          # tope de tokens seguidos a la vez (carga del RPC público)
@@ -75,6 +77,7 @@ class Conexion:
         self.fijas = list(fijas)      # [("A", billetera)] fijas de esta conexión
         self.dinamicas = {}           # clave -> hasta_ts (tokens seguidos)
         self.ws = None; self.nid = 0; self.pend = {}; self.subs = {}; self.sid_de = {}
+        self.iws = sum(map(ord, nombre)) % len(WS_LISTA)   # servidor actual de esta conexión
 
     def libre(self):
         return self.ws is not None and len(self.dinamicas) < POR_CONEXION
@@ -99,7 +102,7 @@ class Conexion:
                     await self.pedir("logsUnsubscribe", [sid])
 
     async def sesion(self, fin):
-        async with websockets.connect(WS, ping_interval=20, ping_timeout=60, max_size=2**23) as ws:
+        async with websockets.connect(WS_LISTA[self.iws], ping_interval=20, ping_timeout=60, max_size=2**23) as ws:
             self.ws = ws; self.pend.clear(); self.subs.clear(); self.sid_de.clear()
             for q in self.fijas: await self.sub(q)
             for k in list(self.dinamicas): await self.sub(("T", k))
@@ -140,6 +143,8 @@ class Conexion:
                 # reiniciaba y tras ~12 cortes cada reconexión esperaba 60 s (tarde 25-nov: 0-3 de 5 conexiones vivas).
                 if time.time() - t_ini > 120: intentos = 0
                 self.ws = None; intentos += 1
+                self.p.caidas_srv[WS_LISTA[self.iws]] = self.p.caidas_srv.get(WS_LISTA[self.iws], 0) + 1
+                self.iws = (self.iws + 1) % len(WS_LISTA)
                 if intentos <= 3 or intentos % 10 == 0:
                     print("conexión", self.nombre, "caída:", type(ex).__name__, str(ex)[:120], "reintento", intentos, flush=True)
                 await asyncio.sleep(min(60, 5 * intentos))
@@ -161,6 +166,7 @@ class Escucha:
         self.ruidosas = set()    # billeteras con > RUIDO_MAX notificaciones en 5 min (bots): se dejan de escuchar
         self.donde = {}       # clave seguida -> Conexion
         self.ult_fila = {}
+        self.caidas_srv = {}     # servidor -> caídas (25-nov)
         self.n = dict(subsA=0, A_compra=0, A_venta=0, trade=0, notif=0, err=0, sin_cupo=0)
         self.f = None; self.dia = None
 
@@ -246,7 +252,9 @@ class Escucha:
             if vuelta % 5: continue
             if len(self.visto) > 200000: self.visto = set()
             vivas = sum(1 for c in self.conA + self.conT if c.ws is not None)
-            print(dt.datetime.now(dt.timezone.utc).strftime("%H:%M"), f"conexiones vivas {vivas}/{len(self.conA)+len(self.conT)}, seguidos {len(self.donde)},", self.n, flush=True)
+            print(dt.datetime.now(dt.timezone.utc).strftime("%H:%M"), f"conexiones vivas {vivas}/{len(self.conA)+len(self.conT)}, seguidos {len(self.donde)},", self.n,
+                  "servidores", {u.split("//")[1][:22]: sum(1 for c in self.conA + self.conT if c.ws is not None and WS_LISTA[c.iws] == u) for u in WS_LISTA},
+                  "caídas", {u.split("//")[1][:22]: n for u, n in self.caidas_srv.items()}, flush=True)
 
     async def correr(self):
         fin = time.time() + MINUTOS * 60
