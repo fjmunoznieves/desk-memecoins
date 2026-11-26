@@ -20,7 +20,7 @@ def tokens_recientes(desde):
     vistos = {}
     for f in sorted(glob.glob("datos/escucha/ev_*.tsv"))[-4:]:  # 26-nov: incluye turno b (ev_*_b.tsv)
         for r in csv.DictReader(open(f), delimiter="\t"):
-            if r.get("tipo") != "A_compra":
+            if r.get("tipo") not in ("A_compra", "O_compra"):
                 continue
             try:
                 t = float(r["recv_ts"])

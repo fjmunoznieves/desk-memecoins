@@ -162,6 +162,13 @@ class Escucha:
         self.A = {}
         for r in csv.DictReader(open("datos/watchlist_A_oper.tsv"), delimiter="\t"):
             self.A[r["direccion"]] = r.get("operador") or r["direccion"][:6]
+        # 26-nov (Fran): billeteras en observación (no son A). Un grupo = un operador. Filas O_compra / O_venta.
+        self.OBS = set()
+        if os.path.exists("datos/watchlist_obs.tsv"):
+            for r in csv.DictReader(open("datos/watchlist_obs.tsv"), delimiter="\t"):
+                if r["direccion"] not in self.A:
+                    self.A[r["direccion"]] = r.get("operador") or r["direccion"][:6]
+                    self.OBS.add(r["direccion"])
         os.makedirs("datos/escucha", exist_ok=True)
         ws_ = list(self.A)
         k = -(-len(ws_) // CONEX_A)
@@ -173,7 +180,7 @@ class Escucha:
         self.donde = {}       # clave seguida -> Conexion
         self.ult_fila = {}
         self.caidas_srv = {}     # servidor -> caídas (25-nov)
-        self.n = dict(subsA=0, A_compra=0, A_venta=0, trade=0, notif=0, err=0, sin_cupo=0)
+        self.n = dict(subsA=0, A_compra=0, A_venta=0, O_compra=0, O_venta=0, trade=0, notif=0, err=0, sin_cupo=0)
         self.f = None; self.dia = None
 
     def escribir(self, fila):
@@ -216,6 +223,8 @@ class Escucha:
                 continue
             if e["usuario"] in self.A:
                 tipo = "A_compra" if e["compra"] else "A_venta"
+                if e["usuario"] in self.OBS:
+                    tipo = "O" + tipo[1:]
                 self.n[tipo] += 1
                 cl = (firma, e["usuario"], e["clave"], tipo)
                 if cl in self.visto:
