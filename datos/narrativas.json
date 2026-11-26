@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-26 09:54",
+ "hora_utc": "2026-11-26 14:56",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -10,14 +10,14 @@
  ],
  "narrativas": [
   {
-   "tema": "Steelers Release Aaron Rodgers",
+   "tema": "Aaron Rodgers reportedly out",
    "fuentes": [
-    "x_chainbase",
+    "bluesky",
     "wikipedia"
    ],
    "calor": 100,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): The Pittsburgh Steelers have released quarterback Aaron Rodgers, ending his tenure with the team. Sources confirmed the decision following reports that Rodgers …",
+    "tendencia en Bluesky: Reporter Gerry Dulac says the star quarterback is gone after a dramatic day of conflict with Mike McCarthy.",
     "120,910 visitas ayer en Wikipedia, nuevo en el top"
    ],
    "token": null
@@ -31,7 +31,15 @@
    "porque": [
     "394,056 visitas ayer en Wikipedia, 6.6× anteayer"
    ],
-   "token": null
+   "token": {
+    "cadena": "bsc",
+    "token": "0x6EDDA9096a4E6c9d310AD94456AdC93725977243",
+    "sym": "UNIVERSE",
+    "liq": 14580,
+    "vol24": 120,
+    "c24": 1.76,
+    "edad_h": 912.5
+   }
   },
   {
    "tema": "Ezra Frech",
@@ -100,13 +108,24 @@
    "token": null
   },
   {
-   "tema": "US Army Iowa Detonation Plan",
+   "tema": "SpaceX Satellite AI Approval",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): The US Army conducted a controlled detonation of nearly five tons of unstable lead azide explosives at the Iowa Army Ammunition Plant in Middletown. Health offi…"
+    "tema caliente en X según Chainbase Tops (puesto 1): The US Federal Communications Commission has authorized SpaceX to deploy up to one million satellites for the Starmind constellation, marking the first approval…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Packers Rams Play on Netflix",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 88,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 2): The Macy's Thanksgiving Day Parade in New York City has been postponed for the first time in its history due to an approaching nor'easter, with organizers tenta…"
    ],
    "token": null
   },
@@ -115,88 +134,137 @@
    "fuentes": [
     "x_chainbase"
    ],
-   "calor": 88,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): The United States has proposed new import tariffs on goods from the European Union, China, and over a dozen other economies, including India, Vietnam, and Taiwa…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Neuralink FDA Trial Approval",
-   "fuentes": [
-    "x_chainbase"
-   ],
    "calor": 86,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): Elon Musk's startup Neuralink has received approval from the US Food and Drug Administration (FDA) to commence a pivotal clinical trial for its brain-computer i…"
+    "tema caliente en X según Chainbase Tops (puesto 3): The US administration has proposed new import tariffs on goods from China, the European Union, and over a dozen other major economies, citing structural industr…"
    ],
    "token": null
   },
   {
-   "tema": "Polymarket Spain Election",
+   "tema": "Bank of England Cuts Capital Req",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 84,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): Prediction market participants are actively trading on the outcome of the upcoming Spanish general election, with over $4.5 million wagered on whether Prime Min…"
+    "tema caliente en X según Chainbase Tops (puesto 4): The Bank of England has announced new measures to reduce UK lenders' capital requirements by 30 basis points, while warning that further reductions could risk f…"
    ],
    "token": null
   },
   {
-   "tema": "1Password Confirms Data Breach",
+   "tema": "Switzerland Approves Bitcoin ETF",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 82,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): Password manager 1Password confirmed a security incident where an attacker compromised an employee's GitHub account to access internal systems. The breach resul…"
+    "tema caliente en X según Chainbase Tops (puesto 5): Switzerland's first spot Bitcoin ETF has begun trading on the SIX Swiss Exchange under the ticker BBIT. The fund holds Bitcoin directly in cold storage at a Swi…"
    ],
    "token": null
   },
   {
-   "tema": "Chinese Cars EU Expansion",
+   "tema": "US DOJ Freezes $1B Crypto",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): Chinese electric vehicle manufacturers are increasing their presence in the European market through higher sales volumes and localized production strategies. XP…"
+    "tema caliente en X según Chainbase Tops (puesto 6): The US Financial Crimes Enforcement Network (FinCEN) confirmed a cybersecurity incident resulting in unauthorized access to a limited subset of its systems. The…"
    ],
    "token": null
   },
   {
-   "tema": "Fincher Uses AI Lip Sync",
+   "tema": "Japan Bond Sales Criteria",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 78,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 7): A senior official from Japan's Finance Ministry stated that the short-term bond sector would be the primary candidate for increased sales if the calendar issuan…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "South Korea Stock Crash",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 76,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): Director David Fincher revealed that he utilized artificial intelligence technology to adjust the lip movements of actors, including Brad Pitt, in his latest fi…"
+    "tema caliente en X según Chainbase Tops (puesto 8): South Korean media reports indicate the government is considering increasing its stock market stabilization fund from ₩10.7 trillion to at least ₩20 trillion to…"
    ],
    "token": null
   },
   {
-   "tema": "JPMorgan S&P 500 8200",
+   "tema": "US Army Iowa Detonation Plan",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 74,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): JPMorgan forecasts an AI supercycle to emerge in 2027, accompanied by strong industrial mergers and acquisitions activity. The bank identifies rapidly growing s…"
+    "tema caliente en X según Chainbase Tops (puesto 9): The US Army conducted a controlled detonation of nearly five tons of hazardous lead azide at the Iowa Army Ammunition Plant. The operation triggered local evacu…"
    ],
    "token": null
   },
   {
-   "tema": "UK PM EU Negotiator",
+   "tema": "Judge Blocks FCC Disney Action",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 72,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): UK Prime Minister Andy Burnham is appointing a new lead negotiator for discussions with the European Union regarding potential reintegration into the bloc. Conc…"
+    "tema caliente en X según Chainbase Tops (puesto 10): A federal judge has temporarily barred the Federal Communications Commission from reviewing the local licenses of eight Disney-owned ABC television stations. Th…"
    ],
    "token": null
+  },
+  {
+   "tema": "Michael Burry Shifts Long",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 70,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 11): Investor Michael Burry has sold his remaining put options on the Nasdaq 100 Index, shifting his portfolio to an almost entirely long stance. He plans to deploy …"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Pepe Wojak",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (PEJAK, puesto de capitalización 914)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "8J69rbLTzWWgUJziFY8jeu5tDwEPBwUz4pKBMr5rpump",
+    "sym": "WOJAK",
+    "liq": 200008,
+    "vol24": 22120,
+    "c24": 12.46,
+    "edad_h": 9306.3
+   }
+  },
+  {
+   "tema": "Zylo Ecosystem",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (ZYLO, puesto de capitalización 728)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "HnGCbLLonRzNRAFHqv5AbvZ4FixMkUQztE2egh4sAmqZ",
+    "sym": "ZYLO",
+    "liq": 45118,
+    "vol24": 818,
+    "c24": 10.41,
+    "edad_h": 1829.2
+   }
   },
   {
    "tema": "Pudgy Penguins",
@@ -205,16 +273,16 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 127)"
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 128)"
    ],
    "token": {
     "cadena": "solana",
     "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
     "sym": "PENGU",
-    "liq": 2353464,
-    "vol24": 136184,
-    "c24": 6.95,
-    "edad_h": 17012.9
+    "liq": 2331994,
+    "vol24": 145832,
+    "c24": 7.52,
+    "edad_h": 17017.9
    }
   },
   {
@@ -224,121 +292,37 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 201)"
+    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 129)"
    ],
    "token": {
     "cadena": "solana",
     "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
     "sym": "MON",
-    "liq": 31943909,
-    "vol24": 300027,
+    "liq": 31943913,
+    "vol24": 302627,
     "c24": 0,
-    "edad_h": 1349.1
+    "edad_h": 1354.1
    }
   },
   {
-   "tema": "Initia",
+   "tema": "Sei",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (INIT, puesto de capitalización 630)"
+    "entre lo más buscado en CoinGecko (SEI, puesto de capitalización 138)"
    ],
-   "token": {
-    "cadena": "solana",
-    "token": "4V77YjprktbfyRg3qFWrdEsxmjGqjjrswzJSjbRypump",
-    "sym": "IPO",
-    "liq": 2587,
-    "vol24": 5159,
-    "c24": -48.41,
-    "edad_h": 70.4
-   }
+   "token": null
   },
   {
-   "tema": "SafePal",
+   "tema": "Non-Playable Shiba",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (SFP, puesto de capitalización 266)"
-   ],
-   "token": {
-    "cadena": "bsc",
-    "token": "0xD41FDb03Ba84762dD66a0af1a6C8540FF1ba5dfb",
-    "sym": "SFP",
-    "liq": 551246,
-    "vol24": 51745,
-    "c24": 6.36,
-    "edad_h": 31951.8
-   }
-  },
-  {
-   "tema": "Janction",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (JCT, puesto de capitalización 837)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "FH5fH8ak4fArrkCZjdjfgkGmYAHLLrpgNne5ehHtkj2X",
-    "sym": "JCT",
-    "liq": 97740068,
-    "vol24": 4,
-    "c24": -0.02,
-    "edad_h": 6074.8
-   }
-  },
-  {
-   "tema": "Telcoin",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (TEL, puesto 116)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "8r47aRfBcFh2b5kA8i6MTF4AaBZuagLGgYqY1QEpXPQJ",
-    "sym": "TEL",
-    "liq": 17969365,
-    "vol24": 42,
-    "c24": 0,
-    "edad_h": 1419.3
-   }
-  },
-  {
-   "tema": "Movement",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (MOVE, puesto 442)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "bGtAGexqRBwCxWLVqJUJ9wJiDVs6PAz7nuHYaJnjKkm",
-    "sym": "USEM",
-    "liq": 21808405,
-    "vol24": 1,
-    "c24": 0,
-    "edad_h": 4199.0
-   }
-  },
-  {
-   "tema": "HeyElsa",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (ELSA, puesto 525)"
+    "entre lo más buscado en CoinGecko (NPS, puesto de capitalización 761)"
    ],
    "token": null
   }
@@ -346,26 +330,17 @@
  "cruces_h18": [],
  "huecos_h19": [
   {
-   "ts": 1795686857,
-   "hora_utc": "2026-11-26 09:54",
-   "tema": "Steelers Release Aaron Rodgers",
-   "fuentes": "x_chainbase,wikipedia",
+   "ts": 1795704990,
+   "hora_utc": "2026-11-26 14:56",
+   "tema": "Aaron Rodgers reportedly out",
+   "fuentes": "bluesky,wikipedia",
    "calor": 100,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 7): The Pittsburgh Steelers have released quarterback Aaron Rodgers, ending his tenure with the team. Sources confirmed the decision following reports that Rodgers … | 120,910 visitas ayer en Wikipedia, nuevo en el top",
+   "porque": "tendencia en Bluesky: Reporter Gerry Dulac says the star quarterback is gone after a dramatic day of conflict with Mike McCarthy. | 120,910 visitas ayer en Wikipedia, nuevo en el top",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795686857,
-   "hora_utc": "2026-11-26 09:54",
-   "tema": "Miss Universe 2026",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "394,056 visitas ayer en Wikipedia, 6.6× anteayer",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795686857,
-   "hora_utc": "2026-11-26 09:54",
+   "ts": 1795704990,
+   "hora_utc": "2026-11-26 14:56",
    "tema": "Ezra Frech",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -373,8 +348,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795686857,
-   "hora_utc": "2026-11-26 09:54",
+   "ts": 1795704990,
+   "hora_utc": "2026-11-26 14:56",
    "tema": "Dancing with the Stars (American TV series) season 35",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -382,8 +357,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795686857,
-   "hora_utc": "2026-11-26 09:54",
+   "ts": 1795704990,
+   "hora_utc": "2026-11-26 14:56",
    "tema": "Jennifer Barreto",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -391,8 +366,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795686857,
-   "hora_utc": "2026-11-26 09:54",
+   "ts": 1795704990,
+   "hora_utc": "2026-11-26 14:56",
    "tema": "Andy Taylor (guitarist)",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -400,8 +375,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795686857,
-   "hora_utc": "2026-11-26 09:54",
+   "ts": 1795704990,
+   "hora_utc": "2026-11-26 14:56",
    "tema": "Mike McCarthy",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -409,12 +384,21 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795686857,
-   "hora_utc": "2026-11-26 09:54",
+   "ts": 1795704990,
+   "hora_utc": "2026-11-26 14:56",
    "tema": "Martha Firestone Ford",
    "fuentes": "wikipedia",
    "calor": 100,
    "porque": "111,793 visitas ayer en Wikipedia, nuevo en el top",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795704990,
+   "hora_utc": "2026-11-26 14:56",
+   "tema": "SpaceX Satellite AI Approval",
+   "fuentes": "x_chainbase",
+   "calor": 90,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): The US Federal Communications Commission has authorized SpaceX to deploy up to one million satellites for the Starmind constellation, marking the first approval…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
