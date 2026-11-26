@@ -18,7 +18,7 @@ CAMPOS = ["clave", "dex", "pool", "ts", "o", "h", "l", "c", "vol_usd"]
 
 def tokens_recientes(desde):
     vistos = {}
-    for f in sorted(glob.glob("datos/escucha/ev_*.tsv"))[-2:]:
+    for f in sorted(glob.glob("datos/escucha/ev_*.tsv"))[-4:]:  # 26-nov: incluye turno b (ev_*_b.tsv)
         for r in csv.DictReader(open(f), delimiter="\t"):
             if r.get("tipo") != "A_compra":
                 continue

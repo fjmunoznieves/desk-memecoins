@@ -8,6 +8,7 @@ Fuente gratis: websocket público de Solana (logsSubscribe), sin clave, no gasta
   para tener el precio a +10 s, +30 s, +60 s... y medir en papel copiar con distintas salidas.
 Salida: datos/escucha/ev_AAAAMMDD.tsv (lo analiza scripts/escucha_an.py). No opera, no firma nada.
 """
+import urllib.request
 import asyncio, base64, csv, json, os, struct, subprocess, sys, time, datetime as dt
 
 import websockets
@@ -16,6 +17,11 @@ import websockets
 # si una se cae, la siguiente reconexión prueba el otro servidor. Uso por servidor en ESCUCHA_SERVIDORES del reporte.
 WS_LISTA = [u.strip() for u in os.environ.get("ESCUCHA_WS", "wss://api.mainnet-beta.solana.com,wss://solana-rpc.publicnode.com").split(",") if u.strip()]
 MINUTOS = float(os.environ.get("ESCUCHA_MINUTOS", "340"))
+# 26-nov (Fran: "lo ideal es no dejar de seguir el mercado"): dos turnos (a/b) que se solapan. SOLAPE_MIN antes de
+# terminar, esta escucha dispara la del otro turno; cada turno escribe su propio archivo (ev_AAAAMMDD.tsv / ev_AAAAMMDD_b.tsv).
+TURNO = os.environ.get("ESCUCHA_TURNO", "a")
+SUFIJO = "" if TURNO == "a" else f"_{TURNO}"
+SOLAPE_MIN = float(os.environ.get("ESCUCHA_SOLAPE_MIN", "20"))
 SEGUIR_S = 90 * 60          # cuánto seguir un token tras la compra A
 MAX_SEGUIDOS = 120          # tope de tokens seguidos a la vez (carga del RPC público)
 DEBUG = int(os.environ.get("ESCUCHA_DEBUG", "0"))
@@ -174,7 +180,7 @@ class Escucha:
         dia = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%d")
         if dia != self.dia:
             if self.f: self.f.close()
-            ruta = f"datos/escucha/ev_{dia}.tsv"
+            ruta = f"datos/escucha/ev_{dia}{SUFIJO}.tsv"
             nuevo = not os.path.exists(ruta)
             self.f = open(ruta, "a", buffering=1); self.dia = dia
             if nuevo:
@@ -228,8 +234,22 @@ class Escucha:
 
     async def reporte(self, fin):
         vuelta = 0
+        relevo = False
         while time.time() < fin:
             await asyncio.sleep(60); vuelta += 1
+            if not relevo and time.time() >= fin - SOLAPE_MIN * 60 and os.environ.get("GH_TOKEN"):
+                relevo = True
+                otro = "b" if TURNO == "a" else "a"
+                try:
+                    req = urllib.request.Request(
+                        f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/actions/workflows/escucha_A.yml/dispatches",
+                        data=json.dumps({"ref": "main", "inputs": {"turno": otro}}).encode(), method="POST",
+                        headers={"Authorization": f"Bearer {os.environ['GH_TOKEN']}", "Accept": "application/vnd.github+json"})
+                    urllib.request.urlopen(req, timeout=30).read()
+                    open("/tmp/relevo_hecho", "w").write(otro)
+                    print(f"relevo solapado: disparado turno {otro} ({SOLAPE_MIN:.0f} min antes de terminar)", flush=True)
+                except Exception as e:
+                    print("relevo solapado falló:", str(e)[:100], flush=True)
             for w, c in self.cuenta.items():
                 if c > RUIDO_MAX and w not in self.ruidosas:
                     self.ruidosas.add(w)

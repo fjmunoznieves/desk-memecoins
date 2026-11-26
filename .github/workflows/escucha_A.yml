@@ -12,11 +12,14 @@ on:
       debug:
         description: "Imprimir N notificaciones crudas"
         default: "0"
+      turno:
+        description: "Turno a/b (26-nov: dos turnos que se solapan 20 min)"
+        default: "a"
 permissions:
   contents: write
   actions: write   # 25-nov: el guardián (scripts/guardian.py) corre dentro de la escucha cada 15 min
 concurrency:
-  group: escucha
+  group: escucha-${{ github.event.inputs.turno || 'a' }}
   cancel-in-progress: false
 jobs:
   escuchar:
@@ -32,10 +35,16 @@ jobs:
         env:
           ESCUCHA_MINUTOS: ${{ github.event.inputs.minutos || '340' }}
           ESCUCHA_DEBUG: ${{ github.event.inputs.debug || '0' }}
+          ESCUCHA_TURNO: ${{ github.event.inputs.turno || 'a' }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # 22-nov (Fran: observatorio liviano): la escucha programada termina el 27-nov; a mano sigue funcionando.
           if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%Y%m%d)" -gt 20261211 ]; then echo "escucha terminada (11-dic, extendida 24-nov por Fran)"; exit 0; fi
+          # 26-nov: la cadena de turnos se mantiene sola; una corrida programada solo arranca si no hay otra escucha activa.
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            otras=$(gh api "repos/${{ github.repository }}/actions/workflows/escucha_A.yml/runs?status=in_progress" --jq '[.workflow_runs[] | select(.id != ${{ github.run_id }})] | length')
+            if [ "$otras" != "0" ]; then echo "ya hay $otras escucha(s) activa(s): la programada no arranca"; touch /tmp/no_corrio; exit 0; fi
+          fi
           python scripts/escucha_A.py
       - name: Guardar
         if: always()
@@ -53,7 +62,11 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ "$(date -u +%Y%m%d)" -gt 20261211 ]; then echo "fin de la escucha, sin relevo"; exit 0; fi
-          curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/escucha_A.yml/dispatches" -d '{"ref":"main"}' && echo "relevo disparado"
+          if [ -f /tmp/no_corrio ]; then echo "no corrió: sin relevo"; exit 0; fi
           curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
             "https://api.github.com/repos/${{ github.repository }}/actions/workflows/velas_escucha.yml/dispatches" -d '{"ref":"main"}' && echo "velas de respaldo disparadas"
+          # el relevo normal es solapado (lo dispara el script 20 min antes); este es solo de respaldo si aquel falló
+          if [ -f /tmp/relevo_hecho ]; then echo "relevo solapado ya hecho (turno $(cat /tmp/relevo_hecho))"; exit 0; fi
+          otro=$([ "${{ github.event.inputs.turno || 'a' }}" = "a" ] && echo b || echo a)
+          curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/escucha_A.yml/dispatches" -d "{\"ref\":\"main\",\"inputs\":{\"turno\":\"$otro\"}}" && echo "relevo de respaldo disparado (turno $otro)"
