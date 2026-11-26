@@ -230,7 +230,7 @@ class Escucha:
                     continue
                 self.ult_fila[k] = recv
                 self.n["trade"] += 1
-                self.escribir([recv, e["ts"], "trade", e["dex"], "", "", k, f"{e['precio']:.6g}", f"{e['sol']:.4f}", ""])
+                self.escribir([recv, e["ts"], "trade", e["dex"], e.get("usuario", ""), "", k, f"{e['precio']:.6g}", f"{e['sol']:.4f}", ""])
 
     async def reporte(self, fin):
         vuelta = 0
