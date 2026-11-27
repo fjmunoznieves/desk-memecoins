@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-26 23:17",
+ "hora_utc": "2026-11-27 09:48",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -10,128 +10,148 @@
  ],
  "narrativas": [
   {
-   "tema": "Miss Universe 2026",
+   "tema": "Pons",
    "fuentes": [
-    "wikipedia"
+    "coingecko",
+    "coinmarketcap"
    ],
-   "calor": 100,
+   "calor": 80,
    "porque": [
-    "394,056 visitas ayer en Wikipedia, 6.6× anteayer"
+    "entre lo más buscado en CoinGecko (PONS, puesto de capitalización 311)",
+    "entre lo más buscado en CoinMarketCap (PONS, puesto 186)"
    ],
    "token": {
-    "cadena": "bsc",
-    "token": "0x6EDDA9096a4E6c9d310AD94456AdC93725977243",
-    "sym": "UNIVERSE",
-    "liq": 14583,
-    "vol24": 68,
-    "c24": -0.02,
-    "edad_h": 920.8
+    "cadena": "robinhood",
+    "token": "0x39dBED3a2bd333467115dE45665cC57F813C4571",
+    "sym": "PONS",
+    "liq": 1273786,
+    "vol24": 411468,
+    "c24": 20.55,
+    "edad_h": 3277.1
    }
   },
   {
-   "tema": "Ezra Frech",
+   "tema": "Kinetiq",
    "fuentes": [
-    "wikipedia"
+    "coingecko",
+    "coinmarketcap"
    ],
-   "calor": 100,
+   "calor": 80,
    "porque": [
-    "260,732 visitas ayer en Wikipedia, nuevo en el top"
+    "entre lo más buscado en CoinGecko (KNTQ, puesto de capitalización 284)",
+    "entre lo más buscado en CoinMarketCap (KNTQ, puesto 272)"
    ],
    "token": null
   },
   {
-   "tema": "Dancing with the Stars (American TV series) season 35",
+   "tema": "Thanksgiving Day celebrations",
    "fuentes": [
+    "bluesky",
     "wikipedia"
    ],
-   "calor": 100,
+   "calor": 78,
    "porque": [
-    "205,438 visitas ayer en Wikipedia, 10.7× anteayer"
+    "tendencia en Bluesky: Users share holiday wishes, dinner prep, cooking wins, and how their day is going.",
+    "101,703 visitas ayer en Wikipedia, 2.7× anteayer"
    ],
    "token": null
   },
   {
-   "tema": "Jennifer Barreto",
+   "tema": "Wu-Tang Clan",
    "fuentes": [
     "wikipedia"
    ],
    "calor": 100,
    "porque": [
-    "149,785 visitas ayer en Wikipedia, nuevo en el top"
+    "147,607 visitas ayer en Wikipedia, nuevo en el top"
    ],
    "token": null
   },
   {
-   "tema": "Andy Taylor (guitarist)",
+   "tema": "John Tuggle",
    "fuentes": [
     "wikipedia"
    ],
    "calor": 100,
    "porque": [
-    "135,665 visitas ayer en Wikipedia, nuevo en el top"
+    "101,935 visitas ayer en Wikipedia, 10.2× anteayer"
    ],
    "token": null
   },
   {
-   "tema": "Mike McCarthy",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "128,019 visitas ayer en Wikipedia, nuevo en el top"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Aaron Rodgers",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "120,910 visitas ayer en Wikipedia, nuevo en el top"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "FQt13bT3XrCjMHksXaxtKWKKqp9LfABXAWiw8k4ipump",
-    "sym": "AARON",
-    "liq": 2385,
-    "vol24": 6,
-    "c24": 0,
-    "edad_h": 17930.7
-   }
-  },
-  {
-   "tema": "Martha Firestone Ford",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "111,793 visitas ayer en Wikipedia, nuevo en el top"
-   ],
-   "token": null
-  },
-  {
-   "tema": "FIFA Cyberattack Data Stolen",
+   "tema": "SpaceX Pledges Shares",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): FIFA confirmed it was the victim of a criminal cyber-attack where hackers gained access to sensitive personal and business information by impersonating staff. T…"
+    "tema caliente en X según Chainbase Tops (puesto 1): Elon Musk and SpaceX have announced a pledge to donate Class A shares to every American child with an active Trump Account. SpaceX will provide one share, while…"
    ],
    "token": null
   },
   {
-   "tema": "UK Net Migration Falls",
+   "tema": "EU Ukraine Funding Deadlock",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): Net migration in the UK has fallen below 100,000, reaching its lowest level in three years excluding the pandemic period. Concurrently, Indian student enrollmen…"
+    "tema caliente en X según Chainbase Tops (puesto 2): European Union leaders ended budget negotiations in Brussels without consensus, with German Chancellor Friedrich Merz and Dutch Prime Minister Jetten citing a l…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Japan Bond Sales Criteria",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 86,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 3): A senior official from Japan's Finance Ministry stated that the government will evaluate bond issuance size, market liquidity, and costs when determining the sa…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "US Indian Enrollment Falls",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 84,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 4): UK net migration has dropped below 100,000 for the year ending in June, marking the lowest level in nearly three decades excluding the pandemic period. This dec…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "South Korea Stock Crash",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 82,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 5): South Korean authorities are considering expanding the country's 8 billion dollar stock market stabilization fund to address heightened market volatility. This …"
+   ],
+   "token": null
+  },
+  {
+   "tema": "SAP Cuts 10000 Jobs",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 80,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 6): The FDA has issued a recall for an 800mg pain reliever due to possible aluminum contamination, while SAP is reportedly considering cutting at least 10,000 jobs …"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Aaron Rodgers Steelers Release",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 78,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 7): NFL quarterback Aaron Rodgers has been released by the Pittsburgh Steelers following public criticism of head coach Mike McCarthy. Reports indicate Rodgers cite…"
    ],
    "token": null
   },
@@ -140,145 +160,82 @@
    "fuentes": [
     "x_chainbase"
    ],
-   "calor": 86,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): German software giant SAP is reportedly weighing a reduction of at least 10,000 jobs, representing approximately 9% of its workforce. The potential cuts are par…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "AI Project Wealth Sharing",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 84,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): A cryptocurrency project promotes the use of AI technology to build generational wealth, urging community members to introduce the platform to their relatives. …"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Norse Atlantic Suspends Flights",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 82,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): Budget airline Norse Atlantic has suspended all flight operations on Thursday due to critical financial issues. The carrier stated it is seeking short-term fina…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Democrats Skip Harvard",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 80,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): Incoming House Democrats have decided to skip Harvard University's orientation program. This action is taken in solidarity with graduate students who are curren…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Bangkok Refinery Fire",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 78,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): A fire at the Bangchak refinery in Bangkok prompted authorities to evacuate nearby areas as thick black smoke rose over the city. Hotel staff in Nha Trang, Viet…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "US Army Iowa Detonation",
-   "fuentes": [
-    "x_chainbase"
-   ],
    "calor": 76,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): The US Army executed a controlled detonation of degraded explosives containing unstable lead azide at the Iowa Army Ammunition Plant. Following the operation, F…"
+    "tema caliente en X según Chainbase Tops (puesto 8): Software giant SAP is reportedly considering a plan to eliminate at least 10,000 positions as part of a broader restructuring effort. The move aims to transform…"
    ],
    "token": null
   },
   {
-   "tema": "UK Contacts Veterans Mobilization",
+   "tema": "Trump Demands Investigation",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 74,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): The UK Ministry of Defence has sent letters to approximately 100,000 military veterans, requesting them to update their contact details and share current skills…"
+    "tema caliente en X según Chainbase Tops (puesto 9): Former President Donald Trump has called for an immediate investigation into the U.S. Bureau of Economic Analysis, alleging that pre-midterm election economic d…"
    ],
    "token": null
   },
   {
-   "tema": "NYPD Responds Brooklyn Clashes",
+   "tema": "NY Rent Freeze Upheld",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 72,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): Clashes occurred between pro-Palestinian protesters and pro-Israel counter-demonstrators outside Essen Deli in the Midwood neighborhood of Brooklyn, New York. T…"
+    "tema caliente en X según Chainbase Tops (puesto 10): A federal judge has issued a temporary restraining order halting the Federal Communications Commission's early review of ABC broadcast station licenses. The cou…"
    ],
    "token": null
   },
   {
-   "tema": "Pudgy Penguins",
+   "tema": "Monad",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 129)"
+    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 128)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
-    "sym": "PENGU",
-    "liq": 2315313,
-    "vol24": 132854,
-    "c24": 0.6,
-    "edad_h": 17026.3
-   }
-  },
-  {
-   "tema": "Zylo Ecosystem",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (ZYLO, puesto de capitalización 721)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "HnGCbLLonRzNRAFHqv5AbvZ4FixMkUQztE2egh4sAmqZ",
-    "sym": "ZYLO",
-    "liq": 45815,
-    "vol24": 1065,
-    "c24": 14.96,
-    "edad_h": 1837.5
-   }
-  },
-  {
-   "tema": "Tezos",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (XTZ, puesto de capitalización 140)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "29vumQTvgvivLsmwWdujoGbLPx4F2mt3BzM24BozBsqV",
-    "sym": "XTZ",
-    "liq": 79809135,
-    "vol24": 306621,
+    "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
+    "sym": "MON",
+    "liq": 31943936,
+    "vol24": 267602,
     "c24": 0,
-    "edad_h": 1639.8
+    "edad_h": 1373.0
    }
+  },
+  {
+   "tema": "Derive",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (DRV, puesto de capitalización 109)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "HBuRKZW5ztyGiYYBPnk7bfDPuUHPAvv7xq6dxYSf4zs9",
+    "sym": "DRV",
+    "liq": 382405501,
+    "vol24": 308619,
+    "c24": 0,
+    "edad_h": 1650.2
+   }
+  },
+  {
+   "tema": "Centrifuge",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (CFG, puesto de capitalización 618)"
+   ],
+   "token": null
   },
   {
    "tema": "Aero",
@@ -287,20 +244,47 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (AERO, puesto de capitalización 122)"
+    "entre lo más buscado en CoinGecko (AERO, puesto de capitalización 121)"
    ],
    "token": null
   },
   {
-   "tema": "Sei",
+   "tema": "Aptos",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (SEI, puesto de capitalización 135)"
+    "entre lo más buscado en CoinGecko (APT, puesto de capitalización 116)"
    ],
-   "token": null
+   "token": {
+    "cadena": "solana",
+    "token": "E88itbQfWqe5FS2UH7cfqQwg77cd9t88ZKzkKGG5KYMz",
+    "sym": "APT",
+    "liq": 4797151611,
+    "vol24": 200457,
+    "c24": 0,
+    "edad_h": 303.4
+   }
+  },
+  {
+   "tema": "Haedal Protocol",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (HAEDAL, puesto 719)"
+   ],
+   "token": {
+    "cadena": "bsc",
+    "token": "0x3D9bE0aC1001cd81c32464276D863d2FFdCa4967",
+    "sym": "HAEDAL",
+    "liq": 201211,
+    "vol24": 1094202,
+    "c24": 42.67,
+    "edad_h": 13868.1
+   }
   },
   {
    "tema": "AKEDO",
@@ -309,7 +293,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (AKE, puesto 415)"
+    "entre lo más buscado en CoinMarketCap (AKE, puesto 514)"
    ],
    "token": {
     "cadena": "solana",
@@ -318,101 +302,139 @@
     "liq": 52505765,
     "vol24": 1,
     "c24": 0,
-    "edad_h": 1587.7
+    "edad_h": 1598.2
    }
   },
   {
-   "tema": "Initia",
+   "tema": "Bulla",
    "fuentes": [
     "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (INIT, puesto 426)"
+    "entre lo más buscado en CoinMarketCap (BULLA, puesto 281)"
    ],
    "token": {
-    "cadena": "robinhood",
-    "token": "0x8A00C53Cb98b066d93145a9902E8224ff463C0Ce",
-    "sym": "IFO",
-    "liq": 3697,
-    "vol24": 84,
-    "c24": 2.73,
-    "edad_h": 1086.9
+    "cadena": "solana",
+    "token": "4eeEismW2HTqXr2tXg44bgpfrb7zGDVPXMEkuoGK7jjh",
+    "sym": "BULLA",
+    "liq": 71150058,
+    "vol24": 187577,
+    "c24": -0.01,
+    "edad_h": 1987.0
+   }
+  },
+  {
+   "tema": "Velvet",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (VELVET, puesto 346)"
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "41TK1R18KrkESEGLBx6yLzXUn8tGR9EphMYo8j85LxcB",
+    "sym": "VELVET",
+    "liq": 82328016,
+    "vol24": 308620,
+    "c24": 0,
+    "edad_h": 1312.4
+   }
+  },
+  {
+   "tema": "KGeN",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (KGEN, puesto 541)"
+   ],
+   "token": {
+    "cadena": "bsc",
+    "token": "0xF3d5b4c34Ed623478cc5141861776E6cf7AE3A1E",
+    "sym": "KGEN",
+    "liq": 7827,
+    "vol24": 132,
+    "c24": 6.28,
+    "edad_h": 9981.8
    }
   }
  ],
  "cruces_h18": [],
  "huecos_h19": [
   {
-   "ts": 1795735038,
-   "hora_utc": "2026-11-26 23:17",
-   "tema": "Ezra Frech",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "260,732 visitas ayer en Wikipedia, nuevo en el top",
+   "ts": 1795772922,
+   "hora_utc": "2026-11-27 09:48",
+   "tema": "Kinetiq",
+   "fuentes": "coingecko,coinmarketcap",
+   "calor": 80,
+   "porque": "entre lo más buscado en CoinGecko (KNTQ, puesto de capitalización 284) | entre lo más buscado en CoinMarketCap (KNTQ, puesto 272)",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795735038,
-   "hora_utc": "2026-11-26 23:17",
-   "tema": "Dancing with the Stars (American TV series) season 35",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "205,438 visitas ayer en Wikipedia, 10.7× anteayer",
+   "ts": 1795772922,
+   "hora_utc": "2026-11-27 09:48",
+   "tema": "Thanksgiving Day celebrations",
+   "fuentes": "bluesky,wikipedia",
+   "calor": 78,
+   "porque": "tendencia en Bluesky: Users share holiday wishes, dinner prep, cooking wins, and how their day is going. | 101,703 visitas ayer en Wikipedia, 2.7× anteayer",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795735038,
-   "hora_utc": "2026-11-26 23:17",
-   "tema": "Jennifer Barreto",
+   "ts": 1795772922,
+   "hora_utc": "2026-11-27 09:48",
+   "tema": "Wu-Tang Clan",
    "fuentes": "wikipedia",
    "calor": 100,
-   "porque": "149,785 visitas ayer en Wikipedia, nuevo en el top",
+   "porque": "147,607 visitas ayer en Wikipedia, nuevo en el top",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795735038,
-   "hora_utc": "2026-11-26 23:17",
-   "tema": "Andy Taylor (guitarist)",
+   "ts": 1795772922,
+   "hora_utc": "2026-11-27 09:48",
+   "tema": "John Tuggle",
    "fuentes": "wikipedia",
    "calor": 100,
-   "porque": "135,665 visitas ayer en Wikipedia, nuevo en el top",
+   "porque": "101,935 visitas ayer en Wikipedia, 10.2× anteayer",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795735038,
-   "hora_utc": "2026-11-26 23:17",
-   "tema": "Mike McCarthy",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "128,019 visitas ayer en Wikipedia, nuevo en el top",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795735038,
-   "hora_utc": "2026-11-26 23:17",
-   "tema": "Martha Firestone Ford",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "111,793 visitas ayer en Wikipedia, nuevo en el top",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795735038,
-   "hora_utc": "2026-11-26 23:17",
-   "tema": "FIFA Cyberattack Data Stolen",
+   "ts": 1795772922,
+   "hora_utc": "2026-11-27 09:48",
+   "tema": "SpaceX Pledges Shares",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): FIFA confirmed it was the victim of a criminal cyber-attack where hackers gained access to sensitive personal and business information by impersonating staff. T…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Elon Musk and SpaceX have announced a pledge to donate Class A shares to every American child with an active Trump Account. SpaceX will provide one share, while…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795735038,
-   "hora_utc": "2026-11-26 23:17",
-   "tema": "UK Net Migration Falls",
+   "ts": 1795772922,
+   "hora_utc": "2026-11-27 09:48",
+   "tema": "EU Ukraine Funding Deadlock",
    "fuentes": "x_chainbase",
    "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Net migration in the UK has fallen below 100,000, reaching its lowest level in three years excluding the pandemic period. Concurrently, Indian student enrollmen…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): European Union leaders ended budget negotiations in Brussels without consensus, with German Chancellor Friedrich Merz and Dutch Prime Minister Jetten citing a l…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795772922,
+   "hora_utc": "2026-11-27 09:48",
+   "tema": "Japan Bond Sales Criteria",
+   "fuentes": "x_chainbase",
+   "calor": 86,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): A senior official from Japan's Finance Ministry stated that the government will evaluate bond issuance size, market liquidity, and costs when determining the sa…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795772922,
+   "hora_utc": "2026-11-27 09:48",
+   "tema": "US Indian Enrollment Falls",
+   "fuentes": "x_chainbase",
+   "calor": 84,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 4): UK net migration has dropped below 100,000 for the year ending in June, marking the lowest level in nearly three decades excluding the pandemic period. This dec…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
