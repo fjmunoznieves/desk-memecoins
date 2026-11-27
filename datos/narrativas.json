@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-27 18:48",
+ "hora_utc": "2026-11-27 21:47",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -17,17 +17,17 @@
    ],
    "calor": 80,
    "porque": [
-    "entre lo más buscado en CoinGecko (PORTAL, puesto de capitalización 514)",
-    "entre lo más buscado en CoinMarketCap (PORTAL, puesto 414)"
+    "entre lo más buscado en CoinGecko (PORTAL, puesto de capitalización 500)",
+    "entre lo más buscado en CoinMarketCap (PORTAL, puesto 398)"
    ],
    "token": {
     "cadena": "solana",
     "token": "Bs5QRVGg979Q4AaBrUPU5K7jHvtZYgmBx5wVqeHVuPXb",
     "sym": "PORTAL",
-    "liq": 394374274,
-    "vol24": 171528,
+    "liq": 394374276,
+    "vol24": 164526,
     "c24": 0,
-    "edad_h": 4306.2
+    "edad_h": 4309.2
    }
   },
   {
@@ -66,90 +66,24 @@
    "token": null
   },
   {
-   "tema": "Iran Kuwait Attack Denial",
+   "tema": "Argentina Central Bank Ban",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): Iranian Foreign Minister Abbas Araghchi has denied Tehran's involvement in a drone strike in Kuwait that killed two Italian nationals, describing the incident a…"
+    "tema caliente en X según Chainbase Tops (puesto 1): Argentina's Congress has passed a law prohibiting the Central Bank from financing government deficits, shifting its primary mandate to preserving the peso's val…"
    ],
    "token": null
   },
   {
-   "tema": "SpaceX Leases Louisiana School",
+   "tema": "France Technical Recession",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): Elon Musk announced a plan to donate one share of SpaceX stock annually to every child in the United States, expanding on an initial pledge where both SpaceX an…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Ethereum Whitepaper 13th Anniversary",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 86,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): The Ethereum whitepaper celebrates its 13th anniversary, marking over a decade since Vitalik Buterin published the foundational document at age 19. The 36-page …"
-   ],
-   "token": null
-  },
-  {
-   "tema": "France Technical Recession Q3",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 84,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): France has officially entered a technical recession after its economy contracted by 0.2% in the third quarter of 2026, according to revised data from the nation…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "FIFA Confirms Handsome Boy Data Breach",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 82,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): FIFA confirmed a cyberattack by the 'Handsome Boy Hacking Club' that resulted in the theft of a limited set of personal and business information. The breach, wh…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "EU Budget Plan Consensus Fail",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 80,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): European Union leaders ended budget talks in Brussels without reaching an agreement on the bloc's long-term funding plan, with German Chancellor Friedrich Merz …"
-   ],
-   "token": null
-  },
-  {
-   "tema": "US Black Friday Spending Record",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 78,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): US holiday spending is projected to increase by 5.4% in 2026, with Adobe Analytics forecasting nearly $13 billion in online Black Friday sales, representing a 9…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Central Banks Hold Policy",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 76,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): The Bank of Japan remains on alert as Tokyo inflation accelerates to its fastest pace this year, while the institution continues to focus on maintaining price g…"
+    "tema caliente en X según Chainbase Tops (puesto 2): France has officially entered a technical recession following a contraction in its economy during the third quarter. Data indicates that the GDP shrank by 0.2%,…"
    ],
    "token": null
   },
@@ -158,31 +92,64 @@
    "fuentes": [
     "x_chainbase"
    ],
-   "calor": 74,
+   "calor": 86,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): The US Census Bureau reported that the US goods trade deficit widened to $149.5 billion in October, marking the largest October deficit on record and the third-…"
+    "tema caliente en X según Chainbase Tops (puesto 3): The U.S. Census Bureau reported that the goods trade deficit surged to $149.5 billion in October, marking the largest deficit for the month on record and exceed…"
    ],
    "token": null
   },
   {
-   "tema": "India Garment Production Surge",
+   "tema": "OpenAI Sues Apple",
    "fuentes": [
     "x_chainbase"
    ],
-   "calor": 72,
+   "calor": 84,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): Global fashion brands including Zara and H&M have shifted approximately $254 million in orders from Bangladesh to India due to labor unrest and production disru…"
+    "tema caliente en X según Chainbase Tops (puesto 4): OpenAI has filed a countersuit against Apple, alleging the theft of trade secrets and accusing the tech giant of coercing and threatening shared suppliers. This…"
    ],
    "token": null
   },
   {
-   "tema": "Marc Marquez MotoGP Retirement",
+   "tema": "SAP AI Job Cuts",
    "fuentes": [
     "x_chainbase"
    ],
-   "calor": 70,
+   "calor": 82,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): Marc Marquez has announced his retirement from MotoGP, concluding a career defined by ten world championships and a notable comeback with Ducati. Concurrently, …"
+    "tema caliente en X según Chainbase Tops (puesto 5): German software giant SAP is preparing a plan to eliminate at least 10,000 positions, representing approximately 9% of its global workforce. The restructuring a…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "NY Senate Leader Dies",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 80,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 6): Andrea Stewart-Cousins, the Majority Leader of the New York State Senate, has died at the age of 76. She was the longest-serving Democratic Senate majority lead…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Tata Sons Board Meeting",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 78,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 7): An Indian court has permitted the Tata Sons board to proceed with its scheduled meeting, rejecting immediate relief sought by Tata Trusts in their ongoing lawsu…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "US Qatar Venezuela Debt",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 76,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 8): The United States and Qatar are reportedly negotiating a multibillion-dollar financial lifeline for Venezuela, aiming to settle $4.16 billion in outstanding deb…"
    ],
    "token": null
   },
@@ -193,35 +160,16 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 127)"
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 128)"
    ],
    "token": {
     "cadena": "solana",
     "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
     "sym": "PENGU",
-    "liq": 2361774,
-    "vol24": 146195,
-    "c24": 0.58,
-    "edad_h": 17045.8
-   }
-  },
-  {
-   "tema": "PumpChan",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (PUMPCHAN, puesto de capitalización 878)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
-    "sym": "PUMPCHAN",
-    "liq": 301266,
-    "vol24": 1337332,
-    "c24": 72.81,
-    "edad_h": 41.3
+    "liq": 2371377,
+    "vol24": 140120,
+    "c24": 1.38,
+    "edad_h": 17048.8
    }
   },
   {
@@ -231,73 +179,54 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (ZYLO, puesto de capitalización 720)"
+    "entre lo más buscado en CoinGecko (ZYLO, puesto de capitalización 719)"
    ],
    "token": {
     "cadena": "solana",
     "token": "HnGCbLLonRzNRAFHqv5AbvZ4FixMkUQztE2egh4sAmqZ",
     "sym": "ZYLO",
-    "liq": 46306,
-    "vol24": 4114,
-    "c24": 1.12,
-    "edad_h": 1857.0
+    "liq": 47281,
+    "vol24": 4117,
+    "c24": 8.33,
+    "edad_h": 1860.0
    }
   },
   {
-   "tema": "Pons",
+   "tema": "PumpChan",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PONS, puesto de capitalización 324)"
+    "entre lo más buscado en CoinGecko (PUMPCHAN, puesto de capitalización 862)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "2K6N3AwwC9ZXbkBTpkwGCpW9DMasz9686sC2QZHQbuim",
-    "sym": "PONS",
-    "liq": 463410758,
-    "vol24": 303034,
-    "c24": 0,
-    "edad_h": 1885.1
+    "token": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
+    "sym": "PUMPCHAN",
+    "liq": 307027,
+    "vol24": 1381454,
+    "c24": 68.67,
+    "edad_h": 44.3
    }
   },
   {
-   "tema": "Akedo",
+   "tema": "Derive",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (AKE, puesto de capitalización 646)"
+    "entre lo más buscado en CoinGecko (DRV, puesto de capitalización 109)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "GjpboAg1KHUyTju9YuxftZbzUKdYu6SVwPTfN9CRMiYw",
-    "sym": "AKE",
-    "liq": 52505765,
-    "vol24": 1,
+    "token": "HBuRKZW5ztyGiYYBPnk7bfDPuUHPAvv7xq6dxYSf4zs9",
+    "sym": "DRV",
+    "liq": 382405514,
+    "vol24": 301233,
     "c24": 0,
-    "edad_h": 1607.2
-   }
-  },
-  {
-   "tema": "Monad",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (MON, puesto de capitalización 134)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "3k4YKrgKr72xiBZc11Q8vC8LUVW1qRr2aDP8P8XaHmzV",
-    "sym": "MON",
-    "liq": 31943948,
-    "vol24": 303001,
-    "c24": 0,
-    "edad_h": 1382.0
+    "edad_h": 1662.2
    }
   },
   {
@@ -307,28 +236,9 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (B2, puesto 462)"
+    "entre lo más buscado en CoinMarketCap (B2, puesto 463)"
    ],
    "token": null
-  },
-  {
-   "tema": "EVAA Protocol",
-   "fuentes": [
-    "coinmarketcap"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinMarketCap (EVAA, puesto 526)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "Ej4cuBwfc36DZH1TiMcX29cTTxM9jgVYJaKF5XtUtZhv",
-    "sym": "EVAA",
-    "liq": 29922540,
-    "vol24": 301223,
-    "c24": 0,
-    "edad_h": 722.5
-   }
   },
   {
    "tema": "Most famous person you're related to",
@@ -342,38 +252,112 @@
    "token": null
   },
   {
-   "tema": "Trump FIFA Corruption Scrutiny",
+   "tema": "Aaron Rodgers reportedly out",
    "fuentes": [
-    "x_chainbase"
+    "bluesky"
    ],
    "calor": 68,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 12): President Trump is facing multiple legal and political challenges, including a congressional investigation into alleged corruption involving FIFA president Gian…"
+    "tendencia en Bluesky: Reporter Gerry Dulac says the star quarterback is gone after a dramatic day of conflict with Mike McCarthy."
+   ],
+   "token": null
+  },
+  {
+   "tema": "Hackers breach Air Force cloud platform",
+   "fuentes": [
+    "bluesky"
+   ],
+   "calor": 66,
+   "porque": [
+    "tendencia en Bluesky: Reuters says the Cloud One breach may expose sensitive military tactical, personnel and logistics data."
+   ],
+   "token": null
+  },
+  {
+   "tema": "Duran Duran",
+   "fuentes": [
+    "wikipedia"
+   ],
+   "calor": 66,
+   "porque": [
+    "164,045 visitas ayer en Wikipedia, 2.6× anteayer"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Andy Taylor (guitarist)",
+   "fuentes": [
+    "wikipedia"
+   ],
+   "calor": 63,
+   "porque": [
+    "318,400 visitas ayer en Wikipedia, 2.3× anteayer"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Van Hollen challenges Schumer",
+   "fuentes": [
+    "bluesky"
+   ],
+   "calor": 62,
+   "porque": [
+    "tendencia en Bluesky: Chris Van Hollen seeks Chuck Schumer's Senate Democratic leader post before the Dec. 1 vote."
+   ],
+   "token": null
+  },
+  {
+   "tema": "Grand Theft Auto VI",
+   "fuentes": [
+    "bluesky"
+   ],
+   "calor": 60,
+   "porque": [
+    "tendencia en Bluesky: Users share playthroughs, fan fiction, and opinions on reviews of Rockstar's new open-world game."
+   ],
+   "token": {
+    "cadena": "solana",
+    "token": "EpVHyKK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump",
+    "sym": "GTAVI",
+    "liq": 14567,
+    "vol24": 400,
+    "c24": 4.4,
+    "edad_h": 3896.7
+   }
+  },
+  {
+   "tema": "jumanji open world",
+   "fuentes": [
+    "trends"
+   ],
+   "calor": 60,
+   "porque": [
+    "búsqueda en tendencia en Google (500+)"
    ],
    "token": null
   }
  ],
  "cruces_h18": [
   {
-   "ts": 1795805295,
-   "hora_utc": "2026-11-27 18:48",
+   "ts": 1795816076,
+   "hora_utc": "2026-11-27 21:47",
    "tema": "PumpChan",
    "fuentes": "coingecko,trending 1h",
    "cadena": "solana",
    "token": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
    "sym": "PUMPCHAN",
-   "liq": 301651,
-   "mc": 15487623,
-   "c1": -1.74,
-   "seguridad": "ok",
-   "aviso": "si",
+   "liq": 305952,
+   "mc": 15831535,
+   "c1": -2.11,
+   "seguridad": "",
+   "aviso": "no",
    "nuestras": "A0 B0 C0"
   }
  ],
  "huecos_h19": [
   {
-   "ts": 1795805295,
-   "hora_utc": "2026-11-27 18:48",
+   "ts": 1795816076,
+   "hora_utc": "2026-11-27 21:47",
    "tema": "Thanksgiving Day celebrations",
    "fuentes": "bluesky,wikipedia",
    "calor": 77,
@@ -381,8 +365,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795805295,
-   "hora_utc": "2026-11-27 18:48",
+   "ts": 1795816076,
+   "hora_utc": "2026-11-27 21:47",
    "tema": "Wu-Tang Clan",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -390,8 +374,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795805295,
-   "hora_utc": "2026-11-27 18:48",
+   "ts": 1795816076,
+   "hora_utc": "2026-11-27 21:47",
    "tema": "John Tuggle",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -399,48 +383,48 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795805295,
-   "hora_utc": "2026-11-27 18:48",
-   "tema": "Iran Kuwait Attack Denial",
+   "ts": 1795816076,
+   "hora_utc": "2026-11-27 21:47",
+   "tema": "Argentina Central Bank Ban",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Iranian Foreign Minister Abbas Araghchi has denied Tehran's involvement in a drone strike in Kuwait that killed two Italian nationals, describing the incident a…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Argentina's Congress has passed a law prohibiting the Central Bank from financing government deficits, shifting its primary mandate to preserving the peso's val…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795805295,
-   "hora_utc": "2026-11-27 18:48",
-   "tema": "SpaceX Leases Louisiana School",
+   "ts": 1795816076,
+   "hora_utc": "2026-11-27 21:47",
+   "tema": "France Technical Recession",
    "fuentes": "x_chainbase",
    "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Elon Musk announced a plan to donate one share of SpaceX stock annually to every child in the United States, expanding on an initial pledge where both SpaceX an…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): France has officially entered a technical recession following a contraction in its economy during the third quarter. Data indicates that the GDP shrank by 0.2%,…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795805295,
-   "hora_utc": "2026-11-27 18:48",
-   "tema": "Ethereum Whitepaper 13th Anniversary",
+   "ts": 1795816076,
+   "hora_utc": "2026-11-27 21:47",
+   "tema": "US Trade Deficit Hits Record",
    "fuentes": "x_chainbase",
    "calor": 86,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 3): The Ethereum whitepaper celebrates its 13th anniversary, marking over a decade since Vitalik Buterin published the foundational document at age 19. The 36-page …",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): The U.S. Census Bureau reported that the goods trade deficit surged to $149.5 billion in October, marking the largest deficit for the month on record and exceed…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795805295,
-   "hora_utc": "2026-11-27 18:48",
-   "tema": "France Technical Recession Q3",
+   "ts": 1795816076,
+   "hora_utc": "2026-11-27 21:47",
+   "tema": "OpenAI Sues Apple",
    "fuentes": "x_chainbase",
    "calor": 84,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 4): France has officially entered a technical recession after its economy contracted by 0.2% in the third quarter of 2026, according to revised data from the nation…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 4): OpenAI has filed a countersuit against Apple, alleging the theft of trade secrets and accusing the tech giant of coercing and threatening shared suppliers. This…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795805295,
-   "hora_utc": "2026-11-27 18:48",
-   "tema": "FIFA Confirms Handsome Boy Data Breach",
+   "ts": 1795816076,
+   "hora_utc": "2026-11-27 21:47",
+   "tema": "SAP AI Job Cuts",
    "fuentes": "x_chainbase",
    "calor": 82,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 5): FIFA confirmed a cyberattack by the 'Handsome Boy Hacking Club' that resulted in the theft of a limited set of personal and business information. The breach, wh…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 5): German software giant SAP is preparing a plan to eliminate at least 10,000 positions, representing approximately 9% of its global workforce. The restructuring a…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
