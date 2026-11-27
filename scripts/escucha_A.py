@@ -28,6 +28,11 @@ DEBUG = int(os.environ.get("ESCUCHA_DEBUG", "0"))
 POR_CONEXION = int(os.environ.get("ESCUCHA_POR_CONEXION", "45"))   # tokens seguidos por conexión T
 CONEX_A = 4; CONEX_T = 1    # el RPC público da 429 con más de ~5 conexiones por IP (prueba 21-nov)
 RUIDO_MAX = int(os.environ.get("ESCUCHA_RUIDO_MAX", "60"))  # notif./min (21-nov: con 120 hubo ~100 cortes 1002 en 5,5 h) por billetera; prueba 21-nov: 97k notif. en 7 min
+# 27-nov (Fran OK "perfecto procede"): también se escuchan tokens que GeckoTerminal muestra en 50-100k de MC
+# aunque no tengan A (grupo de control para compradores por minuto y reparto). Conexión propia X: no quita cupo a las A.
+X_MAX = int(os.environ.get("ESCUCHA_X_MAX", "30"))      # tope de tokens sin A seguidos a la vez
+X_CADA_S = 300                                           # cada cuánto se revisan las listas de GeckoTerminal
+X_MC = (50e3, 100e3)
 RALENTI_S = 2               # máx 1 fila de "trade" por token cada 2 s
 
 PUMP = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"
@@ -174,6 +179,8 @@ class Escucha:
         k = -(-len(ws_) // CONEX_A)
         self.conA = [Conexion(self, f"A{i}", [("A", w) for w in ws_[j:j + k]]) for i, j in enumerate(range(0, len(ws_), k))]
         self.conT = [Conexion(self, f"T{i}", []) for i in range(CONEX_T)]
+        self.conX = [Conexion(self, "X0", [])] if X_MAX > 0 else []
+        for c in self.conX: c.iws = len(WS_LISTA) - 1   # el otro servidor, para no sumar conexiones al primero
         self.visto = set()       # (firma, usuario, clave): el mismo evento llega por varias suscripciones
         self.cuenta = {}         # billetera -> notificaciones en la ventana actual
         self.ruidosas = set()    # billeteras con > RUIDO_MAX notificaciones en 5 min (bots): se dejan de escuchar
@@ -181,7 +188,7 @@ class Escucha:
         self.ult_fila = {}
         self.minuto = {}; self.visto_min = set(); self.vistos_glob = set(); self.reparto_hecho = set()
         self.caidas_srv = {}     # servidor -> caídas (25-nov)
-        self.n = dict(subsA=0, A_compra=0, A_venta=0, O_compra=0, O_venta=0, trade=0, notif=0, err=0, sin_cupo=0)
+        self.n = dict(subsA=0, A_compra=0, A_venta=0, O_compra=0, O_venta=0, trade=0, notif=0, err=0, sin_cupo=0, X_seguidos=0, X_sin_cupo=0, X_err=0)
         self.f = None; self.dia = None
 
     def escribir(self, fila):
@@ -228,6 +235,52 @@ class Escucha:
             self.n["sin_cupo"] += 1; return
         c.dinamicas[clave] = time.time() + SEGUIR_S; self.donde[clave] = c
         await c.sub(("T", clave))
+
+    def _gt_candidatos(self):
+        """Pools pump.fun/PumpSwap de las listas trending de GeckoTerminal (gratis) con MC entre 50k y 100k."""
+        out = []
+        for dur in ("5m", "1h"):
+            try:
+                req = urllib.request.Request(f"https://api.geckoterminal.com/api/v2/networks/solana/trending_pools?duration={dur}&page=1",
+                                             headers={"Accept": "application/json", "User-Agent": "desk-escucha"})
+                d = json.load(urllib.request.urlopen(req, timeout=20)).get("data") or []
+            except Exception:
+                self.n["X_err"] += 1; continue
+            for pl in d:
+                at = pl.get("attributes") or {}; rel = pl.get("relationships") or {}
+                dex = ((rel.get("dex") or {}).get("data") or {}).get("id", "")
+                mint = (((rel.get("base_token") or {}).get("data") or {}).get("id", "")).replace("solana_", "")
+                try: mc = float(at.get("market_cap_usd") or at.get("fdv_usd") or 0)
+                except Exception: mc = 0
+                if not (X_MC[0] <= mc <= X_MC[1]): continue
+                if dex == "pump-fun": out.append((mint, "pf", mc, dur, mint))
+                elif dex == "pumpswap": out.append((at.get("address", ""), "ps", mc, dur, mint))
+            time.sleep(2.5)
+        return out
+
+    async def bucle_x(self, fin):
+        while self.conX and time.time() < fin:
+            await asyncio.sleep(X_CADA_S)
+            c = self.conX[0]
+            ahora = time.time()
+            for k, h in list(c.dinamicas.items()):   # vencidos
+                if h < ahora and self.donde.get(k) is c: self.donde.pop(k, None)
+            try:
+                cands = await asyncio.to_thread(self._gt_candidatos)
+            except Exception:
+                self.n["X_err"] += 1; continue
+            for clave, dex, mc, dur, mint in cands:
+                if not clave or clave in self.donde: continue   # ya seguido (por A o por X)
+                if c.ws is None or sum(1 for h in c.dinamicas.values() if h > ahora) >= X_MAX:
+                    self.n["X_sin_cupo"] += 1; continue
+                c.dinamicas[clave] = ahora + SEGUIR_S; self.donde[clave] = c
+                self.n["X_seguidos"] += 1
+                self.escribir([round(ahora, 2), "", "X_inicio", dex, "", f"gt_{dur}", clave, "", "", f"mc={mc:.0f};mint={mint}"])
+                if mint and mint not in self.reparto_hecho and len(self.reparto_hecho) < 3000:
+                    self.reparto_hecho.add(mint)
+                    asyncio.get_running_loop().run_in_executor(None, self._reparto, mint, ahora)
+                try: await c.sub(("T", clave))
+                except Exception: self.n["X_err"] += 1
 
     async def notificacion(self, que, v):
         self.n["notif"] += 1
@@ -329,18 +382,19 @@ class Escucha:
                     print("guardián falló:", str(e)[:80], flush=True)
             if vuelta % 5: continue
             if len(self.visto) > 200000: self.visto = set()
-            vivas = sum(1 for c in self.conA + self.conT if c.ws is not None)
-            print(dt.datetime.now(dt.timezone.utc).strftime("%H:%M"), f"conexiones vivas {vivas}/{len(self.conA)+len(self.conT)}, seguidos {len(self.donde)},", self.n,
+            vivas = sum(1 for c in self.conA + self.conT + self.conX if c.ws is not None)
+            print(dt.datetime.now(dt.timezone.utc).strftime("%H:%M"), f"conexiones vivas {vivas}/{len(self.conA)+len(self.conT)+len(self.conX)}, seguidos {len(self.donde)},", self.n,
                   "servidores", {u.split("//")[1][:22]: sum(1 for c in self.conA + self.conT if c.ws is not None and WS_LISTA[c.iws] == u) for u in WS_LISTA},
                   "caídas", {u.split("//")[1][:22]: n for u, n in self.caidas_srv.items()}, flush=True)
 
     async def correr(self):
         fin = time.time() + MINUTOS * 60
         tareas = []
-        for c in self.conA + self.conT:
+        for c in self.conA + self.conT + self.conX:
             tareas.append(asyncio.create_task(c.correr(fin)))
             await asyncio.sleep(2)
         tareas.append(asyncio.create_task(self.reporte(fin)))
+        tareas.append(asyncio.create_task(self.bucle_x(fin)))
         await asyncio.gather(*tareas)
         print("FIN", self.n, flush=True)
 
