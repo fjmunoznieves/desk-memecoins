@@ -283,6 +283,13 @@ class Escucha:
         relevo = False
         while time.time() < fin:
             await asyncio.sleep(60); vuelta += 1
+            # 27-nov (Fran): menciones en canales públicos de Telegram (solo lectura). SOLTRENDING cada minuto, el resto cada 5.
+            try:
+                arg = [] if vuelta % 5 == 0 else ["SOLTRENDING"]
+                subprocess.Popen([sys.executable, "scripts/telegram_menciones.py"] + arg,
+                                 env=dict(os.environ, TG_OUT=f"datos/telegram/menciones_{TURNO}.tsv"))
+            except Exception as e:
+                print("telegram falló:", str(e)[:80], flush=True)
             ahora_m, self.minuto = self.minuto, {}
             if len(self.visto_min) > 200000: self.visto_min = set()
             for k, a in ahora_m.items():   # fila "min": compradores únicos del minuto (billetera = lista), operador = n vendedores

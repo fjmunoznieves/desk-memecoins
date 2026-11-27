@@ -3,8 +3,9 @@ Guarda cada contrato mencionado (Solana / EVM) con canal, hora del mensaje y tex
 Canales en datos/telegram/canales.txt (uno por línea)."""
 import csv, html, os, re, sys, time, urllib.request
 os.makedirs("datos/telegram", exist_ok=True)
-CAN = "datos/telegram/canales.txt"; OUT = "datos/telegram/menciones.tsv"
+CAN = "datos/telegram/canales.txt"; OUT = os.environ.get("TG_OUT", "datos/telegram/menciones.tsv")
 canales = [l.strip().lstrip("@") for l in open(CAN) if l.strip() and not l.startswith("#")] if os.path.exists(CAN) else []
+if len(sys.argv) > 1: canales = sys.argv[1:]   # p. ej. solo SOLTRENDING cada minuto
 SOL = re.compile(r"\b[1-9A-HJ-NP-Za-km-z]{32,44}\b"); EVM = re.compile(r"\b0x[a-fA-F0-9]{40}\b")
 ya = set()
 if os.path.exists(OUT):
@@ -19,7 +20,6 @@ for c in canales:
     except Exception as e:
         print("canal", c, "falló:", str(e)[:80]); continue
     bloques = s.split('class="tgme_widget_message_wrap')[1:]
-    print(f"canal {c}: {len(bloques)} mensajes visibles")
     for b in bloques:
         mid = (re.search(r'data-post="[^/]+/(\d+)"', b) or [None, ""])[1]
         hora = (re.search(r'datetime="([^"]+)"', b) or [None, ""])[1]
@@ -30,4 +30,5 @@ for c in canales:
             if (c, mid, x) in ya: continue
             ya.add((c, mid, x)); n += 1
             w.writerow([int(time.time()), c, mid, hora, x, t, " ".join(txt.split())[:160]])
-f.close(); print("menciones nuevas:", n)
+f.close()
+if n or len(sys.argv) <= 1: print("telegram: menciones nuevas", n, flush=True)
