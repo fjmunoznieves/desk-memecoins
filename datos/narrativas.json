@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-27 21:47",
+ "hora_utc": "2026-11-27 23:17",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -10,6 +10,19 @@
  ],
  "narrativas": [
   {
+   "tema": "Crypto Thanksgiving Greetings",
+   "fuentes": [
+    "x_chainbase",
+    "wikipedia"
+   ],
+   "calor": 92,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 5): Discussions within the crypto community address the recent decline in Ethereum prices, with users sharing charts to explain market movements. Concurrently, a na…",
+    "101,703 visitas ayer en Wikipedia, 2.7× anteayer"
+   ],
+   "token": null
+  },
+  {
    "tema": "Portal",
    "fuentes": [
     "coingecko",
@@ -17,8 +30,8 @@
    ],
    "calor": 80,
    "porque": [
-    "entre lo más buscado en CoinGecko (PORTAL, puesto de capitalización 500)",
-    "entre lo más buscado en CoinMarketCap (PORTAL, puesto 398)"
+    "entre lo más buscado en CoinGecko (PORTAL, puesto de capitalización 499)",
+    "entre lo más buscado en CoinMarketCap (PORTAL, puesto 404)"
    ],
    "token": {
     "cadena": "solana",
@@ -27,21 +40,8 @@
     "liq": 394374276,
     "vol24": 164526,
     "c24": 0,
-    "edad_h": 4309.2
+    "edad_h": 4310.7
    }
-  },
-  {
-   "tema": "Thanksgiving Day celebrations",
-   "fuentes": [
-    "bluesky",
-    "wikipedia"
-   ],
-   "calor": 77,
-   "porque": [
-    "tendencia en Bluesky: Users share holiday wishes, dinner prep, cooking wins, and how their day is going.",
-    "101,703 visitas ayer en Wikipedia, 2.7× anteayer"
-   ],
-   "token": null
   },
   {
    "tema": "Wu-Tang Clan",
@@ -66,24 +66,101 @@
    "token": null
   },
   {
-   "tema": "Argentina Central Bank Ban",
+   "tema": "Iran Denies Kuwait Attack",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): Argentina's Congress has passed a law prohibiting the Central Bank from financing government deficits, shifting its primary mandate to preserving the peso's val…"
+    "tema caliente en X según Chainbase Tops (puesto 1): Geopolitical tensions in the Middle East have escalated following a Houthi attack on Saudi Aramco's Jazan refinery, which killed a worker and suspended operatio…"
    ],
    "token": null
   },
   {
-   "tema": "France Technical Recession",
+   "tema": "GTA VI Sells 50 Million",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): France has officially entered a technical recession following a contraction in its economy during the third quarter. Data indicates that the GDP shrank by 0.2%,…"
+    "tema caliente en X según Chainbase Tops (puesto 2): Grand Theft Auto VI has achieved a historic launch, selling approximately 50 million copies in its first week and generating $3.79 billion in revenue. Data indi…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "UK DWP Services Offline",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 86,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 3): The UK Department for Work and Pensions (DWP) has taken several online services offline as a precautionary measure following the detection of a cyber incident. …"
+   ],
+   "token": null
+  },
+  {
+   "tema": "France Enters Technical Recession",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 84,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 4): France has officially entered a technical recession after its economy contracted for three consecutive quarters, with the National Institute of Statistics and E…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Anthropic Shares Rise Above IPO",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 80,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 6): Anthropic shares have recovered to trade above their $83 initial public offering price, reaching levels between $90 and $92.65 in recent sessions. This movement…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Trump Calls GDP Data Fake",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 78,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 7): President Donald Trump has accused the government of falsifying pre-election economic data, specifically labeling the earlier GDP figures as \"fake\" after Q3 gro…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "US China Russia Propose AI Centers",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 76,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 8): Russian envoy Kirill Dmitriev proposed a joint AI data center initiative involving the United States, China, and Russia, leveraging cheap Russian energy to supp…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Spain Snap Election Housing Crisis",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 74,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 9): Spanish Prime Minister Pedro Sánchez and political leaders participated in the final election debate ahead of Sunday's national vote, with housing market issues…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Asia Forms Digital Payment Group",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 72,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 10): Finance and central bank deputies from China, Japan, South Korea, and ASEAN member states have agreed to establish a joint working group focused on linking cros…"
    ],
    "token": null
   },
@@ -92,64 +169,9 @@
    "fuentes": [
     "x_chainbase"
    ],
-   "calor": 86,
+   "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): The U.S. Census Bureau reported that the goods trade deficit surged to $149.5 billion in October, marking the largest deficit for the month on record and exceed…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "OpenAI Sues Apple",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 84,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): OpenAI has filed a countersuit against Apple, alleging the theft of trade secrets and accusing the tech giant of coercing and threatening shared suppliers. This…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "SAP AI Job Cuts",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 82,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): German software giant SAP is preparing a plan to eliminate at least 10,000 positions, representing approximately 9% of its global workforce. The restructuring a…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "NY Senate Leader Dies",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 80,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): Andrea Stewart-Cousins, the Majority Leader of the New York State Senate, has died at the age of 76. She was the longest-serving Democratic Senate majority lead…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Tata Sons Board Meeting",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 78,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): An Indian court has permitted the Tata Sons board to proceed with its scheduled meeting, rejecting immediate relief sought by Tata Trusts in their ongoing lawsu…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "US Qatar Venezuela Debt",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 76,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): The United States and Qatar are reportedly negotiating a multibillion-dollar financial lifeline for Venezuela, aiming to settle $4.16 billion in outstanding deb…"
+    "tema caliente en X según Chainbase Tops (puesto 11): The US Census Bureau released preliminary data showing the US goods trade deficit widened to $149.5 billion in October, surpassing the expected $135 billion. Th…"
    ],
    "token": null
   },
@@ -166,10 +188,10 @@
     "cadena": "solana",
     "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
     "sym": "PENGU",
-    "liq": 2371377,
-    "vol24": 140120,
-    "c24": 1.38,
-    "edad_h": 17048.8
+    "liq": 2358082,
+    "vol24": 137744,
+    "c24": 1.7,
+    "edad_h": 17050.3
    }
   },
   {
@@ -179,7 +201,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (ZYLO, puesto de capitalización 719)"
+    "entre lo más buscado en CoinGecko (ZYLO, puesto de capitalización 720)"
    ],
    "token": {
     "cadena": "solana",
@@ -188,46 +210,38 @@
     "liq": 47281,
     "vol24": 4117,
     "c24": 8.33,
-    "edad_h": 1860.0
+    "edad_h": 1861.5
    }
   },
   {
-   "tema": "PumpChan",
+   "tema": "Akedo",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PUMPCHAN, puesto de capitalización 862)"
+    "entre lo más buscado en CoinGecko (AKE, puesto de capitalización 664)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
-    "sym": "PUMPCHAN",
-    "liq": 307027,
-    "vol24": 1381454,
-    "c24": 68.67,
-    "edad_h": 44.3
-   }
-  },
-  {
-   "tema": "Derive",
-   "fuentes": [
-    "coingecko"
-   ],
-   "calor": 70,
-   "porque": [
-    "entre lo más buscado en CoinGecko (DRV, puesto de capitalización 109)"
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "HBuRKZW5ztyGiYYBPnk7bfDPuUHPAvv7xq6dxYSf4zs9",
-    "sym": "DRV",
-    "liq": 382405514,
-    "vol24": 301233,
+    "token": "GjpboAg1KHUyTju9YuxftZbzUKdYu6SVwPTfN9CRMiYw",
+    "sym": "AKE",
+    "liq": 52505765,
+    "vol24": 1,
     "c24": 0,
-    "edad_h": 1662.2
+    "edad_h": 1611.7
    }
+  },
+  {
+   "tema": "Aero",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (AERO, puesto de capitalización 123)"
+   ],
+   "token": null
   },
   {
    "tema": "BSquared Network",
@@ -236,18 +250,7 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (B2, puesto 463)"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Most famous person you're related to",
-   "fuentes": [
-    "bluesky"
-   ],
-   "calor": 70,
-   "porque": [
-    "tendencia en Bluesky: Users name their best-known relatives, from Daniel Boone to a Social Security architect."
+    "entre lo más buscado en CoinMarketCap (B2, puesto 461)"
    ],
    "token": null
   },
@@ -256,20 +259,53 @@
    "fuentes": [
     "bluesky"
    ],
-   "calor": 68,
+   "calor": 70,
    "porque": [
     "tendencia en Bluesky: Reporter Gerry Dulac says the star quarterback is gone after a dramatic day of conflict with Mike McCarthy."
    ],
    "token": null
   },
   {
-   "tema": "Hackers breach Air Force cloud platform",
+   "tema": "Trump urges Putin halt aggression",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 68,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 12): Donald Trump stated he urged Russian President Vladimir Putin to withdraw all military aggression in Europe to facilitate a deal ending the Ukraine war. When qu…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "McCarthy's ice cream sandwich interview",
+   "fuentes": [
+    "bluesky"
+   ],
+   "calor": 68,
+   "porque": [
+    "tendencia en Bluesky: Steelers coach Mike McCarthy gave a halftime interview with an ice cream sandwich in his mouth."
+   ],
+   "token": null
+  },
+  {
+   "tema": "OpenAI Sues Apple",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 66,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 13): OpenAI has filed a countersuit against Apple, accusing the tech giant of stealing trade secrets, according to a report by the Financial Times. The legal action …"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Israeli strikes in Gaza",
    "fuentes": [
     "bluesky"
    ],
    "calor": 66,
    "porque": [
-    "tendencia en Bluesky: Reuters says the Cloud One breach may expose sensitive military tactical, personnel and logistics data."
+    "tendencia en Bluesky: Users share reports of Palestinians, aid workers, and medics killed despite the ceasefire, and cite war crime claims."
    ],
    "token": null
   },
@@ -283,90 +319,22 @@
     "164,045 visitas ayer en Wikipedia, 2.6× anteayer"
    ],
    "token": null
-  },
-  {
-   "tema": "Andy Taylor (guitarist)",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 63,
-   "porque": [
-    "318,400 visitas ayer en Wikipedia, 2.3× anteayer"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Van Hollen challenges Schumer",
-   "fuentes": [
-    "bluesky"
-   ],
-   "calor": 62,
-   "porque": [
-    "tendencia en Bluesky: Chris Van Hollen seeks Chuck Schumer's Senate Democratic leader post before the Dec. 1 vote."
-   ],
-   "token": null
-  },
-  {
-   "tema": "Grand Theft Auto VI",
-   "fuentes": [
-    "bluesky"
-   ],
-   "calor": 60,
-   "porque": [
-    "tendencia en Bluesky: Users share playthroughs, fan fiction, and opinions on reviews of Rockstar's new open-world game."
-   ],
-   "token": {
-    "cadena": "solana",
-    "token": "EpVHyKK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump",
-    "sym": "GTAVI",
-    "liq": 14567,
-    "vol24": 400,
-    "c24": 4.4,
-    "edad_h": 3896.7
-   }
-  },
-  {
-   "tema": "jumanji open world",
-   "fuentes": [
-    "trends"
-   ],
-   "calor": 60,
-   "porque": [
-    "búsqueda en tendencia en Google (500+)"
-   ],
-   "token": null
   }
  ],
- "cruces_h18": [
-  {
-   "ts": 1795816076,
-   "hora_utc": "2026-11-27 21:47",
-   "tema": "PumpChan",
-   "fuentes": "coingecko,trending 1h",
-   "cadena": "solana",
-   "token": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
-   "sym": "PUMPCHAN",
-   "liq": 305952,
-   "mc": 15831535,
-   "c1": -2.11,
-   "seguridad": "",
-   "aviso": "no",
-   "nuestras": "A0 B0 C0"
-  }
- ],
+ "cruces_h18": [],
  "huecos_h19": [
   {
-   "ts": 1795816076,
-   "hora_utc": "2026-11-27 21:47",
-   "tema": "Thanksgiving Day celebrations",
-   "fuentes": "bluesky,wikipedia",
-   "calor": 77,
-   "porque": "tendencia en Bluesky: Users share holiday wishes, dinner prep, cooking wins, and how their day is going. | 101,703 visitas ayer en Wikipedia, 2.7× anteayer",
+   "ts": 1795821436,
+   "hora_utc": "2026-11-27 23:17",
+   "tema": "Crypto Thanksgiving Greetings",
+   "fuentes": "x_chainbase,wikipedia",
+   "calor": 92,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 5): Discussions within the crypto community address the recent decline in Ethereum prices, with users sharing charts to explain market movements. Concurrently, a na… | 101,703 visitas ayer en Wikipedia, 2.7× anteayer",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795816076,
-   "hora_utc": "2026-11-27 21:47",
+   "ts": 1795821436,
+   "hora_utc": "2026-11-27 23:17",
    "tema": "Wu-Tang Clan",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -374,8 +342,8 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795816076,
-   "hora_utc": "2026-11-27 21:47",
+   "ts": 1795821436,
+   "hora_utc": "2026-11-27 23:17",
    "tema": "John Tuggle",
    "fuentes": "wikipedia",
    "calor": 100,
@@ -383,48 +351,48 @@
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795816076,
-   "hora_utc": "2026-11-27 21:47",
-   "tema": "Argentina Central Bank Ban",
+   "ts": 1795821436,
+   "hora_utc": "2026-11-27 23:17",
+   "tema": "Iran Denies Kuwait Attack",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Argentina's Congress has passed a law prohibiting the Central Bank from financing government deficits, shifting its primary mandate to preserving the peso's val…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Geopolitical tensions in the Middle East have escalated following a Houthi attack on Saudi Aramco's Jazan refinery, which killed a worker and suspended operatio…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795816076,
-   "hora_utc": "2026-11-27 21:47",
-   "tema": "France Technical Recession",
+   "ts": 1795821436,
+   "hora_utc": "2026-11-27 23:17",
+   "tema": "GTA VI Sells 50 Million",
    "fuentes": "x_chainbase",
    "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): France has officially entered a technical recession following a contraction in its economy during the third quarter. Data indicates that the GDP shrank by 0.2%,…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Grand Theft Auto VI has achieved a historic launch, selling approximately 50 million copies in its first week and generating $3.79 billion in revenue. Data indi…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795816076,
-   "hora_utc": "2026-11-27 21:47",
-   "tema": "US Trade Deficit Hits Record",
+   "ts": 1795821436,
+   "hora_utc": "2026-11-27 23:17",
+   "tema": "UK DWP Services Offline",
    "fuentes": "x_chainbase",
    "calor": 86,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 3): The U.S. Census Bureau reported that the goods trade deficit surged to $149.5 billion in October, marking the largest deficit for the month on record and exceed…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): The UK Department for Work and Pensions (DWP) has taken several online services offline as a precautionary measure following the detection of a cyber incident. …",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795816076,
-   "hora_utc": "2026-11-27 21:47",
-   "tema": "OpenAI Sues Apple",
+   "ts": 1795821436,
+   "hora_utc": "2026-11-27 23:17",
+   "tema": "France Enters Technical Recession",
    "fuentes": "x_chainbase",
    "calor": 84,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 4): OpenAI has filed a countersuit against Apple, alleging the theft of trade secrets and accusing the tech giant of coercing and threatening shared suppliers. This…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 4): France has officially entered a technical recession after its economy contracted for three consecutive quarters, with the National Institute of Statistics and E…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795816076,
-   "hora_utc": "2026-11-27 21:47",
-   "tema": "SAP AI Job Cuts",
+   "ts": 1795821436,
+   "hora_utc": "2026-11-27 23:17",
+   "tema": "Anthropic Shares Rise Above IPO",
    "fuentes": "x_chainbase",
-   "calor": 82,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 5): German software giant SAP is preparing a plan to eliminate at least 10,000 positions, representing approximately 9% of its global workforce. The restructuring a…",
+   "calor": 80,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 6): Anthropic shares have recovered to trade above their $83 initial public offering price, reaching levels between $90 and $92.65 in recent sessions. This movement…",
    "idea": "idea paper (no se crea nada)"
   }
  ]
