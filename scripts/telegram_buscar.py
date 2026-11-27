@@ -3,7 +3,7 @@ Entrada datos/telegram/x2_tokens.tsv (clave,...). Salida datos/telegram/x2_menci
 import csv, re, time, urllib.request, sys, os
 canales = [l.strip() for l in open("datos/telegram/canales.txt") if l.strip() and not l.startswith("#") and "RobinHood" not in l]
 if os.environ.get("TG_CANALES"): canales = os.environ["TG_CANALES"].split(",")
-toks = [r["clave"] for r in csv.DictReader(open("datos/telegram/x2_tokens.tsv"), delimiter="\t")]
+toks = [r["clave"] for r in csv.DictReader(open(os.environ.get("TG_IN") or "datos/telegram/x2_tokens.tsv"), delimiter="\t")]
 RUTA = os.environ.get("TG_OUT", "datos/telegram/x2_menciones.tsv")
 out = open(RUTA, "w"); out.write("clave\tcanal\tmsg_id\thora\n"); n = 0; err = 0
 for i, k in enumerate(toks):
