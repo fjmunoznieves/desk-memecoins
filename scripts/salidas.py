@@ -213,6 +213,8 @@ def main():
         reciente = r.get("esc35_pct") and time.time() - int(r.get("medido") or 0) < 6 * 3600
         if (r.get("estado") != "cerrado" or not r.get("esc35_pct") or not r.get("hib_pct")) and not reciente and p0 and r["cadena"] in GNET and edad >= 3600 and time.time() - t_ini < PRESUPUESTO_S:
             pool = r.get("pool") or pool_de(r["cadena"], r["token"])
+            if not pool:
+                r["medido"] = int(time.time())
             if pool:
                 r["pool"] = pool
                 t0 = int(r["ts"])
@@ -223,6 +225,10 @@ def main():
                     c = sorted(x for x in d["data"]["attributes"]["ohlcv_list"] if t0 <= x[0] <= t0 + 7 * 86400)
                 except Exception:
                     c = []
+                if not c:
+                    # 28-nov: sin velas → se marca el intento para que rote; antes quedaba siempre primera y gastaba el
+                    # presupuesto en cada corrida (H34rt quedó 9 días sin medir).
+                    r["medido"] = int(time.time())
                 if c:
                     r["max7d_pct"] = round((max(x[2] for x in c) / p0 - 1) * 100, 1)
                     pct, det = escalonada(c, p0)
