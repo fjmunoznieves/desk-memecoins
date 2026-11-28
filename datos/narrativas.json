@@ -1,5 +1,5 @@
 {
- "hora_utc": "2026-11-27 23:17",
+ "hora_utc": "2026-11-28 09:45",
  "fuentes_ok": [
   "bluesky",
   "coingecko",
@@ -10,19 +10,6 @@
  ],
  "narrativas": [
   {
-   "tema": "Crypto Thanksgiving Greetings",
-   "fuentes": [
-    "x_chainbase",
-    "wikipedia"
-   ],
-   "calor": 92,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 5): Discussions within the crypto community address the recent decline in Ethereum prices, with users sharing charts to explain market movements. Concurrently, a na…",
-    "101,703 visitas ayer en Wikipedia, 2.7× anteayer"
-   ],
-   "token": null
-  },
-  {
    "tema": "Portal",
    "fuentes": [
     "coingecko",
@@ -30,49 +17,38 @@
    ],
    "calor": 80,
    "porque": [
-    "entre lo más buscado en CoinGecko (PORTAL, puesto de capitalización 499)",
-    "entre lo más buscado en CoinMarketCap (PORTAL, puesto 404)"
+    "entre lo más buscado en CoinGecko (PORTAL, puesto de capitalización 923)",
+    "entre lo más buscado en CoinMarketCap (PORTAL, puesto 733)"
    ],
    "token": {
     "cadena": "solana",
     "token": "Bs5QRVGg979Q4AaBrUPU5K7jHvtZYgmBx5wVqeHVuPXb",
     "sym": "PORTAL",
-    "liq": 394374276,
-    "vol24": 164526,
+    "liq": 394374282,
+    "vol24": 120609,
     "c24": 0,
-    "edad_h": 4310.7
+    "edad_h": 4321.1
    }
   },
   {
-   "tema": "Wu-Tang Clan",
+   "tema": "Joe Milton",
    "fuentes": [
     "wikipedia"
    ],
-   "calor": 100,
+   "calor": 91,
    "porque": [
-    "147,607 visitas ayer en Wikipedia, nuevo en el top"
+    "385,182 visitas ayer en Wikipedia, 5.1× anteayer"
    ],
    "token": null
   },
   {
-   "tema": "John Tuggle",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 100,
-   "porque": [
-    "101,935 visitas ayer en Wikipedia, 10.2× anteayer"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Iran Denies Kuwait Attack",
+   "tema": "Iran Threatens US Bases Strait",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 90,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 1): Geopolitical tensions in the Middle East have escalated following a Houthi attack on Saudi Aramco's Jazan refinery, which killed a worker and suspended operatio…"
+    "tema caliente en X según Chainbase Tops (puesto 1): Tensions have escalated in the Middle East as Iranian officials warned of targeting US military bases in Europe and the Middle East, while naval commanders vowe…"
    ],
    "token": null
   },
@@ -83,95 +59,117 @@
    ],
    "calor": 88,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 2): Grand Theft Auto VI has achieved a historic launch, selling approximately 50 million copies in its first week and generating $3.79 billion in revenue. Data indi…"
+    "tema caliente en X según Chainbase Tops (puesto 2): Grand Theft Auto VI has achieved record-breaking commercial success, selling over 50 million copies and generating $3.79 billion in revenue during its first wee…"
    ],
    "token": null
   },
   {
-   "tema": "UK DWP Services Offline",
+   "tema": "EU Proposes Crypto Sanctions",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 86,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 3): The UK Department for Work and Pensions (DWP) has taken several online services offline as a precautionary measure following the detection of a cyber incident. …"
+    "tema caliente en X según Chainbase Tops (puesto 3): The European Union is set to launch an upgraded crypto registry in mid-2027, featuring a searchable platform and automated data checks to verify authorized comp…"
    ],
    "token": null
   },
   {
-   "tema": "France Enters Technical Recession",
+   "tema": "Telegram CEO Warns iOS Update",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 84,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 4): France has officially entered a technical recession after its economy contracted for three consecutive quarters, with the National Institute of Statistics and E…"
+    "tema caliente en X según Chainbase Tops (puesto 4): Telegram founder and CEO Pavel Durov has issued an urgent warning to iPhone users, stating that outdated iOS versions contain critical security vulnerabilities.…"
    ],
    "token": null
   },
   {
-   "tema": "Anthropic Shares Rise Above IPO",
+   "tema": "United Fidelity Bank Shut Down",
+   "fuentes": [
+    "x_chainbase"
+   ],
+   "calor": 82,
+   "porque": [
+    "tema caliente en X según Chainbase Tops (puesto 5): US federal regulators shut down Indiana-based United Fidelity Bank, marking the largest US bank failure since April 2024. The FDIC closed the $5.9 billion lende…"
+   ],
+   "token": null
+  },
+  {
+   "tema": "US Air Force Cloud Breached",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 80,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 6): Anthropic shares have recovered to trade above their $83 initial public offering price, reaching levels between $90 and $92.65 in recent sessions. This movement…"
+    "tema caliente en X según Chainbase Tops (puesto 6): Hackers have breached Cloud One, the US Air Force's flagship cloud computing platform, potentially exposing sensitive military, personnel, and logistics data. T…"
    ],
    "token": null
   },
   {
-   "tema": "Trump Calls GDP Data Fake",
+   "tema": "Mason Rudolph (American football)",
+   "fuentes": [
+    "wikipedia"
+   ],
+   "calor": 80,
+   "porque": [
+    "117,924 visitas ayer en Wikipedia, 4.0× anteayer"
+   ],
+   "token": null
+  },
+  {
+   "tema": "US Black Friday Spending Record",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 78,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 7): President Donald Trump has accused the government of falsifying pre-election economic data, specifically labeling the earlier GDP figures as \"fake\" after Q3 gro…"
+    "tema caliente en X según Chainbase Tops (puesto 7): Adobe Analytics projects that US online spending on Black Friday will reach a record $12.9 billion to $13 billion, representing a 9.2% year-over-year increase. …"
    ],
    "token": null
   },
   {
-   "tema": "US China Russia Propose AI Centers",
+   "tema": "UK DWP Cyber Incident Offline",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 76,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 8): Russian envoy Kirill Dmitriev proposed a joint AI data center initiative involving the United States, China, and Russia, leveraging cheap Russian energy to supp…"
+    "tema caliente en X según Chainbase Tops (puesto 8): The UK Department for Work and Pensions (DWP) has confirmed a cyber incident, resulting in the precautionary shutdown of several online services including Unive…"
    ],
    "token": null
   },
   {
-   "tema": "Spain Snap Election Housing Crisis",
+   "tema": "Spain Police Find Cannabis Farm",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 74,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 9): Spanish Prime Minister Pedro Sánchez and political leaders participated in the final election debate ahead of Sunday's national vote, with housing market issues…"
+    "tema caliente en X según Chainbase Tops (puesto 9): Spanish police uncovered a sophisticated underground cannabis plantation hidden beneath a children's playground in Las Gabias, Granada. The operation included 1…"
    ],
    "token": null
   },
   {
-   "tema": "Asia Forms Digital Payment Group",
+   "tema": "S&P Downgrades France Credit Outlook",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 72,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 10): Finance and central bank deputies from China, Japan, South Korea, and ASEAN member states have agreed to establish a joint working group focused on linking cros…"
+    "tema caliente en X según Chainbase Tops (puesto 10): S&P Global Ratings has changed France's sovereign credit rating outlook from stable to negative while affirming its A+/A-1 ratings. The agency cited risks relat…"
    ],
    "token": null
   },
   {
-   "tema": "US Trade Deficit Hits Record",
+   "tema": "US Federal Legal Proceedings",
    "fuentes": [
     "x_chainbase"
    ],
    "calor": 70,
    "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 11): The US Census Bureau released preliminary data showing the US goods trade deficit widened to $149.5 billion in October, surpassing the expected $135 billion. Th…"
+    "tema caliente en X según Chainbase Tops (puesto 11): Recent reports highlight multiple federal legal developments, including a grand jury hearing evidence in a case involving Rep. Ilhan Omar and a federal court re…"
    ],
    "token": null
   },
@@ -182,64 +180,135 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 128)"
+    "entre lo más buscado en CoinGecko (PENGU, puesto de capitalización 130)"
    ],
    "token": {
     "cadena": "solana",
     "token": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
     "sym": "PENGU",
-    "liq": 2358082,
-    "vol24": 137744,
-    "c24": 1.7,
-    "edad_h": 17050.3
+    "liq": 2315244,
+    "vol24": 141777,
+    "c24": -3.95,
+    "edad_h": 17060.8
    }
   },
   {
-   "tema": "Zylo Ecosystem",
+   "tema": "Official Trump",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (ZYLO, puesto de capitalización 720)"
+    "entre lo más buscado en CoinGecko (TRUMP, puesto de capitalización 147)"
+   ],
+   "token": {
+    "cadena": "bsc",
+    "token": "0x172eb459C85f82Cb2a2E007a8DbA26402ed75BF4",
+    "sym": "TRUMP",
+    "liq": 863597852,
+    "vol24": 0,
+    "c24": -4.15,
+    "edad_h": 7790.2
+   }
+  },
+  {
+   "tema": "Montra",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (MONTRA, puesto de capitalización 865)"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Centrifuge",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (CFG, puesto de capitalización 690)"
+   ],
+   "token": null
+  },
+  {
+   "tema": "Pons",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (PONS, puesto de capitalización 318)"
+   ],
+   "token": {
+    "cadena": "robinhood",
+    "token": "0x39dBED3a2bd333467115dE45665cC57F813C4571",
+    "sym": "PONS",
+    "liq": 1240821,
+    "vol24": 524795,
+    "c24": -4.26,
+    "edad_h": 3301.1
+   }
+  },
+  {
+   "tema": "EVAA Protocol",
+   "fuentes": [
+    "coingecko"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinGecko (EVAA, puesto de capitalización 914)"
    ],
    "token": {
     "cadena": "solana",
-    "token": "HnGCbLLonRzNRAFHqv5AbvZ4FixMkUQztE2egh4sAmqZ",
-    "sym": "ZYLO",
-    "liq": 47281,
-    "vol24": 4117,
-    "c24": 8.33,
-    "edad_h": 1861.5
+    "token": "Ej4cuBwfc36DZH1TiMcX29cTTxM9jgVYJaKF5XtUtZhv",
+    "sym": "EVAA",
+    "liq": 29919902,
+    "vol24": 303601,
+    "c24": -0.03,
+    "edad_h": 737.5
    }
   },
   {
-   "tema": "Akedo",
+   "tema": "Sei",
    "fuentes": [
     "coingecko"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (AKE, puesto de capitalización 664)"
+    "entre lo más buscado en CoinGecko (SEI, puesto de capitalización 136)"
+   ],
+   "token": null
+  },
+  {
+   "tema": "THENA",
+   "fuentes": [
+    "coinmarketcap"
+   ],
+   "calor": 70,
+   "porque": [
+    "entre lo más buscado en CoinMarketCap (THE, puesto 1257)"
    ],
    "token": {
-    "cadena": "solana",
-    "token": "GjpboAg1KHUyTju9YuxftZbzUKdYu6SVwPTfN9CRMiYw",
-    "sym": "AKE",
-    "liq": 52505765,
-    "vol24": 1,
-    "c24": 0,
-    "edad_h": 1611.7
+    "cadena": "bsc",
+    "token": "0xF4C8E32EaDEC4BFe97E0F595AdD0f4450a863a11",
+    "sym": "THE",
+    "liq": 42862,
+    "vol24": 23322,
+    "c24": 0.21,
+    "edad_h": null
    }
   },
   {
-   "tema": "Aero",
+   "tema": "Fabric Protocol",
    "fuentes": [
-    "coingecko"
+    "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinGecko (AERO, puesto de capitalización 123)"
+    "entre lo más buscado en CoinMarketCap (ROBO, puesto 1004)"
    ],
    "token": null
   },
@@ -250,149 +319,118 @@
    ],
    "calor": 70,
    "porque": [
-    "entre lo más buscado en CoinMarketCap (B2, puesto 461)"
+    "entre lo más buscado en CoinMarketCap (B2, puesto 464)"
    ],
    "token": null
   },
   {
-   "tema": "Aaron Rodgers reportedly out",
+   "tema": "Alien Worlds",
    "fuentes": [
-    "bluesky"
+    "coinmarketcap"
    ],
    "calor": 70,
    "porque": [
-    "tendencia en Bluesky: Reporter Gerry Dulac says the star quarterback is gone after a dramatic day of conflict with Mike McCarthy."
+    "entre lo más buscado en CoinMarketCap (TLM, puesto 986)"
    ],
-   "token": null
-  },
-  {
-   "tema": "Trump urges Putin halt aggression",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 68,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 12): Donald Trump stated he urged Russian President Vladimir Putin to withdraw all military aggression in Europe to facilitate a deal ending the Ukraine war. When qu…"
-   ],
-   "token": null
-  },
-  {
-   "tema": "McCarthy's ice cream sandwich interview",
-   "fuentes": [
-    "bluesky"
-   ],
-   "calor": 68,
-   "porque": [
-    "tendencia en Bluesky: Steelers coach Mike McCarthy gave a halftime interview with an ice cream sandwich in his mouth."
-   ],
-   "token": null
-  },
-  {
-   "tema": "OpenAI Sues Apple",
-   "fuentes": [
-    "x_chainbase"
-   ],
-   "calor": 66,
-   "porque": [
-    "tema caliente en X según Chainbase Tops (puesto 13): OpenAI has filed a countersuit against Apple, accusing the tech giant of stealing trade secrets, according to a report by the Financial Times. The legal action …"
-   ],
-   "token": null
-  },
-  {
-   "tema": "Israeli strikes in Gaza",
-   "fuentes": [
-    "bluesky"
-   ],
-   "calor": 66,
-   "porque": [
-    "tendencia en Bluesky: Users share reports of Palestinians, aid workers, and medics killed despite the ceasefire, and cite war crime claims."
-   ],
-   "token": null
-  },
-  {
-   "tema": "Duran Duran",
-   "fuentes": [
-    "wikipedia"
-   ],
-   "calor": 66,
-   "porque": [
-    "164,045 visitas ayer en Wikipedia, 2.6× anteayer"
-   ],
-   "token": null
+   "token": {
+    "cadena": "bsc",
+    "token": "0x2222227E22102Fe3322098e4CBfE18cFebD57c95",
+    "sym": "TLM",
+    "liq": 26091,
+    "vol24": 18944,
+    "c24": 9.04,
+    "edad_h": null
+   }
   }
  ],
- "cruces_h18": [],
+ "cruces_h18": [
+  {
+   "ts": 1795859157,
+   "hora_utc": "2026-11-28 09:45",
+   "tema": "Official Trump",
+   "fuentes": "coingecko,trending 1h",
+   "cadena": "solana",
+   "token": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+   "sym": "TRUMP",
+   "liq": 3461724,
+   "mc": 227070547,
+   "c1": 0.61,
+   "seguridad": "top10",
+   "aviso": "no",
+   "nuestras": "A2 B4 C1"
+  }
+ ],
  "huecos_h19": [
   {
-   "ts": 1795821436,
-   "hora_utc": "2026-11-27 23:17",
-   "tema": "Crypto Thanksgiving Greetings",
-   "fuentes": "x_chainbase,wikipedia",
-   "calor": 92,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 5): Discussions within the crypto community address the recent decline in Ethereum prices, with users sharing charts to explain market movements. Concurrently, a na… | 101,703 visitas ayer en Wikipedia, 2.7× anteayer",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795821436,
-   "hora_utc": "2026-11-27 23:17",
-   "tema": "Wu-Tang Clan",
+   "ts": 1795859157,
+   "hora_utc": "2026-11-28 09:45",
+   "tema": "Joe Milton",
    "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "147,607 visitas ayer en Wikipedia, nuevo en el top",
+   "calor": 91,
+   "porque": "385,182 visitas ayer en Wikipedia, 5.1× anteayer",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795821436,
-   "hora_utc": "2026-11-27 23:17",
-   "tema": "John Tuggle",
-   "fuentes": "wikipedia",
-   "calor": 100,
-   "porque": "101,935 visitas ayer en Wikipedia, 10.2× anteayer",
-   "idea": "idea paper (no se crea nada)"
-  },
-  {
-   "ts": 1795821436,
-   "hora_utc": "2026-11-27 23:17",
-   "tema": "Iran Denies Kuwait Attack",
+   "ts": 1795859157,
+   "hora_utc": "2026-11-28 09:45",
+   "tema": "Iran Threatens US Bases Strait",
    "fuentes": "x_chainbase",
    "calor": 90,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Geopolitical tensions in the Middle East have escalated following a Houthi attack on Saudi Aramco's Jazan refinery, which killed a worker and suspended operatio…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 1): Tensions have escalated in the Middle East as Iranian officials warned of targeting US military bases in Europe and the Middle East, while naval commanders vowe…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795821436,
-   "hora_utc": "2026-11-27 23:17",
+   "ts": 1795859157,
+   "hora_utc": "2026-11-28 09:45",
    "tema": "GTA VI Sells 50 Million",
    "fuentes": "x_chainbase",
    "calor": 88,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Grand Theft Auto VI has achieved a historic launch, selling approximately 50 million copies in its first week and generating $3.79 billion in revenue. Data indi…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 2): Grand Theft Auto VI has achieved record-breaking commercial success, selling over 50 million copies and generating $3.79 billion in revenue during its first wee…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795821436,
-   "hora_utc": "2026-11-27 23:17",
-   "tema": "UK DWP Services Offline",
+   "ts": 1795859157,
+   "hora_utc": "2026-11-28 09:45",
+   "tema": "EU Proposes Crypto Sanctions",
    "fuentes": "x_chainbase",
    "calor": 86,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 3): The UK Department for Work and Pensions (DWP) has taken several online services offline as a precautionary measure following the detection of a cyber incident. …",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 3): The European Union is set to launch an upgraded crypto registry in mid-2027, featuring a searchable platform and automated data checks to verify authorized comp…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795821436,
-   "hora_utc": "2026-11-27 23:17",
-   "tema": "France Enters Technical Recession",
+   "ts": 1795859157,
+   "hora_utc": "2026-11-28 09:45",
+   "tema": "Telegram CEO Warns iOS Update",
    "fuentes": "x_chainbase",
    "calor": 84,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 4): France has officially entered a technical recession after its economy contracted for three consecutive quarters, with the National Institute of Statistics and E…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 4): Telegram founder and CEO Pavel Durov has issued an urgent warning to iPhone users, stating that outdated iOS versions contain critical security vulnerabilities.…",
    "idea": "idea paper (no se crea nada)"
   },
   {
-   "ts": 1795821436,
-   "hora_utc": "2026-11-27 23:17",
-   "tema": "Anthropic Shares Rise Above IPO",
+   "ts": 1795859157,
+   "hora_utc": "2026-11-28 09:45",
+   "tema": "United Fidelity Bank Shut Down",
+   "fuentes": "x_chainbase",
+   "calor": 82,
+   "porque": "tema caliente en X según Chainbase Tops (puesto 5): US federal regulators shut down Indiana-based United Fidelity Bank, marking the largest US bank failure since April 2024. The FDIC closed the $5.9 billion lende…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795859157,
+   "hora_utc": "2026-11-28 09:45",
+   "tema": "US Air Force Cloud Breached",
    "fuentes": "x_chainbase",
    "calor": 80,
-   "porque": "tema caliente en X según Chainbase Tops (puesto 6): Anthropic shares have recovered to trade above their $83 initial public offering price, reaching levels between $90 and $92.65 in recent sessions. This movement…",
+   "porque": "tema caliente en X según Chainbase Tops (puesto 6): Hackers have breached Cloud One, the US Air Force's flagship cloud computing platform, potentially exposing sensitive military, personnel, and logistics data. T…",
+   "idea": "idea paper (no se crea nada)"
+  },
+  {
+   "ts": 1795859157,
+   "hora_utc": "2026-11-28 09:45",
+   "tema": "Mason Rudolph (American football)",
+   "fuentes": "wikipedia",
+   "calor": 80,
+   "porque": "117,924 visitas ayer en Wikipedia, 4.0× anteayer",
    "idea": "idea paper (no se crea nada)"
   }
  ]

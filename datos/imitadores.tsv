@@ -72,3 +72,5 @@ ts	hora_utc	cadena	token	sym	precio	liq	mc	motivo	estado_escaneo	fallos
 1795819756	2026-11-27 22:49	solana	EHtMEqKUHU3Pvyvz3pyiubWsxPBLa9LPJwDoZvhbtXbJ	Sol	0.0001006669434	15302	100666	usa el símbolo de SOL sin ser el contrato oficial	pendiente	liq
 1795819756	2026-11-27 22:49	bsc	0x08Cc1470a7B777B024070f86669282F93e3527ae	SpaceXCoin	0.09400	78076	27262656584	imita marca SPACEX	pendiente	vol5m+5m>=50
 1795826798	2026-11-28 00:46	bsc	0x7d9aA7e23105cFB95DF3b910d7152AD2F95B26a3	SpaceXCoin	0.03707	50782	11491906664	imita marca SPACEX	pendiente	vol5m+5m>=50
+1795857379	2026-11-28 09:16	solana	B29od4bd54VAVAqJFToRKkKJadUGK5v8pkAVb5uvpump	USD1	0.00003075	15349	30760	usa el símbolo de USD1 sin ser el contrato oficial	pendiente	liq+vol5m
+1795857379	2026-11-28 09:16	bsc	0x83bAeA267Ba4397529DdC7D95F1A9afAf78D0baB	SpaceXCoin	0.04387	213653	4387863	imita marca SPACEX	pendiente	ninguno
